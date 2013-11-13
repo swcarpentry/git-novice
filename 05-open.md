@@ -1,6 +1,13 @@
 Open Access
 ===========
 
+<blockquote>
+The opposite of "open" isn't "closed".
+The opposite of "open" is "broken".
+<br/>
+&mdash; John Wilbanks
+</blockquote>
+
 Free sharing of information might be the ideal in science,
 but the reality is often more complicated.
 Normal practice today looks something like this:
