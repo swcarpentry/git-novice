@@ -1,8 +1,8 @@
-A Better Backup
-===============
+A Better Kind of Backup
+=======================
 
-To get started with Git,
-open a shell and run these commands to configure a few things.
+The first time we use Git on a new machine,
+we need to run a commands to configure a few things:
 
 ```
 $ git config --global user.name "Vlad Dracula"
@@ -10,6 +10,10 @@ $ git config --global user.email "vlad@tran.sylvan.ia"
 $ git config --global color.ui "auto"
 $ git config --global core.editor "nano"
 ```
+
+(Please use your own name and email address instead of Dracula's,
+and please make sure you choose an editor that's actually on your system
+rather than `nano`.)
 
 Git commands are written `git verb`,
 where `verb` is what we actually want it to do.
@@ -21,11 +25,10 @@ we're telling Git:
 *   what our favorite text editor is, and
 *   that we want to use these settings globally (i.e., for every project),
 
-Please use your own name and email address instead of Vlad's,
-and please make sure you choose an editor that's actually on your system
-(`nano` might not be).
-
-We can now start actually using Git.
+The four commands above only need to be run once:
+Git will remember the settings until we change them.
+Once Git is configured,
+we can start using Git.
 Let's create a directory for our work:
 
 ```
@@ -54,9 +57,9 @@ $ ls -a
 .	..	.git
 ```
 
-Git will store information about our project in this special sub-directory;
-if you ever delete it,
-you will lose the history of your project.
+Git stores information about the project in this special sub-directory.
+If we ever delete it,
+we will lose the project's history.
 
 We can ask Git for the status of our project at any time like this:
 
@@ -69,12 +72,17 @@ $ git status
 nothing to commit (create/copy files and use "git add" to track)
 ```
 
-Let's add some notes about Mars's suitability as a base.
-(We'll echo the text to the file so that you can see what we're doing,
-but in real life you would use a text editor.)
+We'll explain what `branch master` means later.
+For the moment,
+let's add some notes about Mars's suitability as a base.
+(We'll `cat` the text in the file after we edit it so that you can see what we're doing,
+but in real life this isn't necessary.
+We'll also insert blank lines between groups of shell commands to make them easier to read.)
 
 ```
-$ echo "Cold and dry, but everything is my favorite color" > mars.txt
+$ nano mars.txt
+$ cat mars.txt
+Cold and dry, but everything is my favorite color
 
 $ ls
 mars.txt
@@ -92,8 +100,8 @@ nothing added to commit but untracked files present (use "git add" to track)
 ```
 
 The message "untracked files" means that there's a file in the directory
-that Git doesn't think it's repsonsible for managing.
-We can tell it that it should start to do so like this:
+that Git isn't keeping track of.
+We can tell it that it should like this:
 
 ```
 $ git add mars.txt
@@ -115,7 +123,7 @@ $ git status
 ```
 
 Git now knows that it's supposed to keep tack of this file,
-but it hasn't yet recorded our changes for posterity.
+but it hasn't yet recorded any changes for posterity.
 To get it to do that,
 we need to run one more command:
 
@@ -127,12 +135,11 @@ $ git commit -m "Starting to think about Mars"
 ```
 
 When we run `git commit`,
-Git takes everything we have told it to save
-and stores a copy permanently inside its special `.git` directory
-so that we can recover it later if we want to.
-We use the `-m` flag to specify a comment that we want saved as well
-to help us remember later on what we did and why.
-We can use `git status` to check that everything has been saved:
+Git takes everything we have told it to save using `git add`
+and stores a copy permanently inside the special `.git` directory.
+We use the `-m` flag (for "message")
+to record a comment that will help us remember later on what we did and why.
+If we run `git status` now:
 
 ```
 $ git status
@@ -140,10 +147,9 @@ $ git status
 nothing to commit, working directory clean
 ```
 
-We'll come back and explain what `branch master` means soon;
-for the moment,
-all we need to know is that once Git has saved files,
-we can ask it about their history:
+it tells us everything is up to date.
+If we want to know what we've done recently,
+we can ask Git to show us the project's history:
 
 ```
 $ git log
@@ -158,11 +164,16 @@ Now suppose Dracula adds more information to the file
 (remember, `>>` appends rather than overwriting):
 
 ```
-$ echo "The two moons may be a problem for Wolfman" >> mars.txt
+$ nano mars.txt
+$ cat mars.txt
+Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
 ```
 
-This time, `git status` tells us that the file has been modified,
-because Git already knows it's supposed to keep track of it:
+We don't need to run `git add` again,
+because Git already knows this file is on the list of things it's managing.
+If we run `git status`,
+it tells us the file has been modified:
 
 ```
 $ git status
@@ -176,7 +187,7 @@ $ git status
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-The key phrase is in the last line:
+The last line is the key phrase:
 "no changes added to commit".
 We have changed this file,
 but we haven't committed to making those changes yet.
@@ -196,8 +207,10 @@ index df0654a..315bf3a 100644
 +The two moons may be a problem for Wolfman
 ```
 
-The output is rather cryptic,
-but we can break it down into pieces:
+The output is cryptic because it isn't really intended for human beings to read:
+it's a series of commands for tools like editors and `patch`
+telling them how to reconstruct one file given the other.
+If we can break it down into pieces:
 
 1.   The first line tells us that Git is using the Unix `diff` command
      to compare the old and new versions of the file.
@@ -224,7 +237,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 Whoops:
-Git doesn't actually commit because we didn't use `git add` first.
+Git won't commit because we didn't use `git add` first.
 Let's do that:
 
 ```
@@ -237,9 +250,9 @@ $ git commit -m "Concerns about Mars's moons on my furry friend"
 
 Git insists that we add files to the set we want to commit
 before actually committing anything
-because we frequently won't want to commit everything at once.
+because we often won't commit everything at once.
 For example,
-suppose we're adding a few more citations to our supervisor's work
+suppose we're adding a few citations to our supervisor's work
 to our thesis.
 We might want to commit those additions,
 and the corresponding addition to the bibliography,
@@ -257,7 +270,11 @@ FIXME: diagram
 The following commands show this in action:
 
 ```
-$ echo "But the Mummy will appreciate the lack of humidity" >> mars.txt
+$ nano mars.txt
+$ cat mars.txt
+Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+But the Mummy will appreciate the lack of humidity
 
 $ git diff
 diff --git a/mars.txt b/mars.txt
@@ -283,7 +300,7 @@ $ git diff
 
 There is no output:
 as far as Git can tell,
-there's no difference between what it's been asked to record
+there's no difference between what it's been asked to save permanently
 and what's currently in the directory.
 However,
 if we do this:
@@ -344,8 +361,8 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 ```
 
 If we want to see what we changed when,
-we can use `git diff` yet again.
-We can refer to old versions
+we use `git diff` again,
+but refer to old versions
 using the notation `HEAD~1`, `HEAD~2`, and so on:
 
 ```
@@ -371,8 +388,8 @@ index df0654a..b36abfd 100644
 ```
 
 `HEAD` means "the most recently saved version".
-`HEAD~1` is pronounced "head minus one",
-and means "the previous revision".
+`HEAD~1` (pronounced "head minus one")
+means "the previous revision".
 We can also refer to revisions using
 those long strings of digits and letters
 that `git log` displays.
@@ -397,7 +414,7 @@ index df0654a..b36abfd 100644
 ```
 
 That's the right answer,
-but typing in 40-character strings is annoying,
+but typing random 40-character strings is annoying,
 so Git lets us use just the first few:
 
 ```
@@ -415,12 +432,10 @@ index df0654a..b36abfd 100644
 All right:
 we can save changes to files and see what we've changed---how
 can we restore older versions of things?
-Let's suppose we accidentally overwrite our file
-by using `>` instead of `>>`:
+Let's suppose we accidentally overwrite our file:
 
 ```
-$ echo "We will need to manufacture our own oxygen" > mars.txt
-
+$ nano mars.txt
 $ cat mars.txt
 We will need to manufacture our own oxygen
 ```
@@ -469,5 +484,5 @@ But what if we want to recover files *without* losing the work we've done since?
 For example,
 what if we have added some material to the conclusion of our paper that we'd like to keep,
 but we want to get back an earlier version of the introduction?
-To accomplish that,
-we'll need to explore branching.
+
+FIXME: explain how to recover individual files rather than whole states.

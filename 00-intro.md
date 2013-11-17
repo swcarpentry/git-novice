@@ -7,26 +7,24 @@ to figure out where the company should send its next planetary lander.
 They want to be able to work on the plans at the same time,
 but they have run into problems doing this in the past.
 If they take turns,
-each one will spend a lot of time waiting for the other to finish.
-On the other hand,
-if they work on their own copies and email changes back and forth
-they know that things will be lost, overwritten, or duplicated.
+each one will spend a lot of time waiting for the other to finish,
+but if they work on their own copies and email changes back and forth
+things will be lost, overwritten, or duplicated.
 
 The right solution is to use [version control](../gloss.html#version-control)
 to manage their work.
 Version control is better than mailing files back and forth because:
 
-*   It's hard (but not impossible) to accidentally overlook or overwrite someone's changes,
-    because the version control system highlights them automatically.
-*   It keeps a record of who made what changes when,
-    so that if people have questions later on,
-    they know who to ask
-    (or blame).
 *   Nothing that is committed to version control is ever lost.
     This means it can be used like the "undo" feature in an editor,
     and since all old versions of files are saved
     it's always possible to go back in time to see exactly who wrote what on a particular day,
     or what version of a program was used to generate a particular set of results.
+*   It keeps a record of who made what changes when,
+    so that if people have questions later on,
+    they know who to ask.
+*   It's hard (but not impossible) to accidentally overlook or overwrite someone's changes,
+    because the version control system highlights them automatically.
 
 This lesson shows how to use
 a popular open source version control system called Git.
