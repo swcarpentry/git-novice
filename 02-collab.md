@@ -37,7 +37,7 @@ but the remote repository on GitHub doesn't contain any files yet:
 FIXME: diagram
 
 The next step is to connect the two repositories.
-We do this by making the GitHub repository a [remote](../gloss.html#remote-repository)
+We do this by making the GitHub repository a [remote](../gloss.html#repository-remote)
 for the local repository.
 The home page of the repository on GitHub includes
 the string we need to identify it:

@@ -36,7 +36,7 @@ $ mkdir planets
 $ cd planets
 ```
 
-and tell Git to initialize it:
+and tell Git to make it a [repository](../gloss.html#repository):
 
 ```
 $ git init .
