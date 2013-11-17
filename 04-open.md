@@ -1,5 +1,5 @@
-Open Access
-===========
+Open Science
+============
 
 <blockquote>
 The opposite of "open" isn't "closed".

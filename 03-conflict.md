@@ -4,108 +4,113 @@ Conflicts
 As soon as people can work in parallel,
 someone's going to step on someone else's toes.
 This will even happen with a single person:
-while updating the conclusion to a paper in one branch,
-for example,
-we may decide to make changes to the introduction,
-which we have already updated in another branch.
+if we are working on a piece of software on both our laptop and a server in the lab,
+we could make different changes to each copy.
 Version control helps us manage these [conflicts](../gloss.html#conflict)
 by giving us tools to [resolve](../gloss.html#resolve) overlapping changes.
 
 To see how we can resolve conflicts,
-we must first create a conflict.
-Let's add a line to the version of `moons.txt` in the `master` branch:
+we must first create one.
+The file `mars.txt` currently looks like this
+in both local copies of our `planets` repository
+(the one in our home directory and the one in `/tmp`):
 
 ```
-$ git branch
-* master
-  moons
+$ cat mars.txt
+Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+But the Mummy will appreciate the lack of humidity
+```
 
-$ echo "This line added in master" >> moons.txt
+Let's add a line to the copy under our home directory:
 
-$ cat moons.txt
-Phobos is larger than Deimos
-This line added in master
+```
+$ nano mars.txt
+$ cat mars.txt
+Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+But the Mummy will appreciate the lack of humidity
+This line added to our home copy
+```
 
-$ git add moons.txt
+and then push the change to GitHub:
 
-$ git commit -m "Adding a line to moons.txt in the master branch"
-[master 5ae9631] Adding a line in the master branch
+```
+$ git add mars.txt
+
+$ git commit -m "Adding a line in our home copy"
+[master 5ae9631] Adding a line in our home copy
  1 file changed, 1 insertion(+)
+
+$ git push origin master
+FIXME: show output
 ```
+
+Our repositories are now in this state:
 
 FIXME: diagram
 
-Now let's switch to the `moons` branch
+Now let's switch to the copy under `/tmp`
 and make a different change there:
 
 ```
-$ echo "This line added in the moons branch" >> moons.txt
+$ cd /tmp/planets
+$ nano mars.txt
+$ cat mars.txt
+Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+But the Mummy will appreciate the lack of humidity
+We added a different line in the temporary copy
+```
 
-$ cat moons.txt
-Phobos is larger than Deimos
-This line added in the moons branch
+We can commit the change locally:
 
-$ git add moons.txt
+```
+$ git add mars.txt
 
-$ git commit -m "Adding a line in the moons branch"
-[moons 07ebc69] Adding a line in the moons branch
+$ git commit -m "Adding a line in the temporary copy"
+[master 07ebc69] Adding a line in the temporary copy
  1 file changed, 1 insertion(+)
 ```
 
-Our repository now looks like this:
-
-FIXME: diagram
-
-Let's pull all the changes made in `master` into the `moons` branch:
+but Git won't let us push it to GitHub:
 
 ```
-$ git merge master
-Auto-merging moons.txt
-CONFLICT (content): Merge conflict in moons.txt
+$ git push origin master
+Auto-merging mars.txt
+CONFLICT (content): Merge conflict in mars.txt
 Automatic merge failed; fix conflicts and then commit the result.
+FIXME: check this message
 ```
 
-Git has detected that the changes made in the `master` branch
-overlap with those made in the `moons` branch.
-If we ask it for our status,
-we get this:
+Git detects that the changes made in one copy overlap with those made in the other
+and stops us from trampling on our previous work.
+What we have to do is pull the changes from GitHub,
+[merge](../gloss.html#repository-merge) them into the copy we're currently working in,
+and then push that.
+Let's start by pulling:
 
 ```
-$ git status
-# On branch moons
-# You have unmerged paths.
-#   (fix conflicts and run "git commit")
-#
-# Changes to be committed:
-#
-#	new file:   names.txt
-#
-# Unmerged paths:
-#   (use "git add <file>..." to mark resolution)
-#
-#	both modified:      moons.txt
-#
+FIXME: run git pull
 ```
 
-which tells us that it brought over the file `names.txt` successfully
-(remember, it was added in `master`,
-but didn't yet exist in `moons`),
-but was unable to handle the conflict in `moons.txt`.
-What it *has* done is mark the conflict in that file:
+`git pull` tells us there's a conflict,
+and marks that conflict in the affected file:
 
 ```
-$ cat moons.txt
-Phobos is larger than Deimos
+$ cat mars.txt
+But the Mummy will appreciate the lack of humidity
 <<<<<<< HEAD
-This line added in the moons branch
+We added a different line in the temporary copy
 =======
-This line added in master
+This line added to our home copy
 >>>>>>> master
+FIXME: check output
 ```
 
 Our change---the one in `HEAD`---is preceded by `<<<<<<<`.
 Git has then inserted `=======` as a separator between the conflicting changes
-and marked the end of the region with `>>>>>>>`.
+and marked the end of the content downloaded from GitHub with `>>>>>>>`.
 
 It is now up to us to edit this file to remove these markers
 and reconcile the changes.
@@ -117,57 +122,62 @@ or get rid of the change entirely.
 Let's replace both so that the file looks like this:
 
 ```
-$ cat moons.txt
-Phobos is larger than Deimos
-Lines added in the master and moons branches
+$ cat mars.txt
+Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+But the Mummy will appreciate the lack of humidity
+We had a conflict on this line, but we removed it.
 ```
 
 To finish merging,
-we need to add `moons.txt` to the changes being made by the merge
+we add `mars.txt` to the changes being made by the merge
 and then commit:
 
 ```
-$ git add moons.txt
+$ git add mars.txt
 
 $ git status
-# On branch moons
+# On branch master
 # All conflicts fixed but you are still merging.
 #   (use "git commit" to conclude merge)
 #
 # Changes to be committed:
 #
-#	modified:   moons.txt
-#	new file:   names.txt
+#	modified:   mars.txt
 #
 
 $ git commit -m "Pulling in changes from master"
-[moons 2f20801] Pulling in changes from master
+[master 2f20801] Pulling in changes from master
+FIXME: check command output
 ```
 
-Our repository now looks like this:
+Our repositories now look like this:
 
 FIXME: diagram
 
-Git tries hard to keep track of what we've merged with what,
-so if we switch back to `master` and merge the changes in `moons`,
-we don't have to fix things by hand again:
+so we push our changes to GitHub:
 
 ```
-$ git checkout master
-
-$ git merge moons
-Updating 5ae9631..2f20801
-Fast-forward
- moons.txt | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-$ cat moons.txt 
-Phobos is larger than Deimos
-Lines added in the master and moons branches
+$ git push origin master
+FIXME: show command output
 ```
 
-The key phrase here is "fast forward"
-(which appears in the output of the `git merge` command).
-Since we had already resolved the conflicts between
-the copies of `moons.txt` in the `master` and `moons` branches,
-Git brings the result over on its own.
+to get this:
+
+FIXME: diagram
+
+Git keeps track of what we've merged with what,
+so we don't have to fix things by hand again
+if we switch back to the repository in our home directory and pull from GitHub:
+
+```
+$ cd ~/planets
+$ git pull origin master
+FIXME: command output
+
+$ cat mars.txt 
+Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+But the Mummy will appreciate the lack of humidity
+We had a conflict on this line, but we removed it.
+```
