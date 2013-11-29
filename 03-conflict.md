@@ -43,7 +43,13 @@ $ git commit -m "Adding a line in our home copy"
  1 file changed, 1 insertion(+)
 
 $ git push origin master
-FIXME: show output
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 352 bytes, done.
+Total 3 (delta 1), reused 0 (delta 0)
+To https://github.com/gvwilson/planets
+   29aba7c..dabb4c8  master -> master
 ```
 
 Our repositories are now in this state:
@@ -51,7 +57,8 @@ Our repositories are now in this state:
 FIXME: diagram
 
 Now let's switch to the copy under `/tmp`
-and make a different change there:
+and make a different change there
+*without* updating from GitHub:
 
 ```
 $ cd /tmp/planets
@@ -77,10 +84,13 @@ but Git won't let us push it to GitHub:
 
 ```
 $ git push origin master
-Auto-merging mars.txt
-CONFLICT (content): Merge conflict in mars.txt
-Automatic merge failed; fix conflicts and then commit the result.
-FIXME: check this message
+To https://github.com/gvwilson/planets.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/gvwilson/planets.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
+hint: before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 
 Git detects that the changes made in one copy overlap with those made in the other
@@ -91,7 +101,16 @@ and then push that.
 Let's start by pulling:
 
 ```
-FIXME: run git pull
+$ git pull origin master
+remote: Counting objects: 5, done.        
+remote: Compressing objects: 100% (2/2), done.        
+remote: Total 3 (delta 1), reused 3 (delta 1)        
+Unpacking objects: 100% (3/3), done.
+From https://github.com/gvwilson/planets
+ * branch            master     -> FETCH_HEAD
+Auto-merging mars.txt
+CONFLICT (content): Merge conflict in mars.txt
+Automatic merge failed; fix conflicts and then commit the result.
 ```
 
 `git pull` tells us there's a conflict,
@@ -99,18 +118,21 @@ and marks that conflict in the affected file:
 
 ```
 $ cat mars.txt
+Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 <<<<<<< HEAD
 We added a different line in the temporary copy
 =======
 This line added to our home copy
->>>>>>> master
-FIXME: check output
+>>>>>>> dabb4c8c450e8475aee9b14b4383acc99f42af1d
 ```
 
 Our change---the one in `HEAD`---is preceded by `<<<<<<<`.
 Git has then inserted `=======` as a separator between the conflicting changes
 and marked the end of the content downloaded from GitHub with `>>>>>>>`.
+(The string of letters and digits after that marker
+identifies the revision we've just downloaded.)
 
 It is now up to us to edit this file to remove these markers
 and reconcile the changes.
@@ -126,7 +148,7 @@ $ cat mars.txt
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
-We had a conflict on this line, but we removed it.
+We removed the conflict on this line
 ```
 
 To finish merging,
@@ -146,9 +168,8 @@ $ git status
 #	modified:   mars.txt
 #
 
-$ git commit -m "Pulling in changes from master"
-[master 2f20801] Pulling in changes from master
-FIXME: check command output
+$ git commit -m "Merging changes from GitHub"
+[master 2abf2b1] Merging changes from GitHub
 ```
 
 Our repositories now look like this:
@@ -159,7 +180,13 @@ so we push our changes to GitHub:
 
 ```
 $ git push origin master
-FIXME: show command output
+Counting objects: 10, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 697 bytes, done.
+Total 6 (delta 2), reused 0 (delta 0)
+To https://github.com/gvwilson/planets.git
+   dabb4c8..2abf2b1  master -> master
 ```
 
 to get this:
@@ -173,11 +200,35 @@ if we switch back to the repository in our home directory and pull from GitHub:
 ```
 $ cd ~/planets
 $ git pull origin master
-FIXME: command output
+remote: Counting objects: 10, done.        
+remote: Compressing objects: 100% (4/4), done.        
+remote: Total 6 (delta 2), reused 6 (delta 2)        
+Unpacking objects: 100% (6/6), done.
+From https://github.com/gvwilson/planets
+ * branch            master     -> FETCH_HEAD
+Updating dabb4c8..2abf2b1
+Fast-forward
+ mars.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+```
 
+we get the merged file:
+
+```
 $ cat mars.txt 
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
-We had a conflict on this line, but we removed it.
+We removed the conflict on this line
 ```
+
+We don't need to merge again because GitHub knows someone has already done that.
+
+Version control's ability to merge conflicting changes
+is another reason users tend to divide their programs and papers into multiple files
+instead of storing everything in one large file.
+There's another benefit too:
+whenever there are repeated conflicts in a particular file,
+the version control system is essentially trying to tell its users
+that they ought to clarify who's responsible for what,
+or find a way to divide the work up differently.

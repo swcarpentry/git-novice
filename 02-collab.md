@@ -71,14 +71,15 @@ this command will push the changes from our local repository
 to the repository on GitHub:
 
 ```
-$ git push origin master
-Counting objects: 27, done.
+$ git push -u origin master
+Counting objects: 9, done.
 Delta compression using up to 4 threads.
-Compressing objects: 100% (23/23), done.
-Writing objects: 100% (27/27), 2.62 KiB, done.
-Total 27 (delta 5), reused 0 (delta 0)
-To https://github.com/vlad/planets.git
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (9/9), 821 bytes, done.
+Total 9 (delta 2), reused 0 (delta 0)
+To https://github.com/gvwilson/planets
  * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
 ```
 
 Our local and remote repositories are now in this state:
@@ -123,16 +124,28 @@ $ cat pluto.txt
 It is so a planet!
 
 $ git add pluto.txt
-$ git commit -m "An outside chance"
-FIXME: show command output
+$ git commit -m "Some notes about Pluto"
+ 1 file changed, 1 insertion(+)
+ create mode 100644 pluto.txt
 ```
 
 then push the change to GitHub:
 
 ```
 $ git push origin master
-FIXME: show command output
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 306 bytes, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/gvwilson/planets.git
+   9272da5..29aba7c  master -> master
 ```
+
+Notice that we *didn't* use the `-u` flag to `git push`:
+the origin repository (the one on GitHub) already knows what `master` means.
+We discuss this in a lot more detail in our intermediate lesson
+when we talk about branching.
 
 Our three repositories now look like this:
 
@@ -143,7 +156,17 @@ We can now download changes into the original repository on our machine:
 ```
 $ cd ~/planets
 $ git pull origin master
-FIXME: show output
+remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0)
+Unpacking objects: 100% (3/3), done.
+From https://github.com/gvwilson/planets
+ * branch            master     -> FETCH_HEAD
+Updating 9272da5..29aba7c
+Fast-forward
+ pluto.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 pluto.txt
 ```
 
 In practice,

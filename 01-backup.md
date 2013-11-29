@@ -480,9 +480,32 @@ to back up to earlier revisions,
 `git reset --hard 34961b1` to back up to a particular revision,
 and so on.
 
-But what if we want to recover files *without* losing the work we've done since?
+But what if we want to recover somes files without losing other work we've done since?
 For example,
 what if we have added some material to the conclusion of our paper that we'd like to keep,
 but we want to get back an earlier version of the introduction?
+In that case,
+we want to check out an older revision of the file,
+so we do something like this:
 
-FIXME: explain how to recover individual files rather than whole states.
+```
+$ git checkout 123456 mars.txt
+```
+
+but use the first few digits of an actual revision number instead of 123456.
+To get the right answer,
+we must use the revision number that identifies the state of the repository
+*before* the change we're trying to undo.
+A common mistake is to use the revision number of
+the commit in which we made the change we're trying to get rid of:
+
+FIXME: diagram
+
+The fact that files can be reverted one by one
+tends to change the way people organize their work.
+If everything is in one large document,
+it's hard (but not impossible) to undo changes to the introduction
+without also undoing changes made later to the conclusion.
+If the introduction and conclusion are stored in separate files,
+on the other hand,
+moving backward and forward in time becomes much easier.
