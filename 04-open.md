@@ -1,6 +1,9 @@
-Open Science
-============
-
+---
+layout: lesson
+root: ../..
+title: Open Science
+level: novice
+---
 <blockquote>
 The opposite of "open" isn't "closed".
 The opposite of "open" is "broken".

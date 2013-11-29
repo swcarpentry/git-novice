@@ -1,6 +1,9 @@
-Conflicts
-=========
-
+---
+layout: lesson
+root: ../..
+title: Conflicts
+level: novice
+---
 As soon as people can work in parallel,
 someone's going to step on someone else's toes.
 This will even happen with a single person:

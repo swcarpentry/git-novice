@@ -1,6 +1,9 @@
-Collaborating
-=============
-
+---
+layout: lesson
+root: ../..
+title: Collaborating
+level: novice
+---
 Version control really comes into its own
 when we begin to collaborate with other people.
 We already have most of the machinery we need to do this;
