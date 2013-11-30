@@ -18,8 +18,13 @@ can and should be stored in a version control system.
 
 Topics
 ------
-* [Introducing Version Control](00-intro.html)
-* [A Better Kind of Backup](01-backup.html)
-* [Collaborating](02-collab.html)
-* [Conflicts](03-conflict.html)
-* [Open Science](04-open.html)
+*   [Introducing Version Control](00-intro.html)
+*   [A Better Kind of Backup](01-backup.html)
+*   [Collaborating](02-collab.html)
+*   [Conflicts](03-conflict.html)
+*   [Open Science](04-open.html)
+
+See Also
+--------
+*   [Instructor's Guide](guide.html)
+*   [Reference](reference.html)
