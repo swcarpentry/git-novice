@@ -7,8 +7,7 @@ level: novice
 Version control really comes into its own
 when we begin to collaborate with other people.
 We already have most of the machinery we need to do this;
-the only thing missing is to move files
-from one repository to another.
+the only thing missing is to copy changes from one repository to another.
 
 Systems like Git and Mercurial allow us to move work between any two repositories.
 In practice,
@@ -34,7 +33,7 @@ $ cd planets
 $ git init
 ```
 
-Our local repository still contains the files `mars.txt` that we wrote earlier,
+Our local repository still contains our earlier work on `mars.txt`,
 but the remote repository on GitHub doesn't contain any files yet:
 
 FIXME: diagram
@@ -48,9 +47,10 @@ the string we need to identify it:
 FIXME: screenshot
 
 For now,
-we'll use the 'http' identifier,
+we'll use the 'http' [protocol](../../gloss.html#protocol)
+(which is also used by web browsers)
 since it requires the least setup.
-Copy that string from the browser,
+Copy that URL from the browser,
 go into the local `planets` repository,
 and run this command:
 
@@ -80,7 +80,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (6/6), done.
 Writing objects: 100% (9/9), 821 bytes, done.
 Total 9 (delta 2), reused 0 (delta 0)
-To https://github.com/gvwilson/planets
+To https://github.com/vlad/planets
  * [new branch]      master -> master
 Branch master set up to track remote branch master from origin.
 ```
@@ -141,7 +141,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (2/2), done.
 Writing objects: 100% (3/3), 306 bytes, done.
 Total 3 (delta 0), reused 0 (delta 0)
-To https://github.com/gvwilson/planets.git
+To https://github.com/vlad/planets.git
    9272da5..29aba7c  master -> master
 ```
 
@@ -163,7 +163,7 @@ remote: Counting objects: 4, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 3 (delta 0)
 Unpacking objects: 100% (3/3), done.
-From https://github.com/gvwilson/planets
+From https://github.com/vlad/planets
  * branch            master     -> FETCH_HEAD
 Updating 9272da5..29aba7c
 Fast-forward
