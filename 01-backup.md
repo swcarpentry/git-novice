@@ -268,7 +268,7 @@ but not yet committed.
 `git add` puts things in this area,
 and `git commit` then copies them to long-term storage:
 
-FIXME: diagram
+FIXME: diagram showing how add and commit move files from working to staging to saved
 
 The following commands show this in action:
 
@@ -502,7 +502,7 @@ we must use the revision number that identifies the state of the repository
 A common mistake is to use the revision number of
 the commit in which we made the change we're trying to get rid of:
 
-FIXME: diagram
+FIXME: diagram showing when revision numbers are updated
 
 The fact that files can be reverted one by one
 tends to change the way people organize their work.
