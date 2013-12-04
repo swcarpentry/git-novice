@@ -57,7 +57,7 @@ To https://github.com/gvwilson/planets
 
 Our repositories are now in this state:
 
-FIXME: diagram showing contents of both repositories
+<img src="img/git-after-first-conficting-change.svg" alt="After Making First Change" />
 
 Now let's switch to the copy under `/tmp`
 and make a different change there
@@ -177,7 +177,7 @@ $ git commit -m "Merging changes from GitHub"
 
 Our repositories now look like this:
 
-FIXME: diagram show updated contents of both repositories
+<img src="img/git-after-second-conflicting-change.svg" alt="After Making Second (Conflicting) Change" />
 
 so we push our changes to GitHub:
 
@@ -194,7 +194,7 @@ To https://github.com/gvwilson/planets.git
 
 to get this:
 
-FIXME: diagram showing the new state of all three repositories
+<img src="img/git-after-merging.svg" alt="After Merging Changes Locally" />
 
 Git keeps track of what we've merged with what,
 so we don't have to fix things by hand again
