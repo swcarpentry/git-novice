@@ -24,7 +24,11 @@ Log in to GitHub,
 then create a new repository called `planets`
 using their GUI:
 
-FIXME: screenshot showing creation of a new repository on GitHub
+<img src="img/github-create-repo-01.png" alt="Creating a Repository on GitHub (Step 1)" />
+
+<img src="img/github-create-repo-02.png" alt="Creating a Repository on GitHub (Step 2)" />
+
+<img src="img/github-create-repo-03.png" alt="Creating a Repository on GitHub (Step 3)" />
 
 This effectively does the following on GitHub's servers:
 
@@ -37,7 +41,7 @@ $ git init
 Our local repository still contains the files `mars.txt` that we wrote earlier,
 but the remote repository on GitHub doesn't contain any files yet:
 
-FIXME: diagram showing freshly-made (empty) GitHub repository and local (non-empty) repository
+<img src="img/git-freshly-made-github-repo.svg" alt="Freshly-Made GitHub Repository" />
 
 The next step is to connect the two repositories.
 We do this by making the GitHub repository a [remote](../gloss.html#repository-remote)
@@ -45,7 +49,7 @@ for the local repository.
 The home page of the repository on GitHub includes
 the string we need to identify it:
 
-FIXME: screenshot highlighting where on GitHub to find the magic string
+<img src="img/github-find-repo-string.png" alt="Where to Find Repository URL on GitHub" />
 
 For now,
 we'll use the 'http' identifier,
@@ -87,7 +91,7 @@ Branch master set up to track remote branch master from origin.
 
 Our local and remote repositories are now in this state:
 
-FIXME: diagram comparing states of repositories
+<img src="img/github-repo-after-first-push.svg" alt="GitHub Repository After First Push" />
 
 We can pull changes from the remote repository to the local one as well:
 
@@ -115,7 +119,7 @@ $ git clone https://github.com/vlad/planets.git
 (We did it in `/tmp` or some other directory so that we don't overwrite our existing `planets` directory.)
 Our computer now has two copies of the repository:
 
-FIXME: diagram showing two copies of the same repository on one machine
+<img src="img/git-after-duplicate-clone.svg" alt="After Creating Duplicate Clone of Repository" />
 
 Let's make a change in the copy in `/tmp/planets`:
 
@@ -152,7 +156,7 @@ when we talk about branching.
 
 Our three repositories now look like this:
 
-FIXME: diagram showing the states of the repositories
+<img src="img/git-after-change-to-duplicate-repo.svg" alt="After Pushing Change from Duplicate Repository" />
 
 We can now download changes into the original repository on our machine:
 
