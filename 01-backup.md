@@ -140,6 +140,7 @@ $ git commit -m "Starting to think about Mars"
 When we run `git commit`,
 Git takes everything we have told it to save using `git add`
 and stores a copy permanently inside the special `.git` directory.
+This permanent copy is called a [revision](../../gloss.html#revision).
 We use the `-m` flag (for "message")
 to record a comment that will help us remember later on what we did and why.
 If we run `git status` now:
