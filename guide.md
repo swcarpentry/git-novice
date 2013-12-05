@@ -8,7 +8,7 @@ Version control might be the most important topic we teach,
 but Git is definitely the most complicated tool.
 However,
 GitHub presently dominates the open software forge landscape,
-so we have help novices learn just enough Git
+so we have to help novices learn just enough Git
 to feel they can and should learn more on their own.
 
 This is why we don't teach branching:
