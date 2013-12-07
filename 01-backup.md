@@ -516,3 +516,100 @@ without also undoing changes made later to the conclusion.
 If the introduction and conclusion are stored in separate files,
 on the other hand,
 moving backward and forward in time becomes much easier.
+
+
+What if we have files that we do not want git to track for us? For
+example, we might have result files or intermediate data files that we
+do not want to track, and that clutter up our git status output.
+
+Let's create some data files that we don't want to track:
+
+```
+$ touch a.dat b.dat c.dat
+$ mkdir data
+$ touch data\a.out data\b.out
+```
+
+Then, we can look at the status:
+
+```
+$ git status
+## master
+?? a.dat
+?? b.dat
+?? c.dat
+?? data/
+```
+
+Seeing all of these files can be annoying, and worse, the clutter can
+hide an important files from us. Let's ignore those files.
+
+Git has a powerful mechanism for ignoring files.  We will look at a
+basic example.  In a repository, the file `.gitignore` is used to
+specify files to ignore.
+
+```
+$ nano .gitignore
+$ cat .gitignore
+*.dat
+/data/
+```
+
+This tells git to ignore any file ending with `.dat`, and all files
+under the `data` directory.
+
+Now, we have a much cleaner status.
+
+
+```
+$ git status
+## master
+?? .gitignore
+```
+
+
+Now the `.gitignore` file is there too.  If our programs are creating
+these extra data files, all users of this repository will probably
+want to ignore them too.  So, we can add the ignore file to the
+repository and check it in.
+
+```
+$ git add .gitignore
+$ git commit -m "Add the ignore file"
+$ git status
+## master
+```
+
+When `git status` is clean, it is much easier to tell that all of our
+work is checked in.
+
+We can see the ignored files in the status if we want.  That can be
+helpful when making sure that nothing was accidentally ignored.
+
+```
+$ git status --ignored
+On branch master
+Ignored files:
+  (use "git add -f <file>..." to include in what will be committed)
+
+        a.dat
+        b.dat
+        c.dat
+        data/
+
+nothing to commit, working directory clean
+```
+
+(TODO - DJ:  I don't know if that output is specific to my git config
+or not...)
+
+Finally, the ignore file helps us avoid adding files to the repository
+that we don't want.
+
+```
+$ git add a.data
+The following paths are ignored by one of your .gitignore files:
+a.dat
+Use -f if you really want to add them.
+fatal: no files added
+```
