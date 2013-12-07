@@ -74,7 +74,7 @@ this command will push the changes from our local repository
 to the repository on GitHub:
 
 ```
-$ git push -u origin master
+$ git push origin master
 Counting objects: 9, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (6/6), done.
@@ -88,6 +88,13 @@ Branch master set up to track remote branch master from origin.
 Our local and remote repositories are now in this state:
 
 FIXME: diagram
+
+> ### The '-u' Flag
+>
+> You may see a `-u` option used with `git push`.
+> This tells Git what [branch](../../gloss.html#branch) to use
+> in the repository you're pushing to.
+> We discuss branches and branching in our intermediate-level lessons.
 
 We can pull changes from the remote repository to the local one as well:
 
@@ -144,11 +151,6 @@ Total 3 (delta 0), reused 0 (delta 0)
 To https://github.com/vlad/planets.git
    9272da5..29aba7c  master -> master
 ```
-
-Notice that we *didn't* use the `-u` flag to `git push`:
-the origin repository (the one on GitHub) already knows what `master` means.
-We discuss this in a lot more detail in our intermediate lesson
-when we talk about branching.
 
 Our three repositories now look like this:
 
