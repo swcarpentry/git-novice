@@ -518,17 +518,17 @@ on the other hand,
 moving backward and forward in time becomes much easier.
 
 
-What if we have files that we do not want git to track for us? For
-example, we might have backup files created by the editor, or 
-result files or intermediate data files that we do not need to track, 
-and these can clutter up our git status output.
+What if we have files that we do not want Git to track for us? For
+example, we might have backup files created by the editor, or result
+files or intermediate data files that we do not need to track, and
+these can clutter up our `git status` output.
 
 Let's create some data files that we don't want to track:
 
 ```
 $ touch a.dat b.dat c.dat
 $ mkdir data
-$ touch data\a.out data\b.out
+$ touch data/a.out data/b.out
 ```
 
 Then, we can look at the status:
@@ -543,7 +543,7 @@ $ git status
 ```
 
 Seeing all of these files can be annoying, and worse, the clutter can
-hide important files from us. Let's tell git to ignore those files.
+hide important files from us. Let's tell Git to ignore those files.
 
 Git has a powerful mechanism for ignoring files.  We will look at a
 basic example.  In a repository, the file `.gitignore` is used to
@@ -556,8 +556,9 @@ $ cat .gitignore
 /data/
 ```
 
-This tells git to ignore any file ending with `.dat`, and all files
-under the `data` directory. (If any of these files were already being tracked, they would not be affected by `.gitginore`.)
+This tells Git to ignore any file ending with `.dat`, and all files
+under the `data` directory. (If any of these files were already being
+tracked, they would not be affected by `.gitginore`.)
 
 Now, we have a much cleaner status.
 
@@ -569,11 +570,11 @@ $ git status
 ```
 
 
-Now git notices the `.gitignore` file.  You might think we woudln't want to
-track this file, but if our programs are creating
-these extra data files, all users of this repository will probably
-want to ignore them too.  So, we can add the ignore file to the
-repository and check it in.
+Now Git notices the `.gitignore` file.  You might think we wouldn't
+want to track this file, but if our programs are creating these extra
+data files, all users of this repository will probably want to ignore
+them too.  So, we can add the ignore file to the repository and check
+it in.
 
 ```
 $ git add .gitignore
@@ -602,11 +603,7 @@ Ignored files:
 nothing to commit, working directory clean
 ```
 
-(TODO - DJ:  I don't know if that output is specific to my git config
-or not...
-PB - not specific to you, that's what I get too.)
-
-Finally, the ignore file helps us avoid accidentally adding files to 
+Finally, the ignore file helps us avoid accidentally adding files to
 the repository that we don't want.
 
 ```
@@ -617,8 +614,10 @@ Use -f if you really want to add them.
 fatal: no files added
 ```
 
-Git notices that `a.dat` would be excluded by the rules given in the 
-`.gitignore` file and doesn't automatically include it. We can override
-this by using the `-f` flag.
+Git notices that `a.dat` would be excluded by the rules given in the
+`.gitignore` file and doesn't automatically include it. We can
+override this by using the `-f` flag.
 
-As shown here, the `.gitignore` file just works on a specific repository, but you can also set global rules for `git ignore` using a `.gitginore` file in your home directory.
+As shown here, the `.gitignore` file just works on a specific
+repository, but you can also set global rules for `git ignore` using a
+`.gitginore` file in your home directory.
