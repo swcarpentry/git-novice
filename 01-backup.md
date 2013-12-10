@@ -527,19 +527,26 @@ Let's create some data files that we don't want to track:
 
 ```
 $ touch a.dat b.dat c.dat
-$ mkdir data
-$ touch data/a.out data/b.out
+$ mkdir results
+$ touch results/a.out results/b.out
 ```
 
 Then, we can look at the status:
 
 ```
 $ git status
-## master
-?? a.dat
-?? b.dat
-?? c.dat
-?? data/
+# On branch master 
+# 
+# Initial commit 
+# 
+# Untracked files: 
+# (use "git add <file>..." to include in what will be committed) 
+# 
+# a.dat 
+# b.dat 
+# c.dat 
+# results/ 
+nothing added to commit but untracked files present (use "git add" to track)
 ```
 
 Seeing all of these files can be annoying, and worse, the clutter can
@@ -553,20 +560,26 @@ specify files to ignore.
 $ nano .gitignore
 $ cat .gitignore
 *.dat
-/data/
+/results/
 ```
 
 This tells Git to ignore any file ending with `.dat`, and all files
-under the `data` directory. (If any of these files were already being
+under the `results` directory. (If any of these files were already being
 tracked, they would not be affected by `.gitginore`.)
 
 Now, we have a much cleaner status.
 
 
 ```
-$ git status
-## master
-?? .gitignore
+# On branch master
+#
+# Initial commit
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	.gitignore
+nothing added to commit but untracked files present (use "git add" to track)
 ```
 
 
@@ -580,7 +593,8 @@ it in.
 $ git add .gitignore
 $ git commit -m "Add the ignore file"
 $ git status
-## master
+# On branch master
+nothing to commit, working directory clean
 ```
 
 When `git status` is clean, it is much easier to tell that all of our
@@ -591,14 +605,14 @@ helpful when making sure that no files were accidentally ignored.
 
 ```
 $ git status --ignored
-On branch master
-Ignored files:
-  (use "git add -f <file>..." to include in what will be committed)
-
-        a.dat
-        b.dat
-        c.dat
-        data/
+# On branch master
+# Ignored files:
+#  (use "git add -f <file>..." to include in what will be committed)
+#
+#        a.dat
+#        b.dat
+#        c.dat
+#        results/
 
 nothing to commit, working directory clean
 ```
