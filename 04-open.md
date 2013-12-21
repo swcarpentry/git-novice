@@ -176,7 +176,7 @@ You may also want to include a file called `CITATION` or `CITATION.txt`
 that describes how to reference your project;
 the one for Software Carpentry states:
 
-```
+~~~
 To reference Software Carpentry in publications, please cite both of the following:
 
 Greg Wilson: "Software Carpentry: Lessons Learned". arXiv:1307.5448, July 2013.
@@ -189,7 +189,7 @@ Greg Wilson: "Software Carpentry: Lessons Learned". arXiv:1307.5448, July 2013.
   eprinttype  = {arxiv},
   eprint      = {1307.5448}
 }
-```
+~~~
 
 ### Hosting
 

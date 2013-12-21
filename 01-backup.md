@@ -7,12 +7,15 @@ level: novice
 The first time we use Git on a new machine,
 we need to configure a few things:
 
-```
+~~~
 $ git config --global user.name "Vlad Dracula"
+
 $ git config --global user.email "vlad@tran.sylvan.ia"
+
 $ git config --global color.ui "auto"
+
 $ git config --global core.editor "nano"
-```
+~~~
 
 (Please use your own name and email address instead of Dracula's,
 and please make sure you choose an editor that's actually on your system
@@ -34,31 +37,32 @@ Once Git is configured,
 we can start using Git.
 Let's create a directory for our work:
 
-```
+~~~
 $ mkdir planets
+
 $ cd planets
-```
+~~~
 
 and tell Git to make it a [repository](../gloss.html#repository):
 
-```
+~~~
 $ git init
-```
+~~~
 
 If we use `ls` to show the directory's contents,
 it appears that nothing has changed:
 
-```
+~~~
 $ ls
-```
+~~~
 
 But if we add the `-a` flag to show everything,
 we can see that Git has created a hidden directory called `.git`:
 
-```
+~~~
 $ ls -a
 .	..	.git
-```
+~~~
 
 Git stores information about the project in this special sub-directory.
 If we ever delete it,
@@ -66,14 +70,14 @@ we will lose the project's history.
 
 We can ask Git for the status of our project at any time like this:
 
-```
+~~~
 $ git status
 # On branch master
 #
 # Initial commit
 #
 nothing to commit (create/copy files and use "git add" to track)
-```
+~~~
 
 We'll explain what `branch master` means later.
 For the moment,
@@ -82,8 +86,9 @@ let's add some notes about Mars's suitability as a base.
 but in real life this isn't necessary.
 We'll also insert blank lines between groups of shell commands to make them easier to read.)
 
-```
+~~~
 $ nano mars.txt
+
 $ cat mars.txt
 Cold and dry, but everything is my favorite color
 
@@ -100,19 +105,19 @@ $ git status
 #
 #	mars.txt
 nothing added to commit but untracked files present (use "git add" to track)
-```
+~~~
 
 The "untracked files" message means that there's a file in the directory
 that Git isn't keeping track of.
 We can tell Git that it should do so like this:
 
-```
+~~~
 $ git add mars.txt
-```
+~~~
 
 and check that the right thing happened like this:
 
-```
+~~~
 $ git status
 # On branch master
 #
@@ -123,19 +128,19 @@ $ git status
 #
 #	new file:   mars.txt
 #
-```
+~~~
 
 Git now knows that it's supposed to keep track of this file,
 but it hasn't yet recorded any changes for posterity.
 To get it to do that,
 we need to run one more command:
 
-```
+~~~
 $ git commit -m "Starting to think about Mars"
 [master (root-commit) f22b25e] Starting to think about Mars
  1 file changed, 1 insertion(+)
  create mode 100644 mars.txt
-```
+~~~
 
 When we run `git commit`,
 Git takes everything we have told it to save using `git add`
@@ -149,40 +154,41 @@ so that we can write a longer message.
 
 If we run `git status` now:
 
-```
+~~~
 $ git status
 # On branch master
 nothing to commit, working directory clean
-```
+~~~
 
 it tells us everything is up to date.
 If we want to know what we've done recently,
 we can ask Git to show us the project's history:
 
-```
+~~~
 $ git log
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
     Starting to think about Mars
-```
+~~~
 
 Now suppose Dracula adds more information to the file:
 
-```
+~~~
 $ nano mars.txt
+
 $ cat mars.txt
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
-```
+~~~
 
 We don't need to run `git add` again,
 because Git already knows this file is on the list of things it's managing.
 If we run `git status`,
 it tells us the file has been modified:
 
-```
+~~~
 $ git status
 # On branch master
 # Changes not staged for commit:
@@ -192,7 +198,7 @@ $ git status
 #	modified:   mars.txt
 #
 no changes added to commit (use "git add" and/or "git commit -a")
-```
+~~~
 
 The last line is the key phrase:
 "no changes added to commit".
@@ -203,7 +209,7 @@ which shows us the differences between
 the current state of the file
 and the most recently saved version:
 
-```
+~~~
 $ git diff
 diff --git a/mars.txt b/mars.txt
 index df0654a..315bf3a 100644
@@ -212,7 +218,7 @@ index df0654a..315bf3a 100644
 @@ -1 +1,2 @@
  Cold and dry, but everything is my favorite color
 +The two moons may be a problem for Wolfman
-```
+~~~
 
 The output is cryptic because
 it is actually a series of commands for tools like editors and `patch`
@@ -231,7 +237,7 @@ If we can break it down into pieces:
 
 Let's commit our change:
 
-```
+~~~
 $ git commit -m "Concerns about Mars's moons on my furry friend"
 # On branch master
 # Changes not staged for commit:
@@ -241,19 +247,19 @@ $ git commit -m "Concerns about Mars's moons on my furry friend"
 #	modified:   mars.txt
 #
 no changes added to commit (use "git add" and/or "git commit -a")
-```
+~~~
 
 Whoops:
 Git won't commit because we didn't use `git add` first.
 Let's do that:
 
-```
+~~~
 $ git add mars.txt
 
 $ git commit -m "Concerns about Mars's moons on my furry friend"
 [master 34961b1] Concerns about Mars's moons on my furry friend
  1 file changed, 1 insertion(+)
-```
+~~~
 
 Git insists that we add files to the set we want to commit
 before actually committing anything
@@ -276,8 +282,9 @@ and `git commit` then copies them to long-term storage:
 
 The following commands show this in action:
 
-```
+~~~
 $ nano mars.txt
+
 $ cat mars.txt
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
@@ -292,7 +299,7 @@ index 315bf3a..b36abfd 100644
  Cold and dry, but everything is my favorite color
  The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity
-```
+~~~
 
 So far, so good:
 we've made a change,
@@ -300,10 +307,11 @@ and `git diff` tells us what it is.
 Now let's put that change in the staging area
 and see what `git diff` reports:
 
-```
+~~~
 $ git add mars.txt
+
 $ git diff
-```
+~~~
 
 There is no output:
 as far as Git can tell,
@@ -312,7 +320,7 @@ and what's currently in the directory.
 However,
 if we do this:
 
-```
+~~~
 $ git diff --staged
 diff --git a/mars.txt b/mars.txt
 index 315bf3a..b36abfd 100644
@@ -322,30 +330,30 @@ index 315bf3a..b36abfd 100644
  Cold and dry, but everything is my favorite color
  The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity
-```
+~~~
 
 it shows us the difference between
 the last committed change
 and what's in the staging area.
 Let's save our changes:
 
-```
+~~~
 $ git commit -m "Thoughts about the climate"
 [master 005937f] Thoughts about the climate
  1 file changed, 1 insertion(+)
-```
+~~~
 
 check our status:
 
-```
+~~~
 $ git status
 # On branch master
 nothing to commit, working directory clean
-```
+~~~
 
 and look at the history of what we've done so far:
 
-```
+~~~
 $ git log
 git log
 commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
@@ -365,14 +373,14 @@ Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
     Starting to think about Mars
-```
+~~~
 
 If we want to see what we changed when,
 we use `git diff` again,
 but refer to old versions
 using the notation `HEAD~1`, `HEAD~2`, and so on:
 
-```
+~~~
 $ git diff HEAD~1 mars.txt
 diff --git a/mars.txt b/mars.txt
 index 315bf3a..b36abfd 100644
@@ -392,7 +400,7 @@ index df0654a..b36abfd 100644
  Cold and dry, but everything is my favorite color
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity
-```
+~~~
 
 `HEAD` means "the most recently saved version".
 `HEAD~1` (pronounced "head minus one")
@@ -408,7 +416,7 @@ Our first commit was given the ID
 f22b25e3233b4645dabd0d81e651fe074bd8e73b,
 so let's try this:
 
-```
+~~~
 $ git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b mars.txt
 diff --git a/mars.txt b/mars.txt
 index df0654a..b36abfd 100644
@@ -418,13 +426,13 @@ index df0654a..b36abfd 100644
  Cold and dry, but everything is my favorite color
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity
-```
+~~~
 
 That's the right answer,
 but typing random 40-character strings is annoying,
 so Git lets us use just the first few:
 
-```
+~~~
 $ git diff f22b25e mars.txt
 diff --git a/mars.txt b/mars.txt
 index df0654a..b36abfd 100644
@@ -434,23 +442,24 @@ index df0654a..b36abfd 100644
  Cold and dry, but everything is my favorite color
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity
-```
+~~~
 
 All right:
 we can save changes to files and see what we've changed---how
 can we restore older versions of things?
 Let's suppose we accidentally overwrite our file:
 
-```
+~~~
 $ nano mars.txt
+
 $ cat mars.txt
 We will need to manufacture our own oxygen
-```
+~~~
 
 `git status` now tells us that the file has been changed,
 but those changes haven't been staged:
 
-```
+~~~
 $ git status
 # On branch master
 # Changes not staged for commit:
@@ -460,11 +469,11 @@ $ git status
 #	modified:   mars.txt
 #
 no changes added to commit (use "git add" and/or "git commit -a")
-```
+~~~
 
 We can put things back the way they were like this:
 
-```
+~~~
 $ git reset --hard HEAD
 HEAD is now at 005937f Thoughts about the climate
 
@@ -472,7 +481,7 @@ $ cat mars.txt
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
-```
+~~~
 
 The `--hard` argument to `git reset` tells it to throw away local changes:
 without that,
@@ -495,9 +504,9 @@ In that case,
 we want to check out an older revision of the file,
 so we do something like this:
 
-```
+~~~
 $ git checkout 123456 mars.txt
-```
+~~~
 
 but use the first few digits of an actual revision number instead of 123456.
 To get the right answer,
