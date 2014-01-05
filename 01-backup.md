@@ -5,7 +5,8 @@ title: A Better Kind of Backup
 level: novice
 ---
 The first time we use Git on a new machine,
-we need to configure a few things:
+we need to configure a few things (we'll insert blank lines
+between groups of shell commands to make them easier to read):
 
 ~~~
 $ git config --global user.name "Vlad Dracula"
@@ -83,8 +84,7 @@ We'll explain what `branch master` means later.
 For the moment,
 let's add some notes about Mars's suitability as a base.
 (We'll `cat` the text in the file after we edit it so that you can see what we're doing,
-but in real life this isn't necessary.
-We'll also insert blank lines between groups of shell commands to make them easier to read.)
+but in real life this isn't necessary.)
 
 ~~~
 $ nano mars.txt
