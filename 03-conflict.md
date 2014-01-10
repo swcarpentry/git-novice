@@ -58,7 +58,7 @@ To https://github.com/vlad/planets
 
 Our repositories are now in this state:
 
-<img src="img/git-after-first-conficting-change.svg" alt="After Making First Change" />
+<img src="img/git-after-first-conflicting-change.svg" alt="After Making First Change" />
 
 Now let's switch to the copy under `/tmp`
 and make a different change there
