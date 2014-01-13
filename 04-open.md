@@ -110,7 +110,7 @@ and [tl;drLegal](http://www.tldrlegal.com/) explains many of them in plain Engli
 
 When it comes to data, publications, and the like,
 scientists have many more options to choose from.
-The good news is that an organization called [Creative Commons(http://creativecommons.org/)
+The good news is that an organization called [Creative Commons](http://creativecommons.org/)
 has prepared a set of licenses using combinations of four basic restrictions:
 
 *   Attribution: derived works must give the original author credit for their work.
