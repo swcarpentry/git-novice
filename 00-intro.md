@@ -26,14 +26,16 @@ Version control is better than mailing files back and forth because:
 *   It keeps a record of who made what changes when,
     so that if people have questions later on,
     they know who to ask.
-*   It's hard (but not impossible) to accidentally overlook or overwrite someone's changes,
-    because the version control system highlights them automatically.
+*   It's hard (but not impossible) to accidentally overlook or overwrite someone's changes:
+    the version control system automatically notifies users
+    whenever there's a conflict between one person's work and another's.
 
 This lesson shows how to use
 a popular open source version control system called Git.
 It is more complex than some alternatives,
 but it is widely used,
-primarily because of a hosting site called [GitHub](http://github.com).
+both because it's easy to set up
+and because of a hosting site called [GitHub](http://github.com).
 No matter which version control system you use,
 the most important thing to learn is not the details of their more obscure commands,
 but the workflow that they encourage.
