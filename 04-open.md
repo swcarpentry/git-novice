@@ -4,6 +4,16 @@ root: ../..
 title: Open Science
 level: novice
 ---
+<div class="objectives" markdown="1">
+
+#### Objectives
+*   Explain how the GNU Public License (GPL) differs from most other open licenses.
+*   Explain the four kinds of restrictions that can be combined in a Creative Commons license.
+*   Correctly add licensing and citation information to a project repository.
+*   Outline options for hosting code and data and the pros and cons of each.
+
+</div>
+
 <blockquote>
 The opposite of "open" isn't "closed".
 The opposite of "open" is "broken".
@@ -70,7 +80,7 @@ However,
 people who want to work this way need to make some decisions
 about what exactly "open" means in practice.
 
-### Licensing
+#### Licensing
 
 The first question is licensing.
 Broadly speaking,
@@ -191,7 +201,7 @@ Greg Wilson: "Software Carpentry: Lessons Learned". arXiv:1307.5448, July 2013.
 }
 ~~~
 
-### Hosting
+#### Hosting
 
 The second big question for groups that want to open up their work
 is where to host their code and data.
@@ -208,7 +218,14 @@ a scientist who has spent ten years collecting data
 would like to be sure that data will still be available ten years from now,
 but that's well beyond the lifespan of most of the grants that fund academic infrastructure.
 
-The alternative is to use a public hosting service like [GitHub](http://github.com),
+Another option is to purchase a domain
+and pay an [Internet service provider](../../gloss.html#isp) (ISP) to host it.
+This gives the individual or group more control,
+and sidesteps problems that can arise when moving from one institution to another,
+but requires more time and effort to set up than either
+the option above or the option below.
+
+The third option is to use a public hosting service like [GitHub](http://github.com),
 [BitBucket](http://bitbucket.org),
 [Google Code](http://code.google.com),
 or [SourceForge](http://sourceforge.net).
@@ -234,3 +251,39 @@ Sharing might seem like the only valid choice for science,
 but many institutions may not allow researchers to do this,
 either because they want to protect future patent applications
 or simply because what's new is often also frightening.
+
+<div class="keypoints" markdown="1">
+
+#### Key Points
+*   Open scientific work is more useful and more highly cited than closed.
+*   People who incorporate GPL'd software into theirs must make theirs open;
+    most other open licenses do not require this.
+*   The Creative Commons family of licenses allow people to mix and match
+    requirements and restrictions on attribution,
+    creation of derivative works,
+    further sharing,
+    and commercialization.
+*   People who are not lawyers should not try to write licenses from scratch.
+*   Projects can be hosted on university servers,
+    on personal domains,
+    or on public forges.
+*   Rules regarding intellectual property and storage of sensitive information apply
+    no matter where code and data are hosted.
+
+</div>
+
+<div class="challenges" markdown="1">
+
+#### Challenges
+
+1.  Find out whether you are allowed to apply an open license to your software.
+    Can you do this unilaterally,
+    or do you need permission from someone in your institution?
+    If so, who?
+
+2.  Find out whether you are allowed to host your work openly on a public forge.
+    Can you do this unilaterally,
+    or do you need permission from someone in your institution?
+    If so, who?
+
+</div>
