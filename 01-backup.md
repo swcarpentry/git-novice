@@ -599,7 +599,7 @@ Let's create a few dummy files:
 
 ```
 $ mkdir results
-$ touch a.dat b.dat c.dat touch results/a.out results/b.out
+$ touch a.dat b.dat c.dat results/a.out results/b.out
 ```
 
 and see what Git says:
