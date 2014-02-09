@@ -112,7 +112,7 @@ nothing to commit (create/copy files and use "git add" to track)
 Let's create a file called `mars.txt` that contains some notes
 about the Red Planet's suitability as a base.
 (We'll use `nano` to edit the file;
-you can use whatever editor you like.)
+you can use whatever editor you like. In particular, this does not have to be the core.editor you set globally earlier.)
 
 ~~~
 $ nano mars.txt
