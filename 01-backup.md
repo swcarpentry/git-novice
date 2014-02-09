@@ -723,12 +723,12 @@ nothing to commit, working directory clean
 
     ~~~
     cd           # return to home directory
-    mkdir alpha  # make a new directory
-    cd alpha     # go into it
-    git init .   # make the alpha directory a Git repository
+    mkdir alpha  # make a new directory alpha
+    cd alpha     # go into alpha
+    git init     # make the alpha directory a Git repository
     mkdir beta   # make a sub-directory alpha/beta
-    cd beta      # go into it
-    git init .   # make the beta sub-dirctory a Git repository
+    cd beta      # go into alpha/beta
+    git init     # make the beta sub-directory a Git repository
     ~~~
 
     Why is it a bad idea to do this?
