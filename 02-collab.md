@@ -219,9 +219,9 @@ to share work between different people and machines.
 #### Key Points
 *   A local Git repository can be connected to one or more remote repositories.
 *   Use the HTTPS protocol to connect to remote repositories until you have learned how to set up SSH.
-*   Cloning a remote repository creates a local copy with a remote called `origin` automatically set up.
-*   `git pull` copies changes from a remote repository to a local repository.
 *   `git push` copies changes from a local repository to a remote repository.
+*   `git pull` copies changes from a remote repository to a local repository.
+*   `git clone` clones a remote repository and creates a local copy with a remote called `origin` automatically set up.
 
 </div>
 
