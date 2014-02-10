@@ -129,11 +129,10 @@ Already up-to-date.
 
 Pulling has no effect in this case
 because the two repositories are already synchronized.
-If someone else had pushed some changes,
+If someone else had pushed some changes to the repository on GitHub,
 though,
 this command would download them to our local repository.
-We can simulate this by going to another directory&mdash;for example, `/tmp`&mdash;and
-[cloning](../gloss.html#repository-clone) our GitHub repository:
+We can simulate the workflow with a collaborator by going to another directory, for example, `/tmp` (note the absolute path, don't make `tmp` a subdirectory of `home/vlad/planets`). In contrast to our first local repository, we don't want to create a new repository again (with `git init`), but instead [clone](../gloss.html#repository-clone) the existing repository from GitHub:
 
 ~~~
 $ cd /tmp
