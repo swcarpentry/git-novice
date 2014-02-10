@@ -43,7 +43,8 @@ $ git config --global core.editor "nano"
 ~~~
 
 (Please use your own name and email address instead of Dracula's,
-and please make sure you choose an editor that's actually on your system. On Windows you might want to use `notepad`.)
+and please make sure you choose an editor that's actually on your system,
+such as `notepad` on Windows.)
 
 Git commands are written `git verb`,
 where `verb` is what we actually want it to do.
@@ -112,7 +113,8 @@ nothing to commit (create/copy files and use "git add" to track)
 Let's create a file called `mars.txt` that contains some notes
 about the Red Planet's suitability as a base.
 (We'll use `nano` to edit the file;
-you can use whatever editor you like. In particular, this does not have to be the core.editor you set globally earlier.)
+you can use whatever editor you like.
+In particular, this does not have to be the core.editor you set globally earlier.)
 
 ~~~
 $ nano mars.txt
