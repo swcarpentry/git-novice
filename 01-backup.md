@@ -261,7 +261,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 The last line is the key phrase:
 "no changes added to commit".
-We have changed this file, but we haven't `git add`'ed those changes or saved them as as commit. 
+We have changed this file, but we haven't `git add`'ed those changes or saved them as a commit. 
 Let's double-check our work using `git diff`,
 which shows us the differences between
 the current state of the file
