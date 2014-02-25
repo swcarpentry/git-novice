@@ -168,7 +168,7 @@ $ git status
 #
 ~~~
 
-Git now knows that it's supposed to keep track of this file,
+mars.txt is now in the index - Git now knows that it's supposed to keep track of this file,
 but it hasn't yet recorded any changes for posterity as a commit.
 To get it to do that,
 we need to run one more command:
@@ -261,7 +261,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 The last line is the key phrase:
 "no changes added to commit".
-We have changed this file, but we haven't `git add`'ed those changes or saved them as a commit. 
+We have changed this file in our working tree, but we haven't promoted those changes to the index or saved them as as commit. 
 Let's double-check our work using `git diff`,
 which shows us the differences between
 the current state of the file
@@ -308,8 +308,8 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
 
 Whoops:
-Git won't commit because we didn't use `git add` first - there's nothing for git to make a commit out of!
-Remember to first use 'git add':
+Git won't commit because we didn't use `git add` first - there's nothing in the index and nothing for git to make a commit out of!
+Remember to promote our work from the working tree to the index first using 'git add':
 
 ~~~
 $ git add mars.txt
@@ -334,7 +334,7 @@ Git has a special staging area
 where it keeps track of things that have been added to
 the current [change set](../gloss.html#change-set)
 but not yet committed.
-`git add` puts things in this area,
+`git add` puts things in this area (the index),
 and `git commit` then copies them to long-term storage (as a commit):
 
 <img src="img/git-staging-area.svg" alt="The Git Staging Area" />
@@ -463,9 +463,7 @@ index df0654a..b36abfd 100644
 +But the Mummy will appreciate the lack of humidity
 ~~~
 
-In this way, we build up a chain of revisions.
-The end of this chain is refered to by the word `HEAD`.
-We can refer to earlier revisions in the chain using the `~` notation;
+Recall above we mentioned that revisions have a relational structure, for now just like a simple chain; in git, the word `HEAD` always refers to the most recent end of that chain, the last revision you tacked on.  In other words, `HEAD` means "the most recently saved version".  Every time you do git commit, a new revision is tacked onto the end of that chain, and `HEAD` moves forward to point at that new latest revision.  We can step backwards on the chain using the `~` notation;
 `HEAD~1` (pronounced "head minus one")
 means "the previous revision",
 and `HEAD~123` goes back 123 revisions from where we are now.
