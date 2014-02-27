@@ -2,7 +2,6 @@
 layout: lesson
 root: ../..
 title: Version Control with Git
-level: novice
 ---
 Version control is the lab notebook of the digital world:
 it's what professionals use to keep track of what they've done

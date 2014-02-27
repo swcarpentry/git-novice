@@ -2,7 +2,6 @@
 layout: lesson
 root: ../..
 title: A Better Kind of Backup
-level: novice
 ---
 <div class="objectives" markdown="1">
 

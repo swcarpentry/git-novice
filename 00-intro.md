@@ -2,7 +2,6 @@
 layout: lesson
 root: ../..
 title: Introducing Version Control
-level: novice
 ---
 Wolfman and Dracula have been hired by Universal Missions
 (a space services spinoff from Euphoric State University)
