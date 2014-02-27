@@ -2,7 +2,6 @@
 layout: lesson
 root: ../..
 title: Open Science
-level: novice
 ---
 <div class="objectives" markdown="1">
 

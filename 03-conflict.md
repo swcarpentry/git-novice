@@ -2,7 +2,6 @@
 layout: lesson
 root: ../..
 title: Conflicts
-level: novice
 ---
 <div class="objectives" markdown="1">
 
