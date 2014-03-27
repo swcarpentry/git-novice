@@ -90,7 +90,7 @@ people can choose between the [GNU Public License](http://opensource.org/license
 and licenses like the [MIT](http://opensource.org/licenses/MIT)
 and [BSD](http://opensource.org/licenses/BSD-2-Clause) licenses on the other.
 All of these licenses allow unrestricted sharing and modification of programs,
-but the GPL is [infective](../gloss.html#infective-license):
+but the GPL is [infective](../../gloss.html#infective-license):
 anyone who distributes a modified version of the code
 (or anything that includes GPL'd code)
 must make *their* code freely available as well.
@@ -220,7 +220,7 @@ would like to be sure that data will still be available ten years from now,
 but that's well beyond the lifespan of most of the grants that fund academic infrastructure.
 
 Another option is to purchase a domain
-and pay an [Internet service provider](../../gloss.html#isp) (ISP) to host it.
+and pay an [Internet service provider](../../../gloss.html#isp) (ISP) to host it.
 This gives the individual or group more control,
 and sidesteps problems that can arise when moving from one institution to another,
 but requires more time and effort to set up than either

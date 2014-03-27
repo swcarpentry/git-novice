@@ -57,14 +57,14 @@ but the remote repository on GitHub doesn't contain any files yet:
 <img src="img/git-freshly-made-github-repo.svg" alt="Freshly-Made GitHub Repository" />
 
 The next step is to connect the two repositories.
-We do this by making the GitHub repository a [remote](../gloss.html#repository-remote)
+We do this by making the GitHub repository a [remote](../../gloss.html#repository-remote)
 for the local repository.
 The home page of the repository on GitHub includes
 the string we need to identify it:
 
 <img src="img/github-find-repo-string.png" alt="Where to Find Repository URL on GitHub" />
 
-Click on the 'HTTPS' link to change the [protocol](../../gloss.html#protocol) from SSH to HTTPS.
+Click on the 'HTTPS' link to change the [protocol](../../../gloss.html#protocol) from SSH to HTTPS.
 It's slightly less convenient for day-to-day use,
 but much less work for beginners to set up:
 
@@ -160,7 +160,7 @@ To do this,
 (Note the absolute path:
 don't make `tmp` a subdirectory of the existing repository).
 Instead of creating a new repository here with `git init`,
-we will [clone](../gloss.html#repository-clone) the existing repository from GitHub:
+we will [clone](../../gloss.html#repository-clone) the existing repository from GitHub:
 
 <div class="in" markdown="1">
 ~~~
@@ -289,7 +289,7 @@ to share work between different people and machines.
     clone it,
     add a file,
     push those changes to GitHub,
-    and then look at the [timestamp](../../gloss.html#timestamp) of the change on GitHub.
+    and then look at the [timestamp](../../../gloss.html#timestamp) of the change on GitHub.
     How does GitHub record times, and why?
 
 </div>

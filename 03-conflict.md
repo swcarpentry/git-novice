@@ -16,8 +16,8 @@ someone's going to step on someone else's toes.
 This will even happen with a single person:
 if we are working on a piece of software on both our laptop and a server in the lab,
 we could make different changes to each copy.
-Version control helps us manage these [conflicts](../gloss.html#conflict)
-by giving us tools to [resolve](../gloss.html#resolve) overlapping changes.
+Version control helps us manage these [conflicts](../../gloss.html#conflict)
+by giving us tools to [resolve](../../gloss.html#resolve) overlapping changes.
 
 To see how we can resolve conflicts,
 we must first create one.
@@ -147,7 +147,7 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 Git detects that the changes made in one copy overlap with those made in the other
 and stops us from trampling on our previous work.
 What we have to do is pull the changes from GitHub,
-[merge](../gloss.html#repository-merge) them into the copy we're currently working in,
+[merge](../../gloss.html#repository-merge) them into the copy we're currently working in,
 and then push that.
 Let's start by pulling:
 
