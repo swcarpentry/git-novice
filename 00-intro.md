@@ -13,7 +13,7 @@ each one will spend a lot of time waiting for the other to finish,
 but if they work on their own copies and email changes back and forth
 things will be lost, overwritten, or duplicated.
 
-The right solution is to use [version control](../gloss.html#version-control)
+The right solution is to use [version control](../../gloss.html#version-control)
 to manage their work.
 Version control is better than mailing files back and forth because:
 
