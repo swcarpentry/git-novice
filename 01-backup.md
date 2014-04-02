@@ -238,7 +238,7 @@ $ git commit -m "Starting to think about Mars"
 When we run `git commit`,
 Git takes everything we have told it to save by using `git add`
 and stores a copy permanently inside the special `.git` directory.
-This permanent copy is called a [revision](../../../gloss.html#revision)
+This permanent copy is called a [revision](../../gloss.html#revision)
 and its short identifier is `f22b25e`.
 (Your revision may have another identifier.)
 
@@ -370,7 +370,7 @@ If we can break it down into pieces:
 
 1.  The first line tells us that Git is using the Unix `diff` command
     to compare the old and new versions of the file.
-2.  The second line tells exactly which [revisions](../../../gloss.html#revision) of the file
+2.  The second line tells exactly which [revisions](../../gloss.html#revision) of the file
     Git is comparing;
     `df0654a` and `315bf3a` are unique computer-generated labels for those revisions.
 3.  The remaining lines show us the actual differences

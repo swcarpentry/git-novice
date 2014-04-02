@@ -64,7 +64,7 @@ the string we need to identify it:
 
 <img src="img/github-find-repo-string.png" alt="Where to Find Repository URL on GitHub" />
 
-Click on the 'HTTPS' link to change the [protocol](../../../gloss.html#protocol) from SSH to HTTPS.
+Click on the 'HTTPS' link to change the [protocol](../../gloss.html#protocol) from SSH to HTTPS.
 It's slightly less convenient for day-to-day use,
 but much less work for beginners to set up:
 
@@ -289,7 +289,7 @@ to share work between different people and machines.
     clone it,
     add a file,
     push those changes to GitHub,
-    and then look at the [timestamp](../../../gloss.html#timestamp) of the change on GitHub.
+    and then look at the [timestamp](../../gloss.html#timestamp) of the change on GitHub.
     How does GitHub record times, and why?
 
 </div>
