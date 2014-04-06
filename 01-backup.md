@@ -217,7 +217,7 @@ $ git status
 ~~~
 </div>
 
-mars.txt is now in the index - Git now knows that it's supposed to keep track of this file,
+Git now knows that it's supposed to keep track of `mars.txt`,
 but it hasn't yet recorded any changes for posterity as a commit.
 To get it to do that,
 we need to run one more command:
@@ -340,7 +340,10 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 The last line is the key phrase:
 "no changes added to commit".
-We have changed this file in our working tree, but we haven't promoted those changes to the index or saved them as as commit. 
+We have changed this file,
+but we haven't told Git we will want to save those changes
+(which we do with `git add`)
+much less actually saved them.
 Let's double-check our work using `git diff`,
 which shows us the differences between
 the current state of the file
@@ -399,8 +402,8 @@ no changes added to commit (use "git add" and/or "git commit -a")
 </div>
 
 Whoops:
-Git won't commit because we didn't use `git add` first - there's nothing in the index and nothing for git to make a commit out of!
-Remember to promote our work from the working tree to the index first using 'git add':
+Git won't commit because we didn't use `git add` first.
+Let's fix that:
 
 <div class="in" markdown="1">
 ~~~
@@ -431,7 +434,7 @@ Git has a special staging area
 where it keeps track of things that have been added to
 the current [change set](../../gloss.html#change-set)
 but not yet committed.
-`git add` puts things in this area (the index),
+`git add` puts things in this area,
 and `git commit` then copies them to long-term storage (as a commit):
 
 <img src="img/git-staging-area.svg" alt="The Git Staging Area" />
@@ -613,17 +616,13 @@ index df0654a..b36abfd 100644
 ~~~
 </div>
 
-Recall above we mentioned that revisions are chained together.
-In Git,
-the word `HEAD` always refers to the most recent end of that chain,
-i.e.,
-the last revision that was tacked on.
-Every time we commit,
-`HEAD` moves forward to point at that new latest revision.
-We can step backwards on the chain using the `~` notation:
-`HEAD~1` (pronounced "head minus one")
+In this way,
+we build up a chain of revisions.
+The most recent end of the chain is referred to as `HEAD`;
+we can refer to previous revisions using the `~` notation,
+so `HEAD~1` (pronounced "head minus one")
 means "the previous revision",
-and `HEAD~123` goes back 123 revisions from where we are now.
+while `HEAD~123` goes back 123 revisions from where we are now.
 
 We can also refer to revisions using
 those long strings of digits and letters
