@@ -17,7 +17,7 @@ when we begin to collaborate with other people.
 We already have most of the machinery we need to do this;
 the only thing missing is to copy changes from one repository to another.
 
-Systems like Git and Mercurial allow us to move work between any two repositories.
+Systems like Git allow us to move work between any two repositories.
 In practice,
 though,
 it's easiest to use one copy as a central hub,
