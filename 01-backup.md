@@ -59,6 +59,25 @@ we're telling Git:
 The four commands above only need to be run once:
 the flag `--global` tells Git to use the settings for every project on this machine.
 
+> #### Proxy
+>
+> In some networks you need to use a proxy. If this is the case you may also
+> need to tell Git about the proxy:
+>
+> ~~~
+> $ git config --global http.proxy proxy-url
+> $ git config --global https.proxy proxy-url
+> ~~~
+> {:class="in"}
+>
+> To disable the proxy, use
+>
+> ~~~
+> $ git config --global --unset http.proxy
+> $ git config --global --unset https.proxy
+> ~~~
+> {:class="in"}
+
 ### Creating a Repository
 
 Once Git is configured,

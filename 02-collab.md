@@ -128,6 +128,27 @@ Branch master set up to track remote branch master from origin.
 ~~~
 {:class="out"}
 
+> ##### Proxy
+>
+> If the network you are connected to uses a proxy there is an chance that your last
+> command failed with "Could not resolve hostname" as the error message. To
+> solve this issue you need to tell Git about the proxy:
+>
+> ~~~
+> $ git config --global http.proxy http://user:password@proxy.url
+> $ git config --global https.proxy http://user:password@proxy.url
+> ~~~
+> {:class="in"}
+>
+> When you connect to another network that doesn't use a proxy you will need to
+> tell Git to disable the proxy using
+>
+> ~~~
+> $ git config --global --unset http.proxy
+> $ git config --global --unset https.proxy
+> ~~~
+> {:class="in"}
+
 > #### Password Managers
 >
 > If your operating system has a password manager configured, `git push` will
