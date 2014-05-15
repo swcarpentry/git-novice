@@ -10,7 +10,7 @@ title: A Better Kind of Backup
     and which are required once per repository.
 *   Go through the modify-add-commit cycle for single and multiple files
     and explain where information is stored at each stage.
-*   Identify and Use Git revision numbers.
+*   Identify and use Git revision numbers.
 *   Compare files with old versions of themselves.
 *   Restore old versions of files.
 *   Configure Git to ignore specific files,
