@@ -53,16 +53,13 @@ Enter file in which to save the key (/Users/username/.ssh/id_rsa):
 ~~~
 </div>
 
-You will then be asked to provide a passphrase. Type a new password and hit enter.
-
+You will then be asked to provide an optional passphrase. This can be used to make your key even more secure, but for this lesson you can skip it by hitting enter twice.
 
 <div class="out" markdown="1">
 ~~~
 Enter passphrase (empty for no passphrase):
 ~~~
 </div>
-
-Next, confirm your passphrase by typing it again and hitting enter.
 
 <div class="out" markdown="1">
 ~~~
@@ -93,18 +90,27 @@ The key's randomart image is:
 ~~~
 </div>
 
+The random art image is an alternate way to match keys but we won't be needing this.
 
 #### Add your public key to GitHub
 
-We now need to tell GitHub about your public key. Copy it to your clipboard using the following command:
+We now need to tell GitHub about your public key.  Display the contents of your new public key file with `cat`:
 
 <div class="in" markdown="1">
 ~~~
-$ pbcopy < ~/.ssh/id_rsa.pub
+$ cat ~/.ssh/id_rsa.pub
 ~~~
 </div>
 
-It's okay if you don't see any output.
+The output should look something like this:
+
+<div class="out" markdown="1">
+~~~
+ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA879BJGYlPTLIuc9/R5MYiN4yc/YiCLcdBpSdzgK9Dt0Bkfe3rSz5cPm4wmehdE7GkVFXrBJ2YHqPLuM1yx1AUxIebpwlIl9f/aUHOts9eVnVh4NztPy0iSU/Sv0b2ODQQvcy2vYcujlorscl8JjAgfWsO3W4iGEe6QwBpVomcME8IU35v5VbylM9ORQa6wvZMVrPECBvwItTY8cPWH3MGZiK/74eHbSLKA4PY3gM4GHI450Nie16yggEg2aTQfWA1rry9JYWEoHS9pJ1dnLqZU3k/8OWgqJrilwSoC5rGjgp93iu0H8T6+mEHGRQe84Nk1y5lESSWIbn6P636Bl3uQ== your@email.com
+~~~
+</div>
+
+Copy the contents of the output to your clipboard.
 
 Login to github.com and bring up your account settings by clicking the tools icon.
 
@@ -114,7 +120,7 @@ Select **SSH Keys** from the side menu, then click the **Add SSH key** button.
 
 ![GitHub SSH Keys panel](img/github-ssh-keys.png)
 
-Name your key something whatever you like, and paste the contents of your clipboard into the **Key** text box. It should look something like this.
+Name your key something whatever you like, and paste the contents of your clipboard into the **Key** text box.
 
 ![GitHub Add SSH Key](img/github-add-ssh-key.png)
 
@@ -127,14 +133,7 @@ Going forward, you can use the SSH clone URL when copying a repo to your local m
 
 ![GitHub clone url options](img/github-ssh-clone-url.png)
 
-This will allow you to bypass entering your username and password for future GitHub commands. You *will* have to enter your SSH key passphrase the first time your use the key, but this only needs to be done once.
-
-If you're using OS X, your passphrase can be saved by checking off the **remember password** option.
-
-![OSX Keychain remember SSH  passphrase option](img/ssh-keychain.png)
-
-If you're on Windows, you can follow [these instructions](https://help.github.com/articles/working-with-ssh-key-passphrases#platform-windows) to have your passphrase saved after the first use.
-
+This will allow you to bypass entering your username and password for future GitHub commands. 
 
 <div class="keypoints" markdown="1">
 
