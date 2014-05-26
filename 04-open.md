@@ -220,7 +220,7 @@ would like to be sure that data will still be available ten years from now,
 but that's well beyond the lifespan of most of the grants that fund academic infrastructure.
 
 Another option is to purchase a domain
-and pay an [Internet service provider](../../gloss.html#isp) (ISP) to host it.
+and pay an Internet service provider (ISP) to host it.
 This gives the individual or group more control,
 and sidesteps problems that can arise when moving from one institution to another,
 but requires more time and effort to set up than either
