@@ -264,15 +264,11 @@ to share work between different people and machines.
 
 </div>
 
-<div class="challenges" markdown="1">
-
-#### Challenges
-
-1.  Create a repository on GitHub,
-    clone it,
-    add a file,
-    push those changes to GitHub,
-    and then look at the [timestamp](../../gloss.html#timestamp) of the change on GitHub.
-    How does GitHub record times, and why?
-
+<div class="challenge" markdown="1">
+Create a repository on GitHub,
+clone it,
+add a file,
+push those changes to GitHub,
+and then look at the [timestamp](../../gloss.html#timestamp) of the change on GitHub.
+How does GitHub record times, and why?
 </div>
