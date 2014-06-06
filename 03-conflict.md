@@ -311,19 +311,17 @@ or find a way to divide the work up differently.
 
 </div>
 
-<div class="challenges" markdown="1">
+<div class="challenge" markdown="1">
+Clone the repository created by your instructor.
+Add a new file to it,
+and modify an existing file (your instructor will tell you which one).
+When asked by your instructor,
+pull her changes from the repository to create a conflict,
+then resolve it.
+</div>
 
-#### Challenges
-
-1.  Clone the repository created by your instructor.
-    Add a new file to it,
-    and modify an existing file (your instructor will tell you which one).
-    When asked by your instructor,
-    pull her changes from the repository to create a conflict,
-    then resolve it.
-
-2.  What does Git do
-    when there is a conflict in an image or some other non-textual file
-    that is stored in version control?
-
+<div class="challenge" markdown="1">
+What does Git do
+when there is a conflict in an image or some other non-textual file
+that is stored in version control?
 </div>
