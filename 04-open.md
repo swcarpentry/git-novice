@@ -79,7 +79,7 @@ However,
 people who want to work this way need to make some decisions
 about what exactly "open" means in practice.
 
-#### Licensing
+### Licensing
 
 The first question is licensing.
 Broadly speaking,
@@ -202,7 +202,7 @@ Greg Wilson: "Software Carpentry: Lessons Learned". arXiv:1307.5448, July 2013.
 ~~~
 </div>
 
-#### Hosting
+### Hosting
 
 The second big question for groups that want to open up their work
 is where to host their code and data.

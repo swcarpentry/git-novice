@@ -28,7 +28,7 @@ version control is much better for this than this:
   <p>"Piled Higher and Deeper" by Jorge Cham, http://www.phdcomics.com</p>
 </div>
 
-#### Setting Up
+### Setting Up
 
 The first time we use Git on a new machine,
 we need to configure a few things.
@@ -59,7 +59,7 @@ we're telling Git:
 The four commands above only need to be run once:
 the flag `--global` tells Git to use the settings for every project on this machine.
 
-#### Creating a Repository
+### Creating a Repository
 
 Once Git is configured,
 we can start using it.
@@ -119,7 +119,7 @@ nothing to commit (create/copy files and use "git add" to track)
 ~~~
 {:class="out"}
 
-#### Tracking Changes to Files
+### Tracking Changes to Files
 
 Let's create a file called `mars.txt` that contains some notes
 about the Red Planet's suitability as a base.
@@ -281,7 +281,7 @@ and the log message Git was given when the revision was created.
 > so that our filesystem doesn't become cluttered
 > (and so that we can't accidentally edit or delete an old version).
 
-#### Changing a File
+### Changing a File
 
 Now suppose Dracula adds more information to the file.
 (Again, we'll edit with `nano` and then `cat` the file to show its contents;
@@ -534,7 +534,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 ~~~
 {:class="out"}
 
-#### Exploring History
+### Exploring History
 
 If we want to see what we changed when,
 we use `git diff` again,
@@ -627,7 +627,7 @@ index df0654a..b36abfd 100644
 ~~~
 {:class="out"}
 
-#### Recovering Old Versions
+### Recovering Old Versions
 
 All right:
 we can save changes to files and see what we've changed---how
@@ -725,7 +725,7 @@ If the introduction and conclusion are stored in separate files,
 on the other hand,
 moving backward and forward in time becomes much easier.
 
-#### Ignoring Things
+### Ignoring Things
 
 What if we have files that we do not want Git to track for us,
 like backup files created by our editor
