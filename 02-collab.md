@@ -56,7 +56,7 @@ but the remote repository on GitHub doesn't contain any files yet:
 <img src="img/git-freshly-made-github-repo.svg" alt="Freshly-Made GitHub Repository" />
 
 The next step is to connect the two repositories.
-We do this by making the GitHub repository a [remote](../../gloss.html#repository-remote)
+We do this by making the GitHub repository a [remote](../../gloss.html#remote-repository)
 for the local repository.
 The home page of the repository on GitHub includes
 the string we need to identify it:
@@ -152,7 +152,7 @@ To do this,
 (Note the absolute path:
 don't make `tmp` a subdirectory of the existing repository).
 Instead of creating a new repository here with `git init`,
-we will [clone](../../gloss.html#repository-clone) the existing repository from GitHub:
+we will [clone](../../gloss.html#clone) the existing repository from GitHub:
 
 ~~~
 $ cd /tmp
