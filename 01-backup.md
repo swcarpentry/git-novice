@@ -348,8 +348,8 @@ it is actually a series of commands for tools like editors and `patch`
 telling them how to reconstruct one file given the other.
 If we can break it down into pieces:
 
-1.  The first line tells us that Git is using the Unix `diff` command
-    to compare the old and new versions of the file.
+1.  The first line tells us that Git is producing output similar to the Unix `diff` command
+    comparing the old and new versions of the file.
 2.  The second line tells exactly which [revisions](../../gloss.html#revision) of the file
     Git is comparing;
     `df0654a` and `315bf3a` are unique computer-generated labels for those revisions.
