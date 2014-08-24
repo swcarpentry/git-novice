@@ -117,6 +117,21 @@ Branch master set up to track remote branch master from origin.
 ~~~
 {:class="out"}
 
+> #### Password Managers
+>
+> If your operating system has a password manager configured, `git push` will
+> try to use it when it needs your username and password. If you want to type
+> your username and password at the terminal instead of using
+> a password manager, type
+>
+> ~~~
+> $ unset SSH_ASKPASS
+> ~~~
+> {:class="in"}
+>
+> You may want to add this command at the end of your `~/.bashrc` to make it the
+> default behavior.
+
 Our local and remote repositories are now in this state:
 
 <img src="img/github-repo-after-first-push.svg" alt="GitHub Repository After First Push" />
