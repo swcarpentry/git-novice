@@ -295,7 +295,7 @@ We removed the conflict on this line
 ~~~
 {:class="out"}
 
-We don't need to merge again because GitHub knows someone has already done that.
+We don't need to merge again because Git knows someone has already done that.
 
 Version control's ability to merge conflicting changes
 is another reason users tend to divide their programs and papers into multiple files
