@@ -239,14 +239,9 @@ when we clone a repository.
 (This is why `origin` was a sensible choice earlier
 when we were setting up remotes by hand.)
 
-Our three repositories now look like this:
-
-<img src="img/git-after-change-to-duplicate-repo.svg" alt="After Pushing Change from Duplicate Repository" />
-
 We can now download changes into the original repository on our machine:
 
 ~~~
-$ cd ~/planets
 $ git pull origin master
 ~~~
 {:class="in"}
