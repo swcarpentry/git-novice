@@ -161,30 +161,34 @@ If someone else had pushed some changes to the repository on GitHub,
 though,
 this command would download them to our local repository.
 
-We can simulate working with a collaborator using another copy of the repository on our local machine.
-To do this,
-`cd` to the directory `/tmp`.
-(Note the absolute path:
-don't make `tmp` a subdirectory of the existing repository).
-Instead of creating a new repository here with `git init`,
-we will [clone](../../gloss.html#clone) the existing repository from GitHub:
+For the next step, get into pairs.
+Pick one of your repositories on Github to use for collaboration.
+
+The partner whose repository is being used needs to give the other person access.
+On Github, click the settings button on the right,
+then select Collaborators, and enter your partner's username.
+
+<img src="img/github-add-collaborators.png" alt="Adding collaborators on Github" />
+
+The other partner should `cd` to another directory
+(so `ls` doesn't show a `planets` folder),
+and then make a copy of this repository on your own computer:
 
 ~~~
-$ cd /tmp
-$ git clone https://github.com/vlad/planets.git
+git clone https://github.com/vlad/planets.git
 ~~~
 {:class="in"}
 
+Replace 'vlad' with your partner's username (the one who owns the repository).
+
 `git clone` creates a fresh local copy of a remote repository.
-(We did it in `/tmp` or some other directory so that we don't overwrite our existing `planets` directory.)
-Our computer now has two copies of the repository:
 
-<img src="img/git-after-duplicate-clone.svg" alt="After Creating Duplicate Clone of Repository" />
+<img src="img/github-collaboration.svg" alt="After Creating Clone of Repository" />
 
-Let's make a change in the copy in `/tmp/planets`:
+The new collaborator can now make a change in their copy of the repository:
 
 ~~~
-$ cd /tmp/planets
+$ cd planets
 $ nano pluto.txt
 $ cat pluto.txt
 ~~~
@@ -253,20 +257,6 @@ Fast-forward
  create mode 100644 pluto.txt
 ~~~
 {:class="out"}
-
-which gives us this:
-
-<img src="img/git-after-pulling-to-local-repo.svg" alt="After Pulling Change to Local Repository" />
-
-In practice,
-we would probably never have two copies of the same remote repository
-on our laptop at once.
-Instead,
-one of those copies would be on our laptop,
-and the other on a lab machine,
-or on someone else's computer.
-Pushing and pulling changes gives us a reliable way
-to share work between different people and machines.
 
 <div class="keypoints" markdown="1">
 
