@@ -164,6 +164,13 @@ this command would download them to our local repository.
 For the next step, get into pairs.
 Pick one of your repositories on Github to use for collaboration.
 
+> #### Practicing by yourself
+>
+> If you're working through this lesson on your own, you can carry on by opening
+> a second terminal window, and switching to another directory (e.g. `/tmp`).
+> This window will represent your partner, working on another computer. You
+> won't need to give anyone access on Github, because both 'partners' are you.
+
 The partner whose repository is being used needs to give the other person access.
 On Github, click the settings button on the right,
 then select Collaborators, and enter your partner's username.
