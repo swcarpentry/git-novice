@@ -182,7 +182,7 @@ The other partner should `cd` to another directory
 and then make a copy of this repository on your own computer:
 
 ~~~
-git clone https://github.com/vlad/planets.git
+$ git clone https://github.com/vlad/planets.git
 ~~~
 {:class="in"}
 
