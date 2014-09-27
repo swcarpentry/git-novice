@@ -22,7 +22,6 @@ can and should be stored in a version control system.
 3.  [Collaborating](02-collab.html)
 4.  [Conflicts](03-conflict.html)
 5.  [Open Science](04-open.html)
-6.  [SSH Keys for GitHub](05-sshkeys.html)
 
 [Reference](../ref/02-git.html)
 
