@@ -68,7 +68,7 @@ Click on the 'HTTPS' link to change the [protocol](../../gloss.html#protocol) fr
 > #### HTTPS vs SSH
 >
 > We use HTTPS here because it does not require additional configuration.
-> After the bootcamp you may want to set up SSH access, which is a bit more
+> After the workshop you may want to set up SSH access, which is a bit more
 > secure, by following one of the great tutorials from
 > [GitHub](https://help.github.com/articles/generating-ssh-keys),
 > [Atlassian/BitBucket](https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Git)
