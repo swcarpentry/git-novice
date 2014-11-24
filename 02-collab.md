@@ -76,7 +76,7 @@ Click on the 'HTTPS' link to change the [protocol](../../gloss.html#protocol) fr
 > (this one has a screencast).
 >
 > If want to know more about SSH we invite you to check [our small lesson
-> about it](../extras/06-ssh.html).
+> about it](../extras/07-ssh.html).
 
 <img src="img/github-change-repo-string.png" alt="Changing the Repository URL on GitHub" />
 
