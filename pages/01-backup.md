@@ -24,7 +24,7 @@ Even if you aren't collaborating with other people,
 version control is much better for this than this:
 
 <div>
-  <a href="http://www.phdcomics.com"><img src="img/phd101212s.gif" alt="Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com" /></a>
+  <a href="http://www.phdcomics.com"><img src="fig/phd101212s.gif" alt="Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com" /></a>
   <p>"Piled Higher and Deeper" by Jorge Cham, http://www.phdcomics.com</p>
 </div>
 
@@ -429,7 +429,7 @@ but not yet committed.
 `git add` puts things in this area,
 and `git commit` then copies them to long-term storage (as a commit):
 
-<img src="img/git-staging-area.svg" alt="The Git Staging Area" />
+<img src="fig/git-staging-area.svg" alt="The Git Staging Area" />
 
 Let's watch as our changes to a file move from our editor
 to the staging area
@@ -558,7 +558,7 @@ we first need to add the changed files to the staging area
 (`git add`) and then commit the staged changes to the
 repository (`git commit`):
 
-<img src="img/git-committing.svg" alt="The Git Commit Workflow" />
+<img src="fig/git-committing.svg" alt="The Git Commit Workflow" />
 
 ### Exploring History
 
@@ -725,12 +725,12 @@ the commit in which we made the change we're trying to get rid of.
 In the example below, we want retrieve the state from before the most
 recent commit (`HEAD~1`), which is revision `f22b25e`:
 
-<img src="img/git-checkout.svg" alt="Git Checkout" />
+<img src="fig/git-checkout.svg" alt="Git Checkout" />
 
 The following diagram illustrates what the history of a file might look
 like (moving back from `HEAD`, the most recently committed version):
 
-<img src="img/git-when-revisions-updated.svg" alt="When Git Updates Revision Numbers" />
+<img src="fig/git-when-revisions-updated.svg" alt="When Git Updates Revision Numbers" />
 
 > #### Simplifying the Common Case
 >
