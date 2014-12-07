@@ -74,7 +74,7 @@ However,
 people who want to work this way need to make some decisions
 about what exactly "open" means in practice.
 
-### Licensing
+## Licensing
 
 The first question is licensing.
 Broadly speaking,
@@ -137,37 +137,6 @@ In this case,
 anyone can do anything they want with it,
 without needing to cite the original
 or restrict further re-use.
-The table below shows how the six Creative Commons licenses and PD relate to one another:
-
-<!--- Replace the caption with colspan when it was supported by pandoc:
-https://github.com/jgm/pandoc/issues/1340 -->
-<table border="1">
-  <caption>Licenses that can be used for derivative work or adaptation</caption>
-  <tr>
-    <td>Original work</td> <td>by</td> <td>by-nc</td> <td>by-nc-nd</td> <td>by-nc-sa</td> <td>by-nd</td> <td>by-sa</td> <td>pd</td>
-  </tr>
-  <tr>
-    <td>by</td>       <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td> </td>
-  </tr>
-  <tr>
-    <td>by-nc</td>    <td> </td> <td>X</td> <td>X</td> <td>X</td> <td> </td> <td> </td> <td> </td>
-  </tr>
-  <tr>
-    <td>by-nc-nd</td> <td> </td> <td> </td> <td> </td> <td> </td> <td> </td> <td> </td> <td> </td>
-  </tr>
-  <tr>
-    <td>by-nc-sa</td> <td> </td> <td> </td> <td> </td> <td>X</td> <td> </td> <td> </td> <td> </td>
-  </tr>
-  <tr>
-    <td>by-nd</td>    <td> </td> <td> </td> <td> </td> <td> </td> <td> </td> <td> </td> <td> </td>
-  </tr>
-  <tr>
-    <td>by-sa</td>    <td> </td> <td> </td> <td> </td> <td> </td> <td> </td> <td>X</td> <td> </td>
-  </tr>
-  <tr>
-    <td>pd</td>       <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td>
-  </tr>
-</table>
 
 [Software Carpentry](http://software-carpentry.org/license.html)
 uses CC-BY for its lessons and the MIT License for its code
@@ -179,7 +148,6 @@ You may also want to include a file called `CITATION` or `CITATION.txt`
 that describes how to reference your project;
 the one for Software Carpentry states:
 
-<div class="file" markdown="1">
 ~~~
 To reference Software Carpentry in publications, please cite both of the following:
 
@@ -194,9 +162,8 @@ Greg Wilson: "Software Carpentry: Lessons Learned". arXiv:1307.5448, July 2013.
   eprint      = {1307.5448}
 }
 ~~~
-</div>
 
-### Hosting
+## Hosting
 
 The second big question for groups that want to open up their work
 is where to host their code and data.
