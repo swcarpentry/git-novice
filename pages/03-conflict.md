@@ -285,15 +285,6 @@ the version control system is essentially trying to tell its users
 that they ought to clarify who's responsible for what,
 or find a way to divide the work up differently.
 
-<div class="keypoints" markdown="1">
-
-#### Key Points
-*   Conflicts occur when two or more people change the same file(s) at the same time.
-*   The version control system does not allow people to blindly overwrite each other's changes.
-    Instead, it highlights conflicts so that they can be resolved.
-
-</div>
-
 <div class="challenge" markdown="1">
 Clone the repository created by your instructor.
 Add a new file to it,

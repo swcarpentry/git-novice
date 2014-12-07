@@ -247,26 +247,6 @@ but many institutions may not allow researchers to do this,
 either because they want to protect future patent applications
 or simply because what's new is often also frightening.
 
-<div class="keypoints" markdown="1">
-
-#### Key Points
-*   Open scientific work is more useful and more highly cited than closed.
-*   People who incorporate GPL'd software into theirs must make theirs open;
-    most other open licenses do not require this.
-*   The Creative Commons family of licenses allow people to mix and match
-    requirements and restrictions on attribution,
-    creation of derivative works,
-    further sharing,
-    and commercialization.
-*   People who are not lawyers should not try to write licenses from scratch.
-*   Projects can be hosted on university servers,
-    on personal domains,
-    or on public forges.
-*   Rules regarding intellectual property and storage of sensitive information apply
-    no matter where code and data are hosted.
-
-</div>
-
 <div class="challenge" markdown="1">
 Find out whether you are allowed to apply an open license to your software.
 Can you do this unilaterally,
