@@ -53,14 +53,14 @@ but the remote repository on GitHub doesn't contain any files yet:
 <img src="fig/git-freshly-made-github-repo.svg" alt="Freshly-Made GitHub Repository" />
 
 The next step is to connect the two repositories.
-We do this by making the GitHub repository a [remote](../../gloss.html#remote-repository)
+We do this by making the GitHub repository a **remote**
 for the local repository.
 The home page of the repository on GitHub includes
 the string we need to identify it:
 
 <img src="fig/github-find-repo-string.png" alt="Where to Find Repository URL on GitHub" />
 
-Click on the 'HTTPS' link to change the [protocol](../../gloss.html#protocol) from SSH to HTTPS.
+Click on the 'HTTPS' link to change the **protocol** from SSH to HTTPS.
 
 > #### HTTPS vs SSH
 >
@@ -71,9 +71,6 @@ Click on the 'HTTPS' link to change the [protocol](../../gloss.html#protocol) fr
 > [Atlassian/BitBucket](https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Git)
 > and [GitLab](https://about.gitlab.com/2014/03/04/add-ssh-key-screencast/)
 > (this one has a screencast).
->
-> If want to know more about SSH we invite you to check [our small lesson
-> about it](../extras/07-ssh.html).
 
 <img src="fig/github-change-repo-string.png" alt="Changing the Repository URL on GitHub" />
 
@@ -295,5 +292,5 @@ Fast-forward
 > clone it,
 > add a file,
 > push those changes to GitHub,
-> and then look at the [timestamp](../../gloss.html#timestamp) of the change on GitHub.
+> and then look at the **timestamp** of the change on GitHub.
 > How does GitHub record times, and why?

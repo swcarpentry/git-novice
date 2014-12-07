@@ -53,8 +53,35 @@ subtitle: Reference
 
 ## Glossary
 
-Key Word 1
-:   Definition of first term
+change set
+:   FIXME
 
-Key Word 2
-:   Definition of second term
+conflict
+:   FIXME
+
+infective license
+:   FIXME
+
+merge
+:   FIXME
+
+protocol
+:   FIXME
+
+remote
+:   FIXME
+
+repository
+:   FIXME
+
+resolve
+:   FIXME
+
+revision
+:   FIXME
+
+timestamp
+:   FIXME
+
+version control
+:   FIXME
