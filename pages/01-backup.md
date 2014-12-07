@@ -890,27 +890,26 @@ nothing to commit, working directory clean
 > Mars. Find the last edit done in the past month and look at the changes made by
 > clicking on the "prev" link on the left of the history entry.
 
-<div class="challenge" markdown="1">
-Create a new Git repository on your computer called `bio`.
-Write a three-line biography for yourself in a file called `me.txt`,
-commit your changes,
-then modify one line and add a fourth and display the differences
-between its updated state and its original state.
-</div>
+> ## FIXME {.challenge}
+>
+> Create a new Git repository on your computer called `bio`.
+> Write a three-line biography for yourself in a file called `me.txt`,
+> commit your changes,
+> then modify one line and add a fourth and display the differences
+> between its updated state and its original state.
 
-<div class="challenge" markdown="1">
-The following sequence of commands creates one Git repository inside another:
-
-~~~
-cd           # return to home directory
-mkdir alpha  # make a new directory alpha
-cd alpha     # go into alpha
-git init     # make the alpha directory a Git repository
-mkdir beta   # make a sub-directory alpha/beta
-cd beta      # go into alpha/beta
-git init     # make the beta sub-directory a Git repository
-~~~
-{:class="in"}
-
-Why is it a bad idea to do this?
-</div>
+> ## FIXME {.challenge}
+>
+> The following sequence of commands creates one Git repository inside another:
+> 
+> ~~~ {.input}
+> cd           # return to home directory
+> mkdir alpha  # make a new directory alpha
+> cd alpha     # go into alpha
+> git init     # make the alpha directory a Git repository
+> mkdir beta   # make a sub-directory alpha/beta
+> cd beta      # go into alpha/beta
+> git init     # make the beta sub-directory a Git repository
+> ~~~
+> 
+> Why is it a bad idea to do this?
