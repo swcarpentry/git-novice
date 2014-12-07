@@ -12,8 +12,7 @@ each one will spend a lot of time waiting for the other to finish,
 but if they work on their own copies and email changes back and forth
 things will be lost, overwritten, or duplicated.
 
-A colleague suggests using [version control](../../gloss.html#version-control)
-to manage their work.
+A colleague suggests using **version control** to manage their work.
 Version control is better than mailing files back and forth because:
 
 *   Nothing that is committed to version control is ever lost.
