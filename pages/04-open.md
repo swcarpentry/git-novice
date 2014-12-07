@@ -3,22 +3,17 @@ layout: lesson
 root: ../..
 title: Open Science
 ---
-<div class="objectives" markdown="1">
+> ## Learning Objectives
+>
+> *   Explain how the GNU General Public License (GPL) differs from most other open licenses.
+> *   Explain the four kinds of restrictions that can be combined in a Creative Commons license.
+> *   Correctly add licensing and citation information to a project repository.
+> *   Outline options for hosting code and data and the pros and cons of each.
 
-#### Objectives
-*   Explain how the GNU General Public License (GPL) differs from most other open licenses.
-*   Explain the four kinds of restrictions that can be combined in a Creative Commons license.
-*   Correctly add licensing and citation information to a project repository.
-*   Outline options for hosting code and data and the pros and cons of each.
-
-</div>
-
-<blockquote>
-The opposite of "open" isn't "closed".
-The opposite of "open" is "broken".
-<br/>
-&mdash; John Wilbanks
-</blockquote>
+> The opposite of "open" isn't "closed".
+> The opposite of "open" is "broken".
+>
+> --- John Wilbanks
 
 Free sharing of information might be the ideal in science,
 but the reality is often more complicated.

@@ -3,13 +3,10 @@ layout: lesson
 root: ../..
 title: Conflicts
 ---
-<div class="objectives" markdown="1">
-
-#### Objectives
-*   Explain what conflicts are and when they can occur.
-*   Resolve conflicts resulting from a merge.
-
-</div>
+> ## Learning Objectives
+>
+> *   Explain what conflicts are and when they can occur.
+> *   Resolve conflicts resulting from a merge.
 
 As soon as people can work in parallel,
 someone's going to step on someone else's toes.

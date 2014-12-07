@@ -3,20 +3,17 @@ layout: lesson
 root: ../..
 title: A Better Kind of Backup
 ---
-<div class="objectives" markdown="1">
-
-#### Objectives
-*   Explain which initialization and configuration steps are required once per machine,
-    and which are required once per repository.
-*   Go through the modify-add-commit cycle for single and multiple files
-    and explain where information is stored at each stage.
-*   Identify and use Git revision numbers.
-*   Compare files with old versions of themselves.
-*   Restore old versions of files.
-*   Configure Git to ignore specific files,
-    and explain why it is sometimes useful to do so.
-
-</div>
+> ## Learning Objectives
+> 
+> *   Explain which initialization and configuration steps are required once per machine,
+>     and which are required once per repository.
+> *   Go through the modify-add-commit cycle for single and multiple files
+>     and explain where information is stored at each stage.
+> *   Identify and use Git revision numbers.
+> *   Compare files with old versions of themselves.
+> *   Restore old versions of files.
+> *   Configure Git to ignore specific files,
+>     and explain why it is sometimes useful to do so.
 
 We'll start by exploring how version control can be used
 to keep track of what one person did and when.
@@ -902,6 +899,14 @@ nothing to commit, working directory clean
 *   The `.gitignore` file tells Git what files to ignore.
 
 </div>
+
+> ## FIXME: {.challenge}
+> 
+> On Wikipedia all changes and their authors are tracked. You can go
+> [here](https://en.wikipedia.org/w/index.php?title=Mars&action=history)
+> and you will find the history of all changes done to the article about the planet
+> Mars. Find the last edit done in the past month and look at the changes made by
+> clicking on the "prev" link on the left of the history entry.
 
 <div class="challenge" markdown="1">
 Create a new Git repository on your computer called `bio`.
