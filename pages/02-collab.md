@@ -176,6 +176,11 @@ If someone else had pushed some changes to the repository on GitHub,
 though,
 this command would download them to our local repository.
 
+> #### git pull
+> `git pull` combines two individual commands: `git fetch` and `git merge`.
+> Instead of running `git pull`, you may run `git fetch` which fetches updates from your remote repository (origin) and then `git merge origin/branch-name` which
+> merges it with your local branch.
+
 For the next step, get into pairs.
 Pick one of your repositories on Github to use for collaboration.
 
