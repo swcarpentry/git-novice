@@ -191,6 +191,8 @@ The third option is to use a public hosting service like [GitHub](http://github.
 [BitBucket](http://bitbucket.org),
 [Google Code](http://code.google.com),
 or [SourceForge](http://sourceforge.net).
+Each of these services have a web interface that allows people to create, view, and review their code repositories, and communication tools such as issue tracking, wiki pages, email notifications.
+
 All of these allow people to create repositories through a web interface,
 and also provide mailing lists,
 ways to keep track of who's doing what,
@@ -198,8 +200,8 @@ and so on.
 They all benefit from economies of scale and network effects:
 it's easier to run one large service well
 than to run many smaller services to the same standard,
-and it's also easier for people to collaborate if they're using the same service,
-not least because it gives them fewer passwords to remember.
+and it's also easier for people to collaborate,
+especially if they are already using the same service. 
 
 However,
 all of these services place some constraints on people's work.
@@ -208,11 +210,11 @@ most give users a choice:
 if they're willing to share their work with others,
 it will be hosted for free,
 but if they want privacy,
-they may have to pay.
-Sharing might seem like the only valid choice for science,
-but many institutions may not allow researchers to do this,
-either because they want to protect future patent applications
-or simply because what's new is often also frightening.
+there may be limits on the number of private repositories or collaborators.
+However, GitHub and Bitbucket offer free private repositories for academic projects.
+Sharing might seem an ideal approach for scientific code,
+but many institutions place restrictions on sharing, for example to
+protect potentially  patentable intellectual property.
 
 > ## FIXME {.challenge}
 >
