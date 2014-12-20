@@ -54,6 +54,6 @@ can and should be stored in a version control system.
 ## Other Resources
 
 *   [Motivation](motivation.html)
-*   [Reference Guide](reference.html)
-*   [Next Steps](discussion.html)
+*   [Reference](reference.html)
+*   [Discussion](discussion.html)
 *   [Instructor's Guide](instructors.html)
