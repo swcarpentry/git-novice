@@ -69,7 +69,7 @@ the process looks like this:
 
 This open model accelerates discovery:
 the more open work is,
-the more widely it is cited and re-used.
+[the more widely it is cited and re-used](http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0000308).
 However,
 people who want to work this way need to make some decisions
 about what exactly "open" means in practice.
