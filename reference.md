@@ -54,34 +54,51 @@ subtitle: Reference
 ## Glossary
 
 change set
-:   FIXME
+:   A group of changes to one or more files
+that are [committed](#commit) to a [version control](#version-control) [repository](#repository)
+in a single operation.
 
 conflict
-:   FIXME
+:   A change made by one user of a [version control system](#version-control)
+that is incompatible with changes made by other users.
+Helping users [resolve](#resolve) conflicts
+is one of version control's major tasks.
 
 infective license
-:   FIXME
+:   A license such as the [GPL](http://opensource.org/licenses/GPL-3.0)
+that compels people who incorporate material into their own work
+to place similar sharing requirements on it.
 
 merge
-:   FIXME
+:   (a repository):
+To reconcile two sets of change to a [repository](#repository).
 
 protocol
-:   FIXME
+:   A set of rules that define how one computer communicates with another.
+Common protocols on the Internet include [HTTP](#http) and [SSH](#ssh).
 
 remote
-:   FIXME
+:   
+A version control [repository](#repository) other than the current one
+that the current one is somehow connected to or mirroring.
 
 repository
-:   FIXME
+:   A storage area where a [version control](#version-control) system
+stores old [revisions](#revision) of files
+and information about who changed what, when.
 
 resolve
-:   FIXME
+:   To eliminate the [conflicts](#conflict) between two or more incompatible changes to a file or set of files
+being managed by a [version control](#version-control) system.
 
 revision
-:   FIXME
+:   A recorded state of a [version control](#version-control) [repository](#repository).
 
 timestamp
-:   FIXME
+:   A record of when a particular event occurred.
 
 version control
-:   FIXME
+:   A tool for managing changes to a set of files.
+Each set of changes creates a new [revision](#revision) of the files;
+the version control system allows users to recover old revisions reliably,
+and helps manage conflicting changes made by different users.
