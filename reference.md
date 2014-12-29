@@ -55,49 +55,47 @@ subtitle: Reference
 
 change set
 :   A group of changes to one or more files
-that are [committed](#commit) to a [version control](#version-control) [repository](#repository)
-in a single operation.
+    that are [committed](#commit) to a [version control](#version-control) [repository](#repository)
+    in a single operation.
 
 commit
 :   CHECKME To record the current state of a set of files (a [change set](#changeset))
-in a [version control](#version-control) [repository](#repository).
+    in a [version control](#version-control) [repository](#repository).
 
 conflict
 :   A change made by one user of a [version control system](#version-control)
-that is incompatible with changes made by other users.
-Helping users [resolve](#resolve) conflicts
-is one of version control's major tasks.
+    that is incompatible with changes made by other users.
+    Helping users [resolve](#resolve) conflicts
+    is one of version control's major tasks.
 
 HTTP
 :   The Hypertext Transfer [Protocol](#protocol) used for sharing web pages and other data
-on the World Wide Web.
+    on the World Wide Web.
 
 infective license
 :   A license such as the [GPL](http://opensource.org/licenses/GPL-3.0)
-that compels people who incorporate material into their own work
-to place similar sharing requirements on it.
+    that compels people who incorporate material into their own work
+    to place similar sharing requirements on it.
 
 merge
 :   (a repository):
-To reconcile two sets of changes to a [repository](#repository).
+    To reconcile two sets of changes to a [repository](#repository).
 
 protocol
 :   A set of rules that define how one computer communicates with another.
-Common protocols on the Internet include [HTTP](#http) and [SSH](#ssh).
+    Common protocols on the Internet include [HTTP](#http) and [SSH](#ssh).
 
 remote
-:   
-A version control [repository](#repository) other than the current one
-that the current one is somehow connected to or mirroring.
+:   A version control [repository](#repository) other than the current one
+    that the current one is somehow connected to or mirroring.
 
 repository
 :   A storage area where a [version control](#version-control) system
-stores old [revisions](#revision) of files
-and information about who changed what, when.
+    stores old [revisions](#revision) of files and information about who changed what, when.
 
 resolve
 :   To eliminate the [conflicts](#conflict) between two or more incompatible changes to a file or set of files
-being managed by a [version control](#version-control) system.
+    being managed by a [version control](#version-control) system.
 
 revision
 :   A recorded state of a [version control](#version-control) [repository](#repository).
@@ -110,6 +108,6 @@ timestamp
 
 version control
 :   A tool for managing changes to a set of files.
-Each set of changes creates a new [revision](#revision) of the files;
-the version control system allows users to recover old revisions reliably,
-and helps manage conflicting changes made by different users.
+    Each set of changes creates a new [revision](#revision) of the files;
+    the version control system allows users to recover old revisions reliably,
+    and helps manage conflicting changes made by different users.
