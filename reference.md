@@ -58,11 +58,19 @@ change set
 that are [committed](#commit) to a [version control](#version-control) [repository](#repository)
 in a single operation.
 
+commit
+:   CHECKME To record the current state of a set of files (a [change set](#changeset))
+in a [version control](#version-control) [repository](#repository).
+
 conflict
 :   A change made by one user of a [version control system](#version-control)
 that is incompatible with changes made by other users.
 Helping users [resolve](#resolve) conflicts
 is one of version control's major tasks.
+
+HTTP
+:   The Hypertext Transfer [Protocol](#protocol) used for sharing web pages and other data
+on the World Wide Web.
 
 infective license
 :   A license such as the [GPL](http://opensource.org/licenses/GPL-3.0)
@@ -71,7 +79,7 @@ to place similar sharing requirements on it.
 
 merge
 :   (a repository):
-To reconcile two sets of change to a [repository](#repository).
+To reconcile two sets of changes to a [repository](#repository).
 
 protocol
 :   A set of rules that define how one computer communicates with another.
@@ -93,6 +101,9 @@ being managed by a [version control](#version-control) system.
 
 revision
 :   A recorded state of a [version control](#version-control) [repository](#repository).
+
+SSH
+:   The Secure Shell [protocol](#protocol) used for secure communication between computers.
 
 timestamp
 :   A record of when a particular event occurred.
