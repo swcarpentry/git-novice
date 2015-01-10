@@ -1,7 +1,8 @@
 ---
 layout: lesson
 root: ../..
-title: Conflicts
+title: Version Control with Git
+subtitle: Conflicts
 ---
 > ## Learning Objectives
 >

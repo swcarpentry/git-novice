@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Lesson Title
+title: Version Control with Git
 ---
 Wolfman and Dracula have been hired by Universal Missions
 (a space services spinoff from Euphoric State University)
