@@ -1,7 +1,8 @@
 ---
 layout: lesson
 root: ../..
-title: Collaborating
+title: Version Control with Git
+subtitle: Collaborating
 ---
 > ## Learning Objectives
 >
