@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Lesson Title
+title: Version Control with Git
 subtitle: Reference
 ---
 ## [A Better Kind of Backup](01-backup.html)

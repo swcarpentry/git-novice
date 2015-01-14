@@ -1,7 +1,8 @@
 ---
 layout: lesson
 root: ../..
-title: A Better Kind of Backup
+title: Version Control with Git
+subtitle: A Better Kind of Backup
 ---
 > ## Learning Objectives
 > 

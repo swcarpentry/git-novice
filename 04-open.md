@@ -1,7 +1,8 @@
 ---
 layout: lesson
 root: ../..
-title: Open Science
+title: Version Control with Git
+subtitle: Open Science
 ---
 > ## Learning Objectives
 >
