@@ -255,7 +255,7 @@ the version control system is essentially trying to tell its users
 that they ought to clarify who's responsible for what,
 or find a way to divide the work up differently.
 
-> ## FIXME {.challenge}
+> ## Solving Conflicts that You Create {.challenge}
 >
 > Clone the repository created by your instructor.
 > Add a new file to it,
@@ -264,7 +264,7 @@ or find a way to divide the work up differently.
 > pull her changes from the repository to create a conflict,
 > then resolve it.
 
-> ## FIXME {.challenge}
+> ## Conflicts on Non-textual files {.challenge}
 >
 > What does Git do
 > when there is a conflict in an image or some other non-textual file

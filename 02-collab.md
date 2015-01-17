@@ -266,7 +266,7 @@ Fast-forward
  create mode 100644 pluto.txt
 ~~~
 
-> ## FIXME {.challenge}
+> ## GitHub Timestamp {.challenge}
 >
 > Create a repository on GitHub,
 > clone it,
