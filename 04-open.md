@@ -85,7 +85,7 @@ people can choose between the [GNU General Public License](http://opensource.org
 and licenses like the [MIT](http://opensource.org/licenses/MIT)
 and [BSD](http://opensource.org/licenses/BSD-2-Clause) licenses on the other.
 All of these licenses allow unrestricted sharing and modification of programs,
-but the GPL is **infective**:
+but the GPL is [infective](reference.html#infective):
 anyone who distributes a modified version of the code
 (or anything that includes GPL'd code)
 must make *their* code freely available as well.
