@@ -40,7 +40,7 @@ GitHub displays a page with a URL and some information on how to configure your 
 
 This effectively does the following on GitHub's servers:
 
-~~~ {.input}
+~~~ {.bash}
 $ mkdir planets
 $ cd planets
 $ git init
@@ -77,7 +77,7 @@ Copy that URL from the browser,
 go into the local `planets` repository,
 and run this command:
 
-~~~ {.input}
+~~~ {.bash}
 $ git remote add origin https://github.com/vlad/planets
 ~~~
 
@@ -86,7 +86,7 @@ the only difference should be your username instead of `vlad`.
 
 We can check that the command has worked by running `git remote -v`:
 
-~~~ {.input}
+~~~ {.bash}
 $ git remote -v
 ~~~
 ~~~ {.output}
@@ -102,7 +102,7 @@ Once the nickname `origin` is set up,
 this command will push the changes from our local repository
 to the repository on GitHub:
 
-~~~ {.input}
+~~~ {.bash}
 $ git push origin master
 ~~~
 ~~~ {.output}
@@ -122,7 +122,7 @@ Branch master set up to track remote branch master from origin.
 > command failed with "Could not resolve hostname" as the error message. To
 > solve this issue you need to tell Git about the proxy:
 >
-> ~~~ {.input}
+> ~~~ {.bash}
 > $ git config --global http.proxy http://user:password@proxy.url
 > $ git config --global https.proxy http://user:password@proxy.url
 > ~~~
@@ -130,7 +130,7 @@ Branch master set up to track remote branch master from origin.
 > When you connect to another network that doesn't use a proxy you will need to
 > tell Git to disable the proxy using
 >
-> ~~~ {.input}
+> ~~~ {.bash}
 > $ git config --global --unset http.proxy
 > $ git config --global --unset https.proxy
 > ~~~
@@ -142,7 +142,7 @@ Branch master set up to track remote branch master from origin.
 > your username and password at the terminal instead of using
 > a password manager, type
 >
-> ~~~ {.input}
+> ~~~ {.bash}
 > $ unset SSH_ASKPASS
 > ~~~
 >
@@ -161,7 +161,7 @@ Our local and remote repositories are now in this state:
 
 We can pull changes from the remote repository to the local one as well:
 
-~~~ {.input}
+~~~ {.bash}
 $ git pull origin master
 ~~~
 ~~~ {.output}
@@ -196,7 +196,7 @@ The other partner should `cd` to another directory
 (so `ls` doesn't show a `planets` folder),
 and then make a copy of this repository on your own computer:
 
-~~~ {.input}
+~~~ {.bash}
 $ git clone https://github.com/vlad/planets.git
 ~~~
 
@@ -208,7 +208,7 @@ Replace 'vlad' with your partner's username (the one who owns the repository).
 
 The new collaborator can now make a change in their copy of the repository:
 
-~~~ {.input}
+~~~ {.bash}
 $ cd planets
 $ nano pluto.txt
 $ cat pluto.txt
@@ -216,7 +216,7 @@ $ cat pluto.txt
 ~~~ {.output}
 It is so a planet!
 ~~~
-~~~ {.input}
+~~~ {.bash}
 $ git add pluto.txt
 $ git commit -m "Some notes about Pluto"
 ~~~
@@ -227,7 +227,7 @@ $ git commit -m "Some notes about Pluto"
 
 then push the change to GitHub:
 
-~~~ {.input}
+~~~ {.bash}
 $ git push origin master
 ~~~
 ~~~ {.output}
@@ -249,7 +249,7 @@ when we were setting up remotes by hand.)
 
 We can now download changes into the original repository on our machine:
 
-~~~ {.input}
+~~~ {.bash}
 $ git pull origin master
 ~~~
 ~~~ {.output}
