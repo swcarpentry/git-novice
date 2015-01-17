@@ -191,14 +191,13 @@ The third option is to use a public hosting service like [GitHub](http://github.
 [BitBucket](http://bitbucket.org),
 [Google Code](http://code.google.com),
 or [SourceForge](http://sourceforge.net).
-Each of these services provides a web interface that enables people to create, view, and review their code repositories.
+Each of these services provides a web interface that enables people to create, view, and edit their code repositories.
 These services also provide communication and project management tools including issue tracking, wiki pages,  email notifications, and code reviews.
 These services benefit from economies of scale and network effects:
 it's easier to run one large service well
-than to run many smaller services to the same standard,
-and it's also easier for people to collaborate,
-especially if they are already using the same service.
-Using a popular service makes your project more visible, and can help connect your project with communities already using the same service.
+than to run many smaller services to the same standard.
+It's also easier for people to collaborate:
+using a popular service can help connect your project with communities already using the same service.
 
 As an example, the [Software Carpentry organization](https://github.com/swcarpentry/) on GitHub includes the [source code for this page](https://github.com/swcarpentry/git-novice/blob/gh-pages/04-open.md). Anyone with a GitHub account can suggest changes to this text.
 
@@ -210,8 +209,8 @@ if they're willing to share their work with others,
 it will be hosted for free,
 but if they want privacy,
 there may be limits on the number of private repositories or collaborators.
-Access to private repositories can be purchased through 'premium plans', although GitHub and Bitbucket offer free private repositories for academic and / or open-source projects.
-Sharing might seem an ideal approach for scientific code,
+GitHub and Bitbucket offer free private repositories to academics, and more capabilities are often available via paid plans.
+Sharing is the ideal for science,
 but many institutions place restrictions on sharing, for example to
 protect potentially patentable intellectual property.
 If you encounter such restrictions, it can be productive to inquire about the underlying motivations - either to request an exception for a specific project or domain, or to push more broadly for institutional reform to support more open science.
