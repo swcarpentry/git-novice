@@ -803,15 +803,7 @@ $ git status --ignored
 nothing to commit, working directory clean
 ~~~
 
-> ## FIXME: {.challenge}
-> 
-> On Wikipedia all changes and their authors are tracked. You can go
-> [here](https://en.wikipedia.org/w/index.php?title=Mars&action=history)
-> and you will find the history of all changes done to the article about the planet
-> Mars. Find the last edit done in the past month and look at the changes made by
-> clicking on the "prev" link on the left of the history entry.
-
-> ## FIXME {.challenge}
+> ## `bio` Repository {.challenge}
 >
 > Create a new Git repository on your computer called `bio`.
 > Write a three-line biography for yourself in a file called `me.txt`,
@@ -819,7 +811,7 @@ nothing to commit, working directory clean
 > then modify one line and add a fourth and display the differences
 > between its updated state and its original state.
 
-> ## FIXME {.challenge}
+> ## Places to Create Git Repositories {.challenge}
 >
 > The following sequence of commands creates one Git repository inside another:
 > 
