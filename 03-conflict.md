@@ -71,7 +71,6 @@ make a different change to their copy
 *without* updating from GitHub:
 
 ~~~ {.bash}
-$ cd /tmp/planets
 $ nano mars.txt
 $ cat mars.txt
 ~~~
