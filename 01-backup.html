@@ -27,8 +27,8 @@
         <div class="span10 offset1">
           <h1 class="title">Version Control with Git</h1>
           <h2 class="subtitle">A Better Kind of Backup</h2>
-<div id="learning-objectives" class="objectives">
-<h2>Learning Objectives</h2>
+<div id="learning-objectives" class="objectives objectives">
+<h2 id="learning-objectives" class="objectives objectives">Learning Objectives</h2>
 <ul>
 <li>Explain which initialization and configuration steps are required once per machine, and which are required once per repository.</li>
 <li>Go through the modify-add-commit cycle for single and multiple files and explain where information is stored at each stage.</li>
@@ -60,15 +60,15 @@ $ git config --global core.editor &quot;nano&quot;</code></pre>
 <li>that we want to use these settings globally (i.e., for every project),</li>
 </ul>
 <p>The four commands above only need to be run once: the flag <code>--global</code> tells Git to use the settings for every project on this machine.</p>
-<blockquote>
-<h4>Proxy</h4>
+<div id="proxy" class="callout">
+<h2>Proxy</h2>
 <p>In some networks you need to use a proxy. If this is the case you may also need to tell Git about the proxy:</p>
 <pre class="input"><code>$ git config --global http.proxy proxy-url
 $ git config --global https.proxy proxy-url</code></pre>
 <p>To disable the proxy, use</p>
 <pre class="input"><code>$ git config --global --unset http.proxy
 $ git config --global --unset https.proxy</code></pre>
-</blockquote>
+</div>
 <h3 id="creating-a-repository">Creating a Repository</h3>
 <p>Once Git is configured, we can start using it. Let's create a directory for our work:</p>
 <pre class="input"><code>$ mkdir planets
@@ -141,10 +141,10 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 
     Starting to think about Mars</code></pre>
 <p><code>git log</code> lists all revisions made to a repository in reverse chronological order. The listing for each revision includes the revision's full identifier (which starts with the same characters as the short identifier printed by the <code>git commit</code> command earlier), the revision's author, when it was created, and the log message Git was given when the revision was created.</p>
-<blockquote>
-<h4>Where Are My Changes?</h4>
+<div id="where-are-my-changes" class="callout">
+<h2>Where Are My Changes?</h2>
 <p>If we run <code>ls</code> at this point, we will still see just one file called <code>mars.txt</code>. That's because Git saves information about files' history in the special <code>.git</code> directory mentioned earlier so that our filesystem doesn't become cluttered (and so that we can't accidentally edit or delete an old version).</p>
-</blockquote>
+</div>
 <h3 id="changing-a-file">Changing a File</h3>
 <p>Now suppose Dracula adds more information to the file. (Again, we'll edit with <code>nano</code> and then <code>cat</code> the file to show its contents; you may use a different editor, and don't need to <code>cat</code>.)</p>
 <pre class="input"><code>$ nano mars.txt
@@ -319,12 +319,12 @@ But the Mummy will appreciate the lack of humidity</code></pre>
 <p><img src="fig/git-checkout.svg" alt="Git Checkout" /></p>
 <p>The following diagram illustrates what the history of a file might look like (moving back from <code>HEAD</code>, the most recently committed version):</p>
 <p><img src="fig/git-when-revisions-updated.svg" alt="When Git Updates Revision Numbers" /></p>
-<blockquote>
-<h4>Simplifying the Common Case</h4>
+<div id="simplifying-the-common-case" class="callout">
+<h2>Simplifying the Common Case</h2>
 <p>If you read the output of <code>git status</code> carefully, you'll see that it includes this hint:</p>
 <pre class="input"><code>(use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</code></pre>
 <p>As it says, <code>git checkout</code> without a version identifier restores files to the state saved in <code>HEAD</code>. The double dash <code>--</code> is needed to separate the names of the files being recovered from the command itself: without it, Git would try to use the name of the file as the revision identifier.</p>
-</blockquote>
+</div>
 <p>The fact that files can be reverted one by one tends to change the way people organize their work. If everything is in one large document, it's hard (but not impossible) to undo changes to the introduction without also undoing changes made later to the conclusion. If the introduction and conclusion are stored in separate files, on the other hand, moving backward and forward in time becomes much easier.</p>
 <h3 id="ignoring-things">Ignoring Things</h3>
 <p>What if we have files that we do not want Git to track for us, like backup files created by our editor or intermediate files created during data analysis. Let's create a few dummy files:</p>

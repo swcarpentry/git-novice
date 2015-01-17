@@ -3,7 +3,7 @@ layout: lesson
 title: Version Control with Git
 subtitle: Collaborating
 ---
-> ## Learning Objectives
+> ## Learning Objectives {.objectives}
 >
 > *   Explain what remote repositories are and why they are useful.
 > *   Explain what happens when a remote repository is cloned.
@@ -61,7 +61,7 @@ the string we need to identify it:
 
 Click on the 'HTTPS' link to change the **protocol** from SSH to HTTPS.
 
-> #### HTTPS vs SSH
+> ## HTTPS vs SSH {.callout}
 >
 > We use HTTPS here because it does not require additional configuration.
 > After the workshop you may want to set up SSH access, which is a bit more
@@ -116,7 +116,7 @@ To https://github.com/vlad/planets
 Branch master set up to track remote branch master from origin.
 ~~~
 
-> ##### Proxy
+> ## Proxy {.callout}
 >
 > If the network you are connected to uses a proxy there is an chance that your last
 > command failed with "Could not resolve hostname" as the error message. To
@@ -135,7 +135,7 @@ Branch master set up to track remote branch master from origin.
 > $ git config --global --unset https.proxy
 > ~~~
 
-> #### Password Managers
+> ## Password Managers {.callout}
 >
 > If your operating system has a password manager configured, `git push` will
 > try to use it when it needs your username and password. If you want to type
@@ -153,7 +153,7 @@ Our local and remote repositories are now in this state:
 
 <img src="fig/github-repo-after-first-push.svg" alt="GitHub Repository After First Push" />
 
-> #### The '-u' Flag
+> ## The '-u' Flag {.callout}
 >
 > You may see a `-u` option used with `git push` in some documentation.
 > It is related to concepts we cover in our intermediate lesson,
@@ -179,7 +179,7 @@ this command would download them to our local repository.
 For the next step, get into pairs.
 Pick one of your repositories on Github to use for collaboration.
 
-> #### Practicing by yourself
+> ## Practicing by yourself {.callout}
 >
 > If you're working through this lesson on your own, you can carry on by opening
 > a second terminal window, and switching to another directory (e.g. `/tmp`).
