@@ -39,7 +39,7 @@ small data sets,
 and anything that changes over time or needs to be shared
 can and should be stored in a version control system.
 
-> ## Prerequisites
+> ## Prerequisites {.prereq}
 >
 > A short paragraph describing what learners need to know
 > before tackling this lesson.
