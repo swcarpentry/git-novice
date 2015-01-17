@@ -21,7 +21,7 @@ we must first create one.
 The file `mars.txt` currently looks like this
 in both partners' copies of our `planets` repository:
 
-~~~ {.input}
+~~~ {.bash}
 $ cat mars.txt
 ~~~
 ~~~ {.output}
@@ -32,7 +32,7 @@ But the Mummy will appreciate the lack of humidity
 
 Let's add a line to one partner's copy only:
 
-~~~ {.input}
+~~~ {.bash}
 $ nano mars.txt
 $ cat mars.txt
 ~~~
@@ -45,7 +45,7 @@ This line added to Sarah's copy
 
 and then push the change to GitHub:
 
-~~~ {.input}
+~~~ {.bash}
 $ git add mars.txt
 $ git commit -m "Adding a line in our home copy"
 ~~~
@@ -53,7 +53,7 @@ $ git commit -m "Adding a line in our home copy"
 [master 5ae9631] Adding a line in our home copy
  1 file changed, 1 insertion(+)
 ~~~
-~~~ {.input}
+~~~ {.bash}
 $ git push origin master
 ~~~
 ~~~ {.output}
@@ -70,7 +70,7 @@ Now let's have the other partner
 make a different change to their copy
 *without* updating from GitHub:
 
-~~~ {.input}
+~~~ {.bash}
 $ cd /tmp/planets
 $ nano mars.txt
 $ cat mars.txt
@@ -84,7 +84,7 @@ We added a different line in the other copy
 
 We can commit the change locally:
 
-~~~ {.input}
+~~~ {.bash}
 $ git add mars.txt
 $ git commit -m "Adding a line in my copy"
 ~~~
@@ -95,7 +95,7 @@ $ git commit -m "Adding a line in my copy"
 
 but Git won't let us push it to GitHub:
 
-~~~ {.input}
+~~~ {.bash}
 $ git push origin master
 ~~~
 ~~~ {.output}
@@ -117,7 +117,7 @@ What we have to do is pull the changes from GitHub,
 and then push that.
 Let's start by pulling:
 
-~~~ {.input}
+~~~ {.bash}
 $ git pull origin master
 ~~~
 ~~~ {.output}
@@ -135,7 +135,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 `git pull` tells us there's a conflict,
 and marks that conflict in the affected file:
 
-~~~ {.input}
+~~~ {.bash}
 $ cat mars.txt
 ~~~
 ~~~ {.output}
@@ -162,7 +162,7 @@ the change made in the remote repository, write something new to replace both,
 or get rid of the change entirely.
 Let's replace both so that the file looks like this:
 
-~~~ {.input}
+~~~ {.bash}
 $ cat mars.txt
 ~~~
 ~~~ {.output}
@@ -176,7 +176,7 @@ To finish merging,
 we add `mars.txt` to the changes being made by the merge
 and then commit:
 
-~~~ {.input}
+~~~ {.bash}
 $ git add mars.txt
 $ git status
 ~~~
@@ -190,7 +190,7 @@ $ git status
 #	modified:   mars.txt
 #
 ~~~
-~~~ {.input}
+~~~ {.bash}
 $ git commit -m "Merging changes from GitHub"
 ~~~
 ~~~ {.output}
@@ -199,7 +199,7 @@ $ git commit -m "Merging changes from GitHub"
 
 Now we can push our changes to GitHub:
 
-~~~ {.input}
+~~~ {.bash}
 $ git push origin master
 ~~~
 ~~~ {.output}
@@ -216,7 +216,7 @@ Git keeps track of what we've merged with what,
 so we don't have to fix things by hand again
 when the collaborator who made the first change pulls again:
 
-~~~ {.input}
+~~~ {.bash}
 $ git pull origin master
 ~~~
 ~~~ {.output}
@@ -234,7 +234,7 @@ Fast-forward
 
 we get the merged file:
 
-~~~ {.input}
+~~~ {.bash}
 $ cat mars.txt 
 ~~~
 ~~~ {.output}
