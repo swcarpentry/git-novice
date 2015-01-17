@@ -4,7 +4,7 @@ root: ../..
 title: Version Control with Git
 subtitle: Open Science
 ---
-> ## Learning Objectives
+> ## Learning Objectives {.objectives}
 >
 > *   Explain how the GNU General Public License (GPL) differs from most other open licenses.
 > *   Explain the four kinds of restrictions that can be combined in a Creative Commons license.
