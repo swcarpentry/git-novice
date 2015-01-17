@@ -83,7 +83,7 @@ $ mkdir planets
 $ cd planets
 ~~~
 
-and tell Git to make it a **repository**&mdash;a place where
+and tell Git to make it a [repository](reference.html#repository)&mdash;a place where
 Git can store old versions of our files:
 
 ~~~ {.bash}
@@ -218,7 +218,7 @@ $ git commit -m "Starting to think about Mars"
 When we run `git commit`,
 Git takes everything we have told it to save by using `git add`
 and stores a copy permanently inside the special `.git` directory.
-This permanent copy is called a **revision**
+This permanent copy is called a [revision](reference.html#revision)
 and its short identifier is `f22b25e`.
 (Your revision may have another identifier.)
 
@@ -384,7 +384,7 @@ but *not* commit the work we're doing on the conclusion
 To allow for this,
 Git has a special staging area
 where it keeps track of things that have been added to
-the current **change set**
+the current [change set](reference.html#change-set)
 but not yet committed.
 `git add` puts things in this area,
 and `git commit` then copies them to long-term storage (as a commit):
