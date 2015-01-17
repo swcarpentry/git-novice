@@ -3,7 +3,7 @@ layout: lesson
 title: Version Control with Git
 subtitle: Conflicts
 ---
-> ## Learning Objectives
+> ## Learning Objectives {.objectives}
 >
 > *   Explain what conflicts are and when they can occur.
 > *   Resolve conflicts resulting from a merge.

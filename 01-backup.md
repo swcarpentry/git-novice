@@ -3,7 +3,7 @@ layout: lesson
 title: Version Control with Git
 subtitle: A Better Kind of Backup
 ---
-> ## Learning Objectives
+> ## Learning Objectives {.objectives}
 > 
 > *   Explain which initialization and configuration steps are required once per machine,
 >     and which are required once per repository.
@@ -55,7 +55,7 @@ we're telling Git:
 The four commands above only need to be run once:
 the flag `--global` tells Git to use the settings for every project on this machine.
 
-> #### Proxy
+> ## Proxy {.callout}
 >
 > In some networks you need to use a proxy. If this is the case you may also
 > need to tell Git about the proxy:
@@ -262,7 +262,7 @@ the revision's author,
 when it was created,
 and the log message Git was given when the revision was created.
 
-> #### Where Are My Changes?
+> ## Where Are My Changes? {.callout}
 >
 > If we run `ls` at this point, we will still see just one file called `mars.txt`.
 > That's because Git saves information about files' history
@@ -664,7 +664,7 @@ like (moving back from `HEAD`, the most recently committed version):
 
 <img src="fig/git-when-revisions-updated.svg" alt="When Git Updates Revision Numbers" />
 
-> #### Simplifying the Common Case
+> ## Simplifying the Common Case {.callout}
 >
 > If you read the output of `git status` carefully,
 > you'll see that it includes this hint:
