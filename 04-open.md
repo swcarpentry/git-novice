@@ -191,15 +191,15 @@ The third option is to use a public hosting service like [GitHub](http://github.
 [BitBucket](http://bitbucket.org),
 [Google Code](http://code.google.com),
 or [SourceForge](http://sourceforge.net).
-All of these allow people to create repositories through a web interface,
-and also provide mailing lists,
-ways to keep track of who's doing what,
-and so on.
-They all benefit from economies of scale and network effects:
+Each of these services provides a web interface that enables people to create, view, and edit their code repositories.
+These services also provide communication and project management tools including issue tracking, wiki pages,  email notifications, and code reviews.
+These services benefit from economies of scale and network effects:
 it's easier to run one large service well
-than to run many smaller services to the same standard,
-and it's also easier for people to collaborate if they're using the same service,
-not least because it gives them fewer passwords to remember.
+than to run many smaller services to the same standard.
+It's also easier for people to collaborate:
+using a popular service can help connect your project with communities already using the same service.
+
+As an example, the [Software Carpentry organization](https://github.com/swcarpentry/) on GitHub includes the [source code for this page](https://github.com/swcarpentry/git-novice/blob/gh-pages/04-open.md). Anyone with a GitHub account can suggest changes to this text.
 
 However,
 all of these services place some constraints on people's work.
@@ -208,11 +208,12 @@ most give users a choice:
 if they're willing to share their work with others,
 it will be hosted for free,
 but if they want privacy,
-they may have to pay.
-Sharing might seem like the only valid choice for science,
-but many institutions may not allow researchers to do this,
-either because they want to protect future patent applications
-or simply because what's new is often also frightening.
+there may be limits on the number of private repositories or collaborators.
+GitHub and Bitbucket offer free private repositories to academics, and more capabilities are often available via paid plans.
+Sharing is the ideal for science,
+but many institutions place restrictions on sharing, for example to
+protect potentially patentable intellectual property.
+If you encounter such restrictions, it can be productive to inquire about the underlying motivations - either to request an exception for a specific project or domain, or to push more broadly for institutional reform to support more open science.
 
 > ## Can I Use Open License? {.challenge}
 >
