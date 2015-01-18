@@ -1,5 +1,5 @@
 ---
-layout: lesson
+layout: page
 title: Version Control with Git
 subtitle: Conflicts
 ---
