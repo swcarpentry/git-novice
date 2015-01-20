@@ -40,7 +40,7 @@ $ cat mars.txt
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
-This line added to Sarah's copy
+This line added to Wolfman's copy
 ~~~
 
 and then push the change to GitHub:
@@ -145,7 +145,7 @@ But the Mummy will appreciate the lack of humidity
 <<<<<<< HEAD
 We added a different line in the other copy
 =======
-This line added to Sarah's copy
+This line added to Wolfman's copy
 >>>>>>> dabb4c8c450e8475aee9b14b4383acc99f42af1d
 ~~~
 
