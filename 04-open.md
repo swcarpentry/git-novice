@@ -199,7 +199,10 @@ than to run many smaller services to the same standard.
 It's also easier for people to collaborate:
 using a popular service can help connect your project with communities already using the same service.
 
-As an example, the [Software Carpentry organization](https://github.com/swcarpentry/) on GitHub includes the [source code for this page](https://github.com/swcarpentry/git-novice/blob/gh-pages/04-open.md). Anyone with a GitHub account can suggest changes to this text.
+As an example,
+Software Carpentry [is on GitHub](https://github.com/swcarpentry/)
+where you can find the [source for this page](https://github.com/swcarpentry/git-novice/blob/gh-pages/04-open.md).
+Anyone with a GitHub account can suggest changes to this text.
 
 However,
 all of these services place some constraints on people's work.
