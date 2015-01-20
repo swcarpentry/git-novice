@@ -73,7 +73,7 @@ $ <span class="kw">git</span> config --global --unset https.proxy</code></pre>
 <p>Once Git is configured, we can start using it. Let's create a directory for our work:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> planets
 $ <span class="kw">cd</span> planets</code></pre>
-<p>and tell Git to make it a <strong>repository</strong>—a place where Git can store old versions of our files:</p>
+<p>and tell Git to make it a <a href="reference.html#repository">repository</a>—a place where Git can store old versions of our files:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> init</code></pre>
 <p>If we use <code>ls</code> to show the directory's contents, it appears that nothing has changed:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span></code></pre>
@@ -127,7 +127,7 @@ nothing added to commit but untracked files present (use &quot;git add&quot; to 
 <pre class="output"><code>[master (root-commit) f22b25e] Starting to think about Mars
  1 file changed, 1 insertion(+)
  create mode 100644 mars.txt</code></pre>
-<p>When we run <code>git commit</code>, Git takes everything we have told it to save by using <code>git add</code> and stores a copy permanently inside the special <code>.git</code> directory. This permanent copy is called a <strong>revision</strong> and its short identifier is <code>f22b25e</code>. (Your revision may have another identifier.)</p>
+<p>When we run <code>git commit</code>, Git takes everything we have told it to save by using <code>git add</code> and stores a copy permanently inside the special <code>.git</code> directory. This permanent copy is called a <a href="reference.html#revision">revision</a> and its short identifier is <code>f22b25e</code>. (Your revision may have another identifier.)</p>
 <p>We use the <code>-m</code> flag (for &quot;message&quot;) to record a comment that will help us remember later on what we did and why. If we just run <code>git commit</code> without the <code>-m</code> option, Git will launch <code>nano</code> (or whatever other editor we configured at the start) so that we can write a longer message.</p>
 <p>If we run <code>git status</code> now:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
@@ -192,7 +192,7 @@ $ <span class="kw">git</span> commit -m <span class="st">&quot;Concerns about Ma
 <pre class="output"><code>[master 34961b1] Concerns about Mars&#39;s moons on my furry friend
  1 file changed, 1 insertion(+)</code></pre>
 <p>Git insists that we add files to the set we want to commit before actually committing anything because we may not want to commit everything at once. For example, suppose we're adding a few citations to our supervisor's work to our thesis. We might want to commit those additions, and the corresponding addition to the bibliography, but <em>not</em> commit the work we're doing on the conclusion (which we haven't finished yet).</p>
-<p>To allow for this, Git has a special staging area where it keeps track of things that have been added to the current <strong>change set</strong> but not yet committed. <code>git add</code> puts things in this area, and <code>git commit</code> then copies them to long-term storage (as a commit):</p>
+<p>To allow for this, Git has a special staging area where it keeps track of things that have been added to the current <a href="reference.html#change-set">change set</a> but not yet committed. <code>git add</code> puts things in this area, and <code>git commit</code> then copies them to long-term storage (as a commit):</p>
 <p><img src="fig/git-staging-area.svg" alt="The Git Staging Area" /></p>
 <p>Let's watch as our changes to a file move from our editor to the staging area and into long-term storage. First, we'll add another line to the file:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> mars.txt
