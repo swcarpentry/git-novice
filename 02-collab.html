@@ -27,8 +27,8 @@
         <div class="span10 offset1">
           <h1 class="title">Version Control with Git</h1>
           <h2 class="subtitle">Collaborating</h2>
-<div id="learning-objectives" class="objectives">
-<h2>Learning Objectives</h2>
+<div id="learning-objectives" class="objectives objectives">
+<h2 id="learning-objectives" class="objectives objectives">Learning Objectives</h2>
 <ul>
 <li>Explain what remote repositories are and why they are useful.</li>
 <li>Explain what happens when a remote repository is cloned.</li>
@@ -44,29 +44,29 @@
 <p>As soon as the repository is created, GitHub displays a page with a URL and some information on how to configure your local repository:</p>
 <p><img src="fig/github-create-repo-03.png" alt="Creating a Repository on GitHub (Step 3)" /></p>
 <p>This effectively does the following on GitHub's servers:</p>
-<pre class="input"><code>$ mkdir planets
-$ cd planets
-$ git init</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> planets
+$ <span class="kw">cd</span> planets
+$ <span class="kw">git</span> init</code></pre>
 <p>Our local repository still contains our earlier work on <code>mars.txt</code>, but the remote repository on GitHub doesn't contain any files yet:</p>
 <p><img src="fig/git-freshly-made-github-repo.svg" alt="Freshly-Made GitHub Repository" /></p>
-<p>The next step is to connect the two repositories. We do this by making the GitHub repository a <strong>remote</strong> for the local repository. The home page of the repository on GitHub includes the string we need to identify it:</p>
+<p>The next step is to connect the two repositories. We do this by making the GitHub repository a <a href="reference.html#remote">remote</a> for the local repository. The home page of the repository on GitHub includes the string we need to identify it:</p>
 <p><img src="fig/github-find-repo-string.png" alt="Where to Find Repository URL on GitHub" /></p>
-<p>Click on the 'HTTPS' link to change the <strong>protocol</strong> from SSH to HTTPS.</p>
-<blockquote>
-<h4>HTTPS vs SSH</h4>
+<p>Click on the 'HTTPS' link to change the <a href="reference.html#protocol">protocol</a> from SSH to HTTPS.</p>
+<div id="https-vs-ssh" class="callout">
+<h2>HTTPS vs SSH</h2>
 <p>We use HTTPS here because it does not require additional configuration. After the workshop you may want to set up SSH access, which is a bit more secure, by following one of the great tutorials from <a href="https://help.github.com/articles/generating-ssh-keys">GitHub</a>, <a href="https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Git">Atlassian/BitBucket</a> and <a href="https://about.gitlab.com/2014/03/04/add-ssh-key-screencast/">GitLab</a> (this one has a screencast).</p>
-</blockquote>
+</div>
 <p><img src="fig/github-change-repo-string.png" alt="Changing the Repository URL on GitHub" /></p>
 <p>Copy that URL from the browser, go into the local <code>planets</code> repository, and run this command:</p>
-<pre class="input"><code>$ git remote add origin https://github.com/vlad/planets</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> remote add origin https://github.com/vlad/planets</code></pre>
 <p>Make sure to use the URL for your repository rather than Vlad's: the only difference should be your username instead of <code>vlad</code>.</p>
 <p>We can check that the command has worked by running <code>git remote -v</code>:</p>
-<pre class="input"><code>$ git remote -v</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> remote -v</code></pre>
 <pre class="output"><code>origin   https://github.com/vlad/planets.git (push)
 origin   https://github.com/vlad/planets.git (fetch)</code></pre>
 <p>The name <code>origin</code> is a local nickname for your remote repository: we could use something else if we wanted to, but <code>origin</code> is by far the most common choice.</p>
 <p>Once the nickname <code>origin</code> is set up, this command will push the changes from our local repository to the repository on GitHub:</p>
-<pre class="input"><code>$ git push origin master</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin master</code></pre>
 <pre class="output"><code>Counting objects: 9, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (6/6), done.
@@ -75,56 +75,56 @@ Total 9 (delta 2), reused 0 (delta 0)
 To https://github.com/vlad/planets
  * [new branch]      master -&gt; master
 Branch master set up to track remote branch master from origin.</code></pre>
-<blockquote>
-<h5>Proxy</h5>
+<div id="proxy" class="callout">
+<h2>Proxy</h2>
 <p>If the network you are connected to uses a proxy there is an chance that your last command failed with &quot;Could not resolve hostname&quot; as the error message. To solve this issue you need to tell Git about the proxy:</p>
-<pre class="input"><code>$ git config --global http.proxy http://user:password@proxy.url
-$ git config --global https.proxy http://user:password@proxy.url</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global http.proxy http://user:password@proxy.url
+$ <span class="kw">git</span> config --global https.proxy http://user:password@proxy.url</code></pre>
 <p>When you connect to another network that doesn't use a proxy you will need to tell Git to disable the proxy using</p>
-<pre class="input"><code>$ git config --global --unset http.proxy
-$ git config --global --unset https.proxy</code></pre>
-</blockquote>
-<blockquote>
-<h4>Password Managers</h4>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global --unset http.proxy
+$ <span class="kw">git</span> config --global --unset https.proxy</code></pre>
+</div>
+<div id="password-managers" class="callout">
+<h2>Password Managers</h2>
 <p>If your operating system has a password manager configured, <code>git push</code> will try to use it when it needs your username and password. If you want to type your username and password at the terminal instead of using a password manager, type</p>
-<pre class="input"><code>$ unset SSH_ASKPASS</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">unset</span> <span class="ot">SSH_ASKPASS</span></code></pre>
 <p>You may want to add this command at the end of your <code>~/.bashrc</code> to make it the default behavior.</p>
-</blockquote>
+</div>
 <p>Our local and remote repositories are now in this state:</p>
 <p><img src="fig/github-repo-after-first-push.svg" alt="GitHub Repository After First Push" /></p>
-<blockquote>
-<h4>The '-u' Flag</h4>
+<div id="the--u-flag" class="callout">
+<h2>The '-u' Flag</h2>
 <p>You may see a <code>-u</code> option used with <code>git push</code> in some documentation. It is related to concepts we cover in our intermediate lesson, and can safely be ignored for now.</p>
-</blockquote>
+</div>
 <p>We can pull changes from the remote repository to the local one as well:</p>
-<pre class="input"><code>$ git pull origin master</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> pull origin master</code></pre>
 <pre class="output"><code>From https://github.com/vlad/planets
  * branch            master     -&gt; FETCH_HEAD
 Already up-to-date.</code></pre>
 <p>Pulling has no effect in this case because the two repositories are already synchronized. If someone else had pushed some changes to the repository on GitHub, though, this command would download them to our local repository.</p>
 <p>For the next step, get into pairs. Pick one of your repositories on Github to use for collaboration.</p>
-<blockquote>
-<h4>Practicing by yourself</h4>
+<div id="practicing-by-yourself" class="callout">
+<h2>Practicing by yourself</h2>
 <p>If you're working through this lesson on your own, you can carry on by opening a second terminal window, and switching to another directory (e.g. <code>/tmp</code>). This window will represent your partner, working on another computer. You won't need to give anyone access on Github, because both 'partners' are you.</p>
-</blockquote>
+</div>
 <p>The partner whose repository is being used needs to give the other person access. On Github, click the settings button on the right, then select Collaborators, and enter your partner's username.</p>
 <p><img src="fig/github-add-collaborators.png" alt="Adding collaborators on Github" /></p>
 <p>The other partner should <code>cd</code> to another directory (so <code>ls</code> doesn't show a <code>planets</code> folder), and then make a copy of this repository on your own computer:</p>
-<pre class="input"><code>$ git clone https://github.com/vlad/planets.git</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> clone https://github.com/vlad/planets.git</code></pre>
 <p>Replace 'vlad' with your partner's username (the one who owns the repository).</p>
 <p><code>git clone</code> creates a fresh local copy of a remote repository.</p>
 <p><img src="fig/github-collaboration.svg" alt="After Creating Clone of Repository" /></p>
 <p>The new collaborator can now make a change in their copy of the repository:</p>
-<pre class="input"><code>$ cd planets
-$ nano pluto.txt
-$ cat pluto.txt</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> planets
+$ <span class="kw">nano</span> pluto.txt
+$ <span class="kw">cat</span> pluto.txt</code></pre>
 <pre class="output"><code>It is so a planet!</code></pre>
-<pre class="input"><code>$ git add pluto.txt
-$ git commit -m &quot;Some notes about Pluto&quot;</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add pluto.txt
+$ <span class="kw">git</span> commit -m <span class="st">&quot;Some notes about Pluto&quot;</span></code></pre>
 <pre class="output"><code> 1 file changed, 1 insertion(+)
  create mode 100644 pluto.txt</code></pre>
 <p>then push the change to GitHub:</p>
-<pre class="input"><code>$ git push origin master</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin master</code></pre>
 <pre class="output"><code>Counting objects: 4, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (2/2), done.
@@ -134,7 +134,7 @@ To https://github.com/vlad/planets.git
    9272da5..29aba7c  master -&gt; master</code></pre>
 <p>Note that we didn't have to create a remote called <code>origin</code>: Git does this automatically, using that name, when we clone a repository. (This is why <code>origin</code> was a sensible choice earlier when we were setting up remotes by hand.)</p>
 <p>We can now download changes into the original repository on our machine:</p>
-<pre class="input"><code>$ git pull origin master</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> pull origin master</code></pre>
 <pre class="output"><code>remote: Counting objects: 4, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 3 (delta 0)
@@ -146,8 +146,8 @@ Fast-forward
  pluto.txt | 1 +
  1 file changed, 1 insertion(+)
  create mode 100644 pluto.txt</code></pre>
-<div id="fixme" class="challenge">
-<h2>FIXME</h2>
+<div id="github-timestamp" class="challenge">
+<h2>GitHub Timestamp</h2>
 <p>Create a repository on GitHub, clone it, add a file, push those changes to GitHub, and then look at the <strong>timestamp</strong> of the change on GitHub. How does GitHub record times, and why?</p>
 </div>
         </div>

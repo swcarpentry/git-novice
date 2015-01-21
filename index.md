@@ -12,7 +12,7 @@ each one will spend a lot of time waiting for the other to finish,
 but if they work on their own copies and email changes back and forth
 things will be lost, overwritten, or duplicated.
 
-A colleague suggests using **version control** to manage their work.
+A colleague suggests using [version control](reference.html#version-control) to manage their work.
 Version control is better than mailing files back and forth because:
 
 *   Nothing that is committed to version control is ever lost.
@@ -39,10 +39,11 @@ small data sets,
 and anything that changes over time or needs to be shared
 can and should be stored in a version control system.
 
-> ## Prerequisites
+> ## Prerequisites {.prereq}
 >
-> A short paragraph describing what learners need to know
-> before tackling this lesson.
+> In this lesson we use Git from the Unix Shell.
+> Some previous experience with the shell is expected,
+> *but isn't mandatory*.
 
 ## Topics
 

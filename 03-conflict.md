@@ -1,10 +1,9 @@
 ---
-layout: lesson
-root: ../..
+layout: page
 title: Version Control with Git
 subtitle: Conflicts
 ---
-> ## Learning Objectives
+> ## Learning Objectives {.objectives}
 >
 > *   Explain what conflicts are and when they can occur.
 > *   Resolve conflicts resulting from a merge.
@@ -14,15 +13,15 @@ someone's going to step on someone else's toes.
 This will even happen with a single person:
 if we are working on a piece of software on both our laptop and a server in the lab,
 we could make different changes to each copy.
-Version control helps us manage these **conflicts**
-by giving us tools to **resolve** overlapping changes.
+Version control helps us manage these [conflicts](reference.html#conflicts)
+by giving us tools to [resolve](reference.html#resolve) overlapping changes.
 
 To see how we can resolve conflicts,
 we must first create one.
 The file `mars.txt` currently looks like this
 in both partners' copies of our `planets` repository:
 
-~~~ {.input}
+~~~ {.bash}
 $ cat mars.txt
 ~~~
 ~~~ {.output}
@@ -33,7 +32,7 @@ But the Mummy will appreciate the lack of humidity
 
 Let's add a line to one partner's copy only:
 
-~~~ {.input}
+~~~ {.bash}
 $ nano mars.txt
 $ cat mars.txt
 ~~~
@@ -41,12 +40,12 @@ $ cat mars.txt
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
-This line added to Sarah's copy
+This line added to Wolfman's copy
 ~~~
 
 and then push the change to GitHub:
 
-~~~ {.input}
+~~~ {.bash}
 $ git add mars.txt
 $ git commit -m "Adding a line in our home copy"
 ~~~
@@ -54,7 +53,7 @@ $ git commit -m "Adding a line in our home copy"
 [master 5ae9631] Adding a line in our home copy
  1 file changed, 1 insertion(+)
 ~~~
-~~~ {.input}
+~~~ {.bash}
 $ git push origin master
 ~~~
 ~~~ {.output}
@@ -71,7 +70,7 @@ Now let's have the other partner
 make a different change to their copy
 *without* updating from GitHub:
 
-~~~ {.input}
+~~~ {.bash}
 $ cd /tmp/planets
 $ nano mars.txt
 $ cat mars.txt
@@ -85,7 +84,7 @@ We added a different line in the other copy
 
 We can commit the change locally:
 
-~~~ {.input}
+~~~ {.bash}
 $ git add mars.txt
 $ git commit -m "Adding a line in my copy"
 ~~~
@@ -96,7 +95,7 @@ $ git commit -m "Adding a line in my copy"
 
 but Git won't let us push it to GitHub:
 
-~~~ {.input}
+~~~ {.bash}
 $ git push origin master
 ~~~
 ~~~ {.output}
@@ -114,11 +113,11 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 Git detects that the changes made in one copy overlap with those made in the other
 and stops us from trampling on our previous work.
 What we have to do is pull the changes from GitHub,
-**merge** them into the copy we're currently working in,
+[merge](reference.html#merge) them into the copy we're currently working in,
 and then push that.
 Let's start by pulling:
 
-~~~ {.input}
+~~~ {.bash}
 $ git pull origin master
 ~~~
 ~~~ {.output}
@@ -136,7 +135,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 `git pull` tells us there's a conflict,
 and marks that conflict in the affected file:
 
-~~~ {.input}
+~~~ {.bash}
 $ cat mars.txt
 ~~~
 ~~~ {.output}
@@ -146,7 +145,7 @@ But the Mummy will appreciate the lack of humidity
 <<<<<<< HEAD
 We added a different line in the other copy
 =======
-This line added to Sarah's copy
+This line added to Wolfman's copy
 >>>>>>> dabb4c8c450e8475aee9b14b4383acc99f42af1d
 ~~~
 
@@ -163,7 +162,7 @@ the change made in the remote repository, write something new to replace both,
 or get rid of the change entirely.
 Let's replace both so that the file looks like this:
 
-~~~ {.input}
+~~~ {.bash}
 $ cat mars.txt
 ~~~
 ~~~ {.output}
@@ -177,7 +176,7 @@ To finish merging,
 we add `mars.txt` to the changes being made by the merge
 and then commit:
 
-~~~ {.input}
+~~~ {.bash}
 $ git add mars.txt
 $ git status
 ~~~
@@ -191,7 +190,7 @@ $ git status
 #	modified:   mars.txt
 #
 ~~~
-~~~ {.input}
+~~~ {.bash}
 $ git commit -m "Merging changes from GitHub"
 ~~~
 ~~~ {.output}
@@ -200,7 +199,7 @@ $ git commit -m "Merging changes from GitHub"
 
 Now we can push our changes to GitHub:
 
-~~~ {.input}
+~~~ {.bash}
 $ git push origin master
 ~~~
 ~~~ {.output}
@@ -217,7 +216,7 @@ Git keeps track of what we've merged with what,
 so we don't have to fix things by hand again
 when the collaborator who made the first change pulls again:
 
-~~~ {.input}
+~~~ {.bash}
 $ git pull origin master
 ~~~
 ~~~ {.output}
@@ -235,7 +234,7 @@ Fast-forward
 
 we get the merged file:
 
-~~~ {.input}
+~~~ {.bash}
 $ cat mars.txt 
 ~~~
 ~~~ {.output}
@@ -256,7 +255,7 @@ the version control system is essentially trying to tell its users
 that they ought to clarify who's responsible for what,
 or find a way to divide the work up differently.
 
-> ## FIXME {.challenge}
+> ## Solving Conflicts that You Create {.challenge}
 >
 > Clone the repository created by your instructor.
 > Add a new file to it,
@@ -265,7 +264,7 @@ or find a way to divide the work up differently.
 > pull her changes from the repository to create a conflict,
 > then resolve it.
 
-> ## FIXME {.challenge}
+> ## Conflicts on Non-textual files {.challenge}
 >
 > What does Git do
 > when there is a conflict in an image or some other non-textual file
