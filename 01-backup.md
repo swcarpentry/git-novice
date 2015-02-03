@@ -813,7 +813,7 @@ nothing to commit, working directory clean
 >    `git commit -m "my recent changes"`
 > 4. `git commit -m myfile.txt "my recent changes"`
 
-> ## Recovering Older Versions of a File
+> ## Recovering Older Versions of a File {.challenge}
 > Jennifer has made changes to the Python script that she has been working on for weeks, and the 
 > modifications she made this morning "broke" the script and it no longer runs. She has spent
 > ~ 1hr trying to fix it, with no luck...
