@@ -21,6 +21,11 @@ time, keeps earlier versions around for posterity without burdening
 you with them, and represents a complete documented history of what
 you did at what time and why.**
 
+<div>
+  <a href="http://www.phdcomics.com"><img src="fig/phd101212s.gif" alt="Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com" /></a>
+  <p>How to avoid this for your code. "Piled Higher and Deeper" by Jorge Cham, http://www.phdcomics.com</p>
+</div>
+
 As a scientist, you always collaborate. Even if you carry out your
 research on your own, your experiments are not burgers that either eat
 or sell the same day you make them without ever going back to one once
