@@ -2,6 +2,7 @@
 layout: page
 title: Version Control with Git
 subtitle: Conflicts
+documentclass: scrartcl
 ---
 > ## Learning Objectives {.objectives}
 >
