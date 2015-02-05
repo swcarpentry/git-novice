@@ -2,6 +2,7 @@
 layout: slides
 title: Version Control with Git
 subtitle: Motivation
+documentclass: scrartcl
 ---
 <section class="slide">
 ## Why Use Version Control?

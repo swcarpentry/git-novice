@@ -7,9 +7,10 @@ ALL_MD = $(wildcard *.md) $(DST_RMD)
 EXCLUDE_MD = README.md LAYOUT.md FAQ.md DESIGN.md
 SRC_MD = $(filter-out $(EXCLUDE_MD),$(ALL_MD))
 DST_HTML = $(patsubst %.md,%.html,$(SRC_MD))
+DST_PDF = $(patsubst %.md,%.pdf,$(SRC_MD))
 
 # All outputs.
-DST_ALL = $(DST_HTML)
+DST_ALL = $(DST_HTML) $(DST_PDF)
 
 # Pandoc filters.
 FILTERS = $(wildcard tools/filters/*.py)
@@ -44,6 +45,9 @@ motivation.html : motivation.md _layouts/slides.html
 	--filter=tools/filters/id4glossary.py \
 	$(INCLUDES) \
 	-o $@ $<
+
+%.pdf : %.md
+	pandoc -S -s --listings -o $@ $<
 
 ## unittest : Run unit test (for Python 2 and 3)
 unittest: tools/check.py tools/validation_helpers.py tools/test_check.py

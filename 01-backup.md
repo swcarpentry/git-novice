@@ -2,6 +2,7 @@
 layout: page
 title: Version Control with Git
 subtitle: A Better Kind of Backup
+documentclass: scrartcl
 ---
 > ## Learning Objectives {.objectives}
 > 

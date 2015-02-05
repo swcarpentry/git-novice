@@ -2,6 +2,7 @@
 layout: page
 title: Version Control with Git
 subtitle: Reference
+documentclass: scrartcl
 ---
 ## [A Better Kind of Backup](01-backup.html)
 
