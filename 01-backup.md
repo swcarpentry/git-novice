@@ -139,7 +139,7 @@ $ nano mars.txt
 
 Type the text below into the `mars.txt` file:
 
-~~~ {.bash}
+~~~ {.output}
 Cold and dry, but everything is my favorite color
 ~~~
 
