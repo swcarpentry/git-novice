@@ -220,8 +220,11 @@ When we run `git commit`,
 Git takes everything we have told it to save by using `git add`
 and stores a copy permanently inside the special `.git` directory.
 This permanent copy is called a [revision](reference.html#revision)
-and its short identifier is `f22b25e`.
-(Your revision may have another identifier.)
+and its short identifier is `f22b25e`, which is the short form of
+`f22b25eef5155f4faa123b29a0885c2c66dbda48`. (Your revision will have
+another identifier. The identifiers used by Git are
+[SHA1](http://en.wikipedia.org/wiki/SHA-1) checksums, which due to the
+way they are generated will be globally unique.)
 
 We use the `-m` flag (for "message")
 to record a comment that will help us remember later on what we did and why.
