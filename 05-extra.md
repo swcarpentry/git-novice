@@ -36,7 +36,7 @@ This file can be opened in your preferred text editor.
 as this helps avoid introducing syntax errors.)
 
 Eventually, you will want to start customizing Git's behaviour.
-This can be done by adding more by adding more entries to your `.gitconfig`.
+This can be done by adding more entries to your `.gitconfig`.
 The available options are described in the manual:
 
 ~~~ {.bash}
@@ -46,19 +46,19 @@ $ man git-config
 In particular, you might find it useful to add aliases.
 These are like shortcuts for longer git commands.
 For example, if you get sick of typing `git checkout` all the time,
-you could run the command,
+you could run the command:
 
 ~~~ {.bash}
 $ git config --global alias.co checkout
 ~~~
 
-Now if we return to the example from [A Better Kind of Backup](01-backup.md) where we run,
+Now if we return to the example from [A Better Kind of Backup](01-backup.md) where we ran:
 
 ~~~ {.bash}
 $ git checkout f22b25e mars.txt
 ~~~
 
-we could now instead type,
+we could now instead type:
 
 ~~~ {.bash}
 $ git co f22b25e mars.txt
