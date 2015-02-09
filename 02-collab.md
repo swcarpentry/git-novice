@@ -2,6 +2,7 @@
 layout: page
 title: Version Control with Git
 subtitle: Collaborating
+minutes: FIXME
 ---
 > ## Learning Objectives {.objectives}
 >
@@ -27,16 +28,16 @@ Let's start by sharing the changes we've made to our current project with the wo
 Log in to GitHub,
 then click on the icon in the top right corner to create a new repository called `planets`:
 
-<img src="fig/github-create-repo-01.png" alt="Creating a Repository on GitHub (Step 1)" />
+![Creating a Repository on GitHub (Step 1)](fig/github-create-repo-01.png)
 
 Name your repository "planets" and then click "Create Repository":
 
-<img src="fig/github-create-repo-02.png" alt="Creating a Repository on GitHub (Step 2)" />
+![Creating a Repository on GitHub (Step 2)](fig/github-create-repo-02.png)
 
 As soon as the repository is created,
 GitHub displays a page with a URL and some information on how to configure your local repository:
 
-<img src="fig/github-create-repo-03.png" alt="Creating a Repository on GitHub (Step 3)" />
+![Creating a Repository on GitHub (Step 3)](fig/github-create-repo-03.png)
 
 This effectively does the following on GitHub's servers:
 
@@ -49,7 +50,7 @@ $ git init
 Our local repository still contains our earlier work on `mars.txt`,
 but the remote repository on GitHub doesn't contain any files yet:
 
-<img src="fig/git-freshly-made-github-repo.svg" alt="Freshly-Made GitHub Repository" />
+![Freshly-Made GitHub Repository](fig/git-freshly-made-github-repo.svg)
 
 The next step is to connect the two repositories.
 We do this by making the GitHub repository a [remote](reference.html#remote)
@@ -57,7 +58,7 @@ for the local repository.
 The home page of the repository on GitHub includes
 the string we need to identify it:
 
-<img src="fig/github-find-repo-string.png" alt="Where to Find Repository URL on GitHub" />
+![Where to Find Repository URL on GitHub](fig/github-find-repo-string.png)
 
 Click on the 'HTTPS' link to change the [protocol](reference.html#protocol) from SSH to HTTPS.
 
@@ -71,7 +72,7 @@ Click on the 'HTTPS' link to change the [protocol](reference.html#protocol) from
 > and [GitLab](https://about.gitlab.com/2014/03/04/add-ssh-key-screencast/)
 > (this one has a screencast).
 
-<img src="fig/github-change-repo-string.png" alt="Changing the Repository URL on GitHub" />
+![Changing the Repository URL on GitHub](fig/github-change-repo-string.png)
 
 Copy that URL from the browser,
 go into the local `planets` repository,
@@ -151,7 +152,7 @@ Branch master set up to track remote branch master from origin.
 
 Our local and remote repositories are now in this state:
 
-<img src="fig/github-repo-after-first-push.svg" alt="GitHub Repository After First Push" />
+![GitHub Repository After First Push](fig/github-repo-after-first-push.svg)
 
 > ## The '-u' Flag {.callout}
 >
@@ -190,7 +191,7 @@ The partner whose repository is being used needs to give the other person access
 On GitHub, click the settings button on the right,
 then select Collaborators, and enter your partner's username.
 
-<img src="fig/github-add-collaborators.png" alt="Adding collaborators on GitHub" />
+![Adding collaborators on GitHub](fig/github-add-collaborators.png)
 
 The other partner should `cd` to another directory
 (so `ls` doesn't show a `planets` folder),
@@ -204,7 +205,7 @@ Replace 'vlad' with your partner's username (the one who owns the repository).
 
 `git clone` creates a fresh local copy of a remote repository.
 
-<img src="fig/github-collaboration.svg" alt="After Creating Clone of Repository" />
+![After Creating Clone of Repository](fig/github-collaboration.svg)
 
 The new collaborator can now make a change in their copy of the repository:
 
