@@ -81,17 +81,14 @@ $ <span class="kw">git</span> config --global --unset format.pretty</code></pre>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> planets-nontext
 $ <span class="kw">cd</span> planets-nontext</code></pre>
 <p>Use a program such as Microsoft Word or LibreOffice Writer to create a new document. Enter the same text that we began with before:</p>
-<blockquote>
-<p>Cold and dry, but everything is my favorite color</p>
-</blockquote>
+<pre class="output"><code>Cold and dry, but everything is my favorite color</code></pre>
 <p>Save the document into the <code>planets-nontext</code> directory with the name of <code>mars.doc</code>. Back in the terminal, run the usual commands for setting up a new Git repository:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> init
 $ <span class="kw">git</span> add mars.doc
 $ <span class="kw">git</span> commit -m <span class="st">&quot;Starting to think about Mars&quot;</span></code></pre>
 <p>Then make the same changes to <code>mars.doc</code> that we (or Vlad) previously made to <code>mars.txt</code>.</p>
-<blockquote>
-<p>Cold and dry, but everything is my favorite color The two moons may be a problem for Wolfman</p>
-</blockquote>
+<pre class="output"><code>Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman</code></pre>
 <p>Save and close the word processor. Now see what Git thinks of your changes:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> diff</code></pre>
 <pre class="output"><code>diff --git a/mars.doc b/mars.doc

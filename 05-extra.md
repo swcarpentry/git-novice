@@ -148,7 +148,9 @@ $ cd planets-nontext
 Use a program such as Microsoft Word or LibreOffice Writer to create a new document.
 Enter the same text that we began with before:
 
-> Cold and dry, but everything is my favorite color
+~~~ {.output}
+Cold and dry, but everything is my favorite color
+~~~
 
 Save the document into the `planets-nontext` directory with the name of `mars.doc`.
 Back in the terminal, run the usual commands for setting up a new Git repository:
@@ -161,8 +163,10 @@ $ git commit -m "Starting to think about Mars"
 
 Then make the same changes to `mars.doc` that we (or Vlad) previously made to `mars.txt`.
 
-> Cold and dry, but everything is my favorite color
-> The two moons may be a problem for Wolfman
+~~~ {.output}
+Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+~~~
 
 Save and close the word processor.
 Now see what Git thinks of your changes:
