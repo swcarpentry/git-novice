@@ -27,8 +27,8 @@
         <div class="span10 offset1">
           <h1 class="title">Version Control with Git</h1>
           <h2 class="subtitle">A Better Kind of Backup</h2>
-<div id="learning-objectives" class="objectives objectives">
-<h2 id="learning-objectives" class="objectives objectives">Learning Objectives</h2>
+<div id="learning-objectives" class="objectives">
+<h2>Learning Objectives</h2>
 <ul>
 <li>Explain which initialization and configuration steps are required once per machine, and which are required once per repository.</li>
 <li>Go through the modify-add-commit cycle for single and multiple files and explain where information is stored at each stage.</li>
@@ -92,7 +92,7 @@ nothing to commit (create/copy files and use &quot;git add&quot; to track)</code
 <p>Let's create a file called <code>mars.txt</code> that contains some notes about the Red Planet's suitability as a base. (We'll use <code>nano</code> to edit the file; you can use whatever editor you like. In particular, this does not have to be the core.editor you set globally earlier.)</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> mars.txt</code></pre>
 <p>Type the text below into the <code>mars.txt</code> file:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">Cold</span> and dry, but everything is my favorite color</code></pre>
+<pre class="output"><code>Cold and dry, but everything is my favorite color</code></pre>
 <p><code>mars.txt</code> now contains a single line:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span></code></pre>
 <pre class="output"><code>mars.txt</code></pre>
@@ -380,6 +380,28 @@ fatal: no files added</code></pre>
 #        results/
 
 nothing to commit, working directory clean</code></pre>
+<div id="committing-changes-to-git" class="challenge">
+<h2>Committing Changes to Git</h2>
+<p>Which command(s) below would save changes of <code>myfile.txt</code> to my local Git repository?</p>
+<ol style="list-style-type: decimal">
+<li><code>git commit -m &quot;my recent changes&quot;</code></li>
+<li><code>git init myfile.txt</code> <code>git commit -m &quot;my recent changes&quot;</code></li>
+<li><code>git add myfile.txt</code> <code>git commit -m &quot;my recent changes&quot;</code></li>
+<li><code>git commit -m myfile.txt &quot;my recent changes&quot;</code></li>
+</ol>
+</div>
+<div id="recovering-older-versions-of-a-file" class="challenge">
+<h2>Recovering Older Versions of a File</h2>
+<p>Jennifer has made changes to the Python script that she has been working on for weeks, and the modifications she made this morning &quot;broke&quot; the script and it no longer runs. She has spent ~ 1hr trying to fix it, with no luck...</p>
+<p>Luckily, she has been keeping track of her revisions using Git! Which commands below will let her recover the last committed version of her Python script called <code>data_cruncher.py</code>?</p>
+<ol style="list-style-type: decimal">
+<li><code>git checkout HEAD</code></li>
+<li><code>git checkout HEAD data_cruncher.py</code></li>
+<li><code>git checkout HEAD~1 data_cruncher.py</code></li>
+<li><code>git checkout &lt;unique ID of last revision&gt; data_cruncher.py</code></li>
+<li>Both 2 &amp; 4</li>
+</ol>
+</div>
 <div id="bio-repository" class="challenge">
 <h2><code>bio</code> Repository</h2>
 <p>Create a new Git repository on your computer called <code>bio</code>. Write a three-line biography for yourself in a file called <code>me.txt</code>, commit your changes, then modify one line and add a fourth and display the differences between its updated state and its original state.</p>
