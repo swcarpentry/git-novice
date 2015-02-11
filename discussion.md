@@ -101,7 +101,7 @@ $ git co f22b25e mars.txt
 > Another way to roll back changes is to version control your
 > `.gitconfig` using Git.
 > 
-> Go to Github and do a search for "gitconfig".
+> Go to GitHub and do a search for "gitconfig".
 > You will hopefully see hundreds of repositories in which people have stored
 > their own Git configuration files.
 > Sort them by most number of stars and have a look at the top few.
