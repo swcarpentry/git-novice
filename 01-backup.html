@@ -45,7 +45,7 @@
 &quot;Piled Higher and Deeper&quot; by Jorge Cham, http://www.phdcomics.com
 </p>
 </div>
-<h3 id="setting-up">Setting Up</h3>
+<h2 id="setting-up">Setting Up</h2>
 <p>The first time we use Git on a new machine, we need to configure a few things. Here's how Dracula sets up his new laptop:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global user.name <span class="st">&quot;Vlad Dracula&quot;</span>
 $ <span class="kw">git</span> config --global user.email <span class="st">&quot;vlad@tran.sylvan.ia&quot;</span>
@@ -69,7 +69,7 @@ $ <span class="kw">git</span> config --global https.proxy proxy-url</code></pre>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global --unset http.proxy
 $ <span class="kw">git</span> config --global --unset https.proxy</code></pre>
 </div>
-<h3 id="creating-a-repository">Creating a Repository</h3>
+<h2 id="creating-a-repository">Creating a Repository</h2>
 <p>Once Git is configured, we can start using it. Let's create a directory for our work:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> planets
 $ <span class="kw">cd</span> planets</code></pre>
@@ -88,7 +88,7 @@ $ <span class="kw">cd</span> planets</code></pre>
 # Initial commit
 #
 nothing to commit (create/copy files and use &quot;git add&quot; to track)</code></pre>
-<h3 id="tracking-changes-to-files">Tracking Changes to Files</h3>
+<h2 id="tracking-changes-to-files">Tracking Changes to Files</h2>
 <p>Let's create a file called <code>mars.txt</code> that contains some notes about the Red Planet's suitability as a base. (We'll use <code>nano</code> to edit the file; you can use whatever editor you like. In particular, this does not have to be the core.editor you set globally earlier.)</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> mars.txt</code></pre>
 <p>Type the text below into the <code>mars.txt</code> file:</p>
@@ -145,7 +145,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 <h2>Where Are My Changes?</h2>
 <p>If we run <code>ls</code> at this point, we will still see just one file called <code>mars.txt</code>. That's because Git saves information about files' history in the special <code>.git</code> directory mentioned earlier so that our filesystem doesn't become cluttered (and so that we can't accidentally edit or delete an old version).</p>
 </div>
-<h3 id="changing-a-file">Changing a File</h3>
+<h2 id="changing-a-file">Changing a File</h2>
 <p>Now suppose Dracula adds more information to the file. (Again, we'll edit with <code>nano</code> and then <code>cat</code> the file to show its contents; you may use a different editor, and don't need to <code>cat</code>.)</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> mars.txt
 $ <span class="kw">cat</span> mars.txt</code></pre>
@@ -251,7 +251,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
     Starting to think about Mars</code></pre>
 <p>To recap, when we want to add changes to our repository, we first need to add the changed files to the staging area (<code>git add</code>) and then commit the staged changes to the repository (<code>git commit</code>):</p>
 <p><img src="fig/git-committing.svg" alt="The Git Commit Workflow" /></p>
-<h3 id="exploring-history">Exploring History</h3>
+<h2 id="exploring-history">Exploring History</h2>
 <p>If we want to see what we changed when, we use <code>git diff</code> again, but refer to old versions using the notation <code>HEAD~1</code>, <code>HEAD~2</code>, and so on:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> diff HEAD~1 mars.txt</code></pre>
 <pre class="output"><code>diff --git a/mars.txt b/mars.txt
@@ -292,7 +292,7 @@ index df0654a..b36abfd 100644
  Cold and dry, but everything is my favorite color
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity</code></pre>
-<h3 id="recovering-old-versions">Recovering Old Versions</h3>
+<h2 id="recovering-old-versions">Recovering Old Versions</h2>
 <p>All right: we can save changes to files and see what we've changed---how can we restore older versions of things? Let's suppose we accidentally overwrite our file:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> mars.txt
 $ <span class="kw">cat</span> mars.txt</code></pre>
@@ -326,7 +326,7 @@ But the Mummy will appreciate the lack of humidity</code></pre>
 <p>As it says, <code>git checkout</code> without a version identifier restores files to the state saved in <code>HEAD</code>. The double dash <code>--</code> is needed to separate the names of the files being recovered from the command itself: without it, Git would try to use the name of the file as the revision identifier.</p>
 </div>
 <p>The fact that files can be reverted one by one tends to change the way people organize their work. If everything is in one large document, it's hard (but not impossible) to undo changes to the introduction without also undoing changes made later to the conclusion. If the introduction and conclusion are stored in separate files, on the other hand, moving backward and forward in time becomes much easier.</p>
-<h3 id="ignoring-things">Ignoring Things</h3>
+<h2 id="ignoring-things">Ignoring Things</h2>
 <p>What if we have files that we do not want Git to track for us, like backup files created by our editor or intermediate files created during data analysis. Let's create a few dummy files:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> results
 $ <span class="kw">touch</span> a.dat b.dat c.dat results/a.out results/b.out</code></pre>

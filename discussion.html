@@ -42,7 +42,7 @@
     editor = nano</code></pre>
 <p>This file can be opened in your preferred text editor. (Note that it is recommended to continue using the <code>git config</code> command, as this helps avoid introducing syntax errors.)</p>
 <p>Eventually, you will want to start customizing Git's behaviour. This can be done by adding more entries to your <code>.gitconfig</code>. The available options are described in the manual:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">man</span> git-config</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --help</code></pre>
 <p>In particular, you might find it useful to add aliases. These are like shortcuts for longer git commands. For example, if you get sick of typing <code>git checkout</code> all the time, you could run the command:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global alias.co checkout</code></pre>
 <p>Now if we return to the example from <a href="01-backup.md">A Better Kind of Backup</a> where we ran:</p>
@@ -52,7 +52,7 @@
 <div id="styling-gits-log" class="challenge">
 <h2>Styling Git's Log</h2>
 <p>A good target for customization is output from the log. The default log is quite verbose but gives no graphical hints such as information about which commits were done locally and which were pulled from remotes.</p>
-<p>Use <code>man git-log</code> and <code>man git-config</code> to look for different ways to change the log output.</p>
+<p>Use <code>git log --help</code> and <code>git config --help</code> to look for different ways to change the log output.</p>
 <p>How do you expect the log to look after running the following commands?</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global alias.lg <span class="st">&quot;log --graph&quot;</span>
 $ <span class="kw">git</span> config --global log.abbrevCommit true
@@ -66,7 +66,7 @@ $ <span class="kw">git</span> config --global --unset format.pretty</code></pre>
 <div id="version-controlling-the-gitconfig" class="challenge">
 <h2>Version Controlling the Gitconfig</h2>
 <p>In the previous challenge, we suggested using the <code>--unset</code> flag to delete unwanted options from <code>.gitconfig</code>. Another way to roll back changes is to version control your <code>.gitconfig</code> using Git.</p>
-<p>Go to Github and do a search for &quot;gitconfig&quot;. You will hopefully see hundreds of repositories in which people have stored their own Git configuration files. Sort them by most number of stars and have a look at the top few. Do you see any ideas for things you might want to try out in your own <code>.gitconfig</code>?</p>
+<p>Go to GitHub and do a search for &quot;gitconfig&quot;. You will hopefully see hundreds of repositories in which people have stored their own Git configuration files. Sort them by most number of stars and have a look at the top few. Do you see any ideas for things you might want to try out in your own <code>.gitconfig</code>?</p>
 <p>(Remember to check that they're using an open source license before you clone their work for your own use.)</p>
 </div>
 <h3 id="non-text-files">Non-text Files</h3>
