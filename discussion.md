@@ -41,7 +41,7 @@ This can be done by adding more entries to your `.gitconfig`.
 The available options are described in the manual:
 
 ~~~ {.bash}
-$ man git-config
+$ git config --help
 ~~~
 
 In particular, you might find it useful to add aliases.
@@ -73,7 +73,7 @@ $ git co f22b25e mars.txt
 > such as information about which commits were done locally
 > and which were pulled from remotes.
 > 
-> Use `man git-log` and `man git-config` to look for different ways to change
+> Use `git log --help` and `git config --help` to look for different ways to change
 > the log output.
 > 
 > How do you expect the log to look after running the following commands?
@@ -101,7 +101,7 @@ $ git co f22b25e mars.txt
 > Another way to roll back changes is to version control your
 > `.gitconfig` using Git.
 > 
-> Go to Github and do a search for "gitconfig".
+> Go to GitHub and do a search for "gitconfig".
 > You will hopefully see hundreds of repositories in which people have stored
 > their own Git configuration files.
 > Sort them by most number of stars and have a look at the top few.
