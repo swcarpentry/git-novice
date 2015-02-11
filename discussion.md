@@ -1,14 +1,16 @@
 ---
 layout: page
 title: Version Control with Git
-subtitle: Additional Topics
+subtitle: Discussion
 ---
 
-If you've finished working through the rest of the Git material,
-you might wish to browse the following extra topics.
-These aren't essential for basic Git usage and won't be covered by the instructor.
-They might be useful to have in mind when you begin using Git a lot.
-(And once you start using it, you'll want to use it for *everything*!)
+Frequently Asked Questions
+----
+
+People often have questions about Git beyond the scope of the core material.
+Students who have completed the rest of the lessons might find value in looking through the following topics.
+
+Note that since this material isn't essential for basic Git usage, it won't be covered by the instructor.
 
 
 ### More Advanced Git Configuration
