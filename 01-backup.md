@@ -804,7 +804,6 @@ $ git status --ignored
 nothing to commit, working directory clean
 ~~~
 
-
 ## Types of files that should be tracked by Git
 
 Git works best tracking the changes to text files. Plain text files are 
