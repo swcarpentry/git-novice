@@ -804,7 +804,25 @@ $ git status --ignored
 nothing to commit, working directory clean
 ~~~
 
+
 ## Types of files that should be stored in Git
+
+Git works best tracking the changes to text files. Plain text files are 
+files that you can use the command cat to print the contents to your screen.
+
+Binary/proprietary/executable files contain encoded data. The contents of 
+such files does not make sense to humans.   
+ 
+~~~ {.bash}
+$ cat a.dat
+~~~
+
+~~~ {.bash}
+$ which cat
+$ cat /bin/cat
+~~~
+
+
 
 > ## Committing Changes to Git {.challenge}
 >
