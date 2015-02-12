@@ -804,6 +804,21 @@ $ git status --ignored
 nothing to commit, working directory clean
 ~~~
 
+> ## Key Points
+> *   Use `git config` to configure a user name, email address, editor, and other preferences once per machine.
+> *   `git init` initializes a repository.
+> *   `git status` shows the status of a repository.
+> *   Files can be stored in a project's working directory (which users see),
+>    the staging area (where the next commit is being built up)
+>    and the local repository (where revisions are permanently recorded).
+>*   `git add` puts files in the staging area.
+>*   `git commit` creates a snapshot of the staging area in the local repository.
+>*   Always write a log message when committing changes.
+>*   `git diff` displays differences between revisions.
+>*   `git checkout` recovers old versions of files.
+>*   The `.gitignore` file tells Git what files to ignore.
+
+
 > ## Committing Changes to Git {.challenge}
 >
 > Which command(s) below would save changes of `myfile.txt` to my local Git repository?
