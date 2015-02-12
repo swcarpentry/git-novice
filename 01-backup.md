@@ -804,6 +804,8 @@ $ git status --ignored
 nothing to commit, working directory clean
 ~~~
 
+## Types of files that should be stored in Git
+
 > ## Committing Changes to Git {.challenge}
 >
 > Which command(s) below would save changes of `myfile.txt` to my local Git repository?
