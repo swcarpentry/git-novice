@@ -12,7 +12,7 @@ Students who have completed the rest of the lessons might find value in looking 
 Note that since this material isn't essential for basic Git usage, it won't be covered by the instructor.
 
 
-### More Advanced Git Configuration
+## More Advanced Git Configuration
 
 In [A Better Kind of Backup](01-backup.md),
 we used `git config --global` to set some default options for Git.
@@ -112,9 +112,9 @@ $ git co f22b25e mars.txt
 > their work for your own use.)
 
 
-### Non-text Files
+## Non-text Files
 
-Recall when we discussed [Conflicts](03-conflicts.html)
+Recall when we discussed [Conflicts](03-conflict.html)
 there was a challenge that asked:
 
 > What does Git do
@@ -223,4 +223,3 @@ you will probably just want to replace the logo completely rather than merge lit
 > Try Googling for phrases such as `non-text diff` and `binary version control` to
 > see what ideas and solutions other people have come up with.
 > (You might also see some more arguments about why you shouldn't use binary files with Git.)
-
