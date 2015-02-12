@@ -223,4 +223,3 @@ you will probably just want to replace the logo completely rather than merge lit
 > Try Googling for phrases such as `non-text diff` and `binary version control` to
 > see what ideas and solutions other people have come up with.
 > (You might also see some more arguments about why you shouldn't use binary files with Git.)
-
