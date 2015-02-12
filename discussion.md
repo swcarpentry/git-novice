@@ -114,7 +114,7 @@ $ git co f22b25e mars.txt
 
 ## Non-text Files
 
-Recall when we discussed [Conflicts](03-conflicts.html)
+Recall when we discussed [Conflicts](03-conflict.html)
 there was a challenge that asked:
 
 > What does Git do
