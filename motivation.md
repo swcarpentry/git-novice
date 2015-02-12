@@ -12,7 +12,11 @@ project.
 <section class="slide">
 ## Why Git?
 
-Because many people are using GitHub to collaborating.
+Because many people are using GitHub to collaborate.
+Git provides a platform to objectively share the problem solving process.  
+It facilitates reproducible research, providing a way to manage and record your workflow.  
+This process can enhance collaborators understanding of a probelm.  
+
 </section>
 <section class="slide">
 ## Next Steps
