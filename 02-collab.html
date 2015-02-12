@@ -27,8 +27,8 @@
         <div class="span10 offset1">
           <h1 class="title">Version Control with Git</h1>
           <h2 class="subtitle">Collaborating</h2>
-<div id="learning-objectives" class="objectives objectives">
-<h2 id="learning-objectives" class="objectives objectives">Learning Objectives</h2>
+<div id="learning-objectives" class="objectives">
+<h2>Learning Objectives</h2>
 <ul>
 <li>Explain what remote repositories are and why they are useful.</li>
 <li>Explain what happens when a remote repository is cloned.</li>
@@ -102,13 +102,13 @@ $ <span class="kw">git</span> config --global --unset https.proxy</code></pre>
  * branch            master     -&gt; FETCH_HEAD
 Already up-to-date.</code></pre>
 <p>Pulling has no effect in this case because the two repositories are already synchronized. If someone else had pushed some changes to the repository on GitHub, though, this command would download them to our local repository.</p>
-<p>For the next step, get into pairs. Pick one of your repositories on Github to use for collaboration.</p>
+<p>For the next step, get into pairs. Pick one of your repositories on GitHub to use for collaboration.</p>
 <div id="practicing-by-yourself" class="callout">
 <h2>Practicing by yourself</h2>
-<p>If you're working through this lesson on your own, you can carry on by opening a second terminal window, and switching to another directory (e.g. <code>/tmp</code>). This window will represent your partner, working on another computer. You won't need to give anyone access on Github, because both 'partners' are you.</p>
+<p>If you're working through this lesson on your own, you can carry on by opening a second terminal window, and switching to another directory (e.g. <code>/tmp</code>). This window will represent your partner, working on another computer. You won't need to give anyone access on GitHub, because both 'partners' are you.</p>
 </div>
-<p>The partner whose repository is being used needs to give the other person access. On Github, click the settings button on the right, then select Collaborators, and enter your partner's username.</p>
-<p><img src="fig/github-add-collaborators.png" alt="Adding collaborators on Github" /></p>
+<p>The partner whose repository is being used needs to give the other person access. On GitHub, click the settings button on the right, then select Collaborators, and enter your partner's username.</p>
+<p><img src="fig/github-add-collaborators.png" alt="Adding collaborators on GitHub" /></p>
 <p>The other partner should <code>cd</code> to another directory (so <code>ls</code> doesn't show a <code>planets</code> folder), and then make a copy of this repository on your own computer:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> clone https://github.com/vlad/planets.git</code></pre>
 <p>Replace 'vlad' with your partner's username (the one who owns the repository).</p>
@@ -148,7 +148,7 @@ Fast-forward
  create mode 100644 pluto.txt</code></pre>
 <div id="github-timestamp" class="challenge">
 <h2>GitHub Timestamp</h2>
-<p>Create a repository on GitHub, clone it, add a file, push those changes to GitHub, and then look at the <strong>timestamp</strong> of the change on GitHub. How does GitHub record times, and why?</p>
+<p>Create a repository on GitHub, clone it, add a file, push those changes to GitHub, and then look at the <a href="reference.html#timestamp">timestamp</a> of the change on GitHub. How does GitHub record times, and why?</p>
 </div>
         </div>
       </div>
