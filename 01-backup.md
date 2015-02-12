@@ -822,6 +822,9 @@ $ which cat
 $ cat /bin/cat
 ~~~
 
+As the premise of Git and version control is storing the changes to text 
+files storing binary/proprietary/executables in your repository does not 
+make sense. Always add non-text based files to your .gitignore.
 
 
 > ## Committing Changes to Git {.challenge}
