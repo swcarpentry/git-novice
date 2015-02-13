@@ -2,6 +2,7 @@
 layout: page
 title: Version Control with Git
 subtitle: Conflicts
+minutes: FIXME
 ---
 > ## Learning Objectives {.objectives}
 >
@@ -107,7 +108,7 @@ hint: before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ~~~
 
-<img src="fig/conflict.svg" alt="The conflicting changes" />
+![The conflicting changes](fig/conflict.svg)
 
 Git detects that the changes made in one copy overlap with those made in the other
 and stops us from trampling on our previous work.
