@@ -2,6 +2,7 @@
 layout: page
 title: Version Control with Git
 subtitle: Open Science
+minutes: FIXME
 ---
 > ## Learning Objectives {.objectives}
 >
