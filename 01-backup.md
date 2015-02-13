@@ -343,7 +343,7 @@ If we break it down into pieces:
     In particular,
     the `+` markers in the first column show where we are adding lines.
 
-After reviewing our change it's time to commit it:
+After reviewing our change, it's time to commit it:
 
 ~~~ {.bash}
 $ git commit -m "Concerns about Mars's moons on my furry friend"
