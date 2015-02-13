@@ -5,7 +5,7 @@ subtitle: Open Science
 ---
 > ## Learning Objectives {.objectives}
 >
-> *   Explain how version control can be a leveraged as an electronic lab notebook for computational work.
+> *   Explain how version control can be leveraged as an electronic lab notebook for computational work.
 > *   Explain why adding licensing and citation information to a project repository is important.
 > *   Explain what license choices are available and how to choose one.
 > *   Explain how licensing and social expectations differ.
@@ -48,7 +48,7 @@ the process looks like this:
     like [figshare](http://figshare.com/) or
     [Zenodo](http://zenodo.org), possibly as soon as it's collected,
     and given its own DOI. Or the data was already published and is stored in
-    [Dryad](http://datadryad.org/) 
+    [Dryad](http://datadryad.org/).
 *   The scientist creates a new repository on GitHub to hold her work.
 *   As she does her analysis,
     she pushes changes to her scripts
@@ -79,37 +79,37 @@ about what exactly "open" means in practice.
 
 The benefits of version control in essence mean that, when used
 diligently, you can use version control as a form of electronic
-notebook for your computational work, in particular with a distributed
-version control system such as Git:
+notebook for your computational work.
 
-* Your stages of conception of your work are documented, including who
-  did what and when. These are stamped in a way that it is nearly
-  impossible to forge.
+* The conceptual stages of your work are documented, including who did
+  what and when. Every incremental step is stamped with an identifier
+  that due to how it is computed is globally unique for most intents
+  and purposes.
 * You can tie documentation of rationale, ideas, and other
   intellectual work directly to the changes that spring from them.
 * You can refer to what you used in your research to obtain your
   computational results in a way that is unique and recoverable.
-* The version control repository is well amenable to archiving for
-  perpetuity, and contains the entire history.
+* With a distributed version control system such as Git, the version
+  control repository is easy to archive for perpetuity, and contains
+  the entire history.
 
 ## Licensing
 
 At the latest when a repository with source code (and/or manuscript
 and other creative writing text) becomes public, it should include a
 license, and a license disclaimer in prominent locations (such as the
-top-level README, and the top of source code files). This is because
-as creative works, source code is automatically eligible for copyright
-intellectual property protection. Code that appears to be, or is expressly
+top-level README, and at the top of source code files). This is because
+as creative works, source code is automatically eligible for
+intellectual property (and thus copyright) protection. Code that appears to be, or is expressly
 advertised as freely available has *not* waived or relinquished such
 protection. Consequently, others who (re)use code that lacks a license
-statement do so enitrely on their own peril, because any such (re)use
-would necessarily be at risk of being unilaterally withdrawn by the author(s)
-of the software code.
+statement do so enitrely on their own peril, because the author(s)
+of the software code can always unilaterally make such reuse illegal.
 
 A license solves this problem by granting rights to others (the
 licensees) that they would otherwise not have. What rights are being
 granted under which conditions differs, often only slightly, from one
-license to anothr. In contrast to proprietary licenses, the
+license to another. In contrast to proprietary licenses, the
 [licences](http://opensource.org/licenses/alphabetical) certified by
 the [Open Source Initiative](http://opensource.org/) all grant at
 least the following rights, referred to as the
@@ -119,9 +119,9 @@ least the following rights, referred to as the
    without restrictions, including as part of aggregate distributions.
 2. Modifications or other derived works are allowed, and can be
    redistributed as well.
-3. Who receives these rights is not subject to discrimination,
-   including not by fields of endeavor such as commercial versus
-   academic.
+3. The question of who receives these rights is not subject to
+   discrimination, including not by fields of endeavor such as
+   commercial versus academic.
 
 How best to choose an appropriate license can seem daunting, given how
 many possibilities there are. In practice, a few licenses are by far
@@ -130,13 +130,13 @@ the most popular, including the following:
 * [GNU General Public License](http://opensource.org/licenses/GPL-3.0)
   (GPL),
 * [MIT license](http://opensource.org/licenses/MIT),
-* [BSD license](http://opensource.org/licenses/BSD-2-Clause
+* [BSD license](http://opensource.org/licenses/BSD-2-Clause).
 
 The GPL is different from most other open source licenses in that it
 is
 [infective](http://swcarpentry.github.io/git-novice/reference.html#infective):
-anyone who distributes a modified version of the code (or anything
-that includes GPL'ed code) must make *their* code freely available as
+anyone who distributes a modified version of the code, or anything
+that includes GPL'ed code, must make *their* code freely available as
 well.
 
 The following article provides an excellent overview of licensing and
@@ -149,21 +149,26 @@ code:
 
 At the end of the day what matters is that there is a clear statement
 as to what the license is, and that the license is one already vetted
-and approved by [OSI](http://opensource.org).
+and approved by [OSI](http://opensource.org). Also, the license is
+best chosen from the get-go, even if for a repository that is not
+public. Pushing off the decision only makes it more complicated later,
+because each time a new collaborator starts contributing, they, too,
+hold copyright and will thus need to be asked for approval once a
+license is chosen. 
 
 ### Licensing for non-software products
 
 If the content of a repository contains reseach products other than
-software, such as data, and/or creative writing (manual, technical
-report(s), manuscript(s)), most licenses designed for software are not
-well suitable.
+software, such as data, and/or creative writing (manuals, technical
+reports, manuscripts), most licenses designed for software are _not_
+suitable.
 
-* **Data:** In many jurisdictions most types of data (with possibly
+* **Data:** In most jurisdictions most types of data (with possibly
   the exception of photos, medical images, etc) are considered facts
   of nature, and are hence not eligible for copyright
-  protection. Therefore, licenses, which assert copyright, cannot be
-  applied. Rather than creating a legally murky situation by applying
-  a license to signal expectations from others reusing the data, it is
+  protection. Therefore, using a license, which by definition asserts
+  copyright, to signal social or scholarly expectations for
+  attribution serves only to create a legally murky situation. It is
   much better to clarify the legal side with a public domain waiver
   such as
   [Creative Commons Zero (CC0)](https://creativecommons.org/publicdomain/zero/1.0/),
@@ -171,9 +176,9 @@ well suitable.
   use and cite the data. The [Dryad](http://datadryad.org) data
   repository in fact requires this.
 
-* **Creative works:** Manuals, reports, and manuscripts and other
+* **Creative works:** Manuals, reports, manuscripts and other
   creative works are eligible for intellectual property protection and
-  hence automatically protected by copyright, just as software source
+  are hence automatically protected by copyright, just as software source
   code. [Creative Commons](http://creativecommons.org/) has prepared a
   [set of licenses](http://creativecommons.org/licenses/) using
   combinations of four basic restrictions:
