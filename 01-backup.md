@@ -308,11 +308,11 @@ The last line is the key phrase:
 We have changed this file,
 but we haven't told Git we will want to save those changes
 (which we do with `git add`)
-much less actually saved them.
-Let's double-check our work using `git diff`,
-which shows us the differences between
-the current state of the file
-and the most recently saved version:
+much less actually saved them (which we do with `git commit`).
+So let's do that now. It is good practice to always review
+our changes before saving them. We do this using `git diff`.
+This shows us the differences between the current state
+of the file and the most recently saved version:
 
 ~~~ {.bash}
 $ git diff
@@ -330,19 +330,20 @@ index df0654a..315bf3a 100644
 The output is cryptic because
 it is actually a series of commands for tools like editors and `patch`
 telling them how to reconstruct one file given the other.
-If we can break it down into pieces:
+If we break it down into pieces:
 
 1.  The first line tells us that Git is producing output similar to the Unix `diff` command
     comparing the old and new versions of the file.
 2.  The second line tells exactly which revisions of the file
     Git is comparing;
     `df0654a` and `315bf3a` are unique computer-generated labels for those revisions.
-3.  The remaining lines show us the actual differences
+3.  The third and fourth lines once again show the name of the file being changed.
+4.  The remaining lines are the most interesting, they show us the actual differences
     and the lines on which they occur.
     In particular,
     the `+` markers in the first column show where we are adding lines.
 
-Let's commit our change:
+After reviewing our change, it's time to commit it:
 
 ~~~ {.bash}
 $ git commit -m "Concerns about Mars's moons on my furry friend"
