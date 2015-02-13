@@ -804,6 +804,29 @@ $ git status --ignored
 nothing to commit, working directory clean
 ~~~
 
+## Types of files that should be tracked by Git
+
+Git works best tracking the changes to text files. Plain text files are 
+files that you can use the command cat to print the contents to your screen.
+
+Binary/proprietary/executable files contain encoded data. The contents of 
+such files does not make sense (not readable) to humans.   
+ 
+~~~ {.bash}
+$ cat a.dat
+~~~
+
+~~~ {.bash}
+$ which cat
+$ cat /bin/cat
+~~~
+
+As the premise of Git and version control is storing the changes to text 
+files tracking changes to binary/proprietary/executables does not make 
+sense. While it's fine for such files to live in your REPO, always add 
+non-text based files to your .gitignore.
+
+
 > ## Committing Changes to Git {.challenge}
 >
 > Which command(s) below would save changes of `myfile.txt` to my local Git repository?
