@@ -75,16 +75,15 @@ However,
 people who want to work this way need to make some decisions
 about what exactly "open" means in practice.
 
-## Version control as electronic notebook
+## Version control as electronic lab notebook
 
 The benefits of version control in essence mean that, when used
 diligently, you can use version control as a form of electronic
-notebook for your computational work.
+lab notebook for your computational work.
 
 * The conceptual stages of your work are documented, including who did
-  what and when. Every incremental step is stamped with an identifier
-  that due to how it is computed is globally unique for most intents
-  and purposes.
+  what and when. Every step is stamped with an identifier (the commit ID)
+  that is for most intents and purposes is unique.
 * You can tie documentation of rationale, ideas, and other
   intellectual work directly to the changes that spring from them.
 * You can refer to what you used in your research to obtain your
@@ -95,22 +94,23 @@ notebook for your computational work.
 
 ## Licensing
 
-At the latest when a repository with source code (and/or manuscript
-and other creative writing text) becomes public, it should include a
-license, and a license disclaimer in prominent locations (such as the
-top-level README, and at the top of source code files). This is because
+At the latest when a repository with source code, a manuscript
+or other creative works becomes public, it should include a
+file `LICENSE` or `LICENSE.txt`license in the base directory of the
+repository that clearly states under which license the content is
+being made available. This is because
 as creative works, source code is automatically eligible for
 intellectual property (and thus copyright) protection. Code that appears to be, or is expressly
-advertised as freely available has *not* waived or relinquished such
-protection. Consequently, others who (re)use code that lacks a license
-statement do so enitrely on their own peril, because the author(s)
+advertised as freely available has *not* waived such
+protection. Hence, those who (re)use code that lacks a license
+statement do so on their own peril, because the author(s)
 of the software code can always unilaterally make such reuse illegal.
 
 A license solves this problem by granting rights to others (the
 licensees) that they would otherwise not have. What rights are being
 granted under which conditions differs, often only slightly, from one
 license to another. In contrast to proprietary licenses, the
-[licences](http://opensource.org/licenses/alphabetical) certified by
+[open licences](http://opensource.org/licenses/alphabetical) certified by
 the [Open Source Initiative](http://opensource.org/) all grant at
 least the following rights, referred to as the
 [Open Source Definition](http://opensource.org/osd):
