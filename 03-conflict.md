@@ -2,7 +2,7 @@
 layout: page
 title: Version Control with Git
 subtitle: Conflicts
-minutes: FIXME
+minutes: 30
 ---
 > ## Learning Objectives {.objectives}
 >
