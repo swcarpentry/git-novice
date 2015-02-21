@@ -2,7 +2,7 @@
 layout: page
 title: Version Control with Git
 subtitle: Collaborating
-minutes: FIXME
+minutes: 60
 ---
 > ## Learning Objectives {.objectives}
 >
