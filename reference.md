@@ -11,9 +11,9 @@ subtitle: Reference
 *   `git status` shows the status of a repository.
 *   Files can be stored in a project's working directory (which users see),
     the staging area (where the next commit is being built up)
-    and the local repository (where snapshots are permanently recorded).
+    and the local repository (where revisions are permanently recorded).
 *   `git add` puts files in the staging area.
-*   `git commit` creates a snapshot of the staging area in the local repository.
+*   `git commit` save the revisions in the staging area to the local repository.
 *   Always write a log message when committing changes.
 *   `git diff` displays differences between revisions.
 *   `git checkout` recovers old versions of files.
