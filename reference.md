@@ -13,7 +13,7 @@ subtitle: Reference
     the staging area (where the next commit is being built up)
     and the local repository (where revisions are permanently recorded).
 *   `git add` puts files in the staging area.
-*   `git commit` save the revisions in the staging area to the local repository.
+*   `git commit` saves the revisions in the staging area to the local repository.
 *   Always write a log message when committing changes.
 *   `git diff` displays differences between revisions.
 *   `git checkout` recovers old versions of files.
