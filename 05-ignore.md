@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Version Control with Git
-subtitle: A Better Kind of Backup
-minutes: 60
+subtitle: Ignoring Things
+minutes: 10
 ---
 > ## Learning Objectives {.objectives}
 > 
