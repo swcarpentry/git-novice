@@ -39,7 +39,7 @@ $ git config --global color.ui "auto"
 
 (Please use your own name and email address instead of Dracula's.)
 
-He also has to configure his favorite text editor, following this table:
+He also has to set his favorite text editor, following this table:
 
 | Editor             | Configuration command                            |
 |:-------------------|:-------------------------------------------------|
@@ -62,6 +62,12 @@ we're telling Git:
 
 The four commands above only need to be run once:
 the flag `--global` tells Git to use the settings for every project on this machine.
+
+You can check your settings at any time:
+
+~~~ {.bash}
+$ git config --list
+~~~
 
 > ## Proxy {.callout}
 >
