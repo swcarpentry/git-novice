@@ -44,11 +44,11 @@ He also has to set his favorite text editor, following this table:
 | Editor             | Configuration command                            |
 |:-------------------|:-------------------------------------------------|
 | nano               | `$ git config --global core.editor "nano"`       |
-| Sublime Text (Mac) | `$ git config --global core.editor "subl -n -w"` |
 | Text Wrangler      | `$ git config --global core.editor "edit -w"`    |
+| Sublime Text (Mac) | `$ git config --global core.editor "subl -n -w"` |
 | Sublime Text (Win) | `$ git config --global core.editor "'c:/program files/sublime text 2/sublime_text.exe' -w"` |
 | Notepad++          | `$ git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
-| Kate (Linux)       | `$ git config --global core.editor "kate"`       |
+| Kate               | `$ git config --global core.editor "kate"`       |
 
 Git commands are written `git verb`,
 where `verb` is what we actually want it to do.
