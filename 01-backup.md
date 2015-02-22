@@ -35,12 +35,20 @@ Here's how Dracula sets up his new laptop:
 $ git config --global user.name "Vlad Dracula"
 $ git config --global user.email "vlad@tran.sylvan.ia"
 $ git config --global color.ui "auto"
-$ git config --global core.editor "nano"
 ~~~
 
-(Please use your own name and email address instead of Dracula's,
-and please make sure you choose an editor that's actually on your system,
-such as `notepad` on Windows.)
+(Please use your own name and email address instead of Dracula's.)
+
+He also has to configure his favorite text editor, following this table:
+
+| Editor             | Configuration command                            |
+|:-------------------|:-------------------------------------------------|
+| nano               | `$ git config --global core.editor "nano"`       |
+| Sublime Text (Mac) | `$ git config --global core.editor "subl -n -w"` |
+| Text Wrangler      | `$ git config --global core.editor "edit -w"`    |
+| Sublime Text (Win) | `$ git config --global core.editor "'c:/program files/sublime text 2/sublime_text.exe' -w"` |
+| Notepad++          | `$ git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
+| Kate (Linux)       | `$ git config --global core.editor "kate"`       |
 
 Git commands are written `git verb`,
 where `verb` is what we actually want it to do.
