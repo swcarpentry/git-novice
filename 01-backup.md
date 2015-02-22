@@ -43,7 +43,7 @@ He also has to set his favorite text editor, following this table:
 
 | Editor             | Configuration command                            |
 |:-------------------|:-------------------------------------------------|
-| nano               | `$ git config --global core.editor "nano"`       |
+| nano               | `$ git config --global core.editor "nano -w"`    |
 | Text Wrangler      | `$ git config --global core.editor "edit -w"`    |
 | Sublime Text (Mac) | `$ git config --global core.editor "subl -n -w"` |
 | Sublime Text (Win) | `$ git config --global core.editor "'c:/program files/sublime text 2/sublime_text.exe' -w"` |
