@@ -17,14 +17,14 @@ Wolfman and Dracula will work together in one project.
 
 FIXME
 
-## [Collaborating](02-collab.html)
+## [Collaborating](06-collab.html)
 
 FIXME
 
-## [Conflicts](03-conflict.html)
+## [Conflicts](07-conflict.html)
 
 FIXME
 
-## [Open Science](04-open.html)
+## [Open Science](08-open.html)
 
 FIXME
