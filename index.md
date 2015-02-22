@@ -47,10 +47,14 @@ can and should be stored in a version control system.
 
 ## Topics
 
-1.  [A Better Kind of Backup](01-backup.html)
-2.  [Collaborating](06-collab.html)
-3.  [Conflicts](07-conflict.html)
-4.  [Open Science](08-open.html)
+1.  [Setting Up Git](01-setup.html)
+2.  [Creating a Repository](02-create.html)
+3.  [Tracking Changes](03-changes.html)
+4.  [Exploring History](04-history.html)
+5.  [Ignoring Things](05-ignore.html)
+6.  [Collaborating](06-collab.html)
+7.  [Conflicts](07-conflict.html)
+8.  [Open Science](08-open.html)
 
 ## Other Resources
 
