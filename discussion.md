@@ -14,7 +14,7 @@ Note that since this material isn't essential for basic Git usage, it won't be c
 
 ## More Advanced Git Configuration
 
-In [A Better Kind of Backup](01-backup.md),
+In [Setting Up Git](01-setup.md),
 we used `git config --global` to set some default options for Git.
 It turns out that these configuration options get stored in your home directory
 in a plain text file called `.gitconfig`.
@@ -53,7 +53,7 @@ you could run the command:
 $ git config --global alias.co checkout
 ~~~
 
-Now if we return to the example from [A Better Kind of Backup](01-backup.md) where we ran:
+Now if we return to the example from [Exploring History](04-history.md) where we ran:
 
 ~~~ {.bash}
 $ git checkout f22b25e mars.txt
