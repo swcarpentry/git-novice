@@ -12,7 +12,7 @@ subtitle: Reference
 
 *   `git init` initializes a repository.
 
-##  [Tracking Changes](03-changes.html)
+## [Tracking Changes](03-changes.html)
 
 *   `git status` shows the status of a repository.
 *   Files can be stored in a project's working directory (which users see),
@@ -22,12 +22,12 @@ subtitle: Reference
 *   `git commit` saves the revisions in the staging area to the local repository.
 *   Always write a log message when committing changes.
 
-##  [Exploring History](04-history.html)
+## [Exploring History](04-history.html)
 
 *   `git diff` displays differences between revisions.
 *   `git checkout` recovers old versions of files.
 
-##  [Ignoring Things](05-ignore.html)
+## [Ignoring Things](05-ignore.html)
 
 *   The `.gitignore` file tells Git what files to ignore.
 
