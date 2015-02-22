@@ -13,7 +13,23 @@ Wolfman and Dracula will work together in one project.
 
 *   FIXME
 
-## [A Better Kind of Backup](01-backup.html)
+## [Setting Up Git](01-setup.html)
+
+FIXME
+
+## [Creating a Repository](02-create.html)
+
+FIXME
+
+## [Tracking Changes](03-changes.html)
+
+FIXME
+
+## [Exploring History](04-history.html)
+
+FIXME
+
+## [Ignoring Things](05-ignore.html)
 
 FIXME
 
