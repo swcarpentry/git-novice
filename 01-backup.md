@@ -5,72 +5,59 @@ subtitle: A Better Kind of Backup
 minutes: 60
 ---
 > ## Learning Objectives {.objectives}
-> 
-> *   Explain which initialization and configuration steps are required once per machine,
->     and which are required once per repository.
+>
+> *   Discuss what version control is and how it works.
+> *   Explain how Git and distributed version control works.
 > *   Go through the modify-add-commit cycle for single and multiple files
 >     and explain where information is stored at each stage.
+> *   Discuss how branching works.
 > *   Identify and use Git revision numbers.
 > *   Compare files with old versions of themselves.
 > *   Restore old versions of files.
 > *   Configure Git to ignore specific files,
 >     and explain why it is sometimes useful to do so.
 
-We'll start by exploring how version control can be used
-to keep track of what one person did and when.
-Even if you aren't collaborating with other people,
-version control is much better for this than this:
+## What is version control and how does it work?
+
+Before we start, has everyone downloaded and installed the Github app? Let's do that now.
 
 [![Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com](fig/phd101212s.gif)](http://www.phdcomics.com)
 
 "Piled Higher and Deeper" by Jorge Cham, http://www.phdcomics.com
 
-## Setting Up
+We've all been in this situation before: it seems ridiculous to have multiple nearly-identical versions of the same document. Some word processors let us deal with this a little better, like Microsoft Word ("Track Changes") or Google Docs version history.
 
-The first time we use Git on a new machine,
-we need to configure a few things.
-Here's how Dracula sets up his new laptop:
+Version control systems start with a base version of the document and then save just the changes you made at each step on the way. You can think of it as a tape: if you rewind the tape and start at the base document, then you can play back each change and end up with your latest version.
 
-~~~ {.bash}
-$ git config --global user.name "Vlad Dracula"
-$ git config --global user.email "vlad@tran.sylvan.ia"
-$ git config --global color.ui "auto"
-$ git config --global core.editor "nano"
-~~~
+![Changes are saved sequentially](fig/play-changes.svg)
 
-(Please use your own name and email address instead of Dracula's,
-and please make sure you choose an editor that's actually on your system,
-such as `notepad` on Windows.)
+Once you think of changes as separate from the document itself, you can then think about "playing back" different sets of changes onto the base document and getting different versions of the document. For example, two users can make independent sets of changes based on the same document.
 
-Git commands are written `git verb`,
-where `verb` is what we actually want it to do.
-In this case,
-we're telling Git:
+![Different versions can be saved](fig/versions.svg)
 
-*   our name and email address,
-*   to colorize output,
-*   what our favorite text editor is, and
-*   that we want to use these settings globally (i.e., for every project),
+If there aren't conflicts, you can even try to play two sets of changes onto the same base document.
 
-The four commands above only need to be run once:
-the flag `--global` tells Git to use the settings for every project on this machine.
+![Multiple versions can be merged](fig/merge.svg)
 
-> ## Proxy {.callout}
->
-> In some networks you need to use a proxy. If this is the case you may also
-> need to tell Git about the proxy:
->
-> ~~~ {.bash}
-> $ git config --global http.proxy proxy-url
-> $ git config --global https.proxy proxy-url
-> ~~~
->
-> To disable the proxy, use
->
-> ~~~ {.bash}
-> $ git config --global --unset http.proxy
-> $ git config --global --unset https.proxy
-> ~~~
+## How Git works
+
+A version control system is a tool that keeps track of these changes for us and helps us version and merge our files. A system like Git is designed to keep multiple sets of versions and changes in sync across different computers or servers. This is called a _distributed_ system.
+
+A _repository_ is the set of files that we want to keep under version control.
+
+With Git, every user who wants to make changes to a repository has their own copy of the files in the repository, along with their own copy of the changes (the _commits_) that have been made to those files. Git keeps the commits in a secret directory along with the copies of the files.
+
+A service like Github acts as a central server for your repository, but it is basically just storing another copy of your repository. Github's copies are only special because we told Git that the Github version is special.
+
+![Every user has their own copy](fig/github.svg)
+
+So, if a user wants to make changes to a file in a repo that is under Git control, she can make changes to her own copy of the file and then tell Git to save those changes in its  history. This is called _committing_ the changes, and it saves the changes in her own copy of the repo on her own computer.
+
+If she wants another user to see her changes, though, she needs to tell that other user's Git copy that she made changes. This is called _pushing_ the commits to another repo. She can either push the changes directly to another user's copy, or she can push them to a centrally-designated remote repository, like one at Github.
+
+Everyone has made a user account at Github, right?
+
+
 
 ## Creating a Repository
 
@@ -817,11 +804,11 @@ nothing to commit, working directory clean
 
 > ## Recovering Older Versions of a File {.challenge}
 >
-> Jennifer has made changes to the Python script that she has been working on for weeks, and the 
+> Jennifer has made changes to the Python script that she has been working on for weeks, and the
 > modifications she made this morning "broke" the script and it no longer runs. She has spent
 > ~ 1hr trying to fix it, with no luck...
 >
-> Luckily, she has been keeping track of her revisions using Git! Which commands below will 
+> Luckily, she has been keeping track of her revisions using Git! Which commands below will
 > let her recover the last committed version of her Python script called
 > `data_cruncher.py`?
 >
@@ -842,7 +829,7 @@ nothing to commit, working directory clean
 > ## Places to Create Git Repositories {.challenge}
 >
 > The following sequence of commands creates one Git repository inside another:
-> 
+>
 > ~~~ {.bash}
 > cd           # return to home directory
 > mkdir alpha  # make a new directory alpha
@@ -852,5 +839,5 @@ nothing to commit, working directory clean
 > cd beta      # go into alpha/beta
 > git init     # make the beta sub-directory a Git repository
 > ~~~
-> 
+>
 > Why is it a bad idea to do this?
