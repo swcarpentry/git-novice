@@ -43,7 +43,7 @@ If there aren't conflicts, you can even try to play two sets of changes onto the
 
 A version control system is a tool that keeps track of these changes for us and helps us version and merge our files. A system like Git is designed to keep multiple sets of versions and changes in sync across different computers or servers. This is called a _distributed_ system.
 
-A _repository_ is the set of files that we want to keep under version control.
+A [repository](reference.html#repository) is the set of files that we want to keep under version control.
 
 With Git, every user who wants to make changes to a repository has their own copy of the files in the repository, along with their own copy of the changes (the _commits_) that have been made to those files. Git keeps the commits in a secret directory along with the copies of the files.
 
@@ -57,35 +57,50 @@ If she wants another user to see her changes, though, she needs to tell that oth
 
 Everyone has made a user account at Github, right?
 
+## Setting Up
 
-
-## Creating a Repository
-
-Once Git is configured,
-we can start using it.
-Let's create a directory for our work:
+The first time we use Git on a new machine, we need to make sure Git knows a few things. We can configure some basic settings with `git config`:
 
 ~~~ {.bash}
-$ mkdir planets
-$ cd planets
+$ git config --global user.name "Vlad Dracula"
+$ git config --global user.email "vlad@tran.sylvan.ia"
+$ git config --global color.ui "auto"
+$ git config --global core.editor "nano"
 ~~~
 
-and tell Git to make it a [repository](reference.html#repository)&mdash;a place where
-Git can store old versions of our files:
+(Please use your own name and email address instead of Dracula's,
+and please make sure you choose an editor that's actually on your system,
+such as `notepad` on Windows.)
+
+Git commands are written `git verb`,
+where `verb` is what we actually want it to do.
+In this case,
+we're telling Git:
+
+*   our name and email address,
+*   to colorize output,
+*   what our favorite text editor is, and
+*   that we want to use these settings globally (i.e., for every project),
+
+The four commands above only need to be run once:
+the flag `--global` tells Git to use the settings for every project on this machine.
+
+
+## Start Version Control
+
+Let's create a directory for our work. Create a new folder in your home directory and call it `planets_yourname`, open a terminal window and navigate into that directory.
+
+~~~ {.bash}
+$ cd planets_yourname
+~~~
+
+and tell Git to make this directory into a repository.
 
 ~~~ {.bash}
 $ git init
 ~~~
 
-If we use `ls` to show the directory's contents,
-it appears that nothing has changed:
-
-~~~ {.bash}
-$ ls
-~~~
-
-But if we add the `-a` flag to show everything,
-we can see that Git has created a hidden directory called `.git`:
+Git creates a hidden directory called `.git` in this directory:
 
 ~~~ {.bash}
 $ ls -a
@@ -94,59 +109,34 @@ $ ls -a
 .	..	.git
 ~~~
 
-Git stores information about the project in this special sub-directory.
-If we ever delete it,
-we will lose the project's history.
-
-We can check that everything is set up correctly
-by asking Git to tell us the status of our project:
-
-~~~ {.bash}
-$ git status
-~~~
-~~~ {.output}
-# On branch master
-#
-# Initial commit
-#
-nothing to commit (create/copy files and use "git add" to track)
-~~~
+This hidden directory contains Git's history of all the changes and commits we're going to make. If we ever delete it, we will lose the project's history.
 
 ## Tracking Changes to Files
 
+### Create a file:
+
 Let's create a file called `mars.txt` that contains some notes
 about the Red Planet's suitability as a base.
-(We'll use `nano` to edit the file;
-you can use whatever editor you like.
-In particular, this does not have to be the core.editor you set globally earlier.)
 
-~~~ {.bash}
-$ nano mars.txt
-~~~
-
-Type the text below into the `mars.txt` file:
+Open your favorite text editor, maybe TextWrangler on the Mac or Notepad on Windows, and start a new file. Type the following text into the new file:
 
 ~~~ {.output}
 Cold and dry, but everything is my favorite color
 ~~~
 
-`mars.txt` now contains a single line:
+Save this file in your planets_yourname directory as `mars.txt`.
 
-~~~ {.bash}
-$ ls
-~~~
-~~~ {.output}
-mars.txt
-~~~
-~~~ {.bash}
-$ cat mars.txt
-~~~
-~~~ {.output}
-Cold and dry, but everything is my favorite color
-~~~
+### Tracking our file:
 
-If we check the status of our project again,
-Git tells us that it's noticed the new file:
+We can look at this repo in the Github GUI app. Launch the Github app. From the File menu, go to Add Local Repository... and add the planets directory.
+
+![Add Local Repository](img/new_repo.png)
+
+Now you should see your file `mars.txt` with its changes.
+
+We can do this through the command line as well. These commands are the ones that the GUI app is running for you.
+
+Let's ask Git about the status of this repo:
 
 ~~~ {.bash}
 $ git status
@@ -163,99 +153,63 @@ $ git status
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
 
-The "untracked files" message means that there's a file in the directory
-that Git isn't keeping track of.
-We can tell Git that it should do so using `git add`:
+We can see that our `mars.txt` file is listed as an "untracked file." We can tell Git that it should track this file using `git add`:
 
 ~~~ {.bash}
 $ git add mars.txt
 ~~~
 
-and then check that the right thing happened:
+### Committing changes:
+
+Now let's commit the changes that we made to the file.
+
+We can do this from the app. Type a commit message into the Summary box:
+
+![Commit changes](img/summary.png)
+
+This message describes what our current set of changes did so we can figure it out two months from now.
+
+Press the Commit button to commit these changes.
+
+Or we can do this from the command line:
 
 ~~~ {.bash}
-$ git status
+$ git commit -a -m "Starting to think about Mars"
 ~~~
 ~~~ {.output}
-# On branch master
-#
-# Initial commit
-#
-# Changes to be committed:
-#   (use "git rm --cached <file>..." to unstage)
-#
-#	new file:   mars.txt
-#
-~~~
-
-Git now knows that it's supposed to keep track of `mars.txt`,
-but it hasn't yet recorded any changes for posterity as a commit.
-To get it to do that,
-we need to run one more command:
-
-~~~ {.bash}
-$ git commit -m "Starting to think about Mars"
-~~~
-~~~ {.output}
-[master (root-commit) f22b25e] Starting to think about Mars
+[master (root-commit) 189f6e7] Starting to think about Mars
  1 file changed, 1 insertion(+)
  create mode 100644 mars.txt
 ~~~
 
-When we run `git commit`,
-Git takes everything we have told it to save by using `git add`
-and stores a copy permanently inside the special `.git` directory.
-This permanent copy is called a [revision](reference.html#revision)
-and its short identifier is `f22b25e`.
-(Your revision may have another identifier.)
+Git takes all the changes we made this time and stores a record of those changes permanently inside the special `.git` directory. This set of changes is called a [revision](reference.html#revision). It assigns a unique identifier (`f22b25e`) to the commit so that we can refer to this commit later.
 
-We use the `-m` flag (for "message")
-to record a comment that will help us remember later on what we did and why.
-If we just run `git commit` without the `-m` option,
-Git will launch `nano` (or whatever other editor we configured at the start)
-so that we can write a longer message.
+> ## What are the flags for? {.callout}
+>
+> We use the `-m` flag (for "message") to record a comment that will help us remember later on what we did and why.
+> If we just run `git commit` without the `-m` option, Git will launch `nano` (or whatever other editor we configured at the start) so that we can write a longer message.
+> We use the `-a` flag to tell Git to commit the changes to all of our files in the repository.
 
-If we run `git status` now:
+### Looking at past changes:
 
-~~~ {.bash}
-$ git status
-~~~
-~~~ {.output}
-# On branch master
-nothing to commit, working directory clean
-~~~
+We can look at the repo's history to see what we've done in the past.
 
-it tells us everything is up to date.
-If we want to know what we've done recently,
-we can ask Git to show us the project's history using `git log`:
+![Git history](img/history.png)
+
+From the command line, type `git log`:
 
 ~~~ {.bash}
 $ git log
 ~~~
 ~~~ {.output}
-commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
-Date:   Thu Aug 22 09:51:46 2013 -0400
+commit 189f6e70156057a0da216b18a1bd592fd89daabf
+Author: daisieh_local <daisieh@gmail.com>
+Date:   Sat Feb 28 02:00:20 2015 -0800
 
     Starting to think about Mars
 ~~~
 
-`git log` lists all revisions  made to a repository in reverse chronological order.
-The listing for each revision includes
-the revision's full identifier
-(which starts with the same characters as
-the short identifier printed by the `git commit` command earlier),
-the revision's author,
-when it was created,
-and the log message Git was given when the revision was created.
-
-> ## Where Are My Changes? {.callout}
->
-> If we run `ls` at this point, we will still see just one file called `mars.txt`.
-> That's because Git saves information about files' history
-> in the special `.git` directory mentioned earlier
-> so that our filesystem doesn't become cluttered
-> (and so that we can't accidentally edit or delete an old version).
+You'll see all the revisions that were made in reverse chronological order. You can see the unique identifiers for each of the commits too: notice that the short identifier that we got from the commit message is just the first seven letters of this longer identifier. Git accepts either version of the identifier.
 
 ## Changing a File
 
