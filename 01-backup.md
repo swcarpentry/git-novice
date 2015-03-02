@@ -55,7 +55,11 @@ So, if a user wants to make changes to a file in a repo that is under Git contro
 
 If she wants another user to see her changes, though, she needs to tell that other user's Git copy that she made changes. This is called _pushing_ the commits to another repo. She can either push the changes directly to another user's copy, or she can push them to a centrally-designated remote repository, like one at Github.
 
+![Pushing synchronizes changes to a different copy](fig/push.svg)
+
 Everyone has made a user account at Github, right?
+
+We're going to do everything both through the GUI and through the command line. I want you to focus on the GUI and the actual operations we're performing, because you can always look up what the correct command is later.
 
 ## Setting Up
 
@@ -118,7 +122,7 @@ This hidden directory contains Git's history of all the changes and commits we'r
 Let's create a file called `mars.txt` that contains some notes
 about the Red Planet's suitability as a base.
 
-Open your favorite text editor, maybe TextWrangler on the Mac or Notepad on Windows, and start a new file. Type the following text into the new file:
+Open your favorite text editor, maybe TextWrangler on the Mac or Notepad on Windows, and start a new file. Type some text into the new file:
 
 ~~~ {.output}
 Cold and dry, but everything is my favorite color
@@ -134,7 +138,7 @@ We can look at this repo in the Github GUI app. Launch the Github app. From the 
 
 Now you should see your file `mars.txt` with its changes.
 
-We can do this through the command line as well. These commands are the ones that the GUI app is running for you.
+Remember, the Github app is just a convenient way of executing Git commands without having to use the terminal, but we should know what is going on behind the scenes too. These commands are the ones that the GUI app is running for you.
 
 Let's ask Git about the status of this repo:
 
@@ -159,9 +163,9 @@ We can see that our `mars.txt` file is listed as an "untracked file." We can tel
 $ git add mars.txt
 ~~~
 
-### Committing changes:
+### Committing for the first time:
 
-Now let's commit the changes that we made to the file.
+Now let's commit this file into our repo for the first time.
 
 We can do this from the app. Type a commit message into the Summary box:
 
@@ -182,7 +186,7 @@ $ git commit -a -m "Starting to think about Mars"
  create mode 100644 mars.txt
 ~~~
 
-Git takes all the changes we made this time and stores a record of those changes permanently inside the special `.git` directory. This set of changes is called a [revision](reference.html#revision). It assigns a unique identifier (`f22b25e`) to the commit so that we can refer to this commit later.
+Git takes all the changes we made this time and stores a record of those changes permanently inside the special `.git` directory. This set of changes is called a [revision](reference.html#revision). It assigns a unique identifier (`f22b25e`) to the commit.
 
 > ## What are the flags for? {.callout}
 >
