@@ -215,6 +215,61 @@ Date:   Sat Feb 28 02:00:20 2015 -0800
 
 You'll see all the revisions that were made in reverse chronological order. You can see the unique identifiers for each of the commits too: notice that the short identifier that we got from the commit message is just the first seven letters of this longer identifier. Git accepts either version of the identifier.
 
+## Branches
+
+We could certainly use Git with just these unique identifiers as our labels for our work, and ask Git what label went with which commit went with which set. But this isn't really the way we usually work, is it?
+
+Usually you're trying to accomplish a particular task and you know you're going to make some changes to the repository to achieve this. It'd be nice to have a human-readable label for those changes, to make it easier to visualize and to make it easier to share with others. Branches let us achieve this.
+
+Think of the commit identifiers as our trail of breadcrumbs that we are leaving behind us as we work. When we make a branch, we are changing to a different type of breadcrumb: maybe we start dropping pieces of pumpernickel behind us instead of sourdough.
+
+When you start your new branch `pumpernickel`, you keep the trail of commits that you made before you branched, but any new commits you make will be using the pumpernickel crumbs.
+
+![Branches let you note which trail of commits you're making](fig/branch.svg)
+
+The original trail of breadcrumbs, the sourdough ones in this analogy, have the default branch name of `master`. It's a good practice to keep `master` as the base branch of all the work you do in a repository, and make new branches to do work on new subprojects.
+
+Let's make a branch now. We want to start a new project where we compare the different planets in separate files. Switch to the Github app. Notice that right now, it tells us we're in branch `master` in several different places, and when we committed changes, the button said that we were committing to master.
+
+Make a branch and call it `separate-files`.
+
+![Branch dialog](img/branch.png)
+
+Now, we can switch back to the text editor, make a new file called `jupiter.txt`. Type some text into the file and save it to our `planets_yourname` directory.
+
+~~~ {.output}
+Very attractive big red storm here.
+~~~
+
+In the Github app, commit your new file and changes to the branch `separate-files`. Now, switch branches back to `master` using the pull-down menu. You'll see that the history now reflects what we did before we made the new file. If you look inside your `planets` directory, you'll see that there is only one file now, the `mars.txt` file. If you switch branches back to `separate-files`, you should see `jupiter.txt` come back.
+
+The command line version of this is a bit more confusing. We create a branch by calling
+
+~~~ {.bash}
+$ git branch separate-files
+~~~
+
+We list the available branches using `git branch` with no additional arguments.
+
+~~~ {.bash}
+$ git branch
+~~~
+~~~ {.output}
+* master
+  separate-files
+~~~
+
+But we're not on our new branch! In order to switch branches, we have to use `git checkout`.
+
+~~~ {.bash}
+$ git checkout separate-files
+~~~
+~~~ {.output}
+Switched to branch 'separate-files'
+~~~
+
+Try playing around with the command line and the GUI: they should reflect the same information.
+
 ## Changing a File
 
 Now suppose Dracula adds more information to the file.

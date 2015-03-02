@@ -69,7 +69,11 @@
 </div>
 <p>So, if a user wants to make changes to a file in a repo that is under Git control, she can make changes to her own copy of the file and then tell Git to save those changes in its history. This is called <em>committing</em> the changes, and it saves the changes in her own copy of the repo on her own computer.</p>
 <p>If she wants another user to see her changes, though, she needs to tell that other user's Git copy that she made changes. This is called <em>pushing</em> the commits to another repo. She can either push the changes directly to another user's copy, or she can push them to a centrally-designated remote repository, like one at Github.</p>
+<div class="figure">
+<img src="fig/push.svg" alt="Pushing synchronizes changes to a different copy" /><p class="caption">Pushing synchronizes changes to a different copy</p>
+</div>
 <p>Everyone has made a user account at Github, right?</p>
+<p>We're going to do everything both through the GUI and through the command line. I want you to focus on the GUI and the actual operations we're performing, because you can always look up what the correct command is later.</p>
 <h2 id="setting-up">Setting Up</h2>
 <p>The first time we use Git on a new machine, we need to make sure Git knows a few things. We can configure some basic settings with <code>git config</code>:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global user.name <span class="st">&quot;Vlad Dracula&quot;</span>
@@ -97,7 +101,7 @@ $ <span class="kw">git</span> config --global core.editor <span class="st">&quot
 <h2 id="tracking-changes-to-files">Tracking Changes to Files</h2>
 <h3 id="create-a-file">Create a file:</h3>
 <p>Let's create a file called <code>mars.txt</code> that contains some notes about the Red Planet's suitability as a base.</p>
-<p>Open your favorite text editor, maybe TextWrangler on the Mac or Notepad on Windows, and start a new file. Type the following text into the new file:</p>
+<p>Open your favorite text editor, maybe TextWrangler on the Mac or Notepad on Windows, and start a new file. Type some text into the new file:</p>
 <pre class="output"><code>Cold and dry, but everything is my favorite color</code></pre>
 <p>Save this file in your planets_yourname directory as <code>mars.txt</code>.</p>
 <h3 id="tracking-our-file">Tracking our file:</h3>
@@ -106,7 +110,7 @@ $ <span class="kw">git</span> config --global core.editor <span class="st">&quot
 <img src="img/new_repo.png" alt="Add Local Repository" /><p class="caption">Add Local Repository</p>
 </div>
 <p>Now you should see your file <code>mars.txt</code> with its changes.</p>
-<p>We can do this through the command line as well. These commands are the ones that the GUI app is running for you.</p>
+<p>Remember, the Github app is just a convenient way of executing Git commands without having to use the terminal, but we should know what is going on behind the scenes too. These commands are the ones that the GUI app is running for you.</p>
 <p>Let's ask Git about the status of this repo:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
 <pre class="output"><code># On branch master
@@ -120,8 +124,8 @@ $ <span class="kw">git</span> config --global core.editor <span class="st">&quot
 nothing added to commit but untracked files present (use &quot;git add&quot; to track)</code></pre>
 <p>We can see that our <code>mars.txt</code> file is listed as an &quot;untracked file.&quot; We can tell Git that it should track this file using <code>git add</code>:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add mars.txt</code></pre>
-<h3 id="committing-changes">Committing changes:</h3>
-<p>Now let's commit the changes that we made to the file.</p>
+<h3 id="committing-for-the-first-time">Committing for the first time:</h3>
+<p>Now let's commit this file into our repo for the first time.</p>
 <p>We can do this from the app. Type a commit message into the Summary box:</p>
 <div class="figure">
 <img src="img/summary.png" alt="Commit changes" /><p class="caption">Commit changes</p>
@@ -133,7 +137,7 @@ nothing added to commit but untracked files present (use &quot;git add&quot; to 
 <pre class="output"><code>[master (root-commit) 189f6e7] Starting to think about Mars
  1 file changed, 1 insertion(+)
  create mode 100644 mars.txt</code></pre>
-<p>Git takes all the changes we made this time and stores a record of those changes permanently inside the special <code>.git</code> directory. This set of changes is called a <a href="reference.html#revision">revision</a>. It assigns a unique identifier (<code>f22b25e</code>) to the commit so that we can refer to this commit later.</p>
+<p>Git takes all the changes we made this time and stores a record of those changes permanently inside the special <code>.git</code> directory. This set of changes is called a <a href="reference.html#revision">revision</a>. It assigns a unique identifier (<code>f22b25e</code>) to the commit.</p>
 <div id="what-are-the-flags-for" class="callout">
 <h2>What are the flags for?</h2>
 <p>We use the <code>-m</code> flag (for &quot;message&quot;) to record a comment that will help us remember later on what we did and why. If we just run <code>git commit</code> without the <code>-m</code> option, Git will launch <code>nano</code> (or whatever other editor we configured at the start) so that we can write a longer message. We use the <code>-a</code> flag to tell Git to commit the changes to all of our files in the repository.</p>
@@ -151,6 +155,29 @@ Date:   Sat Feb 28 02:00:20 2015 -0800
 
     Starting to think about Mars</code></pre>
 <p>You'll see all the revisions that were made in reverse chronological order. You can see the unique identifiers for each of the commits too: notice that the short identifier that we got from the commit message is just the first seven letters of this longer identifier. Git accepts either version of the identifier.</p>
+<h2 id="branches">Branches</h2>
+<p>We could certainly use Git with just these unique identifiers as our labels for our work, and ask Git what label went with which commit went with which set. But this isn't really the way we usually work, is it?</p>
+<p>Usually you're trying to accomplish a particular task and you know you're going to make some changes to the repository to achieve this. It'd be nice to have a human-readable label for those changes, to make it easier to visualize and to make it easier to share with others. Branches let us achieve this.</p>
+<p>Think of the commit identifiers as our trail of breadcrumbs that we are leaving behind us as we work. When we make a branch, we are changing to a different type of breadcrumb: maybe we start dropping pieces of pumpernickel behind us instead of sourdough.</p>
+<p>When you start your new branch <code>pumpernickel</code>, you keep the trail of commits that you made before you branched, but any new commits you make will be using the pumpernickel crumbs.</p>
+<div class="figure">
+<img src="fig/branch.svg" alt="Branches let you note which trail of commits you&#39;re making" /><p class="caption">Branches let you note which trail of commits you're making</p>
+</div>
+<p>The original trail of breadcrumbs, the sourdough ones in this analogy, have the default branch name of <code>master</code>. It's a good practice to keep <code>master</code> as the base branch of all the work you do in a repository, and make new branches to do work on new subprojects.</p>
+<p>Let's make a branch now. We want to start a new project where we compare the different planets in separate files. Switch to the Github app. Notice that right now, it tells us we're in branch <code>master</code> in several different places, and when we committed changes, the button said that we were committing to master.</p>
+<p>Make a branch and call it <code>separate-files</code>.</p>
+<div class="figure">
+<img src="img/branch.png" alt="Branch dialog" /><p class="caption">Branch dialog</p>
+</div>
+<p>Now, we can switch back to the text editor, make a new file called <code>jupiter.txt</code>. Type some text into the file and save it to our <code>planets_yourname</code> directory.</p>
+<pre class="output"><code>Very attractive big red storm here.</code></pre>
+<p>In the Github app, commit your new file and changes to the branch <code>separate-files</code>. Now, switch branches back to <code>master</code> using the pull-down menu. You'll see that the history now reflects what we did before we made the new file. If you look inside your <code>planets</code> directory, you'll see that there is only one file now, the <code>mars.txt</code> file. If you switch branches back to <code>separate-files</code>, you should see <code>jupiter.txt</code> come back.</p>
+<p>The command line version of this is a bit more confusing. We create a branch by calling</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> branch separate-files</code></pre>
+<p>We list the available branches using <code>git branch</code> with no additional arguments.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> branch</code></pre>
+<pre class="output"><code>* master
+  separate-files</code></pre>
 <h2 id="changing-a-file">Changing a File</h2>
 <p>Now suppose Dracula adds more information to the file. (Again, we'll edit with <code>nano</code> and then <code>cat</code> the file to show its contents; you may use a different editor, and don't need to <code>cat</code>.)</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> mars.txt
