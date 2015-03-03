@@ -6,7 +6,7 @@ subtitle: Instructor's Guide
 Version control might be the most important topic we teach,
 but Git is definitely the most complicated tool.
 However,
-GitHub presently dominates the open software forge landscape,
+GitHub presently dominates the open software repository landscape,
 so we have to help novices learn just enough Git
 to feel they can and should learn more on their own.
 
@@ -31,6 +31,18 @@ We close with material on licensing because:
 
 ## Teaching Notes
 
+*   Try to make it clear that Git and GitHub are not the same thing:
+    Git is an open source version control tool,
+    GitHub is a company that's built a really useful website on top of it.
+
+*   Ask, "Who uses 'undo' in their editor?"
+    They say, "'Undo' is the simplest form of version control."
+
+*   Decide in advance whether all the learners will work in one shared repository,
+    or whether they will work in pairs (or other small groups) in separate repositories.
+    The former is easier to set up;
+    the latter runs more smoothly.
+
 *   Make sure the network is working *before* starting this lesson.
 
 *   Give learners a five-minute overview of what version control does for them
@@ -49,23 +61,19 @@ We close with material on licensing because:
     to motivate version control as a better way to collaborate
     and as a better way to back work up.
 
-*   Version control is typically taught after the shell,
-    so collect learners' names during that session
-    and create a repository for them to share
-    with their names as both their IDs and their passwords.
+*   Version control is usually not the first subject in a workshop,
+    so get learners to create a GitHub account after the session before.
 
-*   If your learners are advanced enough to be comfortable SSH,
+*   If your learners are advanced enough to be comfortable with SSH,
     tell them they can use keys to authenticate on GitHub instead of passwords,
     but don't try to set this up during class:
     it takes too long,
     and is a distraction from the core ideas of the lesson.
 
-*   Be very clear what files learners are to edit
-    and what user IDs they are to use
-    when giving instructions:
-    it is common for them to edit the file the instructor is working on
-    rather than their own,
-    or to use the instructor's user ID and password when committing.
+*   When giving instructions,
+    be very clear which files learners are to edit:
+    it is common for them to (for example) edit the instructor's biography rather than their own,
+    or to use the instructor's user ID when committing.
 
 *   Be equally clear *when* they are to edit things:
     it's also common for someone to edit the file the instructor is editing
@@ -86,7 +94,7 @@ We close with material on licensing because:
     instructors should demo a GUI on their desktop at some point during this lesson
     and point learners at [this page](http://git-scm.com/downloads/guis).
 
-*   Instructors should also show learners graphical diff/merge tools like
+*   Instructors should show learners graphical diff/merge tools like
     [DiffMerge](https://sourcegear.com/diffmerge/).
 
 *   When appropriate,
@@ -94,6 +102,15 @@ We close with material on licensing because:
     primarily because of GitHub's growing popularity:
     CVS and Subversion are now seen as legacy systems,
     and Mercurial isn't nearly as widely used in the sciences right now.
+
+*   One thing that has caused confusion comes up when recovering old versions
+    towards the end of [the first topic](01-backup.html).
+    If, instead of doing `$ git checkout f22b25e mars.txt`,
+    someone does `$ git checkout f22b25e`,
+    they wind up in the "detached HEAD" state and confusion abounds.
+    It's then possible to keep on committing,
+    but things like `git push origin master` a bit later will not give easily comprehensible results.
+    It also makes it look like commits can be lost.
 
 ## Text Editor
 
