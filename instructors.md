@@ -112,17 +112,17 @@ We close with material on licensing because:
     but things like `git push origin master` a bit later will not give easily comprehensible results.
     It also makes it look like commits can be lost.
 
-*	When teaching the collaboration and conflict sections of the lesson role playing between
-	two instructors can be effective. One instructor can play the role of the repository 
-	owner, while the second instructor can play the role of the collaborator. If it is possible,
-	try to use two projectors so that the computer screens of both instructors can be seen. This 
-	makes for a very clear illustration to the students as to who does what. It is also effective
-	to pair up students during this lesson and assign one member of the pair to follow the
-	role of the owner and the other the role of the collaborator. In this setup, challenges
-	can include asking the collaborator to make a change, commit it and push the change to 
-	the remote repository so that the owner can then retreive it, and vice-versa. The role 
-	playing between the instructors can get a bit "dramatic" in the conflicts part of the 
-	lesson if the instructors want to inject some humor into the room.
+*   When teaching the collaboration and conflict sections of the lesson role playing between
+    two instructors can be effective. One instructor can play the role of the repository
+    owner, while the second instructor can play the role of the collaborator. If it is possible,
+    try to use two projectors so that the computer screens of both instructors can be seen. This
+    makes for a very clear illustration to the students as to who does what. It is also effective
+    to pair up students during this lesson and assign one member of the pair to follow the
+    role of the owner and the other the role of the collaborator. In this setup, challenges
+    can include asking the collaborator to make a change, commit it and push the change to
+    the remote repository so that the owner can then retreive it, and vice-versa. The role
+    playing between the instructors can get a bit "dramatic" in the conflicts part of the
+    lesson if the instructors want to inject some humor into the room.
 	
 ## Text Editor
 
