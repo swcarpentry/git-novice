@@ -29,7 +29,7 @@
         <div class="span10 offset1">
           <h1 class="title">Version Control with Git</h1>
           <h2 class="subtitle">Instructor's Guide</h2>
-<p>Version control might be the most important topic we teach, but Git is definitely the most complicated tool. However, GitHub presently dominates the open software forge landscape, so we have to help novices learn just enough Git to feel they can and should learn more on their own.</p>
+<p>Version control might be the most important topic we teach, but Git is definitely the most complicated tool. However, GitHub presently dominates the open software repository landscape, so we have to help novices learn just enough Git to feel they can and should learn more on their own.</p>
 <p>This is why we don't teach branching: while it is a power tool in the hands of a knowledgeable user, it is an extra cognitive burden for someone who is new to the idea of version control. This is also why we don't get into hashes and commit objects with novices, but try instead to convince them that version control is:</p>
 <ol style="list-style-type: decimal">
 <li>a better backup system;</li>
@@ -43,16 +43,20 @@
 </ol>
 <h2 id="teaching-notes">Teaching Notes</h2>
 <ul>
+<li><p>Try to make it clear that Git and GitHub are not the same thing: Git is an open source version control tool, GitHub is a company that's built a really useful website on top of it.</p></li>
+<li><p>Ask, &quot;Who uses 'undo' in their editor?&quot; They say, &quot;'Undo' is the simplest form of version control.&quot;</p></li>
+<li><p>Decide in advance whether all the learners will work in one shared repository, or whether they will work in pairs (or other small groups) in separate repositories. The former is easier to set up; the latter runs more smoothly.</p></li>
 <li><p>Make sure the network is working <em>before</em> starting this lesson.</p></li>
 <li><p>Give learners a five-minute overview of what version control does for them before diving into the watch-and-do practicals. Most of them will have tried to co-author papers by emailing files back and forth, or will have biked into the office only to realize that the USB key with last night's work is still on the kitchen table. Instructors can also make jokes about directories with names like &quot;final version&quot;, &quot;final version revised&quot;, &quot;final version with reviewer three's corrections&quot;, &quot;really final version&quot;, and, &quot;come on this really has to be the last version&quot; to motivate version control as a better way to collaborate and as a better way to back work up.</p></li>
-<li><p>Version control is typically taught after the shell, so collect learners' names during that session and create a repository for them to share with their names as both their IDs and their passwords.</p></li>
-<li><p>If your learners are advanced enough to be comfortable SSH, tell them they can use keys to authenticate on GitHub instead of passwords, but don't try to set this up during class: it takes too long, and is a distraction from the core ideas of the lesson.</p></li>
-<li><p>Be very clear what files learners are to edit and what user IDs they are to use when giving instructions: it is common for them to edit the file the instructor is working on rather than their own, or to use the instructor's user ID and password when committing.</p></li>
+<li><p>Version control is usually not the first subject in a workshop, so get learners to create a GitHub account after the session before.</p></li>
+<li><p>If your learners are advanced enough to be comfortable with SSH, tell them they can use keys to authenticate on GitHub instead of passwords, but don't try to set this up during class: it takes too long, and is a distraction from the core ideas of the lesson.</p></li>
+<li><p>When giving instructions, be very clear which files learners are to edit: it is common for them to (for example) edit the instructor's biography rather than their own, or to use the instructor's user ID when committing.</p></li>
 <li><p>Be equally clear <em>when</em> they are to edit things: it's also common for someone to edit the file the instructor is editing and commit changes while the instructor is explaining what's going on, so that a conflict occurs when the instructor comes to commit the file.</p></li>
 <li><p>If some learners are using Windows, there will inevitably be issues merging files with different line endings. (Even if everyone's on some flavor of Unix, different editors may or may not add a newline to the last line of a file.) Take a moment to explain these issues, since learners will almost certainly trip over them again.</p></li>
 <li><p>We don't use a Git GUI in these notes because we haven't found one that installs easily and runs reliably on the three major operating systems, and because we want learners to understand what commands are being run. That said, instructors should demo a GUI on their desktop at some point during this lesson and point learners at <a href="http://git-scm.com/downloads/guis">this page</a>.</p></li>
-<li><p>Instructors should also show learners graphical diff/merge tools like <a href="https://sourcegear.com/diffmerge/">DiffMerge</a>.</p></li>
+<li><p>Instructors should show learners graphical diff/merge tools like <a href="https://sourcegear.com/diffmerge/">DiffMerge</a>.</p></li>
 <li><p>When appropriate, explain that we teach Git rather than CVS, Subversion, or Mercurial primarily because of GitHub's growing popularity: CVS and Subversion are now seen as legacy systems, and Mercurial isn't nearly as widely used in the sciences right now.</p></li>
+<li><p>One thing that has caused confusion comes up when recovering old versions towards the end of <a href="01-backup.html">the first topic</a>. If, instead of doing <code>$ git checkout f22b25e mars.txt</code>, someone does <code>$ git checkout f22b25e</code>, they wind up in the &quot;detached HEAD&quot; state and confusion abounds. It's then possible to keep on committing, but things like <code>git push origin master</code> a bit later will not give easily comprehensible results. It also makes it look like commits can be lost.</p></li>
 </ul>
 <h2 id="text-editor">Text Editor</h2>
 <p>We suggest instructors and students use <code>nano</code> as the text editor for this lessons because:</p>
