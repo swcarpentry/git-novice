@@ -29,21 +29,45 @@
         <div class="span10 offset1">
           <h1 class="title">Version Control with Git</h1>
           <h2 class="subtitle">Instructor's Guide</h2>
-<h2 id="legend">Legend</h2>
-<p>Wolfman and Dracula will work together in one project.</p>
-<h2 id="overall">Overall</h2>
+<p>Version control might be the most important topic we teach, but Git is definitely the most complicated tool. However, GitHub presently dominates the open software forge landscape, so we have to help novices learn just enough Git to feel they can and should learn more on their own.</p>
+<p>This is why we don't teach branching: while it is a power tool in the hands of a knowledgeable user, it is an extra cognitive burden for someone who is new to the idea of version control. This is also why we don't get into hashes and commit objects with novices, but try instead to convince them that version control is:</p>
+<ol style="list-style-type: decimal">
+<li>a better backup system;</li>
+<li>a better Dropbox; and</li>
+<li>a better way to collaborate than mailing files back and forth.</li>
+</ol>
+<p>We close with material on licensing because:</p>
+<ol style="list-style-type: decimal">
+<li>questions about who owns what, or can use what, arise naturally once we start talking about using public services like GitHub to store files; and</li>
+<li>the discussion gives learners a chance to catch their breath after what is often a frustrating couple of hours.</li>
+</ol>
+<h2 id="teaching-notes">Teaching Notes</h2>
 <ul>
-<li><p>FIXME</p></li>
-<li><p>FIXME</p></li>
+<li><p>Make sure the network is working <em>before</em> starting this lesson.</p></li>
+<li><p>Give learners a five-minute overview of what version control does for them before diving into the watch-and-do practicals. Most of them will have tried to co-author papers by emailing files back and forth, or will have biked into the office only to realize that the USB key with last night's work is still on the kitchen table. Instructors can also make jokes about directories with names like &quot;final version&quot;, &quot;final version revised&quot;, &quot;final version with reviewer three's corrections&quot;, &quot;really final version&quot;, and, &quot;come on this really has to be the last version&quot; to motivate version control as a better way to collaborate and as a better way to back work up.</p></li>
+<li><p>Version control is typically taught after the shell, so collect learners' names during that session and create a repository for them to share with their names as both their IDs and their passwords.</p></li>
+<li><p>If your learners are advanced enough to be comfortable SSH, tell them they can use keys to authenticate on GitHub instead of passwords, but don't try to set this up during class: it takes too long, and is a distraction from the core ideas of the lesson.</p></li>
+<li><p>Be very clear what files learners are to edit and what user IDs they are to use when giving instructions: it is common for them to edit the file the instructor is working on rather than their own, or to use the instructor's user ID and password when committing.</p></li>
+<li><p>Be equally clear <em>when</em> they are to edit things: it's also common for someone to edit the file the instructor is editing and commit changes while the instructor is explaining what's going on, so that a conflict occurs when the instructor comes to commit the file.</p></li>
+<li><p>If some learners are using Windows, there will inevitably be issues merging files with different line endings. (Even if everyone's on some flavor of Unix, different editors may or may not add a newline to the last line of a file.) Take a moment to explain these issues, since learners will almost certainly trip over them again.</p></li>
+<li><p>We don't use a Git GUI in these notes because we haven't found one that installs easily and runs reliably on the three major operating systems, and because we want learners to understand what commands are being run. That said, instructors should demo a GUI on their desktop at some point during this lesson and point learners at <a href="http://git-scm.com/downloads/guis">this page</a>.</p></li>
+<li><p>Instructors should also show learners graphical diff/merge tools like <a href="https://sourcegear.com/diffmerge/">DiffMerge</a>.</p></li>
+<li><p>When appropriate, explain that we teach Git rather than CVS, Subversion, or Mercurial primarily because of GitHub's growing popularity: CVS and Subversion are now seen as legacy systems, and Mercurial isn't nearly as widely used in the sciences right now.</p></li>
 </ul>
-<h2 id="a-better-kind-of-backup"><a href="01-backup.html">A Better Kind of Backup</a></h2>
-<p>FIXME</p>
-<h2 id="collaborating"><a href="02-collab.html">Collaborating</a></h2>
-<p>FIXME</p>
-<h2 id="conflicts"><a href="03-conflict.html">Conflicts</a></h2>
-<p>FIXME</p>
-<h2 id="open-science"><a href="04-open.html">Open Science</a></h2>
-<p>FIXME</p>
+<h2 id="text-editor">Text Editor</h2>
+<p>We suggest instructors and students use <code>nano</code> as the text editor for this lessons because:</p>
+<ul>
+<li>it runs in all three major operating systems,</li>
+<li>it runs inside the shell (switching windows can be confusing to students), and</li>
+<li>it has shortcut help at the bottom of the window.</li>
+</ul>
+<p>Please point out to students during setup that they can and should use another text editor if they're already familiar with it. Below you will find some tips that could help solving problems when using other editors.</p>
+<h3 id="gedit">Gedit</h3>
+<p>You should use</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global core.editor <span class="st">&#39;gedit --standalone&#39;</span></code></pre>
+<p>to avoid this error occurring if the student already has a Gedit window open:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> commit</code></pre>
+<pre class="error"><code>Aborting commit due to empty commit message.</code></pre>
         </div>
       </div>
       <div class="footer">
