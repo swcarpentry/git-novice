@@ -10,10 +10,9 @@ minutes: 60
 > *   Explain how Git and distributed version control works.
 > *   Go through the modify-add-commit cycle for single and multiple files
 >     and explain where information is stored at each stage.
-> *   Discuss how branching works.
-> *   Identify and use Git revision numbers.
 > *   Compare files with old versions of themselves.
 > *   Restore old versions of files.
+> *   Identify and use Git revision numbers.
 > *   Configure Git to ignore specific files,
 >     and explain why it is sometimes useful to do so.
 
@@ -56,10 +55,6 @@ So, if a user wants to make changes to a file in a repo that is under Git contro
 If she wants another user to see her changes, though, she needs to tell that other user's Git copy that she made changes. This is called _pushing_ the commits to another repo. She can either push the changes directly to another user's copy, or she can push them to a centrally-designated remote repository, like one at Github.
 
 ![Pushing synchronizes changes to a different copy](fig/push.svg)
-
-Everyone has made a user account at Github, right?
-
-We're going to do everything both through the GUI and through the command line. I want you to focus on the GUI and the actual operations we're performing, because you can always look up what the correct command is later.
 
 ## Setting Up
 
@@ -138,8 +133,6 @@ We can look at this repo in the Github GUI app. Launch the Github app. From the 
 
 Now you should see your file `mars.txt` with its changes.
 
-Remember, the Github app is just a convenient way of executing Git commands without having to use the terminal, but we should know what is going on behind the scenes too. These commands are the ones that the GUI app is running for you.
-
 Let's ask Git about the status of this repo:
 
 ~~~ {.bash}
@@ -167,18 +160,8 @@ $ git add mars.txt
 
 Now let's commit this file into our repo for the first time.
 
-We can do this from the app. Type a commit message into the Summary box:
-
-![Commit changes](img/summary.png)
-
-This message describes what our current set of changes did so we can figure it out two months from now.
-
-Press the Commit button to commit these changes.
-
-Or we can do this from the command line:
-
 ~~~ {.bash}
-$ git commit -a -m "Starting to think about Mars"
+$ git commit -m "Starting to think about Mars"
 ~~~
 ~~~ {.output}
 [master (root-commit) 189f6e7] Starting to think about Mars
@@ -186,13 +169,12 @@ $ git commit -a -m "Starting to think about Mars"
  create mode 100644 mars.txt
 ~~~
 
-Git takes all the changes we made this time and stores a record of those changes permanently inside the special `.git` directory. This set of changes is called a [revision](reference.html#revision). It assigns a unique identifier (`f22b25e`) to the commit.
+Git takes all the changes we made this time and stores a record of those changes permanently inside the special `.git` directory. This set of changes is called a [revision](reference.html#revision). It assigns a unique identifier (`189f6e7`) to the commit.
 
 > ## What are the flags for? {.callout}
 >
 > We use the `-m` flag (for "message") to record a comment that will help us remember later on what we did and why.
 > If we just run `git commit` without the `-m` option, Git will launch `nano` (or whatever other editor we configured at the start) so that we can write a longer message.
-> We use the `-a` flag to tell Git to commit the changes to all of our files in the repository.
 
 ### Looking at past changes:
 
@@ -215,77 +197,16 @@ Date:   Sat Feb 28 02:00:20 2015 -0800
 
 You'll see all the revisions that were made in reverse chronological order. You can see the unique identifiers for each of the commits too: notice that the short identifier that we got from the commit message is just the first seven letters of this longer identifier. Git accepts either version of the identifier.
 
-## Branches
-
-We could certainly use Git with just these unique identifiers as our labels for our work, and ask Git what label went with which commit went with which set. But this isn't really the way we usually work, is it?
-
-Usually you're trying to accomplish a particular task and you know you're going to make some changes to the repository to achieve this. It'd be nice to have a human-readable label for those changes, to make it easier to visualize and to make it easier to share with others. Branches let us achieve this.
-
-Think of the commit identifiers as our trail of breadcrumbs that we are leaving behind us as we work. When we make a branch, we are changing to a different type of breadcrumb: maybe we start dropping pieces of pumpernickel behind us instead of sourdough.
-
-When you start your new branch `pumpernickel`, you keep the trail of commits that you made before you branched, but any new commits you make will be using the pumpernickel crumbs.
-
-![Branches let you note which trail of commits you're making](fig/branch.svg)
-
-The original trail of breadcrumbs, the sourdough ones in this analogy, have the default branch name of `master`. It's a good practice to keep `master` as the base branch of all the work you do in a repository, and make new branches to do work on new subprojects.
-
-Let's make a branch now. We want to start a new project where we compare the different planets in separate files. Switch to the Github app. Notice that right now, it tells us we're in branch `master` in several different places, and when we committed changes, the button said that we were committing to master.
-
-Make a branch and call it `separate-files`.
-
-![Branch dialog](img/branch.png)
-
-Now, we can switch back to the text editor, make a new file called `jupiter.txt`. Type some text into the file and save it to our `planets_yourname` directory.
-
-~~~ {.output}
-Very attractive big red storm here.
-~~~
-
-In the Github app, commit your new file and changes to the branch `separate-files`. Now, switch branches back to `master` using the pull-down menu. You'll see that the history now reflects what we did before we made the new file. If you look inside your `planets` directory, you'll see that there is only one file now, the `mars.txt` file. If you switch branches back to `separate-files`, you should see `jupiter.txt` come back.
-
-The command line version of this is a bit more confusing. We create a branch by calling
-
-~~~ {.bash}
-$ git branch separate-files
-~~~
-
-We list the available branches using `git branch` with no additional arguments.
-
-~~~ {.bash}
-$ git branch
-~~~
-~~~ {.output}
-* master
-  separate-files
-~~~
-
-But we're not on our new branch! In order to switch branches, we have to use `git checkout`.
-
-~~~ {.bash}
-$ git checkout separate-files
-~~~
-~~~ {.output}
-Switched to branch 'separate-files'
-~~~
-
-Try playing around with the command line and the GUI: they should reflect the same information.
-
 ## Changing a File
 
-Now suppose Dracula adds more information to the file.
-(Again, we'll edit with `nano` and then `cat` the file to show its contents;
-you may use a different editor, and don't need to `cat`.)
+Now suppose Dracula adds more information to the file. Go to the text editor where you have `mars.txt` open, and make some changes to the file:
 
-~~~ {.bash}
-$ nano mars.txt
-$ cat mars.txt
-~~~
 ~~~ {.output}
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 ~~~
 
-When we run `git status` now,
+Now go back to your terminal window. When we run `git status` now,
 it tells us that a file it already knows about has been modified:
 
 ~~~ {.bash}
@@ -305,13 +226,13 @@ no changes added to commit (use "git add" and/or "git commit -a")
 The last line is the key phrase:
 "no changes added to commit".
 We have changed this file,
-but we haven't told Git we will want to save those changes
+but we haven't told Git we will want it to record these changes
 (which we do with `git add`)
-much less actually saved them (which we do with `git commit`).
+much less actually committed them.
 So let's do that now. It is good practice to always review
 our changes before saving them. We do this using `git diff`.
 This shows us the differences between the current state
-of the file and the most recently saved version:
+of the file and the most recently committed version:
 
 ~~~ {.bash}
 $ git diff
@@ -372,19 +293,9 @@ $ git commit -m "Concerns about Mars's moons on my furry friend"
 ~~~
 
 Git insists that we add files to the set we want to commit
-before actually committing anything
-because we may not want to commit everything at once.
-For example,
-suppose we're adding a few citations to our supervisor's work
-to our thesis.
-We might want to commit those additions,
-and the corresponding addition to the bibliography,
-but *not* commit the work we're doing on the conclusion
-(which we haven't finished yet).
+before actually committing anything. It's sort of a double-check to make sure that you know what you're committing before you do it. For example, if you accidentally put some other file into this git-tracked directory, you probably don't want to introduce it into your git history. By explicitly adding the file first, you're saying that these are exactly the changes I want to commit.
 
-To allow for this,
-Git has a special staging area
-where it keeps track of things that have been added to
+Git has a special staging area where it keeps track of things that have been added to
 the current [change set](reference.html#change-set)
 but not yet committed.
 `git add` puts things in this area,
@@ -393,20 +304,15 @@ and `git commit` then copies them to long-term storage (as a commit):
 ![The Git Staging Area](fig/git-staging-area.svg)
 
 Let's watch as our changes to a file move from our editor
-to the staging area
-and into long-term storage.
-First,
-we'll add another line to the file:
+to the staging area and into the repository.
+First, add another line to the file:
 
-~~~ {.bash}
-$ nano mars.txt
-$ cat mars.txt
-~~~
 ~~~ {.output}
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 ~~~
+
 ~~~ {.bash}
 $ git diff
 ~~~
@@ -432,12 +338,10 @@ $ git add mars.txt
 $ git diff
 ~~~
 
-There is no output:
-as far as Git can tell,
+There is no output: as far as Git can tell,
 there's no difference between what it's been asked to save permanently
 and what's currently in the directory.
-However,
-if we do this:
+However, if we do this:
 
 ~~~ {.bash}
 $ git diff --staged
@@ -456,7 +360,7 @@ index 315bf3a..b36abfd 100644
 it shows us the difference between
 the last committed change
 and what's in the staging area.
-Let's save our changes:
+Let's commit our changes to the repo:
 
 ~~~ {.bash}
 $ git commit -m "Thoughts about the climate"
@@ -550,49 +454,6 @@ so `HEAD~1` (pronounced "head minus one")
 means "the previous revision",
 while `HEAD~123` goes back 123 revisions from where we are now.
 
-We can also refer to revisions using
-those long strings of digits and letters
-that `git log` displays.
-These are unique IDs for the changes,
-and "unique" really does mean unique:
-every change to any set of files on any machine
-has a unique 40-character identifier.
-Our first commit was given the ID
-f22b25e3233b4645dabd0d81e651fe074bd8e73b,
-so let's try this:
-
-~~~ {.bash}
-$ git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b mars.txt
-~~~
-~~~ {.output}
-diff --git a/mars.txt b/mars.txt
-index df0654a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1 +1,3 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
-~~~
-
-That's the right answer,
-but typing random 40-character strings is annoying,
-so Git lets us use just the first few:
-
-~~~ {.bash}
-$ git diff f22b25e mars.txt
-~~~
-~~~ {.output}
-diff --git a/mars.txt b/mars.txt
-index df0654a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1 +1,3 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
-~~~
-
 ## Recovering Old Versions
 
 All right:
@@ -643,12 +504,6 @@ As you might guess from its name,
 In this case,
 we're telling Git that we want to recover the version of the file recorded in `HEAD`,
 which is the last saved revision.
-If we want to go back even further,
-we can use a revision identifier instead:
-
-~~~ {.bash}
-$ git checkout f22b25e mars.txt
-~~~
 
 It's important to remember that
 we must use the revision number that identifies the state of the repository
@@ -689,6 +544,41 @@ without also undoing changes made later to the conclusion.
 If the introduction and conclusion are stored in separate files,
 on the other hand,
 moving backward and forward in time becomes much easier.
+
+We can also refer to revisions using
+those long strings of digits and letters
+that `git log` displays.
+These are unique IDs for the changes,
+and "unique" really does mean unique:
+every change to any set of files on any machine
+has a unique 40-character identifier.
+Our first commit was given the ID
+f22b25e3233b4645dabd0d81e651fe074bd8e73b,
+so let's try this:
+
+~~~ {.bash}
+$ git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b mars.txt
+~~~
+~~~ {.output}
+diff --git a/mars.txt b/mars.txt
+index df0654a..b36abfd 100644
+--- a/mars.txt
++++ b/mars.txt
+@@ -1 +1,3 @@
+ Cold and dry, but everything is my favorite color
++The two moons may be a problem for Wolfman
++But the Mummy will appreciate the lack of humidity
+~~~
+
+We can checkout a revision using the specific identifier as well: this way we can reach even older commits in an absolute fashion.
+
+~~~ {.bash}
+$ git checkout f22b25e mars.txt
+~~~
+
+Note that here we just used the first seven characters of the identifier: Git is fine with using this shortened form as well.
+
+Using these identifiers (called SHAs) is absolutely the safest way to identify a particular revision, but there are easier ways to identify specific revisions. We'll discuss those later.
 
 ## Ignoring Things
 

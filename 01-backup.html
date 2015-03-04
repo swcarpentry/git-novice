@@ -35,10 +35,9 @@
 <li>Discuss what version control is and how it works.</li>
 <li>Explain how Git and distributed version control works.</li>
 <li>Go through the modify-add-commit cycle for single and multiple files and explain where information is stored at each stage.</li>
-<li>Discuss how branching works.</li>
-<li>Identify and use Git revision numbers.</li>
 <li>Compare files with old versions of themselves.</li>
 <li>Restore old versions of files.</li>
+<li>Identify and use Git revision numbers.</li>
 <li>Configure Git to ignore specific files, and explain why it is sometimes useful to do so.</li>
 </ul>
 </div>
@@ -72,8 +71,6 @@
 <div class="figure">
 <img src="fig/push.svg" alt="Pushing synchronizes changes to a different copy" /><p class="caption">Pushing synchronizes changes to a different copy</p>
 </div>
-<p>Everyone has made a user account at Github, right?</p>
-<p>We're going to do everything both through the GUI and through the command line. I want you to focus on the GUI and the actual operations we're performing, because you can always look up what the correct command is later.</p>
 <h2 id="setting-up">Setting Up</h2>
 <p>The first time we use Git on a new machine, we need to make sure Git knows a few things. We can configure some basic settings with <code>git config</code>:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global user.name <span class="st">&quot;Vlad Dracula&quot;</span>
@@ -110,7 +107,6 @@ $ <span class="kw">git</span> config --global core.editor <span class="st">&quot
 <img src="img/new_repo.png" alt="Add Local Repository" /><p class="caption">Add Local Repository</p>
 </div>
 <p>Now you should see your file <code>mars.txt</code> with its changes.</p>
-<p>Remember, the Github app is just a convenient way of executing Git commands without having to use the terminal, but we should know what is going on behind the scenes too. These commands are the ones that the GUI app is running for you.</p>
 <p>Let's ask Git about the status of this repo:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
 <pre class="output"><code># On branch master
@@ -126,21 +122,14 @@ nothing added to commit but untracked files present (use &quot;git add&quot; to 
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add mars.txt</code></pre>
 <h3 id="committing-for-the-first-time">Committing for the first time:</h3>
 <p>Now let's commit this file into our repo for the first time.</p>
-<p>We can do this from the app. Type a commit message into the Summary box:</p>
-<div class="figure">
-<img src="img/summary.png" alt="Commit changes" /><p class="caption">Commit changes</p>
-</div>
-<p>This message describes what our current set of changes did so we can figure it out two months from now.</p>
-<p>Press the Commit button to commit these changes.</p>
-<p>Or we can do this from the command line:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> commit -a -m <span class="st">&quot;Starting to think about Mars&quot;</span></code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> commit -m <span class="st">&quot;Starting to think about Mars&quot;</span></code></pre>
 <pre class="output"><code>[master (root-commit) 189f6e7] Starting to think about Mars
  1 file changed, 1 insertion(+)
  create mode 100644 mars.txt</code></pre>
-<p>Git takes all the changes we made this time and stores a record of those changes permanently inside the special <code>.git</code> directory. This set of changes is called a <a href="reference.html#revision">revision</a>. It assigns a unique identifier (<code>f22b25e</code>) to the commit.</p>
+<p>Git takes all the changes we made this time and stores a record of those changes permanently inside the special <code>.git</code> directory. This set of changes is called a <a href="reference.html#revision">revision</a>. It assigns a unique identifier (<code>189f6e7</code>) to the commit.</p>
 <div id="what-are-the-flags-for" class="callout">
 <h2>What are the flags for?</h2>
-<p>We use the <code>-m</code> flag (for &quot;message&quot;) to record a comment that will help us remember later on what we did and why. If we just run <code>git commit</code> without the <code>-m</code> option, Git will launch <code>nano</code> (or whatever other editor we configured at the start) so that we can write a longer message. We use the <code>-a</code> flag to tell Git to commit the changes to all of our files in the repository.</p>
+<p>We use the <code>-m</code> flag (for &quot;message&quot;) to record a comment that will help us remember later on what we did and why. If we just run <code>git commit</code> without the <code>-m</code> option, Git will launch <code>nano</code> (or whatever other editor we configured at the start) so that we can write a longer message.</p>
 </div>
 <h3 id="looking-at-past-changes">Looking at past changes:</h3>
 <p>We can look at the repo's history to see what we've done in the past.</p>
@@ -155,36 +144,11 @@ Date:   Sat Feb 28 02:00:20 2015 -0800
 
     Starting to think about Mars</code></pre>
 <p>You'll see all the revisions that were made in reverse chronological order. You can see the unique identifiers for each of the commits too: notice that the short identifier that we got from the commit message is just the first seven letters of this longer identifier. Git accepts either version of the identifier.</p>
-<h2 id="branches">Branches</h2>
-<p>We could certainly use Git with just these unique identifiers as our labels for our work, and ask Git what label went with which commit went with which set. But this isn't really the way we usually work, is it?</p>
-<p>Usually you're trying to accomplish a particular task and you know you're going to make some changes to the repository to achieve this. It'd be nice to have a human-readable label for those changes, to make it easier to visualize and to make it easier to share with others. Branches let us achieve this.</p>
-<p>Think of the commit identifiers as our trail of breadcrumbs that we are leaving behind us as we work. When we make a branch, we are changing to a different type of breadcrumb: maybe we start dropping pieces of pumpernickel behind us instead of sourdough.</p>
-<p>When you start your new branch <code>pumpernickel</code>, you keep the trail of commits that you made before you branched, but any new commits you make will be using the pumpernickel crumbs.</p>
-<div class="figure">
-<img src="fig/branch.svg" alt="Branches let you note which trail of commits you&#39;re making" /><p class="caption">Branches let you note which trail of commits you're making</p>
-</div>
-<p>The original trail of breadcrumbs, the sourdough ones in this analogy, have the default branch name of <code>master</code>. It's a good practice to keep <code>master</code> as the base branch of all the work you do in a repository, and make new branches to do work on new subprojects.</p>
-<p>Let's make a branch now. We want to start a new project where we compare the different planets in separate files. Switch to the Github app. Notice that right now, it tells us we're in branch <code>master</code> in several different places, and when we committed changes, the button said that we were committing to master.</p>
-<p>Make a branch and call it <code>separate-files</code>.</p>
-<div class="figure">
-<img src="img/branch.png" alt="Branch dialog" /><p class="caption">Branch dialog</p>
-</div>
-<p>Now, we can switch back to the text editor, make a new file called <code>jupiter.txt</code>. Type some text into the file and save it to our <code>planets_yourname</code> directory.</p>
-<pre class="output"><code>Very attractive big red storm here.</code></pre>
-<p>In the Github app, commit your new file and changes to the branch <code>separate-files</code>. Now, switch branches back to <code>master</code> using the pull-down menu. You'll see that the history now reflects what we did before we made the new file. If you look inside your <code>planets</code> directory, you'll see that there is only one file now, the <code>mars.txt</code> file. If you switch branches back to <code>separate-files</code>, you should see <code>jupiter.txt</code> come back.</p>
-<p>The command line version of this is a bit more confusing. We create a branch by calling</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> branch separate-files</code></pre>
-<p>We list the available branches using <code>git branch</code> with no additional arguments.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> branch</code></pre>
-<pre class="output"><code>* master
-  separate-files</code></pre>
 <h2 id="changing-a-file">Changing a File</h2>
-<p>Now suppose Dracula adds more information to the file. (Again, we'll edit with <code>nano</code> and then <code>cat</code> the file to show its contents; you may use a different editor, and don't need to <code>cat</code>.)</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> mars.txt
-$ <span class="kw">cat</span> mars.txt</code></pre>
+<p>Now suppose Dracula adds more information to the file. Go to the text editor where you have <code>mars.txt</code> open, and make some changes to the file:</p>
 <pre class="output"><code>Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman</code></pre>
-<p>When we run <code>git status</code> now, it tells us that a file it already knows about has been modified:</p>
+<p>Now go back to your terminal window. When we run <code>git status</code> now, it tells us that a file it already knows about has been modified:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
 <pre class="output"><code># On branch master
 # Changes not staged for commit:
@@ -194,7 +158,7 @@ The two moons may be a problem for Wolfman</code></pre>
 #   modified:   mars.txt
 #
 no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</code></pre>
-<p>The last line is the key phrase: &quot;no changes added to commit&quot;. We have changed this file, but we haven't told Git we will want to save those changes (which we do with <code>git add</code>) much less actually saved them (which we do with <code>git commit</code>). So let's do that now. It is good practice to always review our changes before saving them. We do this using <code>git diff</code>. This shows us the differences between the current state of the file and the most recently saved version:</p>
+<p>The last line is the key phrase: &quot;no changes added to commit&quot;. We have changed this file, but we haven't told Git we will want it to record these changes (which we do with <code>git add</code>) much less actually committed them. So let's do that now. It is good practice to always review our changes before saving them. We do this using <code>git diff</code>. This shows us the differences between the current state of the file and the most recently committed version:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> diff</code></pre>
 <pre class="output"><code>diff --git a/mars.txt b/mars.txt
 index df0654a..315bf3a 100644
@@ -225,14 +189,12 @@ no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&q
 $ <span class="kw">git</span> commit -m <span class="st">&quot;Concerns about Mars&#39;s moons on my furry friend&quot;</span></code></pre>
 <pre class="output"><code>[master 34961b1] Concerns about Mars&#39;s moons on my furry friend
  1 file changed, 1 insertion(+)</code></pre>
-<p>Git insists that we add files to the set we want to commit before actually committing anything because we may not want to commit everything at once. For example, suppose we're adding a few citations to our supervisor's work to our thesis. We might want to commit those additions, and the corresponding addition to the bibliography, but <em>not</em> commit the work we're doing on the conclusion (which we haven't finished yet).</p>
-<p>To allow for this, Git has a special staging area where it keeps track of things that have been added to the current <a href="reference.html#change-set">change set</a> but not yet committed. <code>git add</code> puts things in this area, and <code>git commit</code> then copies them to long-term storage (as a commit):</p>
+<p>Git insists that we add files to the set we want to commit before actually committing anything. It's sort of a double-check to make sure that you know what you're committing before you do it. For example, if you accidentally put some other file into this git-tracked directory, you probably don't want to introduce it into your git history. By explicitly adding the file first, you're saying that these are exactly the changes I want to commit.</p>
+<p>Git has a special staging area where it keeps track of things that have been added to the current <a href="reference.html#change-set">change set</a> but not yet committed. <code>git add</code> puts things in this area, and <code>git commit</code> then copies them to long-term storage (as a commit):</p>
 <div class="figure">
 <img src="fig/git-staging-area.svg" alt="The Git Staging Area" /><p class="caption">The Git Staging Area</p>
 </div>
-<p>Let's watch as our changes to a file move from our editor to the staging area and into long-term storage. First, we'll add another line to the file:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> mars.txt
-$ <span class="kw">cat</span> mars.txt</code></pre>
+<p>Let's watch as our changes to a file move from our editor to the staging area and into the repository. First, add another line to the file:</p>
 <pre class="output"><code>Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity</code></pre>
@@ -258,7 +220,7 @@ index 315bf3a..b36abfd 100644
  Cold and dry, but everything is my favorite color
  The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity</code></pre>
-<p>it shows us the difference between the last committed change and what's in the staging area. Let's save our changes:</p>
+<p>it shows us the difference between the last committed change and what's in the staging area. Let's commit our changes to the repo:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> commit -m <span class="st">&quot;Thoughts about the climate&quot;</span></code></pre>
 <pre class="output"><code>[master 005937f] Thoughts about the climate
  1 file changed, 1 insertion(+)</code></pre>
@@ -310,26 +272,6 @@ index df0654a..b36abfd 100644
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity</code></pre>
 <p>In this way, we build up a chain of revisions. The most recent end of the chain is referred to as <code>HEAD</code>; we can refer to previous revisions using the <code>~</code> notation, so <code>HEAD~1</code> (pronounced &quot;head minus one&quot;) means &quot;the previous revision&quot;, while <code>HEAD~123</code> goes back 123 revisions from where we are now.</p>
-<p>We can also refer to revisions using those long strings of digits and letters that <code>git log</code> displays. These are unique IDs for the changes, and &quot;unique&quot; really does mean unique: every change to any set of files on any machine has a unique 40-character identifier. Our first commit was given the ID f22b25e3233b4645dabd0d81e651fe074bd8e73b, so let's try this:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> diff f22b25e3233b4645dabd0d81e651fe074bd8e73b mars.txt</code></pre>
-<pre class="output"><code>diff --git a/mars.txt b/mars.txt
-index df0654a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1 +1,3 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity</code></pre>
-<p>That's the right answer, but typing random 40-character strings is annoying, so Git lets us use just the first few:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> diff f22b25e mars.txt</code></pre>
-<pre class="output"><code>diff --git a/mars.txt b/mars.txt
-index df0654a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1 +1,3 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity</code></pre>
 <h2 id="recovering-old-versions">Recovering Old Versions</h2>
 <p>All right: we can save changes to files and see what we've changed---how can we restore older versions of things? Let's suppose we accidentally overwrite our file:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> mars.txt
@@ -351,8 +293,7 @@ $ <span class="kw">cat</span> mars.txt</code></pre>
 <pre class="output"><code>Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity</code></pre>
-<p>As you might guess from its name, <code>git checkout</code> checks out (i.e., restores) an old version of a file. In this case, we're telling Git that we want to recover the version of the file recorded in <code>HEAD</code>, which is the last saved revision. If we want to go back even further, we can use a revision identifier instead:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout f22b25e mars.txt</code></pre>
+<p>As you might guess from its name, <code>git checkout</code> checks out (i.e., restores) an old version of a file. In this case, we're telling Git that we want to recover the version of the file recorded in <code>HEAD</code>, which is the last saved revision.</p>
 <p>It's important to remember that we must use the revision number that identifies the state of the repository <em>before</em> the change we're trying to undo. A common mistake is to use the revision number of the commit in which we made the change we're trying to get rid of. In the example below, we want retrieve the state from before the most recent commit (<code>HEAD~1</code>), which is revision <code>f22b25e</code>:</p>
 <div class="figure">
 <img src="fig/git-checkout.svg" alt="Git Checkout" /><p class="caption">Git Checkout</p>
@@ -368,6 +309,20 @@ But the Mummy will appreciate the lack of humidity</code></pre>
 <p>As it says, <code>git checkout</code> without a version identifier restores files to the state saved in <code>HEAD</code>. The double dash <code>--</code> is needed to separate the names of the files being recovered from the command itself: without it, Git would try to use the name of the file as the revision identifier.</p>
 </div>
 <p>The fact that files can be reverted one by one tends to change the way people organize their work. If everything is in one large document, it's hard (but not impossible) to undo changes to the introduction without also undoing changes made later to the conclusion. If the introduction and conclusion are stored in separate files, on the other hand, moving backward and forward in time becomes much easier.</p>
+<p>We can also refer to revisions using those long strings of digits and letters that <code>git log</code> displays. These are unique IDs for the changes, and &quot;unique&quot; really does mean unique: every change to any set of files on any machine has a unique 40-character identifier. Our first commit was given the ID f22b25e3233b4645dabd0d81e651fe074bd8e73b, so let's try this:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> diff f22b25e3233b4645dabd0d81e651fe074bd8e73b mars.txt</code></pre>
+<pre class="output"><code>diff --git a/mars.txt b/mars.txt
+index df0654a..b36abfd 100644
+--- a/mars.txt
++++ b/mars.txt
+@@ -1 +1,3 @@
+ Cold and dry, but everything is my favorite color
++The two moons may be a problem for Wolfman
++But the Mummy will appreciate the lack of humidity</code></pre>
+<p>We can checkout a revision using the specific identifier as well: this way we can reach even older commits in an absolute fashion.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout f22b25e mars.txt</code></pre>
+<p>Note that here we just used the first seven characters of the identifier: Git is fine with using this shortened form as well.</p>
+<p>Using these identifiers (called SHAs) is absolutely the safest way to identify a particular revision, but there are easier ways to identify specific revisions. We'll discuss those later.</p>
 <h2 id="ignoring-things">Ignoring Things</h2>
 <p>What if we have files that we do not want Git to track for us, like backup files created by our editor or intermediate files created during data analysis. Let's create a few dummy files:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> results
