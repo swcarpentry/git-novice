@@ -38,7 +38,17 @@
 </ul>
 </div>
 <p>Version control really comes into its own when we begin to collaborate with other people. We already have most of the machinery we need to do this; the only thing missing is to copy changes from one repository to another.</p>
-<p>Systems like Git allow us to move work between any two repositories. In practice, though, it's easiest to use one copy as a central hub, and to keep it on the web rather than on someone's laptop. Most programmers use hosting services like <a href="http://github.com">GitHub</a> or <a href="http://bitbucket.org">BitBucket</a> to hold those master copies; we'll explore the pros and cons of this in the final section of this lesson.</p>
+<p>Systems like Git allow us to move work between any two repositories. Remember, from Git's perspective, the two repositories are copies of each other (clones) which may be out of sync, but were once originally made from the same base repository. From the user's perspective, her own copy is the <em>local</em> copy, and any other ones are <em>remote</em> repositories.</p>
+<p>A service like Github acts as a central server for your repository, but it is basically just storing another copy of your repository. Github's copies are only special because we told Git that the Github version is special.</p>
+<div class="figure">
+<img src="fig/github.svg" alt="Every user has their own copy" /><p class="caption">Every user has their own copy</p>
+</div>
+<p>So, if a user wants to make changes to a file in a repo that is under Git control, she can make changes to her own copy of the file and then tell Git to commit those changes in its history. It saves the changes in her own copy of the repo on her own computer.</p>
+<p>If she wants another user to see her changes, though, she needs to tell that other user's Git copy that she made changes. This is called <em>pushing</em> the commits to another repo. She can either push the changes directly to another user's copy, or she can push them to a centrally-designated remote repository, like one at Github.</p>
+<div class="figure">
+<img src="fig/push.svg" alt="Pushing synchronizes changes to a different copy" /><p class="caption">Pushing synchronizes changes to a different copy</p>
+</div>
+<p>Retrieving the changes from a different copy of the repository is called <em>pulling</em>.</p>
 <p>Let's start by sharing the changes we've made to our current project with the world. Log in to GitHub, then click on the icon in the top right corner to create a new repository called <code>planets</code>:</p>
 <p><img src="fig/github-create-repo-01.png" alt="Creating a Repository on GitHub (Step 1)" /></p>
 <p>Name your repository &quot;planets&quot; and then click &quot;Create Repository&quot;:</p>
