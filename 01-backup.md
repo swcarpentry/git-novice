@@ -46,16 +46,6 @@ A [repository](reference.html#repository) is the set of files that we want to ke
 
 With Git, every user who wants to make changes to a repository has their own copy of the files in the repository, along with their own copy of the changes (the _commits_) that have been made to those files. Git keeps the commits in a secret directory along with the copies of the files.
 
-A service like Github acts as a central server for your repository, but it is basically just storing another copy of your repository. Github's copies are only special because we told Git that the Github version is special.
-
-![Every user has their own copy](fig/github.svg)
-
-So, if a user wants to make changes to a file in a repo that is under Git control, she can make changes to her own copy of the file and then tell Git to save those changes in its  history. This is called _committing_ the changes, and it saves the changes in her own copy of the repo on her own computer.
-
-If she wants another user to see her changes, though, she needs to tell that other user's Git copy that she made changes. This is called _pushing_ the commits to another repo. She can either push the changes directly to another user's copy, or she can push them to a centrally-designated remote repository, like one at Github.
-
-![Pushing synchronizes changes to a different copy](fig/push.svg)
-
 ## Setting Up
 
 The first time we use Git on a new machine, we need to make sure Git knows a few things. We can configure some basic settings with `git config`:
@@ -721,26 +711,9 @@ nothing to commit, working directory clean
 > 4. `git checkout <unique ID of last revision> data_cruncher.py`
 > 5. Both 2 & 4
 
-> ## `bio` Repository {.challenge}
+> ## Making a repo for this workshop {.challenge}
 >
-> Create a new Git repository on your computer called `bio`.
-> Write a three-line biography for yourself in a file called `me.txt`,
-> commit your changes,
-> then modify one line and add a fourth and display the differences
-> between its updated state and its original state.
-
-> ## Places to Create Git Repositories {.challenge}
+> How would you turn the directory from our work today into a repo?
+> Are there files you'd want to ignore?
 >
-> The following sequence of commands creates one Git repository inside another:
->
-> ~~~ {.bash}
-> cd           # return to home directory
-> mkdir alpha  # make a new directory alpha
-> cd alpha     # go into alpha
-> git init     # make the alpha directory a Git repository
-> mkdir beta   # make a sub-directory alpha/beta
-> cd beta      # go into alpha/beta
-> git init     # make the beta sub-directory a Git repository
-> ~~~
->
-> Why is it a bad idea to do this?
+> Set up a repo and a gitignore file for it.

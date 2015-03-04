@@ -11,10 +11,21 @@ minutes: 60
 > *   Explain what conflicts are and when they can occur.
 > *   Resolve conflicts resulting from a merge.
 
-> ## Practicing in pairs {.callout}
->
-> Designate one partner as the repository "Owner" and one partner as the repository
-> "Collaborator".
+A service like Github acts as a central server for your repository, but it is basically just storing another copy of your repository. Github's copies are only special because we told Git that the Github version is special.
+
+![Every user has their own copy](fig/github.svg)
+
+So, if a user wants to make changes to a file in a repo that is under Git control, she can make changes to her own copy of the file and then tell Git to commit those changes in its  history. It saves the changes in her own copy of the repo on her own computer.
+
+If she wants another user to see her changes, though, she needs to tell that other user's Git copy that she made changes. This is called _pushing_ the commits to another repo. She can either push the changes directly to another user's copy, or she can push them to a centrally-designated remote repository, like one at Github.
+
+![Pushing synchronizes changes to a different copy](fig/push.svg)
+
+
+## Practicing in pairs
+
+Designate one partner as the repository "Owner" and one partner as the repository
+"Collaborator".
 
 The repository "Owner" needs to grant the Collaborator access.
 
@@ -97,10 +108,11 @@ Now the repositories on both the Owner's and the Collaborator's machines should 
 up to date and identical. We can check that this is the case for the `mars.txt` file.
 
 Owner & Collaborator: check the contents of `mars.txt`
-~~~
+
+~~~ {.bash}
 cat mars.txt
 ~~~
-~~~
+~~~ {.output}
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
@@ -329,3 +341,5 @@ or find a way to divide the work up differently.
 > to Github. Next, have the Collaborator do the same. This will lead to a conflict which
 > the Collaborator will have to resolve. After this is done, have the Collaborator create
 > a conflict and the owner resolve it.
+
+

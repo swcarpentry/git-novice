@@ -38,10 +38,17 @@
 <li>Resolve conflicts resulting from a merge.</li>
 </ul>
 </div>
-<div id="practicing-in-pairs" class="callout">
-<h2>Practicing in pairs</h2>
-<p>Designate one partner as the repository &quot;Owner&quot; and one partner as the repository &quot;Collaborator&quot;.</p>
+<p>A service like Github acts as a central server for your repository, but it is basically just storing another copy of your repository. Github's copies are only special because we told Git that the Github version is special.</p>
+<div class="figure">
+<img src="fig/github.svg" alt="Every user has their own copy" /><p class="caption">Every user has their own copy</p>
 </div>
+<p>So, if a user wants to make changes to a file in a repo that is under Git control, she can make changes to her own copy of the file and then tell Git to commit those changes in its history. It saves the changes in her own copy of the repo on her own computer.</p>
+<p>If she wants another user to see her changes, though, she needs to tell that other user's Git copy that she made changes. This is called <em>pushing</em> the commits to another repo. She can either push the changes directly to another user's copy, or she can push them to a centrally-designated remote repository, like one at Github.</p>
+<div class="figure">
+<img src="fig/push.svg" alt="Pushing synchronizes changes to a different copy" /><p class="caption">Pushing synchronizes changes to a different copy</p>
+</div>
+<h2 id="practicing-in-pairs">Practicing in pairs</h2>
+<p>Designate one partner as the repository &quot;Owner&quot; and one partner as the repository &quot;Collaborator&quot;.</p>
 <p>The repository &quot;Owner&quot; needs to grant the Collaborator access.</p>
 <p>Owner: On GitHub, click the settings button on the right:</p>
 <div class="figure">
@@ -88,7 +95,12 @@ Fast-forward
  1 file changed, 1 insertion(+)
  create mode 100644 pluto.txt</code></pre>
 <p>Now the repositories on both the Owner's and the Collaborator's machines should be up to date and identical. We can check that this is the case for the <code>mars.txt</code> file.</p>
-<p>Owner &amp; Collaborator: check the contents of <code>mars.txt</code> <sub>~</sub> cat mars.txt <sub><sub><sub> </sub></sub></sub> Cold and dry, but everything is my favorite color The two moons may be a problem for Wolfman But the Mummy will appreciate the lack of humidity This is my important contribution to the collaboration! <sub>~</sub></p>
+<p>Owner &amp; Collaborator: check the contents of <code>mars.txt</code></p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cat</span> mars.txt</code></pre>
+<pre class="output"><code>Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+But the Mummy will appreciate the lack of humidity
+This is my important contribution to the collaboration!</code></pre>
 <div id="github-collaboration" class="challenge">
 <h2>GitHub Collaboration</h2>
 <p>Now the repository owner should make a change to <code>mars.txt</code>, add and commit the changes to Git and push the changes to Github. Then the collaborator should pull the changes from the remote repository to their local repository. Finally, use <code>cat</code> to verify that both the Owner and Collaborator have the same version of the file.</p>
