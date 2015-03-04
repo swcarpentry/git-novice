@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <title>Software Carpentry: Collaborating and Bug Fixing with Github</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc-workshop-and-lesson.css" />
+    <link rel="stylesheet" type="text/css" href="css/lesson.css" />
+    <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
+    <meta charset="UTF-8" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body class="lesson">
+    <div class="container container-full-width card">
+      <div class="banner">
+        <a href="http://software-carpentry.org" title="Software Carpentry">
+          <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
+        </a>
+      </div>
+      <div class="row-fluid">
+        <div class="span10 offset1">
+          <h1 class="title">Collaborating and Bug Fixing with Github</h1>
+          
+<div id="learning-objectives" class="objectives">
+<h2>Learning Objectives</h2>
+<ul>
+<li>Learn about forks at Github</li>
+<li>Make pull requests at Github</li>
+<li>Debug a python script</li>
+</ul>
+</div>
+<h2 id="forks-or-copies-of-copies-of-repos">Forks, or copies of copies of repos</h2>
+<p>As you probably noticed from the last Git lesson, it is not a great practice to have multiple collaborators pushing things into the same repo's master branch all the time. If many people are working on the same file, it's pretty much a guaranteed way to lead to conflicts that you then have to resolve.</p>
+<p>One tool that Github uses to make this easier is called &quot;forking&quot;. This is Github-speak for &quot;clone this repo on the Github server.&quot; When you fork a repo on Github, it clones the repo into your own user account on Github. This way you can push and pull changes to your own copy without affecting the original owner's copy.</p>
+<p>Let's try this now: We're going to fork a repo that we made for this workshop. Go to the Github site: <code>https://github.com/nsoontie/WiSE-swc-ubc</code></p>
+<div class="figure">
+<img src="img/forking.png" alt="Fork this repo at the upper right corner" /><p class="caption">Fork this repo at the upper right corner</p>
+</div>
+<p>When you do this, you'll see it do a cute little forking image and then redirect you to your forked copy of the repo. Notice that instead of Nancy's username <code>nsoontie</code>, it has your username in the path.</p>
+<div class="figure">
+<img src="img/forked.png" alt="Forked repo show new path and repo it was forked from" /><p class="caption">Forked repo show new path and repo it was forked from</p>
+</div>
+<p>Now you can clone this repo onto your own computer.</p>
+<p>If you look at the remote settings for this new clone, you should see that its <code>origin</code> is your Github forked repo. It keeps the original repo you forked from as a remote as well.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> remote -v</code></pre>
+<pre class="output"><code>nsoontie    https://github.com/nsoontie/WiSE-swc-ubc.git (fetch)
+nsoontie    https://github.com/nsoontie/WiSE-swc-ubc.git (push)
+origin  https://github.com/daisieh/WiSE-swc-ubc.git (fetch)
+origin  https://github.com/daisieh/WiSE-swc-ubc.git (push)</code></pre>
+<p>Once you've cloned a local copy of the repo to your machine, go to that directory. Let's upload the work we've done in the workshop into this repo.</p>
+<p>Now commit and push those files to your fork at Github. Go back to your Github repo page in your web browser and refresh: you should see the files you just pushed in the listing.</p>
+<p>Let's say you want to share your work with the rest of the class. Github's way of doing that is through pull requests. Click on that in the right sidebar.</p>
+<div class="figure">
+<img src="img/pr-sidebar.png" alt="Pull requests are on the right sidebar" /><p class="caption">Pull requests are on the right sidebar</p>
+</div>
+<p>Now, let's create a new pull request.</p>
+<div class="figure">
+<img src="img/pr-newbutton.png" alt="Create a new pull request with the green button" /><p class="caption">Create a new pull request with the green button</p>
+</div>
+<p>When you press the big green button, you will go to a page that lists the changes that Github knows about that are different between your fork and the base repo.</p>
+<div class="figure">
+<img src="img/pr-create.png" alt="New PR with changes listed" /><p class="caption">New PR with changes listed</p>
+</div>
+<p>Look through these changes and then create the pull request. You'll see that you can add comments and discussions to the pull request.</p>
+<div class="figure">
+<img src="img/pr-discussion.png" alt="Comments and discussion in PR" /><p class="caption">Comments and discussion in PR</p>
+</div>
+<p>Create the pull request.</p>
+<div class="figure">
+<img src="img/pr-description.png" alt="A created PR" /><p class="caption">A created PR</p>
+</div>
+<p>After you've made your pull request, go back to the pull request list for <code>https://github.com/nsoontie/WiSE-swc-ubc</code>. You should see everyone's pull requests there now.</p>
+<div id="fixing-bugs" class="challenge">
+<h2>Fixing bugs</h2>
+<p>Let's go back to the local copy of this repo on your machine. You'll notice that you got a copy of a file called <code>errors.py</code>. Open this in your text editor. It looks like a python script. How do you run it?</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> WiSE-swc-ubc
+$ <span class="kw">python</span> errors.py</code></pre>
+<p>Running the <code>python</code> command executes a python script from the command line. Try running this program and see what you get:</p>
+<pre class="output"><code>Give me an integer number: 2
+The square of your number is: 2
+Enter a string: sdf
+there are 3 letters in sdf
+there are 0 spaces in sdf
+there are 4 characters in sdf</code></pre>
+<p>There are clearly some errors here. Can you fix them?</p>
+</div>
+<div id="sharing-your-fixes" class="challenge">
+<h2>Sharing your fixes</h2>
+<p>Make pull requests for your fixed scripts. Look at others' fixes. Check out some other people's versions: what did they do differently than you?</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout -b mutantdaisies-master master
+$ <span class="kw">git</span> pull https://github.com/mutantdaisies/WiSE-swc-ubc.git master</code></pre>
+<p>Make comments in each others' pull requests!</p>
+</div>
+        </div>
+      </div>
+      <div class="footer">
+        <a class="label swc-blue-bg" href="http://software-carpentry.org">Software Carpentry</a>
+        <a class="label swc-blue-bg" href="https://github.com/swcarpentry/git-novice">Source</a>
+        <a class="label swc-blue-bg" href="mailto:admin@software-carpentry.org">Contact</a>
+        <a class="label swc-blue-bg" href="LICENSE.html">License</a>
+      </div>
+    </div>
+    <!-- Javascript placed at the end of the document so the pages load faster -->
+    <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
+    <script src="http://software-carpentry.org/v5/js/bootstrap/bootstrap.min.js"></script>
+  </body>
+</html>
