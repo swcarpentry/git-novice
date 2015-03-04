@@ -284,7 +284,7 @@ $ <span class="kw">cat</span> mars.txt</code></pre>
 <pre class="output"><code>Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity</code></pre>
-<p>As you might guess from its name, <code>git checkout</code> checks out (i.e., restores) an old version of a file. In this case, we're telling Git that we want to recover the version of the file recorded in <code>HEAD</code>, which is the last saved revision.</p>
+<p>As you might guess from its name, <code>git checkout</code> checks out (i.e., restores) a different version of a file. In this case, we're telling Git that we want to recover the version of the file recorded in <code>HEAD</code>, which is the last saved revision.</p>
 <p>It's important to remember that we must use the revision number that identifies the state of the repository <em>before</em> the change we're trying to undo. A common mistake is to use the revision number of the commit in which we made the change we're trying to get rid of. In the example below, we want retrieve the state from before the most recent commit (<code>HEAD~1</code>), which is revision <code>f22b25e</code>:</p>
 <div class="figure">
 <img src="fig/git-checkout.svg" alt="Git Checkout" /><p class="caption">Git Checkout</p>
@@ -313,7 +313,7 @@ index df0654a..b36abfd 100644
 <p>We can checkout a revision using the specific identifier as well: this way we can reach even older commits in an absolute fashion.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout f22b25e mars.txt</code></pre>
 <p>Note that here we just used the first seven characters of the identifier: Git is fine with using this shortened form as well.</p>
-<p>Using these identifiers (called SHAs) is absolutely the safest way to identify a particular revision, but there are easier ways to identify specific revisions. We'll discuss those later.</p>
+<p>Using these identifiers (called SHAs) is absolutely the safest way to identify a particular revision, but there are easier ways to identify specific revisions, like tagging and branching. These are outside the scope of the workshop, though.</p>
 <h2 id="ignoring-things">Ignoring Things</h2>
 <p>What if we have files that we do not want Git to track for us, like backup files created by our editor or intermediate files created during data analysis. Let's create a few dummy files:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> results

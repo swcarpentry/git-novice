@@ -490,7 +490,7 @@ But the Mummy will appreciate the lack of humidity
 ~~~
 
 As you might guess from its name,
-`git checkout` checks out (i.e., restores) an old version of a file.
+`git checkout` checks out (i.e., restores) a different version of a file.
 In this case,
 we're telling Git that we want to recover the version of the file recorded in `HEAD`,
 which is the last saved revision.
@@ -568,7 +568,7 @@ $ git checkout f22b25e mars.txt
 
 Note that here we just used the first seven characters of the identifier: Git is fine with using this shortened form as well.
 
-Using these identifiers (called SHAs) is absolutely the safest way to identify a particular revision, but there are easier ways to identify specific revisions. We'll discuss those later.
+Using these identifiers (called SHAs) is absolutely the safest way to identify a particular revision, but there are easier ways to identify specific revisions, like tagging and branching. These are outside the scope of the workshop, though.
 
 ## Ignoring Things
 
