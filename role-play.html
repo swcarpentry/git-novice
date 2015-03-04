@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <title>Software Carpentry: Version Control with Git</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc-workshop-and-lesson.css" />
+    <link rel="stylesheet" type="text/css" href="css/lesson.css" />
+    <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
+    <meta charset="UTF-8" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body class="lesson">
+    <div class="container container-full-width card">
+      <div class="banner">
+        <a href="http://software-carpentry.org" title="Software Carpentry">
+          <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
+        </a>
+      </div>
+      <div class="row-fluid">
+        <div class="span10 offset1">
+          <h1 class="title">Version Control with Git</h1>
+          <h2 class="subtitle">Roleplay to Teach Version Control Collaboration and Conflicts with Github</h2>
+<div id="learning-objectives" class="objectives">
+<h2>Learning Objectives</h2>
+<ul>
+<li>Explain what happens when changes are pushed to or pulled from a remote repository.</li>
+<li>Explain how to add collaborators to a repository.</li>
+<li>Explain what conflicts are and when they can occur.</li>
+<li>Resolve conflicts resulting from a merge.</li>
+</ul>
+</div>
+<div id="practicing-in-pairs" class="callout">
+<h2>Practicing in pairs</h2>
+<p>Designate one partner as the repository &quot;Owner&quot; and one partner as the repository &quot;Collaborator&quot;.</p>
+</div>
+<p>The repository &quot;Owner&quot; needs to grant the Collaborator access.</p>
+<p>Owner: On GitHub, click the settings button on the right:</p>
+<div class="figure">
+<img src="fig/github-role-play-01.png" alt="Adding collaborators on GitHub 01" /><p class="caption">Adding collaborators on GitHub 01</p>
+</div>
+<p>Owner: Select Collaborators (top left), and enter your Collaborator's username.</p>
+<div class="figure">
+<img src="fig/github-role-play-03.png" alt="Adding collaborators on GitHub 02" /><p class="caption">Adding collaborators on GitHub 02</p>
+</div>
+<p>Collaborator: Go to your email to retrieve the <code>URL</code> to connect to the Owner's repository.</p>
+<p>Collaborator: <code>cd</code> to another directory (so <code>ls</code> doesn't show a <code>planets</code> folder), and then make a copy of this repository on your own computer:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> clone URL_from_Collaborator</code></pre>
+<p><code>git clone</code> creates a fresh local copy of a remote repository.</p>
+<p>Collaborator: Make a change in their copy of the repository:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> planets
+$ <span class="kw">nano</span> mars.txt
+$ <span class="kw">cat</span> mars.txt</code></pre>
+<pre class="output"><code>This is my important contribution to the collaboration!</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add mars.txt
+$ <span class="kw">git</span> commit -m <span class="st">&quot;My important contribution.&quot;</span></code></pre>
+<pre class="output"><code> 1 file changed, 1 insertion(+)
+ create mode 100644 mars.txt</code></pre>
+<p>then push the change to GitHub:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin master</code></pre>
+<pre class="output"><code>Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 306 bytes, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/vlad/planets.git
+   9272da5..29aba7c  master -&gt; master</code></pre>
+<p>Now the Owner needs to update their repository to access the changes made by the Collaborator.</p>
+<p>Owner: retrieve the changes from Github:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> pull origin master</code></pre>
+<pre class="output"><code>remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0)
+Unpacking objects: 100% (3/3), done.
+From https://github.com/vlad/planets
+ * branch            master     -&gt; FETCH_HEAD
+Updating 9272da5..29aba7c
+Fast-forward
+ mars.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 pluto.txt</code></pre>
+<p>Now the repositories on both the Owner's and the Collaborator's machines should be up to date and identical. We can check that this is the case for the <code>mars.txt</code> file.</p>
+<p>Owner &amp; Collaborator: check the contents of <code>mars.txt</code> <sub>~</sub> cat mars.txt <sub><sub><sub> </sub></sub></sub> Cold and dry, but everything is my favorite color The two moons may be a problem for Wolfman But the Mummy will appreciate the lack of humidity This is my important contribution to the collaboration! <sub>~</sub></p>
+<div id="github-collaboration" class="challenge">
+<h2>GitHub Collaboration</h2>
+<p>Now the repository owner should make a change to <code>mars.txt</code>, add and commit the changes to Git and push the changes to Github. Then the collaborator should pull the changes from the remote repository to their local repository. Finally, use <code>cat</code> to verify that both the Owner and Collaborator have the same version of the file.</p>
+</div>
+<blockquote>
+<h2>Hint</h2>
+<p>Before teaching this next section, the collaborator should make a secret change to the mars.txt file and add, commit and push the changes to the remote repository.</p>
+</blockquote>
+<p>As soon as people can work in parallel, someone's going to step on someone else's toes. This will even happen with a single person: if we are working on a piece of software on both our laptop and a server in the lab, we could make different changes to each copy. Version control helps us manage these <a href="reference.html#conflicts">conflicts</a> by giving us tools to <a href="reference.html#resolve">resolve</a> overlapping changes.</p>
+<p>Owner: Make a change to the <code>mars.txt</code> file.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> mars.txt
+$ <span class="kw">cat</span> mars.txt</code></pre>
+<pre class="output"><code>Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+But the Mummy will appreciate the lack of humidity
+This is my important contribution to the collaboration!
+Let&#39;s start to discuss conflicts.</code></pre>
+<p>Owner: Commit the change locally:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add mars.txt
+$ <span class="kw">git</span> commit -m <span class="st">&quot;What to cover next&quot;</span></code></pre>
+<pre class="output"><code>[master 07ebc69] What to cover next
+ 1 file changed, 1 insertion(+)</code></pre>
+<p>Owner: Try to push the change to Github:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin master</code></pre>
+<pre class="output"><code>To https://github.com/vlad/planets.git
+ ! [rejected]        master -&gt; master (non-fast-forward)
+error: failed to push some refs to &#39;https://github.com/vlad/planets.git&#39;
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Merge the remote changes (e.g. &#39;git pull&#39;)
+hint: before pushing again.
+hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; for details.</code></pre>
+<p>but Git won't let us push it to GitHub!</p>
+<p>Git detects that the changes made in one copy overlap with those made in the other and stops us from trampling on our previous work. What we have to do is pull the changes from GitHub, <a href="reference.html#merge">merge</a> them into the copy we're currently working in, and then push that.</p>
+<p>Owner: Start by pulling:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> pull origin master</code></pre>
+<pre class="output"><code>remote: Counting objects: 5, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 3 (delta 1)
+Unpacking objects: 100% (3/3), done.
+From https://github.com/vlad/planets
+ * branch            master     -&gt; FETCH_HEAD
+Auto-merging mars.txt
+CONFLICT (content): Merge conflict in mars.txt
+Automatic merge failed; fix conflicts and then commit the result.</code></pre>
+<p><code>git pull</code> tells us there's a conflict, and marks that conflict in the affected file:</p>
+<p>Owner: Look at contents of <code>mars.txt</code></p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> mars.txt</code></pre>
+<pre class="output"><code>Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+But the Mummy will appreciate the lack of humidity
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+Let&#39;s start to discuss conflicts.
+=======
+I don&#39;t think we should teach conflicts at this workshop...
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; dabb4c8c450e8475aee9b14b4383acc99f42af1d</code></pre>
+<p>Our change---the one in <code>HEAD</code>---is preceded by <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>. Git has then inserted <code>=======</code> as a separator between the conflicting changes and marked the end of the content downloaded from GitHub with <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>. (The string of letters and digits after that marker identifies the revision we've just downloaded.)</p>
+<p>It is now up to us to edit this file to remove these markers and reconcile the changes. We can do anything we want: keep the change made in the local repository, keep the change made in the remote repository, write something new to replace both, or get rid of the change entirely.</p>
+<p>Owner: Use a text editor to resolve the conflict:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> mars.txt
+$ <span class="kw">cat</span> mars.txt</code></pre>
+<pre class="output"><code>Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+But the Mummy will appreciate the lack of humidity
+Sorry, but the cat is out of the bag - we&#39;re already doing conflicts!</code></pre>
+<p>Owner: To finish merging, we add <code>mars.txt</code> to the changes being made by the merge and then commit:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add mars.txt
+$ <span class="kw">git</span> status</code></pre>
+<pre class="output"><code># On branch master
+# All conflicts fixed but you are still merging.
+#   (use &quot;git commit&quot; to conclude merge)
+#
+# Changes to be committed:
+#
+#   modified:   mars.txt
+#</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> commit -m <span class="st">&quot;Merging changes from GitHub&quot;</span></code></pre>
+<pre class="output"><code>[master 2abf2b1] Merging changes from GitHub</code></pre>
+<p>Owner: Push the changes to GitHub:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin master</code></pre>
+<pre class="output"><code>Counting objects: 10, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 697 bytes, done.
+Total 6 (delta 2), reused 0 (delta 0)
+To https://github.com/vlad/planets.git
+   dabb4c8..2abf2b1  master -&gt; master</code></pre>
+<p>Git keeps track of what we've merged with what, so we don't have to fix things by hand again.</p>
+<p>Collaborator: Pull the changes from Github:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> pull origin master</code></pre>
+<pre class="output"><code>remote: Counting objects: 10, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 2), reused 6 (delta 2)
+Unpacking objects: 100% (6/6), done.
+From https://github.com/vlad/planets
+ * branch            master     -&gt; FETCH_HEAD
+Updating dabb4c8..2abf2b1
+Fast-forward
+ mars.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)</code></pre>
+<p>We get the merged file:</p>
+<p>Collaborator: Look at contents of <code>mars.txt</code> to verify it is now the same as the Owner's copy:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> mars.txt</code></pre>
+<pre class="output"><code>Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+But the Mummy will appreciate the lack of humidity
+Sorry, but the cat is out of the bag - we&#39;re already doing conflicts!</code></pre>
+<p>We don't need to merge again because Git knows someone has already done that.</p>
+<p>Version control's ability to merge conflicting changes is another reason users tend to divide their programs and papers into multiple files instead of storing everything in one large file. There's another benefit too: whenever there are repeated conflicts in a particular file, the version control system is essentially trying to tell its users that they ought to clarify who's responsible for what, or find a way to divide the work up differently.</p>
+<div id="github-conflict" class="challenge">
+<h2>GitHub Conflict</h2>
+<p>Now the Owner should make a change to <code>mars.txt</code>, and add, commit and push the changes to Github. Next, have the Collaborator do the same. This will lead to a conflict which the Collaborator will have to resolve. After this is done, have the Collaborator create a conflict and the owner resolve it.</p>
+</div>
+        </div>
+      </div>
+      <div class="footer">
+        <a class="label swc-blue-bg" href="http://software-carpentry.org">Software Carpentry</a>
+        <a class="label swc-blue-bg" href="https://github.com/swcarpentry/git-novice">Source</a>
+        <a class="label swc-blue-bg" href="mailto:admin@software-carpentry.org">Contact</a>
+        <a class="label swc-blue-bg" href="LICENSE.html">License</a>
+      </div>
+    </div>
+    <!-- Javascript placed at the end of the document so the pages load faster -->
+    <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
+    <script src="http://software-carpentry.org/v5/js/bootstrap/bootstrap.min.js"></script>
+  </body>
+</html>
