@@ -42,7 +42,6 @@
 </ul>
 </div>
 <h2 id="what-is-version-control-and-how-does-it-work">What is version control and how does it work?</h2>
-<p>Before we start, has everyone downloaded and installed the Github app? Let's do that now.</p>
 <p><a href="http://www.phdcomics.com"><img src="fig/phd101212s.gif" alt="Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com" /></a></p>
 <p>&quot;Piled Higher and Deeper&quot; by Jorge Cham, http://www.phdcomics.com</p>
 <p>We've all been in this situation before: it seems ridiculous to have multiple nearly-identical versions of the same document. Some word processors let us deal with this a little better, like Microsoft Word (&quot;Track Changes&quot;) or Google Docs version history.</p>
@@ -78,8 +77,8 @@ $ <span class="kw">git</span> config --global core.editor <span class="st">&quot
 </ul>
 <p>The four commands above only need to be run once: the flag <code>--global</code> tells Git to use the settings for every project on this machine.</p>
 <h2 id="start-version-control">Start Version Control</h2>
-<p>Let's create a directory for our work. Create a new folder in your home directory and call it <code>planets_yourname</code>, open a terminal window and navigate into that directory.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> planets_yourname</code></pre>
+<p>Let's create a directory for our work. Create a new folder in your home directory and call it <code>planets</code>, open a terminal window and navigate into that directory.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> planets</code></pre>
 <p>and tell Git to make this directory into a repository.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> init</code></pre>
 <p>Git creates a hidden directory called <code>.git</code> in this directory:</p>
@@ -91,13 +90,8 @@ $ <span class="kw">git</span> config --global core.editor <span class="st">&quot
 <p>Let's create a file called <code>mars.txt</code> that contains some notes about the Red Planet's suitability as a base.</p>
 <p>Open your favorite text editor, maybe TextWrangler on the Mac or Notepad on Windows, and start a new file. Type some text into the new file:</p>
 <pre class="output"><code>Cold and dry, but everything is my favorite color</code></pre>
-<p>Save this file in your planets_yourname directory as <code>mars.txt</code>.</p>
+<p>Save this file in your <code>planets</code> directory as <code>mars.txt</code>.</p>
 <h3 id="tracking-our-file">Tracking our file:</h3>
-<p>We can look at this repo in the Github GUI app. Launch the Github app. From the File menu, go to Add Local Repository... and add the planets directory.</p>
-<div class="figure">
-<img src="img/new_repo.png" alt="Add Local Repository" /><p class="caption">Add Local Repository</p>
-</div>
-<p>Now you should see your file <code>mars.txt</code> with its changes.</p>
 <p>Let's ask Git about the status of this repo:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
 <pre class="output"><code># On branch master
@@ -389,6 +383,11 @@ nothing to commit, working directory clean</code></pre>
 <li><code>git checkout &lt;unique ID of last revision&gt; data_cruncher.py</code></li>
 <li>Both 2 &amp; 4</li>
 </ol>
+</div>
+<div id="what-would-happen" class="challenge">
+<h2>What would happen?</h2>
+<p>Suppose that you weren't paying attention and you run <code>git init</code> from your home directory. What would happen?</p>
+<p>How would you fix this situation? Try it and see!</p>
 </div>
 <div id="making-a-repo-for-this-workshop" class="challenge">
 <h2>Making a repo for this workshop</h2>

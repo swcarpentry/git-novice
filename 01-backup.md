@@ -18,8 +18,6 @@ minutes: 60
 
 ## What is version control and how does it work?
 
-Before we start, has everyone downloaded and installed the Github app? Let's do that now.
-
 [![Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com](fig/phd101212s.gif)](http://www.phdcomics.com)
 
 "Piled Higher and Deeper" by Jorge Cham, http://www.phdcomics.com
@@ -77,10 +75,10 @@ the flag `--global` tells Git to use the settings for every project on this mach
 
 ## Start Version Control
 
-Let's create a directory for our work. Create a new folder in your home directory and call it `planets_yourname`, open a terminal window and navigate into that directory.
+Let's create a directory for our work. Create a new folder in your home directory and call it `planets`, open a terminal window and navigate into that directory.
 
 ~~~ {.bash}
-$ cd planets_yourname
+$ cd planets
 ~~~
 
 and tell Git to make this directory into a repository.
@@ -113,15 +111,9 @@ Open your favorite text editor, maybe TextWrangler on the Mac or Notepad on Wind
 Cold and dry, but everything is my favorite color
 ~~~
 
-Save this file in your planets_yourname directory as `mars.txt`.
+Save this file in your `planets` directory as `mars.txt`.
 
 ### Tracking our file:
-
-We can look at this repo in the Github GUI app. Launch the Github app. From the File menu, go to Add Local Repository... and add the planets directory.
-
-![Add Local Repository](img/new_repo.png)
-
-Now you should see your file `mars.txt` with its changes.
 
 Let's ask Git about the status of this repo:
 
@@ -710,6 +702,12 @@ nothing to commit, working directory clean
 > 3. `git checkout HEAD~1 data_cruncher.py`
 > 4. `git checkout <unique ID of last revision> data_cruncher.py`
 > 5. Both 2 & 4
+
+> ## What would happen? {.challenge}
+>
+> Suppose that you weren't paying attention and you run `git init` from your home directory. What would happen?
+>
+> How would you fix this situation? Try it and see!
 
 > ## Making a repo for this workshop {.challenge}
 >
