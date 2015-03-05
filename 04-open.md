@@ -164,6 +164,11 @@ Greg Wilson: "Software Carpentry: Lessons Learned". arXiv:1307.5448, July 2013.
 }
 ~~~
 
+> ## Making Code Citable {.callout}
+>
+> [This short guide](https://guides.github.com/activities/citable-code/) from GitHub
+> explains how to create a Digital Object Identifier (DOI) for your code.
+
 ## Hosting
 
 The second big question for groups that want to open up their work
