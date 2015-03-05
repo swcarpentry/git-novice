@@ -162,8 +162,6 @@ Git takes all the changes we made this time and stores a record of those changes
 
 We can look at the repo's history to see what we've done in the past.
 
-![Git history](img/history.png)
-
 From the command line, type `git log`:
 
 ~~~ {.bash}
