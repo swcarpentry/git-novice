@@ -10,6 +10,50 @@ minutes: 60
 > *   Explain what happens when a remote repository is cloned.
 > *   Explain what happens when changes are pushed to or pulled from a remote repository.
 
+> ## Detached HEAD: what happened? {.callout}
+>
+> Yesterday some of us ended up in a scary state: Detached HEAD. What happened?
+>
+> When we call `git add`, git requires that we specify a file to add to the staging area.
+> We can sequentially add any number of files to the staging area. When we commit, we don't specify a file: `git commit` commits everything in the staging area.
+>
+> So, when you call `git checkout`, you're asking for a particular commit. If you don't specify what file you want, Git thinks that you want to look at everything that changed in that commit: it calls this "detached HEAD."
+>
+> Think of the git history as a tree trunk that we are at the top of and that we can climb up and down. If we climb down, we need a way to get back to the top of the tree. Git calls this tree trunk the "master" branch, and so the top of the tree is `master`.
+>
+> ~~~{.bash}
+> $ git checkout HEAD~1 mars.txt
+> ~~~
+> ~~~{.bash}
+> $ git checkout HEAD~1
+> ~~~
+> ~~~{.output}
+> Note: checking out 'HEAD~2'.
+>
+> You are in 'detached HEAD' state. You can look around, make experimental
+> changes and commit them, and you can discard any commits you make in this
+> state without impacting any branches by performing another checkout.
+>
+> If you want to create a new branch to retain commits you create, you may
+> do so (now or later) by using -b with the checkout command again. Example:
+>
+>   git checkout -b new_branch_name
+>
+> HEAD is now at 61941a9... Starting to think about Mars
+> ~~~
+>
+> To fix this, we go back to master.
+> ~~~{.bash}
+> $ git checkout master
+> ~~~
+> ~~~{.output}
+> Previous HEAD position was 61941a9... Starting to think about Mars
+> Switched to branch 'master'
+> ~~~
+>
+> We're back at the top of our master trunk.
+
+
 Version control really comes into its own
 when we begin to collaborate with other people.
 We already have most of the machinery we need to do this;
@@ -104,19 +148,6 @@ To https://github.com/vlad/planets
 Branch master set up to track remote branch master from origin.
 ~~~
 
-> ## What is branch master? {.callout}
->
-> We could certainly use Git with just SHAs as our labels for our work, and ask Git what label went with which commit went with which set. But this isn't really the way we usually work, is it?
->
-> Usually you're trying to accomplish a particular task and you know you're going to make some changes to the repository to achieve this. It'd be nice to have a human-readable label for those changes, to make it easier to visualize and to make it easier to share with others. Branches let us achieve this.
->
-> Think of the SHAs as our trail of breadcrumbs that we are leaving behind us as we work. When we make a branch, we are changing to a different type of breadcrumb: maybe we start dropping pieces of pumpernickel behind us instead of sourdough.
->
-> When you start your new branch `pumpernickel`, you keep the trail of commits that you made before you branched, but any new commits you make will be using the pumpernickel crumbs.
->
-> ![Branches let you note which trail of commits you're making](fig/branch.svg)
->
-> The original trail of breadcrumbs, the sourdough ones in this analogy, have the default branch name of `master`. All new repos start out on a branch named `master`. It's a good practice to keep `master` as the base branch of all the work you do in a repository, and make new branches to do work on new subprojects.
 
 Our local and remote repositories are now in this state:
 

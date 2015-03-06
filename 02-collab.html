@@ -37,6 +37,29 @@
 <li>Explain what happens when changes are pushed to or pulled from a remote repository.</li>
 </ul>
 </div>
+<div id="detached-head-what-happened" class="callout">
+<h2>Detached HEAD: what happened?</h2>
+<p>Yesterday some of us ended up in a scary state: Detached HEAD. What happened?</p>
+<p>When we call <code>git add</code>, git requires that we specify a file to add to the staging area. We can sequentially add any number of files to the staging area. When we commit, we don't specify a file: <code>git commit</code> commits everything in the staging area.</p>
+<p>So, when you call <code>git checkout</code>, you're asking for a particular commit. If you don't specify what file you want, Git thinks that you want to look at everything that changed in that commit: it calls this &quot;detached HEAD.&quot;</p>
+<p>Think of the git history as a tree trunk that we are at the top of and that we can climb up and down. If we climb down, we need a way to get back to the top of the tree. Git calls this tree trunk the &quot;master&quot; branch, and so the top of the tree is <code>master</code>.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout HEAD~1 mars.txt</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout HEAD~1</code></pre>
+<pre class="output"><code>Note: checking out &#39;HEAD~2&#39;.
+
+You are in &#39;detached HEAD&#39; state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b new_branch_name
+
+HEAD is now at 61941a9... Starting to think about Mars</code></pre>
+<p>To fix this, we go back to master. <sub><del>{.bash} $ git checkout master</del></sub> <sub><del>{.output} Previous HEAD position was 61941a9... Starting to think about Mars Switched to branch 'master'</del></sub></p>
+<p>We're back at the top of our master trunk.</p>
+</div>
 <p>Version control really comes into its own when we begin to collaborate with other people. We already have most of the machinery we need to do this; the only thing missing is to copy changes from one repository to another.</p>
 <p>Systems like Git allow us to move work between any two repositories. Remember, from Git's perspective, the two repositories are copies of each other (clones) which may be out of sync, but were once originally made from the same base repository. From the user's perspective, her own copy is the <em>local</em> copy, and any other ones are <em>remote</em> repositories.</p>
 <p>A service like Github acts as a central server for your repository, but it is basically just storing another copy of your repository. Github's copies are only special because we told Git that the Github version is special.</p>
@@ -96,17 +119,6 @@ Total 9 (delta 2), reused 0 (delta 0)
 To https://github.com/vlad/planets
  * [new branch]      master -&gt; master
 Branch master set up to track remote branch master from origin.</code></pre>
-<div id="what-is-branch-master" class="callout">
-<h2>What is branch master?</h2>
-<p>We could certainly use Git with just SHAs as our labels for our work, and ask Git what label went with which commit went with which set. But this isn't really the way we usually work, is it?</p>
-<p>Usually you're trying to accomplish a particular task and you know you're going to make some changes to the repository to achieve this. It'd be nice to have a human-readable label for those changes, to make it easier to visualize and to make it easier to share with others. Branches let us achieve this.</p>
-<p>Think of the SHAs as our trail of breadcrumbs that we are leaving behind us as we work. When we make a branch, we are changing to a different type of breadcrumb: maybe we start dropping pieces of pumpernickel behind us instead of sourdough.</p>
-<p>When you start your new branch <code>pumpernickel</code>, you keep the trail of commits that you made before you branched, but any new commits you make will be using the pumpernickel crumbs.</p>
-<div class="figure">
-<img src="fig/branch.svg" alt="Branches let you note which trail of commits you&#39;re making" /><p class="caption">Branches let you note which trail of commits you're making</p>
-</div>
-<p>The original trail of breadcrumbs, the sourdough ones in this analogy, have the default branch name of <code>master</code>. All new repos start out on a branch named <code>master</code>. It's a good practice to keep <code>master</code> as the base branch of all the work you do in a repository, and make new branches to do work on new subprojects.</p>
-</div>
 <p>Our local and remote repositories are now in this state:</p>
 <div class="figure">
 <img src="fig/github-repo-after-first-push.svg" alt="GitHub Repository After First Push" /><p class="caption">GitHub Repository After First Push</p>
