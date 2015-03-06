@@ -112,10 +112,6 @@ nothing added to commit but untracked files present (use &quot;git add&quot; to 
  1 file changed, 1 insertion(+)
  create mode 100644 mars.txt</code></pre>
 <p>Git takes all the changes we made this time and stores a record of those changes permanently inside the special <code>.git</code> directory. This set of changes is called a <a href="reference.html#revision">revision</a>. It assigns a unique identifier (<code>189f6e7</code>) to the commit.</p>
-<div id="what-are-the-flags-for" class="callout">
-<h2>What are the flags for?</h2>
-<p>We use the <code>-m</code> flag (for &quot;message&quot;) to record a comment that will help us remember later on what we did and why. If we just run <code>git commit</code> without the <code>-m</code> option, Git will launch <code>nano</code> (or whatever other editor we configured at the start) so that we can write a longer message.</p>
-</div>
 <h3 id="looking-at-past-changes">Looking at past changes:</h3>
 <p>We can look at the repo's history to see what we've done in the past.</p>
 <p>From the command line, type <code>git log</code>:</p>
@@ -283,113 +279,6 @@ But the Mummy will appreciate the lack of humidity</code></pre>
 <p>The following diagram illustrates what the history of a file might look like (moving back from <code>HEAD</code>, the most recently committed version):</p>
 <div class="figure">
 <img src="fig/git-when-revisions-updated.svg" alt="When Git Updates Revision Numbers" /><p class="caption">When Git Updates Revision Numbers</p>
-</div>
-<div id="simplifying-the-common-case" class="callout">
-<h2>Simplifying the Common Case</h2>
-<p>If you read the output of <code>git status</code> carefully, you'll see that it includes this hint:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">(use</span> <span class="st">&quot;git checkout -- &lt;file&gt;...&quot;</span> to discard changes in working directory<span class="kw">)</span></code></pre>
-<p>As it says, <code>git checkout</code> without a version identifier restores files to the state saved in <code>HEAD</code>. The double dash <code>--</code> is needed to separate the names of the files being recovered from the command itself: without it, Git would try to use the name of the file as the revision identifier.</p>
-</div>
-<p>The fact that files can be reverted one by one tends to change the way people organize their work. If everything is in one large document, it's hard (but not impossible) to undo changes to the introduction without also undoing changes made later to the conclusion. If the introduction and conclusion are stored in separate files, on the other hand, moving backward and forward in time becomes much easier.</p>
-<p>We can also refer to revisions using those long strings of digits and letters that <code>git log</code> displays. These are unique IDs for the changes, and &quot;unique&quot; really does mean unique: every change to any set of files on any machine has a unique 40-character identifier. Our first commit was given the ID f22b25e3233b4645dabd0d81e651fe074bd8e73b, so let's try this:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> diff f22b25e3233b4645dabd0d81e651fe074bd8e73b mars.txt</code></pre>
-<pre class="output"><code>diff --git a/mars.txt b/mars.txt
-index df0654a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1 +1,3 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity</code></pre>
-<p>We can checkout a revision using the specific identifier as well: this way we can reach even older commits in an absolute fashion.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout f22b25e mars.txt</code></pre>
-<p>Note that here we just used the first seven characters of the identifier: Git is fine with using this shortened form as well.</p>
-<p>Using these identifiers (called SHAs) is absolutely the safest way to identify a particular revision, but there are easier ways to identify specific revisions, like tagging and branching. These are outside the scope of the workshop, though.</p>
-<h2 id="ignoring-things">Ignoring Things</h2>
-<p>What if we have files that we do not want Git to track for us, like backup files created by our editor or intermediate files created during data analysis. Let's create a few dummy files:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> results
-$ <span class="kw">touch</span> a.dat b.dat c.dat results/a.out results/b.out</code></pre>
-<p>and see what Git says:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
-<pre class="output"><code># On branch master
-# Untracked files:
-#   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
-#
-#   a.dat
-#   b.dat
-#   c.dat
-#   results/
-nothing added to commit but untracked files present (use &quot;git add&quot; to track)</code></pre>
-<p>Putting these files under version control would be a waste of disk space. What's worse, having them all listed could distract us from changes that actually matter, so let's tell Git to ignore them.</p>
-<p>We do this by creating a file in the root directory of our project called <code>.gitignore</code>.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> .gitignore
-$ <span class="kw">cat</span> .gitignore</code></pre>
-<pre class="output"><code>*.dat
-results/</code></pre>
-<p>These patterns tell Git to ignore any file whose name ends in <code>.dat</code> and everything in the <code>results</code> directory. (If any of these files were already being tracked, Git would continue to track them.)</p>
-<p>Once we have created this file, the output of <code>git status</code> is much cleaner:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
-<pre class="output"><code># On branch master
-# Untracked files:
-#   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
-#
-#   .gitignore
-nothing added to commit but untracked files present (use &quot;git add&quot; to track)</code></pre>
-<p>The only thing Git notices now is the newly-created <code>.gitignore</code> file. You might think we wouldn't want to track it, but everyone we're sharing our repository with will probably want to ignore the same things that we're ignoring. Let's add and commit <code>.gitignore</code>:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add .gitignore
-$ <span class="kw">git</span> commit -m <span class="st">&quot;Add the ignore file&quot;</span>
-$ <span class="kw">git</span> status</code></pre>
-<pre class="output"><code># On branch master
-nothing to commit, working directory clean</code></pre>
-<p>As a bonus, using <code>.gitignore</code> helps us avoid accidentally adding files to the repository that we don't want.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add a.dat</code></pre>
-<pre class="output"><code>The following paths are ignored by one of your .gitignore files:
-a.dat
-Use -f if you really want to add them.
-fatal: no files added</code></pre>
-<p>If we really want to override our ignore settings, we can use <code>git add -f</code> to force Git to add something. We can also always see the status of ignored files if we want:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status --ignored</code></pre>
-<pre class="output"><code># On branch master
-# Ignored files:
-#  (use &quot;git add -f &lt;file&gt;...&quot; to include in what will be committed)
-#
-#        a.dat
-#        b.dat
-#        c.dat
-#        results/
-
-nothing to commit, working directory clean</code></pre>
-<div id="committing-changes-to-git" class="challenge">
-<h2>Committing Changes to Git</h2>
-<p>Which command(s) below would save changes of <code>myfile.txt</code> to my local Git repository?</p>
-<ol style="list-style-type: decimal">
-<li><code>git commit -m &quot;my recent changes&quot;</code></li>
-<li><code>git init myfile.txt</code> <code>git commit -m &quot;my recent changes&quot;</code></li>
-<li><code>git add myfile.txt</code> <code>git commit -m &quot;my recent changes&quot;</code></li>
-<li><code>git commit -m myfile.txt &quot;my recent changes&quot;</code></li>
-</ol>
-</div>
-<div id="recovering-older-versions-of-a-file" class="challenge">
-<h2>Recovering Older Versions of a File</h2>
-<p>Jennifer has made changes to the Python script that she has been working on for weeks, and the modifications she made this morning &quot;broke&quot; the script and it no longer runs. She has spent ~ 1hr trying to fix it, with no luck...</p>
-<p>Luckily, she has been keeping track of her revisions using Git! Which commands below will let her recover the last committed version of her Python script called <code>data_cruncher.py</code>?</p>
-<ol style="list-style-type: decimal">
-<li><code>git checkout HEAD</code></li>
-<li><code>git checkout HEAD data_cruncher.py</code></li>
-<li><code>git checkout HEAD~1 data_cruncher.py</code></li>
-<li><code>git checkout &lt;unique ID of last revision&gt; data_cruncher.py</code></li>
-<li>Both 2 &amp; 4</li>
-</ol>
-</div>
-<div id="what-would-happen" class="challenge">
-<h2>What would happen?</h2>
-<p>Suppose that you weren't paying attention and you run <code>git init</code> from your home directory. What would happen?</p>
-<p>How would you fix this situation? Try it and see!</p>
-</div>
-<div id="making-a-repo-for-this-workshop" class="challenge">
-<h2>Making a repo for this workshop</h2>
-<p>How would you turn the directory from our work today into a repo? Are there files you'd want to ignore?</p>
-<p>Set up a repo and a gitignore file for it.</p>
 </div>
         </div>
       </div>
