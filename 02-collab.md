@@ -43,6 +43,7 @@ minutes: 60
 > ~~~
 >
 > To fix this, we go back to master.
+>
 > ~~~{.bash}
 > $ git checkout master
 > ~~~

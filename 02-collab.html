@@ -57,7 +57,10 @@ do so (now or later) by using -b with the checkout command again. Example:
   git checkout -b new_branch_name
 
 HEAD is now at 61941a9... Starting to think about Mars</code></pre>
-<p>To fix this, we go back to master. <sub><del>{.bash} $ git checkout master</del></sub> <sub><del>{.output} Previous HEAD position was 61941a9... Starting to think about Mars Switched to branch 'master'</del></sub></p>
+<p>To fix this, we go back to master.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout master</code></pre>
+<pre class="output"><code>Previous HEAD position was 61941a9... Starting to think about Mars
+Switched to branch &#39;master&#39;</code></pre>
 <p>We're back at the top of our master trunk.</p>
 </div>
 <p>Version control really comes into its own when we begin to collaborate with other people. We already have most of the machinery we need to do this; the only thing missing is to copy changes from one repository to another.</p>
