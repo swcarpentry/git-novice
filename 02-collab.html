@@ -132,54 +132,6 @@ Branch master set up to track remote branch master from origin.</code></pre>
  * branch            master     -&gt; FETCH_HEAD
 Already up-to-date.</code></pre>
 <p>Pulling has no effect in this case because the two repositories are already synchronized. If someone else had pushed some changes to the repository on GitHub, though, this command would download them to our local repository.</p>
-<p>For the next step, get into pairs. Pick one of your repositories on GitHub to use for collaboration.</p>
-<p>The partner whose repository is being used needs to give the other person access. On GitHub, click the settings button on the right, then select Collaborators, and enter your partner's username.</p>
-<div class="figure">
-<img src="fig/github-add-collaborators.png" alt="Adding collaborators on GitHub" /><p class="caption">Adding collaborators on GitHub</p>
-</div>
-<p>The other partner should <code>cd</code> to another directory (so <code>ls</code> doesn't show a <code>planets</code> folder), and then make a copy of this repository on your own computer:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> clone https://github.com/vlad/planets.git</code></pre>
-<p>Replace 'vlad' with your partner's username (the one who owns the repository).</p>
-<p><code>git clone</code> creates a copy of a repository.</p>
-<div class="figure">
-<img src="fig/github-collaboration.svg" alt="After Creating Clone of Repository" /><p class="caption">After Creating Clone of Repository</p>
-</div>
-<p>The new collaborator can now make a change in their copy of the repository:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> planets
-$ <span class="kw">nano</span> pluto.txt
-$ <span class="kw">cat</span> pluto.txt</code></pre>
-<pre class="output"><code>It is so a planet!</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add pluto.txt
-$ <span class="kw">git</span> commit -m <span class="st">&quot;Some notes about Pluto&quot;</span></code></pre>
-<pre class="output"><code> 1 file changed, 1 insertion(+)
- create mode 100644 pluto.txt</code></pre>
-<p>then push the change to GitHub:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin master</code></pre>
-<pre class="output"><code>Counting objects: 4, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (2/2), done.
-Writing objects: 100% (3/3), 306 bytes, done.
-Total 3 (delta 0), reused 0 (delta 0)
-To https://github.com/vlad/planets.git
-   9272da5..29aba7c  master -&gt; master</code></pre>
-<p>Note that we didn't have to create a remote called <code>origin</code>: Git does this automatically, using that name, when we clone a repository. (This is why <code>origin</code> was a sensible choice earlier when we were setting up remotes by hand.)</p>
-<p>We can now download changes into the original repository on our machine:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> pull origin master</code></pre>
-<pre class="output"><code>remote: Counting objects: 4, done.
-remote: Compressing objects: 100% (2/2), done.
-remote: Total 3 (delta 0), reused 3 (delta 0)
-Unpacking objects: 100% (3/3), done.
-From https://github.com/vlad/planets
- * branch            master     -&gt; FETCH_HEAD
-Updating 9272da5..29aba7c
-Fast-forward
- pluto.txt | 1 +
- 1 file changed, 1 insertion(+)
- create mode 100644 pluto.txt</code></pre>
-<div id="github-timestamp" class="challenge">
-<h2>GitHub Timestamp</h2>
-<p>Create a repository on GitHub, clone it, add a file, push those changes to GitHub, and then look at the <a href="reference.html#timestamp">timestamp</a> of the change on GitHub. How does GitHub record times, and why?</p>
-</div>
         </div>
       </div>
       <div class="footer">
