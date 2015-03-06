@@ -55,18 +55,17 @@ minutes: 60
 > We're back at the top of our master trunk.
 
 
-Version control really comes into its own
-when we begin to collaborate with other people.
+Version control really comes into its own when we begin to collaborate with other people.
 We already have most of the machinery we need to do this;
 the only thing missing is to copy changes from one repository to another.
 
 Systems like Git allow us to move work between any two repositories. Remember, from Git's perspective, the two repositories are copies of each other (clones) which may be out of sync, but were once originally made from the same base repository. From the user's perspective, her own copy is the _local_ copy, and any other ones are _remote_ repositories.
 
-A service like Github acts as a central server for your repository, but it is basically just storing another copy of your repository. Github's copies are only special because we told Git that the Github version is special.
+Github and Bitbucket are cloud-hosted servers that can store and share Git repositories for you. Their copy is just another remote repository.
 
 ![Every user has their own copy](fig/github.svg)
 
-So, if a user wants to make changes to a file in a repo that is under Git control, she can make changes to her own copy of the file and then tell Git to commit those changes in its  history. It saves the changes in her own copy of the repo on her own computer.
+So, if a user wants to make changes to a file that is under Git control, she can make changes to her own copy of the file and then tell Git to commit those changes in its  history. It saves the changes in her own copy of the repo on her own computer.
 
 If she wants another user to see her changes, though, she needs to tell that other user's Git copy that she made changes. This is called _pushing_ the commits to another repo. She can either push the changes directly to another user's copy, or she can push them to a centrally-designated remote repository, like one at Github.
 
