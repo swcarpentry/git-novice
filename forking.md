@@ -62,34 +62,3 @@ Create the pull request.
 ![A created PR](img/pr-description.png)
 
 After you've made your pull request, go back to the pull request list for `https://github.com/nsoontie/WiSE-swc-ubc`. You should see everyone's pull requests there now.
-
-> ## Fixing bugs {.challenge}
-> Let's go back to the local copy of this repo on your machine. You'll notice that you got a copy of a file called `errors.py`. Open this in your text editor. It looks like a python script. How do you run it?
->
-> ~~~{.bash}
-> $ cd WiSE-swc-ubc
-> $ python errors.py
-> ~~~
->
-> Running the `python` command executes a python script from the command line. Try running this program and see what you get:
->
-> ~~~{.output}
-> Give me an integer number: 2
-> The square of your number is: 2
-> Enter a string: sdf
-> there are 3 letters in sdf
-> there are 0 spaces in sdf
-> there are 4 characters in sdf
-> ~~~
->
-> There are clearly some errors here. Can you fix them?
-
-> ## Sharing your fixes {.challenge}
-> Make pull requests for your fixed scripts. Look at others' fixes. Check out some other people's versions: what did they do differently than you?
->
-> ~~~{.bash}
-> $ git checkout -b mutantdaisies-master master
-> $ git pull https://github.com/mutantdaisies/WiSE-swc-ubc.git master
-> ~~~
->
-> Make comments in each others' pull requests!
