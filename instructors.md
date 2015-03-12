@@ -31,6 +31,7 @@ We close with material on licensing because:
 
 ## Teaching Notes
 
+<<<<<<< HEAD
 *   Try to make it clear that Git and GitHub are not the same thing:
     Git is an open source version control tool,
     GitHub is a company that's built a really useful website on top of it.
@@ -154,4 +155,19 @@ $ git commit
 ~~~
 ~~~ {.error}
 Aborting commit due to empty commit message.
+~~~
+
+## [A Better Kind of Backup](01-backup.html)
+
+The challenge "Places to create repositories" tries to reinforce the idea that
+the `.git` folder contains the whole Git repo and deleting this folder *undoes*
+a `git init`. It also gives the learner the way to fix the common mistake of
+putting unwanted folders (like `Desktop`) under version control.
+
+Instead of removing the `.git` folder directly, you can choose to move
+it first to a safer directory and remove it from there:
+
+~~~ {.bash}
+mv .git temp_git
+rm -rf  temp_git
 ~~~
