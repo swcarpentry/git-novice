@@ -6,10 +6,10 @@ minutes: 15
 ---
 > ## Learning Objectives {.objectives}
 >
-> *   Explain how the GNU General Public License (GPL) differs from most other open licenses.
-> *   Explain the four kinds of restrictions that can be combined in a Creative Commons license.
-> *   Correctly add licensing and citation information to a project repository.
-> *   Outline options for hosting code and data and the pros and cons of each.
+> *   Explain how version control can be leveraged as an electronic lab notebook for computational work.
+> *   Explain why adding licensing and citation information to a project repository is important.
+> *   Explain what license choices are available and how to choose one.
+> *   Explain how licensing and social expectations differ.
 
 > The opposite of "open" isn't "closed".
 > The opposite of "open" is "broken".
@@ -46,9 +46,10 @@ though,
 the process looks like this:
 
 *   The data that the scientist collects is stored in an open access repository
-    like [figshare](http://figshare.com/) or [Dryad](http://datadryad.org/)
-    as soon as it's collected,
-    and given its own DOI.
+    like [figshare](http://figshare.com/) or
+    [Zenodo](http://zenodo.org), possibly as soon as it's collected,
+    and given its own DOI. Or the data was already published and is stored in
+    [Dryad](http://datadryad.org/).
 *   The scientist creates a new repository on GitHub to hold her work.
 *   As she does her analysis,
     she pushes changes to her scripts
@@ -70,74 +71,132 @@ the process looks like this:
 
 This open model accelerates discovery:
 the more open work is,
-[the more widely it is cited and re-used](http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0000308).
+[the more widely it is cited and re-used](http://dx.doi.org/10.1371/journal.pone.0000308).
 However,
 people who want to work this way need to make some decisions
 about what exactly "open" means in practice.
 
+## Version control as electronic lab notebook
+
+The benefits of version control in essence mean that, when used
+diligently, you can use version control as a form of electronic
+lab notebook for your computational work.
+
+* The conceptual stages of your work are documented, including who did
+  what and when. Every step is stamped with an identifier (the commit ID)
+  that is for most intents and purposes is unique.
+* You can tie documentation of rationale, ideas, and other
+  intellectual work directly to the changes that spring from them.
+* You can refer to what you used in your research to obtain your
+  computational results in a way that is unique and recoverable.
+* With a distributed version control system such as Git, the version
+  control repository is easy to archive for perpetuity, and contains
+  the entire history.
+
 ## Licensing
 
-The first question is licensing.
-Broadly speaking,
-there are two kinds of open license for software,
-and half a dozen for data and publications.
-For software,
-people can choose between the [GNU General Public License](http://opensource.org/licenses/GPL-3.0) (GPL) on the one hand,
-and licenses like the [MIT](http://opensource.org/licenses/MIT)
-and [BSD](http://opensource.org/licenses/BSD-2-Clause) licenses on the other.
-All of these licenses allow unrestricted sharing and modification of programs,
-but the GPL is [infective](reference.html#infective-license):
-anyone who distributes a modified version of the code
-(or anything that includes GPL'd code)
-must make *their* code freely available as well.
+At the latest when a repository with source code, a manuscript
+or other creative works becomes public, it should include a
+file `LICENSE` or `LICENSE.txt`license in the base directory of the
+repository that clearly states under which license the content is
+being made available. This is because
+as creative works, source code is automatically eligible for
+intellectual property (and thus copyright) protection. Code that appears to be, or is expressly
+advertised as freely available has *not* waived such
+protection. Hence, those who (re)use code that lacks a license
+statement do so on their own peril, because the author(s)
+of the software code can always unilaterally make such reuse illegal.
 
-Proponents of the GPL argue that this requirement is needed
-to ensure that people who are benefiting from freely-available code
-are also contributing back to the community.
-Opponents counter that many open source projects have had long and successful lives
-without this condition,
-and that the GPL makes it more difficult to combine code from different sources.
-At the end of the day,
-what matters most is that:
+A license solves this problem by granting rights to others (the
+licensees) that they would otherwise not have. What rights are being
+granted under which conditions differs, often only slightly, from one
+license to another. In contrast to proprietary licenses, the
+[open licences](http://opensource.org/licenses/alphabetical) certified by
+the [Open Source Initiative](http://opensource.org/) all grant at
+least the following rights, referred to as the
+[Open Source Definition](http://opensource.org/osd):
 
-1.   every project have a file in its home directory
-     called something like `LICENSE` or `LICENSE.txt`
-     that clearly states what the license is, and
-2.   people use existing licenses rather than writing new ones.
+1. The source code is available, and may be used and redistributed
+   without restrictions, including as part of aggregate distributions.
+2. Modifications or other derived works are allowed, and can be
+   redistributed as well.
+3. The question of who receives these rights is not subject to
+   discrimination, including not by fields of endeavor such as
+   commercial versus academic.
 
-The second point is as important as the first:
-most scientists are not lawyers,
-so wording that may seem sensible to a layperson
-may have unintended gaps or consequences.
-The [Open Source Initiative](http://opensource.org/)
-maintains a list of open source licenses,
-and [tl;drLegal](http://www.tldrlegal.com/) explains many of them in plain English.
+How best to choose an appropriate license can seem daunting, given how
+many possibilities there are. In practice, a few licenses are by far
+the most popular, including the following:
 
-When it comes to data, publications, and the like,
-scientists have many more options to choose from.
-The good news is that an organization called [Creative Commons](http://creativecommons.org/)
-has prepared a set of licenses using combinations of four basic restrictions:
+* [GNU General Public License](http://opensource.org/licenses/GPL-3.0)
+  (GPL),
+* [MIT license](http://opensource.org/licenses/MIT),
+* [BSD license](http://opensource.org/licenses/BSD-2-Clause).
 
-*   Attribution: derived works must give the original author credit for their work.
-*   No Derivatives: people may copy the work, but must pass it along unchanged.
-*   Share Alike: derivative works must license their work under the same terms as the original.
-*   Noncommercial: free use is allowed, but commercial use is not.
+The GPL is different from most other open source licenses in that it
+is
+[infective](http://swcarpentry.github.io/git-novice/reference.html#infective):
+anyone who distributes a modified version of the code, or anything
+that includes GPL'ed code, must make *their* code freely available as
+well.
 
-These four restrictions are abbreviated "BY", "ND", "SA", and "NC" respectively,
-so "CC-BY-ND" means,
-"People can re-use the work both for free and commercially,
-but cannot make changes and must cite the original."
-These [short descriptions](http://creativecommons.org/licenses/)
-summarize the six CC licenses in plain language,
-and include links to their full legal formulations.
+The following article provides an excellent overview of licensing and
+licensing options from the perspective of scientists who also write
+code:
 
-There is one other important license that doesn't fit into this categorization.
-Scientists (and other people) can choose to put material in the public domain,
-which is often abbreviated "PD".
-In this case,
-anyone can do anything they want with it,
-without needing to cite the original
-or restrict further re-use.
+> Morin, A., Urban, J., and Sliz, P. “[A Quick Guide to Software
+> Licensing for the Scientist-Programmer](http://dx.doi.org/10.1371/journal.pcbi.1002598)” PLoS Computational Biology
+> 8(7) (2012): e1002598.
+
+At the end of the day what matters is that there is a clear statement
+as to what the license is, and that the license is one already vetted
+and approved by [OSI](http://opensource.org). Also, the license is
+best chosen from the get-go, even if for a repository that is not
+public. Pushing off the decision only makes it more complicated later,
+because each time a new collaborator starts contributing, they, too,
+hold copyright and will thus need to be asked for approval once a
+license is chosen.
+
+### Licensing for non-software products
+
+If the content of a repository contains reseach products other than
+software, such as data, and/or creative writing (manuals, technical
+reports, manuscripts), most licenses designed for software are _not_
+suitable.
+
+* **Data:** In most jurisdictions most types of data (with possibly
+  the exception of photos, medical images, etc) are considered facts
+  of nature, and are hence not eligible for copyright
+  protection. Therefore, using a license, which by definition asserts
+  copyright, to signal social or scholarly expectations for
+  attribution serves only to create a legally murky situation. It is
+  much better to clarify the legal side with a public domain waiver
+  such as
+  [Creative Commons Zero (CC0)](https://creativecommons.org/publicdomain/zero/1.0/),
+  and the social expectations side with express requests for how to
+  use and cite the data. The [Dryad](http://datadryad.org) data
+  repository in fact requires this.
+
+* **Creative works:** Manuals, reports, manuscripts and other
+  creative works are eligible for intellectual property protection and
+  are hence automatically protected by copyright, just as software source
+  code. [Creative Commons](http://creativecommons.org/) has prepared a
+  [set of licenses](http://creativecommons.org/licenses/) using
+  combinations of four basic restrictions:
+
+    * Attribution: derived works must give the original author credit
+      for their work.
+    * No Derivatives: people may copy the work, but must pass it along
+      unchanged.
+    * Share Alike: derivative works must license their work under the
+      same terms as the original.
+    * Noncommercial: free use is allowed, but commercial use is not.
+
+  Only the Attribution
+  ([CC-BY](http://creativecommons.org/licenses/by/4.0/)) and
+  Share-Alike
+  ([CC-BY-SA](http://creativecommons.org/licenses/by-sa/4.0/))
+  licenses are considered "[Open](http://opendefinition.org/)".
 
 [Software Carpentry](http://software-carpentry.org/license.html)
 uses CC-BY for its lessons and the MIT License for its code
@@ -164,61 +223,8 @@ Greg Wilson: "Software Carpentry: Lessons Learned". arXiv:1307.5448, July 2013.
 }
 ~~~
 
-> ## Making Code Citable {.callout}
->
-> [This short guide](https://guides.github.com/activities/citable-code/) from GitHub
-> explains how to create a Digital Object Identifier (DOI) for your code.
+### Can I Use an Open License?
 
-## Hosting
-
-The second big question for groups that want to open up their work
-is where to host their code and data.
-One option is for the lab, the department, or the university to provide a server,
-manage accounts and backups,
-and so on.
-The main benefit of this is that it clarifies who owns what,
-which is particularly important if any of the material is sensitive
-(i.e.,
-relates to experiments involving human subjects
-or may be used in a patent application).
-The main drawbacks are the cost of providing the service and its longevity:
-a scientist who has spent ten years collecting data
-would like to be sure that data will still be available ten years from now,
-but that's well beyond the lifespan of most of the grants that fund academic infrastructure.
-
-Another option is to purchase a domain
-and pay an Internet service provider (ISP) to host it.
-This gives the individual or group more control,
-and sidesteps problems that can arise when moving from one institution to another,
-but requires more time and effort to set up than either
-the option above or the option below.
-
-The third option is to use a public hosting service like [GitHub](http://github.com),
-[BitBucket](http://bitbucket.org),
-[Google Code](http://code.google.com),
-or [SourceForge](http://sourceforge.net).
-Each of these services provides a web interface that enables people to create, view, and edit their code repositories.
-These services also provide communication and project management tools including issue tracking, wiki pages,  email notifications, and code reviews.
-These services benefit from economies of scale and network effects:
-it's easier to run one large service well
-than to run many smaller services to the same standard.
-It's also easier for people to collaborate:
-using a popular service can help connect your project with communities already using the same service.
-
-As an example,
-Software Carpentry [is on GitHub](https://github.com/swcarpentry/)
-where you can find the [source for this page](https://github.com/swcarpentry/git-novice/blob/gh-pages/04-open.md).
-Anyone with a GitHub account can suggest changes to this text.
-
-However,
-all of these services place some constraints on people's work.
-In particular,
-most give users a choice:
-if they're willing to share their work with others,
-it will be hosted for free,
-but if they want privacy,
-there may be limits on the number of private repositories or collaborators.
-GitHub and Bitbucket offer free private repositories to academics, and more capabilities are often available via paid plans.
 Sharing is the ideal for science,
 but many institutions place restrictions on sharing, for example to
 protect potentially patentable intellectual property.
