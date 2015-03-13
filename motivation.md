@@ -17,5 +17,5 @@ Because many people are using GitHub to collaborating.
 <section class="slide">
 ## Next Steps
 
-[Here we go!](01-backup.html)
+[Here we go!](01-setup.html)
 </section>
