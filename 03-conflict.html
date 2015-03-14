@@ -83,7 +83,9 @@ hint: Updates were rejected because the tip of your current branch is behind
 hint: its remote counterpart. Merge the remote changes (e.g. &#39;git pull&#39;)
 hint: before pushing again.
 hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; for details.</code></pre>
-<p><img src="fig/conflict.svg" alt="The conflicting changes" /></p>
+<div class="figure">
+<img src="fig/conflict.svg" alt="The conflicting changes" /><p class="caption">The conflicting changes</p>
+</div>
 <p>Git detects that the changes made in one copy overlap with those made in the other and stops us from trampling on our previous work. What we have to do is pull the changes from GitHub, <a href="reference.html#merge">merge</a> them into the copy we're currently working in, and then push that. Let's start by pulling:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> pull origin master</code></pre>
 <pre class="output"><code>remote: Counting objects: 5, done.        
