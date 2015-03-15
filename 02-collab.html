@@ -40,25 +40,37 @@
 <p>Version control really comes into its own when we begin to collaborate with other people. We already have most of the machinery we need to do this; the only thing missing is to copy changes from one repository to another.</p>
 <p>Systems like Git allow us to move work between any two repositories. In practice, though, it's easiest to use one copy as a central hub, and to keep it on the web rather than on someone's laptop. Most programmers use hosting services like <a href="http://github.com">GitHub</a> or <a href="http://bitbucket.org">BitBucket</a> to hold those master copies; we'll explore the pros and cons of this in the final section of this lesson.</p>
 <p>Let's start by sharing the changes we've made to our current project with the world. Log in to GitHub, then click on the icon in the top right corner to create a new repository called <code>planets</code>:</p>
-<p><img src="fig/github-create-repo-01.png" alt="Creating a Repository on GitHub (Step 1)" /></p>
+<div class="figure">
+<img src="fig/github-create-repo-01.png" alt="Creating a Repository on GitHub (Step 1)" /><p class="caption">Creating a Repository on GitHub (Step 1)</p>
+</div>
 <p>Name your repository &quot;planets&quot; and then click &quot;Create Repository&quot;:</p>
-<p><img src="fig/github-create-repo-02.png" alt="Creating a Repository on GitHub (Step 2)" /></p>
+<div class="figure">
+<img src="fig/github-create-repo-02.png" alt="Creating a Repository on GitHub (Step 2)" /><p class="caption">Creating a Repository on GitHub (Step 2)</p>
+</div>
 <p>As soon as the repository is created, GitHub displays a page with a URL and some information on how to configure your local repository:</p>
-<p><img src="fig/github-create-repo-03.png" alt="Creating a Repository on GitHub (Step 3)" /></p>
+<div class="figure">
+<img src="fig/github-create-repo-03.png" alt="Creating a Repository on GitHub (Step 3)" /><p class="caption">Creating a Repository on GitHub (Step 3)</p>
+</div>
 <p>This effectively does the following on GitHub's servers:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> planets
 $ <span class="kw">cd</span> planets
 $ <span class="kw">git</span> init</code></pre>
 <p>Our local repository still contains our earlier work on <code>mars.txt</code>, but the remote repository on GitHub doesn't contain any files yet:</p>
-<p><img src="fig/git-freshly-made-github-repo.svg" alt="Freshly-Made GitHub Repository" /></p>
+<div class="figure">
+<img src="fig/git-freshly-made-github-repo.svg" alt="Freshly-Made GitHub Repository" /><p class="caption">Freshly-Made GitHub Repository</p>
+</div>
 <p>The next step is to connect the two repositories. We do this by making the GitHub repository a <a href="reference.html#remote">remote</a> for the local repository. The home page of the repository on GitHub includes the string we need to identify it:</p>
-<p><img src="fig/github-find-repo-string.png" alt="Where to Find Repository URL on GitHub" /></p>
+<div class="figure">
+<img src="fig/github-find-repo-string.png" alt="Where to Find Repository URL on GitHub" /><p class="caption">Where to Find Repository URL on GitHub</p>
+</div>
 <p>Click on the 'HTTPS' link to change the <a href="reference.html#protocol">protocol</a> from SSH to HTTPS.</p>
 <div id="https-vs-ssh" class="callout">
 <h2>HTTPS vs SSH</h2>
 <p>We use HTTPS here because it does not require additional configuration. After the workshop you may want to set up SSH access, which is a bit more secure, by following one of the great tutorials from <a href="https://help.github.com/articles/generating-ssh-keys">GitHub</a>, <a href="https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Git">Atlassian/BitBucket</a> and <a href="https://about.gitlab.com/2014/03/04/add-ssh-key-screencast/">GitLab</a> (this one has a screencast).</p>
 </div>
-<p><img src="fig/github-change-repo-string.png" alt="Changing the Repository URL on GitHub" /></p>
+<div class="figure">
+<img src="fig/github-change-repo-string.png" alt="Changing the Repository URL on GitHub" /><p class="caption">Changing the Repository URL on GitHub</p>
+</div>
 <p>Copy that URL from the browser, go into the local <code>planets</code> repository, and run this command:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> remote add origin https://github.com/vlad/planets</code></pre>
 <p>Make sure to use the URL for your repository rather than Vlad's: the only difference should be your username instead of <code>vlad</code>.</p>
@@ -93,7 +105,9 @@ $ <span class="kw">git</span> config --global --unset https.proxy</code></pre>
 <p>You may want to add this command at the end of your <code>~/.bashrc</code> to make it the default behavior.</p>
 </div>
 <p>Our local and remote repositories are now in this state:</p>
-<p><img src="fig/github-repo-after-first-push.svg" alt="GitHub Repository After First Push" /></p>
+<div class="figure">
+<img src="fig/github-repo-after-first-push.svg" alt="GitHub Repository After First Push" /><p class="caption">GitHub Repository After First Push</p>
+</div>
 <div id="the--u-flag" class="callout">
 <h2>The '-u' Flag</h2>
 <p>You may see a <code>-u</code> option used with <code>git push</code> in some documentation. It is related to concepts we cover in our intermediate lesson, and can safely be ignored for now.</p>
@@ -110,12 +124,16 @@ Already up-to-date.</code></pre>
 <p>If you're working through this lesson on your own, you can carry on by opening a second terminal window, and switching to another directory (e.g. <code>/tmp</code>). This window will represent your partner, working on another computer. You won't need to give anyone access on GitHub, because both 'partners' are you.</p>
 </div>
 <p>The partner whose repository is being used needs to give the other person access. On GitHub, click the settings button on the right, then select Collaborators, and enter your partner's username.</p>
-<p><img src="fig/github-add-collaborators.png" alt="Adding collaborators on GitHub" /></p>
+<div class="figure">
+<img src="fig/github-add-collaborators.png" alt="Adding collaborators on GitHub" /><p class="caption">Adding collaborators on GitHub</p>
+</div>
 <p>The other partner should <code>cd</code> to another directory (so <code>ls</code> doesn't show a <code>planets</code> folder), and then make a copy of this repository on your own computer:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> clone https://github.com/vlad/planets.git</code></pre>
 <p>Replace 'vlad' with your partner's username (the one who owns the repository).</p>
 <p><code>git clone</code> creates a fresh local copy of a remote repository.</p>
-<p><img src="fig/github-collaboration.svg" alt="After Creating Clone of Repository" /></p>
+<div class="figure">
+<img src="fig/github-collaboration.svg" alt="After Creating Clone of Repository" /><p class="caption">After Creating Clone of Repository</p>
+</div>
 <p>The new collaborator can now make a change in their copy of the repository:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> planets
 $ <span class="kw">nano</span> pluto.txt
