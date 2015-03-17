@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <title>Software Carpentry: Version Control with Git</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc-workshop-and-lesson.css" />
+    <link rel="stylesheet" type="text/css" href="css/lesson.css" />
+    <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
+    <meta charset="UTF-8" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body class="lesson">
+    <div class="container container-full-width card">
+      <div class="banner">
+        <a href="http://software-carpentry.org" title="Software Carpentry">
+          <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
+        </a>
+      </div>
+      <div class="row-fluid">
+        <div class="span10 offset1">
+          <h1 class="title">Version Control with Git</h1>
+          <h2 class="subtitle">Open Science</h2>
+<div id="learning-objectives" class="objectives">
+<h2>Learning Objectives</h2>
+<ul>
+<li>Explain how version control can be leveraged as an electronic lab notebook for computational work.</li>
+<li>Explain why adding licensing and citation information to a project repository is important.</li>
+<li>Explain what license choices are available and how to choose one.</li>
+<li>Explain how licensing and social expectations differ.</li>
+</ul>
+</div>
+<blockquote>
+<p>The opposite of &quot;open&quot; isn't &quot;closed&quot;. The opposite of &quot;open&quot; is &quot;broken&quot;.</p>
+<p>--- John Wilbanks</p>
+</blockquote>
+<p>Free sharing of information might be the ideal in science, but the reality is often more complicated. Normal practice today looks something like this:</p>
+<ul>
+<li>A scientist collects some data and stores it on a machine that is occasionally backed up by her department.</li>
+<li>She then writes or modifies a few small programs (which also reside on her machine) to analyze that data.</li>
+<li>Once she has some results, she writes them up and submits her paper. She might include her data---a growing number of journals require this---but she probably doesn't include her code.</li>
+<li>Time passes.</li>
+<li>The journal sends her reviews written anonymously by a handful of other people in her field. She revises her paper to satisfy them, during which time she might also modify the scripts she wrote earlier, and resubmits.</li>
+<li>More time passes.</li>
+<li>The paper is eventually published. It might include a link to an online copy of her data, but the paper itself will be behind a paywall: only people who have personal or institutional access will be able to read it.</li>
+</ul>
+<p>For a growing number of scientists, though, the process looks like this:</p>
+<ul>
+<li>The data that the scientist collects is stored in an open access repository like <a href="http://figshare.com/">figshare</a> or <a href="http://zenodo.org">Zenodo</a>, possibly as soon as it's collected, and given its own DOI. Or the data was already published and is stored in <a href="http://datadryad.org/">Dryad</a>.</li>
+<li>The scientist creates a new repository on GitHub to hold her work.</li>
+<li>As she does her analysis, she pushes changes to her scripts (and possibly some output files) to that repository. She also uses the repository for her paper; that repository is then the hub for collaboration with her colleagues.</li>
+<li>When she's happy with the state of her paper, she posts a version to <a href="http://arxiv.org/">arXiv</a> or some other preprint server to invite feedback from peers.</li>
+<li>Based on that feedback, she may post several revisions before finally submitting her paper to a journal.</li>
+<li>The published paper includes links to her preprint and to her code and data repositories, which makes it much easier for other scientists to use her work as starting point for their own research.</li>
+</ul>
+<p>This open model accelerates discovery: the more open work is, <a href="http://dx.doi.org/10.1371/journal.pone.0000308">the more widely it is cited and re-used</a>. However, people who want to work this way need to make some decisions about what exactly &quot;open&quot; means in practice.</p>
+<h2 id="version-control-as-electronic-lab-notebook">Version control as electronic lab notebook</h2>
+<p>The benefits of version control in essence mean that, when used diligently, you can use version control as a form of electronic lab notebook for your computational work.</p>
+<ul>
+<li>The conceptual stages of your work are documented, including who did what and when. Every step is stamped with an identifier (the commit ID) that is for most intents and purposes is unique.</li>
+<li>You can tie documentation of rationale, ideas, and other intellectual work directly to the changes that spring from them.</li>
+<li>You can refer to what you used in your research to obtain your computational results in a way that is unique and recoverable.</li>
+<li>With a distributed version control system such as Git, the version control repository is easy to archive for perpetuity, and contains the entire history.</li>
+</ul>
+<h2 id="licensing">Licensing</h2>
+<p>At the latest when a repository with source code, a manuscript or other creative works becomes public, it should include a file <code>LICENSE</code> or <code>LICENSE.txt</code>license in the base directory of the repository that clearly states under which license the content is being made available. This is because as creative works, source code is automatically eligible for intellectual property (and thus copyright) protection. Code that appears to be, or is expressly advertised as freely available has <em>not</em> waived such protection. Hence, those who (re)use code that lacks a license statement do so on their own peril, because the author(s) of the software code can always unilaterally make such reuse illegal.</p>
+<p>A license solves this problem by granting rights to others (the licensees) that they would otherwise not have. What rights are being granted under which conditions differs, often only slightly, from one license to another. In contrast to proprietary licenses, the <a href="http://opensource.org/licenses/alphabetical">open licences</a> certified by the <a href="http://opensource.org/">Open Source Initiative</a> all grant at least the following rights, referred to as the <a href="http://opensource.org/osd">Open Source Definition</a>:</p>
+<ol style="list-style-type: decimal">
+<li>The source code is available, and may be used and redistributed without restrictions, including as part of aggregate distributions.</li>
+<li>Modifications or other derived works are allowed, and can be redistributed as well.</li>
+<li>The question of who receives these rights is not subject to discrimination, including not by fields of endeavor such as commercial versus academic.</li>
+</ol>
+<p>How best to choose an appropriate license can seem daunting, given how many possibilities there are. In practice, a few licenses are by far the most popular, including the following:</p>
+<ul>
+<li><a href="http://opensource.org/licenses/GPL-3.0">GNU General Public License</a> (GPL),</li>
+<li><a href="http://opensource.org/licenses/MIT">MIT license</a>,</li>
+<li><a href="http://opensource.org/licenses/BSD-2-Clause">BSD license</a>.</li>
+</ul>
+<p>The GPL is different from most other open source licenses in that it is <a href="http://swcarpentry.github.io/git-novice/reference.html#infective">infective</a>: anyone who distributes a modified version of the code, or anything that includes GPL'ed code, must make <em>their</em> code freely available as well.</p>
+<p>The following article provides an excellent overview of licensing and licensing options from the perspective of scientists who also write code:</p>
+<blockquote>
+<p>Morin, A., Urban, J., and Sliz, P. “<a href="http://dx.doi.org/10.1371/journal.pcbi.1002598">A Quick Guide to Software Licensing for the Scientist-Programmer</a>” PLoS Computational Biology 8(7) (2012): e1002598.</p>
+</blockquote>
+<p>At the end of the day what matters is that there is a clear statement as to what the license is, and that the license is one already vetted and approved by <a href="http://opensource.org">OSI</a>. Also, the license is best chosen from the get-go, even if for a repository that is not public. Pushing off the decision only makes it more complicated later, because each time a new collaborator starts contributing, they, too, hold copyright and will thus need to be asked for approval once a license is chosen.</p>
+<h3 id="licensing-for-non-software-products">Licensing for non-software products</h3>
+<p>If the content of a repository contains reseach products other than software, such as data, and/or creative writing (manuals, technical reports, manuscripts), most licenses designed for software are <em>not</em> suitable.</p>
+<ul>
+<li><p><strong>Data:</strong> In most jurisdictions most types of data (with possibly the exception of photos, medical images, etc) are considered facts of nature, and are hence not eligible for copyright protection. Therefore, using a license, which by definition asserts copyright, to signal social or scholarly expectations for attribution serves only to create a legally murky situation. It is much better to clarify the legal side with a public domain waiver such as <a href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons Zero (CC0)</a>, and the social expectations side with express requests for how to use and cite the data. The <a href="http://datadryad.org">Dryad</a> data repository in fact requires this.</p></li>
+<li><p><strong>Creative works:</strong> Manuals, reports, manuscripts and other creative works are eligible for intellectual property protection and are hence automatically protected by copyright, just as software source code. <a href="http://creativecommons.org/">Creative Commons</a> has prepared a <a href="http://creativecommons.org/licenses/">set of licenses</a> using combinations of four basic restrictions:</p>
+<ul>
+<li>Attribution: derived works must give the original author credit for their work.</li>
+<li>No Derivatives: people may copy the work, but must pass it along unchanged.</li>
+<li>Share Alike: derivative works must license their work under the same terms as the original.</li>
+<li>Noncommercial: free use is allowed, but commercial use is not.</li>
+</ul></li>
+</ul>
+<p>Only the Attribution (<a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a>) and Share-Alike (<a href="http://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA</a>) licenses are considered &quot;<a href="http://opendefinition.org/">Open</a>&quot;.</p>
+<p><a href="http://software-carpentry.org/license.html">Software Carpentry</a> uses CC-BY for its lessons and the MIT License for its code in order to encourage the widest possible re-use. Again, the most important thing is for the <code>LICENSE</code> file in the root directory of your project to state clearly what your license is. You may also want to include a file called <code>CITATION</code> or <code>CITATION.txt</code> that describes how to reference your project; the one for Software Carpentry states:</p>
+<pre><code>To reference Software Carpentry in publications, please cite both of the following:
+
+Greg Wilson: &quot;Software Carpentry: Lessons Learned&quot;. arXiv:1307.5448, July 2013.
+
+@online{wilson-software-carpentry-2013,
+  author      = {Greg Wilson},
+  title       = {Software Carpentry: Lessons Learned},
+  version     = {1},
+  date        = {2013-07-20},
+  eprinttype  = {arxiv},
+  eprint      = {1307.5448}
+}</code></pre>
+<h2 id="hosting">Hosting</h2>
+<p>The second big question for groups that want to open up their work is where to host their code and data. One option is for the lab, the department, or the university to provide a server, manage accounts and backups, and so on. The main benefit of this is that it clarifies who owns what, which is particularly important if any of the material is sensitive (i.e., relates to experiments involving human subjects or may be used in a patent application). The main drawbacks are the cost of providing the service and its longevity: a scientist who has spent ten years collecting data would like to be sure that data will still be available ten years from now, but that's well beyond the lifespan of most of the grants that fund academic infrastructure.</p>
+<p>Another option is to purchase a domain and pay an Internet service provider (ISP) to host it. This gives the individual or group more control, and sidesteps problems that can arise when moving from one institution to another, but requires more time and effort to set up than either the option above or the option below.</p>
+<p>The third option is to use a public hosting service like <a href="http://github.com">GitHub</a>, <a href="http://bitbucket.org">BitBucket</a>, <a href="http://code.google.com">Google Code</a>, or <a href="http://sourceforge.net">SourceForge</a>. Each of these services provides a web interface that enables people to create, view, and edit their code repositories. These services also provide communication and project management tools including issue tracking, wiki pages, email notifications, and code reviews. These services benefit from economies of scale and network effects: it's easier to run one large service well than to run many smaller services to the same standard. It's also easier for people to collaborate: using a popular service can help connect your project with communities already using the same service.</p>
+<p>As an example, Software Carpentry <a href="https://github.com/swcarpentry/">is on GitHub</a> where you can find the <a href="https://github.com/swcarpentry/git-novice/blob/gh-pages/04-open.md">source for this page</a>. Anyone with a GitHub account can suggest changes to this text.</p>
+<h3 id="can-i-use-an-open-license">Can I Use an Open License?</h3>
+<p>Sharing is the ideal for science, but many institutions place restrictions on sharing, for example to protect potentially patentable intellectual property. If you encounter such restrictions, it can be productive to inquire about the underlying motivations - either to request an exception for a specific project or domain, or to push more broadly for institutional reform to support more open science.</p>
+<div id="can-i-use-open-license" class="challenge">
+<h2>Can I Use Open License?</h2>
+<p>Find out whether you are allowed to apply an open license to your software. Can you do this unilaterally, or do you need permission from someone in your institution? If so, who?</p>
+</div>
+<div id="my-work-can-be-public" class="challenge">
+<h2>My Work Can Be Public?</h2>
+<p>Find out whether you are allowed to host your work openly on a public forge. Can you do this unilaterally, or do you need permission from someone in your institution? If so, who?</p>
+</div>
+        </div>
+      </div>
+      <div class="footer">
+        <a class="label swc-blue-bg" href="http://software-carpentry.org">Software Carpentry</a>
+        <a class="label swc-blue-bg" href="https://github.com/swcarpentry/git-novice">Source</a>
+        <a class="label swc-blue-bg" href="mailto:admin@software-carpentry.org">Contact</a>
+        <a class="label swc-blue-bg" href="LICENSE.html">License</a>
+      </div>
+    </div>
+    <!-- Javascript placed at the end of the document so the pages load faster -->
+    <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
+    <script src="http://software-carpentry.org/v5/js/bootstrap/bootstrap.min.js"></script>
+  </body>
+</html>
