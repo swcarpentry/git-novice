@@ -123,7 +123,7 @@ We close with material on licensing because:
     the remote repository so that the owner can then retreive it, and vice-versa. The role
     playing between the instructors can get a bit "dramatic" in the conflicts part of the
     lesson if the instructors want to inject some humor into the room.
-	
+
 ## Text Editor
 
 We suggest instructors and students use `nano` as the text editor for this lessons because:
