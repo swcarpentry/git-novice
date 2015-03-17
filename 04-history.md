@@ -5,7 +5,7 @@ subtitle: Exploring History
 minutes: 15
 ---
 > ## Learning Objectives {.objectives}
-> 
+>
 > *   Identify and use Git revision numbers.
 > *   Compare files with old versions of themselves.
 > *   Restore old versions of files.
@@ -165,6 +165,9 @@ like (moving back from `HEAD`, the most recently committed version):
 
 ![When Git Updates Revision Numbers](fig/git-when-revisions-updated.svg)
 
+> ## How Git works, in cartoon form {.callout}
+> ![http://figshare.com/articles/How_Git_works_a_cartoon/1328266](fig/git_staging.svg)
+
 > ## Simplifying the Common Case {.callout}
 >
 > If you read the output of `git status` carefully,
@@ -193,11 +196,11 @@ moving backward and forward in time becomes much easier.
 
 > ## Recovering Older Versions of a File {.challenge}
 >
-> Jennifer has made changes to the Python script that she has been working on for weeks, and the 
+> Jennifer has made changes to the Python script that she has been working on for weeks, and the
 > modifications she made this morning "broke" the script and it no longer runs. She has spent
 > ~ 1hr trying to fix it, with no luck...
 >
-> Luckily, she has been keeping track of her revisions using Git! Which commands below will 
+> Luckily, she has been keeping track of her revisions using Git! Which commands below will
 > let her recover the last committed version of her Python script called
 > `data_cruncher.py`?
 >
