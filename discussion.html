@@ -33,7 +33,7 @@
 <p>People often have questions about Git beyond the scope of the core material. Students who have completed the rest of the lessons might find value in looking through the following topics.</p>
 <p>Note that since this material isn't essential for basic Git usage, it won't be covered by the instructor.</p>
 <h2 id="more-advanced-git-configuration">More Advanced Git Configuration</h2>
-<p>In <a href="01-backup.md">A Better Kind of Backup</a>, we used <code>git config --global</code> to set some default options for Git. It turns out that these configuration options get stored in your home directory in a plain text file called <code>.gitconfig</code>.</p>
+<p>In <a href="01-setup.md">Setting Up Git</a>, we used <code>git config --global</code> to set some default options for Git. It turns out that these configuration options get stored in your home directory in a plain text file called <code>.gitconfig</code>.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> ~/.gitconfig</code></pre>
 <pre class="output"><code>[user]
     name = Vlad Dracula
@@ -47,7 +47,7 @@
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --help</code></pre>
 <p>In particular, you might find it useful to add aliases. These are like shortcuts for longer git commands. For example, if you get sick of typing <code>git checkout</code> all the time, you could run the command:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global alias.co checkout</code></pre>
-<p>Now if we return to the example from <a href="01-backup.md">A Better Kind of Backup</a> where we ran:</p>
+<p>Now if we return to the example from <a href="04-history.md">Exploring History</a> where we ran:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout f22b25e mars.txt</code></pre>
 <p>we could now instead type:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> co f22b25e mars.txt</code></pre>
@@ -72,7 +72,7 @@ $ <span class="kw">git</span> config --global --unset format.pretty</code></pre>
 <p>(Remember to check that they're using an open source license before you clone their work for your own use.)</p>
 </div>
 <h2 id="non-text-files">Non-text Files</h2>
-<p>Recall when we discussed <a href="03-conflict.html">Conflicts</a> there was a challenge that asked:</p>
+<p>Recall when we discussed <a href="07-conflict.html">Conflicts</a> there was a challenge that asked:</p>
 <blockquote>
 <p>What does Git do when there is a conflict in an image or some other non-textual file that is stored in version control?</p>
 </blockquote>

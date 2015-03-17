@@ -29,20 +29,32 @@
         <div class="span10 offset1">
           <h1 class="title">Version Control with Git</h1>
           <h2 class="subtitle">Reference</h2>
-<h2 id="a-better-kind-of-backup"><a href="01-backup.html">A Better Kind of Backup</a></h2>
+<h2 id="setting-up-git"><a href="01-setup.html">Setting Up Git</a></h2>
 <ul>
 <li>Use <code>git config</code> to configure a user name, email address, editor, and other preferences once per machine.</li>
+</ul>
+<h2 id="creating-a-repository"><a href="02-create.html">Creating a Repository</a></h2>
+<ul>
 <li><code>git init</code> initializes a repository.</li>
+</ul>
+<h2 id="tracking-changes"><a href="03-changes.html">Tracking Changes</a></h2>
+<ul>
 <li><code>git status</code> shows the status of a repository.</li>
 <li>Files can be stored in a project's working directory (which users see), the staging area (where the next commit is being built up) and the local repository (where revisions are permanently recorded).</li>
 <li><code>git add</code> puts files in the staging area.</li>
 <li><code>git commit</code> saves the revisions in the staging area to the local repository.</li>
 <li>Always write a log message when committing changes.</li>
+</ul>
+<h2 id="exploring-history"><a href="04-history.html">Exploring History</a></h2>
+<ul>
 <li><code>git diff</code> displays differences between revisions.</li>
 <li><code>git checkout</code> recovers old versions of files.</li>
+</ul>
+<h2 id="ignoring-things"><a href="05-ignore.html">Ignoring Things</a></h2>
+<ul>
 <li>The <code>.gitignore</code> file tells Git what files to ignore.</li>
 </ul>
-<h2 id="collaborating"><a href="02-collab.html">Collaborating</a></h2>
+<h2 id="collaborating"><a href="06-collab.html">Collaborating</a></h2>
 <ul>
 <li>A local Git repository can be connected to one or more remote repositories.</li>
 <li>Use the HTTPS protocol to connect to remote repositories until you have learned how to set up SSH.</li>
@@ -50,12 +62,12 @@
 <li><code>git pull</code> copies changes from a remote repository to a local repository.</li>
 <li><code>git clone</code> copies a remote repository to create a local repository with a remote called <code>origin</code> automatically set up.</li>
 </ul>
-<h2 id="conflicts"><a href="03-conflict.html">Conflicts</a></h2>
+<h2 id="conflicts"><a href="07-conflict.html">Conflicts</a></h2>
 <ul>
 <li>Conflicts occur when two or more people change the same file(s) at the same time.</li>
 <li>The version control system does not allow people to blindly overwrite each other's changes. Instead, it highlights conflicts so that they can be resolved.</li>
 </ul>
-<h2 id="open-science"><a href="04-open.html">Open Science</a></h2>
+<h2 id="open-science"><a href="08-open.html">Open Science</a></h2>
 <ul>
 <li>Open scientific work is more useful and more highly cited than closed.</li>
 <li>People who incorporate GPL'd software into theirs must make theirs open; most other open licenses do not require this.</li>
