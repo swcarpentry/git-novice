@@ -60,7 +60,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 The "untracked files" message means that there's a file in the directory
 that Git isn't keeping track of.
-We can tell Git that it should do so using `git add`:
+We can tell Git to track a file using `git add`:
 
 ~~~ {.bash}
 $ git add mars.txt
@@ -84,7 +84,7 @@ $ git status
 ~~~
 
 Git now knows that it's supposed to keep track of `mars.txt`,
-but it hasn't yet recorded any changes for posterity as a commit.
+but it hasn't recorded these changes as a commit yet.
 To get it to do that,
 we need to run one more command:
 
