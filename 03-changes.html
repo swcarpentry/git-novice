@@ -7,10 +7,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-responsive.css" />
     <link rel="stylesheet" type="text/css" href="css/swc.css" />
-    <link rel="stylesheet" type="text/css" href="css/swc-workshop-and-lesson.css" />
-    <link rel="stylesheet" type="text/css" href="css/lesson.css" />
     <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
     <meta charset="UTF-8" />
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -19,14 +16,14 @@
     <![endif]-->
   </head>
   <body class="lesson">
-    <div class="container container-full-width card">
+    <div class="container">
       <div class="banner">
         <a href="http://software-carpentry.org" title="Software Carpentry">
           <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
         </a>
       </div>
-      <div class="row-fluid">
-        <div class="span10 offset1">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
           <h1 class="title">Version Control with Git</h1>
           <h2 class="subtitle">Tracking Changes</h2>
 <div id="learning-objectives" class="objectives">
@@ -141,7 +138,8 @@ $ <span class="kw">git</span> commit -m <span class="st">&quot;Concerns about Ma
 <p>Git insists that we add files to the set we want to commit before actually committing anything because we may not want to commit everything at once. For example, suppose we're adding a few citations to our supervisor's work to our thesis. We might want to commit those additions, and the corresponding addition to the bibliography, but <em>not</em> commit the work we're doing on the conclusion (which we haven't finished yet).</p>
 <p>To allow for this, Git has a special staging area where it keeps track of things that have been added to the current <a href="reference.html#change-set">change set</a> but not yet committed. <code>git add</code> puts things in this area, and <code>git commit</code> then copies them to long-term storage (as a commit):</p>
 <div class="figure">
-<img src="fig/git-staging-area.svg" alt="The Git Staging Area" /><p class="caption">The Git Staging Area</p>
+<img src="fig/git-staging-area.svg" alt="The Git Staging Area" />
+<p class="caption">The Git Staging Area</p>
 </div>
 <p>Let's watch as our changes to a file move from our editor to the staging area and into long-term storage. First, we'll add another line to the file:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> mars.txt
@@ -200,7 +198,8 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
     Starting to think about Mars</code></pre>
 <p>To recap, when we want to add changes to our repository, we first need to add the changed files to the staging area (<code>git add</code>) and then commit the staged changes to the repository (<code>git commit</code>):</p>
 <div class="figure">
-<img src="fig/git-committing.svg" alt="The Git Commit Workflow" /><p class="caption">The Git Commit Workflow</p>
+<img src="fig/git-committing.svg" alt="The Git Commit Workflow" />
+<p class="caption">The Git Commit Workflow</p>
 </div>
 <div id="committing-changes-to-git" class="challenge">
 <h2>Committing Changes to Git</h2>
@@ -227,6 +226,6 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
     </div>
     <!-- Javascript placed at the end of the document so the pages load faster -->
     <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
-    <script src="http://software-carpentry.org/v5/js/bootstrap/bootstrap.min.js"></script>
+    <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
   </body>
 </html>

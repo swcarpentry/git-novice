@@ -7,10 +7,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-responsive.css" />
     <link rel="stylesheet" type="text/css" href="css/swc.css" />
-    <link rel="stylesheet" type="text/css" href="css/swc-workshop-and-lesson.css" />
-    <link rel="stylesheet" type="text/css" href="css/lesson.css" />
     <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
     <meta charset="UTF-8" />
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -19,14 +16,14 @@
     <![endif]-->
   </head>
   <body class="lesson">
-    <div class="container container-full-width card">
+    <div class="container">
       <div class="banner">
         <a href="http://software-carpentry.org" title="Software Carpentry">
           <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
         </a>
       </div>
-      <div class="row-fluid">
-        <div class="span10 offset1">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
           <h1 class="title">Version Control with Git</h1>
           <h2 class="subtitle">Reference</h2>
 <h2 id="setting-up-git"><a href="01-setup.html">Setting Up Git</a></h2>
@@ -79,46 +76,46 @@
 <h2 id="glossary">Glossary</h2>
 <dl>
 <dt><span id="change-set">change set</span></dt>
-<dd><p>A group of changes to one or more files that are <a href="#commit">committed</a> to a <a href="#version-control">version control</a> <a href="#repository">repository</a> in a single operation.</p>
+<dd>A group of changes to one or more files that are <a href="#commit">committed</a> to a <a href="#version-control">version control</a> <a href="#repository">repository</a> in a single operation.
 </dd>
 <dt><span id="commit">commit</span></dt>
-<dd><p>To record the current state of a set of files (a <a href="#changeset">change set</a>) in a <a href="#version-control">version control</a> <a href="#repository">repository</a>. If a commit contains changes to multiple files, all of the changes are recorded together.</p>
+<dd>To record the current state of a set of files (a <a href="#changeset">change set</a>) in a <a href="#version-control">version control</a> <a href="#repository">repository</a>. If a commit contains changes to multiple files, all of the changes are recorded together.
 </dd>
 <dt><span id="conflict">conflict</span></dt>
-<dd><p>A change made by one user of a <a href="#version-control">version control system</a> that is incompatible with changes made by other users. Helping users <a href="#resolve">resolve</a> conflicts is one of version control's major tasks.</p>
+<dd>A change made by one user of a <a href="#version-control">version control system</a> that is incompatible with changes made by other users. Helping users <a href="#resolve">resolve</a> conflicts is one of version control's major tasks.
 </dd>
 <dt><span id="http">HTTP</span></dt>
-<dd><p>The Hypertext Transfer <a href="#protocol">Protocol</a> used for sharing web pages and other data on the World Wide Web.</p>
+<dd>The Hypertext Transfer <a href="#protocol">Protocol</a> used for sharing web pages and other data on the World Wide Web.
 </dd>
 <dt><span id="infective-license">infective license</span></dt>
-<dd><p>A license such as the <a href="http://opensource.org/licenses/GPL-3.0">GPL</a> that compels people who incorporate material into their own work to place similar sharing requirements on it.</p>
+<dd>A license such as the <a href="http://opensource.org/licenses/GPL-3.0">GPL</a> that compels people who incorporate material into their own work to place similar sharing requirements on it.
 </dd>
 <dt><span id="merge">merge</span></dt>
-<dd><p>(a repository): To reconcile two sets of changes to a <a href="#repository">repository</a>.</p>
+<dd>(a repository): To reconcile two sets of changes to a <a href="#repository">repository</a>.
 </dd>
 <dt><span id="protocol">protocol</span></dt>
-<dd><p>A set of rules that define how one computer communicates with another. Common protocols on the Internet include <a href="#http">HTTP</a> and <a href="#ssh">SSH</a>.</p>
+<dd>A set of rules that define how one computer communicates with another. Common protocols on the Internet include <a href="#http">HTTP</a> and <a href="#ssh">SSH</a>.
 </dd>
 <dt><span id="remote">remote</span></dt>
-<dd><p>A version control <a href="#repository">repository</a> other than the current one that the current one is somehow connected to or mirroring.</p>
+<dd>A version control <a href="#repository">repository</a> other than the current one that the current one is somehow connected to or mirroring.
 </dd>
 <dt><span id="repository">repository</span></dt>
-<dd><p>A storage area where a <a href="#version-control">version control</a> system stores old <a href="#revision">revisions</a> of files and information about who changed what, when.</p>
+<dd>A storage area where a <a href="#version-control">version control</a> system stores old <a href="#revision">revisions</a> of files and information about who changed what, when.
 </dd>
 <dt><span id="resolve">resolve</span></dt>
-<dd><p>To eliminate the <a href="#conflict">conflicts</a> between two or more incompatible changes to a file or set of files being managed by a <a href="#version-control">version control</a> system.</p>
+<dd>To eliminate the <a href="#conflict">conflicts</a> between two or more incompatible changes to a file or set of files being managed by a <a href="#version-control">version control</a> system.
 </dd>
 <dt><span id="revision">revision</span></dt>
-<dd><p>A recorded state of a <a href="#version-control">version control</a> <a href="#repository">repository</a>.</p>
+<dd>A recorded state of a <a href="#version-control">version control</a> <a href="#repository">repository</a>.
 </dd>
 <dt><span id="ssh">SSH</span></dt>
-<dd><p>The Secure Shell <a href="#protocol">protocol</a> used for secure communication between computers.</p>
+<dd>The Secure Shell <a href="#protocol">protocol</a> used for secure communication between computers.
 </dd>
 <dt><span id="timestamp">timestamp</span></dt>
-<dd><p>A record of when a particular event occurred.</p>
+<dd>A record of when a particular event occurred.
 </dd>
 <dt><span id="version-control">version control</span></dt>
-<dd><p>A tool for managing changes to a set of files. Each set of changes creates a new <a href="#revision">revision</a> of the files; the version control system allows users to recover old revisions reliably, and helps manage conflicting changes made by different users.</p>
+<dd>A tool for managing changes to a set of files. Each set of changes creates a new <a href="#revision">revision</a> of the files; the version control system allows users to recover old revisions reliably, and helps manage conflicting changes made by different users.
 </dd>
 </dl>
         </div>
@@ -132,6 +129,6 @@
     </div>
     <!-- Javascript placed at the end of the document so the pages load faster -->
     <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
-    <script src="http://software-carpentry.org/v5/js/bootstrap/bootstrap.min.js"></script>
+    <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
   </body>
 </html>
