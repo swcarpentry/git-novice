@@ -105,10 +105,14 @@ and its short identifier is `f22b25e`.
 (Your revision may have another identifier.)
 
 We use the `-m` flag (for "message")
-to record a comment that will help us remember later on what we did and why.
+to record a short, unique comment that will help us remember later on what we did and why.
 If we just run `git commit` without the `-m` option,
 Git will launch `nano` (or whatever other editor we configured at the start)
 so that we can write a longer message.
+
+Good commit messages start with a brief (<50 characters) summary of changes made in the commit 
+followed by more detail if needed, with the summary line separated from the body with a blank line.
+
 
 If we run `git status` now:
 
