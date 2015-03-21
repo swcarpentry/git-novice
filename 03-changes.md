@@ -110,7 +110,7 @@ If we just run `git commit` without the `-m` option,
 Git will launch `nano` (or whatever other editor we configured at the start)
 so that we can write a longer message.
 
-[Good commit messages][commit-messages]start with a brief (<50 characters) summary of
+[Good commit messages][commit-messages] start with a brief (<50 characters) summary of
 changes made in the commit.  If you want to go into more detail, add
 a blank line between the summary line and your additional notes.
 
