@@ -223,6 +223,47 @@ Greg Wilson: "Software Carpentry: Lessons Learned". arXiv:1307.5448, July 2013.
 }
 ~~~
 
+## Hosting
+
+The second big question for groups that want to open up their work
+is where to host their code and data.
+One option is for the lab, the department, or the university to provide a server,
+manage accounts and backups,
+and so on.
+The main benefit of this is that it clarifies who owns what,
+which is particularly important if any of the material is sensitive
+(i.e.,
+relates to experiments involving human subjects
+or may be used in a patent application).
+The main drawbacks are the cost of providing the service and its longevity:
+a scientist who has spent ten years collecting data
+would like to be sure that data will still be available ten years from now,
+but that's well beyond the lifespan of most of the grants that fund academic infrastructure.
+
+Another option is to purchase a domain
+and pay an Internet service provider (ISP) to host it.
+This gives the individual or group more control,
+and sidesteps problems that can arise when moving from one institution to another,
+but requires more time and effort to set up than either
+the option above or the option below.
+
+The third option is to use a public hosting service like [GitHub](http://github.com),
+[BitBucket](http://bitbucket.org),
+[Google Code](http://code.google.com),
+or [SourceForge](http://sourceforge.net).
+Each of these services provides a web interface that enables people to create, view, and edit their code repositories.
+These services also provide communication and project management tools including issue tracking, wiki pages,  email notifications, and code reviews.
+These services benefit from economies of scale and network effects:
+it's easier to run one large service well
+than to run many smaller services to the same standard.
+It's also easier for people to collaborate:
+using a popular service can help connect your project with communities already using the same service.
+
+As an example,
+Software Carpentry [is on GitHub](https://github.com/swcarpentry/)
+where you can find the [source for this page](https://github.com/swcarpentry/git-novice/blob/gh-pages/04-open.md).
+Anyone with a GitHub account can suggest changes to this text.
+
 ### Can I Use an Open License?
 
 Sharing is the ideal for science,

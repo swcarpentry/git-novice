@@ -112,18 +112,37 @@ We close with material on licensing because:
     but things like `git push origin master` a bit later will not give easily comprehensible results.
     It also makes it look like commits can be lost.
 
-*   When teaching the collaboration and conflict sections of the lesson role playing between
-    two instructors can be effective. One instructor can play the role of the repository
-    owner, while the second instructor can play the role of the collaborator. If it is possible,
-    try to use two projectors so that the computer screens of both instructors can be seen. This
-    makes for a very clear illustration to the students as to who does what. It is also effective
-    to pair up students during this lesson and assign one member of the pair to follow the
-    role of the owner and the other the role of the collaborator. In this setup, challenges
-    can include asking the collaborator to make a change, commit it and push the change to
-    the remote repository so that the owner can then retreive it, and vice-versa. The role
-    playing between the instructors can get a bit "dramatic" in the conflicts part of the
-    lesson if the instructors want to inject some humor into the room.
-	
+*   Role playing between two instructors can be effective
+    when teaching the collaboration and conflict sections of the lesson.
+    One instructor can play the role of the repository owner,
+    while the second instructor can play the role of the collaborator.
+    If it is possible,
+    try to use two projectors so that the computer screens of both instructors can be seen.
+    This makes for a very clear illustration to the students as to who does what.
+
+    It is also effective to pair up students during this lesson
+    and assign one member of the pair to take the role of the owner
+    and the other the role of the collaborator.
+    In this setup,
+    challenges can include asking the collaborator to make a change,
+    commit it,
+    and push the change to the remote repository
+    so that the owner can then retreive it,
+    and vice-versa.
+    The role playing between the instructors can get a bit "dramatic" in the conflicts part of the lesson
+    if the instructors want to inject some humor into the room.
+
+*   If you don't have two projectors,
+    have two instructors at the front of the room.
+    Each instructor does their piece of the collaboration demonstration on their own computer
+    and then passes the projector cord back and forth with the other instructor
+    when it's time for them to do the other part of the collaborative workflow.
+    It takes less than 10 seconds for each switchover,
+    so it doesn't interrupt the flow of the lesson.
+
+    And of course it helps to give each of the instructors a different-colored hat,
+    or put different-colored sticky notes on their foreheads.
+
 ## Text Editor
 
 We suggest instructors and students use `nano` as the text editor for this lessons because:
@@ -154,4 +173,19 @@ $ git commit
 ~~~
 ~~~ {.error}
 Aborting commit due to empty commit message.
+~~~
+
+## [A Better Kind of Backup](01-backup.html)
+
+The challenge "Places to create repositories" tries to reinforce the idea that
+the `.git` folder contains the whole Git repo and deleting this folder *undoes*
+a `git init`. It also gives the learner the way to fix the common mistake of
+putting unwanted folders (like `Desktop`) under version control.
+
+Instead of removing the `.git` folder directly, you can choose to move
+it first to a safer directory and remove it from there:
+
+~~~ {.bash}
+mv .git temp_git
+rm -rf  temp_git
 ~~~
