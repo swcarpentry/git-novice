@@ -68,12 +68,6 @@ We close with material on licensing because:
 *   Version control is usually not the first subject in a workshop,
     so get learners to create a GitHub account after the session before.
 
-*   If your learners are advanced enough to be comfortable with SSH,
-    tell them they can use keys to authenticate on GitHub instead of passwords,
-    but don't try to set this up during class:
-    it takes too long,
-    and is a distraction from the core ideas of the lesson.
-
 *   When giving instructions,
     be very clear which files learners are to edit:
     it is common for them to (for example) edit the instructor's biography rather than their own,
@@ -115,6 +109,16 @@ We close with material on licensing because:
     It's then possible to keep on committing,
     but things like `git push origin master` a bit later will not give easily comprehensible results.
     It also makes it look like commits can be lost.
+
+## [Ignoring Things](05-ignore.html)
+## [Collaborating](06-collab.html)
+
+*   If your learners are advanced enough to be comfortable with SSH,
+    tell them they can use keys to authenticate on GitHub instead of passwords,
+    but don't try to set this up during class:
+    it takes too long,
+    and is a distraction from the core ideas of the lesson.
+
 
 *   Role playing between two instructors can be effective
     when teaching the collaboration and conflict sections of the lesson.
