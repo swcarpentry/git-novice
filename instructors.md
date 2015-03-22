@@ -157,24 +157,6 @@ if they're already familiar with it.
 Below you will find some tips that could help solving problems
 when using other editors.
 
-### Gedit
-
-You should use
-
-~~~ {.bash}
-$ git config --global core.editor 'gedit --standalone'
-~~~
-
-to avoid this error occurring
-if the student already has a Gedit window open:
-
-~~~ {.bash}
-$ git commit
-~~~
-~~~ {.error}
-Aborting commit due to empty commit message.
-~~~
-
 ## [A Better Kind of Backup](01-backup.html)
 
 The challenge "Places to create repositories" tries to reinforce the idea that
