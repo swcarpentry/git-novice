@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <title>Software Carpentry: Version Control with Git</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc.css" />
+    <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
+    <meta charset="UTF-8" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body class="lesson">
+    <div class="container">
+      <div class="banner">
+        <a href="http://software-carpentry.org" title="Software Carpentry">
+          <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
+        </a>
+      </div>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <h1 class="title">Version Control with Git</h1>
+          <h2 class="subtitle">Creating a Repository</h2>
+<div id="learning-objectives" class="objectives">
+<h2>Learning Objectives</h2>
+<ul>
+<li>Explain how to create a Git repository locally.</li>
+</ul>
+</div>
+<p>Once Git is configured, we can start using it. Let's create a directory for our work:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> planets
+$ <span class="kw">cd</span> planets</code></pre>
+<p>and tell Git to make it a <a href="reference.html#repository">repository</a>—a place where Git can store old versions of our files:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> init</code></pre>
+<p>If we use <code>ls</code> to show the directory's contents, it appears that nothing has changed:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span></code></pre>
+<p>But if we add the <code>-a</code> flag to show everything, we can see that Git has created a hidden directory called <code>.git</code>:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> -a</code></pre>
+<pre class="output"><code>.   ..  .git</code></pre>
+<p>Git stores information about the project in this special sub-directory. If we ever delete it, we will lose the project's history.</p>
+<p>We can check that everything is set up correctly by asking Git to tell us the status of our project:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
+<pre class="output"><code># On branch master
+#
+# Initial commit
+#
+nothing to commit (create/copy files and use &quot;git add&quot; to track)</code></pre>
+<div id="places-to-create-git-repositories" class="challenge">
+<h2>Places to Create Git Repositories</h2>
+<p>The following sequence of commands creates one Git repository inside another:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cd</span>           <span class="co"># return to home directory</span>
+<span class="kw">mkdir</span> alpha  <span class="co"># make a new directory alpha</span>
+<span class="kw">cd</span> alpha     <span class="co"># go into alpha</span>
+<span class="kw">git</span> init     <span class="co"># make the alpha directory a Git repository</span>
+<span class="kw">mkdir</span> beta   <span class="co"># make a sub-directory alpha/beta</span>
+<span class="kw">cd</span> beta      <span class="co"># go into alpha/beta</span>
+<span class="kw">git</span> init     <span class="co"># make the beta sub-directory a Git repository</span></code></pre>
+<p>Why is it a bad idea to do this?</p>
+</div>
+        </div>
+      </div>
+      <div class="footer">
+        <a class="label swc-blue-bg" href="http://software-carpentry.org">Software Carpentry</a>
+        <a class="label swc-blue-bg" href="https://github.com/swcarpentry/git-novice">Source</a>
+        <a class="label swc-blue-bg" href="mailto:admin@software-carpentry.org">Contact</a>
+        <a class="label swc-blue-bg" href="LICENSE.html">License</a>
+      </div>
+    </div>
+    <!-- Javascript placed at the end of the document so the pages load faster -->
+    <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
+    <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+  </body>
+</html>

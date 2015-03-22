@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <title>Software Carpentry: Version Control with Git</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc.css" />
+    <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
+    <meta charset="UTF-8" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body class="lesson">
+    <div class="container">
+      <div class="banner">
+        <a href="http://software-carpentry.org" title="Software Carpentry">
+          <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
+        </a>
+      </div>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <h1 class="title">Version Control with Git</h1>
+          <h2 class="subtitle">Setting Up Git</h2>
+<div id="learning-objectives" class="objectives">
+<h2>Learning Objectives</h2>
+<ul>
+<li>Explain which initialization and configuration steps are required once per machine, and which are required once per repository.</li>
+</ul>
+</div>
+<p>We'll start by exploring how version control can be used to keep track of what one person did and when. Even if you aren't collaborating with other people, version control is much better for this than this:</p>
+<p><a href="http://www.phdcomics.com"><img src="fig/phd101212s.gif" alt="Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com" /></a></p>
+<p>&quot;Piled Higher and Deeper&quot; by Jorge Cham, http://www.phdcomics.com</p>
+<p>The first time we use Git on a new machine, we need to configure a few things. Here's how Dracula sets up his new laptop:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global user.name <span class="st">&quot;Vlad Dracula&quot;</span>
+$ <span class="kw">git</span> config --global user.email <span class="st">&quot;vlad@tran.sylvan.ia&quot;</span>
+$ <span class="kw">git</span> config --global color.ui <span class="st">&quot;auto&quot;</span></code></pre>
+<p>(Please use your own name and email address instead of Dracula's.)</p>
+<p>He also has to set his favorite text editor, following this table:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Editor</th>
+<th align="left">Configuration command</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">nano</td>
+<td align="left"><code>$ git config --global core.editor &quot;nano -w&quot;</code></td>
+</tr>
+<tr class="even">
+<td align="left">Text Wrangler</td>
+<td align="left"><code>$ git config --global core.editor &quot;edit -w&quot;</code></td>
+</tr>
+<tr class="odd">
+<td align="left">Sublime Text (Mac)</td>
+<td align="left"><code>$ git config --global core.editor &quot;subl -n -w&quot;</code></td>
+</tr>
+<tr class="even">
+<td align="left">Sublime Text (Win)</td>
+<td align="left"><code>$ git config --global core.editor &quot;'c:/program files/sublime text 2/sublime_text.exe' -w&quot;</code></td>
+</tr>
+<tr class="odd">
+<td align="left">Notepad++ (Win)</td>
+<td align="left"><code>$ git config --global core.editor &quot;'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin&quot;</code></td>
+</tr>
+<tr class="even">
+<td align="left">Kate (Linux)</td>
+<td align="left"><code>$ git config --global core.editor &quot;kate&quot;</code></td>
+</tr>
+<tr class="odd">
+<td align="left">Gedit (Linux)</td>
+<td align="left"><code>$ git config --global core.editor &quot;gedit -s&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<p>Git commands are written <code>git verb</code>, where <code>verb</code> is what we actually want it to do. In this case, we're telling Git:</p>
+<ul>
+<li>our name and email address,</li>
+<li>to colorize output,</li>
+<li>what our favorite text editor is, and</li>
+<li>that we want to use these settings globally (i.e., for every project),</li>
+</ul>
+<p>The four commands above only need to be run once: the flag <code>--global</code> tells Git to use the settings for every project on this machine.</p>
+<p>You can check your settings at any time:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --list</code></pre>
+<div id="proxy" class="callout">
+<h2>Proxy</h2>
+<p>In some networks you need to use a proxy. If this is the case you may also need to tell Git about the proxy:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global http.proxy proxy-url
+$ <span class="kw">git</span> config --global https.proxy proxy-url</code></pre>
+<p>To disable the proxy, use</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global --unset http.proxy
+$ <span class="kw">git</span> config --global --unset https.proxy</code></pre>
+</div>
+        </div>
+      </div>
+      <div class="footer">
+        <a class="label swc-blue-bg" href="http://software-carpentry.org">Software Carpentry</a>
+        <a class="label swc-blue-bg" href="https://github.com/swcarpentry/git-novice">Source</a>
+        <a class="label swc-blue-bg" href="mailto:admin@software-carpentry.org">Contact</a>
+        <a class="label swc-blue-bg" href="LICENSE.html">License</a>
+      </div>
+    </div>
+    <!-- Javascript placed at the end of the document so the pages load faster -->
+    <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
+    <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+  </body>
+</html>

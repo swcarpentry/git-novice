@@ -60,7 +60,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 The "untracked files" message means that there's a file in the directory
 that Git isn't keeping track of.
-We can tell Git that it should do so using `git add`:
+We can tell Git to track a file using `git add`:
 
 ~~~ {.bash}
 $ git add mars.txt
@@ -84,15 +84,15 @@ $ git status
 ~~~
 
 Git now knows that it's supposed to keep track of `mars.txt`,
-but it hasn't yet recorded any changes for posterity as a commit.
+but it hasn't recorded these changes as a commit yet.
 To get it to do that,
 we need to run one more command:
 
 ~~~ {.bash}
-$ git commit -m "Starting to think about Mars"
+$ git commit -m "Start notes on Mars as a base"
 ~~~
 ~~~ {.output}
-[master (root-commit) f22b25e] Starting to think about Mars
+[master (root-commit) f22b25e] Start notes on Mars as a base
  1 file changed, 1 insertion(+)
  create mode 100644 mars.txt
 ~~~
@@ -132,7 +132,7 @@ commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Starting to think about Mars
+    Start notes on Mars as a base
 ~~~
 
 `git log` lists all revisions  made to a repository in reverse chronological order.
@@ -225,7 +225,7 @@ If we break it down into pieces:
 After reviewing our change, it's time to commit it:
 
 ~~~ {.bash}
-$ git commit -m "Concerns about Mars's moons on my furry friend"
+$ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
 ~~~
 ~~~ {.output}
 # On branch master
@@ -244,10 +244,10 @@ Let's fix that:
 
 ~~~ {.bash}
 $ git add mars.txt
-$ git commit -m "Concerns about Mars's moons on my furry friend"
+$ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
 ~~~
 ~~~ {.output}
-[master 34961b1] Concerns about Mars's moons on my furry friend
+[master 34961b1] Add concerns about effects of Mars' moons on Wolfman
  1 file changed, 1 insertion(+)
 ~~~
 
@@ -339,10 +339,10 @@ and what's in the staging area.
 Let's save our changes:
 
 ~~~ {.bash}
-$ git commit -m "Thoughts about the climate"
+$ git commit -m "Discuss concerns about Mars' climate for Mummy"
 ~~~
 ~~~ {.output}
-[master 005937f] Thoughts about the climate
+[master 005937f] Discuss concerns about Mars' climate for Mummy
  1 file changed, 1 insertion(+)
 ~~~
 
@@ -366,19 +366,19 @@ commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 10:14:07 2013 -0400
 
-    Thoughts about the climate
+    Discuss concerns about Mars' climate for Mummy
 
 commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 10:07:21 2013 -0400
 
-    Concerns about Mars's moons on my furry friend
+    Add concerns about effects of Mars' moons on Wolfman
 
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Starting to think about Mars
+    Start notes on Mars as a base
 ~~~
 
 To recap, when we want to add changes to our repository,

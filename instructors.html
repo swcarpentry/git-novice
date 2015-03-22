@@ -7,10 +7,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-responsive.css" />
     <link rel="stylesheet" type="text/css" href="css/swc.css" />
-    <link rel="stylesheet" type="text/css" href="css/swc-workshop-and-lesson.css" />
-    <link rel="stylesheet" type="text/css" href="css/lesson.css" />
     <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
     <meta charset="UTF-8" />
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -19,14 +16,14 @@
     <![endif]-->
   </head>
   <body class="lesson">
-    <div class="container container-full-width card">
+    <div class="container">
       <div class="banner">
         <a href="http://software-carpentry.org" title="Software Carpentry">
           <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
         </a>
       </div>
-      <div class="row-fluid">
-        <div class="span10 offset1">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
           <h1 class="title">Version Control with Git</h1>
           <h2 class="subtitle">Instructor's Guide</h2>
 <p>Version control might be the most important topic we teach, but Git is definitely the most complicated tool. However, GitHub presently dominates the open software repository landscape, so we have to help novices learn just enough Git to feel they can and should learn more on their own.</p>
@@ -57,6 +54,10 @@
 <li><p>Instructors should show learners graphical diff/merge tools like <a href="https://sourcegear.com/diffmerge/">DiffMerge</a>.</p></li>
 <li><p>When appropriate, explain that we teach Git rather than CVS, Subversion, or Mercurial primarily because of GitHub's growing popularity: CVS and Subversion are now seen as legacy systems, and Mercurial isn't nearly as widely used in the sciences right now.</p></li>
 <li><p>One thing that has caused confusion comes up when recovering old versions towards the end of <a href="01-backup.html">the first topic</a>. If, instead of doing <code>$ git checkout f22b25e mars.txt</code>, someone does <code>$ git checkout f22b25e</code>, they wind up in the &quot;detached HEAD&quot; state and confusion abounds. It's then possible to keep on committing, but things like <code>git push origin master</code> a bit later will not give easily comprehensible results. It also makes it look like commits can be lost.</p></li>
+<li><p>Role playing between two instructors can be effective when teaching the collaboration and conflict sections of the lesson. One instructor can play the role of the repository owner, while the second instructor can play the role of the collaborator. If it is possible, try to use two projectors so that the computer screens of both instructors can be seen. This makes for a very clear illustration to the students as to who does what.</p>
+<p>It is also effective to pair up students during this lesson and assign one member of the pair to take the role of the owner and the other the role of the collaborator. In this setup, challenges can include asking the collaborator to make a change, commit it, and push the change to the remote repository so that the owner can then retreive it, and vice-versa. The role playing between the instructors can get a bit &quot;dramatic&quot; in the conflicts part of the lesson if the instructors want to inject some humor into the room.</p></li>
+<li><p>If you don't have two projectors, have two instructors at the front of the room. Each instructor does their piece of the collaboration demonstration on their own computer and then passes the projector cord back and forth with the other instructor when it's time for them to do the other part of the collaborative workflow. It takes less than 10 seconds for each switchover, so it doesn't interrupt the flow of the lesson.</p>
+<p>And of course it helps to give each of the instructors a different-colored hat, or put different-colored sticky notes on their foreheads.</p></li>
 </ul>
 <h2 id="text-editor">Text Editor</h2>
 <p>We suggest instructors and students use <code>nano</code> as the text editor for this lessons because:</p>
@@ -72,6 +73,11 @@
 <p>to avoid this error occurring if the student already has a Gedit window open:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> commit</code></pre>
 <pre class="error"><code>Aborting commit due to empty commit message.</code></pre>
+<h2 id="a-better-kind-of-backup"><a href="01-backup.html">A Better Kind of Backup</a></h2>
+<p>The challenge &quot;Places to create repositories&quot; tries to reinforce the idea that the <code>.git</code> folder contains the whole Git repo and deleting this folder <em>undoes</em> a <code>git init</code>. It also gives the learner the way to fix the common mistake of putting unwanted folders (like <code>Desktop</code>) under version control.</p>
+<p>Instead of removing the <code>.git</code> folder directly, you can choose to move it first to a safer directory and remove it from there:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">mv</span> .git temp_git
+<span class="kw">rm</span> -rf  temp_git</code></pre>
         </div>
       </div>
       <div class="footer">
@@ -83,6 +89,6 @@
     </div>
     <!-- Javascript placed at the end of the document so the pages load faster -->
     <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
-    <script src="http://software-carpentry.org/v5/js/bootstrap/bootstrap.min.js"></script>
+    <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
   </body>
 </html>

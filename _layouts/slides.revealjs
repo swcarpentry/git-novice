@@ -5,15 +5,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 
-  <title>Version Control with Git</title>
+$for(author-meta)$
+  <meta name="author" content="$author-meta$">
+$endfor$
+$if(date-meta)$
+  <meta name="date" content="$date-meta$">
+$endif$
+  <title>$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$</title>
 
+$for(css)$
+  <link rel="stylesheet" href="$css$" $if(html5)$$else$type="text/css" $endif$/>
+$endfor$
 
   <script src="js/deckjs-custom.js"></script>
   <script>
       // TODO: finer filter on what is needed (vs profile-5)
       includedeck("css/swc-slides.css", {
          BEFOREINIT: function() {
-            $(".slide.auto li:not(li li):not(.notslide)").addClass("slide");
+            $$(".slide.auto li:not(li li):not(.notslide)").addClass("slide");
          }
       });
   </script>
@@ -21,24 +30,16 @@
 <body>
   <div class="deck-container">
 
+$if(omit-title)$
+$else$
     <div class="slide title-slide" data-container-class="no-status">
         <h1 class="var-title"></h1>
         <img class="logo" src="img/software-carpentry-banner.png" alt="Software Carpentry"/>
     </div>
+$endif$
 
     <!-- Begin slides. Just make elements with a class of slide. -->
-<section id="why-use-version-control" class="slide level2">
-<h1>Why Use Version Control?</h1>
-<p>Let some software handle the versions of your project let you focus on your project.</p>
-</section>
-<section id="why-git" class="slide level2">
-<h1>Why Git?</h1>
-<p>Because many people are using GitHub to collaborating.</p>
-</section>
-<section id="next-steps" class="slide level2">
-<h1>Next Steps</h1>
-<p><a href="01-setup.html">Here we go!</a></p>
-</section>
+$body$
     <!-- End slides. -->
 
     <!-- Begin extension snippets. Add or remove as needed. -->
