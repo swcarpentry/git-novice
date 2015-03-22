@@ -101,6 +101,39 @@ We close with material on licensing because:
     CVS and Subversion are now seen as legacy systems,
     and Mercurial isn't nearly as widely used in the sciences right now.
 
+## [Setting Up Git](01-setup.html)
+
+We suggest instructors and students use `nano` as the text editor for this lessons because:
+
+*   it runs in all three major operating systems,
+*   it runs inside the shell (switching windows can be confusing to students), and
+*   it has shortcut help at the bottom of the window.
+
+Please point out to students during setup
+that they can and should use another text editor
+if they're already familiar with it.
+Below you will find some tips that could help solving problems
+when using other editors.
+
+## [Creating a Repository](02-create.html)
+
+The challenge "Places to create repositories" tries to reinforce the idea that
+the `.git` folder contains the whole Git repo and deleting this folder *undoes*
+a `git init`. It also gives the learner the way to fix the common mistake of
+putting unwanted folders (like `Desktop`) under version control.
+
+Instead of removing the `.git` folder directly, you can choose to move
+it first to a safer directory and remove it from there:
+
+~~~ {.bash}
+mv .git temp_git
+rm -rf  temp_git
+~~~
+
+## [Tracking Changes](03-changes.html)
+
+## [Exploring History](04-history.html)
+
 *   One thing that has caused confusion comes up when recovering old versions
     towards the end of ["Exploring history"](04-history.html).
     If, instead of doing `$ git checkout f22b25e mars.txt`,
@@ -151,31 +184,5 @@ We close with material on licensing because:
     And of course it helps to give each of the instructors a different-colored hat,
     or put different-colored sticky notes on their foreheads.
 
-## Text Editor
-
-We suggest instructors and students use `nano` as the text editor for this lessons because:
-
-*   it runs in all three major operating systems,
-*   it runs inside the shell (switching windows can be confusing to students), and
-*   it has shortcut help at the bottom of the window.
-
-Please point out to students during setup
-that they can and should use another text editor
-if they're already familiar with it.
-Below you will find some tips that could help solving problems
-when using other editors.
-
-## [A Better Kind of Backup](01-backup.html)
-
-The challenge "Places to create repositories" tries to reinforce the idea that
-the `.git` folder contains the whole Git repo and deleting this folder *undoes*
-a `git init`. It also gives the learner the way to fix the common mistake of
-putting unwanted folders (like `Desktop`) under version control.
-
-Instead of removing the `.git` folder directly, you can choose to move
-it first to a safer directory and remove it from there:
-
-~~~ {.bash}
-mv .git temp_git
-rm -rf  temp_git
-~~~
+## [Conflicts](07-conflict.html)
+## [Open Science](08-open.html)
