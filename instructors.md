@@ -3,6 +3,10 @@ layout: page
 title: Version Control with Git
 subtitle: Instructor's Guide
 ---
+## Legend
+
+## Overall
+
 Version control might be the most important topic we teach,
 but Git is definitely the most complicated tool.
 However,
