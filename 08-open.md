@@ -97,7 +97,7 @@ lab notebook for your computational work.
 
 At the latest when a repository with source code, a manuscript
 or other creative works becomes public, it should include a
-file `LICENSE` or `LICENSE.txt`license in the base directory of the
+file `LICENSE` or `LICENSE.txt` in the base directory of the
 repository that clearly states under which license the content is
 being made available. This is because
 as creative works, source code is automatically eligible for
