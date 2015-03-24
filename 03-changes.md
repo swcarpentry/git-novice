@@ -393,12 +393,28 @@ repository (`git commit`):
 >
 > Which command(s) below would save changes of `myfile.txt` to my local Git repository?
 >
-> 1. `git commit -m "my recent changes"`
-> 2. `git init myfile.txt`
->    `git commit -m "my recent changes"`
-> 3. `git add myfile.txt`
->    `git commit -m "my recent changes"`
-> 4. `git commit -m myfile.txt "my recent changes"`
+> 1. 
+>
+>     ~~~
+>     $ git commit -m "my recent changes"
+>     ~~~
+> 2. 
+>
+>     ~~~
+>     $ git init myfile.txt
+>     $ git commit -m "my recent changes"
+>     ~~~
+> 3. 
+>
+>     ~~~
+>     $ git add myfile.txt
+>     $ git commit -m "my recent changes"
+>     ~~~
+> 4. 
+>
+>     ~~~
+>     $ git commit -m myfile.txt "my recent changes"
+>     ~~~
 
 > ## `bio` Repository {.challenge}
 >

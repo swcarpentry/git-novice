@@ -201,8 +201,24 @@ moving backward and forward in time becomes much easier.
 > let her recover the last committed version of her Python script called
 > `data_cruncher.py`?
 >
-> 1. `git checkout HEAD`
-> 2. `git checkout HEAD data_cruncher.py`
-> 3. `git checkout HEAD~1 data_cruncher.py`
-> 4. `git checkout <unique ID of last revision> data_cruncher.py`
+> 1. 
+>
+>     ~~~
+>     $ git checkout HEAD
+>     ~~~
+> 2. 
+>
+>     ~~~
+>     $ git checkout HEAD data_cruncher.py
+>     ~~~
+> 3. 
+>
+>     ~~~
+>     $ git checkout HEAD~1 data_cruncher.py
+>     ~~~
+> 4. 
+>
+>     ~~~
+>     $ git checkout <unique ID of last revision> data_cruncher.py
+>     ~~~
 > 5. Both 2 & 4
