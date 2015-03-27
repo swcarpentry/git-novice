@@ -7,6 +7,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-theme.css" />
     <link rel="stylesheet" type="text/css" href="css/swc.css" />
     <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
     <meta charset="UTF-8" />
@@ -16,7 +17,7 @@
     <![endif]-->
   </head>
   <body class="lesson">
-    <div class="container">
+    <div class="container card">
       <div class="banner">
         <a href="http://software-carpentry.org" title="Software Carpentry">
           <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
@@ -26,14 +27,18 @@
         <div class="col-md-10 col-md-offset-1">
           <h1 class="title">Version Control with Git</h1>
           <h2 class="subtitle">Open Science</h2>
-<div id="learning-objectives" class="objectives">
-<h2>Learning Objectives</h2>
+<div id="learning-objectives" class="objectives panel panel-warning">
+<div class="panel-heading">
+<h2 id="learning-objectives" class="objectives panel panel-warning"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+</div>
+<div class="panel-body">
 <ul>
 <li>Explain how version control can be leveraged as an electronic lab notebook for computational work.</li>
 <li>Explain why adding licensing and citation information to a project repository is important.</li>
 <li>Explain what license choices are available and how to choose one.</li>
 <li>Explain how licensing and social expectations differ.</li>
 </ul>
+</div>
 </div>
 <blockquote>
 <p>The opposite of &quot;open&quot; isn't &quot;closed&quot;. The opposite of &quot;open&quot; is &quot;broken&quot;.</p>
@@ -68,7 +73,7 @@
 <li>With a distributed version control system such as Git, the version control repository is easy to archive for perpetuity, and contains the entire history.</li>
 </ul>
 <h2 id="licensing">Licensing</h2>
-<p>At the latest when a repository with source code, a manuscript or other creative works becomes public, it should include a file <code>LICENSE</code> or <code>LICENSE.txt</code>license in the base directory of the repository that clearly states under which license the content is being made available. This is because as creative works, source code is automatically eligible for intellectual property (and thus copyright) protection. Code that appears to be, or is expressly advertised as freely available has <em>not</em> waived such protection. Hence, those who (re)use code that lacks a license statement do so on their own peril, because the author(s) of the software code can always unilaterally make such reuse illegal.</p>
+<p>At the latest when a repository with source code, a manuscript or other creative works becomes public, it should include a file <code>LICENSE</code> or <code>LICENSE.txt</code> in the base directory of the repository that clearly states under which license the content is being made available. This is because as creative works, source code is automatically eligible for intellectual property (and thus copyright) protection. Code that appears to be, or is expressly advertised as freely available has <em>not</em> waived such protection. Hence, those who (re)use code that lacks a license statement do so on their own peril, because the author(s) of the software code can always unilaterally make such reuse illegal.</p>
 <p>A license solves this problem by granting rights to others (the licensees) that they would otherwise not have. What rights are being granted under which conditions differs, often only slightly, from one license to another. In contrast to proprietary licenses, the <a href="http://opensource.org/licenses/alphabetical">open licences</a> certified by the <a href="http://opensource.org/">Open Source Initiative</a> all grant at least the following rights, referred to as the <a href="http://opensource.org/osd">Open Source Definition</a>:</p>
 <ol style="list-style-type: decimal">
 <li>The source code is available, and may be used and redistributed without restrictions, including as part of aggregate distributions.</li>
@@ -116,17 +121,25 @@ Greg Wilson: &quot;Software Carpentry: Lessons Learned&quot;. arXiv:1307.5448, J
 <h2 id="hosting">Hosting</h2>
 <p>The second big question for groups that want to open up their work is where to host their code and data. One option is for the lab, the department, or the university to provide a server, manage accounts and backups, and so on. The main benefit of this is that it clarifies who owns what, which is particularly important if any of the material is sensitive (i.e., relates to experiments involving human subjects or may be used in a patent application). The main drawbacks are the cost of providing the service and its longevity: a scientist who has spent ten years collecting data would like to be sure that data will still be available ten years from now, but that's well beyond the lifespan of most of the grants that fund academic infrastructure.</p>
 <p>Another option is to purchase a domain and pay an Internet service provider (ISP) to host it. This gives the individual or group more control, and sidesteps problems that can arise when moving from one institution to another, but requires more time and effort to set up than either the option above or the option below.</p>
-<p>The third option is to use a public hosting service like <a href="http://github.com">GitHub</a>, <a href="http://bitbucket.org">BitBucket</a>, <a href="http://code.google.com">Google Code</a>, or <a href="http://sourceforge.net">SourceForge</a>. Each of these services provides a web interface that enables people to create, view, and edit their code repositories. These services also provide communication and project management tools including issue tracking, wiki pages, email notifications, and code reviews. These services benefit from economies of scale and network effects: it's easier to run one large service well than to run many smaller services to the same standard. It's also easier for people to collaborate: using a popular service can help connect your project with communities already using the same service.</p>
+<p>The third option is to use a public hosting service like <a href="http://github.com">GitHub</a>, <a href="http://bitbucket.org">BitBucket</a>, or <a href="http://sourceforge.net">SourceForge</a>. Each of these services provides a web interface that enables people to create, view, and edit their code repositories. These services also provide communication and project management tools including issue tracking, wiki pages, email notifications, and code reviews. These services benefit from economies of scale and network effects: it's easier to run one large service well than to run many smaller services to the same standard. It's also easier for people to collaborate: using a popular service can help connect your project with communities already using the same service.</p>
 <p>As an example, Software Carpentry <a href="https://github.com/swcarpentry/">is on GitHub</a> where you can find the <a href="https://github.com/swcarpentry/git-novice/blob/gh-pages/04-open.md">source for this page</a>. Anyone with a GitHub account can suggest changes to this text.</p>
 <h3 id="can-i-use-an-open-license">Can I Use an Open License?</h3>
 <p>Sharing is the ideal for science, but many institutions place restrictions on sharing, for example to protect potentially patentable intellectual property. If you encounter such restrictions, it can be productive to inquire about the underlying motivations - either to request an exception for a specific project or domain, or to push more broadly for institutional reform to support more open science.</p>
-<div id="can-i-use-open-license" class="challenge">
-<h2>Can I Use Open License?</h2>
+<div id="can-i-use-open-license" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="can-i-use-open-license" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>Can I Use Open License?</h2>
+</div>
+<div class="panel-body">
 <p>Find out whether you are allowed to apply an open license to your software. Can you do this unilaterally, or do you need permission from someone in your institution? If so, who?</p>
 </div>
-<div id="my-work-can-be-public" class="challenge">
-<h2>My Work Can Be Public?</h2>
+</div>
+<div id="my-work-can-be-public" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="my-work-can-be-public" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>My Work Can Be Public?</h2>
+</div>
+<div class="panel-body">
 <p>Find out whether you are allowed to host your work openly on a public forge. Can you do this unilaterally, or do you need permission from someone in your institution? If so, who?</p>
+</div>
 </div>
         </div>
       </div>

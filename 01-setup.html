@@ -7,6 +7,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-theme.css" />
     <link rel="stylesheet" type="text/css" href="css/swc.css" />
     <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
     <meta charset="UTF-8" />
@@ -16,7 +17,7 @@
     <![endif]-->
   </head>
   <body class="lesson">
-    <div class="container">
+    <div class="container card">
       <div class="banner">
         <a href="http://software-carpentry.org" title="Software Carpentry">
           <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
@@ -26,11 +27,15 @@
         <div class="col-md-10 col-md-offset-1">
           <h1 class="title">Version Control with Git</h1>
           <h2 class="subtitle">Setting Up Git</h2>
-<div id="learning-objectives" class="objectives">
-<h2>Learning Objectives</h2>
+<div id="learning-objectives" class="objectives panel panel-warning">
+<div class="panel-heading">
+<h2 id="learning-objectives" class="objectives panel panel-warning"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+</div>
+<div class="panel-body">
 <ul>
 <li>Explain which initialization and configuration steps are required once per machine, and which are required once per repository.</li>
 </ul>
+</div>
 </div>
 <p>We'll start by exploring how version control can be used to keep track of what one person did and when. Even if you aren't collaborating with other people, version control is much better for this than this:</p>
 <p><a href="http://www.phdcomics.com"><img src="fig/phd101212s.gif" alt="Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com" /></a></p>
@@ -89,14 +94,18 @@ $ <span class="kw">git</span> config --global color.ui <span class="st">&quot;au
 <p>The four commands above only need to be run once: the flag <code>--global</code> tells Git to use the settings for every project on this machine.</p>
 <p>You can check your settings at any time:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --list</code></pre>
-<div id="proxy" class="callout">
-<h2>Proxy</h2>
+<div id="proxy" class="callout panel panel-info">
+<div class="panel-heading">
+<h2 id="proxy" class="callout panel panel-info"><span class="glyphicon glyphicon-pushpin"></span>Proxy</h2>
+</div>
+<div class="panel-body">
 <p>In some networks you need to use a proxy. If this is the case you may also need to tell Git about the proxy:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global http.proxy proxy-url
 $ <span class="kw">git</span> config --global https.proxy proxy-url</code></pre>
 <p>To disable the proxy, use</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global --unset http.proxy
 $ <span class="kw">git</span> config --global --unset https.proxy</code></pre>
+</div>
 </div>
         </div>
       </div>

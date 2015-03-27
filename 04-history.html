@@ -7,6 +7,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-theme.css" />
     <link rel="stylesheet" type="text/css" href="css/swc.css" />
     <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
     <meta charset="UTF-8" />
@@ -16,7 +17,7 @@
     <![endif]-->
   </head>
   <body class="lesson">
-    <div class="container">
+    <div class="container card">
       <div class="banner">
         <a href="http://software-carpentry.org" title="Software Carpentry">
           <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
@@ -26,13 +27,17 @@
         <div class="col-md-10 col-md-offset-1">
           <h1 class="title">Version Control with Git</h1>
           <h2 class="subtitle">Exploring History</h2>
-<div id="learning-objectives" class="objectives">
-<h2>Learning Objectives</h2>
+<div id="learning-objectives" class="objectives panel panel-warning">
+<div class="panel-heading">
+<h2 id="learning-objectives" class="objectives panel panel-warning"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+</div>
+<div class="panel-body">
 <ul>
 <li>Identify and use Git revision numbers.</li>
 <li>Compare files with old versions of themselves.</li>
 <li>Restore old versions of files.</li>
 </ul>
+</div>
 </div>
 <p>If we want to see what we changed when, we use <code>git diff</code> again, but refer to old versions using the notation <code>HEAD~1</code>, <code>HEAD~2</code>, and so on:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> diff HEAD~1 mars.txt</code></pre>
@@ -106,24 +111,32 @@ But the Mummy will appreciate the lack of humidity</code></pre>
 <img src="fig/git-when-revisions-updated.svg" alt="When Git Updates Revision Numbers" />
 <p class="caption">When Git Updates Revision Numbers</p>
 </div>
-<div id="simplifying-the-common-case" class="callout">
-<h2>Simplifying the Common Case</h2>
+<div id="simplifying-the-common-case" class="callout panel panel-info">
+<div class="panel-heading">
+<h2 id="simplifying-the-common-case" class="callout panel panel-info"><span class="glyphicon glyphicon-pushpin"></span>Simplifying the Common Case</h2>
+</div>
+<div class="panel-body">
 <p>If you read the output of <code>git status</code> carefully, you'll see that it includes this hint:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">(use</span> <span class="st">&quot;git checkout -- &lt;file&gt;...&quot;</span> to discard changes in working directory<span class="kw">)</span></code></pre>
 <p>As it says, <code>git checkout</code> without a version identifier restores files to the state saved in <code>HEAD</code>. The double dash <code>--</code> is needed to separate the names of the files being recovered from the command itself: without it, Git would try to use the name of the file as the revision identifier.</p>
 </div>
+</div>
 <p>The fact that files can be reverted one by one tends to change the way people organize their work. If everything is in one large document, it's hard (but not impossible) to undo changes to the introduction without also undoing changes made later to the conclusion. If the introduction and conclusion are stored in separate files, on the other hand, moving backward and forward in time becomes much easier.</p>
-<div id="recovering-older-versions-of-a-file" class="challenge">
-<h2>Recovering Older Versions of a File</h2>
+<div id="recovering-older-versions-of-a-file" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="recovering-older-versions-of-a-file" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>Recovering Older Versions of a File</h2>
+</div>
+<div class="panel-body">
 <p>Jennifer has made changes to the Python script that she has been working on for weeks, and the modifications she made this morning &quot;broke&quot; the script and it no longer runs. She has spent ~ 1hr trying to fix it, with no luck...</p>
 <p>Luckily, she has been keeping track of her revisions using Git! Which commands below will let her recover the last committed version of her Python script called <code>data_cruncher.py</code>?</p>
 <ol style="list-style-type: decimal">
-<li><code>git checkout HEAD</code></li>
-<li><code>git checkout HEAD data_cruncher.py</code></li>
-<li><code>git checkout HEAD~1 data_cruncher.py</code></li>
-<li><code>git checkout &lt;unique ID of last revision&gt; data_cruncher.py</code></li>
+<li><pre><code>$ git checkout HEAD</code></pre></li>
+<li><pre><code>$ git checkout HEAD data_cruncher.py</code></pre></li>
+<li><pre><code>$ git checkout HEAD~1 data_cruncher.py</code></pre></li>
+<li><pre><code>$ git checkout &lt;unique ID of last revision&gt; data_cruncher.py</code></pre></li>
 <li>Both 2 &amp; 4</li>
 </ol>
+</div>
 </div>
         </div>
       </div>

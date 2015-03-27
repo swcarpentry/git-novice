@@ -7,6 +7,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-theme.css" />
     <link rel="stylesheet" type="text/css" href="css/swc.css" />
     <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
     <meta charset="UTF-8" />
@@ -16,7 +17,7 @@
     <![endif]-->
   </head>
   <body class="lesson">
-    <div class="container">
+    <div class="container card">
       <div class="banner">
         <a href="http://software-carpentry.org" title="Software Carpentry">
           <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
@@ -26,11 +27,15 @@
         <div class="col-md-10 col-md-offset-1">
           <h1 class="title">Version Control with Git</h1>
           <h2 class="subtitle">Creating a Repository</h2>
-<div id="learning-objectives" class="objectives">
-<h2>Learning Objectives</h2>
+<div id="learning-objectives" class="objectives panel panel-warning">
+<div class="panel-heading">
+<h2 id="learning-objectives" class="objectives panel panel-warning"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+</div>
+<div class="panel-body">
 <ul>
 <li>Explain how to create a Git repository locally.</li>
 </ul>
+</div>
 </div>
 <p>Once Git is configured, we can start using it. Let's create a directory for our work:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> planets
@@ -50,8 +55,11 @@ $ <span class="kw">cd</span> planets</code></pre>
 # Initial commit
 #
 nothing to commit (create/copy files and use &quot;git add&quot; to track)</code></pre>
-<div id="places-to-create-git-repositories" class="challenge">
-<h2>Places to Create Git Repositories</h2>
+<div id="places-to-create-git-repositories" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="places-to-create-git-repositories" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>Places to Create Git Repositories</h2>
+</div>
+<div class="panel-body">
 <p>The following sequence of commands creates one Git repository inside another:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cd</span>           <span class="co"># return to home directory</span>
 <span class="kw">mkdir</span> alpha  <span class="co"># make a new directory alpha</span>
@@ -61,6 +69,7 @@ nothing to commit (create/copy files and use &quot;git add&quot; to track)</code
 <span class="kw">cd</span> beta      <span class="co"># go into alpha/beta</span>
 <span class="kw">git</span> init     <span class="co"># make the beta sub-directory a Git repository</span></code></pre>
 <p>Why is it a bad idea to do this?</p>
+</div>
 </div>
         </div>
       </div>
