@@ -55,6 +55,8 @@ can and should be stored in a version control system.
 6.  [Collaborating](06-collab.html)
 7.  [Conflicts](07-conflict.html)
 8.  [Open Science](08-open.html)
+9.  [Licensing](09-licensing.html)
+10. [Hosting](10-hosting.html)
 
 ## Other Resources
 

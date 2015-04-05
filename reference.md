@@ -49,6 +49,9 @@ subtitle: Reference
 ## [Open Science](08-open.html)
 
 *   Open scientific work is more useful and more highly cited than closed.
+
+[Licensing](09-licensing.html)
+
 *   People who incorporate GPL'd software into theirs must make theirs open;
     most other open licenses do not require this.
 *   The Creative Commons family of licenses allow people to mix and match
@@ -57,6 +60,9 @@ subtitle: Reference
     further sharing,
     and commercialization.
 *   People who are not lawyers should not try to write licenses from scratch.
+
+[Hosting](10-hosting.html)
+
 *   Projects can be hosted on university servers,
     on personal domains,
     or on public forges.
