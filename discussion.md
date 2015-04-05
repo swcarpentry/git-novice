@@ -11,7 +11,6 @@ Students who have completed the rest of the lessons might find value in looking 
 
 Note that since this material isn't essential for basic Git usage, it won't be covered by the instructor.
 
-
 ## More Advanced Git Configuration
 
 In [Setting Up Git](01-setup.md),
@@ -65,52 +64,45 @@ we could now instead type:
 $ git co f22b25e mars.txt
 ~~~
 
+## Styling Git's Log
 
-> ## Styling Git's Log {.challenge}
->
-> A good target for customization is output from the log.
-> The default log is quite verbose but gives no graphical hints
-> such as information about which commits were done locally
-> and which were pulled from remotes.
-> 
-> Use `git log --help` and `git config --help` to look for different ways to change
-> the log output.
-> 
-> How do you expect the log to look after running the following commands?
-> 
-> ~~~ {.bash}
-> $ git config --global alias.lg "log --graph"
-> $ git config --global log.abbrevCommit true
-> $ git config --global format.pretty oneline
-> $ git lg
-> ~~~
-> 
-> You can try the commands out and if you decide you don't like the effect,
-> you can get rid of them by running:
-> 
-> ~~~ {.bash}
-> $ git config --global --unset alias.lg
-> $ git config --global --unset log.abbrevCommit
-> $ git config --global --unset format.pretty
-> ~~~
+A good target for customization is output from the log.
+The default log is quite verbose but gives no graphical hints
+such as information about which commits were done locally
+and which were pulled from remotes.
 
-> ## Version Controlling the Gitconfig {.challenge}
+You can use `git log --help` and `git config --help` to look for different ways to change
+the log output.
+Try the following commands and see what effect they have:
+
+~~~ {.bash}
+$ git config --global alias.lg "log --graph"
+$ git config --global log.abbrevCommit true
+$ git config --global format.pretty oneline
+$ git lg
+~~~
+
+If you don't like the effects,
+you can undo them with:
+
+~~~ {.bash}
+$ git config --global --unset alias.lg
+$ git config --global --unset log.abbrevCommit
+$ git config --global --unset format.pretty
+~~~
+
+> ## Version Controlling Your Git Configuration {.callout}
 > 
-> In the previous challenge, we suggested using the `--unset` flag to delete
-> unwanted options from `.gitconfig`.
-> Another way to roll back changes is to version control your
-> `.gitconfig` using Git.
+> You can use the `--unset` flag to delete unwanted options from `.gitconfig`.
+> Another way to roll back changes is to store your `.gitconfig` using Git.
 > 
-> Go to GitHub and do a search for "gitconfig".
-> You will hopefully see hundreds of repositories in which people have stored
+> For hints on what you might want to configure,
+> go to GitHub and search for "gitconfig".
+> You will find hundreds of repositories in which people have stored
 > their own Git configuration files.
-> Sort them by most number of stars and have a look at the top few.
-> Do you see any ideas for things you might want to try out in your own
-> `.gitconfig`?
->
-> (Remember to check that they're using an open source license before you clone
-> their work for your own use.)
-
+> Sort them by the number of stars and have a look at the top few.
+> If you find some you like,
+> please check that they're covered by an open source license before you clone them.
 
 ## Non-text Files
 
@@ -209,17 +201,3 @@ Even though a logo will be stored in a binary format such as `jpg` or `png`,
 you can expect it will remain fairly static through the lifetime of your repository.
 On the rare occasion that branding does change,
 you will probably just want to replace the logo completely rather than merge little differences in.
-
-> ## Non-text Version Control {.challenge}
-> 
-> How would you write a program to diff non-text files?
->
-> If you go through two files byte by byte, it might be easy to find the first place where differences begin.
-> However, what if two stretches in the middle of a file are exactly the same
-> but have different start locations?
-> Or if a stretch of bytes in one file is identical to two different stretches in the other file,
-> which should be privileged as *the* matching part?
-> 
-> Try Googling for phrases such as `non-text diff` and `binary version control` to
-> see what ideas and solutions other people have come up with.
-> (You might also see some more arguments about why you shouldn't use binary files with Git.)
