@@ -185,4 +185,17 @@ rm -rf  temp_git
     or put different-colored sticky notes on their foreheads.
 
 ## [Conflicts](07-conflict.html)
+
+FIXME
+
 ## [Open Science](08-open.html)
+
+FIXME
+
+## [Licensing](09-licensing.html)
+
+FIXME
+
+## [Hosting](10-hosting.html)
+
+FIXME
