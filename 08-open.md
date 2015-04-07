@@ -71,24 +71,30 @@ the more open work is,
 [the more widely it is cited and re-used](http://dx.doi.org/10.1371/journal.pone.0000308).
 However,
 people who want to work this way need to make some decisions
-about what exactly "open" means in practice.
+about what exactly "open" means and how to do it.
 
-> ## Version Control as an Electronic Lab Notebook {.callout}
+This is one of the (many) reasons we teach version control.
+When used diligently,
+it answers the "how" question
+by acting as a shareable electronic lab notebook for computational work:
+
+*   The conceptual stages of your work are documented, including who did
+    what and when. Every step is stamped with an identifier (the commit ID)
+    that is for most intents and purposes is unique.
+*   You can tie documentation of rationale, ideas, and other
+    intellectual work directly to the changes that spring from them.
+*   You can refer to what you used in your research to obtain your
+    computational results in a way that is unique and recoverable.
+*   With a distributed version control system such as Git, the version
+    control repository is easy to archive for perpetuity, and contains
+    the entire history.
+
+> ## Making Code Citable {.callout}
 >
-> The benefits of version control in essence mean that, when used
-> diligently, you can use version control as a form of electronic
-> lab notebook for your computational work.
-> 
-> *   The conceptual stages of your work are documented, including who did
->     what and when. Every step is stamped with an identifier (the commit ID)
->     that is for most intents and purposes is unique.
-> *   You can tie documentation of rationale, ideas, and other
->     intellectual work directly to the changes that spring from them.
-> *   You can refer to what you used in your research to obtain your
->     computational results in a way that is unique and recoverable.
-> *   With a distributed version control system such as Git, the version
->     control repository is easy to archive for perpetuity, and contains
->     the entire history.
+> [This short guide](https://guides.github.com/activities/citable-code/) from GitHub
+> explains how to create a Digital Object Identifier (DOI) for your code,
+> your papers,
+> or anything else hosted in a version control repository.
 
 > ## How Reproducible Is My Work? {.challenge}
 >
