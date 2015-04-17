@@ -40,6 +40,27 @@
 <p>We'll start by exploring how version control can be used to keep track of what one person did and when. Even if you aren't collaborating with other people, version control is much better for this than this:</p>
 <p><a href="http://www.phdcomics.com"><img src="fig/phd101212s.gif" alt="Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com" /></a></p>
 <p>&quot;Piled Higher and Deeper&quot; by Jorge Cham, http://www.phdcomics.com</p>
+<p>We've all been in this situation before: it seems ridiculous to have multiple nearly-identical versions of the same document. Some word processors let us deal with this a little better, like Microsoft Word (&quot;Track Changes&quot;) or Google Docs version history.</p>
+<p>Version control systems start with a base version of the document and then save just the changes you made at each step on the way. You can think of it as a tape: if you rewind the tape and start at the base document, then you can play back each change and end up with your latest version.</p>
+<div class="figure">
+<img src="fig/play-changes.svg" alt="Changes are saved sequentially" />
+<p class="caption">Changes are saved sequentially</p>
+</div>
+<p>Once you think of changes as separate from the document itself, you can then think about &quot;playing back&quot; different sets of changes onto the base document and getting different versions of the document. For example, two users can make independent sets of changes based on the same document.</p>
+<div class="figure">
+<img src="fig/versions.svg" alt="Different versions can be saved" />
+<p class="caption">Different versions can be saved</p>
+</div>
+<p>If there aren't conflicts, you can even try to play two sets of changes onto the same base document.</p>
+<div class="figure">
+<img src="fig/merge.svg" alt="Multiple versions can be merged" />
+<p class="caption">Multiple versions can be merged</p>
+</div>
+<h2 id="how-git-works">How Git works</h2>
+<p>A version control system is a tool that keeps track of these changes for us and helps us version and merge our files. A system like Git is designed to keep multiple sets of versions and changes in sync across different computers or servers. This is called a <em>distributed</em> system.</p>
+<p>A <a href="reference.html#repository">repository</a> is the set of files that we want to keep under version control.</p>
+<p>With Git, every user who wants to make changes to a repository has their own copy of the files in the repository, along with their own copy of the changes (the <em>commits</em>) that have been made to those files. Git keeps the commits in a secret directory along with the copies of the files.</p>
+<h2 id="setting-up">Setting Up</h2>
 <p>The first time we use Git on a new machine, we need to configure a few things. Here's how Dracula sets up his new laptop:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global user.name <span class="st">&quot;Vlad Dracula&quot;</span>
 $ <span class="kw">git</span> config --global user.email <span class="st">&quot;vlad@tran.sylvan.ia&quot;</span>

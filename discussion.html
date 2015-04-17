@@ -49,32 +49,24 @@
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout f22b25e mars.txt</code></pre>
 <p>we could now instead type:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> co f22b25e mars.txt</code></pre>
-<div id="styling-gits-log" class="challenge panel panel-success">
-<div class="panel-heading">
-<h2 id="styling-gits-log" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>Styling Git's Log</h2>
-</div>
-<div class="panel-body">
+<h2 id="styling-gits-log">Styling Git's Log</h2>
 <p>A good target for customization is output from the log. The default log is quite verbose but gives no graphical hints such as information about which commits were done locally and which were pulled from remotes.</p>
-<p>Use <code>git log --help</code> and <code>git config --help</code> to look for different ways to change the log output.</p>
-<p>How do you expect the log to look after running the following commands?</p>
+<p>You can use <code>git log --help</code> and <code>git config --help</code> to look for different ways to change the log output. Try the following commands and see what effect they have:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global alias.lg <span class="st">&quot;log --graph&quot;</span>
 $ <span class="kw">git</span> config --global log.abbrevCommit true
 $ <span class="kw">git</span> config --global format.pretty oneline
 $ <span class="kw">git</span> lg</code></pre>
-<p>You can try the commands out and if you decide you don't like the effect, you can get rid of them by running:</p>
+<p>If you don't like the effects, you can undo them with:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global --unset alias.lg
 $ <span class="kw">git</span> config --global --unset log.abbrevCommit
 $ <span class="kw">git</span> config --global --unset format.pretty</code></pre>
-</div>
-</div>
-<div id="version-controlling-the-gitconfig" class="challenge panel panel-success">
+<div id="version-controlling-your-git-configuration" class="callout panel panel-info">
 <div class="panel-heading">
-<h2 id="version-controlling-the-gitconfig" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>Version Controlling the Gitconfig</h2>
+<h2 id="version-controlling-your-git-configuration" class="callout panel panel-info"><span class="glyphicon glyphicon-pushpin"></span>Version Controlling Your Git Configuration</h2>
 </div>
 <div class="panel-body">
-<p>In the previous challenge, we suggested using the <code>--unset</code> flag to delete unwanted options from <code>.gitconfig</code>. Another way to roll back changes is to version control your <code>.gitconfig</code> using Git.</p>
-<p>Go to GitHub and do a search for &quot;gitconfig&quot;. You will hopefully see hundreds of repositories in which people have stored their own Git configuration files. Sort them by most number of stars and have a look at the top few. Do you see any ideas for things you might want to try out in your own <code>.gitconfig</code>?</p>
-<p>(Remember to check that they're using an open source license before you clone their work for your own use.)</p>
+<p>You can use the <code>--unset</code> flag to delete unwanted options from <code>.gitconfig</code>. Another way to roll back changes is to store your <code>.gitconfig</code> using Git.</p>
+<p>For hints on what you might want to configure, go to GitHub and search for &quot;gitconfig&quot;. You will find hundreds of repositories in which people have stored their own Git configuration files. Sort them by the number of stars and have a look at the top few. If you find some you like, please check that they're covered by an open source license before you clone them.</p>
 </div>
 </div>
 <h2 id="non-text-files">Non-text Files</h2>
@@ -116,16 +108,6 @@ index df0654a..315bf3a 100644
 <p>An uninformative <code>git diff</code> is not the only consequence of using Git on binary files. However, most of the other problems boil down to whether or not a good diff is possible.</p>
 <p>This isn't to say you should <em>never</em> use Git on binary files. A rule of thumb is that it's okay if the binary file won't change very often, and if it does change, you don't care about merging in small differences between versions.</p>
 <p>We've already seen how a word processed report will fail this test. An example that passes the test is a logo for your organization or project. Even though a logo will be stored in a binary format such as <code>jpg</code> or <code>png</code>, you can expect it will remain fairly static through the lifetime of your repository. On the rare occasion that branding does change, you will probably just want to replace the logo completely rather than merge little differences in.</p>
-<div id="non-text-version-control" class="challenge panel panel-success">
-<div class="panel-heading">
-<h2 id="non-text-version-control" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>Non-text Version Control</h2>
-</div>
-<div class="panel-body">
-<p>How would you write a program to diff non-text files?</p>
-<p>If you go through two files byte by byte, it might be easy to find the first place where differences begin. However, what if two stretches in the middle of a file are exactly the same but have different start locations? Or if a stretch of bytes in one file is identical to two different stretches in the other file, which should be privileged as <em>the</em> matching part?</p>
-<p>Try Googling for phrases such as <code>non-text diff</code> and <code>binary version control</code> to see what ideas and solutions other people have come up with. (You might also see some more arguments about why you shouldn't use binary files with Git.)</p>
-</div>
-</div>
         </div>
       </div>
       <div class="footer">

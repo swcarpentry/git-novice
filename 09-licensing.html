@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <title>Software Carpentry: Version Control with Git</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc.css" />
+    <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
+    <meta charset="UTF-8" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body class="lesson">
+    <div class="container card">
+      <div class="banner">
+        <a href="http://software-carpentry.org" title="Software Carpentry">
+          <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
+        </a>
+      </div>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <h1 class="title">Version Control with Git</h1>
+          <h2 class="subtitle">Licensing</h2>
+<div id="learning-objectives" class="objectives panel panel-warning">
+<div class="panel-heading">
+<h2 id="learning-objectives" class="objectives panel panel-warning"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+</div>
+<div class="panel-body">
+<ul>
+<li>Explain why adding licensing and citation information to a project repository is important.</li>
+<li>Explain what license choices are available and how to choose one.</li>
+<li>Explain how licensing and social expectations differ.</li>
+</ul>
+</div>
+</div>
+<p>When a repository with source code, a manuscript or other creative works becomes public, it should include a file <code>LICENSE</code> or <code>LICENSE.txt</code> in the base directory of the repository that clearly states under which license the content is being made available. This is because as creative works, source code is automatically eligible for intellectual property (and thus copyright) protection. Code that appears to be, or is expressly advertised as freely available has <em>not</em> waived such protection. Hence, those who (re)use code that lacks a license statement do so on their own peril, because the author(s) of the software code can always unilaterally make such reuse illegal.</p>
+<p>A license solves this problem by granting rights to others (the licensees) that they would otherwise not have. What rights are being granted under which conditions differs, often only slightly, from one license to another. In contrast to proprietary licenses, the <a href="http://opensource.org/licenses/alphabetical">open licences</a> certified by the <a href="http://opensource.org/">Open Source Initiative</a> all grant at least the following rights, referred to as the <a href="http://opensource.org/osd">Open Source Definition</a>:</p>
+<ol style="list-style-type: decimal">
+<li>The source code is available, and may be used and redistributed without restrictions, including as part of aggregate distributions.</li>
+<li>Modifications or other derived works are allowed, and can be redistributed as well.</li>
+<li>The question of who receives these rights is not subject to discrimination, including not by fields of endeavor such as commercial versus academic.</li>
+</ol>
+<p>How best to choose an appropriate license can seem daunting, given how many possibilities there are. In practice, a few licenses are by far the most popular, including the following:</p>
+<ul>
+<li><a href="http://opensource.org/licenses/GPL-3.0">GNU General Public License</a> (GPL),</li>
+<li><a href="http://opensource.org/licenses/MIT">MIT license</a>,</li>
+<li><a href="http://opensource.org/licenses/BSD-2-Clause">BSD license</a>.</li>
+</ul>
+<p>The GPL is different from most other open source licenses in that it is <a href="http://swcarpentry.github.io/git-novice/reference.html#infective">infective</a>: anyone who distributes a modified version of the code, or anything that includes GPL'ed code, must make <em>their</em> code freely available as well.</p>
+<p>The following article provides an excellent overview of licensing and licensing options from the perspective of scientists who also write code:</p>
+<blockquote>
+<p>Morin, A., Urban, J., and Sliz, P. “<a href="http://dx.doi.org/10.1371/journal.pcbi.1002598">A Quick Guide to Software Licensing for the Scientist-Programmer</a>” PLoS Computational Biology 8(7) (2012): e1002598.</p>
+</blockquote>
+<p>At the end of the day what matters is that there is a clear statement as to what the license is, and that the license is one already vetted and approved by <a href="http://opensource.org">OSI</a>. Also, the license is best chosen from the get-go, even if for a repository that is not public. Pushing off the decision only makes it more complicated later, because each time a new collaborator starts contributing, they, too, hold copyright and will thus need to be asked for approval once a license is chosen.</p>
+<p>If the content of a repository contains reseach products other than software, such as data, and/or creative writing (manuals, technical reports, manuscripts), most licenses designed for software are <em>not</em> suitable.</p>
+<ul>
+<li><p><strong>Data:</strong> In most jurisdictions most types of data (with possibly the exception of photos, medical images, etc) are considered facts of nature, and are hence not eligible for copyright protection. Therefore, using a license, which by definition asserts copyright, to signal social or scholarly expectations for attribution serves only to create a legally murky situation. It is much better to clarify the legal side with a public domain waiver such as <a href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons Zero (CC0)</a>, and the social expectations side with express requests for how to use and cite the data. The <a href="http://datadryad.org">Dryad</a> data repository in fact requires this.</p></li>
+<li><p><strong>Creative works:</strong> Manuals, reports, manuscripts and other creative works are eligible for intellectual property protection and are hence automatically protected by copyright, just as software source code. <a href="http://creativecommons.org/">Creative Commons</a> has prepared a <a href="http://creativecommons.org/licenses/">set of licenses</a> using combinations of four basic restrictions:</p>
+<ul>
+<li>Attribution: derived works must give the original author credit for their work.</li>
+<li>No Derivatives: people may copy the work, but must pass it along unchanged.</li>
+<li>Share Alike: derivative works must license their work under the same terms as the original.</li>
+<li>Noncommercial: free use is allowed, but commercial use is not.</li>
+</ul></li>
+</ul>
+<p>Only the Attribution (<a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a>) and Share-Alike (<a href="http://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA</a>) licenses are considered &quot;<a href="http://opendefinition.org/">Open</a>&quot;.</p>
+<p><a href="http://software-carpentry.org/license.html">Software Carpentry</a> uses CC-BY for its lessons and the MIT License for its code in order to encourage the widest possible re-use. Again, the most important thing is for the <code>LICENSE</code> file in the root directory of your project to state clearly what your license is. You may also want to include a file called <code>CITATION</code> or <code>CITATION.txt</code> that describes how to reference your project; the one for Software Carpentry states:</p>
+<pre><code>To reference Software Carpentry in publications, please cite both of the following:
+
+Greg Wilson: &quot;Software Carpentry: Lessons Learned&quot;. arXiv:1307.5448, July 2013.
+
+@online{wilson-software-carpentry-2013,
+  author      = {Greg Wilson},
+  title       = {Software Carpentry: Lessons Learned},
+  version     = {1},
+  date        = {2013-07-20},
+  eprinttype  = {arxiv},
+  eprint      = {1307.5448}
+}</code></pre>
+<div id="can-i-use-open-license" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="can-i-use-open-license" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>Can I Use Open License?</h2>
+</div>
+<div class="panel-body">
+<p>Find out whether you are allowed to apply an open license to your software. Can you do this unilaterally, or do you need permission from someone in your institution? If so, who?</p>
+</div>
+</div>
+        </div>
+      </div>
+      <div class="footer">
+        <a class="label swc-blue-bg" href="http://software-carpentry.org">Software Carpentry</a>
+        <a class="label swc-blue-bg" href="https://github.com/swcarpentry/git-novice">Source</a>
+        <a class="label swc-blue-bg" href="mailto:admin@software-carpentry.org">Contact</a>
+        <a class="label swc-blue-bg" href="LICENSE.html">License</a>
+      </div>
+    </div>
+    <!-- Javascript placed at the end of the document so the pages load faster -->
+    <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
+    <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+  </body>
+</html>
