@@ -37,10 +37,10 @@
 </ul>
 </div>
 </div>
-<p>Once Git is configured, we can start using it. Let's create a directory for our work:</p>
+<p>Once Git is configured, we can start using it. Let's create a directory for our work (using the <code>mkdir</code> command) and then move into that directory with the <code>cd</code> command:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> planets
 $ <span class="kw">cd</span> planets</code></pre>
-<p>and tell Git to make it a <a href="reference.html#repository">repository</a>—a place where Git can store old versions of our files:</p>
+<p>and tell Git to make planets a <a href="reference.html#repository">repository</a>—a place where Git can store old versions of our files:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> init</code></pre>
 <p>If we use <code>ls</code> to show the directory's contents, it appears that nothing has changed:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span></code></pre>
@@ -68,7 +68,7 @@ nothing to commit (create/copy files and use &quot;git add&quot; to track)</code
 <span class="kw">mkdir</span> beta   <span class="co"># make a sub-directory alpha/beta</span>
 <span class="kw">cd</span> beta      <span class="co"># go into alpha/beta</span>
 <span class="kw">git</span> init     <span class="co"># make the beta sub-directory a Git repository</span></code></pre>
-<p>Why is it a bad idea to do this?</p>
+<p>While these commands would work -- there is nothing to stop your creating one Git repository inside another -- this is not a very good idea. Can you think of any reasons why?</p>
 </div>
 </div>
         </div>
