@@ -87,7 +87,7 @@ $ git config --list
 
 > ## Proxy {.callout}
 >
-> In some networks you need to use a proxy. If this is the case you may also
+> In some networks you need to use a [proxy](https://en.wikipedia.org/wiki/Proxy_server). If this is the case you may also
 > need to tell Git about the proxy:
 >
 > ~~~ {.bash}
