@@ -13,7 +13,7 @@ Let's create a file called `mars.txt` that contains some notes
 about the Red Planet's suitability as a base.
 (We'll use `nano` to edit the file;
 you can use whatever editor you like.
-In particular, this does not have to be the core.editor you set globally earlier.)
+In particular, this does not have to be the `core.editor` you set globally earlier.)
 
 ~~~ {.bash}
 $ nano mars.txt
