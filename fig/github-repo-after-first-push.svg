@@ -1,155 +1,483 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="622px"
-	 height="452px" viewBox="0 0 622 452" enable-background="new 0 0 622 452" xml:space="preserve">
-<g id="Layer_6">
-	<rect x="7" y="12" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="603.785" height="244"/>
-	<rect x="355.302" y="280.401" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="189.901" height="148.599"/>
-	<rect x="365.145" y="286.131" fill="none" width="195.585" height="24.449"/>
-	<text transform="matrix(1 0 0 1 365.1445 292.7236)" font-family="'Helvetica'" font-size="9.168">https://github.com/vlad/planets</text>
-	<g>
-		<path fill="#B5B5B5" stroke="#FFFFFF" stroke-miterlimit="10" d="M528.445,320.162c0-4.319-3.502-7.82-7.822-7.82H439.88
-			c-4.319,0-7.821,3.501-7.821,7.82v87.077c0,4.319,3.502,7.82,7.821,7.82h80.743c4.32,0,7.822-3.501,7.822-7.82V320.162z"/>
-		<rect x="436.771" y="319.872" fill="none" width="35" height="15"/>
-		<text transform="matrix(1 0 0 1 436.7715 328.1523)" font-family="'Consolas'" font-size="12">.git</text>
-	</g>
-	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="480.3574" y1="334.8721" x2="480.3574" y2="363.4727">
-		<stop  offset="0.0982" style="stop-color:#C4C4C4"/>
-		<stop  offset="0.5326" style="stop-color:#686868"/>
-		<stop  offset="1" style="stop-color:#000000"/>
-	</linearGradient>
-	<path fill="url(#SVGID_1_)" stroke="#231F20" stroke-miterlimit="10" d="M454.451,362.939c0-4.798,11.6-8.687,25.906-8.687
-		c14.308,0,25.906,3.889,25.906,8.687v0.533c0,0,0-1.097,0-1.615c0-0.52,0-18.5,0-18.5v0.201c0-4.797-11.599-8.687-25.906-8.687
-		c-14.307,0-25.906,3.89-25.906,8.687v-0.201c0,0,0,17.868,0,18.494s0,1.621,0,1.621V362.939z"/>
-	<g>
-		<path fill="#FFFFFF" stroke="#231F20" stroke-miterlimit="10" d="M506.158,383.334c0,0,0,17.982,0,18.501s0.184,1.615,0.184,1.615
-			c0,4.797-11.781,8.686-26.09,8.686c-14.307,0-26.088-3.889-26.088-8.686c0,0,0.183-0.996,0.183-1.621c0-0.626,0-18.495,0-18.495
-			c0,4.798,11.599,8.687,25.905,8.687C494.561,392.021,506.158,388.132,506.158,383.334z"/>
-	</g>
-	<g>
-		<path fill="#FFFFFF" stroke="#231F20" stroke-miterlimit="10" d="M506.158,363.312c0,0,0,17.98,0,18.5
-			c0,0.519,0.184,1.615,0.184,1.615c0,4.797-11.781,8.686-26.09,8.686c-14.307,0-26.088-3.889-26.088-8.686
-			c0,0,0.183-0.996,0.183-1.622s0-18.493,0-18.493c0,4.797,11.599,8.686,25.905,8.686
-			C494.561,371.997,506.158,368.108,506.158,363.312z"/>
-	</g>
-	<g>
-		<path fill="#FFFFFF" stroke="#231F20" stroke-miterlimit="10" d="M506.158,343.138c0,0,0,17.98,0,18.5
-			c0,0.519,0.184,1.615,0.184,1.615c0,4.798-11.781,8.687-26.09,8.687c-14.307,0-26.088-3.889-26.088-8.687
-			c0,0,0.183-0.995,0.183-1.621s0-18.494,0-18.494c0,4.798,11.599,8.687,25.905,8.687
-			C494.561,351.824,506.158,347.936,506.158,343.138z"/>
-	</g>
-	<g>
-		<polygon fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" points="499.013,339.387 468.312,339.387 461.493,346.889 
-			492.191,346.889 		"/>
-		<line fill="none" stroke="#70BF41" stroke-width="2" x1="468.312" y1="342.455" x2="493.55" y2="342.455"/>
-	</g>
-	<g>
-		<rect x="369.752" y="331.701" fill="#DCDEE0" width="50" height="64"/>
-		<rect x="369.752" y="331.701" fill="none" stroke="#85888D" stroke-width="0.75" width="50" height="64"/>
-		<line fill="none" stroke="#000000" stroke-width="0.75" x1="376.252" y1="341.701" x2="413.252" y2="341.701"/>
-		<line fill="none" stroke="#000000" stroke-width="0.75" x1="376.252" y1="344.701" x2="413.252" y2="344.701"/>
-		<line fill="none" stroke="#000000" stroke-width="0.75" x1="376.252" y1="347.701" x2="413.252" y2="347.701"/>
-		<line fill="none" stroke="#70BF41" stroke-width="0.75" x1="376.252" y1="353.701" x2="413.252" y2="353.701"/>
-	</g>
-</g>
-<g id="Layer_5">
-	<g>
-		<path fill="#B5B5B5" stroke="#FFFFFF" stroke-miterlimit="10" d="M598,63c0-8.284-6.716-15-15-15H198c-8.284,0-15,6.716-15,15v167
-			c0,8.284,6.716,15,15,15h385c8.284,0,15-6.716,15-15V63z"/>
-		<rect x="197" y="59" fill="none" width="425" height="70.269"/>
-		<text transform="matrix(1 0 0 1 197 71.4199)"><tspan x="0" y="0" font-family="'Consolas'" font-size="18">.git</tspan><tspan x="0" y="21.6" font-family="'Consolas'" font-size="10.8">origin https://github.com/vlad/planets.git</tspan></text>
-	</g>
-	<rect x="16" y="19" fill="none" width="195.585" height="24.449"/>
-	<text transform="matrix(1 0 0 1 16 28.707)" font-family="'Helvetica'" font-size="13.5">~vlad/planets</text>
-</g>
-<g id="Layer_3">
-	<g>
-		<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="303.499" y1="123.9863" x2="303.499" y2="179.2349">
-			<stop  offset="0.0982" style="stop-color:#C4C4C4"/>
-			<stop  offset="0.5326" style="stop-color:#686868"/>
-			<stop  offset="1" style="stop-color:#000000"/>
-		</linearGradient>
-		<path fill="url(#SVGID_2_)" stroke="#231F20" stroke-miterlimit="10" d="M253.453,178.205c0-9.264,22.404-16.777,50.047-16.777
-			s50.045,7.514,50.045,16.777v1.029c0,0,0-2.115,0-3.117c0-1.007,0-35.745,0-35.745v0.394c0-9.27-22.402-16.78-50.045-16.78
-			s-50.047,7.51-50.047,16.78v-0.394c0,0,0,34.519,0,35.733c0,1.205,0,3.129,0,3.129V178.205z"/>
-		<g>
-			<path fill="#FFFFFF" stroke="#231F20" stroke-miterlimit="10" d="M353.545,140.373c0,0,0,34.738,0,35.745
-				c0,1.002,0.355,3.117,0.355,3.117c0,9.27-22.758,16.779-50.4,16.779s-50.4-7.51-50.4-16.779c0,0,0.354-1.924,0.354-3.129
-				c0-1.214,0-35.733,0-35.733c0,9.274,22.404,16.785,50.047,16.785S353.545,149.647,353.545,140.373z"/>
-		</g>
-	</g>
-	<g>
-		<polygon fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" points="341.719,134.965 282.411,134.965 269.235,149.459 
-			328.542,149.459 		"/>
-		<line fill="none" stroke="#70BF41" stroke-width="2" x1="282.411" y1="140.894" x2="331.165" y2="140.894"/>
-	</g>
-</g>
-<g id="Layer_4">
-	<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="537.1768" y1="57.6602" x2="537.1768" y2="112.9126">
-		<stop  offset="0.0982" style="stop-color:#C4C4C4"/>
-		<stop  offset="0.5326" style="stop-color:#686868"/>
-		<stop  offset="1" style="stop-color:#000000"/>
-	</linearGradient>
-	<path fill="url(#SVGID_3_)" stroke="#231F20" stroke-miterlimit="10" d="M487.13,111.882c0-9.268,22.407-16.781,50.047-16.781
-		c27.641,0,50.047,7.513,50.047,16.781v1.03c0,0,0-2.118,0-3.121s0-35.739,0-35.739v0.388c0-9.268-22.406-16.781-50.047-16.781
-		c-27.64,0-50.047,7.513-50.047,16.781v-0.388c0,0,0,34.519,0,35.728s0,3.132,0,3.132V111.882z"/>
-	<g>
-		<path fill="#FFFFFF" stroke="#231F20" stroke-miterlimit="10" d="M587.021,151.283c0,0,0,34.738,0,35.74s0.354,3.121,0.354,3.121
-			c0,9.268-22.76,16.779-50.4,16.779c-27.64,0-50.399-7.512-50.399-16.779c0,0,0.353-1.924,0.353-3.133s0-35.729,0-35.729
-			c0,9.268,22.407,16.781,50.047,16.781C564.614,168.064,587.021,160.551,587.021,151.283z"/>
-	</g>
-	<g>
-		<path fill="#FFFFFF" stroke="#231F20" stroke-miterlimit="10" d="M587.021,112.601c0,0,0,34.736,0,35.739
-			c0,1.002,0.354,3.121,0.354,3.121c0,9.268-22.76,16.779-50.4,16.779c-27.64,0-50.399-7.512-50.399-16.779
-			c0,0,0.353-1.923,0.353-3.132s0-35.728,0-35.728c0,9.268,22.407,16.78,50.047,16.78
-			C564.614,129.381,587.021,121.869,587.021,112.601z"/>
-	</g>
-	<g>
-		<path fill="#FFFFFF" stroke="#231F20" stroke-miterlimit="10" d="M587.021,73.628c0,0,0,34.737,0,35.739s0.354,3.12,0.354,3.12
-			c0,9.269-22.76,16.781-50.4,16.781c-27.64,0-50.399-7.513-50.399-16.781c0,0,0.353-1.922,0.353-3.131s0-35.728,0-35.728
-			c0,9.268,22.407,16.78,50.047,16.78C564.614,90.409,587.021,82.896,587.021,73.628z"/>
-	</g>
-	<g>
-		<polygon fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" points="573.216,66.381 513.908,66.381 500.732,80.875 
-			560.039,80.875 		"/>
-		<line fill="none" stroke="#70BF41" stroke-width="2" x1="513.908" y1="72.311" x2="562.662" y2="72.311"/>
-	</g>
-</g>
-<g id="Layer_1">
-	<g>
-		<rect x="24" y="85" fill="#DCDEE0" width="100" height="128"/>
-		<rect x="24" y="85" fill="none" stroke="#85888D" stroke-width="2" width="100" height="128"/>
-		<line fill="none" stroke="#000000" stroke-width="2" x1="37" y1="105" x2="111" y2="105"/>
-		<line fill="none" stroke="#000000" stroke-width="2" x1="37" y1="111" x2="111" y2="111"/>
-		<line fill="none" stroke="#000000" stroke-width="2" x1="37" y1="117" x2="111" y2="117"/>
-		<line fill="none" stroke="#70BF41" stroke-width="2" x1="37" y1="129" x2="111" y2="129"/>
-	</g>
-</g>
-<g id="Layer_2">
-	<g>
-		<rect x="150.871" y="136.768" fill="#45BEEE" width="45.956" height="30.604"/>
-		<polygon fill="#45BEEE" points="193.467,121.571 193.467,181.695 234.02,151.163 		"/>
-	</g>
-	<rect x="164" y="146.069" fill="none" width="52.743" height="14"/>
-	<text transform="matrix(1 0 0 1 164 154.3496)" font-family="'Consolas'" font-size="12">git add</text>
-	<g>
-		<rect x="381.251" y="136.768" fill="#45BEEE" width="45.956" height="30.604"/>
-		<polygon fill="#45BEEE" points="423.847,121.571 423.847,181.695 464.399,151.163 		"/>
-	</g>
-	<rect x="376.98" y="146.069" fill="none" width="85.542" height="14"/>
-	<text transform="matrix(1 0 0 1 386.7637 154.3496)" font-family="'Consolas'" font-size="12">git commit</text>
-	<g>
-		
-			<rect x="144.797" y="311.759" transform="matrix(0.9805 0.1967 -0.1967 0.9805 68.499 -35.4671)" fill="#45BEEE" width="135.957" height="30.604"/>
-		<polygon fill="#45BEEE" points="282.129,309.871 270.301,368.82 316.068,346.862 		"/>
-	</g>
-	
-		<rect x="140.124" y="323.112" transform="matrix(0.9805 0.1967 -0.1967 0.9805 69.2996 -37.3993)" fill="none" width="165.542" height="14"/>
-	<text transform="matrix(0.9805 0.1967 -0.1967 0.9805 174.1279 321.6309)" font-family="'Consolas'" font-size="12">git push origin</text>
-	<rect x="229" y="206" fill="none" width="147" height="17"/>
-	<text transform="matrix(1 0 0 1 269.4766 214.6279)" font-family="'Helvetica'" font-size="12">staging area</text>
-	<rect x="464.785" y="219" fill="none" width="147" height="17"/>
-	<text transform="matrix(1 0 0 1 511.9414 227.6279)" font-family="'Helvetica'" font-size="12">repository</text>
-</g>
-</svg>
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   x="0px"
+   y="0px"
+   width="770"
+   height="500"
+   viewBox="0 0 770 500"
+   enable-background="new 0 0 622 452"
+   xml:space="preserve"
+   id="svg4593"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="github-repo-after-first-push.svg"><metadata
+     id="metadata4778"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+     id="defs4776"><linearGradient
+       y2="363.47269"
+       x2="480.35739"
+       y1="334.8721"
+       x1="480.35739"
+       gradientUnits="userSpaceOnUse"
+       id="SVGID_1_"
+       gradientTransform="translate(279.43586,-47.971822)"><stop
+         id="stop4613"
+         style="stop-color:#C4C4C4"
+         offset="0.0982" /><stop
+         id="stop4615"
+         style="stop-color:#686868"
+         offset="0.5326" /><stop
+         id="stop4617"
+         style="stop-color:#000000"
+         offset="1" /></linearGradient><linearGradient
+       inkscape:collect="always"
+       xlink:href="#SVGID_3_"
+       id="linearGradient5073"
+       gradientUnits="userSpaceOnUse"
+       x1="537.17682"
+       y1="57.660198"
+       x2="537.17682"
+       y2="112.9126" /><linearGradient
+       inkscape:collect="always"
+       xlink:href="#SVGID_3_"
+       id="linearGradient5457"
+       gradientUnits="userSpaceOnUse"
+       x1="537.17682"
+       y1="57.660198"
+       x2="537.17682"
+       y2="112.9126" /></defs><sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1362"
+     inkscape:window-height="729"
+     id="namedview4774"
+     showgrid="false"
+     showguides="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.83382282"
+     inkscape:cx="327.21322"
+     inkscape:cy="187.90606"
+     inkscape:window-x="0"
+     inkscape:window-y="18"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg4593" /><text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:Monospace;-inkscape-font-specification:Monospace;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="722.67169"
+     y="35.340919"
+     id="text4930"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4932"
+       x="722.67169"
+       y="35.340919" /></text>
+<g
+     id="g5357"
+     transform="translate(-4.520231,-9)"><g
+       id="g5130"><rect
+         style="fill:#ffffff;stroke:#000000;stroke-miterlimit:10"
+         id="rect4596"
+         height="244"
+         width="603.78497"
+         stroke-miterlimit="10"
+         y="12"
+         x="7" /><g
+         id="Layer_5"><g
+           id="g4654"><path
+             stroke-miterlimit="10"
+             d="m 598,63 c 0,-8.284 -6.716,-15 -15,-15 l -385,0 c -8.284,0 -15,6.716 -15,15 l 0,167 c 0,8.284 6.716,15 15,15 l 385,0 c 8.284,0 15,-6.716 15,-15 l 0,-167 z"
+             id="path4656"
+             inkscape:connector-curvature="0"
+             style="fill:#b5b5b5;stroke:#ffffff;stroke-miterlimit:10" /><rect
+             x="197"
+             y="59"
+             width="425"
+             height="70.268997"
+             id="rect4658"
+             style="fill:none" /><text
+             transform="translate(197,71.4199)"
+             id="text4660"><tspan
+               x="0"
+               y="0"
+               font-size="18"
+               id="tspan4662"
+               style="font-size:18px;font-family:Consolas">.git</tspan><tspan
+               x="0"
+               y="21.6"
+               font-size="10.8"
+               id="tspan4664"
+               style="font-size:10.80000019px;font-family:Consolas">origin https://github.com/vlad/planets.git</tspan></text>
+</g><rect
+           x="16"
+           y="19"
+           width="195.58501"
+           height="24.448999"
+           id="rect4666"
+           style="fill:none" /><text
+           transform="translate(16,28.707)"
+           font-size="13.5"
+           id="text4668"
+           style="font-size:13.5px;font-family:Helvetica">~/vlad/planets</text>
+</g><g
+         id="Layer_1"><g
+           id="g4721"><rect
+             x="24"
+             y="85"
+             width="100"
+             height="128"
+             id="rect4723"
+             style="fill:#dcdee0" /><rect
+             x="24"
+             y="85"
+             width="100"
+             height="128"
+             id="rect4725"
+             style="fill:none;stroke:#85888d;stroke-width:2" /><line
+             x1="37"
+             y1="105"
+             x2="111"
+             y2="105"
+             id="line4727"
+             style="fill:none;stroke:#000000;stroke-width:2" /><line
+             x1="37"
+             y1="111"
+             x2="111"
+             y2="111"
+             id="line4729"
+             style="fill:none;stroke:#000000;stroke-width:2" /><line
+             x1="37"
+             y1="117"
+             x2="111"
+             y2="117"
+             id="line4731"
+             style="fill:none;stroke:#000000;stroke-width:2" /><line
+             x1="37"
+             y1="129"
+             x2="111"
+             y2="129"
+             id="line4733"
+             style="fill:none;stroke:#70bf41;stroke-width:2" /></g></g><rect
+         style="fill:none"
+         id="rect4742"
+         height="14"
+         width="52.743"
+         y="146.069"
+         x="164" /><g
+         id="g5114"><g
+           id="g4736"><rect
+             x="150.871"
+             y="136.76801"
+             width="45.956001"
+             height="30.604"
+             id="rect4738"
+             style="fill:#45beee" /><polygon
+             points="193.467,181.695 234.02,151.163 193.467,121.571 "
+             id="polygon4740"
+             style="fill:#45beee" /></g><text
+           y="154.34959"
+           x="164"
+           font-size="12"
+           id="text4744"
+           style="font-size:12px;font-family:Consolas">git add</text>
+</g><rect
+         style="fill:none"
+         id="rect4752"
+         height="14"
+         width="85.542"
+         y="146.069"
+         x="376.98001" /><g
+         id="g5108"><g
+           id="g4746"><rect
+             x="381.25101"
+             y="136.76801"
+             width="45.956001"
+             height="30.604"
+             id="rect4748"
+             style="fill:#45beee" /><polygon
+             points="423.847,181.695 464.399,151.163 423.847,121.571 "
+             id="polygon4750"
+             style="fill:#45beee" /></g><text
+           y="154.34959"
+           x="386.7637"
+           font-size="12"
+           id="text4754"
+           style="font-size:12px;font-family:Consolas">git commit</text>
+</g><rect
+         style="fill:none"
+         id="rect4766"
+         height="17"
+         width="147"
+         y="206"
+         x="229" /><g
+         id="g5093"><g
+           id="Layer_3"><g
+             id="g4671"><linearGradient
+               y2="179.23489"
+               x2="303.49899"
+               y1="123.9863"
+               x1="303.49899"
+               gradientUnits="userSpaceOnUse"
+               id="SVGID_2_"><stop
+                 id="stop4674"
+                 style="stop-color:#C4C4C4"
+                 offset="0.0982" /><stop
+                 id="stop4676"
+                 style="stop-color:#686868"
+                 offset="0.5326" /><stop
+                 id="stop4678"
+                 style="stop-color:#000000"
+                 offset="1" /></linearGradient><path
+               id="path4680"
+               d="m 253.453,178.205 c 0,-9.264 22.404,-16.777 50.047,-16.777 27.643,0 50.045,7.514 50.045,16.777 l 0,1.029 c 0,0 0,-2.115 0,-3.117 0,-1.007 0,-35.745 0,-35.745 l 0,0.394 c 0,-9.27 -22.402,-16.78 -50.045,-16.78 -27.643,0 -50.047,7.51 -50.047,16.78 l 0,-0.394 c 0,0 0,34.519 0,35.733 0,1.205 0,3.129 0,3.129 l 0,-1.029 z"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:url(#SVGID_2_);stroke:#231f20;stroke-miterlimit:10" /><g
+               id="g4682"><path
+                 id="path4684"
+                 d="m 353.545,140.373 c 0,0 0,34.738 0,35.745 0,1.002 0.355,3.117 0.355,3.117 0,9.27 -22.758,16.779 -50.4,16.779 -27.642,0 -50.4,-7.51 -50.4,-16.779 0,0 0.354,-1.924 0.354,-3.129 0,-1.214 0,-35.733 0,-35.733 0,9.274 22.404,16.785 50.047,16.785 27.643,0 50.044,-7.511 50.044,-16.785 z"
+                 stroke-miterlimit="10"
+                 inkscape:connector-curvature="0"
+                 style="fill:#ffffff;stroke:#231f20;stroke-miterlimit:10" /></g></g><g
+             id="g4686"><polygon
+               id="polygon4688"
+               points="341.719,134.965 282.411,134.965 269.235,149.459 328.542,149.459 "
+               stroke-miterlimit="10"
+               style="fill:#ffffff;stroke:#000000;stroke-miterlimit:10" /><line
+               id="line4690"
+               y2="140.894"
+               x2="331.16501"
+               y1="140.894"
+               x1="282.41101"
+               style="fill:none;stroke:#70bf41;stroke-width:2" /></g></g><text
+           y="214.6279"
+           x="269.47659"
+           font-size="12"
+           id="text4768"
+           style="font-size:12px;font-family:Helvetica">staging area</text>
+</g><rect
+         style="fill:none"
+         id="rect4770"
+         height="17"
+         width="147"
+         y="219"
+         x="464.785" /><g
+         id="g5075"><g
+           id="Layer_4"><linearGradient
+             y2="112.9126"
+             x2="537.17682"
+             y1="57.660198"
+             x1="537.17682"
+             gradientUnits="userSpaceOnUse"
+             id="SVGID_3_"><stop
+               id="stop4694"
+               style="stop-color:#C4C4C4"
+               offset="0.0982" /><stop
+               id="stop4696"
+               style="stop-color:#686868"
+               offset="0.5326" /><stop
+               id="stop4698"
+               style="stop-color:#000000"
+               offset="1" /></linearGradient><path
+             id="path4700"
+             d="m 487.13,111.882 c 0,-9.268 22.407,-16.781 50.047,-16.781 27.641,0 50.047,7.513 50.047,16.781 l 0,1.03 c 0,0 0,-2.118 0,-3.121 0,-1.003 0,-35.739 0,-35.739 l 0,0.388 c 0,-9.268 -22.406,-16.781 -50.047,-16.781 -27.64,0 -50.047,7.513 -50.047,16.781 l 0,-0.388 c 0,0 0,34.519 0,35.728 0,1.209 0,3.132 0,3.132 l 0,-1.03 z"
+             stroke-miterlimit="10"
+             inkscape:connector-curvature="0"
+             style="fill:url(#linearGradient5457);stroke:#231f20;stroke-miterlimit:10" /><g
+             id="g4702"><path
+               id="path4704"
+               d="m 587.021,151.283 c 0,0 0,34.738 0,35.74 0,1.002 0.354,3.121 0.354,3.121 0,9.268 -22.76,16.779 -50.4,16.779 -27.64,0 -50.399,-7.512 -50.399,-16.779 0,0 0.353,-1.924 0.353,-3.133 0,-1.209 0,-35.729 0,-35.729 0,9.268 22.407,16.781 50.047,16.781 27.638,0.001 50.045,-7.512 50.045,-16.78 z"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:#ffffff;stroke:#231f20;stroke-miterlimit:10" /></g><g
+             id="g4706"><path
+               id="path4708"
+               d="m 587.021,112.601 c 0,0 0,34.736 0,35.739 0,1.002 0.354,3.121 0.354,3.121 0,9.268 -22.76,16.779 -50.4,16.779 -27.64,0 -50.399,-7.512 -50.399,-16.779 0,0 0.353,-1.923 0.353,-3.132 0,-1.209 0,-35.728 0,-35.728 0,9.268 22.407,16.78 50.047,16.78 27.638,0 50.045,-7.512 50.045,-16.78 z"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:#ffffff;stroke:#231f20;stroke-miterlimit:10" /></g><g
+             id="g4710"><path
+               id="path4712"
+               d="m 587.021,73.628 c 0,0 0,34.737 0,35.739 0,1.002 0.354,3.12 0.354,3.12 0,9.269 -22.76,16.781 -50.4,16.781 -27.64,0 -50.399,-7.513 -50.399,-16.781 0,0 0.353,-1.922 0.353,-3.131 0,-1.209 0,-35.728 0,-35.728 0,9.268 22.407,16.78 50.047,16.78 27.638,0.001 50.045,-7.512 50.045,-16.78 z"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:#ffffff;stroke:#231f20;stroke-miterlimit:10" /></g><g
+             id="g4714"><polygon
+               id="polygon4716"
+               points="573.216,66.381 513.908,66.381 500.732,80.875 560.039,80.875 "
+               stroke-miterlimit="10"
+               style="fill:#ffffff;stroke:#000000;stroke-miterlimit:10" /><line
+               id="line4718"
+               y2="72.310997"
+               x2="562.66199"
+               y1="72.310997"
+               x1="513.90802"
+               style="fill:none;stroke:#70bf41;stroke-width:2" /></g></g><text
+           y="227.6279"
+           x="511.94141"
+           font-size="12"
+           id="text4772"
+           style="font-size:12px;font-family:Helvetica">repository</text>
+</g><rect
+         x="464.785"
+         y="219"
+         width="147"
+         height="17"
+         id="rect4977"
+         style="fill:none" /></g><g
+       transform="translate(53.968319,0)"
+       id="g5323"><g
+         id="g5196"
+         transform="translate(96.572143,0)"><rect
+           style="fill:#ffffff;stroke:#000000;stroke-miterlimit:10"
+           id="rect4811"
+           height="244"
+           width="603.78497"
+           stroke-miterlimit="10"
+           y="262"
+           x="7" /><path
+           style="fill:#b5b5b5;stroke:#ffffff;stroke-miterlimit:10"
+           inkscape:connector-curvature="0"
+           stroke-miterlimit="10"
+           d="m 598,313 c 0,-8.284 -6.716,-15 -15,-15 l -385,0 c -8.284,0 -15,6.716 -15,15 l 0,167 c 0,8.284 6.716,15 15,15 l 385,0 c 8.284,0 15,-6.716 15,-15 l 0,-167 z"
+           id="path4817" /><rect
+           style="fill:none"
+           x="197"
+           y="309"
+           width="425"
+           height="70.268997"
+           id="rect4819" /><text
+           y="321.41989"
+           x="197"
+           id="text4821"><tspan
+             style="font-size:18px;font-family:Consolas"
+             x="197"
+             y="321.41989"
+             font-size="18"
+             id="tspan4823">.git</tspan><tspan
+             style="font-size:10.80000019px;font-family:Consolas"
+             x="197"
+             y="343.0199"
+             font-size="10.8"
+             id="tspan4825" /></text>
+<rect
+           id="rect4827"
+           height="24.448999"
+           width="195.58501"
+           y="269"
+           x="16"
+           style="fill:none" /><text
+           y="278.707"
+           x="16"
+           id="text4829"
+           font-size="13.5"
+           style="font-size:13.5px;font-family:Helvetica">https://github.com/vlad/planets.git</text>
+<g
+           transform="translate(0,250)"
+           id="g5055"><g
+             id="g5023"><linearGradient
+               y2="112.9126"
+               x2="537.17682"
+               y1="57.660198"
+               x1="537.17682"
+               gradientUnits="userSpaceOnUse"
+               id="linearGradient5025"><stop
+                 id="stop5027"
+                 style="stop-color:#C4C4C4"
+                 offset="0.0982" /><stop
+                 id="stop5029"
+                 style="stop-color:#686868"
+                 offset="0.5326" /><stop
+                 id="stop5031"
+                 style="stop-color:#000000"
+                 offset="1" /></linearGradient><path
+               inkscape:connector-curvature="0"
+               style="fill:url(#linearGradient5073);stroke:#231f20;stroke-miterlimit:10"
+               id="path5033"
+               d="m 487.13,111.882 c 0,-9.268 22.407,-16.781 50.047,-16.781 27.641,0 50.047,7.513 50.047,16.781 l 0,1.03 c 0,0 0,-2.118 0,-3.121 0,-1.003 0,-35.739 0,-35.739 l 0,0.388 c 0,-9.268 -22.406,-16.781 -50.047,-16.781 -27.64,0 -50.047,7.513 -50.047,16.781 l 0,-0.388 c 0,0 0,34.519 0,35.728 0,1.209 0,3.132 0,3.132 l 0,-1.03 z"
+               stroke-miterlimit="10" /><g
+               id="g5035"><path
+                 style="fill:#ffffff;stroke:#231f20;stroke-miterlimit:10"
+                 inkscape:connector-curvature="0"
+                 id="path5037"
+                 d="m 587.021,151.283 c 0,0 0,34.738 0,35.74 0,1.002 0.354,3.121 0.354,3.121 0,9.268 -22.76,16.779 -50.4,16.779 -27.64,0 -50.399,-7.512 -50.399,-16.779 0,0 0.353,-1.924 0.353,-3.133 0,-1.209 0,-35.729 0,-35.729 0,9.268 22.407,16.781 50.047,16.781 27.638,0.001 50.045,-7.512 50.045,-16.78 z"
+                 stroke-miterlimit="10" /></g><g
+               id="g5039"><path
+                 style="fill:#ffffff;stroke:#231f20;stroke-miterlimit:10"
+                 inkscape:connector-curvature="0"
+                 id="path5041"
+                 d="m 587.021,112.601 c 0,0 0,34.736 0,35.739 0,1.002 0.354,3.121 0.354,3.121 0,9.268 -22.76,16.779 -50.4,16.779 -27.64,0 -50.399,-7.512 -50.399,-16.779 0,0 0.353,-1.923 0.353,-3.132 0,-1.209 0,-35.728 0,-35.728 0,9.268 22.407,16.78 50.047,16.78 27.638,0 50.045,-7.512 50.045,-16.78 z"
+                 stroke-miterlimit="10" /></g><g
+               id="g5043"><path
+                 style="fill:#ffffff;stroke:#231f20;stroke-miterlimit:10"
+                 inkscape:connector-curvature="0"
+                 id="path5045"
+                 d="m 587.021,73.628 c 0,0 0,34.737 0,35.739 0,1.002 0.354,3.12 0.354,3.12 0,9.269 -22.76,16.781 -50.4,16.781 -27.64,0 -50.399,-7.513 -50.399,-16.781 0,0 0.353,-1.922 0.353,-3.131 0,-1.209 0,-35.728 0,-35.728 0,9.268 22.407,16.78 50.047,16.78 27.638,0.001 50.045,-7.512 50.045,-16.78 z"
+                 stroke-miterlimit="10" /></g><g
+               id="g5047"><polygon
+                 style="fill:#ffffff;stroke:#000000;stroke-miterlimit:10"
+                 id="polygon5049"
+                 points="513.908,66.381 500.732,80.875 560.039,80.875 573.216,66.381 "
+                 stroke-miterlimit="10" /><line
+                 style="fill:none;stroke:#70bf41;stroke-width:2"
+                 id="line5051"
+                 y2="72.310997"
+                 x2="562.66199"
+                 y1="72.310997"
+                 x1="513.90802" /></g></g><text
+             y="227.6279"
+             x="511.94141"
+             font-size="12"
+             id="text5053"
+             style="font-size:12px;font-family:Helvetica">repository</text>
+</g><rect
+           x="200.71864"
+           y="272.82404"
+           transform="matrix(0.98046513,0.196693,-0.196693,0.98046513,0,0)"
+           width="165.5479"
+           height="14.000498"
+           id="rect4762"
+           style="fill:none" /></g><g
+         id="g5317"><rect
+           style="fill:#45beee"
+           id="rect5294"
+           height="30.604004"
+           width="122.71094"
+           y="16.864315"
+           x="277.02808"
+           transform="matrix(0,1,-1,0,0,0)" /><rect
+           x="-47.468319"
+           y="369.13501"
+           width="99.924324"
+           height="30.604004"
+           id="rect5124"
+           style="fill:#45beee" /><polygon
+           transform="translate(-374.75101,232.367)"
+           points="423.847,121.571 423.847,181.695 464.399,151.163 "
+           id="polygon5126"
+           style="fill:#45beee" /><text
+           style="font-size:12px;font-family:Consolas"
+           id="text5128"
+           font-size="12"
+           x="-33.987309"
+           y="386.71658">git push origin</text>
+</g></g></g></svg>
