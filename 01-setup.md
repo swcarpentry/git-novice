@@ -65,8 +65,6 @@ He also has to set his favorite text editor, following this table:
 | Notepad++ (Win)    | `$ git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
 | Kate (Linux)       | `$ git config --global core.editor "kate"`       |
 | Gedit (Linux)      | `$ git config --global core.editor "gedit -s"`   |
-| Emacs      | `$ git config --global core.editor "emacs -nw"`   |
-| Vim       | `$ git config --global core.editor "vim"`   |
 
 
 Git commands are written `git verb`,
