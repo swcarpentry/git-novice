@@ -24,7 +24,7 @@ Normal practice today looks something like this:
     to analyze that data.
 *   Once she has some results,
     she writes them up and submits her paper.
-    She might include her data---a growing number of journals require this---but
+    She might include her data&mdash;a growing number of journals require this&mdash;but
     she probably doesn't include her code.
 *   Time passes.
 *   The journal sends her reviews written anonymously by a handful of other people in her field.

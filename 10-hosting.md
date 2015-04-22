@@ -43,7 +43,7 @@ using a popular service can help connect your project with communities already u
 
 As an example,
 Software Carpentry [is on GitHub](https://github.com/swcarpentry/)
-where you can find the [source for this page](https://github.com/swcarpentry/git-novice/blob/gh-pages/04-open.md).
+where you can find the [source for this page](https://github.com/swcarpentry/git-novice/blob/gh-pages/10-hosting.md).
 Anyone with a GitHub account can suggest changes to this text.
 
 > ## Institutional Barriers {.callout}

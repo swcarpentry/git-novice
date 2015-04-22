@@ -38,7 +38,7 @@ A version control system is a tool that keeps track of these changes for us and 
 
 A [repository](reference.html#repository) is the set of files that we want to keep under version control.
 
-With Git, every user who wants to make changes to a repository has their own copy of the files in the repository, along with their own copy of the changes (the _commits_) that have been made to those files. Git keeps the commits in a secret directory along with the copies of the files.
+With Git, every user who wants to make changes to a repository has their own copy of the files in the repository, along with their own copy of the changes (the _commits_) that have been made to those files. Git keeps the commits in a hidden directory along with the copies of the files.
 
 ## Setting Up
 
@@ -66,6 +66,7 @@ He also has to set his favorite text editor, following this table:
 | Kate (Linux)       | `$ git config --global core.editor "kate"`       |
 | Gedit (Linux)      | `$ git config --global core.editor "gedit -s"`   |
 
+
 Git commands are written `git verb`,
 where `verb` is what we actually want it to do.
 In this case,
@@ -87,7 +88,7 @@ $ git config --list
 
 > ## Proxy {.callout}
 >
-> In some networks you need to use a proxy. If this is the case you may also
+> In some networks you need to use a [proxy](https://en.wikipedia.org/wiki/Proxy_server). If this is the case you may also
 > need to tell Git about the proxy:
 >
 > ~~~ {.bash}
