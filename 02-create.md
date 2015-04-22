@@ -17,7 +17,7 @@ $ mkdir planets
 $ cd planets
 ~~~
 
-Then we tell Git to make planets a [repository](reference.html#repository)&mdash;a place where
+Then we tell Git to make ``planets`` a [repository](reference.html#repository)&mdash;a place where
 Git can store old versions of our files:
 
 ~~~ {.bash}
