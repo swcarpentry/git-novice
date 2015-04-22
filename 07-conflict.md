@@ -149,7 +149,7 @@ This line added to Wolfman's copy
 >>>>>>> dabb4c8c450e8475aee9b14b4383acc99f42af1d
 ~~~
 
-Our change---the one in `HEAD`---is preceded by `<<<<<<<`.
+Our change&mdash;the one in `HEAD`&mdash;is preceded by `<<<<<<<`.
 Git has then inserted `=======` as a separator between the conflicting changes
 and marked the end of the content downloaded from GitHub with `>>>>>>>`.
 (The string of letters and digits after that marker
