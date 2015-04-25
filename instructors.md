@@ -84,6 +84,7 @@ We close with material on licensing because:
     different editors may or may not add a newline to the last line of a file.)
     Take a moment to explain these issues,
     since learners will almost certainly trip over them again.
+    If learners are running into line ending problems, Github has a [page](https://help.github.com/articles/dealing-with-line-endings/#platform-all) that helps with troubleshooting.
 
 *   We don't use a Git GUI in these notes because
     we haven't found one that installs easily and runs reliably on the three major operating systems,
