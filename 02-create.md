@@ -73,4 +73,4 @@ nothing to commit (create/copy files and use "git add" to track)
 > git init     # make the beta sub-directory a Git repository
 > ~~~
 > 
-While it is possible to create one git repository inside another--- there is nothing to stop your doing that --- this is not a good idea. Can you explain why? 
+While it is possible to create one git repository inside another&mdash;there is nothing to stop your doing that&mdash;this is not a good idea. Can you explain why? 
