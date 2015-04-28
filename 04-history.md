@@ -139,7 +139,7 @@ But the Mummy will appreciate the lack of humidity
 ~~~
 
 As you might guess from its name,
-`git checkout` checks out (i.e., restores) an old version of a file.
+`git checkout` checks out (i.e., restores) a different version of a file.
 In this case,
 we're telling Git that we want to recover the version of the file recorded in `HEAD`,
 which is the last saved revision.
