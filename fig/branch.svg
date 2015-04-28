@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="615px"
+	 height="96px" viewBox="0 0 615 96" enable-background="new 0 0 615 96" xml:space="preserve">
+<g id="Layer_1">
+	<g>
+		<g>
+			<defs>
+				<rect id="SVGID_1_" x="-203" y="-133" width="1024" height="768"/>
+			</defs>
+			<clipPath id="SVGID_2_">
+				<use xlink:href="#SVGID_1_"  overflow="visible"/>
+			</clipPath>
+		</g>
+	</g>
+	<rect x="81.56" y="71" fill="none" width="42.881" height="11"/>
+	<text transform="matrix(1 0 0 1 86.4897 77.4795)" font-family="'Helvetica-Light'" font-size="9">c93fcd2</text>
+	<rect x="142.491" y="71" fill="none" width="42.881" height="11"/>
+	<text transform="matrix(1 0 0 1 146.1699 77.4795)" font-family="'Helvetica-Light'" font-size="9">2348e5b</text>
+	<ellipse fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="103" cy="57" rx="9" ry="6"/>
+	<ellipse fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="163.931" cy="57" rx="9" ry="6"/>
+	<ellipse fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="220.108" cy="57" rx="9" ry="6"/>
+	<ellipse fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="276.286" cy="57" rx="9" ry="6"/>
+	<ellipse fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="332.463" cy="57" rx="9" ry="6"/>
+	<ellipse fill="#844908" stroke="#000000" stroke-miterlimit="10" cx="388.463" cy="46" rx="9" ry="6"/>
+	<ellipse fill="#844908" stroke="#000000" stroke-miterlimit="10" cx="448" cy="46" rx="9" ry="6"/>
+	<ellipse fill="#844908" stroke="#000000" stroke-miterlimit="10" cx="507.537" cy="46" rx="9" ry="6"/>
+	<rect x="84" y="25" fill="none" width="134.108" height="19"/>
+	<text transform="matrix(1 0 0 1 84 34.7065)" font-family="'Helvetica-Bold'" font-size="13.5">branch sourdough</text>
+	<rect x="375.494" y="15.5" fill="none" width="140.646" height="19"/>
+	<text transform="matrix(1 0 0 1 375.4941 25.2065)" font-family="'Helvetica-Bold'" font-size="13.5">branch pumpernickel</text>
+</g>
+<g id="Layer_2">
+</g>
+</svg>
