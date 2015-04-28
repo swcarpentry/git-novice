@@ -25,7 +25,7 @@ Type the text below into the `mars.txt` file:
 Cold and dry, but everything is my favorite color
 ~~~
 
-`mars.txt` now contains a single line:
+Save this file in your `planets` directory as `mars.txt`.
 
 ~~~ {.bash}
 $ ls
@@ -40,8 +40,7 @@ $ cat mars.txt
 Cold and dry, but everything is my favorite color
 ~~~
 
-If we check the status of our project again,
-Git tells us that it's noticed the new file:
+Let's ask Git about the status of this repo:
 
 ~~~ {.bash}
 $ git status
@@ -58,9 +57,7 @@ $ git status
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
 
-The "untracked files" message means that there's a file in the directory
-that Git isn't keeping track of.
-We can tell Git to track a file using `git add`:
+We can see that our `mars.txt` file is listed as an "untracked file." We can tell Git that it should track this file using `git add`:
 
 ~~~ {.bash}
 $ git add mars.txt
@@ -83,10 +80,7 @@ $ git status
 #
 ~~~
 
-Git now knows that it's supposed to keep track of `mars.txt`,
-but it hasn't recorded these changes as a commit yet.
-To get it to do that,
-we need to run one more command:
+Now let's commit this file into our repo for the first time.
 
 ~~~ {.bash}
 $ git commit -m "Start notes on Mars as a base"
