@@ -2,7 +2,7 @@
 layout: page
 title: Version Control with Git
 subtitle: Collaborating
-minutes: 55
+minutes: 60
 ---
 > ## Learning Objectives {.objectives}
 >
@@ -10,19 +10,68 @@ minutes: 55
 > *   Explain what happens when a remote repository is cloned.
 > *   Explain what happens when changes are pushed to or pulled from a remote repository.
 
-Version control really comes into its own
-when we begin to collaborate with other people.
+> ## Detached HEAD: what happened? {.callout}
+>
+> Yesterday some of us ended up in a scary state: Detached HEAD. What happened?
+>
+> When we call `git add`, git requires that we specify a file to add to the staging area.
+> We can sequentially add any number of files to the staging area. When we commit, we don't specify a file: `git commit` commits everything in the staging area.
+>
+> So, when you call `git checkout`, you're asking for a particular commit. If you don't specify what file you want, Git thinks that you want to look at everything that changed in that commit: it calls this "detached HEAD."
+>
+> Think of the git history as a tree trunk that we are at the top of and that we can climb up and down. If we climb down, we need a way to get back to the top of the tree. Git calls this tree trunk the "master" branch, and so the top of the tree is `master`.
+>
+> ~~~{.bash}
+> $ git checkout HEAD~1 mars.txt
+> ~~~
+> ~~~{.bash}
+> $ git checkout HEAD~1
+> ~~~
+> ~~~{.output}
+> Note: checking out 'HEAD~2'.
+>
+> You are in 'detached HEAD' state. You can look around, make experimental
+> changes and commit them, and you can discard any commits you make in this
+> state without impacting any branches by performing another checkout.
+>
+> If you want to create a new branch to retain commits you create, you may
+> do so (now or later) by using -b with the checkout command again. Example:
+>
+>   git checkout -b new_branch_name
+>
+> HEAD is now at 61941a9... Starting to think about Mars
+> ~~~
+>
+> To fix this, we go back to master.
+>
+> ~~~{.bash}
+> $ git checkout master
+> ~~~
+> ~~~{.output}
+> Previous HEAD position was 61941a9... Starting to think about Mars
+> Switched to branch 'master'
+> ~~~
+>
+> We're back at the top of our master trunk.
+
+
+Version control really comes into its own when we begin to collaborate with other people.
 We already have most of the machinery we need to do this;
 the only thing missing is to copy changes from one repository to another.
 
-Systems like Git allow us to move work between any two repositories.
-In practice,
-though,
-it's easiest to use one copy as a central hub,
-and to keep it on the web rather than on someone's laptop.
-Most programmers use hosting services like [GitHub](http://github.com) or [BitBucket](http://bitbucket.org)
-to hold those master copies;
-we'll explore the pros and cons of this in the final section of this lesson.
+Systems like Git allow us to move work between any two repositories. Remember, from Git's perspective, the two repositories are copies of each other (clones) which may be out of sync, but were once originally made from the same base repository. From the user's perspective, her own copy is the _local_ copy, and any other ones are _remote_ repositories.
+
+Github and Bitbucket are cloud-hosted servers that can store and share Git repositories for you. Their copy is just another remote repository.
+
+![Every user has their own copy](fig/github.svg)
+
+So, if a user wants to make changes to a file that is under Git control, she can make changes to her own copy of the file and then tell Git to commit those changes in its  history. It saves the changes in her own copy of the repo on her own computer.
+
+If she wants another user to see her changes, though, she needs to tell that other user's Git copy that she made changes. This is called _pushing_ the commits to another repo. She can either push the changes directly to another user's copy, or she can push them to a centrally-designated remote repository, like one at Github.
+
+![Pushing synchronizes changes to a different copy](fig/push.svg)
+
+Retrieving the changes from a different copy of the repository is called _pulling_.
 
 Let's start by sharing the changes we've made to our current project with the world.
 Log in to GitHub,
@@ -47,43 +96,27 @@ $ cd planets
 $ git init
 ~~~
 
-Our local repository still contains our earlier work on `mars.txt`,
-but the remote repository on GitHub doesn't contain any files yet:
+We want the Github repository to reflect the contents of our local repository, so we have to connect the two repositories. We do this by making the GitHub repository a [remote](reference.html#remote) for the local repository.
 
-![Freshly-Made GitHub Repository](fig/git-freshly-made-github-repo.svg)
+Right now, the Github repository is just an empty repo with nothing in it. We want to tell Git where it is and that we want it to be synchronized with our local repo.
 
-The next step is to connect the two repositories.
-We do this by making the GitHub repository a [remote](reference.html#remote)
-for the local repository.
-The home page of the repository on GitHub includes
-the string we need to identify it:
+The home page of the repository on GitHub includes the URL we need to identify it:
 
 ![Where to Find Repository URL on GitHub](fig/github-find-repo-string.png)
 
 Click on the 'HTTPS' link to change the [protocol](reference.html#protocol) from SSH to HTTPS.
 
-> ## HTTPS vs SSH {.callout}
->
-> We use HTTPS here because it does not require additional configuration.
-> After the workshop you may want to set up SSH access, which is a bit more
-> secure, by following one of the great tutorials from
-> [GitHub](https://help.github.com/articles/generating-ssh-keys),
-> [Atlassian/BitBucket](https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Git)
-> and [GitLab](https://about.gitlab.com/2014/03/04/add-ssh-key-screencast/)
-> (this one has a screencast).
-
 ![Changing the Repository URL on GitHub](fig/github-change-repo-string.png)
 
-Copy that URL from the browser,
-go into the local `planets` repository,
+Copy that URL from the browser.
+Now we need to tell Git about this new remote repo. Go into your local `planets` directory
 and run this command:
 
 ~~~ {.bash}
 $ git remote add origin https://github.com/vlad/planets
 ~~~
 
-Make sure to use the URL for your repository rather than Vlad's:
-the only difference should be your username instead of `vlad`.
+Make sure to use the URL for your repository rather than Vlad's. This will tell your local Git repo that we want to add a remote repository at this address that is going to be a copy of our repo. By convention, the main remote repository is called `origin`, but you can name a remote anything you want. It's best to have a designated `origin` remote, though.
 
 We can check that the command has worked by running `git remote -v`:
 
@@ -95,13 +128,11 @@ origin   https://github.com/vlad/planets.git (push)
 origin   https://github.com/vlad/planets.git (fetch)
 ~~~
 
-The name `origin` is a local nickname for your remote repository:
-we could use something else if we wanted to,
-but `origin` is by far the most common choice.
+Remember: we haven't actually put anything in that remote repository yet.
 
-Once the nickname `origin` is set up,
-this command will push the changes from our local repository
-to the repository on GitHub:
+![Freshly-Made GitHub Repository](fig/git-freshly-made-github-repo.svg)
+
+So far, we've only told our local Git repository where the remote one is located. So let's push our local repo to the remote `origin`:
 
 ~~~ {.bash}
 $ git push origin master
@@ -117,48 +148,10 @@ To https://github.com/vlad/planets
 Branch master set up to track remote branch master from origin.
 ~~~
 
-> ## Proxy {.callout}
->
-> If the network you are connected to uses a proxy there is an chance that your last
-> command failed with "Could not resolve hostname" as the error message. To
-> solve this issue you need to tell Git about the proxy:
->
-> ~~~ {.bash}
-> $ git config --global http.proxy http://user:password@proxy.url
-> $ git config --global https.proxy http://user:password@proxy.url
-> ~~~
->
-> When you connect to another network that doesn't use a proxy you will need to
-> tell Git to disable the proxy using
->
-> ~~~ {.bash}
-> $ git config --global --unset http.proxy
-> $ git config --global --unset https.proxy
-> ~~~
-
-> ## Password Managers {.callout}
->
-> If your operating system has a password manager configured, `git push` will
-> try to use it when it needs your username and password. If you want to type
-> your username and password at the terminal instead of using
-> a password manager, type
->
-> ~~~ {.bash}
-> $ unset SSH_ASKPASS
-> ~~~
->
-> You may want to add this command at the end of your `~/.bashrc` to make it the
-> default behavior.
 
 Our local and remote repositories are now in this state:
 
 ![GitHub Repository After First Push](fig/github-repo-after-first-push.svg)
-
-> ## The '-u' Flag {.callout}
->
-> You may see a `-u` option used with `git push` in some documentation.
-> It is related to concepts we cover in our intermediate lesson,
-> and can safely be ignored for now.
 
 We can pull changes from the remote repository to the local one as well:
 
