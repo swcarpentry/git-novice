@@ -8,31 +8,22 @@ minutes: 10
 > 
 > *   Explain how to create a Git repository locally.
 
-Once Git is configured,
-we can start using it.
-Let's create a directory for our work:
+## Start Version Control
+
+Let's create a directory for our work. Create a new folder in your home directory and call it `planets`, open a terminal window and navigate into that directory.
 
 ~~~ {.bash}
-$ mkdir planets
 $ cd planets
 ~~~
 
-and tell Git to make it a [repository](reference.html#repository)&mdash;a place where
+and tell Git to make this directory into a [repository](reference.html#repository)&mdash;a place where
 Git can store old versions of our files:
 
 ~~~ {.bash}
 $ git init
 ~~~
 
-If we use `ls` to show the directory's contents,
-it appears that nothing has changed:
-
-~~~ {.bash}
-$ ls
-~~~
-
-But if we add the `-a` flag to show everything,
-we can see that Git has created a hidden directory called `.git`:
+Git creates a hidden directory called `.git` in this directory:
 
 ~~~ {.bash}
 $ ls -a
@@ -41,9 +32,7 @@ $ ls -a
 .	..	.git
 ~~~
 
-Git stores information about the project in this special sub-directory.
-If we ever delete it,
-we will lose the project's history.
+This hidden directory contains Git's history of all the changes and commits we're going to make. If we ever delete it, we will lose the project's history.
 
 We can check that everything is set up correctly
 by asking Git to tell us the status of our project:
