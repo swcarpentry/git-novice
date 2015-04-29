@@ -11,7 +11,7 @@ minutes: 25
 > *   Restore old versions of files.
 
 
-If we want to see what we changed when,
+If we want to see what we changed at different steps,
 we use `git diff` again,
 but refer to old versions
 using the notation `HEAD~1`, `HEAD~2`, and so on:
