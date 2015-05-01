@@ -49,7 +49,7 @@
 <p>When we call <code>git add</code>, git requires that we specify a file to add to the staging area. We can sequentially add any number of files to the staging area. When we commit, we don’t specify a file: <code>git commit</code> commits everything in the staging area.</p>
 <p>So, when you call <code>git checkout</code>, you’re asking for a particular commit. If you don’t specify what file you want, Git thinks that you want to look at everything that changed in that commit: it calls this “detached HEAD.”</p>
 <p>Think of the git history as a tree trunk that we are at the top of and that we can climb up and down. If we climb down, we need a way to get back to the top of the tree. Git calls this tree trunk the “master” branch, and so the top of the tree is <code>master</code>.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout HEAD~1 mars.txt</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout HEAD~1 README.md</code></pre>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout HEAD~1</code></pre>
 <pre class="output"><code>Note: checking out &#39;HEAD~2&#39;.
 
@@ -79,17 +79,13 @@ Switched to branch &#39;master&#39;</code></pre>
 </div>
 <p>So, if a user wants to make changes to a file that is under Git control, she can make changes to her own copy of the file and then tell Git to commit those changes in its history. It saves the changes in her own copy of the repo on her own computer.</p>
 <p>If she wants another user to see her changes, though, she needs to tell that other user’s Git copy that she made changes. This is called <em>pushing</em> the commits to another repo. She can either push the changes directly to another user’s copy, or she can push them to a centrally-designated remote repository, like one at Github.</p>
-<div class="figure">
-<img src="fig/push.svg" alt="Pushing synchronizes changes to a different copy" />
-<p class="caption">Pushing synchronizes changes to a different copy</p>
-</div>
 <p>Retrieving the changes from a different copy of the repository is called <em>pulling</em>.</p>
-<p>Let’s start by sharing the changes we’ve made to our current project with the world. Log in to GitHub, then click on the icon in the top right corner to create a new repository called <code>planets</code>:</p>
+<p>Let’s start by sharing the changes we’ve made to our current project with the world. Log in to GitHub, then click on the icon in the top right corner to create a new repository called <code>swc-python</code>:</p>
 <div class="figure">
 <img src="fig/github-create-repo-01.png" alt="Creating a Repository on GitHub (Step 1)" />
 <p class="caption">Creating a Repository on GitHub (Step 1)</p>
 </div>
-<p>Name your repository “planets” and then click “Create Repository”:</p>
+<p>Name your repository “swc-python” and then click “Create Repository”:</p>
 <div class="figure">
 <img src="fig/github-create-repo-02.png" alt="Creating a Repository on GitHub (Step 2)" />
 <p class="caption">Creating a Repository on GitHub (Step 2)</p>
@@ -100,8 +96,8 @@ Switched to branch &#39;master&#39;</code></pre>
 <p class="caption">Creating a Repository on GitHub (Step 3)</p>
 </div>
 <p>This effectively does the following on GitHub’s servers:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> planets
-$ <span class="kw">cd</span> planets
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> swc-python
+$ <span class="kw">cd</span> swc-python
 $ <span class="kw">git</span> init</code></pre>
 <p>We want the Github repository to reflect the contents of our local repository, so we have to connect the two repositories. We do this by making the GitHub repository a <a href="reference.html#remote">remote</a> for the local repository.</p>
 <p>Right now, the Github repository is just an empty repo with nothing in it. We want to tell Git where it is and that we want it to be synchronized with our local repo.</p>
@@ -115,13 +111,13 @@ $ <span class="kw">git</span> init</code></pre>
 <img src="fig/github-change-repo-string.png" alt="Changing the Repository URL on GitHub" />
 <p class="caption">Changing the Repository URL on GitHub</p>
 </div>
-<p>Copy that URL from the browser. Now we need to tell Git about this new remote repo. Go into your local <code>planets</code> directory and run this command:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> remote add origin https://github.com/vlad/planets</code></pre>
+<p>Copy that URL from the browser. Now we need to tell Git about this new remote repo. Go into your local <code>swc-python</code> directory and run this command:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> remote add origin https://github.com/vlad/swc-python</code></pre>
 <p>Make sure to use the URL for your repository rather than Vlad’s. This will tell your local Git repo that we want to add a remote repository at this address that is going to be a copy of our repo. By convention, the main remote repository is called <code>origin</code>, but you can name a remote anything you want. It’s best to have a designated <code>origin</code> remote, though.</p>
 <p>We can check that the command has worked by running <code>git remote -v</code>:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> remote -v</code></pre>
-<pre class="output"><code>origin   https://github.com/vlad/planets.git (push)
-origin   https://github.com/vlad/planets.git (fetch)</code></pre>
+<pre class="output"><code>origin   https://github.com/vlad/swc-python.git (push)
+origin   https://github.com/vlad/swc-python.git (fetch)</code></pre>
 <p>Remember: we haven’t actually put anything in that remote repository yet.</p>
 <div class="figure">
 <img src="fig/git-freshly-made-github-repo.svg" alt="Freshly-Made GitHub Repository" />
@@ -134,7 +130,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (6/6), done.
 Writing objects: 100% (9/9), 821 bytes, done.
 Total 9 (delta 2), reused 0 (delta 0)
-To https://github.com/vlad/planets
+To https://github.com/vlad/swc-python
  * [new branch]      master -&gt; master
 Branch master set up to track remote branch master from origin.</code></pre>
 <p>Our local and remote repositories are now in this state:</p>
@@ -144,26 +140,18 @@ Branch master set up to track remote branch master from origin.</code></pre>
 </div>
 <p>We can pull changes from the remote repository to the local one as well:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> pull origin master</code></pre>
-<pre class="output"><code>From https://github.com/vlad/planets
+<pre class="output"><code>From https://github.com/vlad/swc-python
  * branch            master     -&gt; FETCH_HEAD
 Already up-to-date.</code></pre>
 <p>Pulling has no effect in this case because the two repositories are already synchronized. If someone else had pushed some changes to the repository on GitHub, though, this command would download them to our local repository.</p>
 <p>For the next step, get into pairs. Pick one of your repositories on GitHub to use for collaboration.</p>
-<div id="practicing-by-yourself" class="callout panel panel-info">
-<div class="panel-heading">
-<h2 id="practicing-by-yourself" class="callout panel panel-info"><span class="glyphicon glyphicon-pushpin"></span>Practicing by yourself</h2>
-</div>
-<div class="panel-body">
-<p>If you’re working through this lesson on your own, you can carry on by opening a second terminal window, and switching to another directory (e.g. <code>/tmp</code>). This window will represent your partner, working on another computer. You won’t need to give anyone access on GitHub, because both ‘partners’ are you.</p>
-</div>
-</div>
 <p>The partner whose repository is being used needs to give the other person access. On GitHub, click the settings button on the right, then select Collaborators, and enter your partner’s username.</p>
 <div class="figure">
 <img src="fig/github-add-collaborators.png" alt="Adding collaborators on GitHub" />
 <p class="caption">Adding collaborators on GitHub</p>
 </div>
-<p>The other partner should <code>cd</code> to another directory (so <code>ls</code> doesn’t show a <code>planets</code> folder), and then make a copy of this repository on your own computer:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> clone https://github.com/vlad/planets.git</code></pre>
+<p>The other partner should <code>cd</code> to another directory (so <code>ls</code> doesn’t show a <code>swc-python</code> folder), and then make a copy of this repository on your own computer:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> clone https://github.com/vlad/swc-python.git</code></pre>
 <p>Replace ‘vlad’ with your partner’s username (the one who owns the repository).</p>
 <p><code>git clone</code> creates a fresh local copy of a remote repository.</p>
 <div class="figure">
@@ -171,14 +159,13 @@ Already up-to-date.</code></pre>
 <p class="caption">After Creating Clone of Repository</p>
 </div>
 <p>The new collaborator can now make a change in their copy of the repository:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> planets
-$ <span class="kw">nano</span> pluto.txt
-$ <span class="kw">cat</span> pluto.txt</code></pre>
-<pre class="output"><code>It is so a planet!</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add pluto.txt
-$ <span class="kw">git</span> commit -m <span class="st">&quot;Some notes about Pluto&quot;</span></code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> swc-python
+$ <span class="kw">nano</span> log.txt</code></pre>
+<pre class="output"><code>I&#39;m adding some more stuff</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add log.txt
+$ <span class="kw">git</span> commit -m <span class="st">&quot;Some more notes&quot;</span></code></pre>
 <pre class="output"><code> 1 file changed, 1 insertion(+)
- create mode 100644 pluto.txt</code></pre>
+ create mode 100644 log.txt</code></pre>
 <p>then push the change to GitHub:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin master</code></pre>
 <pre class="output"><code>Counting objects: 4, done.
@@ -186,7 +173,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (2/2), done.
 Writing objects: 100% (3/3), 306 bytes, done.
 Total 3 (delta 0), reused 0 (delta 0)
-To https://github.com/vlad/planets.git
+To https://github.com/vlad/swc-python.git
    9272da5..29aba7c  master -&gt; master</code></pre>
 <p>Note that we didn’t have to create a remote called <code>origin</code>: Git does this automatically, using that name, when we clone a repository. (This is why <code>origin</code> was a sensible choice earlier when we were setting up remotes by hand.)</p>
 <p>We can now download changes into the original repository on our machine:</p>
@@ -195,21 +182,13 @@ To https://github.com/vlad/planets.git
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 3 (delta 0)
 Unpacking objects: 100% (3/3), done.
-From https://github.com/vlad/planets
+From https://github.com/vlad/swc-python
  * branch            master     -&gt; FETCH_HEAD
 Updating 9272da5..29aba7c
 Fast-forward
- pluto.txt | 1 +
+ log.txt | 1 +
  1 file changed, 1 insertion(+)
- create mode 100644 pluto.txt</code></pre>
-<div id="github-timestamp" class="challenge panel panel-success">
-<div class="panel-heading">
-<h2 id="github-timestamp" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>GitHub Timestamp</h2>
-</div>
-<div class="panel-body">
-<p>Create a repository on GitHub, clone it, add a file, push those changes to GitHub, and then look at the <a href="reference.html#timestamp">timestamp</a> of the change on GitHub. How does GitHub record times, and why?</p>
-</div>
-</div>
+ create mode 100644 log.txt</code></pre>
         </div>
       </div>
       </article>

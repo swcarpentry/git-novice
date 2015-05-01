@@ -39,9 +39,9 @@
 </div>
 </div>
 <h2 id="start-version-control">Start Version Control</h2>
-<p>Let’s create a directory for our work. Create a new folder in your home directory and call it <code>planets</code>, open a terminal window and navigate into that directory.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> planets</code></pre>
-<p>and tell Git to make this directory into a <a href="reference.html#repository">repository</a>—a place where Git can store old versions of our files:</p>
+<p>Let’s say that we want to start using version control for the work we’ve done at this workshop. From your terminal window, move to the python-inflammation directory.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> python-inflammation</code></pre>
+<p>We want to tell Git to make this directory into a <a href="reference.html#repository">repository</a>—a place where Git can store old versions of our files:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> init</code></pre>
 <p>Git creates a hidden directory called <code>.git</code> in this directory:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> -a</code></pre>
@@ -67,7 +67,7 @@ nothing to commit (create/copy files and use &quot;git add&quot; to track)</code
 <span class="kw">mkdir</span> beta   <span class="co"># make a sub-directory alpha/beta</span>
 <span class="kw">cd</span> beta      <span class="co"># go into alpha/beta</span>
 <span class="kw">git</span> init     <span class="co"># make the beta sub-directory a Git repository</span></code></pre>
-<p>Why is it a bad idea to do this?</p>
+<p>While it is possible to create one git repository inside another—there is nothing to stop your doing that—this is not a good idea. Can you explain why?</p>
 </div>
 </div>
         </div>
