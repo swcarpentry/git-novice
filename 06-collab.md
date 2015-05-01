@@ -22,7 +22,7 @@ minutes: 60
 > Think of the git history as a tree trunk that we are at the top of and that we can climb up and down. If we climb down, we need a way to get back to the top of the tree. Git calls this tree trunk the "master" branch, and so the top of the tree is `master`.
 >
 > ~~~{.bash}
-> $ git checkout HEAD~1 mars.txt
+> $ git checkout HEAD~1 README.md
 > ~~~
 > ~~~{.bash}
 > $ git checkout HEAD~1
@@ -69,17 +69,15 @@ So, if a user wants to make changes to a file that is under Git control, she can
 
 If she wants another user to see her changes, though, she needs to tell that other user's Git copy that she made changes. This is called _pushing_ the commits to another repo. She can either push the changes directly to another user's copy, or she can push them to a centrally-designated remote repository, like one at Github.
 
-![Pushing synchronizes changes to a different copy](fig/push.svg)
-
 Retrieving the changes from a different copy of the repository is called _pulling_.
 
 Let's start by sharing the changes we've made to our current project with the world.
 Log in to GitHub,
-then click on the icon in the top right corner to create a new repository called `planets`:
+then click on the icon in the top right corner to create a new repository called `swc-python`:
 
 ![Creating a Repository on GitHub (Step 1)](fig/github-create-repo-01.png)
 
-Name your repository "planets" and then click "Create Repository":
+Name your repository "swc-python" and then click "Create Repository":
 
 ![Creating a Repository on GitHub (Step 2)](fig/github-create-repo-02.png)
 
@@ -91,8 +89,8 @@ GitHub displays a page with a URL and some information on how to configure your 
 This effectively does the following on GitHub's servers:
 
 ~~~ {.bash}
-$ mkdir planets
-$ cd planets
+$ mkdir swc-python
+$ cd swc-python
 $ git init
 ~~~
 
@@ -109,11 +107,11 @@ Click on the 'HTTPS' link to change the [protocol](reference.html#protocol) from
 ![Changing the Repository URL on GitHub](fig/github-change-repo-string.png)
 
 Copy that URL from the browser.
-Now we need to tell Git about this new remote repo. Go into your local `planets` directory
+Now we need to tell Git about this new remote repo. Go into your local `swc-python` directory
 and run this command:
 
 ~~~ {.bash}
-$ git remote add origin https://github.com/vlad/planets
+$ git remote add origin https://github.com/vlad/swc-python
 ~~~
 
 Make sure to use the URL for your repository rather than Vlad's. This will tell your local Git repo that we want to add a remote repository at this address that is going to be a copy of our repo. By convention, the main remote repository is called `origin`, but you can name a remote anything you want. It's best to have a designated `origin` remote, though.
@@ -124,8 +122,8 @@ We can check that the command has worked by running `git remote -v`:
 $ git remote -v
 ~~~
 ~~~ {.output}
-origin   https://github.com/vlad/planets.git (push)
-origin   https://github.com/vlad/planets.git (fetch)
+origin   https://github.com/vlad/swc-python.git (push)
+origin   https://github.com/vlad/swc-python.git (fetch)
 ~~~
 
 Remember: we haven't actually put anything in that remote repository yet.
@@ -143,7 +141,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (6/6), done.
 Writing objects: 100% (9/9), 821 bytes, done.
 Total 9 (delta 2), reused 0 (delta 0)
-To https://github.com/vlad/planets
+To https://github.com/vlad/swc-python
  * [new branch]      master -> master
 Branch master set up to track remote branch master from origin.
 ~~~
@@ -159,7 +157,7 @@ We can pull changes from the remote repository to the local one as well:
 $ git pull origin master
 ~~~
 ~~~ {.output}
-From https://github.com/vlad/planets
+From https://github.com/vlad/swc-python
  * branch            master     -> FETCH_HEAD
 Already up-to-date.
 ~~~
@@ -173,13 +171,6 @@ this command would download them to our local repository.
 For the next step, get into pairs.
 Pick one of your repositories on GitHub to use for collaboration.
 
-> ## Practicing by yourself {.callout}
->
-> If you're working through this lesson on your own, you can carry on by opening
-> a second terminal window, and switching to another directory (e.g. `/tmp`).
-> This window will represent your partner, working on another computer. You
-> won't need to give anyone access on GitHub, because both 'partners' are you.
-
 The partner whose repository is being used needs to give the other person access.
 On GitHub, click the settings button on the right,
 then select Collaborators, and enter your partner's username.
@@ -187,11 +178,11 @@ then select Collaborators, and enter your partner's username.
 ![Adding collaborators on GitHub](fig/github-add-collaborators.png)
 
 The other partner should `cd` to another directory
-(so `ls` doesn't show a `planets` folder),
+(so `ls` doesn't show a `swc-python` folder),
 and then make a copy of this repository on your own computer:
 
 ~~~ {.bash}
-$ git clone https://github.com/vlad/planets.git
+$ git clone https://github.com/vlad/swc-python.git
 ~~~
 
 Replace 'vlad' with your partner's username (the one who owns the repository).
@@ -203,20 +194,19 @@ Replace 'vlad' with your partner's username (the one who owns the repository).
 The new collaborator can now make a change in their copy of the repository:
 
 ~~~ {.bash}
-$ cd planets
-$ nano pluto.txt
-$ cat pluto.txt
+$ cd swc-python
+$ nano log.txt
 ~~~
 ~~~ {.output}
-It is so a planet!
+I'm adding some more stuff
 ~~~
 ~~~ {.bash}
-$ git add pluto.txt
-$ git commit -m "Some notes about Pluto"
+$ git add log.txt
+$ git commit -m "Some more notes"
 ~~~
 ~~~ {.output}
  1 file changed, 1 insertion(+)
- create mode 100644 pluto.txt
+ create mode 100644 log.txt
 ~~~
 
 then push the change to GitHub:
@@ -230,7 +220,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (2/2), done.
 Writing objects: 100% (3/3), 306 bytes, done.
 Total 3 (delta 0), reused 0 (delta 0)
-To https://github.com/vlad/planets.git
+To https://github.com/vlad/swc-python.git
    9272da5..29aba7c  master -> master
 ~~~
 
@@ -251,20 +241,12 @@ remote: Counting objects: 4, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 3 (delta 0)
 Unpacking objects: 100% (3/3), done.
-From https://github.com/vlad/planets
+From https://github.com/vlad/swc-python
  * branch            master     -> FETCH_HEAD
 Updating 9272da5..29aba7c
 Fast-forward
- pluto.txt | 1 +
+ log.txt | 1 +
  1 file changed, 1 insertion(+)
- create mode 100644 pluto.txt
+ create mode 100644 log.txt
 ~~~
 
-> ## GitHub Timestamp {.challenge}
->
-> Create a repository on GitHub,
-> clone it,
-> add a file,
-> push those changes to GitHub,
-> and then look at the [timestamp](reference.html#timestamp) of the change on GitHub.
-> How does GitHub record times, and why?

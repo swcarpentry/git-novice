@@ -9,35 +9,31 @@ minutes: 20
 > *   Go through the modify-add-commit cycle for single and multiple files.
 > *   Explain where information is stored at each stage.
 
-Let's create a file called `mars.txt` that contains some notes
-about the Red Planet's suitability as a base.
-(We'll use `nano` to edit the file;
-you can use whatever editor you like.
-In particular, this does not have to be the `core.editor` you set globally earlier.)
+Let's write some notes about our workshop experience today. Open the README.md file in your text editor.
 
 ~~~ {.bash}
-$ nano mars.txt
+$ nano README.md
 ~~~
 
-Type the text below into the `mars.txt` file:
+Type the text below into the `README.md` file:
 
 ~~~ {.output}
-Cold and dry, but everything is my favorite color
+I learned some cool things about Python!
 ~~~
 
-Save this file in your `planets` directory as `mars.txt`.
+Save this file in your `python-inflammation` directory as `README.md`.
 
 ~~~ {.bash}
 $ ls
 ~~~
 ~~~ {.output}
-mars.txt
+README.md
 ~~~
 ~~~ {.bash}
-$ cat mars.txt
+$ cat README.md
 ~~~
 ~~~ {.output}
-Cold and dry, but everything is my favorite color
+I learned some cool things about Python!
 ~~~
 
 Let's ask Git about the status of this repo:
@@ -53,14 +49,14 @@ $ git status
 # Untracked files:
 #   (use "git add <file>..." to include in what will be committed)
 #
-#	mars.txt
+#	README.md
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
 
-We can see that our `mars.txt` file is listed as an "untracked file." We can tell Git that it should track this file using `git add`:
+We can see that our `README.md` file is listed as an "untracked file." We can tell Git that it should track this file using `git add`:
 
 ~~~ {.bash}
-$ git add mars.txt
+$ git add README.md
 ~~~
 
 and then check that the right thing happened:
@@ -76,19 +72,19 @@ $ git status
 # Changes to be committed:
 #   (use "git rm --cached <file>..." to unstage)
 #
-#	new file:   mars.txt
+#	new file:   README.md
 #
 ~~~
 
 Now let's commit this file into our repo for the first time.
 
 ~~~ {.bash}
-$ git commit -m "Start notes on Mars as a base"
+$ git commit -m "Start notes about my experience at the workshop"
 ~~~
 ~~~ {.output}
-[master (root-commit) f22b25e] Start notes on Mars as a base
+[master (root-commit) f22b25e] Start notes about my experience at the workshop
  1 file changed, 1 insertion(+)
- create mode 100644 mars.txt
+ create mode 100644 README.md
 ~~~
 
 When we run `git commit`,
@@ -131,7 +127,7 @@ commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Start notes on Mars as a base
+    Start notes about my experience at the workshop
 ~~~
 
 `git log` lists all revisions  made to a repository in reverse chronological order.
@@ -145,7 +141,7 @@ and the log message Git was given when the revision was created.
 
 > ## Where Are My Changes? {.callout}
 >
-> If we run `ls` at this point, we will still see just one file called `mars.txt`.
+> If we run `ls` at this point, we will still see just one file called `README.md`.
 > That's because Git saves information about files' history
 > in the special `.git` directory mentioned earlier
 > so that our filesystem doesn't become cluttered
@@ -156,12 +152,12 @@ Now suppose Dracula adds more information to the file.
 you may use a different editor, and don't need to `cat`.)
 
 ~~~ {.bash}
-$ nano mars.txt
-$ cat mars.txt
+$ nano README.md
+$ cat README.md
 ~~~
 ~~~ {.output}
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
+I learned some cool things about Python!
+I learned about functions
 ~~~
 
 When we run `git status` now,
@@ -176,7 +172,7 @@ $ git status
 #   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
-#	modified:   mars.txt
+#	modified:   README.md
 #
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
@@ -196,13 +192,13 @@ of the file and the most recently saved version:
 $ git diff
 ~~~
 ~~~ {.output}
-diff --git a/mars.txt b/mars.txt
+diff --git a/README.md b/README.md
 index df0654a..315bf3a 100644
---- a/mars.txt
-+++ b/mars.txt
+--- a/README.md
++++ b/README.md
 @@ -1 +1,2 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
+ I learned some cool things about Python!
++I learned about functions
 ~~~
 
 The output is cryptic because
@@ -224,7 +220,7 @@ If we break it down into pieces:
 After reviewing our change, it's time to commit it:
 
 ~~~ {.bash}
-$ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
+$ git commit -m "learned functions"
 ~~~
 ~~~ {.output}
 # On branch master
@@ -232,7 +228,7 @@ $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
 #   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
-#	modified:   mars.txt
+#	modified:   README.md
 #
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
@@ -242,11 +238,11 @@ Git won't commit because we didn't use `git add` first.
 Let's fix that:
 
 ~~~ {.bash}
-$ git add mars.txt
-$ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
+$ git add README.md
+$ git commit -m "learned functions"
 ~~~
 ~~~ {.output}
-[master 34961b1] Add concerns about effects of Mars' moons on Wolfman
+[master 34961b1] learned functions
  1 file changed, 1 insertion(+)
 ~~~
 
@@ -278,26 +274,26 @@ First,
 we'll add another line to the file:
 
 ~~~ {.bash}
-$ nano mars.txt
-$ cat mars.txt
+$ nano README.md
+$ cat README.md
 ~~~
 ~~~ {.output}
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
+I learned some cool things about Python!
+I learned about functions
+Starting to learn about Git
 ~~~
 ~~~ {.bash}
 $ git diff
 ~~~
 ~~~ {.output}
-diff --git a/mars.txt b/mars.txt
+diff --git a/README.md b/README.md
 index 315bf3a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
+--- a/README.md
++++ b/README.md
 @@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
+ I learned some cool things about Python!
+ I learned about functions
++Starting to learn about Git
 ~~~
 
 So far, so good:
@@ -307,7 +303,7 @@ Now let's put that change in the staging area
 and see what `git diff` reports:
 
 ~~~ {.bash}
-$ git add mars.txt
+$ git add README.md
 $ git diff
 ~~~
 
@@ -322,14 +318,14 @@ if we do this:
 $ git diff --staged
 ~~~
 ~~~ {.output}
-diff --git a/mars.txt b/mars.txt
+diff --git a/README.md b/README.md
 index 315bf3a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
+--- a/README.md
++++ b/README.md
 @@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
+ I learned some cool things about Python!
+ I learned about functions
++Starting to learn about Git
 ~~~
 
 it shows us the difference between
@@ -338,10 +334,10 @@ and what's in the staging area.
 Let's save our changes:
 
 ~~~ {.bash}
-$ git commit -m "Discuss concerns about Mars' climate for Mummy"
+$ git commit -m "Learned Git"
 ~~~
 ~~~ {.output}
-[master 005937f] Discuss concerns about Mars' climate for Mummy
+[master 005937f] Learned Git
  1 file changed, 1 insertion(+)
 ~~~
 
@@ -365,19 +361,19 @@ commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 10:14:07 2013 -0400
 
-    Discuss concerns about Mars' climate for Mummy
+    Learned Git
 
 commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 10:07:21 2013 -0400
 
-    Add concerns about effects of Mars' moons on Wolfman
+    learned functions
 
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Start notes on Mars as a base
+    Start notes about my experience at the workshop
 ~~~
 
 To recap, when we want to add changes to our repository,
@@ -415,12 +411,3 @@ repository (`git commit`):
 >     $ git commit -m myfile.txt "my recent changes"
 >     ~~~
 
-> ## `bio` Repository {.challenge}
->
-> Create a new Git repository on your computer called `bio`.
-> Write a three-line biography for yourself in a file called `me.txt`,
-> commit your changes,
-> then modify one line and add a fourth and display the differences
-> between its updated state and its original state.
-
-[commit-messages]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html

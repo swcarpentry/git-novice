@@ -10,13 +10,13 @@ minutes: 10
 
 ## Start Version Control
 
-Let's create a directory for our work. Create a new folder in your home directory and call it `planets`, open a terminal window and navigate into that directory.
+Let's say that we want to start using version control for the work we've done at this workshop. From your terminal window, move to the python-inflammation directory.
 
 ~~~ {.bash}
-$ cd planets
+$ cd python-inflammation
 ~~~
 
-and tell Git to make this directory into a [repository](reference.html#repository)&mdash;a place where
+We want to tell Git to make this directory into a [repository](reference.html#repository)&mdash;a place where
 Git can store old versions of our files:
 
 ~~~ {.bash}
@@ -62,4 +62,4 @@ nothing to commit (create/copy files and use "git add" to track)
 > git init     # make the beta sub-directory a Git repository
 > ~~~
 > 
-> Why is it a bad idea to do this?
+> While it is possible to create one git repository inside another&mdash;there is nothing to stop your doing that&mdash;this is not a good idea. Can you explain why? 
