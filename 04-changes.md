@@ -269,12 +269,16 @@ but *not* commit the work we're doing on the conclusion
 (which we haven't finished yet).
 
 To allow for this,
-Git has a special staging area
+Git has a special *staging area*
 where it keeps track of things that have been added to
 the current [change set](reference.html#change-set)
 but not yet committed.
-`git add` puts things in this area,
-and `git commit` then copies them to long-term storage (as a commit):
+If you think of git as taking snapshots of changes over the life of a
+project,
+`git add` specifies *what* will go in a snapshot
+(putting things in the staging area),
+and `git commit` then *actually takes* the snapshot and
+copies it to long-term storage (as a commit):
 
 ![The Git Staging Area](fig/git-staging-area.svg)
 
