@@ -10,14 +10,14 @@ minutes: 10
 
 Once Git is configured,
 we can start using it.
-Let's create a directory for our work:
+Let's create a directory for our work and then move into that directory:
 
 ~~~ {.bash}
 $ mkdir planets
 $ cd planets
 ~~~
 
-and tell Git to make it a [repository](reference.html#repository)&mdash;a place where
+Then we tell Git to make `planets` a [repository](reference.html#repository)&mdash;a place where
 Git can store old versions of our files:
 
 ~~~ {.bash}
@@ -32,7 +32,7 @@ $ ls
 ~~~
 
 But if we add the `-a` flag to show everything,
-we can see that Git has created a hidden directory called `.git`:
+we can see that Git has created a hidden directory within `planets` called `.git`:
 
 ~~~ {.bash}
 $ ls -a
@@ -73,4 +73,4 @@ nothing to commit (create/copy files and use "git add" to track)
 > git init     # make the beta sub-directory a Git repository
 > ~~~
 > 
-> Why is it a bad idea to do this?
+While it is possible to create one git repository inside another&mdash;there is nothing to stop your doing that&mdash;this is not a good idea. Can you explain why? 

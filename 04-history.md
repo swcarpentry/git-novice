@@ -11,7 +11,7 @@ minutes: 25
 > *   Restore old versions of files.
 
 
-If we want to see what we changed when,
+If we want to see what we changed at different steps,
 we use `git diff` again,
 but refer to old versions
 using the notation `HEAD~1`, `HEAD~2`, and so on:
@@ -160,10 +160,7 @@ recent commit (`HEAD~1`), which is revision `f22b25e`:
 
 ![Git Checkout](fig/git-checkout.svg)
 
-The following diagram illustrates what the history of a file might look
-like (moving back from `HEAD`, the most recently committed version):
-
-![When Git Updates Revision Numbers](fig/git-when-revisions-updated.svg)
+So, to put it all together:
 
 > ## How Git works, in cartoon form {.callout}
 > ![http://figshare.com/articles/How_Git_works_a_cartoon/1328266](fig/git_staging.svg)
