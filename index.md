@@ -27,18 +27,17 @@ Version control is better than mailing files back and forth because:
     the version control system automatically notifies users
     whenever there's a conflict between one person's work and another's.
 
-Team environments are not the only environments to benefit from using
-a version control system; lone researchers also equally benefit.  All
-researchers, whether solo or as part of a team, will be working with
-at least two people: oneself and oneself 9 months from now.  Keeping a
-record of what was changed, when, and why is very useful if the
-researcher ever needs to come back to the project later on.
+Teams are not the only ones to benefit from version control: lone
+researchers can benefit immensely.  Keeping a record of what was
+changed, when, and why is extremely useful for all researchers if they
+ever need to come back to the project later on (e.g., a year later,
+when memory has faded).
 
 Version control is the lab notebook of the digital world: it's what
 professionals use to keep track of what they've done and to
 collaborate with other people.  Every large software development
 project relies on it, and most programmers use it for their small jobs
-as well.  And it isn't just for software: books (like this one),
+as well.  And it isn't just for software: books,
 papers, small data sets, and anything that changes over time or needs
 to be shared can and should be stored in a version control system.
 
