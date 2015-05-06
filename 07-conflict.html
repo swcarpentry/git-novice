@@ -23,6 +23,7 @@
           <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
         </a>
       </div>
+      <article>
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
           <h1 class="title">Version Control with Git</h1>
@@ -38,25 +39,25 @@
 </ul>
 </div>
 </div>
-<p>As soon as people can work in parallel, someone's going to step on someone else's toes. This will even happen with a single person: if we are working on a piece of software on both our laptop and a server in the lab, we could make different changes to each copy. Version control helps us manage these <a href="reference.html#conflicts">conflicts</a> by giving us tools to <a href="reference.html#resolve">resolve</a> overlapping changes.</p>
-<p>To see how we can resolve conflicts, we must first create one. The file <code>mars.txt</code> currently looks like this in both partners' copies of our <code>planets</code> repository:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> mars.txt</code></pre>
+<p>As soon as people can work in parallel, someone’s going to step on someone else’s toes. This will even happen with a single person: if we are working on a piece of software on both our laptop and a server in the lab, we could make different changes to each copy. Version control helps us manage these <a href="reference.html#conflicts">conflicts</a> by giving us tools to <a href="reference.html#resolve">resolve</a> overlapping changes.</p>
+<p>To see how we can resolve conflicts, we must first create one. The file <code>mars.txt</code> currently looks like this in both partners’ copies of our <code>planets</code> repository:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> mars.txt</code></pre></div>
 <pre class="output"><code>Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity</code></pre>
-<p>Let's add a line to one partner's copy only:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> mars.txt
-$ <span class="kw">cat</span> mars.txt</code></pre>
+<p>Let’s add a line to one partner’s copy only:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> mars.txt
+$ <span class="kw">cat</span> mars.txt</code></pre></div>
 <pre class="output"><code>Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 This line added to Wolfman&#39;s copy</code></pre>
 <p>and then push the change to GitHub:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add mars.txt
-$ <span class="kw">git</span> commit -m <span class="st">&quot;Adding a line in our home copy&quot;</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add mars.txt
+$ <span class="kw">git</span> commit -m <span class="st">&quot;Adding a line in our home copy&quot;</span></code></pre></div>
 <pre class="output"><code>[master 5ae9631] Adding a line in our home copy
  1 file changed, 1 insertion(+)</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin master</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin master</code></pre></div>
 <pre class="output"><code>Counting objects: 5, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (3/3), done.
@@ -64,20 +65,20 @@ Writing objects: 100% (3/3), 352 bytes, done.
 Total 3 (delta 1), reused 0 (delta 0)
 To https://github.com/vlad/planets
    29aba7c..dabb4c8  master -&gt; master</code></pre>
-<p>Now let's have the other partner make a different change to their copy <em>without</em> updating from GitHub:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> mars.txt
-$ <span class="kw">cat</span> mars.txt</code></pre>
+<p>Now let’s have the other partner make a different change to their copy <em>without</em> updating from GitHub:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> mars.txt
+$ <span class="kw">cat</span> mars.txt</code></pre></div>
 <pre class="output"><code>Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 We added a different line in the other copy</code></pre>
 <p>We can commit the change locally:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add mars.txt
-$ <span class="kw">git</span> commit -m <span class="st">&quot;Adding a line in my copy&quot;</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add mars.txt
+$ <span class="kw">git</span> commit -m <span class="st">&quot;Adding a line in my copy&quot;</span></code></pre></div>
 <pre class="output"><code>[master 07ebc69] Adding a line in my copy
  1 file changed, 1 insertion(+)</code></pre>
-<p>but Git won't let us push it to GitHub:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin master</code></pre>
+<p>but Git won’t let us push it to GitHub:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin master</code></pre></div>
 <pre class="output"><code>To https://github.com/vlad/planets.git
  ! [rejected]        master -&gt; master (non-fast-forward)
 error: failed to push some refs to &#39;https://github.com/vlad/planets.git&#39;
@@ -89,8 +90,8 @@ hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; fo
 <img src="fig/conflict.svg" alt="The conflicting changes" />
 <p class="caption">The conflicting changes</p>
 </div>
-<p>Git detects that the changes made in one copy overlap with those made in the other and stops us from trampling on our previous work. What we have to do is pull the changes from GitHub, <a href="reference.html#merge">merge</a> them into the copy we're currently working in, and then push that. Let's start by pulling:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> pull origin master</code></pre>
+<p>Git detects that the changes made in one copy overlap with those made in the other and stops us from trampling on our previous work. What we have to do is pull the changes from GitHub, <a href="reference.html#merge">merge</a> them into the copy we’re currently working in, and then push that. Let’s start by pulling:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> pull origin master</code></pre></div>
 <pre class="output"><code>remote: Counting objects: 5, done.        
 remote: Compressing objects: 100% (2/2), done.        
 remote: Total 3 (delta 1), reused 3 (delta 1)        
@@ -100,8 +101,8 @@ From https://github.com/vlad/planets
 Auto-merging mars.txt
 CONFLICT (content): Merge conflict in mars.txt
 Automatic merge failed; fix conflicts and then commit the result.</code></pre>
-<p><code>git pull</code> tells us there's a conflict, and marks that conflict in the affected file:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> mars.txt</code></pre>
+<p><code>git pull</code> tells us there’s a conflict, and marks that conflict in the affected file:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> mars.txt</code></pre></div>
 <pre class="output"><code>Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
@@ -110,16 +111,16 @@ We added a different line in the other copy
 =======
 This line added to Wolfman&#39;s copy
 &gt;&gt;&gt;&gt;&gt;&gt;&gt; dabb4c8c450e8475aee9b14b4383acc99f42af1d</code></pre>
-<p>Our change---the one in <code>HEAD</code>---is preceded by <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>. Git has then inserted <code>=======</code> as a separator between the conflicting changes and marked the end of the content downloaded from GitHub with <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>. (The string of letters and digits after that marker identifies the revision we've just downloaded.)</p>
-<p>It is now up to us to edit this file to remove these markers and reconcile the changes. We can do anything we want: keep the change made in the local repository, keep the change made in the remote repository, write something new to replace both, or get rid of the change entirely. Let's replace both so that the file looks like this:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> mars.txt</code></pre>
+<p>Our change—the one in <code>HEAD</code>—is preceded by <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>. Git has then inserted <code>=======</code> as a separator between the conflicting changes and marked the end of the content downloaded from GitHub with <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>. (The string of letters and digits after that marker identifies the revision we’ve just downloaded.)</p>
+<p>It is now up to us to edit this file to remove these markers and reconcile the changes. We can do anything we want: keep the change made in the local repository, keep the change made in the remote repository, write something new to replace both, or get rid of the change entirely. Let’s replace both so that the file looks like this:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> mars.txt</code></pre></div>
 <pre class="output"><code>Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 We removed the conflict on this line</code></pre>
 <p>To finish merging, we add <code>mars.txt</code> to the changes being made by the merge and then commit:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add mars.txt
-$ <span class="kw">git</span> status</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add mars.txt
+$ <span class="kw">git</span> status</code></pre></div>
 <pre class="output"><code># On branch master
 # All conflicts fixed but you are still merging.
 #   (use &quot;git commit&quot; to conclude merge)
@@ -128,10 +129,10 @@ $ <span class="kw">git</span> status</code></pre>
 #
 #   modified:   mars.txt
 #</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> commit -m <span class="st">&quot;Merging changes from GitHub&quot;</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> commit -m <span class="st">&quot;Merging changes from GitHub&quot;</span></code></pre></div>
 <pre class="output"><code>[master 2abf2b1] Merging changes from GitHub</code></pre>
 <p>Now we can push our changes to GitHub:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin master</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin master</code></pre></div>
 <pre class="output"><code>Counting objects: 10, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (6/6), done.
@@ -139,8 +140,8 @@ Writing objects: 100% (6/6), 697 bytes, done.
 Total 6 (delta 2), reused 0 (delta 0)
 To https://github.com/vlad/planets.git
    dabb4c8..2abf2b1  master -&gt; master</code></pre>
-<p>Git keeps track of what we've merged with what, so we don't have to fix things by hand again when the collaborator who made the first change pulls again:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> pull origin master</code></pre>
+<p>Git keeps track of what we’ve merged with what, so we don’t have to fix things by hand again when the collaborator who made the first change pulls again:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> pull origin master</code></pre></div>
 <pre class="output"><code>remote: Counting objects: 10, done.        
 remote: Compressing objects: 100% (4/4), done.        
 remote: Total 6 (delta 2), reused 6 (delta 2)        
@@ -152,13 +153,13 @@ Fast-forward
  mars.txt | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)</code></pre>
 <p>we get the merged file:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> mars.txt </code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> mars.txt </code></pre></div>
 <pre class="output"><code>Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 We removed the conflict on this line</code></pre>
-<p>We don't need to merge again because Git knows someone has already done that.</p>
-<p>Version control's ability to merge conflicting changes is another reason users tend to divide their programs and papers into multiple files instead of storing everything in one large file. There's another benefit too: whenever there are repeated conflicts in a particular file, the version control system is essentially trying to tell its users that they ought to clarify who's responsible for what, or find a way to divide the work up differently.</p>
+<p>We don’t need to merge again because Git knows someone has already done that.</p>
+<p>Version control’s ability to merge conflicting changes is another reason users tend to divide their programs and papers into multiple files instead of storing everything in one large file. There’s another benefit too: whenever there are repeated conflicts in a particular file, the version control system is essentially trying to tell its users that they ought to clarify who’s responsible for what, or find a way to divide the work up differently.</p>
 <div id="solving-conflicts-that-you-create" class="challenge panel panel-success">
 <div class="panel-heading">
 <h2 id="solving-conflicts-that-you-create" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>Solving Conflicts that You Create</h2>
@@ -177,6 +178,7 @@ We removed the conflict on this line</code></pre>
 </div>
         </div>
       </div>
+      </article>
       <div class="footer">
         <a class="label swc-blue-bg" href="http://software-carpentry.org">Software Carpentry</a>
         <a class="label swc-blue-bg" href="https://github.com/swcarpentry/git-novice">Source</a>

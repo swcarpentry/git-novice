@@ -23,7 +23,7 @@ You also agree to abide by our
 3.  When editing lesson pages, you need only commit changes to the Markdown source files.
 
 4.  If you're looking for things to work on,
-    please see [the list of issues for this repository][lesson-template-issues],
+    please see [the list of issues for this repository][issues],
     or for [our other lessons][swc-lessons].
     Comments on issues and reviews of pull requests are equally welcome.
 
@@ -35,15 +35,8 @@ You also agree to abide by our
 
 2.  For a list of helpful commands run `make` in this directory.
 
-3.  The [list of maintainers][swc-maintainers]
-    on the [Software Carpentry website][swc-website]
-    lists the people currently responsible for managing this repository.
-    Feel free to contact them if you have any questions or languishing pull requests.
-
 [conduct]: CONDUCT.md
-[lesson-template-issues]: https://github.com/swcarpentry/lesson-template/issues
+[issues]: https://github.com/swcarpentry/lesson-template/issues
 [license]: LICENSE.md
 [pro-git-chapter]: http://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project
 [swc-lessons]: http://software-carpentry.org/lessons.html
-[swc-maintainers]: http://software-carpentry.org/lessons.html#maintainers
-[swc-website]: http://software-carpentry.org
