@@ -12,7 +12,7 @@ minutes: 25
 
 
 If we want to see what we changed at different steps,
-we use `git diff` again,
+we can use `git diff` again,
 but refer to old versions
 using the notation `HEAD~1`, `HEAD~2`, and so on:
 
@@ -44,7 +44,7 @@ index df0654a..b36abfd 100644
 ~~~
 
 In this way,
-we build up a chain of revisions.
+we can build up a chain of revisions.
 The most recent end of the chain is referred to as `HEAD`;
 we can refer to previous revisions using the `~` notation,
 so `HEAD~1` (pronounced "head minus one")
@@ -56,7 +56,7 @@ those long strings of digits and letters
 that `git log` displays.
 These are unique IDs for the changes,
 and "unique" really does mean unique:
-every change to any set of files on any machine
+every change to any set of files on any computer
 has a unique 40-character identifier.
 Our first commit was given the ID
 f22b25e3233b4645dabd0d81e651fe074bd8e73b,
@@ -77,8 +77,8 @@ index df0654a..b36abfd 100644
 ~~~
 
 That's the right answer,
-but typing random 40-character strings is annoying,
-so Git lets us use just the first few:
+but typing out random 40-character strings is annoying,
+so Git lets us use just the first few characters:
 
 ~~~ {.bash}
 $ git diff f22b25e mars.txt
@@ -95,8 +95,8 @@ index df0654a..b36abfd 100644
 ~~~
 
 
-All right:
-we can save changes to files and see what we've changed&mdash;how
+All right! So
+we can save changes to files and see what we've changed&mdash;now how
 can we restore older versions of things?
 Let's suppose we accidentally overwrite our file:
 
@@ -155,7 +155,7 @@ we must use the revision number that identifies the state of the repository
 *before* the change we're trying to undo.
 A common mistake is to use the revision number of
 the commit in which we made the change we're trying to get rid of.
-In the example below, we want retrieve the state from before the most
+In the example below, we want to retrieve the state from before the most
 recent commit (`HEAD~1`), which is revision `f22b25e`:
 
 ![Git Checkout](fig/git-checkout.svg)

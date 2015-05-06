@@ -18,7 +18,7 @@ $ cd planets
 ~~~
 
 Then we tell Git to make `planets` a [repository](reference.html#repository)&mdash;a place where
-Git can store old versions of our files:
+Git can store versions of our files:
 
 ~~~ {.bash}
 $ git init
@@ -73,4 +73,6 @@ nothing to commit (create/copy files and use "git add" to track)
 > git init     # make the beta sub-directory a Git repository
 > ~~~
 > 
-While it is possible to create one git repository inside another&mdash;there is nothing to stop your doing that&mdash;this is not a good idea. Can you explain why? 
+> While it is possible to create one git repository inside of
+> another&mdash;there is nothing to stop you from doing that&mdash;this is
+> not a good idea. Can you explain why?

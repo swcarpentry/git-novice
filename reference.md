@@ -52,14 +52,14 @@ subtitle: Reference
 
 [Licensing](09-licensing.html)
 
-*   People who incorporate GPL'd software into theirs must make theirs open;
-    most other open licenses do not require this.
-*   The Creative Commons family of licenses allow people to mix and match
-    requirements and restrictions on attribution,
-    creation of derivative works,
-    further sharing,
-    and commercialization.
-*   People who are not lawyers should not try to write licenses from scratch.
+*   People who incorporate GPL'd software into their own software must
+    make their software also open under the GPL license; most other
+    open licenses do not require this.
+*   The Creative Commons family of licenses allow people to mix and
+    match requirements and restrictions on attribution, creation of
+    derivative works, further sharing, and commercialization.
+*   People who are not lawyers should not try to write licenses from
+    scratch.
 
 [Hosting](10-hosting.html)
 
@@ -72,9 +72,9 @@ subtitle: Reference
 ## Glossary
 
 change set
-:   A group of changes to one or more files
-    that are [committed](#commit) to a [version control](#version-control) [repository](#repository)
-    in a single operation.
+:   A group of changes to one or more files that are or will be added
+    to a single [commit](#commit) in a [version control](#version-control)
+    [repository](#repository).
 
 commit
 :   To record the current state of a set of files (a [change set](#changeset))
@@ -93,13 +93,15 @@ HTTP
     on the World Wide Web.
 
 infective license
-:   A license such as the [GPL](http://opensource.org/licenses/GPL-3.0)
-    that compels people who incorporate material into their own work
-    to place similar sharing requirements on it.
+:   A license, such as the [GPL](http://opensource.org/licenses/GPL-3.0),
+    that legally requires people who incorporate material under the
+    infective license
+    into their own work to also release under the same infective license
+    (eg. under the GPL license).
 
 merge
-:   (a repository):
-    To reconcile two sets of changes to a [repository](#repository).
+:   (a repository): To reconcile two sets of changes to a
+    [repository](#repository).
 
 protocol
 :   A set of rules that define how one computer communicates with another.
