@@ -2,15 +2,15 @@
 layout: page
 title: Version Control with Git
 ---
-Wolfman and Dracula have been hired by Universal Missions
-(a space services spinoff from Euphoric State University)
-to investigate if it is possible to send their next planetary lander to Mars.
-They want to be able to work on the plans at the same time,
-but they have run into problems doing this in the past.
-If they take turns,
-each one will spend a lot of time waiting for the other to finish,
-but if they work on their own copies and email changes back and forth
-things will be lost, overwritten, or duplicated.
+
+Wolfman and Dracula have been hired by Universal Missions (a space
+services spinoff from Euphoric State University) to investigate if it
+is possible to send their next planetary lander to Mars.  They want to
+be able to work on the plans at the same time, but they have run into
+problems doing this in the past.  If they take turns, each one will
+spend a lot of time waiting for the other to finish, but if they work
+on their own copies and email changes back and forth things will be
+lost, overwritten, or duplicated.
 
 A colleague suggests using [version control](reference.html#version-control) to manage their work.
 Version control is better than mailing files back and forth because:
@@ -27,17 +27,20 @@ Version control is better than mailing files back and forth because:
     the version control system automatically notifies users
     whenever there's a conflict between one person's work and another's.
 
-Version control is the lab notebook of the digital world:
-it's what professionals use to keep track of what they've done
-and to collaborate with other people.
-Every large software development project relies on it,
-and most programmers use it for their small jobs as well.
-And it isn't just for software:
-books (like this one),
-papers,
-small data sets,
-and anything that changes over time or needs to be shared
-can and should be stored in a version control system.
+Team environments are not the only environments to benefit from using
+a version control system; lone researchers also equally benefit.  All
+researchers, whether solo or as part of a team, will be working with
+at least two people: oneself and oneself 9 months from now.  Keeping a
+record of what was changed, when, and why is very useful if the
+researcher ever needs to come back to the project later on.
+
+Version control is the lab notebook of the digital world: it's what
+professionals use to keep track of what they've done and to
+collaborate with other people.  Every large software development
+project relies on it, and most programmers use it for their small jobs
+as well.  And it isn't just for software: books (like this one),
+papers, small data sets, and anything that changes over time or needs
+to be shared can and should be stored in a version control system.
 
 > ## Prerequisites {.prereq}
 >
