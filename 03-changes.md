@@ -25,7 +25,7 @@ Type the text below into the `mars.txt` file:
 Cold and dry, but everything is my favorite color
 ~~~
 
-`mars.txt` now contains a single line:
+`mars.txt` now contains a single line, which we can see by running:
 
 ~~~ {.bash}
 $ ls
@@ -101,7 +101,7 @@ When we run `git commit`,
 Git takes everything we have told it to save by using `git add`
 and stores a copy permanently inside the special `.git` directory.
 This permanent copy is called a [revision](reference.html#revision)
-and its short identifier is `f22b25e`.
+and its short identifier is `f22b25e`
 (Your revision may have another identifier.)
 
 We use the `-m` flag (for "message")
@@ -192,7 +192,7 @@ The last line is the key phrase:
 We have changed this file,
 but we haven't told Git we will want to save those changes
 (which we do with `git add`)
-much less actually saved them (which we do with `git commit`).
+nor have we saved them (which we do with `git commit`).
 So let's do that now. It is good practice to always review
 our changes before saving them. We do this using `git diff`.
 This shows us the differences between the current state
@@ -225,12 +225,13 @@ If we break it down into pieces:
 4.  The remaining lines are the most interesting, they show us the actual differences
     and the lines on which they occur.
     In particular,
-    the `+` markers in the first column show where we are adding lines.
+    the `+` markers in the first column show where we have added lines.
 
 After reviewing our change, it's time to commit it:
 
 ~~~ {.bash}
 $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
+$ git status
 ~~~
 ~~~ {.output}
 # On branch master
@@ -396,7 +397,7 @@ repository (`git commit`):
 
 > ## Committing Changes to Git {.challenge}
 >
-> Which command(s) below would save changes of `myfile.txt` to my local Git repository?
+> Which command(s) below would save the changes of `myfile.txt` to my local Git repository?
 >
 > 1. 
 >
@@ -426,7 +427,7 @@ repository (`git commit`):
 > Create a new Git repository on your computer called `bio`.
 > Write a three-line biography for yourself in a file called `me.txt`,
 > commit your changes,
-> then modify one line and add a fourth and display the differences
+> then modify one line, add a fourth line, and display the differences
 > between its updated state and its original state.
 
 [commit-messages]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
