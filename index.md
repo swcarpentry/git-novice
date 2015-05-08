@@ -59,11 +59,12 @@ to be shared can and should be stored in a version control system.
 4.  [Tracking Changes](04-changes.html)
 5.  [Exploring History](05-history.html)
 6.  [Ignoring Things](06-ignore.html)
-7.  [Collaborating](07-collab.html)
-8.  [Conflicts](08-conflict.html)
-9.  [Open Science](09-open.html)
-10. [Licensing](10-licensing.html)
-11. [Hosting](11-hosting.html)
+7.  [Remotes in Github](07-github.html)
+8.  [Collaborating](08-collab.html)
+9.  [Conflicts](09-conflict.html)
+10. [Open Science](10-open.html)
+11. [Licensing](11-licensing.html)
+12. [Hosting](12-hosting.html)
 
 ## Other Resources
 
