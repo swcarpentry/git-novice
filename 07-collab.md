@@ -2,7 +2,7 @@
 layout: page
 title: Version Control with Git
 subtitle: Collaborating
-minutes: 55
+minutes: 25
 ---
 > ## Learning Objectives {.objectives}
 >
