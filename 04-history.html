@@ -28,9 +28,9 @@
         <div class="col-md-10 col-md-offset-1">
           <h1 class="title">Version Control with Git</h1>
           <h2 class="subtitle">Exploring History</h2>
-<div id="learning-objectives" class="objectives panel panel-warning">
+<section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2 id="learning-objectives" class="objectives panel panel-warning"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -39,8 +39,8 @@
 <li>Restore old versions of files.</li>
 </ul>
 </div>
-</div>
-<p>If we want to see what we changed when, we use <code>git diff</code> again, but refer to old versions using the notation <code>HEAD~1</code>, <code>HEAD~2</code>, and so on:</p>
+</section>
+<p>If we want to see what we changed at different steps, we can use <code>git diff</code> again, but refer to old versions using the notation <code>HEAD~1</code>, <code>HEAD~2</code>, and so on:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> diff HEAD~1 mars.txt</code></pre></div>
 <pre class="output"><code>diff --git a/mars.txt b/mars.txt
 index 315bf3a..b36abfd 100644
@@ -59,8 +59,8 @@ index df0654a..b36abfd 100644
  Cold and dry, but everything is my favorite color
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity</code></pre>
-<p>In this way, we build up a chain of revisions. The most recent end of the chain is referred to as <code>HEAD</code>; we can refer to previous revisions using the <code>~</code> notation, so <code>HEAD~1</code> (pronounced “head minus one”) means “the previous revision”, while <code>HEAD~123</code> goes back 123 revisions from where we are now.</p>
-<p>We can also refer to revisions using those long strings of digits and letters that <code>git log</code> displays. These are unique IDs for the changes, and “unique” really does mean unique: every change to any set of files on any machine has a unique 40-character identifier. Our first commit was given the ID f22b25e3233b4645dabd0d81e651fe074bd8e73b, so let’s try this:</p>
+<p>In this way, we can build up a chain of revisions. The most recent end of the chain is referred to as <code>HEAD</code>; we can refer to previous revisions using the <code>~</code> notation, so <code>HEAD~1</code> (pronounced “head minus one”) means “the previous revision”, while <code>HEAD~123</code> goes back 123 revisions from where we are now.</p>
+<p>We can also refer to revisions using those long strings of digits and letters that <code>git log</code> displays. These are unique IDs for the changes, and “unique” really does mean unique: every change to any set of files on any computer has a unique 40-character identifier. Our first commit was given the ID f22b25e3233b4645dabd0d81e651fe074bd8e73b, so let’s try this:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> diff f22b25e3233b4645dabd0d81e651fe074bd8e73b mars.txt</code></pre></div>
 <pre class="output"><code>diff --git a/mars.txt b/mars.txt
 index df0654a..b36abfd 100644
@@ -70,7 +70,7 @@ index df0654a..b36abfd 100644
  Cold and dry, but everything is my favorite color
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity</code></pre>
-<p>That’s the right answer, but typing random 40-character strings is annoying, so Git lets us use just the first few:</p>
+<p>That’s the right answer, but typing out random 40-character strings is annoying, so Git lets us use just the first few characters:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> diff f22b25e mars.txt</code></pre></div>
 <pre class="output"><code>diff --git a/mars.txt b/mars.txt
 index df0654a..b36abfd 100644
@@ -80,7 +80,7 @@ index df0654a..b36abfd 100644
  Cold and dry, but everything is my favorite color
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity</code></pre>
-<p>All right: we can save changes to files and see what we’ve changed—how can we restore older versions of things? Let’s suppose we accidentally overwrite our file:</p>
+<p>All right! So we can save changes to files and see what we’ve changed—now how can we restore older versions of things? Let’s suppose we accidentally overwrite our file:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> mars.txt
 $ <span class="kw">cat</span> mars.txt</code></pre></div>
 <pre class="output"><code>We will need to manufacture our own oxygen</code></pre>
@@ -102,19 +102,15 @@ The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity</code></pre>
 <p>As you might guess from its name, <code>git checkout</code> checks out (i.e., restores) an old version of a file. In this case, we’re telling Git that we want to recover the version of the file recorded in <code>HEAD</code>, which is the last saved revision. If we want to go back even further, we can use a revision identifier instead:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout f22b25e mars.txt</code></pre></div>
-<p>It’s important to remember that we must use the revision number that identifies the state of the repository <em>before</em> the change we’re trying to undo. A common mistake is to use the revision number of the commit in which we made the change we’re trying to get rid of. In the example below, we want retrieve the state from before the most recent commit (<code>HEAD~1</code>), which is revision <code>f22b25e</code>:</p>
+<p>It’s important to remember that we must use the revision number that identifies the state of the repository <em>before</em> the change we’re trying to undo. A common mistake is to use the revision number of the commit in which we made the change we’re trying to get rid of. In the example below, we want to retrieve the state from before the most recent commit (<code>HEAD~1</code>), which is revision <code>f22b25e</code>:</p>
 <div class="figure">
 <img src="fig/git-checkout.svg" alt="Git Checkout" />
 <p class="caption">Git Checkout</p>
 </div>
-<p>The following diagram illustrates what the history of a file might look like (moving back from <code>HEAD</code>, the most recently committed version):</p>
-<div class="figure">
-<img src="fig/git-when-revisions-updated.svg" alt="When Git Updates Revision Numbers" />
-<p class="caption">When Git Updates Revision Numbers</p>
-</div>
-<div id="how-git-works-in-cartoon-form" class="callout panel panel-info">
+<p>So, to put it all together:</p>
+<aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2 id="how-git-works-in-cartoon-form" class="callout panel panel-info"><span class="glyphicon glyphicon-pushpin"></span>How Git works, in cartoon form</h2>
+<h2 id="how-git-works-in-cartoon-form"><span class="glyphicon glyphicon-pushpin"></span>How Git works, in cartoon form</h2>
 </div>
 <div class="panel-body">
 <div class="figure">
@@ -122,21 +118,21 @@ But the Mummy will appreciate the lack of humidity</code></pre>
 <p class="caption">http://figshare.com/articles/How_Git_works_a_cartoon/1328266</p>
 </div>
 </div>
-</div>
-<div id="simplifying-the-common-case" class="callout panel panel-info">
+</aside>
+<aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2 id="simplifying-the-common-case" class="callout panel panel-info"><span class="glyphicon glyphicon-pushpin"></span>Simplifying the Common Case</h2>
+<h2 id="simplifying-the-common-case"><span class="glyphicon glyphicon-pushpin"></span>Simplifying the Common Case</h2>
 </div>
 <div class="panel-body">
 <p>If you read the output of <code>git status</code> carefully, you’ll see that it includes this hint:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">(use</span> <span class="st">&quot;git checkout -- &lt;file&gt;...&quot;</span> to discard changes in working directory<span class="kw">)</span></code></pre></div>
 <p>As it says, <code>git checkout</code> without a version identifier restores files to the state saved in <code>HEAD</code>. The double dash <code>--</code> is needed to separate the names of the files being recovered from the command itself: without it, Git would try to use the name of the file as the revision identifier.</p>
 </div>
-</div>
+</aside>
 <p>The fact that files can be reverted one by one tends to change the way people organize their work. If everything is in one large document, it’s hard (but not impossible) to undo changes to the introduction without also undoing changes made later to the conclusion. If the introduction and conclusion are stored in separate files, on the other hand, moving backward and forward in time becomes much easier.</p>
-<div id="recovering-older-versions-of-a-file" class="challenge panel panel-success">
+<section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="recovering-older-versions-of-a-file" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>Recovering Older Versions of a File</h2>
+<h2 id="recovering-older-versions-of-a-file"><span class="glyphicon glyphicon-pencil"></span>Recovering Older Versions of a File</h2>
 </div>
 <div class="panel-body">
 <p>Jennifer has made changes to the Python script that she has been working on for weeks, and the modifications she made this morning “broke” the script and it no longer runs. She has spent ~ 1hr trying to fix it, with no luck…</p>
@@ -149,7 +145,7 @@ But the Mummy will appreciate the lack of humidity</code></pre>
 <li>Both 2 &amp; 4</li>
 </ol>
 </div>
-</div>
+</section>
         </div>
       </div>
       </article>
