@@ -50,7 +50,7 @@ subtitle: Reference
 
 *   Open scientific work is more useful and more highly cited than closed.
 
-[Licensing](09-licensing.html)
+## [Licensing](09-licensing.html)
 
 *   People who incorporate GPL'd software into their own software must
     make their software also open under the GPL license; most other
@@ -61,7 +61,7 @@ subtitle: Reference
 *   People who are not lawyers should not try to write licenses from
     scratch.
 
-[Hosting](10-hosting.html)
+## [Hosting](10-hosting.html)
 
 *   Projects can be hosted on university servers,
     on personal domains,
