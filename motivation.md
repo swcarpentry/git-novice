@@ -6,11 +6,11 @@ subtitle: Motivation
 ## Why Use Version Control?
 
 Let some software handle the versions of your project let you focus on your
-project.
+project
 
 ## Why Git?
 
-Because many people are using GitHub to collaborating.
+Because many people are using GitHub to collaborate
 
 ## Next Steps
 
