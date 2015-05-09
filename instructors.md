@@ -102,7 +102,7 @@ We close with material on licensing because:
     CVS and Subversion are now seen as legacy systems,
     and Mercurial isn't nearly as widely used in the sciences right now.
 
-## [Setting Up Git](01-setup.html)
+## [Setting Up Git](02-setup.html)
 
 We suggest instructors and students use `nano` as the text editor for this lessons because:
 
@@ -116,7 +116,7 @@ if they're already familiar with it.
 Below you will find some tips that could help solving problems
 when using other editors.
 
-## [Creating a Repository](02-create.html)
+## [Creating a Repository](03-create.html)
 
 The challenge "Places to create repositories" tries to reinforce the idea that
 the `.git` folder contains the whole Git repo and deleting this folder *undoes*
@@ -131,9 +131,9 @@ mv .git temp_git
 rm -rf  temp_git
 ~~~
 
-## [Tracking Changes](03-changes.html)
+## [Tracking Changes](04-changes.html)
 
-## [Exploring History](04-history.html)
+## [Exploring History](05-history.html)
 
 *   One thing that has caused confusion comes up when recovering old versions
     towards the end of ["Exploring history"](04-history.html).
@@ -144,8 +144,8 @@ rm -rf  temp_git
     but things like `git push origin master` a bit later will not give easily comprehensible results.
     It also makes it look like commits can be lost.
 
-## [Ignoring Things](05-ignore.html)
-## [Collaborating](06-collab.html)
+## [Ignoring Things](06-ignore.html)
+## [Collaborating](07-collab.html)
 
 *   If your learners are advanced enough to be comfortable with SSH,
     tell them they can use keys to authenticate on GitHub instead of passwords,
@@ -185,18 +185,18 @@ rm -rf  temp_git
     And of course it helps to give each of the instructors a different-colored hat,
     or put different-colored sticky notes on their foreheads.
 
-## [Conflicts](07-conflict.html)
+## [Conflicts](08-conflict.html)
 
 FIXME
 
-## [Open Science](08-open.html)
+## [Open Science](09-open.html)
 
 FIXME
 
-## [Licensing](09-licensing.html)
+## [Licensing](10-licensing.html)
 
 FIXME
 
-## [Hosting](10-hosting.html)
+## [Hosting](11-hosting.html)
 
 FIXME
