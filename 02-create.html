@@ -28,24 +28,24 @@
         <div class="col-md-10 col-md-offset-1">
           <h1 class="title">Version Control with Git</h1>
           <h2 class="subtitle">Creating a Repository</h2>
-<div id="learning-objectives" class="objectives panel panel-warning">
+<section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2 id="learning-objectives" class="objectives panel panel-warning"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
 <li>Explain how to create a Git repository locally.</li>
 </ul>
 </div>
-</div>
-<p>Once Git is configured, we can start using it. Let’s create a directory for our work:</p>
+</section>
+<p>Once Git is configured, we can start using it. Let’s create a directory for our work and then move into that directory:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> planets
 $ <span class="kw">cd</span> planets</code></pre></div>
-<p>and tell Git to make it a <a href="reference.html#repository">repository</a>—a place where Git can store old versions of our files:</p>
+<p>Then we tell Git to make <code>planets</code> a <a href="reference.html#repository">repository</a>—a place where Git can store versions of our files:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> init</code></pre></div>
 <p>If we use <code>ls</code> to show the directory’s contents, it appears that nothing has changed:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span></code></pre></div>
-<p>But if we add the <code>-a</code> flag to show everything, we can see that Git has created a hidden directory called <code>.git</code>:</p>
+<p>But if we add the <code>-a</code> flag to show everything, we can see that Git has created a hidden directory within <code>planets</code> called <code>.git</code>:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> -a</code></pre></div>
 <pre class="output"><code>.   ..  .git</code></pre>
 <p>Git stores information about the project in this special sub-directory. If we ever delete it, we will lose the project’s history.</p>
@@ -56,9 +56,9 @@ $ <span class="kw">cd</span> planets</code></pre></div>
 # Initial commit
 #
 nothing to commit (create/copy files and use &quot;git add&quot; to track)</code></pre>
-<div id="places-to-create-git-repositories" class="challenge panel panel-success">
+<section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="places-to-create-git-repositories" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>Places to Create Git Repositories</h2>
+<h2 id="places-to-create-git-repositories"><span class="glyphicon glyphicon-pencil"></span>Places to Create Git Repositories</h2>
 </div>
 <div class="panel-body">
 <p>The following sequence of commands creates one Git repository inside another:</p>
@@ -69,9 +69,9 @@ nothing to commit (create/copy files and use &quot;git add&quot; to track)</code
 <span class="kw">mkdir</span> beta   <span class="co"># make a sub-directory alpha/beta</span>
 <span class="kw">cd</span> beta      <span class="co"># go into alpha/beta</span>
 <span class="kw">git</span> init     <span class="co"># make the beta sub-directory a Git repository</span></code></pre></div>
-<p>Why is it a bad idea to do this?</p>
+<p>While it is possible to create one git repository inside of another—there is nothing to stop you from doing that—this is not a good idea. Can you explain why?</p>
 </div>
-</div>
+</section>
         </div>
       </div>
       </article>

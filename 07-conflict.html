@@ -28,9 +28,9 @@
         <div class="col-md-10 col-md-offset-1">
           <h1 class="title">Version Control with Git</h1>
           <h2 class="subtitle">Conflicts</h2>
-<div id="learning-objectives" class="objectives panel panel-warning">
+<section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2 id="learning-objectives" class="objectives panel panel-warning"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -38,7 +38,7 @@
 <li>Resolve conflicts resulting from a merge.</li>
 </ul>
 </div>
-</div>
+</section>
 <p>As soon as people can work in parallel, someone’s going to step on someone else’s toes. This will even happen with a single person: if we are working on a piece of software on both our laptop and a server in the lab, we could make different changes to each copy. Version control helps us manage these <a href="reference.html#conflicts">conflicts</a> by giving us tools to <a href="reference.html#resolve">resolve</a> overlapping changes.</p>
 <p>To see how we can resolve conflicts, we must first create one. The file <code>mars.txt</code> currently looks like this in both partners’ copies of our <code>planets</code> repository:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> mars.txt</code></pre></div>
@@ -160,22 +160,22 @@ But the Mummy will appreciate the lack of humidity
 We removed the conflict on this line</code></pre>
 <p>We don’t need to merge again because Git knows someone has already done that.</p>
 <p>Version control’s ability to merge conflicting changes is another reason users tend to divide their programs and papers into multiple files instead of storing everything in one large file. There’s another benefit too: whenever there are repeated conflicts in a particular file, the version control system is essentially trying to tell its users that they ought to clarify who’s responsible for what, or find a way to divide the work up differently.</p>
-<div id="solving-conflicts-that-you-create" class="challenge panel panel-success">
+<section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="solving-conflicts-that-you-create" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>Solving Conflicts that You Create</h2>
+<h2 id="solving-conflicts-that-you-create"><span class="glyphicon glyphicon-pencil"></span>Solving Conflicts that You Create</h2>
 </div>
 <div class="panel-body">
 <p>Clone the repository created by your instructor. Add a new file to it, and modify an existing file (your instructor will tell you which one). When asked by your instructor, pull her changes from the repository to create a conflict, then resolve it.</p>
 </div>
-</div>
-<div id="conflicts-on-non-textual-files" class="challenge panel panel-success">
+</section>
+<section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="conflicts-on-non-textual-files" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>Conflicts on Non-textual files</h2>
+<h2 id="conflicts-on-non-textual-files"><span class="glyphicon glyphicon-pencil"></span>Conflicts on Non-textual files</h2>
 </div>
 <div class="panel-body">
 <p>What does Git do when there is a conflict in an image or some other non-textual file that is stored in version control?</p>
 </div>
-</div>
+</section>
         </div>
       </div>
       </article>

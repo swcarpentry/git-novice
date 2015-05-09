@@ -28,9 +28,9 @@
         <div class="col-md-10 col-md-offset-1">
           <h1 class="title">Version Control with Git</h1>
           <h2 class="subtitle">Collaborating</h2>
-<div id="learning-objectives" class="objectives panel panel-warning">
+<section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2 id="learning-objectives" class="objectives panel panel-warning"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -39,7 +39,7 @@
 <li>Explain what happens when changes are pushed to or pulled from a remote repository.</li>
 </ul>
 </div>
-</div>
+</section>
 <p>Version control really comes into its own when we begin to collaborate with other people. We already have most of the machinery we need to do this; the only thing missing is to copy changes from one repository to another.</p>
 <p>Systems like Git allow us to move work between any two repositories. In practice, though, it’s easiest to use one copy as a central hub, and to keep it on the web rather than on someone’s laptop. Most programmers use hosting services like <a href="http://github.com">GitHub</a> or <a href="http://bitbucket.org">BitBucket</a> to hold those master copies; we’ll explore the pros and cons of this in the final section of this lesson.</p>
 <p>Let’s start by sharing the changes we’ve made to our current project with the world. Log in to GitHub, then click on the icon in the top right corner to create a new repository called <code>planets</code>:</p>
@@ -72,14 +72,14 @@ $ <span class="kw">git</span> init</code></pre></div>
 <p class="caption">Where to Find Repository URL on GitHub</p>
 </div>
 <p>Click on the ‘HTTPS’ link to change the <a href="reference.html#protocol">protocol</a> from SSH to HTTPS.</p>
-<div id="https-vs-ssh" class="callout panel panel-info">
+<aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2 id="https-vs-ssh" class="callout panel panel-info"><span class="glyphicon glyphicon-pushpin"></span>HTTPS vs SSH</h2>
+<h2 id="https-vs-ssh"><span class="glyphicon glyphicon-pushpin"></span>HTTPS vs SSH</h2>
 </div>
 <div class="panel-body">
 <p>We use HTTPS here because it does not require additional configuration. After the workshop you may want to set up SSH access, which is a bit more secure, by following one of the great tutorials from <a href="https://help.github.com/articles/generating-ssh-keys">GitHub</a>, <a href="https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Git">Atlassian/BitBucket</a> and <a href="https://about.gitlab.com/2014/03/04/add-ssh-key-screencast/">GitLab</a> (this one has a screencast).</p>
 </div>
-</div>
+</aside>
 <div class="figure">
 <img src="fig/github-change-repo-string.png" alt="Changing the Repository URL on GitHub" />
 <p class="caption">Changing the Repository URL on GitHub</p>
@@ -102,9 +102,9 @@ Total 9 (delta 2), reused 0 (delta 0)
 To https://github.com/vlad/planets
  * [new branch]      master -&gt; master
 Branch master set up to track remote branch master from origin.</code></pre>
-<div id="proxy" class="callout panel panel-info">
+<aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2 id="proxy" class="callout panel panel-info"><span class="glyphicon glyphicon-pushpin"></span>Proxy</h2>
+<h2 id="proxy"><span class="glyphicon glyphicon-pushpin"></span>Proxy</h2>
 </div>
 <div class="panel-body">
 <p>If the network you are connected to uses a proxy there is an chance that your last command failed with “Could not resolve hostname” as the error message. To solve this issue you need to tell Git about the proxy:</p>
@@ -114,30 +114,30 @@ $ <span class="kw">git</span> config --global https.proxy http://user:password@p
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global --unset http.proxy
 $ <span class="kw">git</span> config --global --unset https.proxy</code></pre></div>
 </div>
-</div>
-<div id="password-managers" class="callout panel panel-info">
+</aside>
+<aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2 id="password-managers" class="callout panel panel-info"><span class="glyphicon glyphicon-pushpin"></span>Password Managers</h2>
+<h2 id="password-managers"><span class="glyphicon glyphicon-pushpin"></span>Password Managers</h2>
 </div>
 <div class="panel-body">
 <p>If your operating system has a password manager configured, <code>git push</code> will try to use it when it needs your username and password. If you want to type your username and password at the terminal instead of using a password manager, type</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">unset</span> <span class="ot">SSH_ASKPASS</span></code></pre></div>
 <p>You may want to add this command at the end of your <code>~/.bashrc</code> to make it the default behavior.</p>
 </div>
-</div>
+</aside>
 <p>Our local and remote repositories are now in this state:</p>
 <div class="figure">
 <img src="fig/github-repo-after-first-push.svg" alt="GitHub Repository After First Push" />
 <p class="caption">GitHub Repository After First Push</p>
 </div>
-<div id="the--u-flag" class="callout panel panel-info">
+<aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2 id="the--u-flag" class="callout panel panel-info"><span class="glyphicon glyphicon-pushpin"></span>The ‘-u’ Flag</h2>
+<h2 id="the--u-flag"><span class="glyphicon glyphicon-pushpin"></span>The ‘-u’ Flag</h2>
 </div>
 <div class="panel-body">
 <p>You may see a <code>-u</code> option used with <code>git push</code> in some documentation. It is related to concepts we cover in our intermediate lesson, and can safely be ignored for now.</p>
 </div>
-</div>
+</aside>
 <p>We can pull changes from the remote repository to the local one as well:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> pull origin master</code></pre></div>
 <pre class="output"><code>From https://github.com/vlad/planets
@@ -145,14 +145,14 @@ $ <span class="kw">git</span> config --global --unset https.proxy</code></pre></
 Already up-to-date.</code></pre>
 <p>Pulling has no effect in this case because the two repositories are already synchronized. If someone else had pushed some changes to the repository on GitHub, though, this command would download them to our local repository.</p>
 <p>For the next step, get into pairs. Pick one of your repositories on GitHub to use for collaboration.</p>
-<div id="practicing-by-yourself" class="callout panel panel-info">
+<aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2 id="practicing-by-yourself" class="callout panel panel-info"><span class="glyphicon glyphicon-pushpin"></span>Practicing by yourself</h2>
+<h2 id="practicing-by-yourself"><span class="glyphicon glyphicon-pushpin"></span>Practicing by yourself</h2>
 </div>
 <div class="panel-body">
 <p>If you’re working through this lesson on your own, you can carry on by opening a second terminal window, and switching to another directory (e.g. <code>/tmp</code>). This window will represent your partner, working on another computer. You won’t need to give anyone access on GitHub, because both ‘partners’ are you.</p>
 </div>
-</div>
+</aside>
 <p>The partner whose repository is being used needs to give the other person access. On GitHub, click the settings button on the right, then select Collaborators, and enter your partner’s username.</p>
 <div class="figure">
 <img src="fig/github-add-collaborators.png" alt="Adding collaborators on GitHub" />
@@ -198,14 +198,14 @@ Fast-forward
  pluto.txt | 1 +
  1 file changed, 1 insertion(+)
  create mode 100644 pluto.txt</code></pre>
-<div id="github-timestamp" class="challenge panel panel-success">
+<section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="github-timestamp" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>GitHub Timestamp</h2>
+<h2 id="github-timestamp"><span class="glyphicon glyphicon-pencil"></span>GitHub Timestamp</h2>
 </div>
 <div class="panel-body">
 <p>Create a repository on GitHub, clone it, add a file, push those changes to GitHub, and then look at the <a href="reference.html#timestamp">timestamp</a> of the change on GitHub. How does GitHub record times, and why?</p>
 </div>
-</div>
+</section>
         </div>
       </div>
       </article>
