@@ -6,13 +6,25 @@ minutes: 5
 ---
 > ## Learning Objectives {.objectives}
 > 
-> *   Configure Git to ignore specific files,
->     and explain why it is sometimes useful to do so.
+> *   Explain why it is sometimes useful to have Git ignore specific files
+> *   Configure Git to do so
+>      
 
-What if we have files that we do not want Git to track for us,
-like backup files created by our editor
-or intermediate files created during data analysis.
-Let's create a few dummy files:
+### Why it is sometimes useful to *not* track files
+
+Git is incredible useful tool for tracking the changes to your code. However, it's not necessary to the track the changes of *every* file associated with a project. Sometime there are non-code files in your project directory for which you might not want to track changes.  For example:
+
+1. a text editor might create backup files automatically 
+2. intermediate files created during data analysis
+3. some types of output files 
+4. binary files (i.e. files that are not text based)
+5. really, really big files
+
+When projects (or files) get really big it's adventageous *not* to track these files, because tracking them will make your repository unnecessarily big, and, in some cases, this will slow down all of Git's processes.  Moreover, only tracking changes that are necessary keeps your repository nice and clean and organized.  Every little bit of organization helps when project gets big and complicated, when your collaborating with a team, or when you come back to a project in 6 months or so with only a hazy memory of what you did.  
+
+### How to configure Git to ignore certain files
+
+First, let's create a few dummy files:
 
 ~~~ {.bash}
 $ mkdir results
