@@ -32,8 +32,19 @@ If there aren't conflicts, you can even try to play two sets of changes onto the
 
 ![Multiple versions can be merged](fig/merge.svg)
 
-A version control system is a tool that keeps track of these changes for us and helps us version and merge our files. A system like Git is designed to keep multiple sets of versions and changes in sync across different computers or servers. This is called a _distributed_ system.
+A version control system is a tool that keeps track of these changes for us and
+helps us version and merge our files. A version control system allows you to
+decide which changes made up the next version, called a
+[commit](reference.html#commit), and keeps useful metadata about them. The
+complete history of commits for a particular project and their metadada make up
+a [repository](reference.html#repository). Repositories can be kept in sync
+across different computers facilitating collaboration among different people.
 
-A [repository](reference.html#repository) is the set of files that we want to keep under version control.
-
-With Git, every user who wants to make changes to a repository has their own copy of the files in the repository, along with their own copy of the changes (the _commits_) that have been made to those files. Git keeps the commits in a hidden directory (called `.git`) along with the copies of the files.
+> ## The long history of version control systems {.callout}
+>
+> Automated version control systems are nothing new. Tools like RCS, CVS, or
+> Subversion are considered now legacy systems, offering more limited
+> capabilities than modern tools, such as Git and
+> [Mercurial](http://swcarpentry.github.io/hg-novice/). In particular, the
+> latter are *distributed*, meaning that they don't need a centralized server
+> to host the repository.
