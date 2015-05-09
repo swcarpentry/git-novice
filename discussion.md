@@ -13,7 +13,7 @@ Note that since this material isn't essential for basic Git usage, it won't be c
 
 ## More Advanced Git Configuration
 
-In [Setting Up Git](01-setup.md),
+In [Setting Up Git](02-setup.md),
 we used `git config --global` to set some default options for Git.
 It turns out that these configuration options get stored in your home directory
 in a plain text file called `.gitconfig`.
@@ -52,7 +52,7 @@ you could run the command:
 $ git config --global alias.co checkout
 ~~~
 
-Now if we return to the example from [Exploring History](04-history.md) where we ran:
+Now if we return to the example from [Exploring History](05-history.md) where we ran:
 
 ~~~ {.bash}
 $ git checkout f22b25e mars.txt
@@ -106,7 +106,7 @@ $ git config --global --unset format.pretty
 
 ## Non-text Files
 
-Recall when we discussed [Conflicts](07-conflict.html)
+Recall when we discussed [Conflicts](08-conflict.html)
 there was a challenge that asked:
 
 > What does Git do

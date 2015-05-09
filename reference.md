@@ -3,16 +3,16 @@ layout: page
 title: Version Control with Git
 subtitle: Reference
 ---
-## [Setting Up Git](01-setup.html)
+## [Setting Up Git](02-setup.html)
 
 *   Use `git config` to configure
     a user name, email address, editor, and other preferences once per machine.
 
-## [Creating a Repository](02-create.html)
+## [Creating a Repository](03-create.html)
 
 *   `git init` initializes a repository.
 
-## [Tracking Changes](03-changes.html)
+## [Tracking Changes](04-changes.html)
 
 *   `git status` shows the status of a repository.
 *   Files can be stored in a project's working directory (which users see),
@@ -22,16 +22,16 @@ subtitle: Reference
 *   `git commit` saves the revisions in the staging area to the local repository.
 *   Always write a log message when committing changes.
 
-## [Exploring History](04-history.html)
+## [Exploring History](05-history.html)
 
 *   `git diff` displays differences between revisions.
 *   `git checkout` recovers old versions of files.
 
-## [Ignoring Things](05-ignore.html)
+## [Ignoring Things](06-ignore.html)
 
 *   The `.gitignore` file tells Git what files to ignore.
 
-## [Collaborating](06-collab.html)
+## [Collaborating](07-collab.html)
 
 *   A local Git repository can be connected to one or more remote repositories.
 *   Use the HTTPS protocol to connect to remote repositories until you have learned how to set up SSH.
@@ -40,17 +40,17 @@ subtitle: Reference
 *   `git clone` copies a remote repository to create a local repository
     with a remote called `origin` automatically set up.
 
-## [Conflicts](07-conflict.html)
+## [Conflicts](08-conflict.html)
 
 *   Conflicts occur when two or more people change the same file(s) at the same time.
 *   The version control system does not allow people to blindly overwrite each other's changes.
     Instead, it highlights conflicts so that they can be resolved.
 
-## [Open Science](08-open.html)
+## [Open Science](09-open.html)
 
 *   Open scientific work is more useful and more highly cited than closed.
 
-## [Licensing](09-licensing.html)
+## [Licensing](10-licensing.html)
 
 *   People who incorporate GPL'd software into their own software must
     make their software also open under the GPL license; most other
@@ -61,7 +61,7 @@ subtitle: Reference
 *   People who are not lawyers should not try to write licenses from
     scratch.
 
-## [Hosting](10-hosting.html)
+## [Hosting](11-hosting.html)
 
 *   Projects can be hosted on university servers,
     on personal domains,

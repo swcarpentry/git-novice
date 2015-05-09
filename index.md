@@ -53,16 +53,17 @@ to be shared can and should be stored in a version control system.
 
 ## Topics
 
-1.  [Setting Up Git](01-setup.html)
-2.  [Creating a Repository](02-create.html)
-3.  [Tracking Changes](03-changes.html)
-4.  [Exploring History](04-history.html)
-5.  [Ignoring Things](05-ignore.html)
-6.  [Collaborating](06-collab.html)
-7.  [Conflicts](07-conflict.html)
-8.  [Open Science](08-open.html)
-9.  [Licensing](09-licensing.html)
-10. [Hosting](10-hosting.html)
+1.  [Automated version control](01-basics.html)
+2.  [Setting Up Git](02-setup.html)
+3.  [Creating a Repository](03-create.html)
+4.  [Tracking Changes](04-changes.html)
+5.  [Exploring History](05-history.html)
+6.  [Ignoring Things](06-ignore.html)
+7.  [Collaborating](07-collab.html)
+8.  [Conflicts](08-conflict.html)
+9.  [Open Science](09-open.html)
+10. [Licensing](10-licensing.html)
+11. [Hosting](11-hosting.html)
 
 ## Other Resources
 

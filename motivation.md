@@ -14,4 +14,4 @@ Because many people are using GitHub to collaborating.
 
 ## Next Steps
 
-[Here we go!](01-setup.html)
+[Here we go!](01-basics.html)
