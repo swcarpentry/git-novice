@@ -6,9 +6,8 @@ minutes: 5
 ---
 > ## Learning Objectives {.objectives}
 >
-> *   Explain which initialization and configuration steps are required once per computer,
->     and which are required once per repository.
-
+> *  Configure `git` the first time is used on a computer
+> *  Understand the meaning of the `--global` configuration flag
 
 When we use Git on a new computer for the first time,
 we need to configure a few things.
