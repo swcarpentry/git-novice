@@ -54,6 +54,8 @@ You can check your settings at any time:
 $ git config --list
 ~~~
 
+You can change your configuration as many times as you want to: just use the same commands to choose another editor or update your email address.
+
 > ## Proxy {.callout}
 >
 > In some networks you need to use a [proxy](https://en.wikipedia.org/wiki/Proxy_server). If this is the case you may also
