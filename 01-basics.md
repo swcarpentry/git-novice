@@ -2,7 +2,7 @@
 layout: page
 title: Version Control with Git
 subtitle: Automated version control
-minutes: 10
+minutes: 5
 ---
 > ## Learning Objectives {.objectives}
 >
