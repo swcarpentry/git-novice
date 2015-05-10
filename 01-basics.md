@@ -12,7 +12,7 @@ minutes: 5
 We'll start by exploring how version control can be used
 to keep track of what one person did and when.
 Even if you aren't collaborating with other people,
-version control is much better for this than this:
+automated version control is much better than this:
 
 [![Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com](fig/phd101212s.gif)](http://www.phdcomics.com)
 
@@ -33,7 +33,7 @@ If there aren't conflicts, you can even try to play two sets of changes onto the
 ![Multiple versions can be merged](fig/merge.svg)
 
 A version control system is a tool that keeps track of these changes for us and
-helps us version and merge our files. A version control system allows you to
+helps us version and merge our files. It allows you to
 decide which changes made up the next version, called a
 [commit](reference.html#commit), and keeps useful metadata about them. The
 complete history of commits for a particular project and their metadada make up
