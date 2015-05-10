@@ -136,7 +136,7 @@ rm -rf  temp_git
 ## [Exploring History](05-history.html)
 
 *   One thing that has caused confusion comes up when recovering old versions
-    towards the end of ["Exploring history"](04-history.html).
+    towards the end of ["Exploring history"](05-history.html).
     If, instead of doing `$ git checkout f22b25e mars.txt`,
     someone does `$ git checkout f22b25e`,
     they wind up in the "detached HEAD" state and confusion abounds.
