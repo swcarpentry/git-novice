@@ -89,7 +89,7 @@ nothing to commit, working directory clean
 ~~~
 
 As a bonus, using `.gitignore` helps us avoid accidentally adding files to the
-repository that we don't want:
+repository that we don't want to track:
 
 ~~~ {.bash}
 $ git add a.dat
