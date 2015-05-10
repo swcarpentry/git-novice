@@ -20,7 +20,10 @@ In practice,
 though,
 it's easiest to use one copy as a central hub,
 and to keep it on the web rather than on someone's laptop.
-Most programmers use hosting services like [GitHub](http://github.com) or [BitBucket](http://bitbucket.org)
+Most programmers use hosting services like
+[GitHub](http://github.com),
+[BitBucket](http://bitbucket.org) or
+[GitLab](http://gitlab.com/)
 to hold those master copies;
 we'll explore the pros and cons of this in the final section of this lesson.
 
