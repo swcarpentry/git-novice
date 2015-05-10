@@ -9,18 +9,16 @@ minutes: 15
 > *   Explain what conflicts are and when they can occur.
 > *   Resolve conflicts resulting from a merge.
 
-As soon as people can work in parallel,
-someone's going to step on someone else's toes.
-This will even happen with a single person:
-if we are working on a piece of software on both our laptop and a server in the lab,
-we could make different changes to each copy.
-Version control helps us manage these [conflicts](reference.html#conflicts)
-by giving us tools to [resolve](reference.html#resolve) overlapping changes.
+As soon as people can work in parallel, someone's going to step on someone
+else's toes.  This will even happen with a single person: if we are working on
+a piece of software on both our laptop and a server in the lab, we could make
+different changes to each copy.  Version control helps us manage these
+[conflicts](reference.html#conflicts) by giving us tools to
+[resolve](reference.html#resolve) overlapping changes.
 
-To see how we can resolve conflicts,
-we must first create one.
-The file `mars.txt` currently looks like this
-in both partners' copies of our `planets` repository:
+To see how we can resolve conflicts, we must first create one.  The file
+`mars.txt` currently looks like this in both partners' copies of our `planets`
+repository:
 
 ~~~ {.bash}
 $ cat mars.txt
@@ -232,7 +230,7 @@ Fast-forward
  1 file changed, 1 insertion(+), 1 deletion(-)
 ~~~
 
-we get the merged file:
+We get the merged file:
 
 ~~~ {.bash}
 $ cat mars.txt 
