@@ -31,26 +31,29 @@ subtitle: Reference
 
 *   The `.gitignore` file tells Git what files to ignore.
 
-## [Collaborating](07-collab.html)
+## [Remotes in Github](07-github.html)
 
 *   A local Git repository can be connected to one or more remote repositories.
 *   Use the HTTPS protocol to connect to remote repositories until you have learned how to set up SSH.
 *   `git push` copies changes from a local repository to a remote repository.
 *   `git pull` copies changes from a remote repository to a local repository.
+
+## [Collaborating](08-collab.html)
+
 *   `git clone` copies a remote repository to create a local repository
     with a remote called `origin` automatically set up.
 
-## [Conflicts](08-conflict.html)
+## [Conflicts](09-conflict.html)
 
 *   Conflicts occur when two or more people change the same file(s) at the same time.
 *   The version control system does not allow people to blindly overwrite each other's changes.
     Instead, it highlights conflicts so that they can be resolved.
 
-## [Open Science](09-open.html)
+## [Open Science](10-open.html)
 
 *   Open scientific work is more useful and more highly cited than closed.
 
-## [Licensing](10-licensing.html)
+## [Licensing](11-licensing.html)
 
 *   People who incorporate GPL'd software into their own software must
     make their software also open under the GPL license; most other
@@ -61,7 +64,7 @@ subtitle: Reference
 *   People who are not lawyers should not try to write licenses from
     scratch.
 
-## [Hosting](11-hosting.html)
+## [Hosting](12-hosting.html)
 
 *   Projects can be hosted on university servers,
     on personal domains,

@@ -52,7 +52,7 @@ you could run the command:
 $ git config --global alias.co checkout
 ~~~
 
-Now if we return to the example from [Exploring History](04-history.html) where we ran:
+Now if we return to the example from [Exploring History](05-history.html) where we ran:
 
 ~~~ {.bash}
 $ git checkout f22b25e mars.txt
@@ -106,7 +106,7 @@ $ git config --global --unset format.pretty
 
 ## Non-text Files
 
-Recall when we discussed [Conflicts](08-conflict.html)
+Recall when we discussed [Conflicts](09-conflict.html)
 there was a challenge that asked:
 
 > What does Git do
