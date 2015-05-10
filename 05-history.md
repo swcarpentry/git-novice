@@ -11,10 +11,9 @@ minutes: 25
 > *   Restore old versions of files.
 
 
-If we want to see what we changed at different steps,
-we can use `git diff` again,
-but refer to old versions
-using the notation `HEAD~1`, `HEAD~2`, and so on:
+If we want to see what we changed at different steps, we can use `git diff`
+again, but with the notation `HEAD~1`, `HEAD~2`, and so on, to refer to old
+versions:
 
 ~~~ {.bash}
 $ git diff HEAD~1 mars.txt
