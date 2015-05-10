@@ -31,7 +31,7 @@ subtitle: Reference
 
 *   The `.gitignore` file tells Git what files to ignore.
 
-## [Remotes in Github](07-github.html)
+## [Remotes in GitHub](07-github.html)
 
 *   A local Git repository can be connected to one or more remote repositories.
 *   Use the HTTPS protocol to connect to remote repositories until you have learned how to set up SSH.
