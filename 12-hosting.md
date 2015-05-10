@@ -31,21 +31,29 @@ but requires more time and effort to set up than either
 the option above or the option below.
 
 The third option is to use a public hosting service like
-[GitHub](http://github.com),
-[BitBucket](http://bitbucket.org)
-or [GitLab](http://gitlab.com/).
-Each of these services provides a web interface that enables people to create, view, and edit their code repositories.
-These services also provide communication and project management tools including issue tracking, wiki pages,  email notifications, and code reviews.
-These services benefit from economies of scale and network effects:
-it's easier to run one large service well
-than to run many smaller services to the same standard.
-It's also easier for people to collaborate:
-using a popular service can help connect your project with communities already using the same service.
+[GitHub](http://github.com), [BitBucket](http://bitbucket.org), or
+[SourceForge](http://sourceforge.net).  Each of these services provides a web
+interface that enables people to create, view, and edit their code repositories.
+These services also provide communication and project management tools including
+issue tracking, wiki pages, email notifications, and code reviews.  These
+services benefit from economies of scale and network effects: it's easier to run
+one large service well than to run many smaller services to the same standard.
+It's also easier for people to collaborate.  Using a popular service can help
+connect your project with communities already using the same service.
 
 As an example,
 Software Carpentry [is on GitHub](https://github.com/swcarpentry/)
-where you can find the [source for this page](https://github.com/swcarpentry/git-novice/blob/gh-pages/10-hosting.md).
-Anyone with a GitHub account can suggest changes to this text.
+where you can find the [source for this page](https://github.com/swcarpentry/git-novice/blob/gh-pages/10-hosting.md).  Anyone with a GitHub account can suggest changes to this text.
+
+Using large, well-established services can also help you quickly take advantage
+of powerful tools.  One such tool, continuous integration (CI), can
+automatically run software builds and tests whenever code is committed or pull
+requests are submitted.  Direct integration of CI with an online hosting service
+means this information is present in any pull request, and helps maintain code
+integrity and quality standards.  While CI is still available in self-hosted
+situations, there is much less setup and maintenance involved with using an
+online service.  Furthermore, such tools are often provided free of charge to
+open source projects, and are also available for private repositories for a fee.
 
 > ## Institutional Barriers {.callout}
 >
