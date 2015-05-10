@@ -16,7 +16,7 @@ Because of this complexity, we don't teach novice learners about many
 interesting topics, such as branching, hashes, and commit objects.
 
 Instead to try convince them that version control is useful for researchers 
-working in teams or not, because it is:
+working in teams or not, because it is
 
 - a better way to "undo" changes,
 - a better way to collaborate than mailing files back and forth, and
@@ -74,7 +74,7 @@ working in teams or not, because it is:
 ## [Setting Up Git](02-setup.html)
 
 *   We suggest instructors and students use `nano` as the text editor for this
-    lessons because:
+    lessons because
     
     - it runs in all three major operating systems, 
     - it runs inside the shell (switching windows can be confusing to students), and 
