@@ -132,7 +132,7 @@ Branch master set up to track remote branch master from origin.
 > ~~~
 >
 > When you connect to another network that doesn't use a proxy you will need to
-> tell Git to disable the proxy using
+> tell Git to disable the proxy using:
 >
 > ~~~ {.bash}
 > $ git config --global --unset http.proxy
@@ -144,7 +144,7 @@ Branch master set up to track remote branch master from origin.
 > If your operating system has a password manager configured, `git push` will
 > try to use it when it needs your username and password. If you want to type
 > your username and password at the terminal instead of using
-> a password manager, type
+> a password manager, type:
 >
 > ~~~ {.bash}
 > $ unset SSH_ASKPASS
