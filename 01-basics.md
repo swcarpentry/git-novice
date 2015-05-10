@@ -6,8 +6,8 @@ minutes: 5
 ---
 > ## Learning Objectives {.objectives}
 >
-> *   Understand the benefits of an automated version control system
-> *   Understand the basics of how Git works
+> *   Understand the benefits of an automated version control system.
+> *   Understand the basics of how Git works.
 
 We'll start by exploring how version control can be used
 to keep track of what one person did and when.

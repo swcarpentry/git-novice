@@ -6,8 +6,8 @@ minutes: 5
 ---
 > ## Learning Objectives {.objectives}
 >
-> *  Configure `git` the first time is used on a computer
-> *  Understand the meaning of the `--global` configuration flag
+> *  Configure `git` the first time is used on a computer.
+> *  Understand the meaning of the `--global` configuration flag.
 
 When we use Git on a new computer for the first time,
 we need to configure a few things.
