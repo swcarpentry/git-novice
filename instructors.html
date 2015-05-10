@@ -57,7 +57,7 @@
 <li><p>Instructors should show learners graphical diff/merge tools like <a href="https://sourcegear.com/diffmerge/">DiffMerge</a>.</p></li>
 <li><p>When appropriate, explain that we teach Git rather than CVS, Subversion, or Mercurial primarily because of GitHub’s growing popularity: CVS and Subversion are now seen as legacy systems, and Mercurial isn’t nearly as widely used in the sciences right now.</p></li>
 </ul>
-<h2 id="setting-up-git"><a href="01-setup.html">Setting Up Git</a></h2>
+<h2 id="setting-up-git"><a href="02-setup.html">Setting Up Git</a></h2>
 <p>We suggest instructors and students use <code>nano</code> as the text editor for this lessons because:</p>
 <ul>
 <li>it runs in all three major operating systems,</li>
@@ -65,18 +65,18 @@
 <li>it has shortcut help at the bottom of the window.</li>
 </ul>
 <p>Please point out to students during setup that they can and should use another text editor if they’re already familiar with it. Below you will find some tips that could help solving problems when using other editors.</p>
-<h2 id="creating-a-repository"><a href="02-create.html">Creating a Repository</a></h2>
+<h2 id="creating-a-repository"><a href="03-create.html">Creating a Repository</a></h2>
 <p>The challenge “Places to create repositories” tries to reinforce the idea that the <code>.git</code> folder contains the whole Git repo and deleting this folder <em>undoes</em> a <code>git init</code>. It also gives the learner the way to fix the common mistake of putting unwanted folders (like <code>Desktop</code>) under version control.</p>
 <p>Instead of removing the <code>.git</code> folder directly, you can choose to move it first to a safer directory and remove it from there:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">mv</span> .git temp_git
-<span class="kw">rm</span> -rf  temp_git</code></pre></div>
-<h2 id="tracking-changes"><a href="03-changes.html">Tracking Changes</a></h2>
-<h2 id="exploring-history"><a href="04-history.html">Exploring History</a></h2>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">mv</span> .git temp_git
+<span class="kw">rm</span> -rf  temp_git</code></pre>
+<h2 id="tracking-changes"><a href="04-changes.html">Tracking Changes</a></h2>
+<h2 id="exploring-history"><a href="05-history.html">Exploring History</a></h2>
 <ul>
-<li>One thing that has caused confusion comes up when recovering old versions towards the end of <a href="04-history.html">“Exploring history”</a>. If, instead of doing <code>$ git checkout f22b25e mars.txt</code>, someone does <code>$ git checkout f22b25e</code>, they wind up in the “detached HEAD” state and confusion abounds. It’s then possible to keep on committing, but things like <code>git push origin master</code> a bit later will not give easily comprehensible results. It also makes it look like commits can be lost.</li>
+<li>One thing that has caused confusion comes up when recovering old versions towards the end of <a href="05-history.html">“Exploring history”</a>. If, instead of doing <code>$ git checkout f22b25e mars.txt</code>, someone does <code>$ git checkout f22b25e</code>, they wind up in the “detached HEAD” state and confusion abounds. It’s then possible to keep on committing, but things like <code>git push origin master</code> a bit later will not give easily comprehensible results. It also makes it look like commits can be lost.</li>
 </ul>
-<h2 id="ignoring-things"><a href="05-ignore.html">Ignoring Things</a></h2>
-<h2 id="collaborating"><a href="06-collab.html">Collaborating</a></h2>
+<h2 id="ignoring-things"><a href="06-ignore.html">Ignoring Things</a></h2>
+<h2 id="collaborating"><a href="08-collab.html">Collaborating</a></h2>
 <ul>
 <li><p>If your learners are advanced enough to be comfortable with SSH, tell them they can use keys to authenticate on GitHub instead of passwords, but don’t try to set this up during class: it takes too long, and is a distraction from the core ideas of the lesson.</p></li>
 <li><p>Role playing between two instructors can be effective when teaching the collaboration and conflict sections of the lesson. One instructor can play the role of the repository owner, while the second instructor can play the role of the collaborator. If it is possible, try to use two projectors so that the computer screens of both instructors can be seen. This makes for a very clear illustration to the students as to who does what.</p>
@@ -84,13 +84,13 @@
 <li><p>If you don’t have two projectors, have two instructors at the front of the room. Each instructor does their piece of the collaboration demonstration on their own computer and then passes the projector cord back and forth with the other instructor when it’s time for them to do the other part of the collaborative workflow. It takes less than 10 seconds for each switchover, so it doesn’t interrupt the flow of the lesson.</p>
 <p>And of course it helps to give each of the instructors a different-colored hat, or put different-colored sticky notes on their foreheads.</p></li>
 </ul>
-<h2 id="conflicts"><a href="07-conflict.html">Conflicts</a></h2>
+<h2 id="conflicts"><a href="09-conflict.html">Conflicts</a></h2>
 <p>FIXME</p>
-<h2 id="open-science"><a href="08-open.html">Open Science</a></h2>
+<h2 id="open-science"><a href="10-open.html">Open Science</a></h2>
 <p>FIXME</p>
-<h2 id="licensing"><a href="09-licensing.html">Licensing</a></h2>
+<h2 id="licensing"><a href="11-licensing.html">Licensing</a></h2>
 <p>FIXME</p>
-<h2 id="hosting"><a href="10-hosting.html">Hosting</a></h2>
+<h2 id="hosting"><a href="12-hosting.html">Hosting</a></h2>
 <p>FIXME</p>
         </div>
       </div>
