@@ -44,8 +44,8 @@ we're telling Git:
 *   what our favorite text editor is, and
 *   that we want to use these settings globally (i.e., for every project),
 
-The four commands above only need to be run once:
-the flag `--global` tells Git to use the settings for every project on this computer.
+The four commands above only need to be run once: the flag `--global` tells Git
+to use the settings for every project on this computer.
 
 You can check your settings at any time:
 
@@ -53,12 +53,14 @@ You can check your settings at any time:
 $ git config --list
 ~~~
 
-You can change your configuration as many times as you want to: just use the same commands to choose another editor or update your email address.
+You can change your configuration as many times as you want: just use the
+same commands to choose another editor or update your email address.
 
 > ## Proxy {.callout}
 >
-> In some networks you need to use a [proxy](https://en.wikipedia.org/wiki/Proxy_server). If this is the case you may also
-> need to tell Git about the proxy:
+> In some networks you need to use a
+> [proxy](https://en.wikipedia.org/wiki/Proxy_server). If this is the case, you
+> may also need to tell Git about the proxy:
 >
 > ~~~ {.bash}
 > $ git config --global http.proxy proxy-url
@@ -71,4 +73,3 @@ You can change your configuration as many times as you want to: just use the sam
 > $ git config --global --unset http.proxy
 > $ git config --global --unset https.proxy
 > ~~~
-
