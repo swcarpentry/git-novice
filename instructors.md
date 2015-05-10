@@ -37,7 +37,7 @@ working in teams or not, because it is
     Unix, different editors may or may not add a newline to the last line of a
     file.) Take a moment to explain these issues, since learners will almost
     certainly trip over them again.  If learners are running into line ending
-    problems, Github has a
+    problems, GitHub has a
     [page](https://help.github.com/articles/dealing-with-line-endings/#platform-all)
     that helps with troubleshooting.
 
@@ -112,7 +112,7 @@ working in teams or not, because it is
     challenge does that.
 
 *   This is a good moment to show a diff with a graphical diff tool. If you 
-    skip it because you're short on time, show it once in Github.
+    skip it because you're short on time, show it once in GitHub.
 
 ## [Exploring History](05-history.html)
 
@@ -125,13 +125,13 @@ working in teams or not, because it is
     `git checkout master`.
 
 *   This is a good moment to show a log within a Git GUI. If you skip it
-    because you're short on time, show it once in Github.
+    because you're short on time, show it once in GitHub.
 
 ## [Ignoring Things](06-ignore.html)
 
 Just remember that you can use regular expressions in `.gitignore`.
 
-## [Remotes in Github](07-github.html)
+## [Remotes in GitHub](07-github.html)
 
 *   Make it clear that Git and GitHub are not the same thing: Git is an open
     source version control tool, GitHub is a company that hosts Git
@@ -246,6 +246,6 @@ their breath after what is often a frustrating couple of hours.
 ## [Hosting](12-hosting.html)
 
 A common concern for learners is having their work publicly available on
-Github.  While we encourage open science, sometimes private repos are the
+GitHub.  While we encourage open science, sometimes private repos are the
 only choice. It's always interesting to mention the options to have
 web-hosted private repositories.
