@@ -145,7 +145,7 @@ rm -rf  temp_git
     It also makes it look like commits can be lost.
 
 ## [Ignoring Things](06-ignore.html)
-## [Collaborating](07-collab.html)
+## [Collaborating](08-collab.html)
 
 *   If your learners are advanced enough to be comfortable with SSH,
     tell them they can use keys to authenticate on GitHub instead of passwords,
@@ -185,18 +185,18 @@ rm -rf  temp_git
     And of course it helps to give each of the instructors a different-colored hat,
     or put different-colored sticky notes on their foreheads.
 
-## [Conflicts](08-conflict.html)
+## [Conflicts](09-conflict.html)
 
 FIXME
 
-## [Open Science](09-open.html)
+## [Open Science](10-open.html)
 
 FIXME
 
-## [Licensing](10-licensing.html)
+## [Licensing](11-licensing.html)
 
 FIXME
 
-## [Hosting](11-hosting.html)
+## [Hosting](12-hosting.html)
 
 FIXME
