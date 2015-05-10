@@ -9,7 +9,7 @@ minutes: 15
 > *   Explain what conflicts are and when they can occur.
 > *   Resolve conflicts resulting from a merge.
 
-As soon as people can work in parallel, someone's going to step on someone
+As soon as people can work in parallel, it's likely someone's going to step on someone
 else's toes.  This will even happen with a single person: if we are working on
 a piece of software on both our laptop and a server in the lab, we could make
 different changes to each copy.  Version control helps us manage these
