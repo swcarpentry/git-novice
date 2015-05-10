@@ -9,14 +9,11 @@ subtitle: Instructor's Guide
 
 Version control might be the most important topic we teach, but Git is
 definitely the most complicated tool.  However, GitHub presently dominates the
-open software repository landscape, so we have to help novices learn just
-enough Git to feel they can and should learn more on their own.
+open software repository landscape, so the time and effort required to teach
+fundamental Git is justified and worthwhile.
 
-There are many things we don't teach:
-
-- we don't teach branching, because despite being a powerful tool, it is an
-  extra cognitive burden for novices.
-- we don't enter the details of Git internals, like hashes and commit objects.
+Because of this complexity, we don't teach novice learners about many
+interesting topics, such as branching, hashes, and commit objects.
 
 Instead to try convince them that version control is useful for researchers 
 working in teams or not, because it is:
@@ -59,7 +56,7 @@ working in teams or not, because it is:
     Subversion are now seen as legacy systems, and Mercurial isn't nearly as
     widely used in the sciences right now.
 
-## [Motivation](index.html)
+## [Automated version control](01-basics.html)
 
 *   Ask, "Who uses 'undo' in their editor?" All say "Me". 'Undo' is the simplest
     form of version control.
@@ -134,12 +131,7 @@ working in teams or not, because it is:
 
 Just remember that you can use regular expressions in `.gitignore`.
 
-## [Collaborating](08-collab.html)
-
-*   Decide in advance whether all the learners will work in one shared
-    repository, or whether they will work in pairs (or other small groups) in
-    separate repositories.  The former is easier to set up; the latter runs
-    more smoothly.
+## [Remotes in Github](07-github.html)
 
 *   Make it clear that Git and GitHub are not the same thing: Git is an open
     source version control tool, GitHub is a company that hosts Git
@@ -153,6 +145,13 @@ Just remember that you can use regular expressions in `.gitignore`.
 
 *   It is very useful to draw a diagram showing the different repositories
     involved.
+
+## [Collaborating](08-collab.html)
+
+*   Decide in advance whether all the learners will work in one shared
+    repository, or whether they will work in pairs (or other small groups) in
+    separate repositories.  The former is easier to set up; the latter runs
+    more smoothly.
 
 *   Role playing between two instructors can be effective when teaching the
     collaboration and conflict sections of the lesson.  One instructor can play
@@ -212,7 +211,7 @@ Just remember that you can use regular expressions in `.gitignore`.
 
 ## [Conflicts](09-conflict.html)
 
-*   Expect the learners to make mistakes. Expect *you* to make mistakes. This
+*   Expect the learners to make mistakes. Expect *yourself* to make mistakes. This
     happens because it is late in the lesson and everyone is tired.
 
 *   If you're the only instructor, the best way to create a conflict is:
@@ -232,19 +231,17 @@ Just remember that you can use regular expressions in `.gitignore`.
     - discard the remote file, `git checkout --ours conflicted_file.txt`
     - discard the local file, `git checkout --theirs conflicted_file.txt`
     
-    You still have to `git add` and `git commit` after this.
+    You still have to `git add` and `git commit` after this. This is
+    particularly useful when working with binary files.
 
 ## [Open Science](10-open.html)
 
-
 ## [Licensing](11-licensing.html)
 
-We teach about licensing because:
-
-- questions about who owns what, or can use what, arise naturally once we
-  start talking about using public services like GitHub to store files; and 
-- the discussion gives learners a chance to catch their breath after what
-  is often a frustrating couple of hours.
+We teach about licensing because questions about who owns what, or can use
+what, arise naturally once we start talking about using public services like
+GitHub to store files. Also, the discussion gives learners a chance to catch
+their breath after what is often a frustrating couple of hours.
 
 ## [Hosting](12-hosting.html)
 
