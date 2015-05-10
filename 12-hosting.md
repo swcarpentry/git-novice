@@ -43,7 +43,7 @@ connect your project with communities already using the same service.
 
 As an example,
 Software Carpentry [is on GitHub](https://github.com/swcarpentry/)
-where you can find the [source for this page](https://github.com/swcarpentry/git-novice/blob/gh-pages/10-hosting.md).  Anyone with a GitHub account can suggest changes to this text.
+where you can find the [source for this page](https://github.com/swcarpentry/git-novice/blob/gh-pages/12-hosting.md).  Anyone with a GitHub account can suggest changes to this text.
 
 Using large, well-established services can also help you quickly take advantage
 of powerful tools.  One such tool, continuous integration (CI), can
