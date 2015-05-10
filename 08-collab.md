@@ -6,7 +6,7 @@ minutes: 25
 ---
 > ## Learning Objectives {.objectives}
 >
-> *   Explain how to collaborate pushing to a common repo
+> *   Explain how to collaborate pushing to a common repository.
 
 For the next step, get into pairs.
 Pick one of your repositories on GitHub to use for collaboration.
