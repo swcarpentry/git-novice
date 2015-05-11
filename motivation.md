@@ -15,6 +15,10 @@ project
 - revert to any previous version
 - collaborate in the same files without fearing conflicts
 
+## Two main concepts
+
+- *commit*: a recorded set of changes in your project's file
+- *repository*: the history of all your project's commits
 
 ## Why Git & Github?
 
