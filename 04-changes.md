@@ -100,9 +100,9 @@ $ git commit -m "Start notes on Mars as a base"
 When we run `git commit`,
 Git takes everything we have told it to save by using `git add`
 and stores a copy permanently inside the special `.git` directory.
-This permanent copy is called a [revision](reference.html#revision)
-and its short identifier is `f22b25e`
-(Your revision may have another identifier.)
+This permanent copy is called a [commit](reference.html#commit)
+(or [revision](reference.html#revision)) and its short identifier is `f22b25e`
+(Your commit may have another identifier.)
 
 We use the `-m` flag (for "message")
 to record a short, descriptive, and specific comment that will help us remember later on what we did and why.
@@ -140,14 +140,14 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
     Start notes on Mars as a base
 ~~~
 
-`git log` lists all revisions  made to a repository in reverse chronological order.
-The listing for each revision includes
-the revision's full identifier
+`git log` lists all commits  made to a repository in reverse chronological order.
+The listing for each commit includes
+the commit's full identifier
 (which starts with the same characters as
 the short identifier printed by the `git commit` command earlier),
-the revision's author,
+the commit's author,
 when it was created,
-and the log message Git was given when the revision was created.
+and the log message Git was given when the commit was created.
 
 > ## Where Are My Changes? {.callout}
 >
