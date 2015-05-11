@@ -6,8 +6,8 @@ minutes: 5
 ---
 > ## Learning Objectives {.objectives}
 > 
-> *   Configure Git to ignore specific files,
->     and explain why it is sometimes useful to do so.
+> *   Configure Git to ignore specific files.
+> *   Explain why it is sometimes useful to do so.
 
 What if we have files that we do not want Git to track for us,
 like backup files created by our editor
@@ -41,7 +41,7 @@ What's worse,
 having them all listed could distract us from changes that actually matter,
 so let's tell Git to ignore them.
 
-We do this by creating a file in the root directory of our project called `.gitignore`.
+We do this by creating a file in the root directory of our project called `.gitignore`:
 
 ~~~ {.bash}
 $ nano .gitignore
@@ -88,8 +88,8 @@ $ git status
 nothing to commit, working directory clean
 ~~~
 
-As a bonus,
-using `.gitignore` helps us avoid accidentally adding files to the repository that we don't want.
+As a bonus, using `.gitignore` helps us avoid accidentally adding files to the
+repository that we don't want to track:
 
 ~~~ {.bash}
 $ git add a.dat
