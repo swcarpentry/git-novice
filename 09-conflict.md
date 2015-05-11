@@ -151,7 +151,7 @@ Our change&mdash;the one in `HEAD`&mdash;is preceded by `<<<<<<<`.
 Git has then inserted `=======` as a separator between the conflicting changes
 and marked the end of the content downloaded from GitHub with `>>>>>>>`.
 (The string of letters and digits after that marker
-identifies the revision we've just downloaded.)
+identifies the commit we've just downloaded.)
 
 It is now up to us to edit this file to remove these markers
 and reconcile the changes.
