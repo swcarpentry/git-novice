@@ -117,7 +117,8 @@ remote
 
 repository
 :   A storage area where a [version control](#version-control) system
-    stores old [revisions](#revision) of files and information about who changed what, when.
+    stores the full history of [commits](#commit) of a project and information
+    about who changed what, when.
 
 resolve
 :   To eliminate the [conflicts](#conflict) between two or more incompatible changes to a file or set of files
