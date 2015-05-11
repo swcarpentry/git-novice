@@ -124,7 +124,8 @@ resolve
     being managed by a [version control](#version-control) system.
 
 revision
-:   A recorded state of a [version control](#version-control) [repository](#repository).
+:   A recorded [change set](#change-set) of a [version control](#version-control) 
+    [repository](#repository). The same as a [commit](#commit).
 
 SSH
 :   The Secure Shell [protocol](#protocol) used for secure communication between computers.
