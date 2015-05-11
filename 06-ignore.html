@@ -30,19 +30,20 @@
           <h2 class="subtitle">Ignoring Things</h2>
 <section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+<h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
-<li>Configure Git to ignore specific files, and explain why it is sometimes useful to do so.</li>
+<li>Configure Git to ignore specific files.</li>
+<li>Explain why it is sometimes useful to do so.</li>
 </ul>
 </div>
 </section>
 <p>What if we have files that we do not want Git to track for us, like backup files created by our editor or intermediate files created during data analysis. Let’s create a few dummy files:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> results
-$ <span class="kw">touch</span> a.dat b.dat c.dat results/a.out results/b.out</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> results
+$ <span class="kw">touch</span> a.dat b.dat c.dat results/a.out results/b.out</code></pre>
 <p>and see what Git says:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
 <pre class="output"><code># On branch master
 # Untracked files:
 #   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
@@ -53,14 +54,14 @@ $ <span class="kw">touch</span> a.dat b.dat c.dat results/a.out results/b.out</c
 #   results/
 nothing added to commit but untracked files present (use &quot;git add&quot; to track)</code></pre>
 <p>Putting these files under version control would be a waste of disk space. What’s worse, having them all listed could distract us from changes that actually matter, so let’s tell Git to ignore them.</p>
-<p>We do this by creating a file in the root directory of our project called <code>.gitignore</code>.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> .gitignore
-$ <span class="kw">cat</span> .gitignore</code></pre></div>
+<p>We do this by creating a file in the root directory of our project called <code>.gitignore</code>:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> .gitignore
+$ <span class="kw">cat</span> .gitignore</code></pre>
 <pre class="output"><code>*.dat
 results/</code></pre>
 <p>These patterns tell Git to ignore any file whose name ends in <code>.dat</code> and everything in the <code>results</code> directory. (If any of these files were already being tracked, Git would continue to track them.)</p>
 <p>Once we have created this file, the output of <code>git status</code> is much cleaner:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
 <pre class="output"><code># On branch master
 # Untracked files:
 #   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
@@ -68,19 +69,19 @@ results/</code></pre>
 #   .gitignore
 nothing added to commit but untracked files present (use &quot;git add&quot; to track)</code></pre>
 <p>The only thing Git notices now is the newly-created <code>.gitignore</code> file. You might think we wouldn’t want to track it, but everyone we’re sharing our repository with will probably want to ignore the same things that we’re ignoring. Let’s add and commit <code>.gitignore</code>:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add .gitignore
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add .gitignore
 $ <span class="kw">git</span> commit -m <span class="st">&quot;Add the ignore file&quot;</span>
-$ <span class="kw">git</span> status</code></pre></div>
+$ <span class="kw">git</span> status</code></pre>
 <pre class="output"><code># On branch master
 nothing to commit, working directory clean</code></pre>
-<p>As a bonus, using <code>.gitignore</code> helps us avoid accidentally adding files to the repository that we don’t want.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add a.dat</code></pre></div>
+<p>As a bonus, using <code>.gitignore</code> helps us avoid accidentally adding files to the repository that we don’t want to track:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add a.dat</code></pre>
 <pre class="output"><code>The following paths are ignored by one of your .gitignore files:
 a.dat
 Use -f if you really want to add them.
 fatal: no files added</code></pre>
 <p>If we really want to override our ignore settings, we can use <code>git add -f</code> to force Git to add something. We can also always see the status of ignored files if we want:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status --ignored</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status --ignored</code></pre>
 <pre class="output"><code># On branch master
 # Ignored files:
 #  (use &quot;git add -f &lt;file&gt;...&quot; to include in what will be committed)
