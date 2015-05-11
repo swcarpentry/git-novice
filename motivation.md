@@ -15,4 +15,4 @@ Because many people are using GitHub to collaborate
 
 ## Next Steps
 
-[Here we go!](01-basics.html)
+[Let's start our lesson](index.html)
