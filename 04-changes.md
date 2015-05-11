@@ -273,12 +273,22 @@ Git has a special *staging area*
 where it keeps track of things that have been added to
 the current [change set](reference.html#change-set)
 but not yet committed.
-If you think of git as taking snapshots of changes over the life of a
-project,
-`git add` specifies *what* will go in a snapshot
-(putting things in the staging area),
-and `git commit` then *actually takes* the snapshot and
-copies it to long-term storage (as a commit):
+
+> ## Staging area {.callout}
+> If you think of git as taking snapshots of changes over the life of a
+> project,
+> `git add` specifies *what* will go in a snapshot
+> (putting things in the staging area),
+> and `git commit` then *actually takes* the snapshot, and
+> copies it to long-term storage (as a commit).
+> If you don't have anything staged when you type `git commit`,
+> git will prompt you to use `git commit -a` or `git commit --all`,
+> which is kind of like gathering *everyone* for the picture!
+> However, it's often considered bad practice to do this instead
+> of explicitly adding things to the staging area, because you might
+> commit changes you forgot you made. Try to stage things manually,
+> or you might find yourself searching for "git undo commit" more
+> than you would like!
 
 ![The Git Staging Area](fig/git-staging-area.svg)
 
