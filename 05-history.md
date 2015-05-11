@@ -6,14 +6,13 @@ minutes: 25
 ---
 > ## Learning Objectives {.objectives}
 >
-> *   Identify and use Git revision numbers.
+> *   Identify and use Git commit numbers.
 > *   Compare various versions of tracked files.
 > *   Restore old versions of files.
 
-
 If we want to see what we changed at different steps, we can use `git diff`
 again, but with the notation `HEAD~1`, `HEAD~2`, and so on, to refer to old
-versions:
+commits:
 
 ~~~ {.bash}
 $ git diff HEAD~1 mars.txt
@@ -43,14 +42,14 @@ index df0654a..b36abfd 100644
 ~~~
 
 In this way,
-we can build up a chain of revisions.
+we can build up a chain of commits.
 The most recent end of the chain is referred to as `HEAD`;
-we can refer to previous revisions using the `~` notation,
+we can refer to previous commits using the `~` notation,
 so `HEAD~1` (pronounced "head minus one")
-means "the previous revision",
-while `HEAD~123` goes back 123 revisions from where we are now.
+means "the previous commit",
+while `HEAD~123` goes back 123 commits from where we are now.
 
-We can also refer to revisions using
+We can also refer to commits using
 those long strings of digits and letters
 that `git log` displays.
 These are unique IDs for the changes,
@@ -141,21 +140,21 @@ As you might guess from its name,
 `git checkout` checks out (i.e., restores) an old version of a file.
 In this case,
 we're telling Git that we want to recover the version of the file recorded in `HEAD`,
-which is the last saved revision.
+which is the last saved commit.
 If we want to go back even further,
-we can use a revision identifier instead:
+we can use a commit identifier instead:
 
 ~~~ {.bash}
 $ git checkout f22b25e mars.txt
 ~~~
 
 It's important to remember that
-we must use the revision number that identifies the state of the repository
+we must use the commit number that identifies the state of the repository
 *before* the change we're trying to undo.
-A common mistake is to use the revision number of
+A common mistake is to use the number of
 the commit in which we made the change we're trying to get rid of.
 In the example below, we want to retrieve the state from before the most
-recent commit (`HEAD~1`), which is revision `f22b25e`:
+recent commit (`HEAD~1`), which is commit `f22b25e`:
 
 ![Git Checkout](fig/git-checkout.svg)
 
@@ -178,7 +177,7 @@ So, to put it all together:
 > The double dash `--` is needed to separate the names of the files being recovered
 > from the command itself:
 > without it,
-> Git would try to use the name of the file as the revision identifier.
+> Git would try to use the name of the file as the commit identifier.
 
 The fact that files can be reverted one by one
 tends to change the way people organize their work.
@@ -196,7 +195,7 @@ moving backward and forward in time becomes much easier.
 > modifications she made this morning "broke" the script and it no longer runs. She has spent
 > ~ 1hr trying to fix it, with no luck...
 >
-> Luckily, she has been keeping track of her revisions using Git! Which commands below will
+> Luckily, she has been keeping track of her project's versions using Git! Which commands below will
 > let her recover the last committed version of her Python script called
 > `data_cruncher.py`?
 >
@@ -218,6 +217,6 @@ moving backward and forward in time becomes much easier.
 > 4. 
 >
 >     ~~~
->     $ git checkout <unique ID of last revision> data_cruncher.py
+>     $ git checkout <unique ID of last commit> data_cruncher.py
 >     ~~~
 > 5. Both 2 & 4
