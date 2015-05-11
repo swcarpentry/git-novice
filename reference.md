@@ -135,6 +135,6 @@ timestamp
 
 version control
 :   A tool for managing changes to a set of files.
-    Each set of changes creates a new [revision](#revision) of the files;
-    the version control system allows users to recover old revisions reliably,
+    Each set of changes creates a new [commit](#commit) of the files;
+    the version control system allows users to recover old commits reliably,
     and helps manage conflicting changes made by different users.
