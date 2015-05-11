@@ -9,9 +9,11 @@ subtitle: Motivation
 Let some software handle the versions of your project let you focus on your
 project
 
-## Why Git?
 
-Because many people are using GitHub to collaborate
+## Why Git & Github?
+
+- no need for a server: easy to set up
+- GitHub's strong community: easy to ask for help
 
 ## Next Steps
 
