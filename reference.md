@@ -112,8 +112,8 @@ protocol
     Common protocols on the Internet include [HTTP](#http) and [SSH](#ssh).
 
 remote
-:   A version control [repository](#repository) other than the current one
-    that the current one is somehow connected to or mirroring.
+:   (of a repository) A version control [repository](#repository) connected to another,
+    in such way that both can be kept in sync exchanging [commits](#commit).
 
 repository
 :   A storage area where a [version control](#version-control) system
