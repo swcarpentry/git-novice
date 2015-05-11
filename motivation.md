@@ -9,6 +9,12 @@ subtitle: Motivation
 Let some software handle the versions of your project let you focus on your
 project
 
+## Version Control Features
+
+- history of all changes: what, when, and by whom was changed
+- revert to any previous version
+- collaborate in the same files without fearing conflicts
+
 
 ## Why Git & Github?
 
