@@ -6,8 +6,8 @@ minutes: 15
 ---
 > ## Learning Objectives {.objectives}
 >
-> *   Explain what conflicts are and when they can occur.
-> *   Resolve conflicts resulting from a merge.
+> *   Conflicts in Git repositories
+> *   Resolving conflicts resulting from a merge
 
 As soon as people can work in parallel, it's likely someone's going to step on someone
 else's toes.  This will even happen with a single person: if we are working on

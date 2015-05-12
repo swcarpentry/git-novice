@@ -6,7 +6,7 @@ minutes: 5
 ---
 > ## Learning Objectives {.objectives}
 >
-> *   Explain how version control can be leveraged as an electronic lab notebook for computational work.
+> *  A version control system  as an electronic lab notebook for computational work
 
 > The opposite of "open" isn't "closed".
 > The opposite of "open" is "broken".

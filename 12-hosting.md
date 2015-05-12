@@ -6,7 +6,7 @@ minutes: 10
 ---
 > ## Learning Objectives {.objectives}
 >
-> *   Explain different options for hosting scientific work.
+> *   Different options for hosting scientific work
 
 The second big question for groups that want to open up their work
 is where to host their code and data.
