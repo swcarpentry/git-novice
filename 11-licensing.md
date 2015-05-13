@@ -7,8 +7,8 @@ minutes: 10
 > ## Learning Objectives {.objectives}
 >
 > *   Explain why adding licensing and citation information to a project repository is important.
-> *   Explain what license choices are available and how to choose one.
-> *   Explain how licensing and social expectations differ.
+> *   Choose a proper license.
+> *   Explain differences in licensing and social expectations.
 
 When a repository with source code, a manuscript
 or other creative works becomes public, it should include a

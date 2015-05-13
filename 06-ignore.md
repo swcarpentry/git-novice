@@ -7,7 +7,7 @@ minutes: 5
 > ## Learning Objectives {.objectives}
 > 
 > *   Configure Git to ignore specific files.
-> *   Explain why it is sometimes useful to do so.
+> *   Explain why ignoring files can be useful.
 
 What if we have files that we do not want Git to track for us,
 like backup files created by our editor
