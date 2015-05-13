@@ -10,7 +10,7 @@ project.
 
 ## Why Git?
 
-Because many people are using GitHub to collaborating.
+Because many people are using GitHub for collaborating.
 
 ## Next Steps
 
