@@ -286,7 +286,9 @@ but not yet committed.
 > which is kind of like gathering *everyone* for the picture!
 > However, it's almost always better to
 > explicitly add things to the staging area, because you might
-> commit changes you forgot you made.
+> commit changes you forgot you made. (Going back to snapshots,
+> you might get the extra with incomplete makeup walking on
+> the stage for the snapshot because you used `-a`!)
 > Try to stage things manually,
 > or you might find yourself searching for "git undo commit" more
 > than you would like!
