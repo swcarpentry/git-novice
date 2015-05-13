@@ -6,9 +6,9 @@ minutes: 30
 ---
 > ## Learning Objectives {.objectives}
 >
-> *   Remote repositories: configuration and motivation
-> *   Cloning a remote repository 
-> *   Pushed to or pulled from a remote repository
+> *   Explain what remote repositories are and why they are useful.
+> *   Clone a remote repository. 
+> *   Push to or pull from a remote repository.
 
 Version control really comes into its own
 when we begin to collaborate with other people.

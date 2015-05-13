@@ -6,7 +6,7 @@ minutes: 10
 ---
 > ## Learning Objectives {.objectives}
 > 
-> *   Creating a local Git repository
+> *   Create a local Git repository.
 
 Once Git is configured,
 we can start using it.

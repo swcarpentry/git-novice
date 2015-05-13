@@ -6,9 +6,9 @@ minutes: 25
 ---
 > ## Learning Objectives {.objectives}
 >
-> *   Git revision numbers: identification and use
-> *   Comparing various versions of tracked files
-> *   Restoring old versions of files
+> *   Identify and use Git revision numbers.
+> *   Compare various versions of tracked files.
+> *   Restore old versions of files.
 
 
 If we want to see what we changed at different steps, we can use `git diff`
