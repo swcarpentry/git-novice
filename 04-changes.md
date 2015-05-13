@@ -280,13 +280,14 @@ but not yet committed.
 > `git add` specifies *what* will go in a snapshot
 > (putting things in the staging area),
 > and `git commit` then *actually takes* the snapshot, and
-> copies it to long-term storage (as a commit).
+> makes a permanent record of it (as a commit).
 > If you don't have anything staged when you type `git commit`,
 > Git will prompt you to use `git commit -a` or `git commit --all`,
 > which is kind of like gathering *everyone* for the picture!
-> However, it's often considered bad practice to do this instead
-> of explicitly adding things to the staging area, because you might
-> commit changes you forgot you made. Try to stage things manually,
+> However, it's almost always better to
+> explicitly add things to the staging area, because you might
+> commit changes you forgot you made.
+> Try to stage things manually,
 > or you might find yourself searching for "git undo commit" more
 > than you would like!
 
