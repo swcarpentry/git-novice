@@ -5,6 +5,16 @@ subtitle: Instructor's Guide
 ---
 ## Legend
 
+We follow two scientists, Dracula and Wolfman, collaborating in a project. In
+the first part of the lesson, Dracula is working by himself in his laptop and
+used Git locally. In the second part of the lesson, he uploads his local repo
+to GitHub ands add Wolfman as a collaborator. With both working in the same
+project, conflicts arise and we see how to handle them with Git. The lesson
+closes with a part on Open Science that is somewhat detached from the story.
+
+The story mimics the typical way novices use Git and GitHub and tries to solve
+the concerns they may have.
+
 ## Overall
 
 Version control might be the most important topic we teach, but Git is
