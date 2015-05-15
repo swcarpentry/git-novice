@@ -25,7 +25,7 @@ fundamental Git is justified and worthwhile.
 Because of this complexity, we don't teach novice learners about many
 interesting topics, such as branching, hashes, and commit objects.
 
-Instead to try convince them that version control is useful for researchers 
+Instead we try to convince them that version control is useful for researchers
 working in teams or not, because it is
 
 - a better way to "undo" changes,
@@ -139,7 +139,8 @@ working in teams or not, because it is
 
 ## [Ignoring Things](06-ignore.html)
 
-Just remember that you can use regular expressions in `.gitignore`.
+Just remember that you can use wildcards and regular expressions to ignore a
+particular set of files in `.gitignore`.
 
 ## [Remotes in GitHub](07-github.html)
 
