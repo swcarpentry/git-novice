@@ -6,24 +6,25 @@ subtitle: Motivation
 
 ## Why Version Control?
 
-Let some software handle the versions of your project let you focus on your
-project
+Using a software tool to handle the versions of your project files
+lets you focus on the more interesting/innovative aspects of your project
 
 ## Version Control Features
 
-- history of all changes: what, when, and by whom was changed
-- revert to any previous version
-- collaborate in the same files without fearing conflicts
+*   It's easy to set up
+*   Every copy of a Git repository is a full backup of a project and its history
+*   A few easy-to-remember commands are all you need for most day-to-day version control tasks
+*   The [GitHub](https://github.com/) hosting service provides a web-based collaboration service
 
 ## Two main concepts
 
-- *commit*: a recorded set of changes in your project's file
-- *repository*: the history of all your project's commits
+*   *commit*: a recorded set of changes in your project's file
+*   *repository*: the history of all your project's commits
 
-## Why Git & Github?
+## Why Use Github?
 
-- no need for a server: easy to set up
-- GitHub's strong community: easy to ask for help
+*   No need for a server: easy to set up
+*   GitHub's strong community: your colleagues are probably already there
 
 ## Next Steps
 
