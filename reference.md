@@ -81,7 +81,8 @@ change set
 
 commit
 :   To record the current state of a set of files (a [change set](#changeset))
-    in a [version control](#version-control) [repository](#repository).
+    in a [version control](#version-control) [repository](#repository). As a noun, 
+    the result of commiting, i.e. a recorded change set in a repository.
     If a commit contains changes to multiple files,
     all of the changes are recorded together.
 
@@ -111,19 +112,21 @@ protocol
     Common protocols on the Internet include [HTTP](#http) and [SSH](#ssh).
 
 remote
-:   A version control [repository](#repository) other than the current one
-    that the current one is somehow connected to or mirroring.
+:   (of a repository) A version control [repository](#repository) connected to another,
+    in such way that both can be kept in sync exchanging [commits](#commit).
 
 repository
 :   A storage area where a [version control](#version-control) system
-    stores old [revisions](#revision) of files and information about who changed what, when.
+    stores the full history of [commits](#commit) of a project and information
+    about who changed what, when.
 
 resolve
 :   To eliminate the [conflicts](#conflict) between two or more incompatible changes to a file or set of files
     being managed by a [version control](#version-control) system.
 
 revision
-:   A recorded state of a [version control](#version-control) [repository](#repository).
+:   A recorded [change set](#change-set) of a [version control](#version-control) 
+    [repository](#repository). The same as a [commit](#commit).
 
 SSH
 :   The Secure Shell [protocol](#protocol) used for secure communication between computers.
@@ -133,6 +136,6 @@ timestamp
 
 version control
 :   A tool for managing changes to a set of files.
-    Each set of changes creates a new [revision](#revision) of the files;
-    the version control system allows users to recover old revisions reliably,
+    Each set of changes creates a new [commit](#commit) of the files;
+    the version control system allows users to recover old commits reliably,
     and helps manage conflicting changes made by different users.
