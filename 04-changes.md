@@ -100,9 +100,9 @@ $ git commit -m "Start notes on Mars as a base"
 When we run `git commit`,
 Git takes everything we have told it to save by using `git add`
 and stores a copy permanently inside the special `.git` directory.
-This permanent copy is called a [revision](reference.html#revision)
-and its short identifier is `f22b25e`
-(Your revision may have another identifier.)
+This permanent copy is called a [commit](reference.html#commit)
+(or [revision](reference.html#revision)) and its short identifier is `f22b25e`
+(Your commit may have another identifier.)
 
 We use the `-m` flag (for "message")
 to record a short, descriptive, and specific comment that will help us remember later on what we did and why.
@@ -140,14 +140,14 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
     Start notes on Mars as a base
 ~~~
 
-`git log` lists all revisions  made to a repository in reverse chronological order.
-The listing for each revision includes
-the revision's full identifier
+`git log` lists all commits  made to a repository in reverse chronological order.
+The listing for each commit includes
+the commit's full identifier
 (which starts with the same characters as
 the short identifier printed by the `git commit` command earlier),
-the revision's author,
+the commit's author,
 when it was created,
-and the log message Git was given when the revision was created.
+and the log message Git was given when the commit was created.
 
 > ## Where Are My Changes? {.callout}
 >
@@ -218,9 +218,9 @@ If we break it down into pieces:
 
 1.  The first line tells us that Git is producing output similar to the Unix `diff` command
     comparing the old and new versions of the file.
-2.  The second line tells exactly which revisions of the file
+2.  The second line tells exactly which versions of the file
     Git is comparing;
-    `df0654a` and `315bf3a` are unique computer-generated labels for those revisions.
+    `df0654a` and `315bf3a` are unique computer-generated labels for those versions.
 3.  The third and fourth lines once again show the name of the file being changed.
 4.  The remaining lines are the most interesting, they show us the actual differences
     and the lines on which they occur.
