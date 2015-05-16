@@ -201,3 +201,147 @@ Even though a logo will be stored in a binary format such as `jpg` or `png`,
 you can expect it will remain fairly static through the lifetime of your repository.
 On the rare occasion that branding does change,
 you will probably just want to replace the logo completely rather than merge little differences in.
+
+##Removing a file
+Adding and modifying files are not the only actions one might take
+when working on a project.  It might be required to remove a file
+from the repository.
+
+Create a new file for the planet Nibiru:
+
+~~~{.bash}
+$ echo "This is another name for fake planet X" > nibiru.txt
+~~~
+
+Now add to the repository like you have learned earlier:
+
+~~~{.bash}
+$ git add nibiru.txt
+$ git commit -m 'adding info on nibiru'
+$ git status
+~~~
+~~~{.output}
+On branch master
+nothing to commit, working directory clean
+~~~
+
+Nibiru is not a real planet.  That was a silly idea.  Let us remove
+it from the disk and then from the repository:
+
+~~~{.bash}
+$ rm nibiru.txt
+$ git status
+~~~
+~~~{.output}
+On branch master
+Changes not staged for commit:
+   (use "git add/rm <file>..." to update what will be committed)
+   (use "git checkout -- <file>..." to discard changes in working directory)
+
+    deleted:    nibiru.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+~~~
+
+See how git has noticed that the file `nibiru.txt` has been removed
+from the disk.  The next step is to "stage" the removal of the file
+from the repository.  This is done with the command `git rm`:
+
+~~~{.bash}
+$ git rm nibiru.txt
+$ git status
+~~~
+~~~{.output}
+On branch master
+Changes to be committed:
+   (use "git reset HEAD <file>..." to unstage)
+
+   deleted:    nibiru.txt
+~~~
+$ git commit -m 'removing info on Nibiru, it is not a real planet!'
+
+~~~
+
+The change has been staged.  Now commit the removal, and remove the
+file from the repository itself.  Note that the file will be removed
+in the version you are committing.  The previous revision will still
+have the file, if you were to retrieve that specific revision.
+
+~~~{.bash}
+$ git commit -m 'Removing info on Nibiru.  It is not a real planet!'
+~~~
+
+##Renaming a File
+Another common change when working on a project is to rename a file.
+
+Create a file for the planet Krypton:
+
+~~~{.bash}
+$ echo "Superman's home planet" > krypton.txt
+~~~
+
+Add it to the repository:
+
+~~~{.bash}
+$ git add krypton.txt
+$ git commit -m 'Adding planet Krypton'
+~~~
+
+We all know that Superman moved to Earth.  Not that he had much
+choice.  Now his home planet is Earth.
+
+Rename the file `krypton.txt` to `earth.txt`:
+
+~~~{.bash}
+$ mv krypton.txt earth.txt
+~~~
+
+Let us see what `git` has figured out by itself:
+
+~~~{.bash}
+$ git status
+~~~
+~~~{.output}
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        deleted:    krypton.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+    earth.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+~~~
+
+`git` has noticed that the file `krypton.txt` has disappeared from the
+file system and a new file `earth.txt` has showed up.
+
+Add those changes to the staging area:
+
+~~~{.bash}
+$ git add krypton.txt earth.txt
+$ git status
+~~~
+~~~{.output}
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+    renamed:    krypton.txt -> earth.txt
+
+~~~
+
+Notice how `git` has now figure out that the `krypton.txt` has not
+disappeared it has simply been renamed.
+
+The final step is commit our change to the repository:
+
+~~~{.bash}
+$ git commit -m 'Superman's home is now Earth'
+~~~
+
+	
