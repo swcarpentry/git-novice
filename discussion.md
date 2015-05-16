@@ -257,8 +257,6 @@ Changes to be committed:
    (use "git reset HEAD <file>..." to unstage)
 
    deleted:    nibiru.txt
-~~~
-$ git commit -m 'removing info on Nibiru, it is not a real planet!'
 
 ~~~
 
