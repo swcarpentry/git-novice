@@ -20,11 +20,11 @@ automated version control is much better than this situation:
 
 We've all been in this situation before: it seems ridiculous to have multiple nearly-identical versions of the same document. Some word processors let us deal with this a little better, such as Microsoft Word's "Track Changes" or Google Docs' version history.
 
-Version control systems start with a base version of the document and then save just the changes you made at each step of the way. You can think of it as a tape: if you rewind the tape and start at the base document, then you can play back each change and end up with your latest version.
+Version control systems keep track of a chain of document versions starting with a base version.  This is done in an efficient manner so as to not consume large amounts of space.  Given two versions, such as the current and previous or the current and the one last week, version control systems can easily compute the difference to show us what has changed.
 
-![Changes are saved sequentially](fig/play-changes.svg)
+![Sequence of versions are stored and changes can easily be computed](fig/play-changes.svg)
 
-Once you think of changes as separate from the document itself, you can then think about "playing back" different sets of changes onto the base document and getting different versions of the document. For example, two users can make independent sets of changes based on the same document.
+The idea of the differences between two documents is extremely powerful.  Once we think of the differences as separate from the document itself, we can then think about "playing back" different sets of changes onto the base document and getting different versions of the document. For example, two users can make independent sets of changes based on the same document.
 
 ![Different versions can be saved](fig/versions.svg)
 
@@ -32,9 +32,9 @@ If there aren't conflicts, you can even try to play two sets of changes onto the
 
 ![Multiple versions can be merged](fig/merge.svg)
 
-A version control system is a tool that keeps track of these changes for us and
-helps us version and merge our files. It allows you to
-decide which changes make up the next version, called a
+A version control system is a tool that versions our files and helps us merge
+our changes based on computing the differences between the versions.
+It allows us to decide which changes make up the next version, called a
 [commit](reference.html#commit), and keeps useful metadata about them. The
 complete history of commits for a particular project and their metadada make up
 a [repository](reference.html#repository). Repositories can be kept in sync
