@@ -36,7 +36,7 @@ You also agree to abide by our
 2.  For a list of helpful commands run `make` in this directory.
 
 [conduct]: CONDUCT.md
-[issues]: https://github.com/swcarpentry/lesson-template/issues
+[issues]: https://github.com/swcarpentry/git-novice/issues
 [license]: LICENSE.md
 [pro-git-chapter]: http://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project
 [swc-lessons]: http://software-carpentry.org/lessons.html
