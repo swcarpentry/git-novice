@@ -88,8 +88,7 @@ $ git status
 nothing to commit, working directory clean
 ~~~
 
-As a bonus, using `.gitignore` helps us avoid accidentally adding files to the
-repository that we don't want to track:
+As a bonus, using `.gitignore` helps us avoid accidentally adding files that we don't want to track to the repository:
 
 ~~~ {.bash}
 $ git add a.dat
