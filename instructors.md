@@ -3,17 +3,20 @@ layout: page
 title: Version Control with Git
 subtitle: Instructor's Guide
 ---
-## Legend
+Using a software tool to handle the versions of your project files
+lets you focus on the more interesting/innovative aspects of your project
 
-We follow two scientists, Dracula and Wolfman, collaborating in a project. In
-the first part of the lesson, Dracula is working by himself in his laptop and
-uses Git locally. In the second part of the lesson, he uploads his local repo
-to GitHub ands add Wolfman as a collaborator. With both working in the same
-project, conflicts arise and we see how to handle them with Git. The lesson
-closes with a part on Open Science that is somewhat detached from the story.
-
-The story mimics the typical way novices use Git and GitHub and tries to solve
-the concerns they may have.
+*   Version control's advantages:
+    *   It's easy to set up
+    *   Every copy of a Git repository is a full backup of a project and its history
+    *   A few easy-to-remember commands are all you need for most day-to-day version control tasks
+    *   The [GitHub](https://github.com/) hosting service provides a web-based collaboration service
+*   Two main concepts
+    *   *commit*: a recorded set of changes in your project's file
+    *   *repository*: the history of all your project's commits
+*   Why Use Github?
+    *   No need for a server: easy to set up
+    *   GitHub's strong community: your colleagues are probably already there
 
 ## Overall
 
@@ -28,9 +31,9 @@ interesting topics, such as branching, hashes, and commit objects.
 Instead we try to convince them that version control is useful for researchers
 working in teams or not, because it is
 
-- a better way to "undo" changes,
-- a better way to collaborate than mailing files back and forth, and
-- a better way to share your code and other scientific work with the world.
+*   a better way to "undo" changes,
+*   a better way to collaborate than mailing files back and forth, and
+*   a better way to share your code and other scientific work with the world.
 
 ## Teaching Notes
 
@@ -66,7 +69,7 @@ working in teams or not, because it is
     Subversion are now seen as legacy systems, and Mercurial isn't nearly as
     widely used in the sciences right now.
 
-## [Automated version control](01-basics.html)
+## [Automated Version Control](01-basics.html)
 
 *   Ask, "Who uses 'undo' in their editor?" All say "Me". 'Undo' is the simplest
     form of version control.
@@ -86,9 +89,9 @@ working in teams or not, because it is
 *   We suggest instructors and students use `nano` as the text editor for this
     lessons because
     
-    - it runs in all three major operating systems, 
-    - it runs inside the shell (switching windows can be confusing to students), and 
-    - it has shortcut help at the bottom of the window.
+    *   it runs in all three major operating systems, 
+    *   it runs inside the shell (switching windows can be confusing to students), and 
+    *   it has shortcut help at the bottom of the window.
 
     Please point out to students during setup that they can and should use
     another text editor if they're already familiar with it.
@@ -227,20 +230,20 @@ particular set of files in `.gitignore`.
 
 *   If you're the only instructor, the best way to create a conflict is:
 
-    - Clone your repo in a different directory, pretending is your computer at
-      work: `git clone https://github.com/vlad/planets.git planets-at-work`.
-    - At the office, you make a change, commit and push.  
-    - At your laptop repo, you (forget to pull and) make a change, commit and 
-      try to push. 
-    - `git pull` now and show the conflict.
+    *   Clone your repo in a different directory, pretending is your computer at
+        work: `git clone https://github.com/vlad/planets.git planets-at-work`.
+    *   At the office, you make a change, commit and push.  
+    *   At your laptop repo, you (forget to pull and) make a change, commit and 
+        try to push. 
+    *   `git pull` now and show the conflict.
 
 *   Learners usually forget to `git add` the file after fixing the conflict and
     just (try to) commit. You can diagnose this with `git status`.
 
 *   Remember that you can discard one of the two parents of the merge:
 
-    - discard the remote file, `git checkout --ours conflicted_file.txt`
-    - discard the local file, `git checkout --theirs conflicted_file.txt`
+    *   discard the remote file, `git checkout --ours conflicted_file.txt`
+    *   discard the local file, `git checkout --theirs conflicted_file.txt`
     
     You still have to `git add` and `git commit` after this. This is
     particularly useful when working with binary files.
