@@ -55,7 +55,7 @@ to be shared can and should be stored in a version control system.
 
 ## Topics
 
-1.  [Automated version control](01-basics.html)
+1.  [Automated Version Control](01-basics.html)
 2.  [Setting Up Git](02-setup.html)
 3.  [Creating a Repository](03-create.html)
 4.  [Tracking Changes](04-changes.html)
@@ -70,7 +70,6 @@ to be shared can and should be stored in a version control system.
 
 ## Other Resources
 
-*   [Motivation](motivation.html)
 *   [Reference](reference.html)
 *   [Discussion](discussion.html)
 *   [Instructor's Guide](instructors.html)
