@@ -182,9 +182,8 @@ this command would download them to our local repository.
 
 > ## GitHub Timestamp {.challenge}
 >
-> Create a repository on GitHub,
-> clone it,
-> add a file,
-> push those changes to GitHub,
-> and then look at the [timestamp](reference.html#timestamp) of the change on GitHub.
+> Create a remote repository on GitHub.
+> Push the contents of your local repository to the remote.
+> Make changes to your local repository and push these changes.
+> Look at the [timestamp](reference.html#timestamp) of the change on GitHub.
 > How does GitHub record times, and why?
