@@ -185,5 +185,5 @@ this command would download them to our local repository.
 > Create a remote repository on GitHub.
 > Push the contents of your local repository to the remote.
 > Make changes to your local repository and push these changes.
-> Look at the [timestamp](reference.html#timestamp) of the change on GitHub.
+> Go to the repo you just created on Github and check the [timestamps](reference.html#timestamp) of the files.
 > How does GitHub record times, and why?
