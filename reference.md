@@ -128,6 +128,13 @@ revision
 :   A recorded [change set](#change-set) of a [version control](#version-control) 
     [repository](#repository). The same as a [commit](#commit).
 
+SHA-1
+:   [SHA-1 hashes](http://en.wikipedia.org/wiki/SHA-1) is what Git uses to compute identifiers, including for commits.
+    To compute these, Git uses not only the actual change of a commit, but also its metadata (such as date, author,
+    message), including the identifiers of all commits of preceding changes. This makes Git commit IDs virtually unique.
+    I.e., the likelihood that two commits made independently, even of the same change, receive the same ID is exceedingly
+    small.
+
 SSH
 :   The Secure Shell [protocol](#protocol) used for secure communication between computers.
 
