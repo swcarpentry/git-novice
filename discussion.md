@@ -226,26 +226,7 @@ nothing to commit, working directory clean
 ~~~
 
 Nibiru is not a real planet.  That was a silly idea.  Let us remove
-it from the disk and then from the repository:
-
-~~~{.bash}
-$ rm nibiru.txt
-$ git status
-~~~
-~~~{.output}
-On branch master
-Changes not staged for commit:
-   (use "git add/rm <file>..." to update what will be committed)
-   (use "git checkout -- <file>..." to discard changes in working directory)
-
-    deleted:    nibiru.txt
-
-no changes added to commit (use "git add" and/or "git commit -a")
-~~~
-
-See how git has noticed that the file `nibiru.txt` has been removed
-from the disk.  The next step is to "stage" the removal of the file
-from the repository.  This is done with the command `git rm`:
+it from the disk and let Git know about it:
 
 ~~~{.bash}
 $ git rm nibiru.txt
@@ -262,12 +243,69 @@ Changes to be committed:
 
 The change has been staged.  Now commit the removal, and remove the
 file from the repository itself.  Note that the file will be removed
-in the version you are committing.  The previous revision will still
-have the file, if you were to retrieve that specific revision.
+in the new commit.  The previous commit will still
+have the file, if you were to retrieve that specific commit.
 
 ~~~{.bash}
 $ git commit -m 'Removing info on Nibiru.  It is not a real planet!'
 ~~~
+
+
+#### Removing with Unix
+Sometimes we migth forget to remove the file through Git. If you removed the 
+file with Unix `rm` instead of using `git rm`, no worries,
+Git is smart enough to notice the missing file. Let us recreate the file and
+commit it again.
+
+~~~{.bash}
+$ echo "This is another name for fake planet X" > nibiru.txt
+$ git add nibiru.txt
+$ git commit -m 'adding nibiru again'
+~~~
+
+Now we remove the file with Unix `rm`:
+
+~~~{.bash}
+$ rm nibiru.txt
+$ git status
+~~~
+~~~{.output}
+On branch master
+Changes not staged for commit:
+   (use "git add/rm <file>..." to update what will be committed)
+   (use "git checkout -- <file>..." to discard changes in working directory)
+
+    deleted:    nibiru.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+~~~
+
+See how Git has noticed that the file `nibiru.txt` has been removed
+from the disk.  The next step is to "stage" the removal of the file
+from the repository.  This is done with the command `git rm` just as
+before.
+
+~~~{.bash}
+$ git rm nibiru.txt
+$ git status
+~~~
+~~~{.output}
+On branch master
+Changes to be committed:
+   (use "git reset HEAD <file>..." to unstage)
+
+   deleted:    nibiru.txt
+
+~~~
+
+The change that was made in Unix has now been staged and needs to be
+committed.
+
+~~~{.bash}
+$ git commit -m 'Removing info on Nibiru, again!'
+~~~
+
+
 
 ##Renaming a File
 Another common change when working on a project is to rename a file.
@@ -288,15 +326,44 @@ $ git commit -m 'Adding planet Krypton'
 We all know that Superman moved to Earth.  Not that he had much
 choice.  Now his home planet is Earth.
 
-Rename the file `krypton.txt` to `earth.txt`:
+Rename the file `krypton.txt` to `earth.txt` with Git:
+
+~~~{.bash}
+$ git mv krypton.txt earth.txt
+$ git status
+~~~
+~~~{.output}
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	renamed:    krypton.txt -> earth.txt
+#
+~~~
+The final step is commit our change to the repository:
+
+~~~{.bash}
+$ git commit -m 'Superman's home is now Earth'
+~~~
+
+
+#### Renaming with Unix
+If you forgot to use Git and you used Unix `mv` instead 
+of `git mv`, you will have a touch more work to do but Git will 
+be able to deal with it. Let's try again renaming the file, 
+this time with Unix `mv`. First, we need to recreate the 
+`krypton.txt` file:
+
+~~~{.bash}
+$ echo "Superman's home planet" > krypton.txt
+$ git add krypton.txt
+$ git commit -m 'Adding planet Krypton again.'
+~~~
+
+Let us rename the file and see what Git can figured out by itself:
 
 ~~~{.bash}
 $ mv krypton.txt earth.txt
-~~~
-
-Let us see what `git` has figured out by itself:
-
-~~~{.bash}
 $ git status
 ~~~
 ~~~{.output}
@@ -315,7 +382,7 @@ Untracked files:
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
 
-`git` has noticed that the file `krypton.txt` has disappeared from the
+Git has noticed that the file `krypton.txt` has disappeared from the
 file system and a new file `earth.txt` has showed up.
 
 Add those changes to the staging area:
@@ -333,13 +400,13 @@ Changes to be committed:
 
 ~~~
 
-Notice how `git` has now figure out that the `krypton.txt` has not
+Notice how Git has now figure out that the `krypton.txt` has not
 disappeared it has simply been renamed.
 
-The final step is commit our change to the repository:
+The final step, as before, is to commit our change to the repository:
 
 ~~~{.bash}
-$ git commit -m 'Superman's home is now Earth'
+$ git commit -m 'Superman's home is Earth, told you before.'
 ~~~
 
 	
