@@ -45,7 +45,7 @@ we're telling Git:
 *   that we want to use these settings globally (i.e., for every project),
 
 The four commands above only need to be run once: the flag `--global` tells Git
-to use the settings for every project on this computer.
+to use the settings for every project, in your user account, on this computer.
 
 You can check your settings at any time:
 
