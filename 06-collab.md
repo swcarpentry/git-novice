@@ -221,7 +221,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (2/2), done.
 Writing objects: 100% (3/3), 306 bytes, done.
 Total 3 (delta 0), reused 0 (delta 0)
-To https://github.com/vlad/swc-python.git
+To https://github.com/vlad/planets.git
    9272da5..29aba7c  master -> master
 ~~~
 
