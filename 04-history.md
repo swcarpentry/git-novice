@@ -17,30 +17,30 @@ but refer to old versions
 using the notation `HEAD~1`, `HEAD~2`, and so on:
 
 ~~~ {.bash}
-$ git diff HEAD~1 README.md
+$ git diff HEAD~1 mars.txt
 ~~~
 ~~~ {.output}
-diff --git a/README.md b/README.md
+diff --git a/mars.txt b/mars.txt
 index 315bf3a..b36abfd 100644
---- a/README.md
-+++ b/README.md
+--- a/mars.txt
++++ b/mars.txt
 @@ -1,2 +1,3 @@
- I learned some cool things about Python!
- I learned about functions
-+Starting to learn about Git
+ Cold and dry, but everything is my favorite color
+ The two moons may be a problem for Wolfman
++But the Mummy will appreciate the lack of humidity
 ~~~
 ~~~ {.bash}
-$ git diff HEAD~2 README.md
+$ git diff HEAD~2 mars.txt
 ~~~
 ~~~ {.output}
-diff --git a/README.md b/README.md
+diff --git a/mars.txt b/mars.txt
 index df0654a..b36abfd 100644
---- a/README.md
-+++ b/README.md
+--- a/mars.txt
++++ b/mars.txt
 @@ -1 +1,3 @@
- I learned some cool things about Python!
-+I learned about functions
-+Starting to learn about Git
+ Cold and dry, but everything is my favorite color
++The two moons may be a problem for Wolfman
++But the Mummy will appreciate the lack of humidity
 ~~~
 
 In this way,
@@ -63,17 +63,17 @@ f22b25e3233b4645dabd0d81e651fe074bd8e73b,
 so let's try this:
 
 ~~~ {.bash}
-$ git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b README.md
+$ git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b mars.txt
 ~~~
 ~~~ {.output}
-diff --git a/README.md b/README.md
+diff --git a/mars.txt b/mars.txt
 index df0654a..b36abfd 100644
---- a/README.md
-+++ b/README.md
+--- a/mars.txt
++++ b/mars.txt
 @@ -1 +1,3 @@
- I learned some cool things about Python!
-+I learned about functions
-+Starting to learn about Git
+ Cold and dry, but everything is my favorite color
++The two moons may be a problem for Wolfman
++But the Mummy will appreciate the lack of humidity
 ~~~
 
 That's the right answer,
@@ -81,17 +81,17 @@ but typing random 40-character strings is annoying,
 so Git lets us use just the first few:
 
 ~~~ {.bash}
-$ git diff f22b25e README.md
+$ git diff f22b25e mars.txt
 ~~~
 ~~~ {.output}
-diff --git a/README.md b/README.md
+diff --git a/mars.txt b/mars.txt
 index df0654a..b36abfd 100644
---- a/README.md
-+++ b/README.md
+--- a/mars.txt
++++ b/mars.txt
 @@ -1 +1,3 @@
- I learned some cool things about Python!
-+I learned about functions
-+Starting to learn about Git
+ Cold and dry, but everything is my favorite color
++The two moons may be a problem for Wolfman
++But the Mummy will appreciate the lack of humidity
 ~~~
 
 
@@ -101,8 +101,8 @@ can we restore older versions of things?
 Let's suppose we accidentally overwrite our file:
 
 ~~~ {.bash}
-$ nano README.md
-$ cat README.md
+$ nano mars.txt
+$ cat mars.txt
 ~~~
 ~~~ {.output}
 We will need to manufacture our own oxygen
@@ -120,7 +120,7 @@ $ git status
 #   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
-#	modified:   README.md
+#	modified:   mars.txt
 #
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
@@ -129,17 +129,17 @@ We can put things back the way they were
 by using `git checkout`:
 
 ~~~ {.bash}
-$ git checkout HEAD README.md
-$ cat README.md
+$ git checkout HEAD mars.txt
+$ cat mars.txt
 ~~~
 ~~~ {.output}
-I learned some cool things about Python!
-I learned about functions
-Starting to learn about Git
+Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+But the Mummy will appreciate the lack of humidity
 ~~~
 
 As you might guess from its name,
-`git checkout` checks out (i.e., restores) a different version of a file.
+`git checkout` checks out (i.e., restores) an old version of a file.
 In this case,
 we're telling Git that we want to recover the version of the file recorded in `HEAD`,
 which is the last saved revision.
@@ -147,7 +147,7 @@ If we want to go back even further,
 we can use a revision identifier instead:
 
 ~~~ {.bash}
-$ git checkout f22b25e README.md
+$ git checkout f22b25e mars.txt
 ~~~
 
 It's important to remember that

@@ -9,34 +9,39 @@ minutes: 20
 > *   Go through the modify-add-commit cycle for single and multiple files.
 > *   Explain where information is stored at each stage.
 
-Let's write some notes about our workshop experience today. Open the README.md file in your text editor.
+Let's create a file called `mars.txt` that contains some notes
+about the Red Planet's suitability as a base.
+(We'll use `nano` to edit the file;
+you can use whatever editor you like.
+In particular, this does not have to be the `core.editor` you set globally earlier.)
 
 ~~~ {.bash}
-$ nano README.md
+$ nano mars.txt
 ~~~
 
-Type the text below into the `README.md` file:
+Type the text below into the `mars.txt` file:
 
 ~~~ {.output}
-I learned some cool things about Python!
+Cold and dry, but everything is my favorite color
 ~~~
 
-Save this file in your `python-inflammation` directory as `README.md`.
+`mars.txt` now contains a single line:
 
 ~~~ {.bash}
 $ ls
 ~~~
 ~~~ {.output}
-README.md
+mars.txt
 ~~~
 ~~~ {.bash}
-$ cat README.md
+$ cat mars.txt
 ~~~
 ~~~ {.output}
-I learned some cool things about Python!
+Cold and dry, but everything is my favorite color
 ~~~
 
-Let's ask Git about the status of this repo:
+If we check the status of our project again,
+Git tells us that it's noticed the new file:
 
 ~~~ {.bash}
 $ git status
@@ -49,14 +54,16 @@ $ git status
 # Untracked files:
 #   (use "git add <file>..." to include in what will be committed)
 #
-#	README.md
+#	mars.txt
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
 
-We can see that our `README.md` file is listed as an "untracked file." We can tell Git that it should track this file using `git add`:
+The "untracked files" message means that there's a file in the directory
+that Git isn't keeping track of.
+We can tell Git to track a file using `git add`:
 
 ~~~ {.bash}
-$ git add README.md
+$ git add mars.txt
 ~~~
 
 and then check that the right thing happened:
@@ -72,19 +79,22 @@ $ git status
 # Changes to be committed:
 #   (use "git rm --cached <file>..." to unstage)
 #
-#	new file:   README.md
+#	new file:   mars.txt
 #
 ~~~
 
-Now let's commit this file into our repo for the first time.
+Git now knows that it's supposed to keep track of `mars.txt`,
+but it hasn't recorded these changes as a commit yet.
+To get it to do that,
+we need to run one more command:
 
 ~~~ {.bash}
-$ git commit -m "Start notes about my experience at the workshop"
+$ git commit -m "Start notes on Mars as a base"
 ~~~
 ~~~ {.output}
-[master (root-commit) f22b25e] Start notes about my experience at the workshop
+[master (root-commit) f22b25e] Start notes on Mars as a base
  1 file changed, 1 insertion(+)
- create mode 100644 README.md
+ create mode 100644 mars.txt
 ~~~
 
 When we run `git commit`,
@@ -127,7 +137,7 @@ commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Start notes about my experience at the workshop
+    Start notes on Mars as a base
 ~~~
 
 `git log` lists all revisions  made to a repository in reverse chronological order.
@@ -141,7 +151,7 @@ and the log message Git was given when the revision was created.
 
 > ## Where Are My Changes? {.callout}
 >
-> If we run `ls` at this point, we will still see just one file called `README.md`.
+> If we run `ls` at this point, we will still see just one file called `mars.txt`.
 > That's because Git saves information about files' history
 > in the special `.git` directory mentioned earlier
 > so that our filesystem doesn't become cluttered
@@ -152,12 +162,12 @@ Now suppose Dracula adds more information to the file.
 you may use a different editor, and don't need to `cat`.)
 
 ~~~ {.bash}
-$ nano README.md
-$ cat README.md
+$ nano mars.txt
+$ cat mars.txt
 ~~~
 ~~~ {.output}
-I learned some cool things about Python!
-I learned about functions
+Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
 ~~~
 
 When we run `git status` now,
@@ -172,7 +182,7 @@ $ git status
 #   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
-#	modified:   README.md
+#	modified:   mars.txt
 #
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
@@ -192,13 +202,13 @@ of the file and the most recently saved version:
 $ git diff
 ~~~
 ~~~ {.output}
-diff --git a/README.md b/README.md
+diff --git a/mars.txt b/mars.txt
 index df0654a..315bf3a 100644
---- a/README.md
-+++ b/README.md
+--- a/mars.txt
++++ b/mars.txt
 @@ -1 +1,2 @@
- I learned some cool things about Python!
-+I learned about functions
+ Cold and dry, but everything is my favorite color
++The two moons may be a problem for Wolfman
 ~~~
 
 The output is cryptic because
@@ -220,7 +230,7 @@ If we break it down into pieces:
 After reviewing our change, it's time to commit it:
 
 ~~~ {.bash}
-$ git commit -m "learned functions"
+$ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
 ~~~
 ~~~ {.output}
 # On branch master
@@ -228,7 +238,7 @@ $ git commit -m "learned functions"
 #   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
-#	modified:   README.md
+#	modified:   mars.txt
 #
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
@@ -238,11 +248,11 @@ Git won't commit because we didn't use `git add` first.
 Let's fix that:
 
 ~~~ {.bash}
-$ git add README.md
-$ git commit -m "learned functions"
+$ git add mars.txt
+$ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
 ~~~
 ~~~ {.output}
-[master 34961b1] learned functions
+[master 34961b1] Add concerns about effects of Mars' moons on Wolfman
  1 file changed, 1 insertion(+)
 ~~~
 
@@ -274,26 +284,26 @@ First,
 we'll add another line to the file:
 
 ~~~ {.bash}
-$ nano README.md
-$ cat README.md
+$ nano mars.txt
+$ cat mars.txt
 ~~~
 ~~~ {.output}
-I learned some cool things about Python!
-I learned about functions
-Starting to learn about Git
+Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+But the Mummy will appreciate the lack of humidity
 ~~~
 ~~~ {.bash}
 $ git diff
 ~~~
 ~~~ {.output}
-diff --git a/README.md b/README.md
+diff --git a/mars.txt b/mars.txt
 index 315bf3a..b36abfd 100644
---- a/README.md
-+++ b/README.md
+--- a/mars.txt
++++ b/mars.txt
 @@ -1,2 +1,3 @@
- I learned some cool things about Python!
- I learned about functions
-+Starting to learn about Git
+ Cold and dry, but everything is my favorite color
+ The two moons may be a problem for Wolfman
++But the Mummy will appreciate the lack of humidity
 ~~~
 
 So far, so good:
@@ -303,7 +313,7 @@ Now let's put that change in the staging area
 and see what `git diff` reports:
 
 ~~~ {.bash}
-$ git add README.md
+$ git add mars.txt
 $ git diff
 ~~~
 
@@ -318,14 +328,14 @@ if we do this:
 $ git diff --staged
 ~~~
 ~~~ {.output}
-diff --git a/README.md b/README.md
+diff --git a/mars.txt b/mars.txt
 index 315bf3a..b36abfd 100644
---- a/README.md
-+++ b/README.md
+--- a/mars.txt
++++ b/mars.txt
 @@ -1,2 +1,3 @@
- I learned some cool things about Python!
- I learned about functions
-+Starting to learn about Git
+ Cold and dry, but everything is my favorite color
+ The two moons may be a problem for Wolfman
++But the Mummy will appreciate the lack of humidity
 ~~~
 
 it shows us the difference between
@@ -334,10 +344,10 @@ and what's in the staging area.
 Let's save our changes:
 
 ~~~ {.bash}
-$ git commit -m "Learned Git"
+$ git commit -m "Discuss concerns about Mars' climate for Mummy"
 ~~~
 ~~~ {.output}
-[master 005937f] Learned Git
+[master 005937f] Discuss concerns about Mars' climate for Mummy
  1 file changed, 1 insertion(+)
 ~~~
 
@@ -361,19 +371,19 @@ commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 10:14:07 2013 -0400
 
-    Learned Git
+    Discuss concerns about Mars' climate for Mummy
 
 commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 10:07:21 2013 -0400
 
-    learned functions
+    Add concerns about effects of Mars' moons on Wolfman
 
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Start notes about my experience at the workshop
+    Start notes on Mars as a base
 ~~~
 
 To recap, when we want to add changes to our repository,

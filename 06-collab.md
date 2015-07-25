@@ -73,11 +73,11 @@ Retrieving the changes from a different copy of the repository is called _pullin
 
 Let's start by sharing the changes we've made to our current project with the world.
 Log in to GitHub,
-then click on the icon in the top right corner to create a new repository called `swc-python`:
+then click on the icon in the top right corner to create a new repository called `planets`:
 
 ![Creating a Repository on GitHub (Step 1)](fig/github-create-repo-01.png)
 
-Name your repository "swc-python" and then click "Create Repository":
+Name your repository "planets" and then click "Create Repository":
 
 ![Creating a Repository on GitHub (Step 2)](fig/github-create-repo-02.png)
 
@@ -89,8 +89,8 @@ GitHub displays a page with a URL and some information on how to configure your 
 This effectively does the following on GitHub's servers:
 
 ~~~ {.bash}
-$ mkdir swc-python
-$ cd swc-python
+$ mkdir planets
+$ cd planets
 $ git init
 ~~~
 
@@ -106,12 +106,12 @@ Click on the 'HTTPS' link to change the [protocol](reference.html#protocol) from
 
 ![Changing the Repository URL on GitHub](fig/github-change-repo-string.png)
 
-Copy that URL from the browser.
-Now we need to tell Git about this new remote repo. Go into your local `swc-python` directory
+Copy that URL from the browser,
+go into the local `planets` repository,
 and run this command:
 
 ~~~ {.bash}
-$ git remote add origin https://github.com/vlad/swc-python
+$ git remote add origin https://github.com/vlad/planets
 ~~~
 
 Make sure to use the URL for your repository rather than Vlad's. This will tell your local Git repo that we want to add a remote repository at this address that is going to be a copy of our repo. By convention, the main remote repository is called `origin`, but you can name a remote anything you want. It's best to have a designated `origin` remote, though.
@@ -122,8 +122,8 @@ We can check that the command has worked by running `git remote -v`:
 $ git remote -v
 ~~~
 ~~~ {.output}
-origin   https://github.com/vlad/swc-python.git (push)
-origin   https://github.com/vlad/swc-python.git (fetch)
+origin   https://github.com/vlad/planets.git (push)
+origin   https://github.com/vlad/planets.git (fetch)
 ~~~
 
 Remember: we haven't actually put anything in that remote repository yet.
@@ -141,7 +141,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (6/6), done.
 Writing objects: 100% (9/9), 821 bytes, done.
 Total 9 (delta 2), reused 0 (delta 0)
-To https://github.com/vlad/swc-python
+To https://github.com/vlad/planets
  * [new branch]      master -> master
 Branch master set up to track remote branch master from origin.
 ~~~
@@ -157,7 +157,7 @@ We can pull changes from the remote repository to the local one as well:
 $ git pull origin master
 ~~~
 ~~~ {.output}
-From https://github.com/vlad/swc-python
+From https://github.com/vlad/planets
  * branch            master     -> FETCH_HEAD
 Already up-to-date.
 ~~~
@@ -178,11 +178,11 @@ then select Collaborators, and enter your partner's username.
 ![Adding collaborators on GitHub](fig/github-add-collaborators.png)
 
 The other partner should `cd` to another directory
-(so `ls` doesn't show a `swc-python` folder),
+(so `ls` doesn't show a `planets` folder),
 and then make a copy of this repository on your own computer:
 
 ~~~ {.bash}
-$ git clone https://github.com/vlad/swc-python.git
+$ git clone https://github.com/vlad/planets.git
 ~~~
 
 Replace 'vlad' with your partner's username (the one who owns the repository).
@@ -194,19 +194,20 @@ Replace 'vlad' with your partner's username (the one who owns the repository).
 The new collaborator can now make a change in their copy of the repository:
 
 ~~~ {.bash}
-$ cd swc-python
-$ nano log.txt
+$ cd planets
+$ nano pluto.txt
+$ cat pluto.txt
 ~~~
 ~~~ {.output}
-I'm adding some more stuff
+It is so a planet!
 ~~~
 ~~~ {.bash}
-$ git add log.txt
-$ git commit -m "Some more notes"
+$ git add pluto.txt
+$ git commit -m "Some notes about Pluto"
 ~~~
 ~~~ {.output}
  1 file changed, 1 insertion(+)
- create mode 100644 log.txt
+ create mode 100644 pluto.txt
 ~~~
 
 then push the change to GitHub:
@@ -241,12 +242,12 @@ remote: Counting objects: 4, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 3 (delta 0)
 Unpacking objects: 100% (3/3), done.
-From https://github.com/vlad/swc-python
+From https://github.com/vlad/planets
  * branch            master     -> FETCH_HEAD
 Updating 9272da5..29aba7c
 Fast-forward
- log.txt | 1 +
+ pluto.txt | 1 +
  1 file changed, 1 insertion(+)
- create mode 100644 log.txt
+ create mode 100644 pluto.txt
 ~~~
 

@@ -8,15 +8,16 @@ minutes: 10
 > 
 > *   Explain how to create a Git repository locally.
 
-## Start Version Control
-
-Let's say that we want to start using version control for the work we've done at this workshop. From your terminal window, move to the python-inflammation directory.
+Once Git is configured,
+we can start using it.
+Let's create a directory for our work:
 
 ~~~ {.bash}
-$ cd python-inflammation
+$ mkdir planets
+$ cd planets
 ~~~
 
-We want to tell Git to make this directory into a [repository](reference.html#repository)&mdash;a place where
+and tell Git to make it a [repository](reference.html#repository)&mdash;a place where
 Git can store old versions of our files:
 
 ~~~ {.bash}
