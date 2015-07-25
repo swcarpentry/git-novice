@@ -48,21 +48,10 @@ The first time we use Git on a new machine, we need to make sure Git knows a few
 $ git config --global user.name "Vlad Dracula"
 $ git config --global user.email "vlad@tran.sylvan.ia"
 $ git config --global color.ui "auto"
+$ git config --global core.editor "nano -w"
 ~~~
 
 (Please use your own name and email address instead of Dracula's.)
-
-He also has to set his favorite text editor, following this table:
-
-| Editor             | Configuration command                            |
-|:-------------------|:-------------------------------------------------|
-| nano               | `$ git config --global core.editor "nano -w"`    |
-| Text Wrangler      | `$ git config --global core.editor "edit -w"`    |
-| Sublime Text (Mac) | `$ git config --global core.editor "subl -n -w"` |
-| Sublime Text (Win) | `$ git config --global core.editor "'c:/program files/sublime text 2/sublime_text.exe' -w"` |
-| Notepad++ (Win)    | `$ git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
-| Kate (Linux)       | `$ git config --global core.editor "kate"`       |
-| Gedit (Linux)      | `$ git config --global core.editor "gedit -s"`   |
 
 Git commands are written `git verb`,
 where `verb` is what we actually want it to do.
