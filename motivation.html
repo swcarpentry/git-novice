@@ -27,17 +27,45 @@
     </div>
 
     <!-- Begin slides. Just make elements with a class of slide. -->
-<section id="why-use-version-control" class="slide level2">
-<h1>Why Use Version Control?</h1>
-<p>Let some software handle the versions of your project let you focus on your project.</p>
+<section class="slide level2">
+
+<p>We’ll start by exploring how version control can be used to keep track of what one person did and when. Even if you aren’t collaborating with other people, version control is much better for this than this:</p>
+<p><a href="http://www.phdcomics.com"><img src="fig/phd101212s.gif" alt="Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com" /></a></p>
+<p>“Piled Higher and Deeper” by Jorge Cham, http://www.phdcomics.com</p>
+<p>We’ve all been in this situation before: it seems ridiculous to have multiple nearly-identical versions of the same document. Some word processors let us deal with this a little better, like Microsoft Word (“Track Changes”) or Google Docs version history.</p>
+<p>Version control systems start with a base version of the document and then save just the changes you made at each step on the way. You can think of it as a tape: if you rewind the tape and start at the base document, then you can play back each change and end up with your latest version.</p>
+<figure>
+<img src="fig/play-changes.svg" alt="Changes are saved sequentially" /><figcaption>Changes are saved sequentially</figcaption>
+</figure>
+<p>Once you think of changes as separate from the document itself, you can then think about “playing back” different sets of changes onto the base document and getting different versions of the document. For example, two users can make independent sets of changes based on the same document.</p>
+<figure>
+<img src="fig/versions.svg" alt="Different versions can be saved" /><figcaption>Different versions can be saved</figcaption>
+</figure>
+<p>If there aren’t conflicts, you can even try to play two sets of changes onto the same base document.</p>
+<figure>
+<img src="fig/merge.svg" alt="Multiple versions can be merged" /><figcaption>Multiple versions can be merged</figcaption>
+</figure>
 </section>
-<section id="why-git" class="slide level2">
-<h1>Why Git?</h1>
-<p>Because many people are using GitHub to collaborating.</p>
+<section id="collaborating-with-yourself-and-others" class="slide level2">
+<h1>Collaborating, with yourself and others</h1>
+<p>You can think of version control as allowing you to collaborate with yourself two weeks from now as well as yourself two weeks ago. But you can also collaborate with other people, using version control.</p>
+<p>The particular version control system we will teach you today is called Git, and the main reason we like it is because of Github. Github is a free website that lets us use the version control tool Git to share with users anywhere in the world.</p>
 </section>
-<section id="next-steps" class="slide level2">
-<h1>Next Steps</h1>
-<p><a href="01-setup.html">Here we go!</a></p>
+<section id="an-example" class="slide level2">
+<h1>An example</h1>
+<p>Andrew wants to share the workshop exercises with everyone in the workshop, and he wants everyone to be able to share and view each others’ answers to the exercises. Yesterday, he had everyone copy and paste their answers from their RStudio worksheets to the Etherpad, but maybe there’s a better way to do this. He’s going to set up a Github repository, and by the end of the day, you all will be able to contribute your answers to it and view each others’ work.</p>
+</section>
+<section id="setting-up-the-repo" class="slide level2">
+<h1>Setting up the repo</h1>
+<p>Andrew goes to the directory that he wants to share and creates a repository from it.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> init
+$ <span class="kw">git</span> add *
+$ <span class="kw">git</span> commit -m <span class="st">&quot;initial commit&quot;</span></code></pre>
+<p>He creates a new public repository to share this on Github.</p>
+<p>Then he pushes his directory to that repository on Github.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> remote add origin https://github.com/aammd/workshop.git
+$ <span class="kw">git</span> push -u origin master</code></pre>
+<p>Now it’s ready for collaboration!</p>
 </section>
     <!-- End slides. -->
 
