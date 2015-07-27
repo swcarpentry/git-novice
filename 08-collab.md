@@ -9,7 +9,7 @@ minutes: 25
 > *  Collaborate pushing to a common repository.
 
 For the next step, get into pairs.
-Pick one of your repositories on GitHub to use for collaboration.
+One person will be the "Owner" (this is the person whose Github repository will be used to start the exercise) and the other person will be the "Collaborator" (this is the person who will be cloning the Owner's repository and making changes to it).
 
 > ## Practicing by yourself {.callout}
 >
@@ -18,27 +18,27 @@ Pick one of your repositories on GitHub to use for collaboration.
 > This window will represent your partner, working on another computer. You
 > won't need to give anyone access on GitHub, because both 'partners' are you.
 
-The partner whose repository is being used needs to give the other person access.
+The Owner needs to give the Collaborator access.
 On GitHub, click the settings button on the right,
 then select Collaborators, and enter your partner's username.
 
 ![Adding collaborators on GitHub](fig/github-add-collaborators.png)
 
-The other partner should `cd` to another directory
+The Collaborator needs to work on this project locally. He or she should `cd` to another directory
 (so `ls` doesn't show a `planets` folder),
-and then make a copy of this repository on your own computer:
+and then make a copy of the Owner's repository:
 
 ~~~ {.bash}
 $ git clone https://github.com/vlad/planets.git
 ~~~
 
-Replace 'vlad' with your partner's username (the one who owns the repository).
+Replace 'vlad' with the Owner's username.
 
 `git clone` creates a fresh local copy of a remote repository.
 
 ![After Creating Clone of Repository](fig/github-collaboration.svg)
 
-The new collaborator can now make a change in their copy of the repository:
+The Collaborator can now make a change in his or her copy of the repository:
 
 ~~~ {.bash}
 $ cd planets
@@ -57,7 +57,7 @@ $ git commit -m "Some notes about Pluto"
  create mode 100644 pluto.txt
 ~~~
 
-then push the change to GitHub:
+Then push the change to GitHub:
 
 ~~~ {.bash}
 $ git push origin master
