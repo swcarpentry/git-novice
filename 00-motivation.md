@@ -58,3 +58,4 @@ $ git push -u origin master
 
 Now it's ready for collaboration!
 
+First things first: does everyone have a github account?

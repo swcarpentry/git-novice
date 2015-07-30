@@ -13,9 +13,11 @@ minutes: 60
 
 As you probably noticed from the last Git lesson, it is not a great practice to have multiple collaborators pushing things into the same repo's master branch all the time. If many people are working on the same file, it's pretty much a guaranteed way to lead to conflicts that you then have to resolve.
 
-One tool that Github uses to make this easier is called "forking". This is Github-speak for "clone this repo on the Github server." When you fork a repo on Github, it clones the repo into your own user account on Github. This way you can push and pull changes to your own copy without affecting the original owner's copy.
+Remember at the beginning of the session, when Andrew made a repository of the R lessons to share with the class? We're going to look at how to add our own files to his repository when we can't ask someone to allow us to directly collaborate on their repo.
 
-Let's try this now: We're going to fork a repo that we made for this workshop. Go to the Github site: `https://github.com/nsoontie/WiSE-swc-ubc`
+The tool that Github uses to make this easier is called "forking". This is Github-speak for "clone this repo on the Github server." When you fork a repo on Github, it clones the repo into your own user account on Github. This way you can push and pull changes to your own copy without affecting the original owner's copy.
+
+Let's try this now: We're going to fork Andrew's repo. Go to the Github site: `https://github.com/nsoontie/WiSE-swc-ubc`
 
 ![Fork this repo at the upper right corner](img/forking.png)
 
@@ -62,3 +64,23 @@ Create the pull request.
 ![A created PR](img/pr-description.png)
 
 After you've made your pull request, go back to the pull request list for `https://github.com/nsoontie/WiSE-swc-ubc`. You should see everyone's pull requests there now.
+
+Optional: Another instructor has added a pull request to be merged into the main repo. We'll go ahead and merge it. Then, if you want to add these materials back to your own fork, you need to use git pull to pull from Andrew's repo again. This won't be origin, but a different remote with a different address.
+
+Set up another remote, by convention called `upstream`.
+~~~{.bash}
+$ git remote add upstream https://github.com/nsoontie/WiSE-swc-ubc.git
+$ git remote -v
+~~~
+~~~{.output}
+upstream	https://github.com/nsoontie/WiSE-swc-ubc.git (fetch)
+upstream	https://github.com/nsoontie/WiSE-swc-ubc.git (push)
+origin	https://github.com/daisieh/WiSE-swc-ubc.git (fetch)
+origin	https://github.com/daisieh/WiSE-swc-ubc.git (push)
+~~~
+
+Now we can pull changes from that remote in the same way we pulled ones from `origin`:
+~~~{.bash}
+$ git pull upstream master
+~~~
+
