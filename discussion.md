@@ -91,7 +91,7 @@ $ git config --global --unset log.abbrevCommit
 $ git config --global --unset format.pretty
 ~~~
 
-> ## Version Controlling Your Git Configuration {.callout}
+> ## Undoing Git Configuration Changes {.callout}
 > 
 > You can use the `--unset` flag to delete unwanted options from `.gitconfig`.
 > Another way to roll back changes is to store your `.gitconfig` using Git.
@@ -251,7 +251,7 @@ $ git commit -m 'Removing info on Nibiru.  It is not a real planet!'
 ~~~
 
 
-## Removing with Unix
+## Removing a File with Unix
 Sometimes we migth forget to remove the file through Git. If you removed the 
 file with Unix `rm` instead of using `git rm`, no worries,
 Git is smart enough to notice the missing file. Let us recreate the file and
@@ -347,7 +347,7 @@ $ git commit -m 'Superman's home is now Earth'
 ~~~
 
 
-## Renaming with Unix
+## Renaming a File with Unix
 If you forgot to use Git and you used Unix `mv` instead 
 of `git mv`, you will have a touch more work to do but Git will 
 be able to deal with it. Let's try again renaming the file, 
