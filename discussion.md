@@ -251,7 +251,7 @@ $ git commit -m 'Removing info on Nibiru.  It is not a real planet!'
 ~~~
 
 
-#### Removing with Unix
+## Removing with Unix
 Sometimes we migth forget to remove the file through Git. If you removed the 
 file with Unix `rm` instead of using `git rm`, no worries,
 Git is smart enough to notice the missing file. Let us recreate the file and
