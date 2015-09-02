@@ -347,7 +347,7 @@ $ git commit -m 'Superman's home is now Earth'
 ~~~
 
 
-#### Renaming with Unix
+## Renaming with Unix
 If you forgot to use Git and you used Unix `mv` instead 
 of `git mv`, you will have a touch more work to do but Git will 
 be able to deal with it. Let's try again renaming the file, 
