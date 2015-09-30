@@ -7,7 +7,7 @@ minutes: 30
 > ## Learning Objectives {.objectives}
 >
 > *   Explain what remote repositories are and why they are useful.
-> *   Clone a remote repository. 
+> *   Clone a remote repository.
 > *   Push to or pull from a remote repository.
 
 Version control really comes into its own
@@ -82,7 +82,7 @@ go into the local `planets` repository,
 and run this command:
 
 ~~~ {.bash}
-$ git remote add origin https://github.com/vlad/planets
+$ git remote add origin https://github.com/vlad/planets.git
 ~~~
 
 Make sure to use the URL for your repository rather than Vlad's:
