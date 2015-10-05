@@ -58,7 +58,7 @@ but the remote repository on GitHub doesn't contain any files yet:
 The next step is to connect the two repositories.
 We do this by making the GitHub repository a [remote](reference.html#remote)
 for the local repository.
-The home page of the repository on GitHub includes
+For existing repositories, the home page of the repository on GitHub includes
 the string we need to identify it:
 
 ![Where to Find Repository URL on GitHub](fig/github-find-repo-string.png)
@@ -79,7 +79,7 @@ Click on the 'HTTPS' link to change the [protocol](reference.html#protocol) from
 
 Copy that URL from the browser,
 go into the local `planets` repository,
-and run this command:
+and run this command. For a newly created repository, the GitHub setup page should give you the same command.
 
 ~~~ {.bash}
 $ git remote add origin https://github.com/vlad/planets.git
@@ -104,7 +104,7 @@ but `origin` is by far the most common choice.
 
 Once the nickname `origin` is set up,
 this command will push the changes from our local repository
-to the repository on GitHub:
+to the repository on GitHub.  Again, for a newly created repository, you'll see this command on the set up page.
 
 ~~~ {.bash}
 $ git push origin master
