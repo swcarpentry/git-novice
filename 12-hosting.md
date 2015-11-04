@@ -55,6 +55,16 @@ situations, there is much less setup and maintenance involved with using an
 online service.  Furthermore, such tools are often provided free of charge to
 open source projects, and are also available for private repositories for a fee.
 
+In some scenarios, researchers might want to keep their shared documents or code private. For example, in
+the early stages of code development, before it is ready to be released as open source, a research team
+might want to collaborate on the code internally. In another scenario, a paper for publication might be
+prepared using version control, and the draft should not be circulated widely before submission. To work
+on such files in private, researchers can make use of the distributed nature of Git to exchange versions,
+without having to use any central repository. An elegant way to do this is via Git bundles, where the
+latest snapshot of a repository is bundled into a single file, which can then be emailed as an attachment
+or placed into a shared filesystem. Packing all changes into a single file will allow collaborators to
+circumvent complications with file permissions in shared filesystems.
+
 > ## Institutional Barriers {.callout}
 >
 > Sharing is the ideal for science,
