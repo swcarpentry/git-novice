@@ -80,7 +80,7 @@ change set
     [repository](#repository).
 
 commit
-:   To record the current state of a set of files (a [change set](#changeset))
+:   To record the current state of a set of files (a [change set](#change-set))
     in a [version control](#version-control) [repository](#repository). As a noun, 
     the result of commiting, i.e. a recorded change set in a repository.
     If a commit contains changes to multiple files,
