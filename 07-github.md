@@ -220,3 +220,9 @@ copy unless its owner grants you permission.
 > Make changes to your local repository and push these changes.
 > Go to the repo you just created on Github and check the [timestamps](reference.html#timestamp) of the files.
 > How does GitHub record times, and why?
+
+> ## What Does `git clone` do? {.challenge}
+> 
+> The process of cloning a repository can be broken down into 5 bash and git commands, 
+> most of which are shown in this lesson.  After opening your terminal, what five 
+> commands could you run to perform the same operation as `git clone`?  
