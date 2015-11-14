@@ -125,8 +125,7 @@ resolve
     being managed by a [version control](#version-control) system.
 
 revision
-:   A recorded [change set](#change-set) of a [version control](#version-control) 
-    [repository](#repository). The same as a [commit](#commit).
+:   A synonym for [commit](#commit).
 
 SHA-1
 :   [SHA-1 hashes](http://en.wikipedia.org/wiki/SHA-1) is what Git uses to compute identifiers, including for commits.
