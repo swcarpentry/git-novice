@@ -180,6 +180,39 @@ If someone else had pushed some changes to the repository on GitHub,
 though,
 this command would download them to our local repository.
 
+There is one more way to interact with remote repositories on Github.  So 
+far in the lesson, we've experienced the scenario where we had a repository on our 
+computer, and then created a space for it on Github, filling the Github copy 
+by "pushing" the content from our computer.  What if the opposite were true?  
+What if we have an online repository that we want to copy to our computer?  There 
+is a single git command that can do this for us, `git clone`.  
+
+Open a new terminal window.  We could create another copy of our `planets` repository, 
+but we don't have to.  In fact, we can clone any public repository on Github to our 
+local computer.  Let's try cloning this lesson from the Software Carpentry Github page.  
+
+~~~{.bash}
+git clone https://github.com/swcarpentry/git-novice
+~~~
+~~~{.output}
+Cloning into 'git-novice'...
+remote: Counting objects: 3249, done.
+remote: Total 3249 (delta 0), reused 0 (delta 0), pack-reused 3249
+Receiving objects: 100% (3249/3249), 6.25 MiB | 4.27 MiB/s, done.
+Resolving deltas: 100% (1835/1835), done.
+Checking connectivity... done.
+~~~
+
+If you type `ls`, you should see a new directory named `git-novice` and if you 
+look inside, it should contain all the material from this lesson.  The `git clone` 
+command created the local directory and then "pulled" the material from the Github 
+copy into this new local copy.  
+
+Note that even though you now have a local copy of this repository, you won't be able 
+to push changes to it, since it doesn't belong to you.  So you can always copy a 
+repository on Github to your own computer, but you won't be able to edit the Github 
+copy unless its owner grants you permission.  
+
 > ## GitHub Timestamp {.challenge}
 >
 > Create a remote repository on GitHub.
