@@ -31,11 +31,11 @@ If there aren't conflicts, you can even try to play two sets of changes onto the
 
 You can think of version control as allowing you to collaborate with yourself two weeks from now as well as yourself two weeks ago. But you can also collaborate with other people, using version control.
 
-The particular version control system we will teach you today is called Git, and the main reason we like it is because of Github. Github is a free website that lets us use the version control tool Git to share with users anywhere in the world.
+The particular version control system we will teach you today is called Git, and the main reason we like it is because of GitHub. GitHub is a free website that lets us use the version control tool Git to share with users anywhere in the world.
 
 ## An example
 
-Andrew wants to share the workshop exercises with everyone in the workshop, and he wants everyone to be able to share and view each others' answers to the exercises. Yesterday, he had everyone copy and paste their answers from their RStudio worksheets to the Etherpad, but maybe there's a better way to do this. He's going to set up a Github repository, and by the end of the day, you all will be able to contribute your answers to it and view each others' work.
+Andrew wants to share the workshop exercises with everyone in the workshop, and he wants everyone to be able to share and view each others' answers to the exercises. Yesterday, he had everyone copy and paste their answers from their RStudio worksheets to the Etherpad, but maybe there's a better way to do this. He's going to set up a GitHub repository, and by the end of the day, you all will be able to contribute your answers to it and view each others' work.
 
 ## Setting up the repo
 
@@ -47,9 +47,9 @@ $ git add *
 $ git commit -m "initial commit"
 ~~~
 
-He creates a new public repository to share this on Github.
+He creates a new public repository to share this on GitHub.
 
-Then he pushes his directory to that repository on Github.
+Then he pushes his directory to that repository on GitHub.
 
 ~~~ {.bash}
 $ git remote add origin https://github.com/aammd/workshop.git
@@ -58,4 +58,4 @@ $ git push -u origin master
 
 Now it's ready for collaboration!
 
-First things first: does everyone have a github account?
+First things first: does everyone have a GitHub account (create one [here][https://github.com])?
