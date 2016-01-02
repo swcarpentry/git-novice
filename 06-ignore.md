@@ -119,3 +119,13 @@ $ git status --ignored
 
 nothing to commit, working directory clean
 ~~~
+
+> ## Ignoring nested files {.challenge}
+>
+> Given a directory structuture that looks like:
+> ~~~
+> results/data
+> results/plots
+> ~~~
+>
+> How would you ignore only `results/plots` and not `results/data`?
