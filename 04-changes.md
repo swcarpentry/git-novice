@@ -411,6 +411,13 @@ repository (`git commit`):
 
 ![The Git Commit Workflow](fig/git-committing.svg)
 
+> ## Choosing a commit message {.challenge}
+>
+> Which of the following commit messages would be most appropriate for the 
+> last commit made to `mars.txt`?
+> *   (a) "Changes"
+> *   (b) "Added line 'But the Mummy will appreciate the lack of humidity' to mars.txt"
+> *   (c) "Discuss effects of Mars' climate on the Mummy"
 
 > ## Committing Changes to Git {.challenge}
 >
