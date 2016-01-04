@@ -415,9 +415,15 @@ repository (`git commit`):
 >
 > Which of the following commit messages would be most appropriate for the 
 > last commit made to `mars.txt`?
-> 1. "Changes"
-> 2. "Added line 'But the Mummy will appreciate the lack of humidity' to mars.txt"
-> 3. "Discuss effects of Mars' climate on the Mummy"
+> 1. 
+>
+>     "Changes"
+> 2. 
+>
+>     "Added line 'But the Mummy will appreciate the lack of humidity' to mars.txt"
+> 3. 
+>
+>     "Discuss effects of Mars' climate on the Mummy"
 
 > ## Committing Changes to Git {.challenge}
 >
