@@ -415,6 +415,7 @@ repository (`git commit`):
 >
 > Which of the following commit messages would be most appropriate for the 
 > last commit made to `mars.txt`?
+> 
 > 1. 
 >
 >     "Changes"
