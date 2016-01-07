@@ -97,3 +97,11 @@ Fast-forward
  1 file changed, 1 insertion(+)
  create mode 100644 pluto.txt
 ~~~
+
+> ## Review changes {.challenge}
+>
+> The Owner makes some changes in the repository without giving any information
+> to the Collaborator. 
+> How can the Collaborator find out what has changed with command line? And 
+> on GitHub? And what if the Collaborator made some local changes and committed
+> them?
