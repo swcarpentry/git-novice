@@ -119,3 +119,41 @@ $ git status --ignored
 
 nothing to commit, working directory clean
 ~~~
+
+> ## Ignoring nested files {.challenge}
+>
+> Given a directory structure that looks like:
+> ~~~
+> results/data
+> results/plots
+> ~~~
+>
+> How would you ignore only `results/plots` and not `results/data`?
+
+> ## Including specific files {.challenge}
+>
+> How would you ignore all `.data` files in your root directory except for 
+> `final.data`?
+> Hint: Find out what `!` (the exclamation point operator) does
+
+> ## Ignoring files deep in a directory {.challenge}
+>
+> Given a directory structure that looks like:
+> ~~~
+> results/data/position/gps/useless.data
+> results/plots
+> ~~~
+>
+> What's the shortest `.gitignore` rule you could write to ignore all `.data`
+> files in `result/data/position/gps`
+> Hint: What does appending `**` to a rule accomplish?
+
+> ## The order of rules {.challenge}
+>
+> Given a `.gitignore` file with the following contents:
+> ~~~
+> *.data
+> !*.data
+> ~~~
+>
+> What will be the result?
