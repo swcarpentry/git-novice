@@ -101,7 +101,8 @@ Fast-forward
 > ## Review changes {.challenge}
 >
 > The Owner makes some changes in the repository without giving any information
-> to the Collaborator. 
-> How can the Collaborator find out what has changed with command line? And 
-> on GitHub? And what if the Collaborator made some local changes and committed
-> them?
+> to the Collaborator. How can the Collaborator find out what has changed with 
+> command line? And on GitHub? 
+> 
+> The Collaborator makes some local changes and committed them. Has the process
+> to review changes changed? 
