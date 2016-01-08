@@ -220,3 +220,43 @@ moving backward and forward in time becomes much easier.
 >     $ git checkout <unique ID of last commit> data_cruncher.py
 >     ~~~
 > 5. Both 2 & 4
+
+
+> ## Understanding Workflow and History {.challenge}
+>
+> What is the output of the following commands?
+>
+> ~~~ {.bash}
+> $ cd planets
+> $ nano venus.txt #input the following text: Venus is beautiful and full of love
+> $ git add venus.txt
+> $ nano venus.txt #add the following text: Venus is too hot to be suitable as a base
+> $ git commit -m "comments on Venus as an unsuitable base"
+> $ git checkout HEAD venus.txt
+> $ cat venus.txt #this will print the contents of venus.txt to the screen
+> ~~~
+>
+> 1. 
+> 
+>     ~~~ {.output}
+>     Venus is too hot to be suitable as a base
+>     ~~~
+>
+> 2. 
+> 
+>     ~~~ {.output}
+>     Venus is beautiful and full of love
+>     ~~~
+>
+> 3. 
+> 
+>     ~~~ {.output}
+>     Venus is beautiful and full of love
+>     Venus is too hot to be suitable as a base
+>     ~~~
+>
+> 4. 
+> 
+>     ~~~ {.output}
+>     Error because you have changed venus.txt without committing the changes
+>     ~~~
