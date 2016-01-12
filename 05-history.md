@@ -224,7 +224,7 @@ moving backward and forward in time becomes much easier.
 
 > ## Understanding Workflow and History {.challenge}
 >
-> What is the output of the following commands?
+> What is the output of cat venus.txt at the end of this set of commands?
 >
 > ~~~ {.bash}
 > $ cd planets
