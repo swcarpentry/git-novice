@@ -104,5 +104,12 @@ Fast-forward
 > to the Collaborator. How can the Collaborator find out what has changed with 
 > command line? And on GitHub? 
 > 
-> The Collaborator makes some local changes and committed them. Has the process
-> to review changes changed? 
+> ## Comment changes in GitHub {.challenge}
+>
+> The Collaborator has some questions about one line change made by the Owner and
+> has some suggestions to propose. 
+> 
+> With GitHub, it is possible to comment the diff of a commit. Over the line of 
+> code to comment, a blue comment icon appears to open a comment window. 
+> 
+> The Collaborator posts its comments and suggestions using GitHub interface.
