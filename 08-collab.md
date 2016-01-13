@@ -100,7 +100,7 @@ Fast-forward
 
 > ## Review changes {.challenge}
 >
-> The Owner makes some changes in the repository without giving any information
+> The Owner push commits to the repository without giving any information
 > to the Collaborator. How can the Collaborator find out what has changed with 
 > command line? And on GitHub? 
 > 
