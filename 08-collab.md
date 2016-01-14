@@ -97,3 +97,19 @@ Fast-forward
  1 file changed, 1 insertion(+)
  create mode 100644 pluto.txt
 ~~~
+
+> ## Review changes {.challenge}
+>
+> The Owner push commits to the repository without giving any information
+> to the Collaborator. How can the Collaborator find out what has changed with 
+> command line? And on GitHub? 
+> 
+> ## Comment changes in GitHub {.challenge}
+>
+> The Collaborator has some questions about one line change made by the Owner and
+> has some suggestions to propose. 
+> 
+> With GitHub, it is possible to comment the diff of a commit. Over the line of 
+> code to comment, a blue comment icon appears to open a comment window. 
+> 
+> The Collaborator posts its comments and suggestions using GitHub interface.
