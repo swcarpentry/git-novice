@@ -461,4 +461,26 @@ repository (`git commit`):
 > then modify one line, add a fourth line, and display the differences
 > between its updated state and its original state.
 
+> ## Author and Committer {.challenge}
+>
+> For each of the commits you have done, Git stored your name twice.
+> You are named as the author and as the committer. You can observe
+> that by telling Git to show you more information about your last
+> commits:
+>
+> ~~~
+> $ git log --format=full
+> ~~~
+>
+> When commiting you can name someone else as the author:
+>
+> ~~~
+> $ git commit --author="Vlad Dracula <vlad@tran.sylvan.ia>"
+> ~~~
+>
+> Create a new repository and create two commits: one without the
+> `--author` option and one by naming a colleague of yours as the
+> author. Run `git log` and `git log --format=full`. Think about ways
+> how that can allow you to collaborate with your colleagues.
+
 [commit-messages]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
