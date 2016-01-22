@@ -478,7 +478,7 @@ repository (`git commit`):
 > $ git commit --author="Vlad Dracula <vlad@tran.sylvan.ia>"
 > ~~~
 >
-> Create a new repository and create three commits: two without the
+> Create a new repository and create two commits: one without the
 > `--author` option and one by naming a colleague of yours as the
 > author. Run `git log` and `git log --format=full`. Think about ways
 > how that can allow you to collaborate with your colleagues.
