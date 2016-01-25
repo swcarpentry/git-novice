@@ -187,3 +187,8 @@ this command would download them to our local repository.
 > Make changes to your local repository and push these changes.
 > Go to the repo you just created on Github and check the [timestamps](reference.html#timestamp) of the files.
 > How does GitHub record times, and why?
+
+> ## Push vs. commit {.challenge}
+>
+> In this lesson, we introduced the "git push" command.
+> How is "git push" different from "git commit"?
