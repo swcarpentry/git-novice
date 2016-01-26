@@ -192,3 +192,19 @@ this command would download them to our local repository.
 >
 > In this lesson, we introduced the "git push" command.
 > How is "git push" different from "git commit"?
+
+> ## Fixing up remote settings {.challenge}
+>
+> It happens quite often in practice that you made a typo in the
+> remote URL. This exercice is about how to fix this kind of issues.
+> First start by adding a remote with an invalid URL:
+>
+> ~~~ {.bash}
+> git remote add broken https://github.com/this/url/is/invalid
+> ~~~
+>
+> Do you get an error when adding the remote? Can you think of a
+> command that would make it obvious that your remote URL was not
+> valid? Can you figure out how to fix the URL (tip: use `git remote
+> -h`)? Don't forget to clean up and remove this remote once you are
+> done with this exercise.
