@@ -6,7 +6,7 @@ minutes: 20
 ---
 > ## Learning Objectives {.objectives}
 > 
-> *   Go through the modify-add-commit cycle for single and multiple files.
+> *   Go through the modify-add-commit cycle for a single file.
 > *   Explain where information is stored at each stage of Git commit workflow.
 
 Let's create a file called `mars.txt` that contains some notes
