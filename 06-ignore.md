@@ -158,7 +158,7 @@ nothing to commit, working directory clean
 >
 > What will be the result?
 
-> ## Log-files
+> ## Log-files {.challenge}
 >
 > You wrote a script that creates many intermediate log-files of the form log_01, log_02, log_03, etc. You want to keep them but you do not want to track them through `git`.
 >
