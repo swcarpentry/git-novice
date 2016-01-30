@@ -6,7 +6,7 @@ minutes: 5
 ---
 > ## Learning Objectives {.objectives}
 >
-> *   Explain why adding licensing and citation information to a project repository is important.
+> *   Explain why adding licensing and citation information to a repository is important.
 > *   Choose a proper license.
 > *   Explain differences in licensing and social expectations.
 
