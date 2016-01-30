@@ -24,24 +24,23 @@ then select Collaborators, and enter your partner's username.
 
 ![Adding collaborators on GitHub](fig/github-add-collaborators.png)
 
-The Collaborator needs to work on this project locally. He or she should `cd` to another directory
-(so `ls` doesn't show a `planets` folder),
-and then make a copy of the Owner's repository:
+The Collaborator needs to download a copy of the Owner's repository to her
+ machine. This is called "cloning a repo". To clone the Owner's repo into
+her `Desktop` folder, the Collaborator enters:
 
 ~~~ {.bash}
-$ git clone https://github.com/vlad/planets.git
+$ git clone https://github.com/vlad/planets.git ~/Desktop/vlad-planets
 ~~~
 
 Replace 'vlad' with the Owner's username.
 
-`git clone` creates a fresh local copy of a remote repository.
-
 ![After Creating Clone of Repository](fig/github-collaboration.svg)
 
-The Collaborator can now make a change in his or her copy of the repository:
+The Collaborator can now make a change in her clone of the Owner's repository,
+exactly the same way as we've been doing before:
 
 ~~~ {.bash}
-$ cd planets
+$ cd ~/Desktop/vlad-planets
 $ nano pluto.txt
 $ cat pluto.txt
 ~~~
