@@ -8,13 +8,15 @@ minutes: 25
 >
 > *  Collaborate pushing to a common repository.
 
-For the next step, get into pairs.
-One person will be the "Owner" (this is the person whose Github repository will be used to start the exercise) and the other person will be the "Collaborator" (this is the person who will be cloning the Owner's repository and making changes to it).
+For the next step, get into pairs.  One person will be the "Owner" and the other
+will be the "Collaborator". The goal is that the Collaborator add changes into
+the Owner's repository. We will switch roles at the end, so both persons will
+play Owner and Collaborator.
 
 > ## Practicing by yourself {.callout}
 >
 > If you're working through this lesson on your own, you can carry on by opening
-> a second terminal window, and switching to another directory (e.g. `/tmp`).
+> a second terminal window.
 > This window will represent your partner, working on another computer. You
 > won't need to give anyone access on GitHub, because both 'partners' are you.
 
@@ -56,7 +58,7 @@ $ git commit -m "Some notes about Pluto"
  create mode 100644 pluto.txt
 ~~~
 
-Then push the change to GitHub:
+Then push the change to the *Owner's repository* on GitHub:
 
 ~~~ {.bash}
 $ git push origin master
@@ -71,14 +73,15 @@ To https://github.com/vlad/planets.git
    9272da5..29aba7c  master -> master
 ~~~
 
-Note that we didn't have to create a remote called `origin`:
-Git does this automatically,
-using that name,
-when we clone a repository.
-(This is why `origin` was a sensible choice earlier
-when we were setting up remotes by hand.)
+Note that we didn't have to create a remote called `origin`: Git uses this
+name by default when we clone a repository.  (This is why `origin` was a
+sensible choice earlier when we were setting up remotes by hand.)
 
-We can now download changes into the original repository on our machine:
+Take a look to the Owner's repository on its GitHub website now (maybe you need
+to refresh your browser.) You should be able to see the new commit made by the
+Collaborator.
+
+To download the Collaborator's changes from GitHub, the Owner now enters:
 
 ~~~ {.bash}
 $ git pull origin master
@@ -97,18 +100,25 @@ Fast-forward
  create mode 100644 pluto.txt
 ~~~
 
+Now the three repositories (Owner's local, Collaborator's local, and Owner's on
+GitHub) are back in sync.
+
+> ## Review changes {.challenge}
+>
+> Switch roles and repeat the whole process.
+>
 > ## Review changes {.challenge}
 >
 > The Owner push commits to the repository without giving any information
-> to the Collaborator. How can the Collaborator find out what has changed with 
-> command line? And on GitHub? 
-> 
+> to the Collaborator. How can the Collaborator find out what has changed with
+> command line? And on GitHub?
+>
 > ## Comment changes in GitHub {.challenge}
 >
 > The Collaborator has some questions about one line change made by the Owner and
-> has some suggestions to propose. 
-> 
-> With GitHub, it is possible to comment the diff of a commit. Over the line of 
-> code to comment, a blue comment icon appears to open a comment window. 
-> 
+> has some suggestions to propose.
+>
+> With GitHub, it is possible to comment the diff of a commit. Over the line of
+> code to comment, a blue comment icon appears to open a comment window.
+>
 > The Collaborator posts its comments and suggestions using GitHub interface.
