@@ -42,9 +42,10 @@ across different computers facilitating collaboration among different people.
 
 > ## The long history of version control systems {.callout}
 >
-> Automated version control systems are nothing new. Tools like RCS, CVS, or
-> Subversion are considered now legacy systems, offering more limited
-> capabilities than modern tools, such as Git and
-> [Mercurial](http://swcarpentry.github.io/hg-novice/). In particular, the
-> latter are *distributed*, meaning that they don't need a centralized server
-> to host the repository.
+> Automated version control systems are nothing new. 
+> Tools like RCS, CVS, or Subversion have been around since the early 1980s and are used by many large companies.
+> However, many of these are now becoming considered as legacy systems due to various limitations in their capabilities.
+> In particular, the more modern systems, such as Git and [Mercurial](http://swcarpentry.github.io/hg-novice/) 
+> are *distributed*, meaning that they do not need a centralized server to host the repository.
+> These modern systems also include powerful merging tools that make it possible for multiple authors to work within 
+> the same files concurrently.
