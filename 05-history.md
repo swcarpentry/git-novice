@@ -260,3 +260,18 @@ moving backward and forward in time becomes much easier.
 >     ~~~ {.output}
 >     Error because you have changed venus.txt without committing the changes
 >     ~~~
+
+> ## Reattaching your head {.challenge}
+> Above we used
+>
+> ~~~ {.bash}
+> $ git checkout f22b25e mars.txt
+> ~~~
+>
+> to revert mars.txt to its state after the commit f22b25e.
+> If you forget `mars.txt` in that command, git will tell you that "You are in
+> 'detached HEAD' state."
+>
+> Detach your head, look around (check the state of the
+> files, the output of ``git status``, ``git log`` and ``git diff``)
+> Then reattach your head by running ``git checkout master``
