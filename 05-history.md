@@ -148,6 +148,19 @@ we can use a commit identifier instead:
 $ git checkout f22b25e mars.txt
 ~~~
 
+> ## Reattaching your head {.callout}
+> Above we used
+>
+> ~~~ {.bash}
+> $ git checkout f22b25e mars.txt
+> ~~~
+>
+> to revert mars.txt to its state after the commit f22b25e.
+> If you forget `mars.txt` in that command, git will tell you that "You are in
+> 'detached HEAD' state." In this state, you shouldn't make any changes.
+> You can fix this by reattaching your head using ``git checkout master``
+
+
 It's important to remember that
 we must use the commit number that identifies the state of the repository
 *before* the change we're trying to undo.
@@ -261,17 +274,3 @@ moving backward and forward in time becomes much easier.
 >     Error because you have changed venus.txt without committing the changes
 >     ~~~
 
-> ## Reattaching your head {.challenge}
-> Above we used
->
-> ~~~ {.bash}
-> $ git checkout f22b25e mars.txt
-> ~~~
->
-> to revert mars.txt to its state after the commit f22b25e.
-> If you forget `mars.txt` in that command, git will tell you that "You are in
-> 'detached HEAD' state."
->
-> Detach your head, look around (check the state of the
-> files, the output of ``git status``, ``git log`` and ``git diff``)
-> Then reattach your head by running ``git checkout master``
