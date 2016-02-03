@@ -148,7 +148,7 @@ we can use a commit identifier instead:
 $ git checkout f22b25e mars.txt
 ~~~
 
-> ## Reattaching your head {.callout}
+> ## Don't lose your HEAD {.callout}
 > Above we used
 >
 > ~~~ {.bash}
