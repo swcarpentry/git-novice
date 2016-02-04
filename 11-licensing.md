@@ -10,17 +10,14 @@ minutes: 10
 > *   Choose a proper license.
 > *   Explain differences in licensing and social expectations.
 
-When a repository with source code, a manuscript
-or other creative works becomes public, it should include a
-file `LICENSE` or `LICENSE.txt` in the base directory of the
-repository that clearly states under which license the content is
-being made available. This is because
-as creative works, source code is automatically eligible for
-intellectual property (and thus copyright) protection. Code that appears to be, or is expressly
-advertised as freely available has *not* waived such
-protection. Hence, those who (re)use code that lacks a license
-statement do so on their own peril, because the author(s)
-of the software code can always unilaterally make such reuse illegal.
+When a repository with source code, a manuscript or other creative
+works becomes public, it should include a file `LICENSE` or
+`LICENSE.txt` in the base directory of the repository that clearly
+states under which license the content is being made available. This
+is because creative works are automatically eligible for intellectual
+property (and thus copyright) protection. Reusing creative works
+without a license is dangerous, because the copyright holders could
+sue you for copyright infringement.
 
 A license solves this problem by granting rights to others (the
 licensees) that they would otherwise not have. What rights are being
