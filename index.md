@@ -66,7 +66,8 @@ to be shared can and should be stored in a version control system.
 9.  [Conflicts](09-conflict.html)
 10. [Open Science](10-open.html)
 11. [Licensing](11-licensing.html)
-12. [Hosting](12-hosting.html)
+12. [Citation](12-citation.html)
+13. [Hosting](13-hosting.html)
 
 ## Other Resources
 

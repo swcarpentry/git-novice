@@ -64,7 +64,7 @@ subtitle: Reference
 *   People who are not lawyers should not try to write licenses from
     scratch.
 
-## [Hosting](12-hosting.html)
+## [Hosting](13-hosting.html)
 
 *   Projects can be hosted on university servers,
     on personal domains,
