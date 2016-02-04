@@ -257,7 +257,7 @@ what, arise naturally once we start talking about using public services like
 GitHub to store files. Also, the discussion gives learners a chance to catch
 their breath after what is often a frustrating couple of hours.
 
-## [Hosting](12-hosting.html)
+## [Hosting](13-hosting.html)
 
 A common concern for learners is having their work publicly available on
 GitHub.  While we encourage open science, sometimes private repos are the

@@ -56,25 +56,6 @@ decision only makes it more complicated later, because each time a new
 collaborator starts contributing, they, too, hold copyright and will
 thus need to be asked for approval once a license is chosen.
 
-You may also want to include a file called `CITATION` or `CITATION.txt`
-that describes how to reference your project;
-the one for Software Carpentry states:
-
-~~~
-To reference Software Carpentry in publications, please cite both of the following:
-
-Greg Wilson: "Software Carpentry: Lessons Learned". arXiv:1307.5448, July 2013.
-
-@online{wilson-software-carpentry-2013,
-  author      = {Greg Wilson},
-  title       = {Software Carpentry: Lessons Learned},
-  version     = {1},
-  date        = {2013-07-20},
-  eprinttype  = {arxiv},
-  eprint      = {1307.5448}
-}
-~~~
-
 > ## Can I Use Open License? {.challenge}
 >
 > Find out whether you are allowed to apply an open license to your software.
