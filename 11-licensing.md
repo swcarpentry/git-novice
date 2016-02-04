@@ -22,23 +22,8 @@ sue you for copyright infringement.
 A license solves this problem by granting rights to others (the
 licensees) that they would otherwise not have. What rights are being
 granted under which conditions differs, often only slightly, from one
-license to another. In contrast to proprietary licenses, the
-[open licences](http://opensource.org/licenses/alphabetical) certified by
-the [Open Source Initiative](http://opensource.org/) all grant at
-least the following rights, referred to as the
-[Open Source Definition](http://opensource.org/osd):
-
-1. The source code is available, and may be used and redistributed
-   without restrictions, including as part of aggregate distributions.
-2. Modifications or other derived works are allowed, and can be
-   redistributed as well.
-3. The question of who receives these rights is not subject to
-   discrimination, including not by fields of endeavor such as
-   commercial versus academic.
-
-How best to choose an appropriate license can seem daunting, given how
-many possibilities there are. In practice, a few licenses are by far
-the most popular, including the following:
+license to another. In practice, a few licenses are by far the most
+popular, including the following:
 
 * [GNU General Public License](http://opensource.org/licenses/GPL-3.0)
   (GPL),
