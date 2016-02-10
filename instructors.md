@@ -127,6 +127,26 @@ working in teams or not, because it is
 *   This is a good moment to show a diff with a graphical diff tool. If you 
     skip it because you're short on time, show it once in GitHub.
 
+Solutions to exercises:
+
+> ## Choosing a commit message {.challenge}
+>
+> Which of the following commit messages would be most appropriate for the 
+> last commit made to `mars.txt`?
+> 
+> 1. 
+>
+>     "Changes"
+> 2. 
+>
+>     "Added line 'But the Mummy will appreciate the lack of humidity' to mars.txt"
+> 3. 
+>
+>     **"Discuss effects of Mars' climate on the Mummy"**
+> 
+>Answer 1 is not descriptive enough, answer 2 is too descriptive and redundant, and answer 3 is good - short but descriptive.
+
+
 ## [Exploring History](05-history.html)
 
 *   One thing may cause confusion is recovering old versions.  If, instead of
