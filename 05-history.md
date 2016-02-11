@@ -235,6 +235,18 @@ moving backward and forward in time becomes much easier.
 > 5. Both 2 & 4
 
 
+> ## Reverting a commit {.challenge}
+
+Jennifer is collaborating on her python script with her colleagues and realises her last commit isn't right at all and wants to undo it.  Since she is working with others she needs to undo her work the correct way to leave a record of it.  Below are the right steps and explanations, what is the missing command?
+
+| Command or action              | Explanation                                                                                                                            |
+|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| < ________ >                   | Look at the git history of the project to find the commit ID                                                                           |
+| Copy the ID                    | Find the commit and copy the first few characters of the ID (e.g. 0b1d055). You generally only need the first six to be unique.        |
+| $`git revert  <commit ID> `    | Type `git revert` and paste in the ID copied. Git will create a new commit that is the exact opposite of the commit you are reverting. |
+| Type in the new commit message | Your default text editor will open so you can edit the commit message to record you are reverting the previous commit and why.         |
+| Save and close                 | Save the commit and close your editor to complete the process.                                                                         |
+
 > ## Understanding Workflow and History {.challenge}
 >
 > What is the output of cat venus.txt at the end of this set of commands?
