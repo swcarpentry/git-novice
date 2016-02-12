@@ -31,7 +31,7 @@ but requires more time and effort to set up than either
 the option above or the option below.
 
 The third option is to use a public hosting service like
-[GitHub](http://github.com), [BitBucket](http://bitbucket.org), or
+[GitHub](http://github.com), [BitBucket](http://bitbucket.org), [GitLab](https://gitlab.com/users/sign_in), or
 [SourceForge](http://sourceforge.net).  Each of these services provides a web
 interface that enables people to create, view, and edit their code repositories.
 These services also provide communication and project management tools including
