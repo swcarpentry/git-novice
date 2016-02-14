@@ -158,9 +158,10 @@ nothing to commit, working directory clean
 >
 > What will be the result?
 >
-> ##Tom creates the following files in his project repository: a.stat, b.stat, c.stat, summary.stat, data/a.dat, data/b.dat, data/c.data. He decided for the 
+> ## Ignoring a particular file {.challenge}
+> Tom creates the following files in his project repository: a.stat, b.stat, c.stat, summary.stat, data/a.dat, data/b.dat, data/c.data. He decided for the 
 > time being everything ending with stat (*.stat) and those in data folder should be ignored. So created a gitignore file *.stat and data/. However as the 
-> time pass, he decided summary.stat should be really tracked, so to this he could: {.challenge}
+> time pass, he decided summary.stat should be really tracked, so to this he could:
 >
 > a)
 > 
