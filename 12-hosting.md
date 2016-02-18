@@ -45,6 +45,16 @@ As an example,
 Software Carpentry [is on GitHub](https://github.com/swcarpentry/)
 where you can find the [source for this page](https://github.com/swcarpentry/git-novice/blob/gh-pages/12-hosting.md).  Anyone with a GitHub account can suggest changes to this text.
 
+For your personal work, you can host your code and collaborate for free using 
+[GitHub](http://github.com), though your work will be publicy accessible on the 
+internet. If you are not sure you want your work to be accessible to the public 
+at large (e.g., your PI won't allow it) but still want the benefits of hosted 
+version control, you can receive five free private repositories
+along with unlimited public reposotories using an *.edu* email address on
+[GitHub](htt://github.com). Alternatively, you can get unlimited public and 
+private repositories by signing up on [Bitbucket](http://bitbucket.org) with an
+*.edu, .ac.il, edu.sg* email address.
+
 Using large, well-established services can also help you quickly take advantage
 of powerful tools.  One such tool, continuous integration (CI), can
 automatically run software builds and tests whenever code is committed or pull
