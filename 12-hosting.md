@@ -53,7 +53,7 @@ version control, you can receive five free private repositories
 along with unlimited public reposotories using an *.edu* email address on
 [GitHub](htt://github.com). Alternatively, you can get unlimited public and 
 private repositories by signing up on [Bitbucket](http://bitbucket.org) with an
-*.edu, .ac.il, edu.sg* email address.
+*.edu, .ac.il, edu.sg* and all other high-level email addresses.
 
 Using large, well-established services can also help you quickly take advantage
 of powerful tools.  One such tool, continuous integration (CI), can
