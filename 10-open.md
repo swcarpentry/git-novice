@@ -2,7 +2,7 @@
 layout: page
 title: Version Control with Git
 subtitle: Open Science
-minutes: 5
+minutes: 5-10
 ---
 > ## Learning Objectives {.objectives}
 >
@@ -104,3 +104,22 @@ by acting as a shareable electronic lab notebook for computational work:
 > using only what they can find in your papers or on the web.
 > Try to do the same for one of their results,
 > then try to do it for a result from a lab you work with.
+
+> ## How to find an appropriate data repository? {.challenge}
+>
+> Surf around the internet for a couple of minutes and check out the data repositories
+> mentioned above: [Figshare](http://figshare.com/), [Zenodo](http://zenodo.org), 
+> [Dryad](http://datadryad.org/). Depending on your field of research, you might 
+> find community-recognized repositories that are well-known in your field.
+> You might also find this page very useful -> [Nature: Recommended Data
+> Repositories](http://www.nature.com/sdata/data-policies/repositories). 
+> Discuss with your neighbor which data repository you might want to
+> approach for your current project and explain why. 
+
+> ## Can I also publish code? {.challenge}
+>
+> There are many new ways to publish code and to make it citable. One
+> way is described [here](https://guides.github.com/activities/citable-code/).
+> Basically it's a combination of github (where the code is) and zenodo (the 
+> repository, creating the DOI). Read through this page while being aware
+> that this is only one of many ways to making your code citable.
