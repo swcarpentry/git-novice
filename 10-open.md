@@ -107,7 +107,7 @@ by acting as a shareable electronic lab notebook for computational work:
 
 > ## How to find an appropriate data repository? {.challenge}
 >
-> Surf around the internet for a couple of minutes and check out the data repositories
+> Surf the internet for a couple of minutes and check out the data repositories
 > mentioned above: [Figshare](http://figshare.com/), [Zenodo](http://zenodo.org),
 > [Dryad](http://datadryad.org/). Depending on your field of research, you might
 > find community-recognized repositories that are well-known in your field.
@@ -121,5 +121,5 @@ by acting as a shareable electronic lab notebook for computational work:
 > There are many new ways to publish code and to make it citable. One
 > way is described [here](https://guides.github.com/activities/citable-code/).
 > Basically it's a combination of github (where the code is) and zenodo (the
-> repository, creating the DOI). Read through this page while being aware
+> repository creating the DOI). Read through this page while being aware
 > that this is only one of many ways to making your code citable.
