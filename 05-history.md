@@ -202,6 +202,25 @@ on the other hand,
 moving backward and forward in time becomes much easier.
 
 
+
+> ## Checking out changed files {.challenge}
+>
+> Assume you have started to work on something, like above and git says to discard thing.
+> How can the command above "git checkout -- mars.txt" be described in terms of git?
+>
+> a) take the last snapshot and overwrite my pending changes
+> b) in the history of the repository, go back one step
+> c) clear the staging area from the changes I did to mars.txt
+> d) delete everything I have done since I last committed
+>
+> How can it be described in terms of an editor, like word?
+>
+> a) "undo" my last changes (where redo is possible)
+> b) close the file without saving
+> c) overwrite the file I am working on with an older backup
+> d) create a copy of the file I am working on and then c)
+>
+>
 > ## Recovering Older Versions of a File {.challenge}
 >
 > Jennifer has made changes to the Python script that she has been working on for weeks, and the
