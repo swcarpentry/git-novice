@@ -5,7 +5,7 @@ subtitle: Collaborating
 minutes: 25
 ---
 > ## Learning Objectives {.objectives}
->
+> *   Clone a remote repository.
 > *  Collaborate pushing to a common repository.
 
 For the next step, get into pairs.
