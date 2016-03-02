@@ -39,7 +39,14 @@
 </ul>
 </div>
 </section>
-<p>When we use Git on a new computer for the first time, we need to configure a few things. Here’s how Dracula sets up his new laptop:</p>
+<p>When we use Git on a new computer for the first time, we need to configure a few things.
+<p>Git commands are written <code>git verb</code>, where <code>verb</code> is what we actually want it to do. Below are some basic Git commands for Git that will help during the setup process:</p>
+<ul>
+<li>our name and email address,</li>
+<li>to colorize output,</li>
+<li>what our favorite text editor is, and</li>
+<li>that we want to use these settings globally (i.e., for every project),</li>
+<p>Here’s how Dracula sets up his new laptop:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global user.name <span class="st">&quot;Vlad Dracula&quot;</span>
 $ <span class="kw">git</span> config --global user.email <span class="st">&quot;vlad@tran.sylvan.ia&quot;</span>
 $ <span class="kw">git</span> config --global color.ui <span class="st">&quot;auto&quot;</span></code></pre>
@@ -83,12 +90,6 @@ $ <span class="kw">git</span> config --global color.ui <span class="st">&quot;au
 </tr>
 </tbody>
 </table>
-<p>Git commands are written <code>git verb</code>, where <code>verb</code> is what we actually want it to do. In this case, we’re telling Git:</p>
-<ul>
-<li>our name and email address,</li>
-<li>to colorize output,</li>
-<li>what our favorite text editor is, and</li>
-<li>that we want to use these settings globally (i.e., for every project),</li>
 </ul>
 <p>The four commands above only need to be run once: the flag <code>--global</code> tells Git to use the settings for every project on this computer.</p>
 <p>You can check your settings at any time:</p>
