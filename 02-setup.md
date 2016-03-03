@@ -9,9 +9,20 @@ minutes: 5
 > *  Configure `git` the first time is used on a computer.
 > *  Understand the meaning of the `--global` configuration flag.
 
+
+
 When we use Git on a new computer for the first time,
-we need to configure a few things.
-Here's how Dracula sets up his new laptop:
+we need to configure a few things. Below are a few examples
+of configurations we will set as we get started with Git:
+
+*   our name and email address,
+*   to colorize our output,
+*   what our preferred text editor is,
+*   and that we want to use these settings globally (i.e. for every project)
+
+On a command line, Git commands are written as `git verb`, 
+where `verb` is what we actually want to do. So here is how 
+Dracula sets up his new laptop:
 
 ~~~ {.bash}
 $ git config --global user.name "Vlad Dracula"
@@ -34,17 +45,8 @@ He also has to set his favorite text editor, following this table:
 | Gedit (Linux)      | `$ git config --global core.editor "gedit -s -w"`   |
 
 
-Git commands are written `git verb`,
-where `verb` is what we actually want it to do.
-In this case,
-we're telling Git:
 
-*   our name and email address,
-*   to colorize output,
-*   what our favorite text editor is, and
-*   that we want to use these settings globally (i.e., for every project),
-
-The four commands above only need to be run once: the flag `--global` tells Git
+The four commands we just ran above only need to be run once: the flag `--global` tells Git
 to use the settings for every project, in your user account, on this computer.
 
 You can check your settings at any time:
