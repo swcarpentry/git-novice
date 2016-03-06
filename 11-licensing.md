@@ -6,30 +6,27 @@ minutes: 10
 ---
 > ## Learning Objectives {.objectives}
 >
-> *   Explain why adding licensing and citation information to a project repository is important.
+> *   Explain why adding licensing and citation information to a repository is important.
 > *   Choose a proper license.
 > *   Explain differences in licensing and social expectations.
 
-When a repository with source code, a manuscript
-or other creative works becomes public, it should include a
-file `LICENSE` or `LICENSE.txt` in the base directory of the
-repository that clearly states under which license the content is
-being made available. This is because
-as creative works, source code is automatically eligible for
-intellectual property (and thus copyright) protection. Code that appears to be, or is expressly
-advertised as freely available has *not* waived such
-protection. Hence, those who (re)use code that lacks a license
-statement do so on their own peril, because the author(s)
-of the software code can always unilaterally make such reuse illegal.
+When a repository with source code, a manuscript or other creative works becomes
+public, it should include a file `LICENSE` or `LICENSE.txt` in the base
+directory of the repository that clearly states under which license the content
+is being made available. This is because as creative works, source code is
+automatically eligible for intellectual property (and thus copyright)
+protection. Code that appears to be, or is expressly advertised as freely
+available has *not* waived such protection. Hence, those who (re)use code that
+lacks a license statement do so on their own peril, because the author(s) of the
+software code can always unilaterally make such reuse illegal.
 
-A license solves this problem by granting rights to others (the
-licensees) that they would otherwise not have. What rights are being
-granted under which conditions differs, often only slightly, from one
-license to another. In contrast to proprietary licenses, the
-[open licences](http://opensource.org/licenses/alphabetical) certified by
-the [Open Source Initiative](http://opensource.org/) all grant at
-least the following rights, referred to as the
-[Open Source Definition](http://opensource.org/osd):
+A license solves this problem by granting rights to others (the licensees) that
+they would otherwise not have. What rights are being granted under which
+conditions differs, often only slightly, from one license to another. In
+contrast to proprietary licenses, the [open
+licences](http://opensource.org/licenses/alphabetical) certified by the [Open
+Source Initiative](http://opensource.org/) all grant at least the following
+rights, referred to as the [Open Source Definition](http://opensource.org/osd):
 
 1. The source code is available, and may be used and redistributed
    without restrictions, including as part of aggregate distributions.
@@ -49,34 +46,29 @@ the most popular, including the following:
 * [BSD license](http://opensource.org/licenses/BSD-2-Clause),
 * [Apache license, Version 2.0](http://opensource.org/licenses/Apache-2.0).
 
-The GPL is different from most other open source licenses in that it
-is
+The GPL is different from most other open source licenses in that it is
 [infective](http://swcarpentry.github.io/git-novice/reference.html#infective):
-anyone who distributes a modified version of the code, or anything
-that includes GPL'ed code, must make *their* code freely available as
-well.
+anyone who distributes a modified version of the code, or anything that includes
+GPL'ed code, must make *their* code freely available as well.
 
-The following article provides an excellent overview of licensing and
-licensing options from the perspective of scientists who also write
-code:
+The following article provides an excellent overview of licensing and licensing
+options from the perspective of scientists who also write code:
 
-> Morin, A., Urban, J., and Sliz, P. “[A Quick Guide to Software
-> Licensing for the Scientist-Programmer](http://dx.doi.org/10.1371/journal.pcbi.1002598)” PLoS Computational Biology
-> 8(7) (2012): e1002598.
+> Morin, A., Urban, J., and Sliz, P. “[A Quick Guide to Software Licensing for
+> the Scientist-Programmer](http://dx.doi.org/10.1371/journal.pcbi.1002598)”
+> PLoS Computational Biology 8(7) (2012): e1002598.
 
-At the end of the day what matters is that there is a clear statement
-as to what the license is, and that the license is one already vetted
-and approved by [OSI](http://opensource.org). Also, the license is
-best chosen from the get-go, even if for a repository that is not
-public. Pushing off the decision only makes it more complicated later,
-because each time a new collaborator starts contributing, they, too,
-hold copyright and will thus need to be asked for approval once a
-license is chosen.
+At the end of the day what matters is that there is a clear statement as to what
+the license is, and that the license is one already vetted and approved by
+[OSI](http://opensource.org). Also, the license is best chosen from the get-go,
+even if for a repository that is not public. Pushing off the decision only makes
+it more complicated later, because each time a new collaborator starts
+contributing, they, too, hold copyright and will thus need to be asked for
+approval once a license is chosen.
 
-If the content of a repository contains reseach products other than
-software, such as data, and/or creative writing (manuals, technical
-reports, manuscripts), most licenses designed for software are _not_
-suitable.
+If the content of a repository contains reseach products other than software,
+such as data, and/or creative writing (manuals, technical reports, manuscripts),
+most licenses designed for software are _not_ suitable.
 
 * **Data:** In most jurisdictions most types of data (with possibly
   the exception of photos, medical images, etc) are considered facts
@@ -112,20 +104,32 @@ suitable.
   ([CC-BY-SA](http://creativecommons.org/licenses/by-sa/4.0/))
   licenses are considered "[Open](http://opendefinition.org/)".
 
-[Software Carpentry](http://software-carpentry.org/license.html)
-uses CC-BY for its lessons and the MIT License for its code
-in order to encourage the widest possible re-use.
-Again,
-the most important thing is for the `LICENSE` file in the root directory of your project
-to state clearly what your license is.
-You may also want to include a file called `CITATION` or `CITATION.txt`
-that describes how to reference your project;
-the one for Software Carpentry states:
+[Software Carpentry](http://software-carpentry.org/license.html) uses CC-BY for
+its lessons and the MIT License for its code in order to encourage the widest
+possible re-use.  Again, the most important thing is for the `LICENSE` file in
+the root directory of your project to state clearly what your license is.  You
+may also want to include a file called `CITATION` or `CITATION.txt` that
+describes how to reference your project; the [one for Software
+Carpentry](https://github.com/swcarpentry/website/blob/gh-pages/CITATION)
+states:
 
 ~~~
 To reference Software Carpentry in publications, please cite both of the following:
 
-Greg Wilson: "Software Carpentry: Lessons Learned". arXiv:1307.5448, July 2013.
+Greg Wilson: "Software Carpentry: Getting Scientists to Write Better
+Code by Making Them More Productive".  Computing in Science &
+Engineering, Nov-Dec 2006.
+
+Greg Wilson: "Software Carpentry: Lessons Learned". arXiv:1307.5448,
+July 2013.
+
+@article{wilson-software-carpentry-2006,
+    author =  {Greg Wilson},
+    title =   {Software Carpentry: Getting Scientists to Write Better Code by Making Them More Productive},
+    journal = {Computing in Science \& Engineering},
+    month =   {November--December},
+    year =    {2006},
+}
 
 @online{wilson-software-carpentry-2013,
   author      = {Greg Wilson},
@@ -148,7 +152,7 @@ Greg Wilson: "Software Carpentry: Lessons Learned". arXiv:1307.5448, July 2013.
 >
 > Many of the software tools we use on a daily basis (including in this workshop) are
 > released as open-source software. Pick a project on GitHub from the list below, or
-> one of your own choosing. Find its license (usually in a file called `LICENSE` or 
+> one of your own choosing. Find its license (usually in a file called `LICENSE` or
 > `COPYING`) and talk about how it restricts your use of the software. Is it one of
 > the licenses discussed in this session? How is it different?
 > - [Git](https://github.com/git/git), the source-code management tool
