@@ -82,7 +82,7 @@ by acting as a shareable electronic lab notebook for computational work:
 
 *   The conceptual stages of your work are documented, including who did
     what and when. Every step is stamped with an identifier (the commit ID)
-    that is for most intents and purposes is unique.
+    that is for most intents and purposes unique.
 *   You can tie documentation of rationale, ideas, and other
     intellectual work directly to the changes that spring from them.
 *   You can refer to what you used in your research to obtain your
