@@ -141,16 +141,23 @@ Branch master set up to track remote branch master from origin.
 > ## Password Managers {.callout}
 >
 > If your operating system has a password manager configured, `git push` will
-> try to use it when it needs your username and password. If you want to type
-> your username and password at the terminal instead of using
-> a password manager, type:
+> try to use it when it needs your username and password.  For example, this
+> is the default behavior for Git Bash on Windows. If you want to type your
+> username and password at the terminal instead of using a password manager,
+> type:
 >
 > ~~~ {.bash}
 > $ unset SSH_ASKPASS
 > ~~~
 >
-> You may want to add this command at the end of your `~/.bashrc` to make it the
-> default behavior.
+> in the terminal, before you run `git push`.  Despite the name, [git uses
+> `SSH_ASKPASS` for all credential
+> entry](http://git-scm.com/docs/gitcredentials#_requesting_credentials), so
+> you may want to unset `SSH_ASKPASS` whether you are using git via SSH or
+> https.
+>
+> You may also want to add `unset SSH_ASKPASS` at the end of your `~/.bashrc`
+> to make git default to using the terminal for usernames and passwords.
 
 Our local and remote repositories are now in this state:
 
