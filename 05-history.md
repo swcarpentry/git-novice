@@ -237,7 +237,7 @@ moving backward and forward in time becomes much easier.
 
 > ## Reverting a commit {.challenge}
 
-Jennifer is collaborating on her python script with her colleagues and realises her last commit isn't right at all and wants to undo it.  Since she is working with others she needs to undo her work the correct way to leave a record of it.  Below are the right steps and explanations, what is the missing command?
+Jennifer is collaborating on her python script with her colleagues and realises her last commit to the group repository is wrong and wants to undo it.  Jennifer needs to undo correctly so everyone in the group repository gets the correct change.  `git revert <wrong commit ID>` will make a new commit that undoes Jennifer's previous wrong commit. Therefore `git revert` is different than `git checkout <commit ID>` because `checkout` is for local changes not committed to the group repository.  Below are the right steps and explanations for Jennifer to use `git revert`, what is the missing command?
 
 | Command or action              | Explanation                                                                                                                            |
 |--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
