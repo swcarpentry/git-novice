@@ -71,3 +71,9 @@ open source projects, and are also available for private repositories for a fee.
 > Can you do this unilaterally,
 > or do you need permission from someone in your institution?
 > If so, who?
+
+> ## Where Can I Share My Work? {.challenge}
+>
+> Does your institution have a repository or repositories that you can
+> use to share your papers, data and software? How do institutional repositories
+> differ from services like [arXiV](http://arxiv.org/), [figshare](http://figshare.com/) and [GitHub](http://github.com/)?
