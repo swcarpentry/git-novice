@@ -4,17 +4,17 @@ title: Version Control with Git
 subtitle: Instructor's Guide
 ---
 Using a software tool to handle the versions of your project files
-lets you focus on the more interesting/innovative aspects of your project
+lets you focus on the more interesting/innovative aspects of your project.
 
-*   Version control's advantages:
+*   Version control's advantages
     *   It's easy to set up
     *   Every copy of a Git repository is a full backup of a project and its history
     *   A few easy-to-remember commands are all you need for most day-to-day version control tasks
     *   The [GitHub](https://github.com/) hosting service provides a web-based collaboration service
 *   Two main concepts
-    *   *commit*: a recorded set of changes in your project's file
+    *   *commit*: a recorded set of changes in your project's files
     *   *repository*: the history of all your project's commits
-*   Why Use Github?
+*   Why use Github?
     *   No need for a server: easy to set up
     *   GitHub's strong community: your colleagues are probably already there
 
@@ -121,7 +121,7 @@ working in teams or not, because it is
 ## [Tracking Changes](04-changes.html)
 
 *   It's important that learners do a full commit cycle by themselves (make
-    changes, `git add`, `git diff`, and `git commit`). The "`bio` repository"
+    changes, `git diff`, `git add`, and `git commit`). The "`bio` repository"
     challenge does that.
 
 *   This is a good moment to show a diff with a graphical diff tool. If you 
@@ -170,7 +170,7 @@ particular set of files in `.gitignore`.
 *   Make it clear that Git and GitHub are not the same thing: Git is an open
     source version control tool, GitHub is a company that hosts Git
     repositories in the web and provides a web interface to interact with repos
-    the host.
+    they host.
 
 *   If your learners are advanced enough to be comfortable with SSH, tell them
     they can use keys to authenticate on GitHub instead of passwords, but don't
@@ -234,7 +234,7 @@ particular set of files in `.gitignore`.
     repo under a given directory using a second argument: 
 
     ~~~{.input}    
-    $ git clone https://github.com/vlad/planets.git vlad-planet`
+    $ git clone https://github.com/vlad/planets.git vlad-planet
     ~~~
     
 *   The most common mistake is that learners `push` before `pull`ing. If they
