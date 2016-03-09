@@ -109,4 +109,4 @@ by acting as a shareable electronic lab notebook for computational work:
 >
 > Does your institution have a repository or repositories that you can
 > use to share your papers, data and software? How do institutional repositories
-> differ from services like [arXiV](http://arxiv.org/), [figshare](http://figshare.com/) and GitHub(http://github.com/)?
+> differ from services like [arXiV](http://arxiv.org/), [figshare](http://figshare.com/) and [GitHub](http://github.com/)?
