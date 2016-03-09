@@ -104,9 +104,3 @@ by acting as a shareable electronic lab notebook for computational work:
 > using only what they can find in your papers or on the web.
 > Try to do the same for one of their results,
 > then try to do it for a result from a lab you work with.
-
-> ## Where Can I Share My Work? {.challenge}
->
-> Does your institution have a repository or repositories that you can
-> use to share your papers, data and software? How do institutional repositories
-> differ from services like [arXiV](http://arxiv.org/), [figshare](http://figshare.com/) and [GitHub](http://github.com/)?
