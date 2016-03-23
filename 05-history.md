@@ -212,22 +212,22 @@ moving backward and forward in time becomes much easier.
 > let her recover the last committed version of her Python script called
 > `data_cruncher.py`?
 >
-> 1. 
+> 1.
 >
 >     ~~~
 >     $ git checkout HEAD
 >     ~~~
-> 2. 
+> 2.
 >
 >     ~~~
 >     $ git checkout HEAD data_cruncher.py
 >     ~~~
-> 3. 
+> 3.
 >
 >     ~~~
 >     $ git checkout HEAD~1 data_cruncher.py
 >     ~~~
-> 4. 
+> 4.
 >
 >     ~~~
 >     $ git checkout <unique ID of last commit> data_cruncher.py
@@ -249,28 +249,83 @@ moving backward and forward in time becomes much easier.
 > $ cat venus.txt #this will print the contents of venus.txt to the screen
 > ~~~
 >
-> 1. 
-> 
+> 1.
+>
 >     ~~~ {.output}
 >     Venus is too hot to be suitable as a base
 >     ~~~
 >
-> 2. 
-> 
+> 2.
+>
 >     ~~~ {.output}
 >     Venus is beautiful and full of love
 >     ~~~
 >
-> 3. 
-> 
+> 3.
+>
 >     ~~~ {.output}
 >     Venus is beautiful and full of love
 >     Venus is too hot to be suitable as a base
 >     ~~~
 >
-> 4. 
-> 
+> 4.
+>
 >     ~~~ {.output}
 >     Error because you have changed venus.txt without committing the changes
 >     ~~~
 
+
+
+
+
+> ## Explore and summarize histories {.challenge}
+>
+> Exploring history is an important part of git, often it is a challenge to find
+> the right commit ID, especially if the commit is from several months ago.
+>
+> Imaging the `planets` project has more than 50 files.
+> You would like to find a specific commit which a very large section of text
+> in `mars.txt` is modified.
+> When you type `git log`, a very long list appeared,
+> How can you narrow down the search?
+>
+> Recorded that the `git diff` command allow us to explore one specific file,
+> e.g. `git diff mars.txt`. We can apply the similar idea here.
+>
+> ~~~ {.bash}
+> $ git log mars.txt
+> ~~~
+>
+> Unfortunately some of these commit messages are very ambiguous e.g. `update files`.
+> How can you narrow down further?
+>
+> Recorded the `git commit` you performed earlier,
+> git will display a summary message like this `1 file changed, 1 insertion(+)`.
+> Is that possible to display some information like these? Let's try the following:
+>
+> ~~~ {.bash}
+> $ git log --stat mars.txt
+> ~~~
+>
+> You might find something like this.
+> At this particular commit, you added 23 lines and deleted 67 lines to mars.txt
+>
+> ~~~ {.output}
+> mars.txt | 90 +++++++++++++++++++++++-------------------------------------------------------------------
+> 1 file changed, 23 insertions(+), 67 deletions(-)
+> ~~~
+>
+> This switch `--stat` can apply to `git diff` as well. Try the following
+>
+> ~~~  {.bash}
+> $ git diff --stat
+> ~~~
+>
+> What does the following command do?
+>
+> ~~~ {.bash}
+> $ git diff --stat HEAD~3 HEAD~1 *.txt
+> ~~~
+>
+>
+>
