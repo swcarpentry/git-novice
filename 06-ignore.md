@@ -123,7 +123,8 @@ nothing to commit, working directory clean
 > ## Ignoring nested files {.challenge}
 >
 > Given a directory structure that looks like:
-> ~~~
+>
+> ~~~ {.bash}
 > results/data
 > results/plots
 > ~~~
@@ -139,7 +140,8 @@ nothing to commit, working directory clean
 > ## Ignoring files deep in a directory {.challenge}
 >
 > Given a directory structure that looks like:
-> ~~~
+>
+> ~~~ {.bash}
 > results/data/position/gps/useless.data
 > results/plots
 > ~~~
@@ -151,7 +153,8 @@ nothing to commit, working directory clean
 > ## The order of rules {.challenge}
 >
 > Given a `.gitignore` file with the following contents:
-> ~~~
+>
+> ~~~ {.bash}
 > *.data
 > !*.data
 > ~~~
