@@ -6,7 +6,7 @@ minutes: 5
 ---
 > ## Learning Objectives {.objectives}
 >
-> *  Configure `git` the first time is used on a computer.
+> *  Configure `git` the first time it is used on a computer.
 > *  Understand the meaning of the `--global` configuration flag.
 
 
