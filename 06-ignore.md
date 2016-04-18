@@ -5,7 +5,7 @@ subtitle: Ignoring Things
 minutes: 5
 ---
 > ## Learning Objectives {.objectives}
-> 
+>
 > *   Configure Git to ignore specific files.
 > *   Explain why ignoring files can be useful.
 
@@ -123,7 +123,8 @@ nothing to commit, working directory clean
 > ## Ignoring nested files {.challenge}
 >
 > Given a directory structure that looks like:
-> ~~~
+>
+> ~~~ {.bash}
 > results/data
 > results/plots
 > ~~~
@@ -132,14 +133,15 @@ nothing to commit, working directory clean
 
 > ## Including specific files {.challenge}
 >
-> How would you ignore all `.data` files in your root directory except for 
+> How would you ignore all `.data` files in your root directory except for
 > `final.data`?
 > Hint: Find out what `!` (the exclamation point operator) does
 
 > ## Ignoring files deep in a directory {.challenge}
 >
 > Given a directory structure that looks like:
-> ~~~
+>
+> ~~~ {.bash}
 > results/data/position/gps/useless.data
 > results/plots
 > ~~~
@@ -151,12 +153,14 @@ nothing to commit, working directory clean
 > ## The order of rules {.challenge}
 >
 > Given a `.gitignore` file with the following contents:
-> ~~~
+>
+> ~~~ {.bash}
 > *.data
 > !*.data
 > ~~~
 >
 > What will be the result?
+<<<<<<< HEAD
 >
 > ## Ignoring a particular file {.challenge}
 > Tom creates the following files in his project repository: a.stat, b.stat, c.stat, summary.stat, data/a.dat, data/b.dat, data/c.data. He decided for the 
@@ -189,3 +193,17 @@ nothing to commit, working directory clean
 >	~~~
 > e) both b & d
 >
+=======
+
+> ## Log-files {.challenge}
+>
+> You wrote a script that creates many intermediate log-files of the form log_01, log_02, log_03, etc. You want to keep them but you do not want to track them through `git`.
+>
+> 1. Write **one** `.gitignore` entry that excludes files of the form `log_01`, `log_02`, etc.
+>
+> 2. Test your "ignore pattern" by creating some dummy files of the form `log_01`, etc.
+>
+> 3. You find that the file `log_01` is very important after all, add it to the tracked files without changing the `.gitignore` again.
+>
+> 4. Discuss with your neighbor what other types of files could reside in your directory that you do not want to track and thus would exclude via `.gitignore`.
+>>>>>>> d177a3126ba313bd049505df07f4a8298f8d9bd3
