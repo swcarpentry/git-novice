@@ -163,12 +163,6 @@ Our local and remote repositories are now in this state:
 
 ![GitHub Repository After First Push](fig/github-repo-after-first-push.svg)
 
-> ## The '-u' Flag {.callout}
->
-> You may see a `-u` option used with `git push` in some documentation.
-> It is related to concepts we cover in our intermediate lesson,
-> and can safely be ignored for now.
-
 We can pull changes from the remote repository to the local one as well:
 
 ~~~ {.bash}
