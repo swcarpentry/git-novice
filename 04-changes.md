@@ -483,4 +483,14 @@ repository (`git commit`):
 > author. Run `git log` and `git log --format=full`. Think about ways
 > how that can allow you to collaborate with your colleagues.
 
+> ## Removing a file from the repository {.challenge}
+>
+> ~~~{.bash}
+> $ touch remove.txt
+> $ git add remove.txt
+> $ git commit -m "add file to be removed"
+> $ git rm remove.txt
+> $ git commit -m "successfully removed file"
+> ~~~
+
 [commit-messages]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
