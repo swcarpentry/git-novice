@@ -485,6 +485,8 @@ repository (`git commit`):
 
 > ## Removing a file from the repository {.challenge}
 >
+> You can also remove a file from the Git repository by using the git rm command
+>
 > ~~~{.bash}
 > $ touch remove.txt
 > $ git add remove.txt
