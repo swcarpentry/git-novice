@@ -59,7 +59,7 @@ to be shared can and should be stored in a version control system.
 2.  [Setting Up Git](02-setup.html)
 3.  [Creating a Repository](03-create.html)
 4.  [Tracking Changes](04-changes.html)
-5.  [Exploring History](05-history.html)
+5.  [Exploring History and Undoing Mistakes](05-history.html)
 6.  [Ignoring Things](06-ignore.html)
 7.  [Remotes in GitHub](07-github.html)
 8.  [Collaborating](08-collab.html)
