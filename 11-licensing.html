@@ -34,62 +34,40 @@
 </div>
 <div class="panel-body">
 <ul>
-<li>Explain why adding licensing and citation information to a project repository is important.</li>
+<li>Explain why adding licensing and citation information to a repository is important.</li>
 <li>Choose a proper license.</li>
 <li>Explain differences in licensing and social expectations.</li>
 </ul>
 </div>
 </section>
-<p>When a repository with source code, a manuscript or other creative works becomes public, it should include a file <code>LICENSE</code> or <code>LICENSE.txt</code> in the base directory of the repository that clearly states under which license the content is being made available. This is because as creative works, source code is automatically eligible for intellectual property (and thus copyright) protection. Code that appears to be, or is expressly advertised as freely available has <em>not</em> waived such protection. Hence, those who (re)use code that lacks a license statement do so on their own peril, because the author(s) of the software code can always unilaterally make such reuse illegal.</p>
-<p>A license solves this problem by granting rights to others (the licensees) that they would otherwise not have. What rights are being granted under which conditions differs, often only slightly, from one license to another. In contrast to proprietary licenses, the <a href="http://opensource.org/licenses/alphabetical">open licences</a> certified by the <a href="http://opensource.org/">Open Source Initiative</a> all grant at least the following rights, referred to as the <a href="http://opensource.org/osd">Open Source Definition</a>:</p>
-<ol style="list-style-type: decimal">
-<li>The source code is available, and may be used and redistributed without restrictions, including as part of aggregate distributions.</li>
-<li>Modifications or other derived works are allowed, and can be redistributed as well.</li>
-<li>The question of who receives these rights is not subject to discrimination, including not by fields of endeavor such as commercial versus academic.</li>
-</ol>
-<p>How best to choose an appropriate license can seem daunting, given how many possibilities there are. In practice, a few licenses are by far the most popular, including the following:</p>
+<p>When a repository with source code, a manuscript or other creative works becomes public, it should include a file <code>LICENSE</code> or <code>LICENSE.txt</code> in the base directory of the repository that clearly states under which license the content is being made available. This is because creative works are automatically eligible for intellectual property (and thus copyright) protection. Reusing creative works without a license is dangerous, because the copyright holders could sue you for copyright infringement.</p>
+<p>A license solves this problem by granting rights to others (the licensees) that they would otherwise not have. What rights are being granted under which conditions differs, often only slightly, from one license to another. In practice, a few licenses are by far the most popular, and <a href="http://choosealicense.com/">choosealicense.com</a> will help you find a common license that suits your needs. Important considerations include:</p>
 <ul>
-<li><a href="http://opensource.org/licenses/GPL-3.0">GNU General Public License</a> (GPL),</li>
-<li><a href="http://opensource.org/licenses/MIT">MIT license</a>,</li>
-<li><a href="http://opensource.org/licenses/BSD-2-Clause">BSD license</a>.</li>
+<li>Whether you want to address patent rights.</li>
+<li>Whether you require people distributing derivative works to also distribute their source code.</li>
+<li>Whether the content you are licensing is source code.</li>
+<li>Whether you want to license the code at all.</li>
 </ul>
-<p>The GPL is different from most other open source licenses in that it is <a href="http://swcarpentry.github.io/git-novice/reference.html#infective">infective</a>: anyone who distributes a modified version of the code, or anything that includes GPL’ed code, must make <em>their</em> code freely available as well.</p>
+<p>Choosing a licence that is in common use makes life easier for contributors and users, because they are more likely to already be familiar with the license and don’t have to wade through a bunch of jargon to decide if they’re ok with it. The <a href="http://opensource.org/licenses">Open Source Inititative</a> and <a href="http://www.gnu.org/licenses/license-list.html">Free Software Foundation</a> both maintain lists of licenses which are good choices.</p>
 <p>The following article provides an excellent overview of licensing and licensing options from the perspective of scientists who also write code:</p>
 <blockquote>
 <p>Morin, A., Urban, J., and Sliz, P. “<a href="http://dx.doi.org/10.1371/journal.pcbi.1002598">A Quick Guide to Software Licensing for the Scientist-Programmer</a>” PLoS Computational Biology 8(7) (2012): e1002598.</p>
 </blockquote>
-<p>At the end of the day what matters is that there is a clear statement as to what the license is, and that the license is one already vetted and approved by <a href="http://opensource.org">OSI</a>. Also, the license is best chosen from the get-go, even if for a repository that is not public. Pushing off the decision only makes it more complicated later, because each time a new collaborator starts contributing, they, too, hold copyright and will thus need to be asked for approval once a license is chosen.</p>
-<p>If the content of a repository contains reseach products other than software, such as data, and/or creative writing (manuals, technical reports, manuscripts), most licenses designed for software are <em>not</em> suitable.</p>
-<ul>
-<li><p><strong>Data:</strong> In most jurisdictions most types of data (with possibly the exception of photos, medical images, etc) are considered facts of nature, and are hence not eligible for copyright protection. Therefore, using a license, which by definition asserts copyright, to signal social or scholarly expectations for attribution serves only to create a legally murky situation. It is much better to clarify the legal side with a public domain waiver such as <a href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons Zero (CC0)</a>, and the social expectations side with express requests for how to use and cite the data. The <a href="http://datadryad.org">Dryad</a> data repository in fact requires this.</p></li>
-<li><p><strong>Creative works:</strong> Manuals, reports, manuscripts and other creative works are eligible for intellectual property protection and are hence automatically protected by copyright, just as software source code. <a href="http://creativecommons.org/">Creative Commons</a> has prepared a <a href="http://creativecommons.org/licenses/">set of licenses</a> using combinations of four basic restrictions:</p>
-<ul>
-<li>Attribution: derived works must give the original author credit for their work.</li>
-<li>No Derivatives: people may copy the work, but must pass it along unchanged.</li>
-<li>Share Alike: derivative works must license their work under the same terms as the original.</li>
-<li>Noncommercial: free use is allowed, but commercial use is not.</li>
-</ul></li>
-</ul>
-<p>Only the Attribution (<a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a>) and Share-Alike (<a href="http://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA</a>) licenses are considered “<a href="http://opendefinition.org/">Open</a>”.</p>
-<p><a href="http://software-carpentry.org/license.html">Software Carpentry</a> uses CC-BY for its lessons and the MIT License for its code in order to encourage the widest possible re-use. Again, the most important thing is for the <code>LICENSE</code> file in the root directory of your project to state clearly what your license is. You may also want to include a file called <code>CITATION</code> or <code>CITATION.txt</code> that describes how to reference your project; the one for Software Carpentry states:</p>
-<pre><code>To reference Software Carpentry in publications, please cite both of the following:
-
-Greg Wilson: &quot;Software Carpentry: Lessons Learned&quot;. arXiv:1307.5448, July 2013.
-
-@online{wilson-software-carpentry-2013,
-  author      = {Greg Wilson},
-  title       = {Software Carpentry: Lessons Learned},
-  version     = {1},
-  date        = {2013-07-20},
-  eprinttype  = {arxiv},
-  eprint      = {1307.5448}
-}</code></pre>
+<p>At the end of the day what matters is that there is a clear statement as to what the license is. Also, the license is best chosen from the get-go, even if for a repository that is not public. Pushing off the decision only makes it more complicated later, because each time a new collaborator starts contributing, they, too, hold copyright and will thus need to be asked for approval once a license is chosen.</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
 <h2><span class="glyphicon glyphicon-pencil"></span>Can I Use Open License?</h2>
 </div>
 <div class="panel-body">
 <p>Find out whether you are allowed to apply an open license to your software. Can you do this unilaterally, or do you need permission from someone in your institution? If so, who?</p>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>What licenses have I already accepted?</h2>
+</div>
+<div class="panel-body">
+<p>Many of the software tools we use on a daily basis (including in this workshop) are released as open-source software. Pick a project on GitHub from the list below, or one of your own choosing. Find its license (usually in a file called <code>LICENSE</code> or <code>COPYING</code>) and talk about how it restricts your use of the software. Is it one of the licenses discussed in this session? How is it different? - <a href="https://github.com/git/git">Git</a>, the source-code management tool - <a href="https://github.com/python/cpython">CPython</a>, the standard implementation of the Python language - <a href="https://github.com/jupyter">Jupyter</a>, the project behind the web-based Python notebooks we’ll be using - <a href="https://github.com/ether/etherpad-lite">EtherPad</a>, a real-time collaborative editor</p>
 </div>
 </section>
         </div>
@@ -105,5 +83,16 @@ Greg Wilson: &quot;Software Carpentry: Lessons Learned&quot;. arXiv:1307.5448, J
     <!-- Javascript placed at the end of the document so the pages load faster -->
     <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
     <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-37305346-2', 'auto');
+      ga('send', 'pageview');
+    
+    </script>
   </body>
 </html>

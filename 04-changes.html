@@ -34,7 +34,7 @@
 </div>
 <div class="panel-body">
 <ul>
-<li>Go through the modify-add-commit cycle for single and multiple files.</li>
+<li>Go through the modify-add-commit cycle for a single file.</li>
 <li>Explain where information is stored at each stage of Git commit workflow.</li>
 </ul>
 </div>
@@ -221,6 +221,19 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 </div>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Choosing a commit message</h2>
+</div>
+<div class="panel-body">
+<p>Which of the following commit messages would be most appropriate for the last commit made to <code>mars.txt</code>?</p>
+<ol style="list-style-type: decimal">
+<li>“Changes”</li>
+<li>“Added line ‘But the Mummy will appreciate the lack of humidity’ to mars.txt”</li>
+<li>“Discuss effects of Mars’ climate on the Mummy”</li>
+</ol>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
 <h2><span class="glyphicon glyphicon-pencil"></span>Committing Changes to Git</h2>
 </div>
 <div class="panel-body">
@@ -243,6 +256,18 @@ $ git commit -m &quot;my recent changes&quot;</code></pre></li>
 <p>Create a new Git repository on your computer called <code>bio</code>. Write a three-line biography for yourself in a file called <code>me.txt</code>, commit your changes, then modify one line, add a fourth line, and display the differences between its updated state and its original state.</p>
 </div>
 </section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Author and Committer</h2>
+</div>
+<div class="panel-body">
+<p>For each of the commits you have done, Git stored your name twice. You are named as the author and as the committer. You can observe that by telling Git to show you more information about your last commits:</p>
+<pre><code>$ git log --format=full</code></pre>
+<p>When commiting you can name someone else as the author:</p>
+<pre><code>$ git commit --author=&quot;Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;&quot;</code></pre>
+<p>Create a new repository and create two commits: one without the <code>--author</code> option and one by naming a colleague of yours as the author. Run <code>git log</code> and <code>git log --format=full</code>. Think about ways how that can allow you to collaborate with your colleagues.</p>
+</div>
+</section>
         </div>
       </div>
       </article>
@@ -256,5 +281,16 @@ $ git commit -m &quot;my recent changes&quot;</code></pre></li>
     <!-- Javascript placed at the end of the document so the pages load faster -->
     <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
     <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-37305346-2', 'auto');
+      ga('send', 'pageview');
+    
+    </script>
   </body>
 </html>
