@@ -453,6 +453,18 @@ repository (`git commit`):
 >     $ git commit -m myfile.txt "my recent changes"
 >     ~~~
 
+> ## Committing Multiple Files {.challenge}
+>
+> The staging area can hold changes from any number of files
+> that you want to commit as a single snapshot.
+>
+> 1. Add some text to `mars.txt` noting your decision
+> to consider Venus as a base
+> 2. Create a new file `venus.txt` with your initial thoughts
+> about Venus as a base for you and your friends
+> 3. Add changes from both files to the staging area,
+> and commit those changes.
+
 > ## `bio` Repository {.challenge}
 >
 > Create a new Git repository on your computer called `bio`.
