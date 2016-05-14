@@ -53,7 +53,7 @@ We will need to manufacture our own oxygen
 ~~~
 
 `git status` now tells us that the file has been changed,
-but those changes haven't been staged:
+but those changes haven't been staged to be committed:
 
 ~~~ {.bash}
 $ git status
