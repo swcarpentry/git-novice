@@ -827,3 +827,21 @@ div.chapter h2 {
         margin: 0px 0px;
     }
 }
+/* version added automatically */
+div.banner::before {
+    content: "Version 2015.08";
+    font-size: 10px;
+    font-family: monospace;
+    font-weight: bold;
+    line-height: 1;
+    /* */
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    /* */
+    color: white;
+    background: rgb(43, 57, 144);
+    padding: 3px;
+    border: 1px solid white;
+}
