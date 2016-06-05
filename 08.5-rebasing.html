@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <title>Software Carpentry: Version Control with Git</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc.css" />
+    <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
+    <meta charset="UTF-8" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body class="lesson">
+    <div class="container card">
+      <div class="banner">
+        <a href="http://software-carpentry.org" title="Software Carpentry">
+          <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
+        </a>
+      </div>
+      <article>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+                    <a href="index.html"><h1 class="title">Version Control with Git</h1></a>
+          <h2 class="subtitle">Updating a forked project</h2>
+          <p>The collaboration scenario we just went over is very neat, but it makes several assumptions that aren’t always true. The biggest assumption is that only one person is working on a project at any given time. What happens if the person you’re collaborating with makes significant changes of their own in the time while you’re working on it. Your code might still work, but how do you update your project to include both your and their changes, and then include this in the pull request you send to them later?</p>
+<p>This workflow is slightly more complicated, and involves “rebasing” your code on the latest version of their project. This is best explained with an example.</p>
+<p>Let’s pretend that your name is Angela and are collaborating on a project with someone named Ted. Ted is the owner of a repository, and you (Angela) have forked it and made a few really awesome changes in commits D, E, and F. Unfortunately, Ted has also made a few changes (commits A, B, and C), and you’re not sure whether or not they will work with your changes. So you want to update it so that your changes are actually on “top” of his updated version.</p>
+<p>The current situation:</p>
+<pre><code>fork --- A --- B --- C (Ted)
+    \
+     D --- E --- F (Angela)</code></pre>
+<p>What you (Angela) want:</p>
+<pre><code>fork --- A --- B --- C (Ted)
+                      \
+                       D --- E --- F (Angela)</code></pre>
+<p>The second scenario (what we want) is much nicer, as Angela is now in a position to send a pull request to Ted. We have the most up-to-date version of the code will <em>all</em> changes, so we can make sure they play nice with each other. Let’s try doing this for real with your partner’s repository.</p>
+<p>Let’s clone our forked copy of your partner’s planets repository from GitHub, and make a file called <code>jupiter.txt</code>. Add whatever you want to it, then commit it.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> clone https://github.com/yourName/planets-partnersName.git
+<span class="kw">cd</span> planets-partnersName
+<span class="kw">echo</span> <span class="st">&#39;jupiter is big&#39;</span> <span class="kw">&gt;</span> jupiter.txt
+<span class="kw">git</span> add .
+<span class="kw">git</span> commit -m <span class="st">&#39;added jupiter&#39;</span>
+<span class="co"># you can push it if you want to, but it doesn&#39;t matter for this example</span></code></pre></div>
+<p>Now let’s give our partner some changes they have to deal with. In your copy of <code>planets</code> (<code>planets-yourName</code>), make a file called <code>saturn.txt</code>, and add whatever you want to it. Commit that too, then push it to GitHub.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cd</span> ../planets-yourName
+<span class="kw">echo</span> <span class="st">&#39;saturn is the prettiest planet&#39;</span> <span class="kw">&gt;</span> saturn.txt
+<span class="kw">git</span> add .
+<span class="kw">git</span> commit -m <span class="st">&#39;added saturn&#39;</span>
+<span class="kw">git</span> push origin master</code></pre></div>
+<p><code>cd</code> back to your fork of your partner’s project. So right now, this is the current situation:</p>
+<pre><code>fork --- added saturn (partner)
+   \
+    added jupiter (us)</code></pre>
+<p>What we want to do is this:</p>
+<pre><code>fork --- added saturn (partner)
+                \
+                 added jupiter (us)</code></pre>
+<p>Let’s see if we can accomplish this. The first step is for us to retrieve the base (upstream) repository that we forked from.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># add a new remote repository</span>
+<span class="kw">git</span> remote add upstream https://github.com/partner/planets-partnersName.git
+<span class="co"># fetch the contents of that remote repository</span>
+<span class="kw">git</span> pull upstream master</code></pre></div>
+<p>Now we will check to make sure we are on our master branch and rebase our project onto what we just downloaded.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> checkout master <span class="co"># not strictly necessary</span>
+<span class="kw">git</span> rebase upstream/master
+<span class="co"># check our work</span>
+<span class="kw">ls</span></code></pre></div>
+<pre class="output"><code>mars.txt
+pluto.txt
+jupiter.txt
+saturn.txt</code></pre>
+<p>Success, our repository now has both sets of changes. Unfortunately, GitHub now thinks our project has diverged from the online repository if we run <code>git status</code>.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> status</code></pre></div>
+<pre class="output"><code>On branch gh-pages
+Your branch and &#39;origin/gh-pages&#39; have diverged,
+and have 9 and 8 different commits each, respectively.
+  (use &quot;git pull&quot; to merge the remote branch into yours)</code></pre>
+<p>This is perhaps the one time we are going to ignore Git’s advice. We will forcibly overwrite our remote with the new, rebased project.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> push -f origin master</code></pre></div>
+<p>Congratulations, we have successfully updated our forked repository! If we run <code>git log</code>, we can now see that our changes have been put on “top” of our partners’.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> log</code></pre></div>
+<pre class="output"><code>commit 9f5ae8031323377d6c5ea4b396f8097858a85c2b
+Author: Your name &lt;your email&gt;
+Date:   Mon Feb 8 09:30:58 2016 -0500
+
+    added jupiter
+
+commit bebb959cf3d84377bdcc0bd8a9cb6b3a4e5c2c93
+Author: Partner name &lt;partner email&gt;
+Date:   Mon Feb 8 09:10:58 2016 -0500
+
+    added saturn
+
+commit a1e517673a689bb5f03599f3667239a9e8d9f0d2
+Author: Your name &lt;your email&gt;
+Date:   Tue Feb 9 09:08:42 2016 -0500
+
+    this should be the pull request where you added in their changes
+
+[earlier stuff]</code></pre>
+<p>To summarize, our two repositories now look like this:</p>
+<pre><code>fork --- added saturn (partner)
+                \
+                 added jupiter (us)</code></pre>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="collaborating-on-a-forked-repository"><span class="glyphicon glyphicon-pencil"></span>Collaborating on a forked repository</h2>
+</div>
+<div class="panel-body">
+<p>During this lesson, we put ourselves in a position to contribute to your partner’s repository via pull request. Submit a pull request with our rebased changes now so they have both <code>saturn.txt</code> and <code>jupiter.txt</code>.</p>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="updating-your-copy-of-an-upstream-repository"><span class="glyphicon glyphicon-pencil"></span>Updating your copy of an upstream repository</h2>
+</div>
+<div class="panel-body">
+<p>Pretend that your partner updated their repository with some new changes. What do you think is the appropriate command to update our copy of our partner’s repository?</p>
+</div>
+</section>
+        </div>
+      </div>
+      </article>
+      <div class="footer">
+        <a class="label swc-blue-bg" href="http://software-carpentry.org">Software Carpentry</a>
+        <a class="label swc-blue-bg" href="https://github.com/swcarpentry/git-novice">Source</a>
+        <a class="label swc-blue-bg" href="mailto:admin@software-carpentry.org">Contact</a>
+        <a class="label swc-blue-bg" href="LICENSE.html">License</a>
+      </div>
+    </div>
+    <!-- Javascript placed at the end of the document so the pages load faster -->
+    <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
+    <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-37305346-2', 'auto');
+      ga('send', 'pageview');
+    
+    </script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <title>Software Carpentry: Version Control with Git</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc.css" />
+    <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
+    <meta charset="UTF-8" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body class="lesson">
+    <div class="container card">
+      <div class="banner">
+        <a href="http://software-carpentry.org" title="Software Carpentry">
+          <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
+        </a>
+      </div>
+      <article>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+                    <a href="index.html"><h1 class="title">Version Control with Git</h1></a>
+          <h2 class="subtitle">Collaborating</h2>
+          <section class="objectives panel panel-warning">
+<div class="panel-heading">
+<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+</div>
+<div class="panel-body">
+<ul>
+<li>Collaborate by forking a team member’s repo, making changes to it, then submitting a pull request.</li>
+<li>Learn what a fork/pull request is.</li>
+</ul>
+</div>
+</section>
+<p>For the next step, get into pairs. We will practice collaborating on a project using the tools built into GitHub (and other repo services these days).</p>
+<p>Each team member should try to find the other on GitHub (generally searching each others’ GitHub username is the best way to do this). Once you’ve found them, find their <code>planets</code> repository, click on it to open it and view it.</p>
+<p>Although it’s possible to work directly on someone else’s remote repository, it’s much safer to create your own copy of their work, then ask them to pull your changes back into their copy once you’ve made a good addition to it. This has the additional advantage of not requiring permissions from the original repository owner- you don’t need to ask for special GitHub access permissions from someone every time you want to consider working on something. Making your own copy of a repository is called <code>forking</code> it.</p>
+<p>Let’s fork our partner’s repository. In the top right corner of the GitHub page for their repository, there is a <code>Fork</code> button. Click it, and GitHub will create an online clone of the repository except in your account.</p>
+<p>Now, in an ideal world, we’d clone our new forked repository, do some work there, then push it back to GitHub. In the interests of time, we are going to take advantage of the fantastic online editing capabilities on GitHub.</p>
+<ul>
+<li><p>Click the <code>New file</code> button.</p></li>
+<li><p>Name it pluto.txt (in the box that says <code>planets/_____________</code>)</p></li>
+<li><p>Add some musings on whether or not you think Pluto is actually a planet in the main dialog.</p></li>
+<li><p>Add a witty commit message at the bottom and commit the file.</p></li>
+</ul>
+<p>Awesome, you’ve just added a commit using GitHub’s online editor. Now how can we add our changes into our partner’s repository?</p>
+<ul>
+<li><p>To get our changes added back into our partner’s branch, hit the giant green button at the top that says <code>New pull request</code>. As long as our partner hasn’t worked on the same line of the same file, it will say <code>Able to merge. These branches can be automatically merged.</code> at the top. It will also show you all of the changes between your and your partner’s repositories in a diff below.</p></li>
+<li><p>Hit the button that says <code>Create pull request</code>.</p></li>
+<li><p>Add a title for your pull request (similar to commit messages), and hit the button in the lower right that says <code>Create pull request</code>.</p></li>
+</ul>
+<p>Congratulations, you’ve just created your first pull request! Your partner should now have a pull request for their repository (and you should have the one they sent you!). Let’s accept our partner’s pull request. Go to your repository and select the <code>Pull requests</code> tab at the top-left. You should see your partner’s pull request there. Accept it. We’ve now just collaborated on a project.</p>
+        </div>
+      </div>
+      </article>
+      <div class="footer">
+        <a class="label swc-blue-bg" href="http://software-carpentry.org">Software Carpentry</a>
+        <a class="label swc-blue-bg" href="https://github.com/swcarpentry/git-novice">Source</a>
+        <a class="label swc-blue-bg" href="mailto:admin@software-carpentry.org">Contact</a>
+        <a class="label swc-blue-bg" href="LICENSE.html">License</a>
+      </div>
+    </div>
+    <!-- Javascript placed at the end of the document so the pages load faster -->
+    <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
+    <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-37305346-2', 'auto');
+      ga('send', 'pageview');
+    
+    </script>
+  </body>
+</html>
