@@ -106,11 +106,11 @@ Fast-forward
 >
 > ## Review of the Basic Collaborative Workflow using Git {.callout}
 >
-> A quick review of the basic collaborative workflow using is:
-> * track a change to the repository with `git add`
-> * stage the change using `git commit -m`
+> A quick review of the git commands with a basic collaborative workflow:
+> * track a changes to the repository with `git add`
+> * stage the changes using `git commit -m`
 > * upload the changes to GitHub with `git push origin master`
-> * downloand changes to our local copy of the repository using the `git push origin master`
+> * verify that the local repo is up-to-date using `git pull origin master`
 >
 > The git commands that correspond to this workflow.
 > ~~~ {.bash}
