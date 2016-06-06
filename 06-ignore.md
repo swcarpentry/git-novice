@@ -101,7 +101,8 @@ fatal: no files added
 ~~~
 
 If we really want to override our ignore settings,
-we can use `git add -f` to force Git to add something.
+we can use `git add -f` to force Git to add something. For example,
+`git add -f a.dat`.
 We can also always see the status of ignored files if we want:
 
 ~~~ {.bash}
