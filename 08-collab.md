@@ -113,3 +113,10 @@ Fast-forward
 > code to comment, a blue comment icon appears to open a comment window. 
 > 
 > The Collaborator posts its comments and suggestions using GitHub interface.
+
+> ## Version history, backup and version control {.challenge}
+>
+> Some backup software can keep a history of the versions of your files. They also
+> allows you to recover specific versions. How is this functionality different from version control?
+> What are some of the benifits of using version control, Git and Github?
+ 
