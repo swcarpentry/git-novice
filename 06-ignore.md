@@ -160,6 +160,40 @@ nothing to commit, working directory clean
 > ~~~
 >
 > What will be the result?
+<<<<<<< HEAD
+>
+> ## Ignoring a particular file {.challenge}
+> Tom creates the following files in his project repository: a.stat, b.stat, c.stat, summary.stat, data/a.dat, data/b.dat, data/c.data. He decided for the 
+> time being everything ending with stat (*.stat) and those in data folder should be ignored. So created a gitignore file *.stat and data/. However as the 
+> time pass, he decided summary.stat should be really tracked, so to this he could:
+>
+> a)
+> 
+>	~~~ 
+>	$ git add summary.stat
+>	~~~
+> b)
+>
+>	~~~
+>	$git add -f summary.stat
+>	~~~
+> c)
+>
+>	~~~
+>	$git commit summary.stat
+>	~~~
+> d) 
+>
+>	~~~
+>	modify .gitignore to 
+> 	a.stat
+>	b.stat
+>	c.stat
+>	data/
+>	~~~
+> e) both b & d
+>
+=======
 
 > ## Log-files {.challenge}
 >
@@ -172,3 +206,4 @@ nothing to commit, working directory clean
 > 3. You find that the file `log_01` is very important after all, add it to the tracked files without changing the `.gitignore` again.
 >
 > 4. Discuss with your neighbor what other types of files could reside in your directory that you do not want to track and thus would exclude via `.gitignore`.
+>>>>>>> d177a3126ba313bd049505df07f4a8298f8d9bd3
