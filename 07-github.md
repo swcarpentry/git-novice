@@ -24,7 +24,8 @@ Most programmers use hosting services like
 [BitBucket](http://bitbucket.org) or
 [GitLab](http://gitlab.com/)
 to hold those master copies;
-we'll explore the pros and cons of this in the final section of this lesson.
+we'll explore the pros and cons of using hosting services like these
+in the final section of this lesson.
 
 Let's start by sharing the changes we've made to our current project with the world.
 Log in to GitHub,
