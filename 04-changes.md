@@ -9,6 +9,15 @@ minutes: 20
 > *   Go through the modify-add-commit cycle for a single file.
 > *   Explain where information is stored at each stage of Git commit workflow.
 
+First let's make sure we're still in the right directory. You should be in the `planets` directory. 
+~~~ {.bash}
+$ pwd
+~~~
+If you are still in `moons` navigate back up to `planets`
+~~~ {.bash}
+$ cd ..
+~~~
+
 Let's create a file called `mars.txt` that contains some notes
 about the Red Planet's suitability as a base.
 (We'll use `nano` to edit the file;
