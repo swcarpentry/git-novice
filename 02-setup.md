@@ -22,7 +22,8 @@ of configurations we will set as we get started with Git:
 
 On a command line, Git commands are written as `git verb`,
 where `verb` is what we actually want to do. So here is how
-Dracula sets up his new laptop:
+Dracula sets up his new laptop: 
+(Please use your own name and email address instead of Dracula's.)
 
 ~~~ {.bash}
 $ git config --global user.name "Vlad Dracula"
@@ -30,7 +31,6 @@ $ git config --global user.email "vlad@tran.sylvan.ia"
 $ git config --global color.ui "auto"
 ~~~
 
-(Please use your own name and email address instead of Dracula's.)
 
 He also has to set his favorite text editor, following this table:
 
