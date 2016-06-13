@@ -51,7 +51,12 @@ to be shared can and should be stored in a version control system.
 
 > ## Getting ready {.getready}
 >
-> Nothing to do: you're ready to go!
+> We'll do the work in the `Desktop` folder so make sure you change your working directory to it.
+> Open a terminal and type:
+> ~~~ {.bash}
+> cd
+> cd Desktop
+> ~~~
 
 ## Topics
 
