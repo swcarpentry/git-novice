@@ -286,3 +286,21 @@ Jennifer is collaborating on her python script with her colleagues and realises 
 >     Error because you have changed venus.txt without committing the changes
 >     ~~~
 
+
+> ## Checking Understanding of git diff {.challenge}
+>
+> Consider this command: `git diff HEAD~3 mars.txt`. What do you predict this command 
+> will do if you execute it? What happens when you do execute it? Why? 
+>
+> Try another command, `git diff [ID] mars.txt`, where [ID] is replaced with 
+> the unique identifier for your most recent commit. What do you think will happen, 
+> and what does happen? 
+
+
+> ## Getting Rid of Staged Changes {.challenge}
+>
+> `git checkout` can be used to restore a previous commit when unstaged changes have
+> been made, but will it also work for changes that have been staged but not committed? 
+> Make a change to `mars.txt`, add that change, and use `git checkout` to see if 
+> you can remove your change. 
+
