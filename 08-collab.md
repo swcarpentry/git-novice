@@ -97,7 +97,28 @@ Fast-forward
  1 file changed, 1 insertion(+)
  create mode 100644 pluto.txt
 ~~~
-
+>
+> ## Review of the Basic Collaborative Workflow using Git {.callout}
+>
+> A quick review of the git commands with a basic collaborative workflow:
+> * track a changes to the repository with `git add`
+> * stage the changes using `git commit -m`
+> * upload the changes to GitHub with `git push origin master`
+> * verify that the local repo is up-to-date using `git pull origin master`
+>
+> The git commands that correspond to this workflow.
+> ~~~ {.bash}
+> $ git add <file>
+> $ git commit -m "comment"
+> $ git push origin master
+> $ git pull origin master 
+> ~~~
+> 
+> It is a good practice to make many **atomic** changes with `add/commit/push/pull` instead 
+> of one massive `add/commit/push/pull` in your local repository
+> as it is easier to "recover" things.
+> 
+ 
 > ## Review changes {.challenge}
 >
 > The Owner push commits to the repository without giving any information
