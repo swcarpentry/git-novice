@@ -122,6 +122,9 @@ working in teams or not, because it is
     $ mv .git temp_git 
     $ rm -rf  temp_git 
     ~~~
+    
+    The challenge suggests that it is a bad idea to create a Git repo inside another repo. 
+    For more discussion on this topic, please see [this issue](https://github.com/swcarpentry/git-novice/issues/272).
 
 ## [Tracking Changes](04-changes.html)
 
