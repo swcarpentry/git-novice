@@ -26,7 +26,11 @@ then select Collaborators, and enter your partner's username.
 
 ![Adding collaborators on GitHub](fig/github-add-collaborators.png)
 
-The Collaborator needs to download a copy of the Owner's repository to her
+To accept access to the Owner's repo, the Collaborator 
+needs to go to [https://github.com/notifications](https://github.com/notifications).
+Once there she can accept access to the Owner's repo.
+
+Next, the Collaborator needs to download a copy of the Owner's repository to her
  machine. This is called "cloning a repo". To clone the Owner's repo into
 her `Desktop` folder, the Collaborator enters:
 
