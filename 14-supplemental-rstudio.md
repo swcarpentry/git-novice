@@ -31,7 +31,7 @@ our computer, we'll choose "existing directory":
 ![](fig/RStudio_screenshot_existingdirectory.png)
 &nbsp;
 
-> ## Do you see a "verson control" option? {.callout}
+> ## Do you see a "version control" option? {.callout}
 >
 > Although we're not going to use it here, there should be a "version control"
 > option on this menu. That is what you would click on if you wanted to
