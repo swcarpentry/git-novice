@@ -77,7 +77,7 @@ working in teams or not, because it is
 *   Further resources:
     *    [git-it](https://github.com/jlord/git-it) is a self-paced command-line Git demo,
          with [git-it-electron](https://github.com/jlord/git-it-electron) its GitHub Desktop successor
-    *    Code School's has an interactive course, [Try Git](https://try.github.io)
+    *    [Code School](https://www.codeschool.com/) has a free interactive course, [Try Git](https://try.github.io)
     *    for instructors, [the Git parable](http://tom.preston-werner.com/2009/05/19/the-git-parable.html)
          is valuable background reading
 
