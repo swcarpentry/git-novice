@@ -52,11 +52,7 @@ to be shared can and should be stored in a version control system.
 > ## Getting ready {.getready}
 >
 > We'll do the work in the `Desktop` folder so make sure you change your working directory to it.
-> Open a terminal and type:
-> ~~~ {.bash}
-> cd
-> cd Desktop
-> ~~~
+> Open a terminal and execute `cd` followed by `cd Desktop`.
 
 ## Topics
 
