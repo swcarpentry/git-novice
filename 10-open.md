@@ -2,7 +2,7 @@
 layout: page
 title: Version Control with Git
 subtitle: Open Science
-minutes: 5-10
+minutes: 10 (5 to explain the lesson and 5 to do a challenge)
 ---
 > ## Learning Objectives {.objectives}
 >
