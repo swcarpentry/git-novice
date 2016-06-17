@@ -211,3 +211,8 @@ GitHub, though, this command would download them to our local repository.
 > valid? Can you figure out how to fix the URL (tip: use `git remote
 > -h`)? Don't forget to clean up and remove this remote once you are
 > done with this exercise.
+
+> ## GitHub License and README files {.challenge}
+> In this section we learned about creating a remote repository on GitHub, but when you initialized your
+> GitHub repo, you didn't add a README.md or a license file. If you had, what do you think would have happened when
+> you tried to link your local and remote repositories?
