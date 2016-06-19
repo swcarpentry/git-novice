@@ -61,11 +61,18 @@
 <ul>
 <li><p>Make sure the network is working <em>before</em> starting this lesson.</p></li>
 <li><p>Drawings are particularly useful in this lesson: if you have a whiteboard, <a href="https://twitter.com/chendaniely/status/583689081151979520">use it!</a></p></li>
-<li><p>Version control is usually not the first subject in a workshop, so get learners to create a GitHub account after the session before.</p></li>
+<li><p>Version control is usually not the first subject in a workshop, so get learners to create a GitHub account after the session before. Remind learners that the username and email they use for GitHub (and setup<br />
+during Git configuration) will be viewable to the public by default. However, there are many reasons why a learner may not want their personal information viewable, and GitHub has <a href="https://help.github.com/articles/keeping-your-email-address-private/">resources for keeping an email address private</a>.</p></li>
 <li><p>If some learners are using Windows, there will inevitably be issues merging files with different line endings. (Even if everyone’s on some flavor of Unix, different editors may or may not add a newline to the last line of a file.) Take a moment to explain these issues, since learners will almost certainly trip over them again. If learners are running into line ending problems, GitHub has a <a href="https://help.github.com/articles/dealing-with-line-endings/#platform-all">page</a> that helps with troubleshooting.</p></li>
 <li><p>We don’t use a Git GUI in these notes because we haven’t found one that installs easily and runs reliably on the three major operating systems, and because we want learners to understand what commands are being run. That said, instructors should demo a GUI on their desktop at some point during this lesson and point learners at <a href="http://git-scm.com/downloads/guis">this page</a>.</p></li>
 <li><p>Instructors should show learners graphical diff/merge tools like <a href="https://sourcegear.com/diffmerge/">DiffMerge</a>.</p></li>
 <li><p>When appropriate, explain that we teach Git rather than CVS, Subversion, or Mercurial primarily because of GitHub’s growing popularity: CVS and Subversion are now seen as legacy systems, and Mercurial isn’t nearly as widely used in the sciences right now.</p></li>
+<li>Further resources:
+<ul>
+<li><a href="https://github.com/jlord/git-it">git-it</a> is a self-paced command-line Git demo, with <a href="https://github.com/jlord/git-it-electron">git-it-electron</a> its GitHub Desktop successor</li>
+<li><a href="https://www.codeschool.com/">Code School</a> has a free interactive course, <a href="https://try.github.io">Try Git</a></li>
+<li>for instructors, <a href="http://tom.preston-werner.com/2009/05/19/the-git-parable.html">the Git parable</a> is valuable background reading</li>
+</ul></li>
 </ul>
 <h2 id="automated-version-control"><a href="01-basics.html">Automated Version Control</a></h2>
 <ul>
@@ -89,7 +96,8 @@
 <li><p>The challenge “Places to create repositories” tries to reinforce the idea that the <code>.git</code> folder contains the whole Git repo and deleting this folder undoes a <code>git init</code>. It also gives the learner the way to fix the common mistake of putting unwanted folders (like <code>Desktop</code>) under version control.</p>
 <p>Instead of removing the <code>.git</code> folder directly, you can choose to move it first to a safer directory and remove it from there:</p>
 <pre class="input"><code>$ mv .git temp_git 
-$ rm -rf  temp_git </code></pre></li>
+$ rm -rf  temp_git </code></pre>
+<p>The challenge suggests that it is a bad idea to create a Git repo inside another repo. For more discussion on this topic, please see <a href="https://github.com/swcarpentry/git-novice/issues/272">this issue</a>.</p></li>
 </ul>
 <h2 id="tracking-changes"><a href="04-changes.html">Tracking Changes</a></h2>
 <ul>
@@ -99,7 +107,7 @@ $ rm -rf  temp_git </code></pre></li>
 <p>Solutions to exercises:</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Choosing a commit message</h2>
+<h2 id="choosing-a-commit-message"><span class="glyphicon glyphicon-pencil"></span>Choosing a commit message</h2>
 </div>
 <div class="panel-body">
 <p>Which of the following commit messages would be most appropriate for the last commit made to <code>mars.txt</code>?</p>
@@ -149,7 +157,8 @@ $ rm -rf  temp_git </code></pre></li>
 <li><p>If you’re the only instructor, the best way to create a conflict is:</p>
 <ul>
 <li>Clone your repo in a different directory, pretending is your computer at work: <code>git clone https://github.com/vlad/planets.git planets-at-work</code>.</li>
-<li>At the office, you make a change, commit and push.<br /></li>
+<li>At the office, you make a change, commit and push.<br />
+</li>
 <li>At your laptop repo, you (forget to pull and) make a change, commit and try to push.</li>
 <li><code>git pull</code> now and show the conflict.</li>
 </ul></li>
