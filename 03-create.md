@@ -6,7 +6,8 @@ minutes: 10
 ---
 > ## Learning Objectives {.objectives}
 > 
-> *   Create a local Git repository.
+> *   Learn how to create a local Git repository using `git init`.
+> *   Learn how to locate `.git` directory and understand what its purpose is. 
 
 Once Git is configured,
 we can start using it.
