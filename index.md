@@ -25,7 +25,7 @@ manage their work. Version control is better than mailing files back and forth:
     version, much like the "undo" feature in an editor.
 
 *   When several people collaborate in the same project, it's possible to
-    accidentally overlook or overwrite someone's changes: the version control
+    accidentally overlook or overwrite someone's changes. The version control
     system automatically notifies users whenever there's a conflict between one
     person's work and another's.
 
