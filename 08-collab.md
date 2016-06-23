@@ -107,16 +107,31 @@ Fast-forward
 Now the three repositories (Owner's local, Collaborator's local, and Owner's on
 GitHub) are back in sync.
 
-> ## Review changes {.challenge}
+> ## A basic collaborative workflow  {.callout}
+>
+> In practice, it is good to be sure that you have an updated version of the
+> repository you are collaborating on, so you should `git pull` before making
+> our changes. The basic collaborative workflow would be:
+>
+> * update your local repo with `git pull origin master`,
+> * make your changes and stage them with `git add`,
+> * commit your changes with `git commit -m`, and
+> * upload the changes to GitHub with `git push origin master`
+>
+> It is better to make many commits with smaller changes rather than
+> of one commit with massive changes: small commits are easier to
+> read and review.
+
+> ## Switch roles and repeat {.challenge}
 >
 > Switch roles and repeat the whole process.
->
+
 > ## Review changes {.challenge}
 >
 > The Owner push commits to the repository without giving any information
 > to the Collaborator. How can the Collaborator find out what has changed with
 > command line? And on GitHub?
->
+
 > ## Comment changes in GitHub {.challenge}
 >
 > The Collaborator has some questions about one line change made by the Owner and
@@ -132,4 +147,3 @@ GitHub) are back in sync.
 > Some backup software can keep a history of the versions of your files. They also
 > allows you to recover specific versions. How is this functionality different from version control?
 > What are some of the benifits of using version control, Git and Github?
- 
