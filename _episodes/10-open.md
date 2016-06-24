@@ -110,7 +110,7 @@ by acting as a shareable electronic lab notebook for computational work:
 > then try to do it for a result from a lab you work with.
 {: .challenge}
 
-> ## How to find an appropriate data repository?
+> ## How to Find an Appropriate Data Repository?
 >
 > Surf the internet for a couple of minutes and check out the data repositories
 > mentioned above: [Figshare](http://figshare.com/), [Zenodo](http://zenodo.org),
@@ -122,7 +122,7 @@ by acting as a shareable electronic lab notebook for computational work:
 > approach for your current project and explain why.
 {: .challenge}
 
-> ## Can I also publish code?
+> ## Can I Also Publish Code?
 >
 > There are many new ways to publish code and to make it citable. One
 > way is described [on the homepage of github itself](

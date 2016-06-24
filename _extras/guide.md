@@ -160,7 +160,7 @@ Solutions to exercises:
 >
 >     **"Discuss effects of Mars' climate on the Mummy"**
 > 
->Answer 1 is not descriptive enough, answer 2 is too descriptive and redundant, and answer 3 is good - short but descriptive.
+> Answer 1 is not descriptive enough, answer 2 is too descriptive and redundant, and answer 3 is good - short but descriptive.
 {: .challenge}
 
 ## [Exploring History](05-history.html)

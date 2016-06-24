@@ -16,7 +16,7 @@ will be the "Collaborator". The goal is that the Collaborator add changes into
 the Owner's repository. We will switch roles at the end, so both persons will
 play Owner and Collaborator.
 
-> ## Practicing by yourself
+> ## Practicing By Yourself
 >
 > If you're working through this lesson on your own, you can carry on by opening
 > a second terminal window.
@@ -125,7 +125,7 @@ Fast-forward
 Now the three repositories (Owner's local, Collaborator's local, and Owner's on
 GitHub) are back in sync.
 
-> ## A basic collaborative workflow 
+> ## A Basic Collaborative Workflow 
 >
 > In practice, it is good to be sure that you have an updated version of the
 > repository you are collaborating on, so you should `git pull` before making
@@ -141,19 +141,19 @@ GitHub) are back in sync.
 > read and review.
 {: .callout}
 
-> ## Switch roles and repeat
+> ## Switch Roles and Repeat
 >
 > Switch roles and repeat the whole process.
 {: .challenge}
 
-> ## Review changes
+> ## Review Changes
 >
 > The Owner push commits to the repository without giving any information
 > to the Collaborator. How can the Collaborator find out what has changed with
 > command line? And on GitHub?
 {: .challenge}
 
-> ## Comment changes in GitHub
+> ## Comment Changes in GitHub
 >
 > The Collaborator has some questions about one line change made by the Owner and
 > has some suggestions to propose.
@@ -164,7 +164,7 @@ GitHub) are back in sync.
 > The Collaborator posts its comments and suggestions using GitHub interface.
 {: .challenge}
 
-> ## Version history, backup and version control
+> ## Version History, Backup, and Version Control
 >
 > Some backup software can keep a history of the versions of your files. They also
 > allows you to recover specific versions. How is this functionality different from version control?

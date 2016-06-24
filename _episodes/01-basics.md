@@ -42,7 +42,7 @@ complete history of commits for a particular project and their metadata make up
 a [repository](reference.html#repository). Repositories can be kept in sync
 across different computers facilitating collaboration among different people.
 
-> ## The long history of version control systems
+> ## The Long History of Version Control Systems
 >
 > Automated version control systems are nothing new.
 > Tools like RCS, CVS, or Subversion have been around since the early 1980s and are used by many large companies.
@@ -53,12 +53,12 @@ across different computers facilitating collaboration among different people.
 > the same files concurrently.
 {: .callout}
 
-> ## Paper writing
+> ## Paper Writing
 >
-> * Imagine you drafted an excellent paragraph for a paper you are writing, but later ruin it. How would you retrieve 
-> the *excellent* version of your conclusion? Is it even possible?
+> *   Imagine you drafted an excellent paragraph for a paper you are writing, but later ruin it. How would you retrieve 
+>     the *excellent* version of your conclusion? Is it even possible?
 > 
-> * Imagine you have 5 co-authors. How would you manage the changes and comments they make to your paper?
-> If you use LibreOffice Writer or Microsoft Word, what happens if you accept changes made using the 
-> `Track Changes` option? Do you have a history of those changes? 
+> *   Imagine you have 5 co-authors. How would you manage the changes and comments they make to your paper?
+>     If you use LibreOffice Writer or Microsoft Word, what happens if you accept changes made using the 
+>     `Track Changes` option? Do you have a history of those changes? 
 {: .challenge}

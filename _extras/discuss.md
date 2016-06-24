@@ -219,7 +219,8 @@ you can expect it will remain fairly static through the lifetime of your reposit
 On the rare occasion that branding does change,
 you will probably just want to replace the logo completely rather than merge little differences in.
 
-##Removing a file
+## Removing a File
+
 Adding and modifying files are not the only actions one might take
 when working on a project.  It might be required to remove a file
 from the repository.
