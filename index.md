@@ -42,35 +42,9 @@ as well.  And it isn't just for software: books,
 papers, small data sets, and anything that changes over time or needs
 to be shared can and should be stored in a version control system.
 
-> ## Prerequisites {.prereq}
+> ## Prerequisites
 >
 > In this lesson we use Git from the Unix Shell.
 > Some previous experience with the shell is expected,
 > *but isn't mandatory*.
-
-> ## Getting ready {.getready}
->
-> We'll do the work in the `Desktop` folder so make sure you change your working directory to it.
-> Open a terminal and execute `cd` followed by `cd Desktop`.
-
-## Topics
-
-1.  [Automated Version Control](01-basics.html)
-2.  [Setting Up Git](02-setup.html)
-3.  [Creating a Repository](03-create.html)
-4.  [Tracking Changes](04-changes.html)
-5.  [Exploring History](05-history.html)
-6.  [Ignoring Things](06-ignore.html)
-7.  [Remotes in GitHub](07-github.html)
-8.  [Collaborating](08-collab.html)
-9.  [Conflicts](09-conflict.html)
-10. [Open Science](10-open.html)
-11. [Licensing](11-licensing.html)
-12. [Citation](12-citation.html)
-13. [Hosting](13-hosting.html)
-
-## Other Resources
-
-*   [Reference](reference.html)
-*   [Discussion](discussion.html)
-*   [Instructor's Guide](instructors.html)
+{: .prereq}

@@ -1,11 +1,14 @@
 ---
 title: Using Git from RStudio
-minutes: 10
+teaching: 10
+exercises: 0
+questions:
+- "FIXME"
+objectives:
+- "Understand how to use Git from RStudio."
+keypoints:
+- "FIXME"
 ---
-
-> ## Learning Objectives {.objectives}
->
-> *   Understand how to use Git from RStudio.
 
 Since version control is so useful when developing scripts, RStudio has built-in
 integration with Git. There are some more obscure Git features that you still
@@ -29,7 +32,7 @@ our computer, we'll choose "existing directory":
 ![](fig/RStudio_screenshot_existingdirectory.png)
 &nbsp;
 
-> ## Do you see a "version control" option? {.callout}
+> ## Do you see a "version control" option?
 >
 > Although we're not going to use it here, there should be a "version control"
 > option on this menu. That is what you would click on if you wanted to
@@ -39,7 +42,7 @@ our computer, we'll choose "existing directory":
 > [this page](https://stat545-ubc.github.io/git03_rstudio-meet-git.html) 
 > for some debugging advice. Even if you have Git installed, you may need
 > to accept the XCode license if you are using MacOSX.
-  
+{: .callout}
   
 Next, RStudio will ask which existing directory we want to use. Click "browse"
 to navigate to the correct directory on your computer, then click "create 
@@ -84,13 +87,13 @@ the history:
 ![](fig/RStudio_screenshot_history.png)
 &nbsp;
 
-> ## Are the push/pull commands greyed out? {.callout}
+> ## Are the push/pull commands greyed out?
 >
 > If this is the case, it generally means that RStudio doesn't know the
 > location of any other version of your repository (i.e. the one on Github).
 > To fix this, open a terminal to the repository and enter the command:
 > `git push -u origin master`. Then restart RStudio.
-  
+{: .callout}
 
 If we click on "history", we can see a pretty graphical version of what 
 `git log` would tell us:  

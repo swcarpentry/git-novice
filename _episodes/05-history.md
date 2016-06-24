@@ -1,21 +1,27 @@
 ---
 title: Exploring History
-minutes: 25
+teaching: 25
+exercises: 0
+questions:
+- "FIXME"
+objectives:
+- "Identify and use Git commit numbers."
+- "Compare various versions of tracked files."
+- "Restore old versions of files."
+keypoints:
+- "FIXME"
 ---
-> ## Learning Objectives {.objectives}
->
-> *   Identify and use Git commit numbers.
-> *   Compare various versions of tracked files.
-> *   Restore old versions of files.
 
 If we want to see what we changed at different steps, we can use `git diff`
 again, but with the notation `HEAD~1`, `HEAD~2`, and so on, to refer to old
 commits:
 
-~~~ {.bash}
+~~~
 $ git diff HEAD~1 mars.txt
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 diff --git a/mars.txt b/mars.txt
 index 315bf3a..b36abfd 100644
 --- a/mars.txt
@@ -25,10 +31,14 @@ index 315bf3a..b36abfd 100644
  The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity
 ~~~
-~~~ {.bash}
+{: .output}
+
+~~~
 $ git diff HEAD~2 mars.txt
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 diff --git a/mars.txt b/mars.txt
 index df0654a..b36abfd 100644
 --- a/mars.txt
@@ -38,6 +48,7 @@ index df0654a..b36abfd 100644
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity
 ~~~
+{: .output}
 
 In this way,
 we can build up a chain of commits.
@@ -58,10 +69,12 @@ Our first commit was given the ID
 f22b25e3233b4645dabd0d81e651fe074bd8e73b,
 so let's try this:
 
-~~~ {.bash}
+~~~
 $ git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b mars.txt
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 diff --git a/mars.txt b/mars.txt
 index df0654a..b36abfd 100644
 --- a/mars.txt
@@ -71,15 +84,18 @@ index df0654a..b36abfd 100644
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity
 ~~~
+{: .output}
 
 That's the right answer,
 but typing out random 40-character strings is annoying,
 so Git lets us use just the first few characters:
 
-~~~ {.bash}
+~~~
 $ git diff f22b25e mars.txt
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 diff --git a/mars.txt b/mars.txt
 index df0654a..b36abfd 100644
 --- a/mars.txt
@@ -89,28 +105,33 @@ index df0654a..b36abfd 100644
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity
 ~~~
-
+{: .output}
 
 All right! So
 we can save changes to files and see what we've changed&mdash;now how
 can we restore older versions of things?
 Let's suppose we accidentally overwrite our file:
 
-~~~ {.bash}
+~~~
 $ nano mars.txt
 $ cat mars.txt
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 We will need to manufacture our own oxygen
 ~~~
+{: .output}
 
 `git status` now tells us that the file has been changed,
 but those changes haven't been staged:
 
-~~~ {.bash}
+~~~
 $ git status
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 # On branch master
 # Changes not staged for commit:
 #   (use "git add <file>..." to update what will be committed)
@@ -120,19 +141,23 @@ $ git status
 #
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
+{: .output}
 
 We can put things back the way they were
 by using `git checkout`:
 
-~~~ {.bash}
+~~~
 $ git checkout HEAD mars.txt
 $ cat mars.txt
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 ~~~
+{: .output}
 
 As you might guess from its name,
 `git checkout` checks out (i.e., restores) an old version of a file.
@@ -142,22 +167,24 @@ which is the last saved commit.
 If we want to go back even further,
 we can use a commit identifier instead:
 
-~~~ {.bash}
+~~~
 $ git checkout f22b25e mars.txt
 ~~~
+{: .bash}
 
-> ## Don't lose your HEAD {.callout}
+> ## Don't lose your HEAD
 > Above we used
 >
-> ~~~ {.bash}
+> ~~~
 > $ git checkout f22b25e mars.txt
 > ~~~
+> {: .bash}
 >
 > to revert mars.txt to its state after the commit f22b25e.
 > If you forget `mars.txt` in that command, git will tell you that "You are in
 > 'detached HEAD' state." In this state, you shouldn't make any changes.
 > You can fix this by reattaching your head using ``git checkout master``
-
+{: .callout}
 
 It's important to remember that
 we must use the commit number that identifies the state of the repository
@@ -171,17 +198,19 @@ recent commit (`HEAD~1`), which is commit `f22b25e`:
 
 So, to put it all together:
 
-> ## How Git works, in cartoon form {.callout}
+> ## How Git works, in cartoon form
 > ![http://figshare.com/articles/How_Git_works_a_cartoon/1328266](fig/git_staging.svg)
+{: .callout}
 
-> ## Simplifying the Common Case {.callout}
+> ## Simplifying the Common Case
 >
 > If you read the output of `git status` carefully,
 > you'll see that it includes this hint:
 >
-> ~~~ {.bash}
+> ~~~
 > (use "git checkout -- <file>..." to discard changes in working directory)
 > ~~~
+> {: .bash}
 >
 > As it says,
 > `git checkout` without a version identifier restores files to the state saved in `HEAD`.
@@ -189,6 +218,7 @@ So, to put it all together:
 > from the command itself:
 > without it,
 > Git would try to use the name of the file as the commit identifier.
+{: .callout}
 
 The fact that files can be reverted one by one
 tends to change the way people organize their work.
@@ -198,7 +228,6 @@ without also undoing changes made later to the conclusion.
 If the introduction and conclusion are stored in separate files,
 on the other hand,
 moving backward and forward in time becomes much easier.
-
 
 > ## Recovering Older Versions of a File
 >
@@ -210,32 +239,20 @@ moving backward and forward in time becomes much easier.
 > let her recover the last committed version of her Python script called
 > `data_cruncher.py`?
 >
-> 1. 
+> 1. `$ git checkout HEAD`
 >
->     ~~~
->     $ git checkout HEAD
->     ~~~
-> 2. 
+> 2. `$ git checkout HEAD data_cruncher.py`
 >
->     ~~~
->     $ git checkout HEAD data_cruncher.py
->     ~~~
-> 3. 
+> 3. `$ git checkout HEAD~1 data_cruncher.py`
 >
->     ~~~
->     $ git checkout HEAD~1 data_cruncher.py
->     ~~~
-> 4. 
+> 4. `$ git checkout <unique ID of last commit> data_cruncher.py`
 >
->     ~~~
->     $ git checkout <unique ID of last commit> data_cruncher.py
->     ~~~
-> 5. Both 2 & 4
+> 5. Both 2 and 4
 {: .challenge}
 
 > ## Reverting a commit
 >
-> Jennifer is collaborating on her python script with her colleagues and
+> Jennifer is collaborating on her Python script with her colleagues and
 > realises her last commit to the group repository is wrong and wants to
 > undo it.  Jennifer needs to undo correctly so everyone in the group
 > repository gets the correct change.  `git revert [wrong commit ID]`
@@ -244,21 +261,23 @@ moving backward and forward in time becomes much easier.
 > ID]` because `checkout` is for local changes not committed to the
 > group repository.  Below are the right steps and explanations for
 > Jennifer to use `git revert`, what is the missing command?
-> | Command or action              | Explanation                                                                                                                            |
-> |--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-> | < ________ >                   | Look at the git history of the project to find the commit ID                                                                           |
-> | Copy the ID                    | Find the commit and copy the first few characters of the ID (e.g. 0b1d055). You generally only need the first six to be unique.        |
-> | $`git revert  <commit ID> `    | Type `git revert` and paste in the ID copied. Git will create a new commit that is the exact opposite of the commit you are reverting. |
-> | Type in the new commit message | Your default text editor will open so you can edit the commit message to record you are reverting the previous commit and why.         |
-> | Save and close                 | Save the commit and close your editor to complete the process.                                                                         |
 >
+> 1. ________ # Look at the git history of the project to find the commit ID
+>
+> 2. Copy the ID (the first few characters of the ID, e.g. 0b1d055).
+>
+> 3. `git revert [commit ID]`
+>
+> 4. Type in the new commit message.
+>
+> 5. Save and close
 {: .challenge}
 
 > ## Understanding Workflow and History
 >
 > What is the output of cat venus.txt at the end of this set of commands?
 >
-> ~~~ {.bash}
+> ~~~
 > $ cd planets
 > $ nano venus.txt #input the following text: Venus is beautiful and full of love
 > $ git add venus.txt
@@ -267,31 +286,36 @@ moving backward and forward in time becomes much easier.
 > $ git checkout HEAD venus.txt
 > $ cat venus.txt #this will print the contents of venus.txt to the screen
 > ~~~
+> {: .bash}
 >
 > 1. 
 > 
->     ~~~ {.output}
+>     ~~~
 >     Venus is too hot to be suitable as a base
 >     ~~~
+>     {: .output}
 >
 > 2. 
 > 
->     ~~~ {.output}
+>     ~~~
 >     Venus is beautiful and full of love
 >     ~~~
+>     {: .output}
 >
 > 3. 
 > 
->     ~~~ {.output}
+>     ~~~
 >     Venus is beautiful and full of love
 >     Venus is too hot to be suitable as a base
 >     ~~~
+>     {: .output}
 >
 > 4. 
 > 
->     ~~~ {.output}
+>     ~~~
 >     Error because you have changed venus.txt without committing the changes
 >     ~~~
+>     {: .output}
 {: .challenge}
 
 > ## Checking Understanding of git diff

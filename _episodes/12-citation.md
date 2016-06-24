@@ -1,10 +1,14 @@
 ---
 title: Citation
-minutes: 2
+teaching: 2
+exercises: 0
+questions:
+- "FIXME"
+objectives:
+- "Make your work easy to cite"
+keypoints:
+- "FIXME"
 ---
-> ## Learning Objectives {.objectives}
->
-> *   Make your work easy to cite
 
 You may want to include a file called `CITATION` or `CITATION.txt`
 that describes how to reference your project;
@@ -39,3 +43,4 @@ July 2013.
   eprint      = {1307.5448}
 }
 ~~~
+{: .source}

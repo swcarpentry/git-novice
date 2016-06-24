@@ -1,12 +1,16 @@
 ---
 title: Licensing
-minutes: 5
+teaching: 5
+exercises: 0
+questions:
+- "FIXME"
+objectives:
+- "Explain why adding licensing and citation information to a repository is important."
+- "Choose a proper license."
+- "Explain differences in licensing and social expectations."
+keypoints:
+- "FIXME"
 ---
-> ## Learning Objectives {.objectives}
->
-> *   Explain why adding licensing and citation information to a repository is important.
-> *   Choose a proper license.
-> *   Explain differences in licensing and social expectations.
 
 When a repository with source code, a manuscript or other creative
 works becomes public, it should include a file `LICENSE` or
@@ -39,13 +43,9 @@ Inititative](http://opensource.org/licenses) and [Free Software
 Foundation](http://www.gnu.org/licenses/license-list.html) both
 maintain lists of licenses which are good choices.
 
-The following article provides an excellent overview of licensing and
-licensing options from the perspective of scientists who also write
-code:
-
-> Morin, A., Urban, J., and Sliz, P. “[A Quick Guide to Software
-> Licensing for the Scientist-Programmer](http://dx.doi.org/10.1371/journal.pcbi.1002598)” PLoS Computational Biology
-> 8(7) (2012): e1002598.
+[Thi article][software-licensing] provides an excellent overview of
+licensing and licensing options from the perspective of scientists who
+also write code.
 
 At the end of the day what matters is that there is a clear statement
 as to what the license is. Also, the license is best chosen from the
@@ -74,3 +74,5 @@ thus need to be asked for approval once a license is chosen.
 > - [Jupyter](https://github.com/jupyter), the project behind the web-based Python notebooks we'll be using
 > - [EtherPad](https://github.com/ether/etherpad-lite), a real-time collaborative editor
 {: .challenge}
+
+[software-licensing]: http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002598

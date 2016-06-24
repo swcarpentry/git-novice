@@ -2,7 +2,8 @@
 layout: reference
 ---
 
-## Git Cheatsheets for Quick Reference 
+## Git Cheatsheets for Quick Reference
+
 * A great [printable git cheatsheet](https://services.github.com/resources/) is available in PDF from the GitHub training website.
 * An [interactive one-page visualisation](http://ndpsoftware.com/git-cheatsheet.html) about the relationships between workspace, staging area, local repository, upstream repository, and the commands associated with each (with explanations).
 * Both resources are also available in other languages e.g. Spanish, French, and more
