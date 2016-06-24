@@ -30,45 +30,48 @@
           <h2 class="subtitle">Collaborating</h2>
           <section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
+<li>Clone a remote repository.</li>
 <li>Collaborate pushing to a common repository.</li>
 </ul>
 </div>
 </section>
-<p>For the next step, get into pairs. Pick one of your repositories on GitHub to use for collaboration.</p>
+<p>For the next step, get into pairs. One person will be the “Owner” and the other will be the “Collaborator”. The goal is that the Collaborator add changes into the Owner’s repository. We will switch roles at the end, so both persons will play Owner and Collaborator.</p>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pushpin"></span>Practicing by yourself</h2>
+<h2 id="practicing-by-yourself"><span class="glyphicon glyphicon-pushpin"></span>Practicing by yourself</h2>
 </div>
 <div class="panel-body">
-<p>If you’re working through this lesson on your own, you can carry on by opening a second terminal window, and switching to another directory (e.g. <code>/tmp</code>). This window will represent your partner, working on another computer. You won’t need to give anyone access on GitHub, because both ‘partners’ are you.</p>
+<p>If you’re working through this lesson on your own, you can carry on by opening a second terminal window. This window will represent your partner, working on another computer. You won’t need to give anyone access on GitHub, because both ‘partners’ are you.</p>
 </div>
 </aside>
-<p>The partner whose repository is being used needs to give the other person access. On GitHub, click the settings button on the right, then select Collaborators, and enter your partner’s username.</p>
+<p>The Owner needs to give the Collaborator access. On GitHub, click the settings button on the right, then select Collaborators, and enter your partner’s username.</p>
 <div class="figure">
-<img src="fig/github-add-collaborators.png" alt="Adding collaborators on GitHub" /><p class="caption">Adding collaborators on GitHub</p>
+<img src="fig/github-add-collaborators.png" alt="Adding collaborators on GitHub" />
+<p class="caption">Adding collaborators on GitHub</p>
 </div>
-<p>The other partner should <code>cd</code> to another directory (so <code>ls</code> doesn’t show a <code>planets</code> folder), and then make a copy of this repository on your own computer:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> clone https://github.com/vlad/planets.git</code></pre>
-<p>Replace ‘vlad’ with your partner’s username (the one who owns the repository).</p>
-<p><code>git clone</code> creates a fresh local copy of a remote repository.</p>
+<p>To accept access to the Owner’s repo, the Collaborator needs to go to <a href="https://github.com/notifications" class="uri">https://github.com/notifications</a>. Once there she can accept access to the Owner’s repo.</p>
+<p>Next, the Collaborator needs to download a copy of the Owner’s repository to her machine. This is called “cloning a repo”. To clone the Owner’s repo into her <code>Desktop</code> folder, the Collaborator enters:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> clone https://github.com/vlad/planets.git ~/Desktop/vlad-planets</code></pre></div>
+<p>Replace ‘vlad’ with the Owner’s username.</p>
 <div class="figure">
-<img src="fig/github-collaboration.svg" alt="After Creating Clone of Repository" /><p class="caption">After Creating Clone of Repository</p>
+<img src="fig/github-collaboration.svg" alt="After Creating Clone of Repository" />
+<p class="caption">After Creating Clone of Repository</p>
 </div>
-<p>The new collaborator can now make a change in their copy of the repository:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> planets
+<p>The Collaborator can now make a change in her clone of the Owner’s repository, exactly the same way as we’ve been doing before:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> ~/Desktop/vlad-planets
 $ <span class="kw">nano</span> pluto.txt
-$ <span class="kw">cat</span> pluto.txt</code></pre>
+$ <span class="kw">cat</span> pluto.txt</code></pre></div>
 <pre class="output"><code>It is so a planet!</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add pluto.txt
-$ <span class="kw">git</span> commit -m <span class="st">&quot;Some notes about Pluto&quot;</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add pluto.txt
+$ <span class="kw">git</span> commit -m <span class="st">&quot;Some notes about Pluto&quot;</span></code></pre></div>
 <pre class="output"><code> 1 file changed, 1 insertion(+)
  create mode 100644 pluto.txt</code></pre>
-<p>then push the change to GitHub:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin master</code></pre>
+<p>Then push the change to the <em>Owner’s repository</em> on GitHub:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin master</code></pre></div>
 <pre class="output"><code>Counting objects: 4, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (2/2), done.
@@ -76,9 +79,10 @@ Writing objects: 100% (3/3), 306 bytes, done.
 Total 3 (delta 0), reused 0 (delta 0)
 To https://github.com/vlad/planets.git
    9272da5..29aba7c  master -&gt; master</code></pre>
-<p>Note that we didn’t have to create a remote called <code>origin</code>: Git does this automatically, using that name, when we clone a repository. (This is why <code>origin</code> was a sensible choice earlier when we were setting up remotes by hand.)</p>
-<p>We can now download changes into the original repository on our machine:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> pull origin master</code></pre>
+<p>Note that we didn’t have to create a remote called <code>origin</code>: Git uses this name by default when we clone a repository. (This is why <code>origin</code> was a sensible choice earlier when we were setting up remotes by hand.)</p>
+<p>Take a look to the Owner’s repository on its GitHub website now (maybe you need to refresh your browser.) You should be able to see the new commit made by the Collaborator.</p>
+<p>To download the Collaborator’s changes from GitHub, the Owner now enters:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> pull origin master</code></pre></div>
 <pre class="output"><code>remote: Counting objects: 4, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 3 (delta 0)
@@ -90,6 +94,29 @@ Fast-forward
  pluto.txt | 1 +
  1 file changed, 1 insertion(+)
  create mode 100644 pluto.txt</code></pre>
+<p>Now the three repositories (Owner’s local, Collaborator’s local, and Owner’s on GitHub) are back in sync.</p>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="review-changes"><span class="glyphicon glyphicon-pencil"></span>Review changes</h2>
+</div>
+<div class="panel-body">
+<p>Switch roles and repeat the whole process.</p>
+<h2 id="review-changes-1" class="challenge">Review changes</h2>
+<p>The Owner push commits to the repository without giving any information to the Collaborator. How can the Collaborator find out what has changed with command line? And on GitHub?</p>
+<h2 id="comment-changes-in-github" class="challenge">Comment changes in GitHub</h2>
+<p>The Collaborator has some questions about one line change made by the Owner and has some suggestions to propose.</p>
+<p>With GitHub, it is possible to comment the diff of a commit. Over the line of code to comment, a blue comment icon appears to open a comment window.</p>
+<p>The Collaborator posts its comments and suggestions using GitHub interface.</p>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="version-history-backup-and-version-control"><span class="glyphicon glyphicon-pencil"></span>Version history, backup and version control</h2>
+</div>
+<div class="panel-body">
+<p>Some backup software can keep a history of the versions of your files. They also allows you to recover specific versions. How is this functionality different from version control? What are some of the benifits of using version control, Git and Github?</p>
+</div>
+</section>
         </div>
       </div>
       </article>
@@ -103,5 +130,16 @@ Fast-forward
     <!-- Javascript placed at the end of the document so the pages load faster -->
     <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
     <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-37305346-2', 'auto');
+      ga('send', 'pageview');
+    
+    </script>
   </body>
 </html>

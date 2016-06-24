@@ -43,8 +43,13 @@ working in teams or not, because it is
     [use it!](https://twitter.com/chendaniely/status/583689081151979520)
 
 *   Version control is usually not the first subject in a workshop,
-    so get learners to create a GitHub account after the session before.
-
+    so get learners to create a GitHub account after the session before. 
+    Remind learners that the username and email they use for GitHub (and setup  
+    during Git configuration) will be viewable to the public by default. 
+    However, there are many reasons why a learner may not want their personal
+    information viewable, and GitHub has [resources for keeping an email address
+    private](https://help.github.com/articles/keeping-your-email-address-private/).
+   
 *   If some learners are using Windows, there will inevitably be issues merging
     files with different line endings.  (Even if everyone's on some flavor of
     Unix, different editors may or may not add a newline to the last line of a
@@ -68,6 +73,13 @@ working in teams or not, because it is
     Mercurial primarily because of GitHub's growing popularity: CVS and
     Subversion are now seen as legacy systems, and Mercurial isn't nearly as
     widely used in the sciences right now.
+
+*   Further resources:
+    *    [git-it](https://github.com/jlord/git-it) is a self-paced command-line Git demo,
+         with [git-it-electron](https://github.com/jlord/git-it-electron) its GitHub Desktop successor
+    *    [Code School](https://www.codeschool.com/) has a free interactive course, [Try Git](https://try.github.io)
+    *    for instructors, [the Git parable](http://tom.preston-werner.com/2009/05/19/the-git-parable.html)
+         is valuable background reading
 
 ## [Automated Version Control](01-basics.html)
 
@@ -117,6 +129,9 @@ working in teams or not, because it is
     $ mv .git temp_git 
     $ rm -rf  temp_git 
     ~~~
+    
+    The challenge suggests that it is a bad idea to create a Git repo inside another repo. 
+    For more discussion on this topic, please see [this issue](https://github.com/swcarpentry/git-novice/issues/272).
 
 ## [Tracking Changes](04-changes.html)
 

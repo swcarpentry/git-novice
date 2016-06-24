@@ -102,6 +102,16 @@ The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity</code></pre>
 <p>As you might guess from its name, <code>git checkout</code> checks out (i.e., restores) an old version of a file. In this case, we’re telling Git that we want to recover the version of the file recorded in <code>HEAD</code>, which is the last saved commit. If we want to go back even further, we can use a commit identifier instead:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout f22b25e mars.txt</code></pre>
+<aside class="callout panel panel-info">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pushpin"></span>Don’t lose your HEAD</h2>
+</div>
+<div class="panel-body">
+<p>Above we used</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout f22b25e mars.txt</code></pre>
+<p>to revert mars.txt to its state after the commit f22b25e. If you forget <code>mars.txt</code> in that command, git will tell you that “You are in ‘detached HEAD’ state.” In this state, you shouldn’t make any changes. You can fix this by reattaching your head using <code>git checkout master</code></p>
+</div>
+</aside>
 <p>It’s important to remember that we must use the commit number that identifies the state of the repository <em>before</em> the change we’re trying to undo. A common mistake is to use the number of the commit in which we made the change we’re trying to get rid of. In the example below, we want to retrieve the state from before the most recent commit (<code>HEAD~1</code>), which is commit <code>f22b25e</code>:</p>
 <div class="figure">
 <img src="fig/git-checkout.svg" alt="Git Checkout" /><p class="caption">Git Checkout</p>
@@ -144,6 +154,28 @@ But the Mummy will appreciate the lack of humidity</code></pre>
 </ol>
 </div>
 </section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Understanding Workflow and History</h2>
+</div>
+<div class="panel-body">
+<p>What is the output of cat venus.txt at the end of this set of commands?</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> planets
+$ <span class="kw">nano</span> venus.txt <span class="co">#input the following text: Venus is beautiful and full of love</span>
+$ <span class="kw">git</span> add venus.txt
+$ <span class="kw">nano</span> venus.txt <span class="co">#add the following text: Venus is too hot to be suitable as a base</span>
+$ <span class="kw">git</span> commit -m <span class="st">&quot;comments on Venus as an unsuitable base&quot;</span>
+$ <span class="kw">git</span> checkout HEAD venus.txt
+$ <span class="kw">cat</span> venus.txt <span class="co">#this will print the contents of venus.txt to the screen</span></code></pre>
+<ol style="list-style-type: decimal">
+<li><pre class="output"><code>Venus is too hot to be suitable as a base</code></pre></li>
+<li><pre class="output"><code>Venus is beautiful and full of love</code></pre></li>
+<li><pre class="output"><code>Venus is beautiful and full of love
+Venus is too hot to be suitable as a base</code></pre></li>
+<li><pre class="output"><code>Error because you have changed venus.txt without committing the changes</code></pre></li>
+</ol>
+</div>
+</section>
         </div>
       </div>
       </article>
@@ -157,5 +189,16 @@ But the Mummy will appreciate the lack of humidity</code></pre>
     <!-- Javascript placed at the end of the document so the pages load faster -->
     <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
     <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-37305346-2', 'auto');
+      ga('send', 'pageview');
+    
+    </script>
   </body>
 </html>

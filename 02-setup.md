@@ -6,7 +6,7 @@ minutes: 5
 ---
 > ## Learning Objectives {.objectives}
 >
-> *  Configure `git` the first time is used on a computer.
+> *  Configure `git` the first time it is used on a computer.
 > *  Understand the meaning of the `--global` configuration flag.
 
 
@@ -20,8 +20,8 @@ of configurations we will set as we get started with Git:
 *   what our preferred text editor is,
 *   and that we want to use these settings globally (i.e. for every project)
 
-On a command line, Git commands are written as `git verb`, 
-where `verb` is what we actually want to do. So here is how 
+On a command line, Git commands are written as `git verb`,
+where `verb` is what we actually want to do. So here is how
 Dracula sets up his new laptop:
 
 ~~~ {.bash}
@@ -30,12 +30,16 @@ $ git config --global user.email "vlad@tran.sylvan.ia"
 $ git config --global color.ui "auto"
 ~~~
 
-(Please use your own name and email address instead of Dracula's.)
+(Please use your own name and email address instead of Dracula's. 
+This user name and email will be associated with your subsequent Git activity, 
+which means that any changes pushed to GitHub in a later lesson will include this information. 
+If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private](https://help.github.com/articles/keeping-your-email-address-private/).)
 
 He also has to set his favorite text editor, following this table:
 
 | Editor             | Configuration command                            |
 |:-------------------|:-------------------------------------------------|
+|Atom | `$ git config --global core.editor "atom --wait"`|
 | nano               | `$ git config --global core.editor "nano -w"`    |
 | Text Wrangler      | `$ git config --global core.editor "edit -w"`    |
 | Sublime Text (Mac) | `$ git config --global core.editor "subl -n -w"` |
@@ -75,4 +79,13 @@ same commands to choose another editor or update your email address.
 > ~~~ {.bash}
 > $ git config --global --unset http.proxy
 > $ git config --global --unset https.proxy
+> ~~~
+
+> ## Git Help & Manual {.callout}
+>
+> Always remember that if you forget a git command, you can access the list of command by using -h and access the git manual by using --help :
+>
+> ~~~ {.bash}
+> $ git config -h
+> $ git config --help
 > ~~~
