@@ -235,6 +235,18 @@ moving backward and forward in time becomes much easier.
 > 5. Both 2 & 4
 
 
+> ## Reverting a commit {.challenge}
+
+Jennifer is collaborating on her python script with her colleagues and realises her last commit to the group repository is wrong and wants to undo it.  Jennifer needs to undo correctly so everyone in the group repository gets the correct change.  `git revert <wrong commit ID>` will make a new commit that undoes Jennifer's previous wrong commit. Therefore `git revert` is different than `git checkout <commit ID>` because `checkout` is for local changes not committed to the group repository.  Below are the right steps and explanations for Jennifer to use `git revert`, what is the missing command?
+
+| Command or action              | Explanation                                                                                                                            |
+|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| < ________ >                   | Look at the git history of the project to find the commit ID                                                                           |
+| Copy the ID                    | Find the commit and copy the first few characters of the ID (e.g. 0b1d055). You generally only need the first six to be unique.        |
+| $`git revert  <commit ID> `    | Type `git revert` and paste in the ID copied. Git will create a new commit that is the exact opposite of the commit you are reverting. |
+| Type in the new commit message | Your default text editor will open so you can edit the commit message to record you are reverting the previous commit and why.         |
+| Save and close                 | Save the commit and close your editor to complete the process.                                                                         |
+
 > ## Understanding Workflow and History {.challenge}
 >
 > What is the output of cat venus.txt at the end of this set of commands?
@@ -273,6 +285,24 @@ moving backward and forward in time becomes much easier.
 >     ~~~ {.output}
 >     Error because you have changed venus.txt without committing the changes
 >     ~~~
+
+
+> ## Checking Understanding of git diff {.challenge}
+>
+> Consider this command: `git diff HEAD~3 mars.txt`. What do you predict this command 
+> will do if you execute it? What happens when you do execute it? Why? 
+>
+> Try another command, `git diff [ID] mars.txt`, where [ID] is replaced with 
+> the unique identifier for your most recent commit. What do you think will happen, 
+> and what does happen? 
+
+
+> ## Getting Rid of Staged Changes {.challenge}
+>
+> `git checkout` can be used to restore a previous commit when unstaged changes have
+> been made, but will it also work for changes that have been staged but not committed? 
+> Make a change to `mars.txt`, add that change, and use `git checkout` to see if 
+> you can remove your change. 
 
 
 

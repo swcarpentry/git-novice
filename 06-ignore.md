@@ -101,7 +101,8 @@ fatal: no files added
 ~~~
 
 If we really want to override our ignore settings,
-we can use `git add -f` to force Git to add something.
+we can use `git add -f` to force Git to add something. For example,
+`git add -f a.dat`.
 We can also always see the status of ignored files if we want:
 
 ~~~ {.bash}
@@ -123,7 +124,8 @@ nothing to commit, working directory clean
 > ## Ignoring nested files {.challenge}
 >
 > Given a directory structure that looks like:
-> ~~~
+>
+> ~~~ {.bash}
 > results/data
 > results/plots
 > ~~~
@@ -139,7 +141,8 @@ nothing to commit, working directory clean
 > ## Ignoring files deep in a directory {.challenge}
 >
 > Given a directory structure that looks like:
-> ~~~
+>
+> ~~~ {.bash}
 > results/data/position/gps/useless.data
 > results/plots
 > ~~~
@@ -151,7 +154,8 @@ nothing to commit, working directory clean
 > ## The order of rules {.challenge}
 >
 > Given a `.gitignore` file with the following contents:
-> ~~~
+>
+> ~~~ {.bash}
 > *.data
 > !*.data
 > ~~~
