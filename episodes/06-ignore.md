@@ -142,7 +142,7 @@ nothing to commit, working directory clean
 ~~~
 {: .output}
 
-> ## Ignoring nested files
+> ## Ignoring Nested Files
 >
 > Given a directory structure that looks like:
 >
@@ -155,14 +155,14 @@ nothing to commit, working directory clean
 > How would you ignore only `results/plots` and not `results/data`?
 {: .challenge}
 
-> ## Including specific files
+> ## Including Specific Files
 >
 > How would you ignore all `.data` files in your root directory except for
 > `final.data`?
 > Hint: Find out what `!` (the exclamation point operator) does
 {: .challenge}
 
-> ## Ignoring files deep in a directory
+> ## Ignoring Files Deep in a Directory
 >
 > Given a directory structure that looks like:
 >
@@ -177,7 +177,7 @@ nothing to commit, working directory clean
 > Hint: What does appending `**` to a rule accomplish?
 {: .challenge}
 
-> ## The order of rules
+> ## The Order of Rules
 >
 > Given a `.gitignore` file with the following contents:
 >
@@ -190,7 +190,7 @@ nothing to commit, working directory clean
 > What will be the result?
 {: .challenge}
 
-> ## Log-files
+> ## Log Files
 >
 > You wrote a script that creates many intermediate log-files of the form log_01, log_02, log_03, etc.
 > You want to keep them but you do not want to track them through `git`.

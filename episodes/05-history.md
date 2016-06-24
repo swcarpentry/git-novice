@@ -172,7 +172,8 @@ $ git checkout f22b25e mars.txt
 ~~~
 {: .bash}
 
-> ## Don't lose your HEAD
+> ## Don't Lose Your HEAD
+>
 > Above we used
 >
 > ~~~
@@ -196,11 +197,10 @@ recent commit (`HEAD~1`), which is commit `f22b25e`:
 
 ![Git Checkout](fig/git-checkout.svg)
 
-So, to put it all together:
+So, to put it all together,
+here's how Git works in cartoon form:
 
-> ## How Git works, in cartoon form
-> ![http://figshare.com/articles/How_Git_works_a_cartoon/1328266](fig/git_staging.svg)
-{: .callout}
+![http://figshare.com/articles/How_Git_works_a_cartoon/1328266](fig/git_staging.svg)
 
 > ## Simplifying the Common Case
 >
@@ -250,7 +250,7 @@ moving backward and forward in time becomes much easier.
 > 5. Both 2 and 4
 {: .challenge}
 
-> ## Reverting a commit
+> ## Reverting a Commit
 >
 > Jennifer is collaborating on her Python script with her colleagues and
 > realises her last commit to the group repository is wrong and wants to
@@ -318,7 +318,7 @@ moving backward and forward in time becomes much easier.
 >     {: .output}
 {: .challenge}
 
-> ## Checking Understanding of git diff
+> ## Checking Understanding of `git diff`
 >
 > Consider this command: `git diff HEAD~3 mars.txt`. What do you predict this command 
 > will do if you execute it? What happens when you do execute it? Why? 

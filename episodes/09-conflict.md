@@ -319,7 +319,7 @@ or find a way to divide the work up differently.
 > that is stored in version control?
 {: .challenge}
 
-> ## A typical work session
+> ## A Typical Work Session
 >
 > You sit down at your computer to work on a shared project that is tracked in a
 > remote Git repository. During your work session, you take the following

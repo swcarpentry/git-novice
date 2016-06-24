@@ -316,9 +316,9 @@ where it keeps track of things that have been added to
 the current [change set](reference.html#change-set)
 but not yet committed.
 
-> ## Staging area
-> If you think of Git as taking snapshots of changes over the life of a
-> project,
+> ## Staging Area
+>
+> If you think of Git as taking snapshots of changes over the life of a project,
 > `git add` specifies *what* will go in a snapshot
 > (putting things in the staging area),
 > and `git commit` then *actually takes* the snapshot, and
@@ -474,7 +474,7 @@ repository (`git commit`):
 
 ![The Git Commit Workflow](fig/git-committing.svg)
 
-> ## Choosing a commit message
+> ## Choosing a Commit Message
 >
 > Which of the following commit messages would be most appropriate for the 
 > last commit made to `mars.txt`?

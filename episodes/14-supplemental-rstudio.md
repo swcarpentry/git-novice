@@ -32,7 +32,7 @@ our computer, we'll choose "existing directory":
 ![](fig/RStudio_screenshot_existingdirectory.png)
 &nbsp;
 
-> ## Do you see a "version control" option?
+> ## Do You See a "Version Control" Option?
 >
 > Although we're not going to use it here, there should be a "version control"
 > option on this menu. That is what you would click on if you wanted to
@@ -87,7 +87,7 @@ the history:
 ![](fig/RStudio_screenshot_history.png)
 &nbsp;
 
-> ## Are the push/pull commands greyed out?
+> ## Are the Push/Pull Commands Grayed Out?
 >
 > If this is the case, it generally means that RStudio doesn't know the
 > location of any other version of your repository (i.e. the one on Github).

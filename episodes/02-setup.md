@@ -86,7 +86,7 @@ same commands to choose another editor or update your email address.
 > {: .bash}
 {: .callout}
 
-> ## Git Help & Manual
+> ## Git Help and Manual
 >
 > Always remember that if you forget a git command, you can access the list of command by using -h and access the git manual by using --help :
 >

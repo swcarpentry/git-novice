@@ -61,7 +61,7 @@ identify it:
 Click on the 'HTTPS' link to change the [protocol](reference.html#protocol) from
 SSH to HTTPS.
 
-> ## HTTPS vs SSH
+> ## HTTPS vs. SSH
 >
 > We use HTTPS here because it does not require additional configuration.  After
 > the workshop you may want to set up SSH access, which is a bit more secure, by
@@ -213,13 +213,13 @@ GitHub, though, this command would download them to our local repository.
 > times, and why?
 {: .challenge}
 
-> ## Push vs. commit
+> ## Push vs. Commit
 >
 > In this lesson, we introduced the "git push" command.
 > How is "git push" different from "git commit"?
 {: .challenge}
 
-> ## Fixing up remote settings
+> ## Fixing Remote Settings
 >
 > It happens quite often in practice that you made a typo in the
 > remote URL. This exercice is about how to fix this kind of issues.
