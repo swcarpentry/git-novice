@@ -1,7 +1,5 @@
 ---
-layout: page
-title: Version Control with Git
-subtitle: Automated Version Control
+title: Automated Version Control
 minutes: 5
 ---
 > ## Learning Objectives {.objectives}
@@ -50,7 +48,7 @@ across different computers facilitating collaboration among different people.
 > These modern systems also include powerful merging tools that make it possible for multiple authors to work within
 > the same files concurrently.
 
-> ## Paper writing {.challenge}
+> ## Paper writing
 >
 > * Imagine you drafted an excellent paragraph for a paper you are writing, but later ruin it. How would you retrieve 
 > the *excellent* version of your conclusion? Is it even possible?
@@ -58,3 +56,4 @@ across different computers facilitating collaboration among different people.
 > * Imagine you have 5 co-authors. How would you manage the changes and comments they make to your paper?
 > If you use LibreOffice Writer or Microsoft Word, what happens if you accept changes made using the 
 > `Track Changes` option? Do you have a history of those changes? 
+{: .challenge}

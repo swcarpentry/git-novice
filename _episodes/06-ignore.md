@@ -1,7 +1,5 @@
 ---
-layout: page
-title: Version Control with Git
-subtitle: Ignoring Things
+title: Ignoring Things
 minutes: 5
 ---
 > ## Learning Objectives {.objectives}
@@ -121,7 +119,7 @@ $ git status --ignored
 nothing to commit, working directory clean
 ~~~
 
-> ## Ignoring nested files {.challenge}
+> ## Ignoring nested files
 >
 > Given a directory structure that looks like:
 >
@@ -131,14 +129,16 @@ nothing to commit, working directory clean
 > ~~~
 >
 > How would you ignore only `results/plots` and not `results/data`?
+{: .challenge}
 
-> ## Including specific files {.challenge}
+> ## Including specific files
 >
 > How would you ignore all `.data` files in your root directory except for
 > `final.data`?
 > Hint: Find out what `!` (the exclamation point operator) does
+{: .challenge}
 
-> ## Ignoring files deep in a directory {.challenge}
+> ## Ignoring files deep in a directory
 >
 > Given a directory structure that looks like:
 >
@@ -150,8 +150,9 @@ nothing to commit, working directory clean
 > What's the shortest `.gitignore` rule you could write to ignore all `.data`
 > files in `result/data/position/gps`
 > Hint: What does appending `**` to a rule accomplish?
+{: .challenge}
 
-> ## The order of rules {.challenge}
+> ## The order of rules
 >
 > Given a `.gitignore` file with the following contents:
 >
@@ -161,10 +162,12 @@ nothing to commit, working directory clean
 > ~~~
 >
 > What will be the result?
+{: .challenge}
 
-> ## Log-files {.challenge}
+> ## Log-files
 >
-> You wrote a script that creates many intermediate log-files of the form log_01, log_02, log_03, etc. You want to keep them but you do not want to track them through `git`.
+> You wrote a script that creates many intermediate log-files of the form log_01, log_02, log_03, etc.
+> You want to keep them but you do not want to track them through `git`.
 >
 > 1. Write **one** `.gitignore` entry that excludes files of the form `log_01`, `log_02`, etc.
 >
@@ -173,3 +176,4 @@ nothing to commit, working directory clean
 > 3. You find that the file `log_01` is very important after all, add it to the tracked files without changing the `.gitignore` again.
 >
 > 4. Discuss with your neighbor what other types of files could reside in your directory that you do not want to track and thus would exclude via `.gitignore`.
+{: .challenge}

@@ -1,7 +1,5 @@
 ---
-layout: page
-title: Version Control with Git
-subtitle: Tracking Changes
+title: Tracking Changes
 minutes: 20
 ---
 > ## Learning Objectives {.objectives}
@@ -411,7 +409,7 @@ repository (`git commit`):
 
 ![The Git Commit Workflow](fig/git-committing.svg)
 
-> ## Choosing a commit message {.challenge}
+> ## Choosing a commit message
 >
 > Which of the following commit messages would be most appropriate for the 
 > last commit made to `mars.txt`?
@@ -425,8 +423,9 @@ repository (`git commit`):
 > 3. 
 >
 >     "Discuss effects of Mars' climate on the Mummy"
+{: .challenge}
 
-> ## Committing Changes to Git {.challenge}
+> ## Committing Changes to Git
 >
 > Which command(s) below would save the changes of `myfile.txt` to my local Git repository?
 >
@@ -452,8 +451,9 @@ repository (`git commit`):
 >     ~~~
 >     $ git commit -m myfile.txt "my recent changes"
 >     ~~~
+{: .challenge}
 
-> ## Committing Multiple Files {.challenge}
+> ## Committing Multiple Files
 >
 > The staging area can hold changes from any number of files
 > that you want to commit as a single snapshot.
@@ -464,16 +464,18 @@ repository (`git commit`):
 > about Venus as a base for you and your friends
 > 3. Add changes from both files to the staging area,
 > and commit those changes.
+{: .challenge}
 
-> ## `bio` Repository {.challenge}
+> ## `bio` Repository
 >
 > Create a new Git repository on your computer called `bio`.
 > Write a three-line biography for yourself in a file called `me.txt`,
 > commit your changes,
 > then modify one line, add a fourth line, and display the differences
 > between its updated state and its original state.
+{: .challenge}
 
-> ## Author and Committer {.challenge}
+> ## Author and Committer
 >
 > For each of the commits you have done, Git stored your name twice.
 > You are named as the author and as the committer. You can observe
@@ -494,5 +496,6 @@ repository (`git commit`):
 > `--author` option and one by naming a colleague of yours as the
 > author. Run `git log` and `git log --format=full`. Think about ways
 > how that can allow you to collaborate with your colleagues.
+{: .challenge}
 
 [commit-messages]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html

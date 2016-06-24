@@ -1,7 +1,5 @@
 ---
-layout: page
-title: Version Control with Git
-subtitle: Collaborating
+title: Collaborating
 minutes: 25
 ---
 > ## Learning Objectives {.objectives}
@@ -122,17 +120,19 @@ GitHub) are back in sync.
 > of one commit with massive changes: small commits are easier to
 > read and review.
 
-> ## Switch roles and repeat {.challenge}
+> ## Switch roles and repeat
 >
 > Switch roles and repeat the whole process.
+{: .challenge}
 
-> ## Review changes {.challenge}
+> ## Review changes
 >
 > The Owner push commits to the repository without giving any information
 > to the Collaborator. How can the Collaborator find out what has changed with
 > command line? And on GitHub?
+{: .challenge}
 
-> ## Comment changes in GitHub {.challenge}
+> ## Comment changes in GitHub
 >
 > The Collaborator has some questions about one line change made by the Owner and
 > has some suggestions to propose.
@@ -141,9 +141,11 @@ GitHub) are back in sync.
 > code to comment, a blue comment icon appears to open a comment window.
 >
 > The Collaborator posts its comments and suggestions using GitHub interface.
+{: .challenge}
 
-> ## Version history, backup and version control {.challenge}
+> ## Version history, backup and version control
 >
 > Some backup software can keep a history of the versions of your files. They also
 > allows you to recover specific versions. How is this functionality different from version control?
 > What are some of the benifits of using version control, Git and Github?
+{: .challenge}

@@ -1,7 +1,5 @@
 ---
-layout: page
-title: Version Control with Git
-subtitle: Creating a Repository
+title: Creating a Repository
 minutes: 10
 ---
 > ## Learning Objectives {.objectives}
@@ -59,7 +57,7 @@ $ git status
 nothing to commit (create/copy files and use "git add" to track)
 ~~~
 
-> ## Places to Create Git Repositories {.challenge}
+> ## Places to Create Git Repositories
 >
 > Dracula starts a new project, `moons`, related to his `planets` project.
 > Despite Wolfman's concerns, he enters the following sequence of commands to
@@ -76,4 +74,5 @@ nothing to commit (create/copy files and use "git add" to track)
 > ~~~
 > 
 > Why is it a bad idea to do this?
-> How can Dracula "undo" his last `git init`?
+> How can Dracula undo his last `git init`?
+{: .challenge}

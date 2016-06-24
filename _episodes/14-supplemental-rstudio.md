@@ -1,7 +1,5 @@
 ---
-layout: page
-title: Version Control with Git
-subtitle: Using Git from RStudio
+title: Using Git from RStudio
 minutes: 10
 ---
 
