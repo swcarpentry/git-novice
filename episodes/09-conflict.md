@@ -1,7 +1,5 @@
 ---
-layout: page
-title: Version Control with Git
-subtitle: Conflicts
+title: Conflicts
 minutes: 15
 ---
 > ## Learning Objectives {.objectives}
@@ -253,7 +251,7 @@ the version control system is essentially trying to tell its users
 that they ought to clarify who's responsible for what,
 or find a way to divide the work up differently.
 
-> ## Solving Conflicts that You Create {.challenge}
+> ## Solving Conflicts that You Create
 >
 > Clone the repository created by your instructor.
 > Add a new file to it,
@@ -261,14 +259,16 @@ or find a way to divide the work up differently.
 > When asked by your instructor,
 > pull her changes from the repository to create a conflict,
 > then resolve it.
+{: .challenge}
 
-> ## Conflicts on Non-textual files {.challenge}
+> ## Conflicts on Non-textual files
 >
 > What does Git do
 > when there is a conflict in an image or some other non-textual file
 > that is stored in version control?
+{: .challenge}
 
-> ## A typical work session {.challenge}
+> ## A typical work session
 >
 > You sit down at your computer to work on a shared project that is tracked in a
 > remote Git repository. During your work session, you take the following
@@ -295,3 +295,4 @@ or find a way to divide the work up differently.
 > |4    |                           |                            |
 > |5    |                           |                            |
 > |6    | Celebrate!                | `AFK`                      |
+{: .challenge}

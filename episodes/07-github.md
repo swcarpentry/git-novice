@@ -1,7 +1,5 @@
 ---
-layout: page
-title: Version Control with Git
-subtitle: Remotes in GitHub
+title: Remotes in GitHub
 minutes: 30
 ---
 > ## Learning Objectives {.objectives}
@@ -175,28 +173,31 @@ Pulling has no effect in this case because the two repositories are already
 synchronized.  If someone else had pushed some changes to the repository on
 GitHub, though, this command would download them to our local repository.
 
-> ## GitHub GUI {.challenge}
+> ## GitHub GUI
 > 
 > Browse to your `planets` repository on GitHub.
 > Under the Code tab, find and click on the text that says "XX commits" (where "XX" is some number). 
 > Hover over, and click on, the three buttons to the right of each commit.
 > What information can you gather/explore from these buttons?
 > How would you get that same information in the shell?
+{: .challenge}
 
-> ## GitHub Timestamp {.challenge}
+> ## GitHub Timestamp
 >
 > Create a remote repository on GitHub.  Push the contents of your local
 > repository to the remote.  Make changes to your local repository and push
 > these changes.  Go to the repo you just created on Github and check the
 > [timestamps](reference.html#timestamp) of the files.  How does GitHub record
 > times, and why?
+{: .challenge}
 
-> ## Push vs. commit {.challenge}
+> ## Push vs. commit
 >
 > In this lesson, we introduced the "git push" command.
 > How is "git push" different from "git commit"?
+{: .challenge}
 
-> ## Fixing up remote settings {.challenge}
+> ## Fixing up remote settings
 >
 > It happens quite often in practice that you made a typo in the
 > remote URL. This exercice is about how to fix this kind of issues.
@@ -211,8 +212,11 @@ GitHub, though, this command would download them to our local repository.
 > valid? Can you figure out how to fix the URL (tip: use `git remote
 > -h`)? Don't forget to clean up and remove this remote once you are
 > done with this exercise.
+{: .challenge}
 
-> ## GitHub License and README files {.challenge}
+> ## GitHub License and README files
+>
 > In this section we learned about creating a remote repository on GitHub, but when you initialized your
 > GitHub repo, you didn't add a README.md or a license file. If you had, what do you think would have happened when
 > you tried to link your local and remote repositories?
+{: .challenge}

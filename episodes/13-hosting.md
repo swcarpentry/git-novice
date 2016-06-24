@@ -1,7 +1,5 @@
 ---
-layout: page
-title: Version Control with Git
-subtitle: Hosting
+title: Hosting
 minutes: 10
 ---
 > ## Learning Objectives {.objectives}
@@ -62,15 +60,17 @@ open source projects, and are also available for private repositories for a fee.
 > either to request an exception for a specific project or domain,
 > or to push more broadly for institutional reform to support more open science.
 
-> ## Can My Work Be Public? {.challenge}
+> ## Can My Work Be Public?
 >
 > Find out whether you are allowed to host your work openly on a public forge.
 > Can you do this unilaterally,
 > or do you need permission from someone in your institution?
 > If so, who?
+{: .challenge}
 
-> ## Where Can I Share My Work? {.challenge}
+> ## Where Can I Share My Work?
 >
 > Does your institution have a repository or repositories that you can
 > use to share your papers, data and software? How do institutional repositories
 > differ from services like [arXiV](http://arxiv.org/), [figshare](http://figshare.com/) and [GitHub](http://github.com/)?
+{: .challenge}

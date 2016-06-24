@@ -1,7 +1,5 @@
 ---
-layout: page
-title: Version Control with Git
-subtitle: Open Science
+title: Open Science
 minutes: 10 (5 to explain the lesson and 5 to do a challenge)
 ---
 > ## Learning Objectives {.objectives}
@@ -98,14 +96,15 @@ by acting as a shareable electronic lab notebook for computational work:
 > your papers,
 > or anything else hosted in a version control repository.
 
-> ## How Reproducible Is My Work? {.challenge}
+> ## How Reproducible Is My Work?
 >
 > Ask one of your labmates to reproduce a result you recently obtained
 > using only what they can find in your papers or on the web.
 > Try to do the same for one of their results,
 > then try to do it for a result from a lab you work with.
+{: .challenge}
 
-> ## How to find an appropriate data repository? {.challenge}
+> ## How to find an appropriate data repository?
 >
 > Surf the internet for a couple of minutes and check out the data repositories
 > mentioned above: [Figshare](http://figshare.com/), [Zenodo](http://zenodo.org),
@@ -115,8 +114,9 @@ by acting as a shareable electronic lab notebook for computational work:
 > http://www.nature.com/sdata/data-policies/repositories).
 > Discuss with your neighbor which data repository you might want to
 > approach for your current project and explain why.
+{: .challenge}
 
-> ## Can I also publish code? {.challenge}
+> ## Can I also publish code?
 >
 > There are many new ways to publish code and to make it citable. One
 > way is described [on the homepage of github itself](
@@ -124,3 +124,4 @@ by acting as a shareable electronic lab notebook for computational work:
 > Basically it's a combination of github (where the code is) and zenodo (the
 > repository creating the DOI). Read through this page while being aware
 > that this is only one of many ways to making your code citable.
+{: .challenge}

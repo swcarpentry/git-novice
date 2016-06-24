@@ -1,6 +1,5 @@
 ---
-layout: page
-title: Version Control with Git
+layout: lesson
 ---
 
 Wolfman and Dracula have been hired by Universal Missions (a space

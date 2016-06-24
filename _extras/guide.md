@@ -144,7 +144,7 @@ working in teams or not, because it is
 
 Solutions to exercises:
 
-> ## Choosing a commit message {.challenge}
+> ## Choosing a commit message
 >
 > Which of the following commit messages would be most appropriate for the 
 > last commit made to `mars.txt`?
@@ -160,7 +160,7 @@ Solutions to exercises:
 >     **"Discuss effects of Mars' climate on the Mummy"**
 > 
 >Answer 1 is not descriptive enough, answer 2 is too descriptive and redundant, and answer 3 is good - short but descriptive.
-
+{: .challenge}
 
 ## [Exploring History](05-history.html)
 

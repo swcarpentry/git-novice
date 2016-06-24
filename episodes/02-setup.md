@@ -1,7 +1,5 @@
 ---
-layout: page
-title: Version Control with Git
-subtitle: Setting Up Git
+title: Setting Up Git
 minutes: 5
 ---
 > ## Learning Objectives {.objectives}
