@@ -1,13 +1,15 @@
 ---
 title: Setting Up Git
-minutes: 5
+teaching: 5
+exercises: 0
+questions:
+- "FIXME"
+objectives:
+- "Configure `git` the first time it is used on a computer."
+- "Understand the meaning of the `--global` configuration flag."
+keypoints:
+- "FIXME"
 ---
-> ## Learning Objectives {.objectives}
->
-> *  Configure `git` the first time it is used on a computer.
-> *  Understand the meaning of the `--global` configuration flag.
-
-
 
 When we use Git on a new computer for the first time,
 we need to configure a few things. Below are a few examples
@@ -22,11 +24,12 @@ On a command line, Git commands are written as `git verb`,
 where `verb` is what we actually want to do. So here is how
 Dracula sets up his new laptop:
 
-~~~ {.bash}
+~~~
 $ git config --global user.name "Vlad Dracula"
 $ git config --global user.email "vlad@tran.sylvan.ia"
 $ git config --global color.ui "auto"
 ~~~
+{: .bash}
 
 (Please use your own name and email address instead of Dracula's. 
 This user name and email will be associated with your subsequent Git activity, 
@@ -54,36 +57,42 @@ to use the settings for every project, in your user account, on this computer.
 
 You can check your settings at any time:
 
-~~~ {.bash}
+~~~
 $ git config --list
 ~~~
+{: .bash}
 
 You can change your configuration as many times as you want: just use the
 same commands to choose another editor or update your email address.
 
-> ## Proxy {.callout}
+> ## Proxy
 >
 > In some networks you need to use a
 > [proxy](https://en.wikipedia.org/wiki/Proxy_server). If this is the case, you
 > may also need to tell Git about the proxy:
 >
-> ~~~ {.bash}
+> ~~~
 > $ git config --global http.proxy proxy-url
 > $ git config --global https.proxy proxy-url
 > ~~~
+> {: .bash}
 >
 > To disable the proxy, use
 >
-> ~~~ {.bash}
+> ~~~
 > $ git config --global --unset http.proxy
 > $ git config --global --unset https.proxy
 > ~~~
+> {: .bash}
+{: .callout}
 
-> ## Git Help & Manual {.callout}
+> ## Git Help & Manual
 >
 > Always remember that if you forget a git command, you can access the list of command by using -h and access the git manual by using --help :
 >
-> ~~~ {.bash}
+> ~~~
 > $ git config -h
 > $ git config --help
 > ~~~
+> {: .bash}
+{: .callout}

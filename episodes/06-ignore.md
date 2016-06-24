@@ -1,28 +1,35 @@
 ---
 title: Ignoring Things
-minutes: 5
+teaching: 5
+exercises: 0
+questions:
+- "FIXME"
+objectives:
+- "Configure Git to ignore specific files."
+- "Explain why ignoring files can be useful."
+keypoints:
+- "FIXME"
 ---
-> ## Learning Objectives {.objectives}
->
-> *   Configure Git to ignore specific files.
-> *   Explain why ignoring files can be useful.
 
 What if we have files that we do not want Git to track for us,
 like backup files created by our editor
 or intermediate files created during data analysis.
 Let's create a few dummy files:
 
-~~~ {.bash}
+~~~
 $ mkdir results
 $ touch a.dat b.dat c.dat results/a.out results/b.out
 ~~~
+{: .bash}
 
 and see what Git says:
 
-~~~ {.bash}
+~~~
 $ git status
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 # On branch master
 # Untracked files:
 #   (use "git add <file>..." to include in what will be committed)
@@ -33,6 +40,7 @@ $ git status
 #	results/
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
+{: .output}
 
 Putting these files under version control would be a waste of disk space.
 What's worse,
@@ -41,14 +49,17 @@ so let's tell Git to ignore them.
 
 We do this by creating a file in the root directory of our project called `.gitignore`:
 
-~~~ {.bash}
+~~~
 $ nano .gitignore
 $ cat .gitignore
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 *.dat
 results/
 ~~~
+{: .output}
 
 These patterns tell Git to ignore any file whose name ends in `.dat`
 and everything in the `results` directory.
@@ -58,10 +69,12 @@ Git would continue to track them.)
 Once we have created this file,
 the output of `git status` is much cleaner:
 
-~~~ {.bash}
+~~~
 $ git status
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 # On branch master
 # Untracked files:
 #   (use "git add <file>..." to include in what will be committed)
@@ -69,6 +82,7 @@ $ git status
 #	.gitignore
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
+{: .output}
 
 The only thing Git notices now is the newly-created `.gitignore` file.
 You might think we wouldn't want to track it,
@@ -76,37 +90,45 @@ but everyone we're sharing our repository with will probably want to ignore
 the same things that we're ignoring.
 Let's add and commit `.gitignore`:
 
-~~~ {.bash}
+~~~
 $ git add .gitignore
 $ git commit -m "Add the ignore file"
 $ git status
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 # On branch master
 nothing to commit, working directory clean
 ~~~
+{: .output}
 
 As a bonus, using `.gitignore` helps us avoid accidentally adding to the repository files that we don't want to track:
 
-~~~ {.bash}
+~~~
 $ git add a.dat
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 The following paths are ignored by one of your .gitignore files:
 a.dat
 Use -f if you really want to add them.
 fatal: no files added
 ~~~
+{: .output}
 
 If we really want to override our ignore settings,
 we can use `git add -f` to force Git to add something. For example,
 `git add -f a.dat`.
 We can also always see the status of ignored files if we want:
 
-~~~ {.bash}
+~~~
 $ git status --ignored
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 # On branch master
 # Ignored files:
 #  (use "git add -f <file>..." to include in what will be committed)
@@ -118,15 +140,17 @@ $ git status --ignored
 
 nothing to commit, working directory clean
 ~~~
+{: .output}
 
 > ## Ignoring nested files
 >
 > Given a directory structure that looks like:
 >
-> ~~~ {.bash}
+> ~~~
 > results/data
 > results/plots
 > ~~~
+> {: .bash}
 >
 > How would you ignore only `results/plots` and not `results/data`?
 {: .challenge}
@@ -142,10 +166,11 @@ nothing to commit, working directory clean
 >
 > Given a directory structure that looks like:
 >
-> ~~~ {.bash}
+> ~~~
 > results/data/position/gps/useless.data
 > results/plots
 > ~~~
+> {: .bash}
 >
 > What's the shortest `.gitignore` rule you could write to ignore all `.data`
 > files in `result/data/position/gps`
@@ -156,10 +181,11 @@ nothing to commit, working directory clean
 >
 > Given a `.gitignore` file with the following contents:
 >
-> ~~~ {.bash}
+> ~~~
 > *.data
 > !*.data
 > ~~~
+> {: .bash}
 >
 > What will be the result?
 {: .challenge}

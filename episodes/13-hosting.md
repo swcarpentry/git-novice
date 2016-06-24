@@ -1,10 +1,14 @@
 ---
 title: Hosting
-minutes: 10
+teaching: 10
+exercises: 0
+questions:
+- "FIXME"
+objectives:
+- "Explain different options for hosting scientific work."
+keypoints:
+- "FIXME"
 ---
-> ## Learning Objectives {.objectives}
->
-> *   Explain different options for hosting scientific work.
 
 The second big question for groups that want to open up their work is where to
 host their code and data.  One option is for the lab, the department, or the
@@ -50,7 +54,7 @@ situations, there is much less setup and maintenance involved with using an
 online service.  Furthermore, such tools are often provided free of charge to
 open source projects, and are also available for private repositories for a fee.
 
-> ## Institutional Barriers {.callout}
+> ## Institutional Barriers
 >
 > Sharing is the ideal for science,
 > but many institutions place restrictions on sharing,
@@ -59,6 +63,7 @@ open source projects, and are also available for private repositories for a fee.
 > it can be productive to inquire about the underlying motivations
 > either to request an exception for a specific project or domain,
 > or to push more broadly for institutional reform to support more open science.
+{: .callout}
 
 > ## Can My Work Be Public?
 >

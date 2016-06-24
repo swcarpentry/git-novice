@@ -1,15 +1,20 @@
 ---
 title: Open Science
-minutes: 10 (5 to explain the lesson and 5 to do a challenge)
+teaching: 5
+exercises: 5
+questions:
+- "FIXME"
+objectives:
+- "Explain how a version control system can be leveraged as an electronic lab notebook for computational work."
+keypoints:
+- "FIXME"
 ---
-> ## Learning Objectives {.objectives}
->
-> *  Explain how a version control system can be leveraged as an electronic lab notebook for computational work.
 
 > The opposite of "open" isn't "closed".
 > The opposite of "open" is "broken".
 >
 > --- John Wilbanks
+{: .quotation}
 
 Free sharing of information might be the ideal in science,
 but the reality is often more complicated.
@@ -89,12 +94,13 @@ by acting as a shareable electronic lab notebook for computational work:
     control repository is easy to archive for perpetuity, and contains
     the entire history.
 
-> ## Making Code Citable {.callout}
+> ## Making Code Citable
 >
 > [This short guide](https://guides.github.com/activities/citable-code/) from GitHub
 > explains how to create a Digital Object Identifier (DOI) for your code,
 > your papers,
 > or anything else hosted in a version control repository.
+{: .callout}
 
 > ## How Reproducible Is My Work?
 >

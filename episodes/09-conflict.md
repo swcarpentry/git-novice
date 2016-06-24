@@ -1,11 +1,15 @@
 ---
 title: Conflicts
-minutes: 15
+teaching: 15
+exercises: 0
+questions:
+- "FIXME"
+objectives:
+- "Explain what conflicts are and when they can occur."
+- "Resolve conflicts resulting from a merge."
+keypoints:
+- "FIXME"
 ---
-> ## Learning Objectives {.objectives}
->
-> *   Explain what conflicts are and when they can occur.
-> *   Resolve conflicts resulting from a merge.
 
 As soon as people can work in parallel, it's likely someone's going to step on someone
 else's toes.  This will even happen with a single person: if we are working on
@@ -18,42 +22,54 @@ To see how we can resolve conflicts, we must first create one.  The file
 `mars.txt` currently looks like this in both partners' copies of our `planets`
 repository:
 
-~~~ {.bash}
+~~~
 $ cat mars.txt
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 ~~~
+{: .output}
 
 Let's add a line to one partner's copy only:
 
-~~~ {.bash}
+~~~
 $ nano mars.txt
 $ cat mars.txt
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 This line added to Wolfman's copy
 ~~~
+{: .output}
 
 and then push the change to GitHub:
 
-~~~ {.bash}
+~~~
 $ git add mars.txt
 $ git commit -m "Adding a line in our home copy"
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 [master 5ae9631] Adding a line in our home copy
  1 file changed, 1 insertion(+)
 ~~~
-~~~ {.bash}
+{: .output}
+
+~~~
 $ git push origin master
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 Counting objects: 5, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (3/3), done.
@@ -62,39 +78,48 @@ Total 3 (delta 1), reused 0 (delta 0)
 To https://github.com/vlad/planets
    29aba7c..dabb4c8  master -> master
 ~~~
+{: .output}
 
 Now let's have the other partner
 make a different change to their copy
 *without* updating from GitHub:
 
-~~~ {.bash}
+~~~
 $ nano mars.txt
 $ cat mars.txt
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 We added a different line in the other copy
 ~~~
+{: .output}
 
 We can commit the change locally:
 
-~~~ {.bash}
+~~~
 $ git add mars.txt
 $ git commit -m "Adding a line in my copy"
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 [master 07ebc69] Adding a line in my copy
  1 file changed, 1 insertion(+)
 ~~~
+{: .output}
 
 but Git won't let us push it to GitHub:
 
-~~~ {.bash}
+~~~
 $ git push origin master
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 To https://github.com/vlad/planets.git
  ! [rejected]        master -> master (non-fast-forward)
 error: failed to push some refs to 'https://github.com/vlad/planets.git'
@@ -103,6 +128,7 @@ hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
 hint: before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ~~~
+{: .output}
 
 ![The conflicting changes](fig/conflict.svg)
 
@@ -113,10 +139,12 @@ What we have to do is pull the changes from GitHub,
 and then push that.
 Let's start by pulling:
 
-~~~ {.bash}
+~~~
 $ git pull origin master
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 remote: Counting objects: 5, done.        
 remote: Compressing objects: 100% (2/2), done.        
 remote: Total 3 (delta 1), reused 3 (delta 1)        
@@ -127,14 +155,17 @@ Auto-merging mars.txt
 CONFLICT (content): Merge conflict in mars.txt
 Automatic merge failed; fix conflicts and then commit the result.
 ~~~
+{: .output}
 
 `git pull` tells us there's a conflict,
 and marks that conflict in the affected file:
 
-~~~ {.bash}
+~~~
 $ cat mars.txt
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
@@ -144,6 +175,7 @@ We added a different line in the other copy
 This line added to Wolfman's copy
 >>>>>>> dabb4c8c450e8475aee9b14b4383acc99f42af1d
 ~~~
+{: .output}
 
 Our change&mdash;the one in `HEAD`&mdash;is preceded by `<<<<<<<`.
 Git has then inserted `=======` as a separator between the conflicting changes
@@ -158,25 +190,30 @@ the change made in the remote repository, write something new to replace both,
 or get rid of the change entirely.
 Let's replace both so that the file looks like this:
 
-~~~ {.bash}
+~~~
 $ cat mars.txt
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 We removed the conflict on this line
 ~~~
+{: .output}
 
 To finish merging,
 we add `mars.txt` to the changes being made by the merge
 and then commit:
 
-~~~ {.bash}
+~~~
 $ git add mars.txt
 $ git status
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 # On branch master
 # All conflicts fixed but you are still merging.
 #   (use "git commit" to conclude merge)
@@ -186,19 +223,26 @@ $ git status
 #	modified:   mars.txt
 #
 ~~~
-~~~ {.bash}
+{: .output}
+
+~~~
 $ git commit -m "Merging changes from GitHub"
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 [master 2abf2b1] Merging changes from GitHub
 ~~~
+{: .output}
 
 Now we can push our changes to GitHub:
 
-~~~ {.bash}
+~~~
 $ git push origin master
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 Counting objects: 10, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (6/6), done.
@@ -207,15 +251,18 @@ Total 6 (delta 2), reused 0 (delta 0)
 To https://github.com/vlad/planets.git
    dabb4c8..2abf2b1  master -> master
 ~~~
+{: .output}
 
 Git keeps track of what we've merged with what,
 so we don't have to fix things by hand again
 when the collaborator who made the first change pulls again:
 
-~~~ {.bash}
+~~~
 $ git pull origin master
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 remote: Counting objects: 10, done.        
 remote: Compressing objects: 100% (4/4), done.        
 remote: Total 6 (delta 2), reused 6 (delta 2)        
@@ -227,18 +274,22 @@ Fast-forward
  mars.txt | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 ~~~
+{: .output}
 
 We get the merged file:
 
-~~~ {.bash}
+~~~
 $ cat mars.txt 
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 We removed the conflict on this line
 ~~~
+{: .output}
 
 We don't need to merge again because Git knows someone has already done that.
 

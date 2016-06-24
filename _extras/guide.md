@@ -125,10 +125,11 @@ working in teams or not, because it is
     Instead of removing the `.git` folder directly, you can choose to move it
     first to a safer directory and remove it from there:
     
-    ~~~{.input} 
+    ~~~
     $ mv .git temp_git 
     $ rm -rf  temp_git 
     ~~~
+    {: .bash}
     
     The challenge suggests that it is a bad idea to create a Git repo inside another repo. 
     For more discussion on this topic, please see [this issue](https://github.com/swcarpentry/git-novice/issues/272).
@@ -231,9 +232,10 @@ particular set of files in `.gitignore`.
     repos in your Desktop, but under different names, e.g., pretend one is your
     computer at work: 
 
-    ~~~{.input}    
+    ~~~
     $ git clone https://github.com/vlad/planets.git planets-at-work
     ~~~
+    {: .bash}
 
 *   It's very common that learners mistype the remote alias or the remote URL
     when adding a remote, so they cannot `push`. You can diagnose this with
@@ -248,9 +250,10 @@ particular set of files in `.gitignore`.
 *   If both repos are in the `Desktop`, have them to clone their collaborator
     repo under a given directory using a second argument: 
 
-    ~~~{.input}    
+    ~~~
     $ git clone https://github.com/vlad/planets.git vlad-planet
     ~~~
+    {: .bash}
     
 *   The most common mistake is that learners `push` before `pull`ing. If they
     `pull` afterward, they may get a conflict.

@@ -1,11 +1,15 @@
 ---
 title: Remotes in GitHub
-minutes: 30
+teaching: 30
+exercises: 0
+questions:
+- "FIXME"
+objectives:
+- "Explain what remote repositories are and why they are useful."
+- "Push to or pull from a remote repository."
+keypoints:
+- "FIXME"
 ---
-> ## Learning Objectives {.objectives}
->
-> *   Explain what remote repositories are and why they are useful.
-> *   Push to or pull from a remote repository.
 
 Version control really comes into its own when we begin to collaborate with
 other people.  We already have most of the machinery we need to do this; the
@@ -35,11 +39,12 @@ information on how to configure your local repository:
 
 This effectively does the following on GitHub's servers:
 
-~~~ {.bash}
+~~~
 $ mkdir planets
 $ cd planets
 $ git init
 ~~~
+{: .bash}
 
 Our local repository still contains our earlier work on `mars.txt`, but the
 remote repository on GitHub doesn't contain any files yet:
@@ -56,7 +61,7 @@ identify it:
 Click on the 'HTTPS' link to change the [protocol](reference.html#protocol) from
 SSH to HTTPS.
 
-> ## HTTPS vs SSH {.callout}
+> ## HTTPS vs SSH
 >
 > We use HTTPS here because it does not require additional configuration.  After
 > the workshop you may want to set up SSH access, which is a bit more secure, by
@@ -65,28 +70,33 @@ SSH to HTTPS.
 > [Atlassian/BitBucket](https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Git)
 > and [GitLab](https://about.gitlab.com/2014/03/04/add-ssh-key-screencast/)
 > (this one has a screencast).
+{: .callout}
 
 ![Changing the Repository URL on GitHub](fig/github-change-repo-string.png)
 
 Copy that URL from the browser, go into the local `planets` repository, and run
 this command:
 
-~~~ {.bash}
+~~~
 $ git remote add origin https://github.com/vlad/planets.git
 ~~~
+{: .bash}
 
 Make sure to use the URL for your repository rather than Vlad's: the only
 difference should be your username instead of `vlad`.
 
 We can check that the command has worked by running `git remote -v`:
 
-~~~ {.bash}
+~~~
 $ git remote -v
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 origin   https://github.com/vlad/planets.git (push)
 origin   https://github.com/vlad/planets.git (fetch)
 ~~~
+{: .output}
 
 The name `origin` is a local nickname for your remote repository: we could use
 something else if we wanted to, but `origin` is by far the most common choice.
@@ -94,10 +104,12 @@ something else if we wanted to, but `origin` is by far the most common choice.
 Once the nickname `origin` is set up, this command will push the changes from
 our local repository to the repository on GitHub:
 
-~~~ {.bash}
+~~~
 $ git push origin master
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 Counting objects: 9, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (6/6), done.
@@ -107,27 +119,31 @@ To https://github.com/vlad/planets
  * [new branch]      master -> master
 Branch master set up to track remote branch master from origin.
 ~~~
+{: .output}
 
-> ## Proxy {.callout}
+> ## Proxy
 >
 > If the network you are connected to uses a proxy there is an chance that your
 > last command failed with "Could not resolve hostname" as the error message. To
 > solve this issue you need to tell Git about the proxy:
 >
-> ~~~ {.bash}
+> ~~~
 > $ git config --global http.proxy http://user:password@proxy.url
 > $ git config --global https.proxy http://user:password@proxy.url
 > ~~~
+> {: .bash}
 >
 > When you connect to another network that doesn't use a proxy you will need to
 > tell Git to disable the proxy using:
 >
-> ~~~ {.bash}
+> ~~~
 > $ git config --global --unset http.proxy
 > $ git config --global --unset https.proxy
 > ~~~
+> {: .bash}
+{: .callout}
 
-> ## Password Managers {.callout}
+> ## Password Managers
 >
 > If your operating system has a password manager configured, `git push` will
 > try to use it when it needs your username and password.  For example, this
@@ -135,9 +151,10 @@ Branch master set up to track remote branch master from origin.
 > username and password at the terminal instead of using a password manager,
 > type:
 >
-> ~~~ {.bash}
+> ~~~
 > $ unset SSH_ASKPASS
 > ~~~
+> {: .bash}
 >
 > in the terminal, before you run `git push`.  Despite the name, [git uses
 > `SSH_ASKPASS` for all credential
@@ -147,27 +164,32 @@ Branch master set up to track remote branch master from origin.
 >
 > You may also want to add `unset SSH_ASKPASS` at the end of your `~/.bashrc`
 > to make git default to using the terminal for usernames and passwords.
+{: .callout}
 
 Our local and remote repositories are now in this state:
 
 ![GitHub Repository After First Push](fig/github-repo-after-first-push.svg)
 
-> ## The '-u' Flag {.callout}
+> ## The '-u' Flag
 >
 > You may see a `-u` option used with `git push` in some documentation.  It is
 > related to concepts we cover in our intermediate lesson, and can safely be
 > ignored for now.
+{: .callout}
 
 We can pull changes from the remote repository to the local one as well:
 
-~~~ {.bash}
+~~~
 $ git pull origin master
 ~~~
-~~~ {.output}
+{: .bash}
+
+~~~
 From https://github.com/vlad/planets
  * branch            master     -> FETCH_HEAD
 Already up-to-date.
 ~~~
+{: .output}
 
 Pulling has no effect in this case because the two repositories are already
 synchronized.  If someone else had pushed some changes to the repository on
@@ -203,9 +225,10 @@ GitHub, though, this command would download them to our local repository.
 > remote URL. This exercice is about how to fix this kind of issues.
 > First start by adding a remote with an invalid URL:
 >
-> ~~~ {.bash}
+> ~~~
 > git remote add broken https://github.com/this/url/is/invalid
 > ~~~
+> {: .bash}
 >
 > Do you get an error when adding the remote? Can you think of a
 > command that would make it obvious that your remote URL was not
