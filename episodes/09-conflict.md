@@ -8,7 +8,8 @@ objectives:
 - "Explain what conflicts are and when they can occur."
 - "Resolve conflicts resulting from a merge."
 keypoints:
-- "FIXME"
+- "Conflicts occur when two or more people change the same file(s) at the same time."
+- "The version control system does not allow people to overwrite each other's changes blindly, but highlights conflicts so that they can be resolved."
 ---
 
 As soon as people can work in parallel, it's likely someone's going to step on someone

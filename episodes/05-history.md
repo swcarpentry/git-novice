@@ -9,7 +9,8 @@ objectives:
 - "Compare various versions of tracked files."
 - "Restore old versions of files."
 keypoints:
-- "FIXME"
+- "`git diff` displays differences between commits."
+- "`git checkout` recovers old versions of files."
 ---
 
 If we want to see what we changed at different steps, we can use `git diff`

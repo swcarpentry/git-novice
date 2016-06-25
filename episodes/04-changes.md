@@ -8,7 +8,11 @@ objectives:
 - "Go through the modify-add-commit cycle for a single file."
 - "Explain where information is stored at each stage of Git commit workflow."
 keypoints:
-- "FIXME"
+- "`git status` shows the status of a repository."
+- "Files can be stored in a project's working directory (which users see), the staging area (where the next commit is being built up) and the local repository (where commits are permanently recorded)."
+- "`git add` puts files in the staging area."
+- "`git commit` saves the staged content as a new commit in the local repository."
+- "Always write a log message when committing changes."
 ---
 
 Let's create a file called `mars.txt` that contains some notes

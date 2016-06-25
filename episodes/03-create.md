@@ -7,7 +7,7 @@ questions:
 objectives:
 - "Create a local Git repository."
 keypoints:
-- "FIXME"
+- "`git init` initializes a repository."
 ---
 
 Once Git is configured,

@@ -8,7 +8,7 @@ objectives:
 - "Configure Git to ignore specific files."
 - "Explain why ignoring files can be useful."
 keypoints:
-- "FIXME"
+- "The `.gitignore` file tells Git what files to ignore."
 ---
 
 What if we have files that we do not want Git to track for us,
