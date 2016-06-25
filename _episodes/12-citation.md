@@ -7,7 +7,7 @@ questions:
 objectives:
 - "Make your work easy to cite"
 keypoints:
-- "FIXME"
+- "Add a CITATION file to a repository to explain how you want your work cited."
 ---
 
 You may want to include a file called `CITATION` or `CITATION.txt`
