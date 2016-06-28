@@ -73,7 +73,20 @@ nothing to commit (create/copy files and use "git add" to track)
 > mkdir moons    # make a sub-directory planets/moons
 > cd moons       # go into planets/moons
 > git init       # make the moons sub-directory a Git repository
+> ls -a          # list full contents of moons sub-directory
 > ~~~
 > 
-> Why is it a bad idea to do this?
+> Notice here that the `planets` project is now also tracking the entire `mars` repository. 
 > How can Dracula "undo" his last `git init`?
+
+Git repositories can interfere with each other if they are "nested" in the directory of another. We therefore advise to create each new git repository in a separate directory. Note that we can track or ignore (as discussed later) files in directories within a git repository as shown:
+~~~ {.bash}
+touch moon phobos deimos titan    #create moon files
+cd ..                             # return to planets directory
+ls moons                          # list contents of the moons directory
+git add moons/*                   # add all contents of planets/moons
+git status                        # show moons files in staging area
+git commit -m "add moon files"    # commit planets/moons to planets git repo
+"moons/*" >> .gitignore           # ignore all files within moons
+> ~~~
+
