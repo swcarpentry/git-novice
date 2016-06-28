@@ -81,7 +81,7 @@ nothing to commit (create/copy files and use "git add" to track)
 
 Git repositories can interfere with each other if they are "nested" in the directory of another. We therefore advise to create each new git repository in a separate directory. Note that we can track or ignore (as discussed later) files in directories within a git repository as shown:
 ~~~ {.bash}
-touch moon phobos deimos titan    #create moon files
+touch moon phobos deimos titan    # create moon files
 cd ..                             # return to planets directory
 ls moons                          # list contents of the moons directory
 git add moons/*                   # add all contents of planets/moons
