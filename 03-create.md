@@ -88,5 +88,5 @@ git add moons/*                   # add all contents of planets/moons
 git status                        # show moons files in staging area
 git commit -m "add moon files"    # commit planets/moons to planets git repo
 "moons/*" >> .gitignore           # ignore all files within moons
-> ~~~
+~~~
 
