@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Version Control with Git
-subtitle: Instructor's Guide
+title: "Instructor's Guide"
+permalink: /guide/
 ---
 Using a software tool to handle the versions of your project files
 lets you focus on the more interesting/innovative aspects of your project.

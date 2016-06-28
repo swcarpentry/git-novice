@@ -28,7 +28,7 @@ The Owner needs to give the Collaborator access.
 On GitHub, click the settings button on the right,
 then select Collaborators, and enter your partner's username.
 
-![Adding collaborators on GitHub](fig/github-add-collaborators.png)
+![Adding collaborators on GitHub]({{ site.root }}/fig/github-add-collaborators.png)
 
 To accept access to the Owner's repo, the Collaborator 
 needs to go to [https://github.com/notifications](https://github.com/notifications).
@@ -45,7 +45,7 @@ $ git clone https://github.com/vlad/planets.git ~/Desktop/vlad-planets
 
 Replace 'vlad' with the Owner's username.
 
-![After Creating Clone of Repository](fig/github-collaboration.svg)
+![After Creating Clone of Repository]({{ site.root }}/fig/github-collaboration.svg)
 
 The Collaborator can now make a change in her clone of the Owner's repository,
 exactly the same way as we've been doing before:
