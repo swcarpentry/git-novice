@@ -32,7 +32,8 @@ $ git config --global color.ui "auto"
 
 (Please use your own name and email address instead of Dracula's. 
 This user name and email will be associated with your subsequent Git activity, 
-which means that any changes pushed to GitHub in a later lesson will include this information. 
+which means that any changes pushed to GitHub in a later lesson will include this information.
+We recommend setting up an account on [GitHub](https://github.com) if you haven't already and using this as your user.name so your computer works with this website in the future (including later in this lesson).
 If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private](https://help.github.com/articles/keeping-your-email-address-private/).)
 
 He also has to set his favorite text editor, following this table:
@@ -48,8 +49,12 @@ He also has to set his favorite text editor, following this table:
 | Notepad++ (Win)    | `$ git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
 | Kate (Linux)       | `$ git config --global core.editor "kate"`       |
 | Gedit (Linux)      | `$ git config --global core.editor "gedit -s -w"`   |
+| Scratch (Linux)       | `$ git config --global core.editor "scratch-text-editor"`  |
 | emacs              | `$ git config --global core.editor "emacs"`   |
+
+It is also possible to configure "Vim" as the text editor for Git if you want to change it back. Note that Vim is the default editor for Git so this is only needed if you have changed it already 
 | vim                | `$ git config --global core.editor "vim"`   |
+If you haven't used Vim before and wish to exit a session, type <kbd>Esc</kbd> then <kbd>:q!</kbd> and <kbd>Enter</kbd>.
 
 The four commands we just ran above only need to be run once: the flag `--global` tells Git
 to use the settings for every project, in your user account, on this computer.
