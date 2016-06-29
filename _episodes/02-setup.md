@@ -58,6 +58,8 @@ He also has to set his favorite text editor, following this table:
 | emacs              | `$ git config --global core.editor "emacs"`   |
 
 It is also possible to configure "Vim" as the text editor for Git if you want to change it back. Note that Vim is the default editor for Git so this is only needed if you have changed it already 
+| Default Editor             | Configuration command                            |
+|:-------------------|:-------------------------------------------------|
 | vim                | `$ git config --global core.editor "vim"`   |
 If you haven't used Vim before and wish to exit a session, type <kbd>Esc</kbd> then <kbd>:q!</kbd> and <kbd>Enter</kbd>.
 
