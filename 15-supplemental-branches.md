@@ -142,6 +142,10 @@ Fast-forward
  1 file changed, 2 insertions(+), 0 deletions(-)
 ~~~
 
+Another option, rather than `git merge` is `git rebase` which performs a similar function. There are pro's and con's of each and much debate among coders on which is better to document changes across branches. However, we recommend `git merge` for initial usage because one of the most common issues with sharing remote repositories is altering the history while other users are working on a copy. Only use `git rebase` on a local repository with commits that have not been pushed to GitHub. 
+
+> Never use `git rebase` on a remote repository.
+
 If we wish to add a change to `mars.txt` to the `test_branch` version, we do not have to repeat these, we can apply these commits with `git cherry-pick`. This allows us the precisely move particulary commits across branches, such as updating bugs or documentation which affect every branch. Here we use the commit identifier from the `git log` of the `master` branch as we did in [Exploring History](05-history.html). 
 
 ~~~ {.bash}

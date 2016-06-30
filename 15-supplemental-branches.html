@@ -194,6 +194,10 @@ $ git commit -m &quot;Adding moons data to mars&quot;</code></pre>
 Fast-forward
  pluto.txt | 2
  1 file changed, 2 insertions(+), 0 deletions(-)</code></pre>
+<p>Another option, rather than <code>git merge</code> is <code>git rebase</code> which performs a similar function. There are pro’s and con’s of each and much debate among coders on which is better to document changes across branches. However, we recommend <code>git merge</code> for initial usage because one of the most common issues with sharing remote repositories is altering the history while other users are working on a copy. Only use <code>git rebase</code> on a local repository with commits that have not been pushed to GitHub.</p>
+<blockquote>
+<p>Never use <code>git rebase</code> on a remote repository.</p>
+</blockquote>
 <p>If we wish to add a change to <code>mars.txt</code> to the <code>test_branch</code> version, we do not have to repeat these, we can apply these commits with <code>git cherry-pick</code>. This allows us the precisely move particulary commits across branches, such as updating bugs or documentation which affect every branch. Here we use the commit identifier from the <code>git log</code> of the <code>master</code> branch as we did in <a href="05-history.html">Exploring History</a>.</p>
 <pre class="bash"><code>$ git checkout test_branch
 $ git cherry-pick a1e32d</code></pre>
