@@ -2,7 +2,7 @@
 layout: page
 title: Version Control with Git
 subtitle: Branches
-minutes: 15
+minutes: 30
 ---
 > ## Learning Objectives {.objectives}
 >
