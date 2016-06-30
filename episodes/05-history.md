@@ -109,7 +109,7 @@ index df0654a..b36abfd 100644
 {: .output}
 
 All right! So
-we can save changes to files and see what we've changed&mdash;now how
+we can save changes to files and see what we've changed—now how
 can we restore older versions of things?
 Let's suppose we accidentally overwrite our file:
 
@@ -291,32 +291,32 @@ moving backward and forward in time becomes much easier.
 >
 > 1.
 >
->     ~~~
->     Venus is too hot to be suitable as a base
->     ~~~
->     {: .output}
+> ~~~
+> Venus is too hot to be suitable as a base
+> ~~~
+> {: .output}
 >
 > 2.
 >
->     ~~~
->     Venus is beautiful and full of love
->     ~~~
->     {: .output}
+> ~~~
+> Venus is beautiful and full of love
+> ~~~
+> {: .output}
 >
 > 3.
 >
->     ~~~
->     Venus is beautiful and full of love
->     Venus is too hot to be suitable as a base
->     ~~~
->     {: .output}
+> ~~~
+> Venus is beautiful and full of love
+> Venus is too hot to be suitable as a base
+> ~~~
+> {: .output}
 >
 > 4.
 >
->     ~~~
->     Error because you have changed venus.txt without committing the changes
->     ~~~
->     {: .output}
+> ~~~
+> Error because you have changed venus.txt without committing the changes
+> ~~~
+> {: .output}
 {: .challenge}
 
 > ## Checking Understanding of `git diff`
@@ -337,8 +337,7 @@ moving backward and forward in time becomes much easier.
 > you can remove your change.
 {: .challenge}
 
-
-> ## Explore and summarize histories {.challenge}
+> ## Explore and Summarize Histories
 >
 > Exploring history is an important part of git, often it is a challenge to find
 > the right commit ID, especially if the commit is from several months ago.
@@ -351,9 +350,10 @@ moving backward and forward in time becomes much easier.
 > Recorded that the `git diff` command allow us to explore one specific file,
 > e.g. `git diff mars.txt`. We can apply the similar idea here.
 >
-> ~~~ {.bash}
+> ~~~
 > $ git log mars.txt
 > ~~~
+> {: .bash}
 >
 > Unfortunately some of these commit messages are very ambiguous e.g. `update files`.
 > How can you search through these files?
@@ -361,18 +361,17 @@ moving backward and forward in time becomes much easier.
 > Both `git diff` and `git log` are very useful and they summarize different part of the history for you.
 > Is that possible to combine both? Let's try the following:
 >
-> ~~~ {.bash}
+> ~~~
 > $ git log --patch mars.txt
 > ~~~
+> {: .bash}
 >
 > You should get a long list of output, and you should be able to see both commit messages and the difference between each commit.
 >
 > Question: What does the following command do?
 >
-> ~~~ {.bash}
+> ~~~
 > $ git log --patch HEAD~3 HEAD~1 *.txt
 > ~~~
->
->
->
->>>>>>> 03f41f51f61b5c225162ce3fc62eb19c4006a190:05-history.md
+> {: .bash}
+{: .challenge}

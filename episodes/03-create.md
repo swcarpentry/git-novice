@@ -20,7 +20,7 @@ $ cd planets
 ~~~
 {: .bash}
 
-Then we tell Git to make `planets` a [repository](reference.html#repository)&mdash;a place where
+Then we tell Git to make `planets` a [repository](reference.html#repository)—a place where
 Git can store versions of our files:
 
 ~~~
