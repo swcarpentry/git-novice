@@ -178,7 +178,7 @@ This line added to Wolfman's copy
 ~~~
 {: .output}
 
-Our change&mdash;the one in `HEAD`&mdash;is preceded by `<<<<<<<`.
+Our change—the one in `HEAD`—is preceded by `<<<<<<<`.
 Git has then inserted `=======` as a separator between the conflicting changes
 and marked the end of the content downloaded from GitHub with `>>>>>>>`.
 (The string of letters and digits after that marker
