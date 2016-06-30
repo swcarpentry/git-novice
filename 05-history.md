@@ -12,11 +12,8 @@ minutes: 25
 > *   Restore old versions of files.
 
 As we saw in the previous lesson, we can refer to commits by their
-identifiers, but even the short ones do not spring trippingly from the tongue.
-Much of the time, we'll be working on some revisions, and when we want to
-refer back to something in a previous commit, it might be nice not to have to
-look up the identifier.  The clever Git people thought so, too, so you can
-refer to the _most recent commit_ by using `HEAD`.
+identifiers.  You can refer to the _most recent commit_ of the working
+directory by using the identifier `HEAD`.
 
 We've been adding one line at a time to `mars.txt`, so it's easy to track our
 progress by looking, so let's do that using our `HEAD`s.  Before we start,
