@@ -289,30 +289,30 @@ moving backward and forward in time becomes much easier.
 > ~~~
 > {: .bash}
 >
-> 1. 
-> 
+> 1.
+>
 >     ~~~
 >     Venus is too hot to be suitable as a base
 >     ~~~
 >     {: .output}
 >
-> 2. 
-> 
+> 2.
+>
 >     ~~~
 >     Venus is beautiful and full of love
 >     ~~~
 >     {: .output}
 >
-> 3. 
-> 
+> 3.
+>
 >     ~~~
 >     Venus is beautiful and full of love
 >     Venus is too hot to be suitable as a base
 >     ~~~
 >     {: .output}
 >
-> 4. 
-> 
+> 4.
+>
 >     ~~~
 >     Error because you have changed venus.txt without committing the changes
 >     ~~~
@@ -321,18 +321,58 @@ moving backward and forward in time becomes much easier.
 
 > ## Checking Understanding of `git diff`
 >
-> Consider this command: `git diff HEAD~3 mars.txt`. What do you predict this command 
-> will do if you execute it? What happens when you do execute it? Why? 
+> Consider this command: `git diff HEAD~3 mars.txt`. What do you predict this command
+> will do if you execute it? What happens when you do execute it? Why?
 >
-> Try another command, `git diff [ID] mars.txt`, where [ID] is replaced with 
-> the unique identifier for your most recent commit. What do you think will happen, 
-> and what does happen? 
+> Try another command, `git diff [ID] mars.txt`, where [ID] is replaced with
+> the unique identifier for your most recent commit. What do you think will happen,
+> and what does happen?
 {: .challenge}
 
 > ## Getting Rid of Staged Changes
 >
 > `git checkout` can be used to restore a previous commit when unstaged changes have
-> been made, but will it also work for changes that have been staged but not committed? 
-> Make a change to `mars.txt`, add that change, and use `git checkout` to see if 
-> you can remove your change. 
+> been made, but will it also work for changes that have been staged but not committed?
+> Make a change to `mars.txt`, add that change, and use `git checkout` to see if
+> you can remove your change.
 {: .challenge}
+
+
+> ## Explore and summarize histories {.challenge}
+>
+> Exploring history is an important part of git, often it is a challenge to find
+> the right commit ID, especially if the commit is from several months ago.
+>
+> Imaging the `planets` project has more than 50 files.
+> You would like to find a commit with specific text in `mars.txt` is modified.
+> When you type `git log`, a very long list appeared,
+> How can you narrow down the search?
+>
+> Recorded that the `git diff` command allow us to explore one specific file,
+> e.g. `git diff mars.txt`. We can apply the similar idea here.
+>
+> ~~~ {.bash}
+> $ git log mars.txt
+> ~~~
+>
+> Unfortunately some of these commit messages are very ambiguous e.g. `update files`.
+> How can you search through these files?
+>
+> Both `git diff` and `git log` are very useful and they summarize different part of the history for you.
+> Is that possible to combine both? Let's try the following:
+>
+> ~~~ {.bash}
+> $ git log --patch mars.txt
+> ~~~
+>
+> You should get a long list of output, and you should be able to see both commit messages and the difference between each commit.
+>
+> Question: What does the following command do?
+>
+> ~~~ {.bash}
+> $ git log --patch HEAD~3 HEAD~1 *.txt
+> ~~~
+>
+>
+>
+>>>>>>> 03f41f51f61b5c225162ce3fc62eb19c4006a190:05-history.md
