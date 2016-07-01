@@ -3,7 +3,9 @@ title: Exploring History
 teaching: 25
 exercises: 0
 questions:
-- "FIXME"
+- "How can I identify old versions of files?"
+- "How do I review my changes?"
+- "How can I recover old versions of files?"
 objectives:
 - "Identify and use Git commit numbers."
 - "Compare various versions of tracked files."

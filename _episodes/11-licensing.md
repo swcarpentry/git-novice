@@ -3,9 +3,9 @@ title: Licensing
 teaching: 5
 exercises: 0
 questions:
-- "FIXME"
+- "What licensing information should I include with my work?"
 objectives:
-- "Explain why adding licensing and citation information to a repository is important."
+- "Explain why adding licensing information to a repository is important."
 - "Choose a proper license."
 - "Explain differences in licensing and social expectations."
 keypoints:
