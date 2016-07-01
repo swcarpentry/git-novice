@@ -3,7 +3,7 @@ title: Collaborating
 teaching: 25
 exercises: 0
 questions:
-- "FIXME"
+- "How can I use version control to collaborate with other people?"
 objectives:
 - "Clone a remote repository."
 - "Collaborate pushing to a common repository."

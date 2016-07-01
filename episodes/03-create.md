@@ -3,7 +3,7 @@ title: Creating a Repository
 teaching: 10
 exercises: 0
 questions:
-- "FIXME"
+- "Where does Git store information?"
 objectives:
 - "Create a local Git repository."
 keypoints:

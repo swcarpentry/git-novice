@@ -3,12 +3,13 @@ title: Automated Version Control
 teaching: 5
 exercises: 0
 questions:
-- "FIXME"
+- "What is version control and why should I use it?"
 objectives:
 - "Understand the benefits of an automated version control system."
 - "Understand the basics of how Git works."
 keypoints:
-- "FIXME"
+- "Version control is like an unlimited 'undo'."
+- "Version control also allows many people to work in parallel."
 ---
 
 We'll start by exploring how version control can be used

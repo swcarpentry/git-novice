@@ -3,7 +3,7 @@ title: Hosting
 teaching: 10
 exercises: 0
 questions:
-- "FIXME"
+- "Where should I host my version control repositories?"
 objectives:
 - "Explain different options for hosting scientific work."
 keypoints:

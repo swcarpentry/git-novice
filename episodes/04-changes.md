@@ -3,7 +3,9 @@ title: Tracking Changes
 teaching: 20
 exercises: 0
 questions:
-- "FIXME"
+- "How do I record changes in Git?"
+- "How do I check the status of my version control repository?"
+- "How do I record notes about what changes I made and why?"
 objectives:
 - "Go through the modify-add-commit cycle for a single file."
 - "Explain where information is stored at each stage of Git commit workflow."

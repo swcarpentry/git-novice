@@ -3,7 +3,7 @@ title: Setting Up Git
 teaching: 5
 exercises: 0
 questions:
-- "FIXME"
+- "How do I get set up to use Git?"
 objectives:
 - "Configure `git` the first time it is used on a computer."
 - "Understand the meaning of the `--global` configuration flag."
@@ -31,10 +31,10 @@ $ git config --global color.ui "auto"
 ~~~
 {: .bash}
 
-(Please use your own name and email address instead of Dracula's. 
+Please use your own name and email address instead of Dracula's. 
 This user name and email will be associated with your subsequent Git activity, 
 which means that any changes pushed to GitHub in a later lesson will include this information. 
-If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private](https://help.github.com/articles/keeping-your-email-address-private/).)
+If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private][git-privacy].
 
 He also has to set his favorite text editor, following this table:
 
@@ -96,3 +96,5 @@ same commands to choose another editor or update your email address.
 > ~~~
 > {: .bash}
 {: .callout}
+
+[git-privacy]: https://help.github.com/articles/keeping-your-email-address-private/

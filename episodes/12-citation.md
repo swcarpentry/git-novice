@@ -3,7 +3,7 @@ title: Citation
 teaching: 2
 exercises: 0
 questions:
-- "FIXME"
+- "How can I make my work easier to cite?"
 objectives:
 - "Make your work easy to cite"
 keypoints:

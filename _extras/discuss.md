@@ -455,5 +455,4 @@ The final step, as before, is to commit our change to the repository:
 $ git commit -m 'Superman's home is Earth, told you before.'
 ~~~
 {: .bash}
-
 	

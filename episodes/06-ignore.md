@@ -3,7 +3,7 @@ title: Ignoring Things
 teaching: 5
 exercises: 0
 questions:
-- "FIXME"
+- "How can I tell Git to ignore files I don't want to track?"
 objectives:
 - "Configure Git to ignore specific files."
 - "Explain why ignoring files can be useful."

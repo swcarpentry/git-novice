@@ -3,7 +3,7 @@ title: Remotes in GitHub
 teaching: 30
 exercises: 0
 questions:
-- "FIXME"
+- "How do I share my changes with others on the web?"
 objectives:
 - "Explain what remote repositories are and why they are useful."
 - "Push to or pull from a remote repository."

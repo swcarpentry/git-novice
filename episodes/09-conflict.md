@@ -3,7 +3,7 @@ title: Conflicts
 teaching: 15
 exercises: 0
 questions:
-- "FIXME"
+- "What do I do when my changes conflict with someone else's?"
 objectives:
 - "Explain what conflicts are and when they can occur."
 - "Resolve conflicts resulting from a merge."
