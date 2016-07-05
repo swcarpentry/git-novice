@@ -55,7 +55,12 @@ He also has to set his favorite text editor, following this table:
 
 It is possible to reconfigure the text editor for Git whenever you want to change it.
 
-Note that Vim is the default editor for Git so this is only needed if you have changed it already. If you haven't used Vim before and wish to exit a session, type <kbd>Esc</kbd> then <kbd>:q!</kbd> and <kbd>Enter</kbd>.
+> ## Exiting Vim {.callout}
+>
+> Note that `vim` is the default editor for for many programs, if you haven't used `vim` before and wish to exit a session, type <kbd>Esc</kbd> then <kbd>:q!</kbd> and <kbd>Enter</kbd>.
+>
+
+
 
 The four commands we just ran above only need to be run once: the flag `--global` tells Git
 to use the settings for every project, in your user account, on this computer.
