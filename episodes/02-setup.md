@@ -62,7 +62,7 @@ It is possible to reconfigure the text editor for Git whenever you want to chang
 
 > ## Exiting Vim {.callout}
 >
-> Note that `vim` is the default editor for for many programs, if you haven't used `vim` before and wish to exit a session, type <kbd>Esc</kbd> then <kbd>:q!</kbd> and <kbd>Enter</kbd>.
+> Note that `vim` is the default editor for for many programs, if you haven't used `vim` before and wish to exit a session, type `Esc` then `:q!` and `Enter`.
 >
 
 
