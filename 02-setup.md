@@ -33,7 +33,7 @@ $ git config --global color.ui "auto"
 (Please use your own name and email address instead of Dracula's. 
 This user name and email will be associated with your subsequent Git activity, 
 which means that any changes pushed to GitHub in a later lesson will include this information.
-We recommend setting up an account on [GitHub](https://github.com) if you haven't already and using this as your user.name so your computer works with this website in the future (including later in this lesson).
+Please use the same email address as you use for your [GitHub](https://github.com) if you hav one already or create one later in this lesson.
 If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private](https://help.github.com/articles/keeping-your-email-address-private/).)
 
 He also has to set his favorite text editor, following this table:
