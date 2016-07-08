@@ -488,6 +488,12 @@ repository (`git commit`):
 > 1. "Changes"
 > 2. "Added line 'But the Mummy will appreciate the lack of humidity' to mars.txt"
 > 3. "Discuss effects of Mars' climate on the Mummy"
+>
+> > ## Solution
+> > Answer 1 is not descriptive enough,
+> > and answer 2 is too descriptive and redundant,
+> > but answer 3 is good: short but descriptive.
+> {: .solution}
 {: .challenge}
 
 > ## Committing Changes to Git
