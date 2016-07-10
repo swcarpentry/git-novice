@@ -146,9 +146,9 @@ $ git pull origin master
 {: .bash}
 
 ~~~
-remote: Counting objects: 5, done.        
-remote: Compressing objects: 100% (2/2), done.        
-remote: Total 3 (delta 1), reused 3 (delta 1)        
+remote: Counting objects: 5, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 3 (delta 1)
 Unpacking objects: 100% (3/3), done.
 From https://github.com/vlad/planets
  * branch            master     -> FETCH_HEAD
@@ -264,9 +264,9 @@ $ git pull origin master
 {: .bash}
 
 ~~~
-remote: Counting objects: 10, done.        
-remote: Compressing objects: 100% (4/4), done.        
-remote: Total 6 (delta 2), reused 6 (delta 2)        
+remote: Counting objects: 10, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 2), reused 6 (delta 2)
 Unpacking objects: 100% (6/6), done.
 From https://github.com/vlad/planets
  * branch            master     -> FETCH_HEAD
@@ -280,7 +280,7 @@ Fast-forward
 We get the merged file:
 
 ~~~
-$ cat mars.txt 
+$ cat mars.txt
 ~~~
 {: .bash}
 
@@ -324,8 +324,8 @@ or find a way to divide the work up differently.
 >
 > You sit down at your computer to work on a shared project that is tracked in a
 > remote Git repository. During your work session, you take the following
-> actions, but not in this order: 
-> 
+> actions, but not in this order:
+>
 > - *Make changes* by appending the number `100` to a text file `numbers.txt`
 > - *Update remote* repository to match the local repository
 > - *Celebrate* your success with beer(s)

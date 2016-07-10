@@ -75,7 +75,7 @@ nothing to commit (create/copy files and use "git add" to track)
 > Dracula starts a new project, `moons`, related to his `planets` project.
 > Despite Wolfman's concerns, he enters the following sequence of commands to
 > create one Git repository inside another:
-> 
+>
 > ~~~
 > cd             # return to home directory
 > mkdir planets  # make a new directory planets
@@ -86,7 +86,7 @@ nothing to commit (create/copy files and use "git add" to track)
 > git init       # make the moons sub-directory a Git repository
 > ~~~
 > {: .bash}
-> 
+>
 > Why is it a bad idea to do this?
 > How can Dracula undo his last `git init`?
 {: .challenge}

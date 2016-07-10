@@ -30,7 +30,7 @@ then select Collaborators, and enter your partner's username.
 
 ![Adding collaborators on GitHub]({{ site.root }}/fig/github-add-collaborators.png)
 
-To accept access to the Owner's repo, the Collaborator 
+To accept access to the Owner's repo, the Collaborator
 needs to go to [https://github.com/notifications](https://github.com/notifications).
 Once there she can accept access to the Owner's repo.
 
@@ -125,7 +125,7 @@ Fast-forward
 Now the three repositories (Owner's local, Collaborator's local, and Owner's on
 GitHub) are back in sync.
 
-> ## A Basic Collaborative Workflow 
+> ## A Basic Collaborative Workflow
 >
 > In practice, it is good to be sure that you have an updated version of the
 > repository you are collaborating on, so you should `git pull` before making
