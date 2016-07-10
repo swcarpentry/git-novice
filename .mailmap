@@ -1,107 +1,108 @@
-Aaron O'Leary <aaron.oleary@gmail.com>
-Abigail Cabunoc <abigail.cabunoc@gmail.com> <abigail.cabunoc@oicr.on.ca>
-Alison Appling <aappling@usgs.gov>
-Amy Brown <amyrhoda@gmail.com>
-Andreas Mueller <amueller@nyu.edu>
-Andrew Rohl <a.rohl@curtin.edu.au>
-Andy Boughton <abought@gmail.com> <pchemist@gmail.com>
-Anelda van der Walt <anelda@users.noreply.github.com>
-Anne Fouilloux <annefou@uio.no>
 Aron Ahmadia <aron@ahmadia.net>
-Belinda Weaver <b.weaver@uq.edu.au>
-Bennet Fauber <bennet@umich.edu>
-Bernhard Konrad <bernhard.konrad@gmail.com>
-Bill Mills <mills.wj@gmail.com>
-Billy Charlton <billy@worldofbilly.com>
-Brendan Smithyman <smithyman@gmail.com>
-Brenna O'Brien <info@brennaobrien.com>
-Catherine Olsson <catherio@mit.edu>
-Catrina Loucks <catrina.loucks@gmail.com>
-Christian Jacobs <c.jacobs10@imperial.ac.uk>
-Daina Bouquin <dbouquin@gmail.com>
-Daisie Huang <daisieh@gmail.com>
-Daniel Chen <Maveri2k@yahoo.com>
-Danielle Traphagen <dtrapezoid@gmail.com>
-David Jones <dave@dkjones.org>
-David LeBauer <dlebauer@gmail.com>
-David Rio Deiros <driodeiros@gmail.com>
-Dorota Jarecka <djarecka@gmail.com>
-Doug Latornell <djl@douglatornell.ca>
-Emmanouil Farsarakis <farsarakis@gmail.com> <farsarakis@epcc.ed.ac.uk>
-Ethan White <ethan@weecology.org>
-François Michonneau <francois.michonneau@gmail.com>
-Garret Christensen <garret@berkeley.edu>
-Greg Wilson <gvwilson@software-carpentry.org> <gvwilson@third-bit.com>
-Hartmut Schmider <hartmut.schmider@queensu.ca>
-Hilmar Lapp <hlapp@drycafe.net>
-Ivan Gonzalez <iglpdc@gmail.com> <iglpdc@users.noreply.github.com>
 James Allen <jamesallen0108@gmail.com>
-Jamie Hadwin <jamie.hadwin@okstate.edu>
-Jane Charlesworth <janepipistrelle@gmail.com>
-John Blischak <jdblischak@gmail.com>
-Jon Borrelli <borrejj@gmail.com>
-Jon Pipitone <jon.pipitone@utoronto.ca>
-Jonah Duckles <jonah@duckles.org>
-Juan Nunez-Iglesias <juan.n@unimelb.edu.au>
-Kate Hertweck <k8hertweck@gmail.com> <kl167@le.ac.uk>
-Kate Lee <kl167@le.ac.uk>
-Kathleen Labrie <kathleen.labrie.phd@gmail.com>
-Keith Ma <keithma@bu.edu>
-Konrad Förstner <konrad@foerstner.org>
-Konrad Hinsen <konrad.hinsen@fastmail.net>
-Kristina Riemer <kristina.riemer@weecology.org>
-Kunal Marwaha <marwahaha@berkeley.edu>
-Laurent Duchesne <l@urent.org>
-Lex Nederbragt <lex.nederbragt@bio.uio.no>
-Loïc Estève <loic.esteve@ymail.com>
-Luke W. Johnston <lwjohnst@gmail.com>
-Madeleine Bonsma <madeleine.bonsma@gmail.com>
-Marianne Corvellec <marianne.corvellec@ens-lyon.org>
-Mark Wheelhouse <mjw03@doc.ic.ac.uk>
-Mark Laufersweiler <laufers@gmail.com>
-Martin Heroux <heroux.martin@gmail.com>
-Matt Davis <jiffyclub@gmail.com>
-Matthew Brett <matthew.brett@gmail.com>
-Matthias Liffers <m@tthi.as>
-Michael Hansen <hansen.mike@gmail.com>
-Michael Sarahan <msarahan@gmail.com>
-Natalie Robinson <n.robinson@colorado.edu>
-Nicholas Hannah <nchlshnnh@gmail.com>
-Nicola Soranzo <nsoranzo@tiscali.it>
-Paul Preney <paul@preney.ca>
-Pauline Barmby <pbarmby@uwo.ca>
-Pete Bachant <petebachant@gmail.com>
-Peter Steinbach <steinbach@scionics.de>
-Piotr Banaszkiewicz <piotr@banaszkiewicz.org>
-Qingpeng Zhang <qingpeng@msu.edu>
-Raniere Silva <ra092767@ime.unicamp.br> <raniere@ime.unicamp.br> <raniere@rgaiacs.com>
-Rudi Brauning <rudiger.brauning@agresearch.co.nz>
-Ruth Collings <contact@ruthcollings.ca>
-Rémi Emonet <remi.emonet@reverse--com.heeere>
-Sarah Stevens <sstevens2@wisc.edu>
+Alison Appling <aappling@usgs.gov>
 Sean Aubin <saubin@uwaterloo.ca>
-Sebastian Schmeier <s.schmeier@gmail.com>
-Stefan Pfenninger <stefan@pfenninger.org>
-Steve Vandervalk <stevenvandervalk@users.noreply.github.com>
-Steven Wu <stevenhwu@gmail.com>
-Stuart Geiger <sgeiger@gmail.com>
-Thomas Kluyver <takowl@gmail.com>
-Tiffany Timbers <tiffany.timbers@gmail.com>
-Tim Tröndle <tim.troendle@younicos.com>
-Timothy Rice <t.rice@ms.unimelb.edu.au>
-Timothée Poisot <tim@poisotlab.io>
+Pete Bachant <petebachant@gmail.com>
+Piotr Banaszkiewicz <piotr@banaszkiewicz.org>
+Pauline Barmby <pbarmby@uwo.ca>
+Berenice Batut <berenice.batut@gmail.com> <berenice.batut@udamail.fr>
 Trevor Bekolay <tbekolay@gmail.com>
-VP Nagraj <vpnagraj@virginia.edu>
-W. Trevor King <wking@tremily.us>
+John Blischak <jdblischak@gmail.com>
+Madeleine Bonsma <madeleine.bonsma@gmail.com>
+Jon Borrelli <borrejj@gmail.com>
+Andy Boughton <abought@gmail.com> <pchemist@gmail.com>
+Daina Bouquin <dbouquin@gmail.com>
+Rudi Brauning <rudiger.brauning@agresearch.co.nz>
+Matthew Brett <matthew.brett@gmail.com>
+Amy Brown <amyrhoda@gmail.com>
+Abigail Cabunoc <abigail.cabunoc@gmail.com> <abigail.cabunoc@oicr.on.ca>
+Jane Charlesworth <janepipistrelle@gmail.com>
+Billy Charlton <billy@worldofbilly.com>
+Daniel Chen <Maveri2k@yahoo.com>
+Garret Christensen <garret@berkeley.edu>
+Ruth Collings <contact@ruthcollings.ca>
+Marianne Corvellec <marianne.corvellec@ens-lyon.org>
+Matt Davis <jiffyclub@gmail.com>
+Emily Dolson <emilyldolson@gmail.com>
+Laurent Duchesne <l@urent.org>
+Jonah Duckles <jonah@duckles.org>
+Rémi Emonet <remi@heeere.com> <remi.emonet@univ-st-etienne.fr>
+Loïc Estève <loic.esteve@ymail.com>
+Sean Farley <sean.michael.farley@gmail.com>
+Emmanouil Farsarakis <farsarakis@gmail.com> <farsarakis@epcc.ed.ac.uk>
+Bennet Fauber <bennet@umich.edu>
+Anne Fouilloux <annefou@uio.no>
+Konrad Förstner <konrad@foerstner.org>
+Stuart Geiger <sgeiger@gmail.com>
+Ivan Gonzalez <iglpdc@gmail.com> <iglpdc@users.noreply.github.com>
+Marisa Guarinello <mguarinello@gmail.com>
+Jamie Hadwin <jamie.hadwin@okstate.edu>
+Nicholas Hannah <nchlshnnh@gmail.com>
+Michael Hansen <hansen.mike@gmail.com>
+Martin Heroux <heroux.martin@gmail.com>
+Kate Hertweck <k8hertweck@gmail.com> <kl167@le.ac.uk>
+Konrad Hinsen <konrad.hinsen@fastmail.net>
+Daisie Huang <daisieh@gmail.com>
+Daisie Huang_local <daisieh@gmail.com>
 Yuandra Ismiraldi <me@yuandraismiraldi.net>
+Mike Jackson <michaelj@epcc.ed.ac.uk>
+Christian Jacobs <c.jacobs10@imperial.ac.uk>
+Dorota Jarecka <djarecka@gmail.com>
+Dorota Jarecka <djarecka@gmail.com>
+David Jones <dave@dkjones.org>
 Zbigniew Jędrzejewski-Szmek <zbyszek@in.waw.pl>
+Thomas Kluyver <takowl@gmail.com>
+Bernhard Konrad <bernhard.konrad@gmail.com>
+Mateusz Kuzak <mateusz.kuzak@gmail.com>
+Kathleen Labrie <kathleen.labrie.phd@gmail.com>
+Hilmar Lapp <hlapp@drycafe.net>
+Doug Latornell <djl@douglatornell.ca>
+Mark Laufersweiler <laufers@gmail.com>
+David LeBauer <dlebauer@gmail.com>
+Kate Lee <kl167@le.ac.uk>
+Matthias Liffers <m@tthi.as>
+Catrina Loucks <catrina.loucks@gmail.com>
+Keith Ma <keithma@bu.edu>
+Kunal Marwaha <marwahaha@berkeley.edu>
+François Michonneau <francois.michonneau@gmail.com>
+Bill Mills <mills.wj@gmail.com>
+Andreas Mueller <amueller@nyu.edu>
+VP Nagraj <vpnagraj@virginia.edu>
+Lex Nederbragt <lex.nederbragt@bio.uio.no>
+Juan Nunez-Iglesias <juan.n@unimelb.edu.au>
+Brenna O'Brien <info@brennaobrien.com>
+Aaron O'Leary <aaron.oleary@gmail.com>
+Catherine Olsson <catherio@mit.edu>
+Chris Pawsey <chris.bording@pawsey.org.au>
+Stefan Pfenninger <stefan@pfenninger.org>
+Jon Pipitone <jon.pipitone@utoronto.ca>
+Timothée Poisot <tim@poisotlab.io>
+Paul Preney <paul@preney.ca>
+Timothy Rice <t.rice@ms.unimelb.edu.au>
+Kristina Riemer <kristina.riemer@weecology.org>
+David Rio Deiros <driodeiros@gmail.com>
+Natalie Robinson <n.robinson@colorado.edu>
+Andrew Rohl <a.rohl@curtin.edu.au>
 Andrew Rohl <a.rohl@curtin.edu.au>
 Ariel Rokem <arokem@gmail.com>
-Berenice Batut <berenice.batut@gmail.com> <berenice.batut@udamail.fr>
-Chris Pawsey <chris.bording@pawsey.org.au>
-Daisie Huang_local <daisieh@gmail.com>
-Dorota Jarecka <djarecka@gmail.com>
-Emily Dolson <emilyldolson@gmail.com>
-Marisa Guarinello <mguarinello@gmail.com>
-Mike Jackson <michaelj@epcc.ed.ac.uk>
-Mateusz Kuzak <mateusz.kuzak@gmail.com>
+Michael Sarahan <msarahan@gmail.com>
+Sebastian Schmeier <s.schmeier@gmail.com>
+Hartmut Schmider <hartmut.schmider@queensu.ca>
+Raniere Silva <ra092767@ime.unicamp.br> <raniere@ime.unicamp.br> <raniere@rgaiacs.com>
+Brendan Smithyman <smithyman@gmail.com>
+Nicola Soranzo <nsoranzo@tiscali.it>
+Peter Steinbach <steinbach@scionics.de>
+Sarah Stevens <sstevens2@wisc.edu>
+Tiffany Timbers <tiffany.timbers@gmail.com>
+Danielle Traphagen <dtrapezoid@gmail.com>
+W. Trevor King <wking@tremily.us>
+Tim Tröndle <tim.troendle@younicos.com>
+Steve Vandervalk <stevenvandervalk@users.noreply.github.com>
+Luke W. Johnston <lwjohnst@gmail.com>
+Belinda Weaver <b.weaver@uq.edu.au>
+Mark Wheelhouse <mjw03@doc.ic.ac.uk>
+Ethan White <ethan@weecology.org>
+Greg Wilson <gvwilson@software-carpentry.org> <gvwilson@third-bit.com>
+Steven Wu <stevenhwu@gmail.com>
+Qingpeng Zhang <qingpeng@msu.edu>
+Anelda van der Walt <anelda@users.noreply.github.com>
