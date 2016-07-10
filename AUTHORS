@@ -1,56 +1,105 @@
-git-novice was written by:
-Aron Ahmadia <aron@ahmadia.net>
-James Allen <jamesallen0108@gmail.com>
-Pete Bachant <petebachant@gmail.com>
-Piotr Banaszkiewicz <piotr@banaszkiewicz.org>
-Pauline Barmby <pbarmby@uwo.ca>
-Trevor Bekolay <tbekolay@gmail.com>
-John Blischak <jdblischak@gmail.com>
-Jon Borrelli <borrejj@gmail.com>
-Andy Boughton <abought@gmail.com>
-Amy Brown <amyrhoda@gmail.com>
-Abigail Cabunoc <abigail.cabunoc@oicr.on.ca>
-Jane Charlesworth <janepipistrelle@gmail.com>
-Daniel Chen <Maveri2k@yahoo.com>
-Ruth Collings <contact@ruthcollings.ca>
-Matt Davis <jiffyclub@gmail.com>
-Rémi Emonet <remi.emonet@reverse--com.heeere>
-Emmanouil Farsarakis <farsarakis@gmail.com>
-Konrad Förstner <konrad@foerstner.org>
-Ivan Gonzalez <iglpdc@gmail.com>
-Nicholas Hannah <nchlshnnh@gmail.com>
-Michael Hansen <hansen.mike@gmail.com>
-Konrad Hinsen <konrad.hinsen@fastmail.net>
-Daisie Huang <daisieh@gmail.com>
-Christian Jacobs <c.jacobs10@imperial.ac.uk>
-Dorota Jarecka <djarecka@gmail.com>
-Luke W. Johnston <lwjohnst@gmail.com>
-David Jones <dave@dkjones.org>
-Zbigniew Jędrzejewski-Szmek <zbyszek@in.waw.pl>
-W. Trevor King <wking@tremily.us>
-Thomas Kluyver <takowl@gmail.com>
-Bernhard Konrad <bernhard.konrad@gmail.com>
-Hilmar Lapp <hlapp@drycafe.net>
-Doug Latornell <djl@douglatornell.ca>
-David LeBauer <dlebauer@gmail.com>
-Kate Lee <kl167@le.ac.uk>
-François Michonneau <francois.michonneau@gmail.com>
-Bill Mills <mills.wj@gmail.com>
-Juan Nunez-Iglesias <juan.n@unimelb.edu.au>
-Brenna O'Brien <info@brennaobrien.com>
-Aaron O'Leary <aaron.oleary@gmail.com>
-Stefan Pfenninger <stefan@pfenninger.org>
-Jon Pipitone <jon.pipitone@utoronto.ca>
-Timothée Poisot <tim@poisotlab.io>
-Timothy Rice <t.rice@ms.unimelb.edu.au>
-David Rio Deiros <driodeiros@gmail.com>
-Natalie Robinson <n.robinson@colorado.edu>
-Andrew Rohl <a.rohl@curtin.edu.au>
-Michael Sarahan <msarahan@gmail.com>
-Raniere Silva <raniere@ime.unicamp.br>
-Peter Steinbach <steinbach@scionics.de>
-Tiffany Timbers <tiffany.timbers@gmail.com>
-Danielle Traphagen <dtrapezoid@gmail.com>
-Belinda Weaver <b.weaver@uq.edu.au>
-Ethan White <ethan@weecology.org>
-Greg Wilson <gvwilson@software-carpentry.org>
+Aron Ahmadia
+James Allen
+Alison Appling
+Sean Aubin
+Pete Bachant
+Piotr Banaszkiewicz
+Pauline Barmby
+Berenice Batut
+Trevor Bekolay
+John Blischak
+Madeleine Bonsma
+Jon Borrelli
+Andy Boughton
+Daina Bouquin
+Rudi Brauning
+Matthew Brett
+Amy Brown
+Abigail Cabunoc
+Jane Charlesworth
+Billy Charlton
+Daniel Chen
+Garret Christensen
+Ruth Collings
+Marianne Corvellec
+Matt Davis
+Emily Dolson
+Laurent Duchesne
+Jonah Duckles
+Rémi Emonet
+Loïc Estève
+Emmanouil Farsarakis
+Bennet Fauber
+Anne Fouilloux
+Konrad Förstner
+Stuart Geiger
+Ivan Gonzalez
+Marisa Guarinello
+Jamie Hadwin
+Nicholas Hannah
+Michael Hansen
+Martin Heroux
+Kate Hertweck
+Konrad Hinsen
+Daisie Huang
+Yuandra Ismiraldi
+Mike Jackson
+Christian Jacobs
+Dorota Jarecka
+Luke W. Johnston
+David Jones
+Zbigniew Jędrzejewski-Szmek
+W. Trevor King
+Thomas Kluyver
+Bernhard Konrad
+Mateusz Kuzak
+Kathleen Labrie
+Hilmar Lapp
+Doug Latornell
+Mark Laufersweiler
+David LeBauer
+Kate Lee
+Matthias Liffers
+Catrina Loucks
+Keith Ma
+Kunal Marwaha
+François Michonneau
+Bill Mills
+Andreas Mueller
+VP Nagraj
+Lex Nederbragt
+Juan Nunez-Iglesias
+Brenna O'Brien
+Aaron O'Leary
+Catherine Olsson
+Chris Pawsey
+Stefan Pfenninger
+Jon Pipitone
+Timothée Poisot
+Paul Preney
+Timothy Rice
+Kristina Riemer
+David Rio Deiros
+Natalie Robinson
+Andrew Rohl
+Andrew Rohl
+Ariel Rokem
+Michael Sarahan
+Sebastian Schmeier
+Hartmut Schmider
+Raniere Silva
+Brendan Smithyman
+Nicola Soranzo
+Peter Steinbach
+Sarah Stevens
+Tiffany Timbers
+Danielle Traphagen
+Tim Tröndle
+Anelda van der Walt
+Steve Vandervalk
+Belinda Weaver
+Mark Wheelhouse
+Ethan White
+Greg Wilson
+Steven Wu
+Qingpeng Zhang
