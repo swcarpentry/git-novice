@@ -48,7 +48,7 @@ the process looks like this:
 *   The data that the scientist collects is stored in an open access repository
     like [figshare](http://figshare.com/) or
     [Zenodo](http://zenodo.org), possibly as soon as it's collected,
-    and given its own 
+    and given its own
     [Digital Object Identifier](https://en.wikipedia.org/wiki/Digital_object_identifier) (DOI).
     Or the data was already published and is stored in
     [Dryad](http://datadryad.org/).

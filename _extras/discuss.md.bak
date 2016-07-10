@@ -101,10 +101,10 @@ $ git config --global --unset format.pretty
 {: .bash}
 
 > ## Undoing Git Configuration Changes
->
+> 
 > You can use the `--unset` flag to delete unwanted options from `.gitconfig`.
 > Another way to roll back changes is to store your `.gitconfig` using Git.
->
+> 
 > For hints on what you might want to configure,
 > go to GitHub and search for "gitconfig".
 > You will find hundreds of repositories in which people have stored
@@ -209,7 +209,7 @@ An uninformative `git diff` is not the only consequence of using Git on binary f
 However, most of the other problems boil down to whether or not a good diff is possible.
 
 This isn't to say you should *never* use Git on binary files.
-A rule of thumb is that it's OK if the binary file won't change very often,
+A rule of thumb is that it's okay if the binary file won't change very often,
 and if it does change, you don't care about merging in small differences between versions.
 
 We've already seen how a word processed report will fail this test.
@@ -278,7 +278,7 @@ $ git commit -m 'Removing info on Nibiru.  It is not a real planet!'
 
 ## Removing a File with Unix
 
-Sometimes we might forget to remove the file through Git. If you removed the
+Sometimes we migth forget to remove the file through Git. If you removed the 
 file with Unix `rm` instead of using `git rm`, no worries,
 Git is smart enough to notice the missing file. Let us recreate the file and
 commit it again.
@@ -387,10 +387,10 @@ $ git commit -m 'Superman's home is now Earth'
 
 ## Renaming a File with Unix
 
-If you forgot to use Git and you used Unix `mv` instead
-of `git mv`, you will have a touch more work to do but Git will
-be able to deal with it. Let's try again renaming the file,
-this time with Unix `mv`. First, we need to recreate the
+If you forgot to use Git and you used Unix `mv` instead 
+of `git mv`, you will have a touch more work to do but Git will 
+be able to deal with it. Let's try again renaming the file, 
+this time with Unix `mv`. First, we need to recreate the 
 `krypton.txt` file:
 
 ~~~

@@ -31,9 +31,9 @@ $ git config --global color.ui "auto"
 ~~~
 {: .bash}
 
-Please use your own name and email address instead of Dracula's. 
-This user name and email will be associated with your subsequent Git activity, 
-which means that any changes pushed to GitHub in a later lesson will include this information. 
+Please use your own name and email address instead of Dracula's.
+This user name and email will be associated with your subsequent Git activity,
+which means that any changes pushed to GitHub in a later lesson will include this information.
 If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private][git-privacy].
 
 He also has to set his favorite text editor, following this table:
