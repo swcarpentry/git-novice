@@ -20,14 +20,14 @@ a given directory. This is a way to keep track of related files. One
 of the way to keep track of them is via version control! To get
 started using RStudio for version control, let's make a new project:
 
-![]({{ site.root }}/fig/RStudio_screenshot_newproject.png)
+![]({{ site.github.url }}/fig/RStudio_screenshot_newproject.png)
 
 This will pop up a window asking us how we want to create the project. We have
 some options here. Let's say that we want to use RStudio with the planets
 repository that we already made. Since that repository lives in a directory on
 our computer, we'll choose "existing directory":
 
-![]({{ site.root }}/fig/RStudio_screenshot_existingdirectory.png)
+![]({{ site.github.url }}/fig/RStudio_screenshot_existingdirectory.png)
 
 > ## Do You See a "Version Control" Option?
 >
@@ -45,24 +45,24 @@ Next, RStudio will ask which existing directory we want to use. Click "browse"
 to navigate to the correct directory on your computer, then click "create
 project":
 
-![]({{ site.root }}/fig/RStudio_screenshot_navigateexisting.png)
+![]({{ site.github.url }}/fig/RStudio_screenshot_navigateexisting.png)
 
 Ta-da! Now you have an R project containing your repository. Notice the
 vertical "Git" menu that is now on the menu bar. This means RStudio has
 recognized that this directory is a git repository, so it's giving you tools
 to use Git:
 
-![]({{ site.root }}/fig/RStudio_screenshot_afterclone.png)
+![]({{ site.github.url }}/fig/RStudio_screenshot_afterclone.png)
 
 To edit the files in your repository, you can click on them from the panel in
 the lower right. Let's add some more information about pluto:
 
-![]({{ site.root }}/fig/RStudio_screenshot_editfiles.png)
+![]({{ site.github.url }}/fig/RStudio_screenshot_editfiles.png)
 
 We can also use RStudio to commit these changes. Go to the git menu and click
 "commit":
 
-![]({{ site.root }}/fig/RStudio_screenshot_commit.png)
+![]({{ site.github.url }}/fig/RStudio_screenshot_commit.png)
 
 This will bring up a screen where you can select which files to commit (check
 the boxes in the "staged" column) and enter a commit message (in the upper
@@ -70,13 +70,13 @@ right). The icons in the "status" column indicate the current status of each
 file. You can also see the changes to each file by clicking on its name. Once
 everything is the way you want it, click "commit":
 
-![]({{ site.root }}/fig/RStudio_screenshot_review.png)
+![]({{ site.github.url }}/fig/RStudio_screenshot_review.png)
 
 You can push these changes by selecting "push" from the Git menu. There are
 also options there to pull from a remote version of the repository, and view
 the history:
 
-![]({{ site.root }}/fig/RStudio_screenshot_history.png)
+![]({{ site.github.url }}/fig/RStudio_screenshot_history.png)
 
 > ## Are the Push/Pull Commands Grayed Out?
 >
@@ -89,13 +89,13 @@ the history:
 If we click on "history", we can see a pretty graphical version of what
 `git log` would tell us:
 
-![]({{ site.root }}/fig/RStudio_screenshot_viewhistory.png)
+![]({{ site.github.url }}/fig/RStudio_screenshot_viewhistory.png)
 
 RStudio creates some files that is uses to keep track of your project. You
 generally don't want to track these, so adding them to your .gitignore file
 is a good idea:
 
-![]({{ site.root }}/fig/RStudio_screenshot_gitignore.png)
+![]({{ site.github.url }}/fig/RStudio_screenshot_gitignore.png)
 
 There are many more features buried in the RStudio git interface, but these
 should be enough to get you started!
