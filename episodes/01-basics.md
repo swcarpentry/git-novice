@@ -17,7 +17,7 @@ to keep track of what one person did and when.
 Even if you aren't collaborating with other people,
 automated version control is much better than this situation:
 
-[![Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com/comics/archive_print.php?comicid=1531]({{ site.root }}/fig/phd101212s.gif)](http://www.phdcomics.com)
+[![Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com/comics/archive_print.php?comicid=1531]({{ site.github.url }}/fig/phd101212s.gif)](http://www.phdcomics.com)
 
 "Piled Higher and Deeper" by Jorge Cham, http://www.phdcomics.com
 
@@ -33,7 +33,7 @@ think of it as a tape: if you rewind the tape and start at the base
 document, then you can play back each change and end up with your
 latest version.
 
-![Changes are saved sequentially]({{ site.root }}/fig/play-changes.svg)
+![Changes are saved sequentially]({{ site.github.url }}/fig/play-changes.svg)
 
 Once you think of changes as separate from the document itself, you
 can then think about "playing back" different sets of changes onto the
@@ -41,11 +41,11 @@ base document and getting different versions of the document. For
 example, two users can make independent sets of changes based on the
 same document.
 
-![Different versions can be saved]({{ site.root }}/fig/versions.svg)
+![Different versions can be saved]({{ site.github.url }}/fig/versions.svg)
 
 If there aren't conflicts, you can even play two sets of changes onto the same base document.
 
-![Multiple versions can be merged]({{ site.root }}/fig/merge.svg)
+![Multiple versions can be merged]({{ site.github.url }}/fig/merge.svg)
 
 A version control system is a tool that keeps track of these changes for us and
 helps us version and merge our files. It allows you to
