@@ -161,6 +161,86 @@ Solutions to exercises:
 > 
 >Answer 1 is not descriptive enough, answer 2 is too descriptive and redundant, and answer 3 is good - short but descriptive.
 
+> ## Committing Changes to Git {.challenge}
+> 3.
+>
+>     ~~~
+>     $ git init myfile.txt
+>     $ git commit -m "my recent changes"
+>     ~~~
+>
+>Answer 1 would only create a commit if files have already been staged,
+>Answer 2 would try to create a new repository,
+>Answer 3 is correct: first add the file to the staging area, then commit.
+>Answer 4 would try to commit a file "my recent changes" with the message myfile.txt.
+
+
+> ## `bio` Repository {.challenge}
+>
+>     ~~~
+>     $ mkdir bio
+>     $ cd bio
+>     $ git init
+>     Initialized empty Git repository in /home/vlad/bio/.git/
+>     
+>     $ nano me.txt
+>     $ cat me.txt
+>     Full Name:      Vlad III Dracula
+>     Year of Birth:  1431
+>     Place of Birth: Segesvar, Kingdom of Hungary
+>     
+>     $ git commit -m "Vlad's initial bio"
+>     [master (root-commit) aaa3271] Vlad's initial bio
+>      1 file changed, 4 insertions(+)
+>      create mode 100644 me.txt
+>     
+>     $ nano me.txt
+>     $ cat me.txt
+>     Full Name:      Vlad III Dracula
+>     Year of Birth:  1432
+>     Place of Birth: Segesvar, Kingdom of Hungary
+>     Favorite book:  Mary Shelley's Frankenstein
+>     
+>     $ git diff
+>     diff --git a/me.txt b/me.txt
+>     index 9a788d3..cd0e9e6 100644
+>     --- a/me.txt
+>     +++ b/me.txt
+>     @@ -1,4 +1,4 @@
+>      Full Name:      Vlad III Dracula
+>     -Year of Birth:  1431
+>     +Year of Birth:  1432
+>      Place of Birth: Segesvar, Kingdom of Hungary
+>     -
+>     +Favorite book:  Mary Shelley's Frankenstein
+>     $
+>     ~~~
+>
+
+> ## Author and Committer {.challenge}
+>
+>     ~~~
+>     $ git add me.txt
+>     $ git commit -m "Updated Vlad's bio." --author="Frank N. Stein <franky@monster.com>"
+>     [master 4162a51] Updated Vlad's bio.
+>      Author: Frank N. Stein <franky@monster.com>
+>      1 file changed, 2 insertions(+), 2 deletions(-)
+>     
+>     $ git log --format=full
+>     commit 4162a51b273ba799a9d395dd70c45d96dba4e2ff
+>     Author: Frank N. Stein <franky@monster.com>
+>     Commit: Vlad Dracula <vlad@tran.sylvan.ia>
+>     
+>         Updated Vlad's bio.
+>     
+>     commit aaa3271e5e26f75f11892718e83a3e2743fab8ea
+>     Author: Vlad Dracula <vlad@tran.sylvan.ia>
+>     Commit: Vlad Dracula <vlad@tran.sylvan.ia>
+>     
+>         Vlad's initial bio.
+>     $
+>     ~~~
+
 
 ## [Exploring History](05-history.html)
 
