@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Version Control with Git
-subtitle: Instructor's Guide
+title: "Instructor's Guide"
+permalink: /guide/
 ---
 Using a software tool to handle the versions of your project files
 lets you focus on the more interesting/innovative aspects of your project.
@@ -10,7 +10,7 @@ lets you focus on the more interesting/innovative aspects of your project.
     *   It's easy to set up
     *   Every copy of a Git repository is a full backup of a project and its history
     *   A few easy-to-remember commands are all you need for most day-to-day version control tasks
-    *   The [GitHub](https://github.com/) hosting service provides a web-based collaboration service
+    *   The [GitHub][github] hosting service provides a web-based collaboration service
 *   Two main concepts
     *   *commit*: a recorded set of changes in your project's files
     *   *repository*: the history of all your project's commits
@@ -40,34 +40,32 @@ working in teams or not, because it is
 *   Make sure the network is working *before* starting this lesson.
 
 *   Drawings are particularly useful in this lesson: if you have a whiteboard,
-    [use it!](https://twitter.com/chendaniely/status/583689081151979520)
+    [use it][drawings]!
 
 *   Version control is usually not the first subject in a workshop,
-    so get learners to create a GitHub account after the session before. 
-    Remind learners that the username and email they use for GitHub (and setup  
-    during Git configuration) will be viewable to the public by default. 
+    so get learners to create a GitHub account after the session before.
+    Remind learners that the username and email they use for GitHub (and setup
+    during Git configuration) will be viewable to the public by default.
     However, there are many reasons why a learner may not want their personal
     information viewable, and GitHub has [resources for keeping an email address
-    private](https://help.github.com/articles/keeping-your-email-address-private/).
-   
-*   If some learners are using Windows, there will inevitably be issues merging
-    files with different line endings.  (Even if everyone's on some flavor of
-    Unix, different editors may or may not add a newline to the last line of a
-    file.) Take a moment to explain these issues, since learners will almost
-    certainly trip over them again.  If learners are running into line ending
-    problems, GitHub has a
-    [page](https://help.github.com/articles/dealing-with-line-endings/#platform-all)
-    that helps with troubleshooting.
+    private][github-privacy].
+
+*   If some learners are using Windows, there will inevitably be issues
+    merging files with different line endings.  (Even if everyone's on
+    some flavor of Unix, different editors may or may not add a
+    newline to the last line of a file.) Take a moment to explain
+    these issues, since learners will almost certainly trip over them
+    again.  If learners are running into line ending problems, GitHub
+    has a [page][github-line-endings] that helps with troubleshooting.
 
 *   We don't use a Git GUI in these notes because we haven't found one that
     installs easily and runs reliably on the three major operating systems, and
     because we want learners to understand what commands are being run.  That
     said, instructors should demo a GUI on their desktop at some point during
-    this lesson and point learners at [this
-    page](http://git-scm.com/downloads/guis).
+    this lesson and point learners at [this page][github-gui].
 
 *   Instructors should show learners graphical diff/merge tools like
-    [DiffMerge](https://sourcegear.com/diffmerge/).
+    [DiffMerge][diffmerge].
 
 *   When appropriate, explain that we teach Git rather than CVS, Subversion, or
     Mercurial primarily because of GitHub's growing popularity: CVS and
@@ -75,13 +73,12 @@ working in teams or not, because it is
     widely used in the sciences right now.
 
 *   Further resources:
-    *    [git-it](https://github.com/jlord/git-it) is a self-paced command-line Git demo,
-         with [git-it-electron](https://github.com/jlord/git-it-electron) its GitHub Desktop successor
-    *    [Code School](https://www.codeschool.com/) has a free interactive course, [Try Git](https://try.github.io)
-    *    for instructors, [the Git parable](http://tom.preston-werner.com/2009/05/19/the-git-parable.html)
-         is valuable background reading
+    *    [git-it][git-it] is a self-paced command-line Git demo,
+         with [git-it-electron][git-it-electron] its GitHub Desktop successor.
+    *    [Code School][code-school] has a free interactive course, [Try Git][try-git].
+    *    for instructors, [the Git parable][git-parable] is useful background reading
 
-## [Automated Version Control](01-basics.html)
+## [Automated Version Control]({{ site.github.url }}/01-basics/)
 
 *   Ask, "Who uses 'undo' in their editor?" All say "Me". 'Undo' is the simplest
     form of version control.
@@ -96,13 +93,13 @@ working in teams or not, because it is
     and, "come on this really has to be the last version" to motivate version
     control as a better way to collaborate and as a better way to back work up.
 
-## [Setting Up Git](02-setup.html)
+## [Setting Up Git]({{ site.github.url }}/02-setup/)
 
 *   We suggest instructors and students use `nano` as the text editor for this
     lessons because
-    
-    *   it runs in all three major operating systems, 
-    *   it runs inside the shell (switching windows can be confusing to students), and 
+
+    *   it runs in all three major operating systems,
+    *   it runs inside the shell (switching windows can be confusing to students), and
     *   it has shortcut help at the bottom of the window.
 
     Please point out to students during setup that they can and should use
@@ -112,137 +109,36 @@ working in teams or not, because it is
     common for them to edit the instructor's details (e.g. email).  Check at
     the end using `git config --list`.
 
-## [Creating a Repository](03-create.html)
+## [Creating a Repository]({{ site.github.url }}/03-create/)
 
-*   When you do `git status`, Mac users may see a `.DS_Store` file showing as 
+*   When you do `git status`, Mac users may see a `.DS_Store` file showing as
     untracked. This a file that Mac OS creates in each directory.
 
 *   The challenge "Places to create repositories" tries to reinforce the idea
     that the `.git` folder contains the whole Git repo and deleting this folder
     undoes a `git init`. It also gives the learner the way to fix the common
     mistake of putting unwanted folders (like `Desktop`) under version control.
-    
+
     Instead of removing the `.git` folder directly, you can choose to move it
     first to a safer directory and remove it from there:
-    
-    ~~~{.input} 
-    $ mv .git temp_git 
-    $ rm -rf  temp_git 
-    ~~~
-    
-    The challenge suggests that it is a bad idea to create a Git repo inside another repo. 
-    For more discussion on this topic, please see [this issue](https://github.com/swcarpentry/git-novice/issues/272).
 
-## [Tracking Changes](04-changes.html)
+    ~~~
+    $ mv .git temp_git
+    $ rm -rf  temp_git
+    ~~~
+    {: .bash}
+
+    The challenge suggests that it is a bad idea to create a Git repo inside another repo.
+    For more discussion on this topic, please see [this issue][repos-in-repos].
+
+## [Tracking Changes]({{ site.github.url }}/04-changes/)
 
 *   It's important that learners do a full commit cycle by themselves (make
     changes, `git diff`, `git add`, and `git commit`). The "`bio` repository"
     challenge does that.
 
-*   This is a good moment to show a diff with a graphical diff tool. If you 
+*   This is a good moment to show a diff with a graphical diff tool. If you
     skip it because you're short on time, show it once in GitHub.
-
-Solutions to exercises:
-
-> ## Choosing a commit message {.challenge}
->
-> Which of the following commit messages would be most appropriate for the 
-> last commit made to `mars.txt`?
-> 
-> 1. 
->
->     "Changes"
-> 2. 
->
->     "Added line 'But the Mummy will appreciate the lack of humidity' to mars.txt"
-> 3. 
->
->     **"Discuss effects of Mars' climate on the Mummy"**
-> 
->Answer 1 is not descriptive enough, answer 2 is too descriptive and redundant, and answer 3 is good - short but descriptive.
-
-> ## Committing Changes to Git {.challenge}
-> 3.
->
->     ~~~
->     $ git init myfile.txt
->     $ git commit -m "my recent changes"
->     ~~~
->
->Answer 1 would only create a commit if files have already been staged,
->Answer 2 would try to create a new repository,
->Answer 3 is correct: first add the file to the staging area, then commit.
->Answer 4 would try to commit a file "my recent changes" with the message myfile.txt.
-
-
-> ## `bio` Repository {.challenge}
->
->     ~~~
->     $ mkdir bio
->     $ cd bio
->     $ git init
->     Initialized empty Git repository in /home/vlad/bio/.git/
->     
->     $ nano me.txt
->     $ cat me.txt
->     Full Name:      Vlad III Dracula
->     Year of Birth:  1431
->     Place of Birth: Segesvar, Kingdom of Hungary
->     
->     $ git commit -m "Vlad's initial bio"
->     [master (root-commit) aaa3271] Vlad's initial bio
->      1 file changed, 4 insertions(+)
->      create mode 100644 me.txt
->     
->     $ nano me.txt
->     $ cat me.txt
->     Full Name:      Vlad III Dracula
->     Year of Birth:  1432
->     Place of Birth: Segesvar, Kingdom of Hungary
->     Favorite book:  Mary Shelley's Frankenstein
->     
->     $ git diff
->     diff --git a/me.txt b/me.txt
->     index 9a788d3..cd0e9e6 100644
->     --- a/me.txt
->     +++ b/me.txt
->     @@ -1,4 +1,4 @@
->      Full Name:      Vlad III Dracula
->     -Year of Birth:  1431
->     +Year of Birth:  1432
->      Place of Birth: Segesvar, Kingdom of Hungary
->     -
->     +Favorite book:  Mary Shelley's Frankenstein
->     $
->     ~~~
->
-
-> ## Author and Committer {.challenge}
->
->     ~~~
->     $ git add me.txt
->     $ git commit -m "Updated Vlad's bio." --author="Frank N. Stein <franky@monster.com>"
->     [master 4162a51] Updated Vlad's bio.
->      Author: Frank N. Stein <franky@monster.com>
->      1 file changed, 2 insertions(+), 2 deletions(-)
->     
->     $ git log --format=full
->     commit 4162a51b273ba799a9d395dd70c45d96dba4e2ff
->     Author: Frank N. Stein <franky@monster.com>
->     Commit: Vlad Dracula <vlad@tran.sylvan.ia>
->     
->         Updated Vlad's bio.
->     
->     commit aaa3271e5e26f75f11892718e83a3e2743fab8ea
->     Author: Vlad Dracula <vlad@tran.sylvan.ia>
->     Commit: Vlad Dracula <vlad@tran.sylvan.ia>
->     
->         Vlad's initial bio.
->     $
->     ~~~
-
-
-## [Exploring History](05-history.html)
 
 *   One thing may cause confusion is recovering old versions.  If, instead of
     doing `$ git checkout f22b25e mars.txt`, someone does `$ git checkout
@@ -255,12 +151,12 @@ Solutions to exercises:
 *   This is a good moment to show a log within a Git GUI. If you skip it
     because you're short on time, show it once in GitHub.
 
-## [Ignoring Things](06-ignore.html)
+## [Ignoring Things]({{ site.github.url }}/06-ignore/)
 
 Just remember that you can use wildcards and regular expressions to ignore a
 particular set of files in `.gitignore`.
 
-## [Remotes in GitHub](07-github.html)
+## [Remotes in GitHub]({{ site.github.url }}/07-github/)
 
 *   Make it clear that Git and GitHub are not the same thing: Git is an open
     source version control tool, GitHub is a company that hosts Git
@@ -275,7 +171,7 @@ particular set of files in `.gitignore`.
 *   It is very useful to draw a diagram showing the different repositories
     involved.
 
-## [Collaborating](08-collab.html)
+## [Collaborating]({{ site.github.url }}/08-collab/)
 
 *   Decide in advance whether all the learners will work in one shared
     repository, or whether they will work in pairs (or other small groups) in
@@ -309,16 +205,17 @@ particular set of files in `.gitignore`.
 
 *   If you're the only instructor, the best way to create is clone the two
     repos in your Desktop, but under different names, e.g., pretend one is your
-    computer at work: 
+    computer at work:
 
-    ~~~{.input}    
+    ~~~
     $ git clone https://github.com/vlad/planets.git planets-at-work
     ~~~
+    {: .bash}
 
 *   It's very common that learners mistype the remote alias or the remote URL
     when adding a remote, so they cannot `push`. You can diagnose this with
-    `git remote -v` and checking carefully for typos. 
-    - To fix a wrong alias, you can do `git remote rename <old> <new>`. 
+    `git remote -v` and checking carefully for typos.
+    - To fix a wrong alias, you can do `git remote rename <old> <new>`.
     - To fix a wrong URL, you can do `git remote set-url <alias> <newurl> `.
 
 *   Before cloning the repo, be sure that nobody is inside another repo. The
@@ -326,19 +223,20 @@ particular set of files in `.gitignore`.
     cd Desktop`.
 
 *   If both repos are in the `Desktop`, have them to clone their collaborator
-    repo under a given directory using a second argument: 
+    repo under a given directory using a second argument:
 
-    ~~~{.input}    
+    ~~~
     $ git clone https://github.com/vlad/planets.git vlad-planet
     ~~~
-    
+    {: .bash}
+
 *   The most common mistake is that learners `push` before `pull`ing. If they
     `pull` afterward, they may get a conflict.
 
 *   Conflicts, sometimes weird, will start to arise. Stay tight: conflicts are
     next.
 
-## [Conflicts](09-conflict.html)
+## [Conflicts]({{ site.github.url }}/09-conflict/)
 
 *   Expect the learners to make mistakes. Expect *yourself* to make mistakes. This
     happens because it is late in the lesson and everyone is tired.
@@ -347,9 +245,9 @@ particular set of files in `.gitignore`.
 
     *   Clone your repo in a different directory, pretending is your computer at
         work: `git clone https://github.com/vlad/planets.git planets-at-work`.
-    *   At the office, you make a change, commit and push.  
-    *   At your laptop repo, you (forget to pull and) make a change, commit and 
-        try to push. 
+    *   At the office, you make a change, commit and push.
+    *   At your laptop repo, you (forget to pull and) make a change, commit and
+        try to push.
     *   `git pull` now and show the conflict.
 
 *   Learners usually forget to `git add` the file after fixing the conflict and
@@ -359,22 +257,37 @@ particular set of files in `.gitignore`.
 
     *   discard the remote file, `git checkout --ours conflicted_file.txt`
     *   discard the local file, `git checkout --theirs conflicted_file.txt`
-    
+
     You still have to `git add` and `git commit` after this. This is
     particularly useful when working with binary files.
 
-## [Open Science](10-open.html)
+## [Open Science]({{ site.github.url }}/10-open/)
 
-## [Licensing](11-licensing.html)
+## [Licensing]({{ site.github.url }}/11-licensing/)
 
 We teach about licensing because questions about who owns what, or can use
 what, arise naturally once we start talking about using public services like
 GitHub to store files. Also, the discussion gives learners a chance to catch
 their breath after what is often a frustrating couple of hours.
 
-## [Hosting](13-hosting.html)
+## [Citation]({{ site.github.url }}/12-citation/)
+
+## [Hosting]({{ site.github.url }}/13-hosting/)
 
 A common concern for learners is having their work publicly available on
 GitHub.  While we encourage open science, sometimes private repos are the
 only choice. It's always interesting to mention the options to have
 web-hosted private repositories.
+
+[code-school]: https://www.codeschool.com/
+[diffmerge]: https://sourcegear.com/diffmerge/
+[drawings]: https://twitter.com/chendaniely/status/583689081151979520
+[git-it]: https://github.com/jlord/git-it
+[git-it-electron]: https://github.com/jlord/git-it-electron
+[git-parable]: http://tom.preston-werner.com/2009/05/19/the-git-parable.html
+[github]: https://github.com/
+[github-gui]: http://git-scm.com/downloads/guis
+[github-line-endings]: https://help.github.com/articles/dealing-with-line-endings/#platform-all
+[github-privacy]: https://help.github.com/articles/keeping-your-email-address-private/
+[repos-in-repos]: https://github.com/swcarpentry/git-novice/issues/272
+[try-git]: https://try.github.io

@@ -1,17 +1,20 @@
 ---
-layout: page
-title: Version Control with Git
-subtitle: Open Science
-minutes: 10 (5 to explain the lesson and 5 to do a challenge)
+title: Open Science
+teaching: 5
+exercises: 5
+questions:
+- "How can version control help me make my work more open?"
+objectives:
+- "Explain how a version control system can be leveraged as an electronic lab notebook for computational work."
+keypoints:
+- "Open scientific work is more useful and more highly cited than closed."
 ---
-> ## Learning Objectives {.objectives}
->
-> *  Explain how a version control system can be leveraged as an electronic lab notebook for computational work.
 
 > The opposite of "open" isn't "closed".
 > The opposite of "open" is "broken".
 >
 > --- John Wilbanks
+{: .quotation}
 
 Free sharing of information might be the ideal in science,
 but the reality is often more complicated.
@@ -24,7 +27,7 @@ Normal practice today looks something like this:
     to analyze that data.
 *   Once she has some results,
     she writes them up and submits her paper.
-    She might include her data&mdash;a growing number of journals require this&mdash;but
+    She might include her data—a growing number of journals require this—but
     she probably doesn't include her code.
 *   Time passes.
 *   The journal sends her reviews written anonymously by a handful of other people in her field.
@@ -45,7 +48,7 @@ the process looks like this:
 *   The data that the scientist collects is stored in an open access repository
     like [figshare](http://figshare.com/) or
     [Zenodo](http://zenodo.org), possibly as soon as it's collected,
-    and given its own 
+    and given its own
     [Digital Object Identifier](https://en.wikipedia.org/wiki/Digital_object_identifier) (DOI).
     Or the data was already published and is stored in
     [Dryad](http://datadryad.org/).
@@ -91,21 +94,23 @@ by acting as a shareable electronic lab notebook for computational work:
     control repository is easy to archive for perpetuity, and contains
     the entire history.
 
-> ## Making Code Citable {.callout}
+> ## Making Code Citable
 >
 > [This short guide](https://guides.github.com/activities/citable-code/) from GitHub
 > explains how to create a Digital Object Identifier (DOI) for your code,
 > your papers,
 > or anything else hosted in a version control repository.
+{: .callout}
 
-> ## How Reproducible Is My Work? {.challenge}
+> ## How Reproducible Is My Work?
 >
 > Ask one of your labmates to reproduce a result you recently obtained
 > using only what they can find in your papers or on the web.
 > Try to do the same for one of their results,
 > then try to do it for a result from a lab you work with.
+{: .challenge}
 
-> ## How to find an appropriate data repository? {.challenge}
+> ## How to Find an Appropriate Data Repository?
 >
 > Surf the internet for a couple of minutes and check out the data repositories
 > mentioned above: [Figshare](http://figshare.com/), [Zenodo](http://zenodo.org),
@@ -115,8 +120,9 @@ by acting as a shareable electronic lab notebook for computational work:
 > http://www.nature.com/sdata/data-policies/repositories).
 > Discuss with your neighbor which data repository you might want to
 > approach for your current project and explain why.
+{: .challenge}
 
-> ## Can I also publish code? {.challenge}
+> ## Can I Also Publish Code?
 >
 > There are many new ways to publish code and to make it citable. One
 > way is described [on the homepage of github itself](
@@ -124,3 +130,4 @@ by acting as a shareable electronic lab notebook for computational work:
 > Basically it's a combination of github (where the code is) and zenodo (the
 > repository creating the DOI). Read through this page while being aware
 > that this is only one of many ways to making your code citable.
+{: .challenge}
