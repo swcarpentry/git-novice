@@ -498,17 +498,26 @@ repository (`git commit`):
 
 > ## Committing Changes to Git
 >
-> Which command(s) below would save the changes of `myfile.txt` to my local Git repository?
+> Which command(s) below would save the changes of `myfile.txt`
+> to my local Git repository?
 >
 > 1. `$ git commit -m "my recent changes"`
 >
 > 2. `$ git init myfile.txt`  
->     `$ git commit -m "my recent changes"`
+>    `$ git commit -m "my recent changes"`
 >
 > 3. `$ git add myfile.txt`  
->     `$ git commit -m "my recent changes"`
+>    `$ git commit -m "my recent changes"`
 >
 > 4. `$ git commit -m myfile.txt "my recent changes"`
+>
+> > ## Solution
+> >
+> > 1. Would only create a commit if files have already been staged.
+> > 2. Would try to create a new repository.
+> > 3. Is correct: first add the file to the staging area, then commit.
+> > 4. Would try to commit a file "my recent changes" with the message myfile.txt.
+> {: .solution}
 {: .challenge}
 
 > ## Committing Multiple Files
@@ -522,15 +531,6 @@ repository (`git commit`):
 > about Venus as a base for you and your friends
 > 3. Add changes from both files to the staging area,
 > and commit those changes.
-{: .challenge}
-
-> ## `bio` Repository
->
-> Create a new Git repository on your computer called `bio`.
-> Write a three-line biography for yourself in a file called `me.txt`,
-> commit your changes,
-> then modify one line, add a fourth line, and display the differences
-> between its updated state and its original state.
 {: .challenge}
 
 > ## Author and Committer
@@ -556,6 +556,30 @@ repository (`git commit`):
 > `--author` option and one by naming a colleague of yours as the
 > author. Run `git log` and `git log --format=full`. Think about ways
 > how that can allow you to collaborate with your colleagues.
+>
+> > ## Solution
+> >
+> > ~~~
+> > $ git add me.txt
+> > $ git commit -m "Updated Vlad's bio." --author="Frank N. Stein <franky@monster.com>"
+> > [master 4162a51] Updated Vlad's bio.
+> > Author: Frank N. Stein <franky@monster.com>
+> > 1 file changed, 2 insertions(+), 2 deletions(-)
+> >
+> > $ git log --format=full
+> > commit 4162a51b273ba799a9d395dd70c45d96dba4e2ff
+> > Author: Frank N. Stein <franky@monster.com>
+> > Commit: Vlad Dracula <vlad@tran.sylvan.ia>
+> >
+> > Updated Vlad's bio.
+> >
+> > commit aaa3271e5e26f75f11892718e83a3e2743fab8ea
+> > Author: Vlad Dracula <vlad@tran.sylvan.ia>
+> > Commit: Vlad Dracula <vlad@tran.sylvan.ia>
+> >
+> > Vlad's initial bio.
+> > ~~~
+> {: .solution}
 {: .challenge}
 
 [commit-messages]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
