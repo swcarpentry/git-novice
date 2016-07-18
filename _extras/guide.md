@@ -140,8 +140,6 @@ working in teams or not, because it is
 *   This is a good moment to show a diff with a graphical diff tool. If you
     skip it because you're short on time, show it once in GitHub.
 
-## [Exploring History]({{ site.github.url }}/05-history/)
-
 *   One thing may cause confusion is recovering old versions.  If, instead of
     doing `$ git checkout f22b25e mars.txt`, someone does `$ git checkout
     f22b25e`, they wind up in the "detached HEAD" state and confusion abounds.
