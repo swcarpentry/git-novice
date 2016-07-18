@@ -32,7 +32,8 @@ $ git config --global color.ui "auto"
 
 (Please use your own name and email address instead of Dracula's. 
 This user name and email will be associated with your subsequent Git activity, 
-which means that any changes pushed to GitHub in a later lesson will include this information. 
+which means that any changes pushed to GitHub in a later lesson will include this information.
+Please use the same email address as you use for your [GitHub](https://github.com) if you hav one already or create one later in this lesson.
 If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private](https://help.github.com/articles/keeping-your-email-address-private/).)
 
 He also has to set his favorite text editor, following this table:
@@ -45,11 +46,21 @@ He also has to set his favorite text editor, following this table:
 | Sublime Text (Mac) | `$ git config --global core.editor "subl -n -w"` |
 | Sublime Text (Win, 32-bit install) | `$ git config --global core.editor "'c:/program files (x86)/sublime text 3/sublime_text.exe' -w"` |
 | Sublime Text (Win, 64-bit install) | `$ git config --global core.editor "'c:/program files/sublime text 3/sublime_text.exe' -w"` |
-| Notepad++ (Win)    | `$ git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
+| Notepad++ (Win)    | `$ git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"` `$ alias notepad="'c:/program files (x86)/Notepad++/notepad++.exe'"`|
 | Kate (Linux)       | `$ git config --global core.editor "kate"`       |
 | Gedit (Linux)      | `$ git config --global core.editor "gedit -s -w"`   |
+| Scratch (Linux)       | `$ git config --global core.editor "scratch-text-editor"`  |
 | emacs              | `$ git config --global core.editor "emacs"`   |
 | vim                | `$ git config --global core.editor "vim"`   |
+
+It is possible to reconfigure the text editor for Git whenever you want to change it.
+
+> ## Exiting Vim {.callout}
+>
+> Note that `vim` is the default editor for for many programs, if you haven't used `vim` before and wish to exit a session, type `Esc` then `:q!` and `Enter`.
+>
+
+
 
 The four commands we just ran above only need to be run once: the flag `--global` tells Git
 to use the settings for every project, in your user account, on this computer.
