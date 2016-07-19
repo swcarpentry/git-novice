@@ -298,3 +298,21 @@ ol {
 span.fold-unfold {
   margin-left: 1em;
   opacity: 0.5; }
+/* version added automatically */
+div.navbar-header::before {
+    content: "Version 2016.06";
+    font-size: 10px;
+    font-family: monospace;
+    font-weight: bold;
+    line-height: 1;
+    /* */
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    /* */
+    color: white;
+    background: rgb(43, 57, 144);
+    padding: 3px;
+    border: 1px solid white;
+}
