@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2016-07-19 12:34:30 +0200">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="search-domain" value="/swc-releases/2016.06/git-novice">
+    <link rel="stylesheet" type="text/css" href="/swc-releases/2016.06/git-novice/assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/swc-releases/2016.06/git-novice/assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="/swc-releases/2016.06/git-novice/assets/css/lesson.css" />
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon-swc.ico" />
+    
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <title>Version Control with Git: Licenses</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+      <a href="https://software-carpentry.org" class="pull-left">
+        <img class="navbar-logo" src="/swc-releases/2016.06/git-novice/assets/img/swc-icon-blue.svg" alt="Software Carpentry logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="/swc-releases/2016.06/git-novice/">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="/swc-releases/2016.06/git-novice/conduct/">Code of Conduct</a></li>
+
+	
+        
+        <li><a href="/swc-releases/2016.06/git-novice/setup/">Setup</a></li>
+        <li><a href="/swc-releases/2016.06/git-novice/reference/">Reference</a></li>
+        <li class="dropdown">
+          <a href="/swc-releases/2016.06/git-novice/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="/swc-releases/2016.06/git-novice/01-basics/">Automated Version Control</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/02-setup/">Setting Up Git</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/03-create/">Creating a Repository</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/04-changes/">Tracking Changes</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/05-history/">Exploring History</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/06-ignore/">Ignoring Things</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/07-github/">Remotes in GitHub</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/08-collab/">Collaborating</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/09-conflict/">Conflicts</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/10-open/">Open Science</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/11-licensing/">Licensing</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/12-citation/">Citation</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/13-hosting/">Hosting</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/14-supplemental-rstudio/">Using Git from RStudio</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="/swc-releases/2016.06/git-novice/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="/swc-releases/2016.06/git-novice/about/">About</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/discuss/">Discussion</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/figures/">Figures</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/guide/">Instructor's Guide</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="/swc-releases/2016.06/git-novice/license/">License</a></li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search...">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<h1 class="maintitle"><a href="/swc-releases/2016.06/git-novice/">Version Control with Git</a>: Licenses</h1>
+
+<h2 id="instructional-material">Instructional Material</h2>
+
+<p>All Software Carpentry and Data Carpentry instructional material is
+made available under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution
+license</a>. The following is a human-readable summary of
+(and not a substitute for) the <a href="https://creativecommons.org/licenses/by/4.0/legalcode">full legal text of the CC BY 4.0
+license</a>.</p>
+
+<p>You are free:</p>
+
+<ul>
+  <li>to <strong>Share</strong>—copy and redistribute the material in any medium or format</li>
+  <li>to <strong>Adapt</strong>—remix, transform, and build upon the material</li>
+</ul>
+
+<p>for any purpose, even commercially.</p>
+
+<p>The licensor cannot revoke these freedoms as long as you follow the
+license terms.</p>
+
+<p>Under the following terms:</p>
+
+<ul>
+  <li><strong>Attribution</strong>—You must give appropriate credit (mentioning that
+your work is derived from work that is Copyright © Software
+Carpentry and, where practical, linking to
+http://software-carpentry.org/), provide a <a href="https://creativecommons.org/licenses/by/4.0/">link to the
+license</a>, and indicate if changes were made. You may do
+so in any reasonable manner, but not in any way that suggests the
+licensor endorses you or your use.</li>
+</ul>
+
+<p><strong>No additional restrictions</strong>—You may not apply legal terms or
+technological measures that legally restrict others from doing
+anything the license permits.  With the understanding that:</p>
+
+<p>Notices:</p>
+
+<ul>
+  <li>You do not have to comply with the license for elements of the
+material in the public domain or where your use is permitted by an
+applicable exception or limitation.</li>
+  <li>No warranties are given. The license may not give you all of the
+permissions necessary for your intended use. For example, other
+rights such as publicity, privacy, or moral rights may limit how you
+use the material.</li>
+</ul>
+
+<h2 id="software">Software</h2>
+
+<p>Except where otherwise noted, the example programs and other software
+provided by Software Carpentry and Data Carpentry are made available under the
+<a href="http://opensource.org">OSI</a>-approved
+<a href="http://opensource.org/licenses/mit-license.html">MIT license</a>.</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+“Software”), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+<h2 id="trademark">Trademark</h2>
+
+<p>“Software Carpentry” an “Data Carpentry” and their respective logos
+are registered trademarks of <a href="http://numfocus.org/">NumFOCUS</a>.</p>
+
+
+
+      
+      <hr/>
+<footer>
+  <div class="row">
+    <div class="col-md-6" align="left">
+      <h4>
+	Copyright &copy; 2016
+	<a href="https://software-carpentry.org">Software Carpentry Foundation</a>
+	
+      </h4>
+    </div>
+    <div class="col-md-6" align="right">
+      <h4>
+	<a href="/">Source</a>
+	/
+	<a href="/blob/gh-pages/CONTRIBUTING.md">Contributing</a>
+	/
+	<a href="mailto:lessons@software-carpentry.org">Contact</a>
+      </h4>
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    <script src="/swc-releases/2016.06/git-novice/assets/js/jquery.min.js"></script>
+<script src="/swc-releases/2016.06/git-novice/assets/js/bootstrap.min.js"></script>
+<script src="/swc-releases/2016.06/git-novice/assets/js/lesson.js"></script>
+
+  </body>
+</html>

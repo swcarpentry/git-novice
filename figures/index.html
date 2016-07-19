@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2016-07-19 12:34:30 +0200">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="search-domain" value="/swc-releases/2016.06/git-novice">
+    <link rel="stylesheet" type="text/css" href="/swc-releases/2016.06/git-novice/assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/swc-releases/2016.06/git-novice/assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="/swc-releases/2016.06/git-novice/assets/css/lesson.css" />
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon-swc.ico" />
+    
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <title>Version Control with Git: Figures</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+      <a href="https://software-carpentry.org" class="pull-left">
+        <img class="navbar-logo" src="/swc-releases/2016.06/git-novice/assets/img/swc-icon-blue.svg" alt="Software Carpentry logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="/swc-releases/2016.06/git-novice/">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="/swc-releases/2016.06/git-novice/conduct/">Code of Conduct</a></li>
+
+	
+        
+        <li><a href="/swc-releases/2016.06/git-novice/setup/">Setup</a></li>
+        <li><a href="/swc-releases/2016.06/git-novice/reference/">Reference</a></li>
+        <li class="dropdown">
+          <a href="/swc-releases/2016.06/git-novice/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="/swc-releases/2016.06/git-novice/01-basics/">Automated Version Control</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/02-setup/">Setting Up Git</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/03-create/">Creating a Repository</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/04-changes/">Tracking Changes</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/05-history/">Exploring History</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/06-ignore/">Ignoring Things</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/07-github/">Remotes in GitHub</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/08-collab/">Collaborating</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/09-conflict/">Conflicts</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/10-open/">Open Science</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/11-licensing/">Licensing</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/12-citation/">Citation</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/13-hosting/">Hosting</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/14-supplemental-rstudio/">Using Git from RStudio</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="/swc-releases/2016.06/git-novice/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="/swc-releases/2016.06/git-novice/about/">About</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/discuss/">Discussion</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/figures/">Figures</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/guide/">Instructor's Guide</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="/swc-releases/2016.06/git-novice/license/">License</a></li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search...">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<h1 class="maintitle"><a href="/swc-releases/2016.06/git-novice/">Version Control with Git</a>: Figures</h1>
+
+<p><img alt="Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com/comics/archive_print.php?comicid=1531" src="/swc-releases/2016.06/git-novice/fig/phd101212s.gif" /></p>
+<hr />
+
+<p><img alt="Changes are saved sequentially" src="/swc-releases/2016.06/git-novice/fig/play-changes.svg" /></p>
+<hr />
+
+<p><img alt="Different versions can be saved" src="/swc-releases/2016.06/git-novice/fig/versions.svg" /></p>
+<hr />
+
+<p><img alt="Multiple versions can be merged" src="/swc-releases/2016.06/git-novice/fig/merge.svg" /></p>
+<hr />
+
+<p><img alt="The Git Staging Area" src="/swc-releases/2016.06/git-novice/fig/git-staging-area.svg" /></p>
+<hr />
+
+<p><img alt="The Git Commit Workflow" src="/swc-releases/2016.06/git-novice/fig/git-committing.svg" /></p>
+<hr />
+
+<p><img alt="Git Checkout" src="/swc-releases/2016.06/git-novice/fig/git-checkout.svg" /></p>
+<hr />
+
+<p><img alt="http://figshare.com/articles/How_Git_works_a_cartoon/1328266" src="/swc-releases/2016.06/git-novice/fig/git_staging.svg" /></p>
+<hr />
+
+<p><img alt="Creating a Repository on GitHub (Step 1)" src="/swc-releases/2016.06/git-novice/fig/github-create-repo-01.png" /></p>
+<hr />
+
+<p><img alt="Creating a Repository on GitHub (Step 2)" src="/swc-releases/2016.06/git-novice/fig/github-create-repo-02.png" /></p>
+<hr />
+
+<p><img alt="Creating a Repository on GitHub (Step 3)" src="/swc-releases/2016.06/git-novice/fig/github-create-repo-03.png" /></p>
+<hr />
+
+<p><img alt="Freshly-Made GitHub Repository" src="/swc-releases/2016.06/git-novice/fig/git-freshly-made-github-repo.svg" /></p>
+<hr />
+
+<p><img alt="Where to Find Repository URL on GitHub" src="/swc-releases/2016.06/git-novice/fig/github-find-repo-string.png" /></p>
+<hr />
+
+<p><img alt="Changing the Repository URL on GitHub" src="/swc-releases/2016.06/git-novice/fig/github-change-repo-string.png" /></p>
+<hr />
+
+<p><img alt="GitHub Repository After First Push" src="/swc-releases/2016.06/git-novice/fig/github-repo-after-first-push.svg" /></p>
+<hr />
+
+<p><img alt="Adding collaborators on GitHub" src="/swc-releases/2016.06/git-novice/fig/github-add-collaborators.png" /></p>
+<hr />
+
+<p><img alt="After Creating Clone of Repository" src="/swc-releases/2016.06/git-novice/fig/github-collaboration.svg" /></p>
+<hr />
+
+<p><img alt="The conflicting changes" src="/swc-releases/2016.06/git-novice/fig/conflict.svg" /></p>
+<hr />
+
+<p><img alt="" src="/swc-releases/2016.06/git-novice/fig/RStudio_screenshot_newproject.png" /></p>
+<hr />
+
+<p><img alt="" src="/swc-releases/2016.06/git-novice/fig/RStudio_screenshot_existingdirectory.png" /></p>
+<hr />
+
+<p><img alt="" src="/swc-releases/2016.06/git-novice/fig/RStudio_screenshot_navigateexisting.png" /></p>
+<hr />
+
+<p><img alt="" src="/swc-releases/2016.06/git-novice/fig/RStudio_screenshot_afterclone.png" /></p>
+<hr />
+
+<p><img alt="" src="/swc-releases/2016.06/git-novice/fig/RStudio_screenshot_editfiles.png" /></p>
+<hr />
+
+<p><img alt="" src="/swc-releases/2016.06/git-novice/fig/RStudio_screenshot_commit.png" /></p>
+<hr />
+
+<p><img alt="" src="/swc-releases/2016.06/git-novice/fig/RStudio_screenshot_review.png" /></p>
+<hr />
+
+<p><img alt="" src="/swc-releases/2016.06/git-novice/fig/RStudio_screenshot_history.png" /></p>
+<hr />
+
+<p><img alt="" src="/swc-releases/2016.06/git-novice/fig/RStudio_screenshot_viewhistory.png" /></p>
+<hr />
+
+<p><img alt="" src="/swc-releases/2016.06/git-novice/fig/RStudio_screenshot_gitignore.png" /></p>
+
+
+
+      
+      <hr/>
+<footer>
+  <div class="row">
+    <div class="col-md-6" align="left">
+      <h4>
+	Copyright &copy; 2016
+	<a href="https://software-carpentry.org">Software Carpentry Foundation</a>
+	
+      </h4>
+    </div>
+    <div class="col-md-6" align="right">
+      <h4>
+	<a href="/">Source</a>
+	/
+	<a href="/blob/gh-pages/CONTRIBUTING.md">Contributing</a>
+	/
+	<a href="mailto:lessons@software-carpentry.org">Contact</a>
+      </h4>
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    <script src="/swc-releases/2016.06/git-novice/assets/js/jquery.min.js"></script>
+<script src="/swc-releases/2016.06/git-novice/assets/js/bootstrap.min.js"></script>
+<script src="/swc-releases/2016.06/git-novice/assets/js/lesson.js"></script>
+
+  </body>
+</html>

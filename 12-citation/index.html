@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2016-07-19 12:34:30 +0200">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="search-domain" value="/swc-releases/2016.06/git-novice">
+    <link rel="stylesheet" type="text/css" href="/swc-releases/2016.06/git-novice/assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/swc-releases/2016.06/git-novice/assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="/swc-releases/2016.06/git-novice/assets/css/lesson.css" />
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon-swc.ico" />
+    
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <title>Version Control with Git: Citation</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+      <a href="https://software-carpentry.org" class="pull-left">
+        <img class="navbar-logo" src="/swc-releases/2016.06/git-novice/assets/img/swc-icon-blue.svg" alt="Software Carpentry logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="/swc-releases/2016.06/git-novice/">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="/swc-releases/2016.06/git-novice/conduct/">Code of Conduct</a></li>
+
+	
+        
+        <li><a href="/swc-releases/2016.06/git-novice/setup/">Setup</a></li>
+        <li><a href="/swc-releases/2016.06/git-novice/reference/">Reference</a></li>
+        <li class="dropdown">
+          <a href="/swc-releases/2016.06/git-novice/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="/swc-releases/2016.06/git-novice/01-basics/">Automated Version Control</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/02-setup/">Setting Up Git</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/03-create/">Creating a Repository</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/04-changes/">Tracking Changes</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/05-history/">Exploring History</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/06-ignore/">Ignoring Things</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/07-github/">Remotes in GitHub</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/08-collab/">Collaborating</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/09-conflict/">Conflicts</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/10-open/">Open Science</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/11-licensing/">Licensing</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/12-citation/">Citation</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/13-hosting/">Hosting</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/14-supplemental-rstudio/">Using Git from RStudio</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="/swc-releases/2016.06/git-novice/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="/swc-releases/2016.06/git-novice/about/">About</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/discuss/">Discussion</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/figures/">Figures</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/guide/">Instructor's Guide</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="/swc-releases/2016.06/git-novice/license/">License</a></li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search...">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+<div class="row">
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="/swc-releases/2016.06/git-novice/11-licensing/"><span class="glyphicon glyphicon-menu-left"></span></a>
+      
+    </h3>
+  </div>
+  <div class="col-md-10">
+    <h3 class="maintitle"><a href="/swc-releases/2016.06/git-novice/">Version Control with Git</a></h3>
+    <h1 class="maintitle">Citation</h1>
+  </div>
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="/swc-releases/2016.06/git-novice/13-hosting/"><span class="glyphicon glyphicon-menu-right"></span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+<blockquote class="objectives">
+  <h2>Overview</h2>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Teaching:</strong> 2 min
+      </br>
+      <strong>Exercises:</strong> 0 min
+    </div>
+    <div class="col-md-9">
+      <strong>Questions</strong>
+      <ul>
+	
+	<li><p>How can I make my work easier to cite?</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9">
+      <strong>Objectives</strong>
+      <ul>
+	
+	<li><p>Make your work easy to cite</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+  
+</blockquote>
+
+<p>You may want to include a file called <code class="highlighter-rouge">CITATION</code> or <code class="highlighter-rouge">CITATION.txt</code>
+that describes how to reference your project;
+the <a href="https://github.com/swcarpentry/website/blob/gh-pages/CITATION">one for Software
+Carpentry</a>
+states:</p>
+
+<div class="source highlighter-rouge"><pre class="highlight"><code>To reference Software Carpentry in publications, please cite both of the following:
+
+Greg Wilson: "Software Carpentry: Getting Scientists to Write Better
+Code by Making Them More Productive".  Computing in Science &amp;
+Engineering, Nov-Dec 2006.
+
+Greg Wilson: "Software Carpentry: Lessons Learned". arXiv:1307.5448,
+July 2013.
+
+@article{wilson-software-carpentry-2006,
+    author =  {Greg Wilson},
+    title =   {Software Carpentry: Getting Scientists to Write Better Code by Making Them More Productive},
+    journal = {Computing in Science \&amp; Engineering},
+    month =   {November--December},
+    year =    {2006},
+}
+
+@online{wilson-software-carpentry-2013,
+  author      = {Greg Wilson},
+  title       = {Software Carpentry: Lessons Learned},
+  version     = {1},
+  date        = {2013-07-20},
+  eprinttype  = {arxiv},
+  eprint      = {1307.5448}
+}
+</code></pre>
+</div>
+
+<blockquote class="keypoints">
+  <h2>Key Points</h2>
+  <ul>
+    
+    <li><p>Add a CITATION file to a repository to explain how you want your work cited.</p>
+</li>
+    
+  </ul>
+</blockquote>
+
+
+      
+      <hr/>
+<footer>
+  <div class="row">
+    <div class="col-md-6" align="left">
+      <h4>
+	Copyright &copy; 2016
+	<a href="https://software-carpentry.org">Software Carpentry Foundation</a>
+	
+      </h4>
+    </div>
+    <div class="col-md-6" align="right">
+      <h4>
+	<a href="/">Source</a>
+	/
+	<a href="/blob/gh-pages/CONTRIBUTING.md">Contributing</a>
+	/
+	<a href="mailto:lessons@software-carpentry.org">Contact</a>
+      </h4>
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    <script src="/swc-releases/2016.06/git-novice/assets/js/jquery.min.js"></script>
+<script src="/swc-releases/2016.06/git-novice/assets/js/bootstrap.min.js"></script>
+<script src="/swc-releases/2016.06/git-novice/assets/js/lesson.js"></script>
+
+  </body>
+</html>

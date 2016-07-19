@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2016-07-19 12:34:30 +0200">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="search-domain" value="/swc-releases/2016.06/git-novice">
+    <link rel="stylesheet" type="text/css" href="/swc-releases/2016.06/git-novice/assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/swc-releases/2016.06/git-novice/assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="/swc-releases/2016.06/git-novice/assets/css/lesson.css" />
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon-swc.ico" />
+    
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <title>Version Control with Git: Tracking Changes</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+      <a href="https://software-carpentry.org" class="pull-left">
+        <img class="navbar-logo" src="/swc-releases/2016.06/git-novice/assets/img/swc-icon-blue.svg" alt="Software Carpentry logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="/swc-releases/2016.06/git-novice/">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="/swc-releases/2016.06/git-novice/conduct/">Code of Conduct</a></li>
+
+	
+        
+        <li><a href="/swc-releases/2016.06/git-novice/setup/">Setup</a></li>
+        <li><a href="/swc-releases/2016.06/git-novice/reference/">Reference</a></li>
+        <li class="dropdown">
+          <a href="/swc-releases/2016.06/git-novice/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="/swc-releases/2016.06/git-novice/01-basics/">Automated Version Control</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/02-setup/">Setting Up Git</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/03-create/">Creating a Repository</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/04-changes/">Tracking Changes</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/05-history/">Exploring History</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/06-ignore/">Ignoring Things</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/07-github/">Remotes in GitHub</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/08-collab/">Collaborating</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/09-conflict/">Conflicts</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/10-open/">Open Science</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/11-licensing/">Licensing</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/12-citation/">Citation</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/13-hosting/">Hosting</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/14-supplemental-rstudio/">Using Git from RStudio</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="/swc-releases/2016.06/git-novice/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="/swc-releases/2016.06/git-novice/about/">About</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/discuss/">Discussion</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/figures/">Figures</a></li>
+            
+            <li><a href="/swc-releases/2016.06/git-novice/guide/">Instructor's Guide</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="/swc-releases/2016.06/git-novice/license/">License</a></li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search...">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+<div class="row">
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="/swc-releases/2016.06/git-novice/03-create/"><span class="glyphicon glyphicon-menu-left"></span></a>
+      
+    </h3>
+  </div>
+  <div class="col-md-10">
+    <h3 class="maintitle"><a href="/swc-releases/2016.06/git-novice/">Version Control with Git</a></h3>
+    <h1 class="maintitle">Tracking Changes</h1>
+  </div>
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="/swc-releases/2016.06/git-novice/05-history/"><span class="glyphicon glyphicon-menu-right"></span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+<blockquote class="objectives">
+  <h2>Overview</h2>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Teaching:</strong> 20 min
+      </br>
+      <strong>Exercises:</strong> 0 min
+    </div>
+    <div class="col-md-9">
+      <strong>Questions</strong>
+      <ul>
+	
+	<li><p>How do I record changes in Git?</p>
+</li>
+	
+	<li><p>How do I check the status of my version control repository?</p>
+</li>
+	
+	<li><p>How do I record notes about what changes I made and why?</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9">
+      <strong>Objectives</strong>
+      <ul>
+	
+	<li><p>Go through the modify-add-commit cycle for a single file.</p>
+</li>
+	
+	<li><p>Explain where information is stored at each stage of Git commit workflow.</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+  
+</blockquote>
+
+<p>Let’s create a file called <code class="highlighter-rouge">mars.txt</code> that contains some notes
+about the Red Planet’s suitability as a base.
+(We’ll use <code class="highlighter-rouge">nano</code> to edit the file;
+you can use whatever editor you like.
+In particular, this does not have to be the <code class="highlighter-rouge">core.editor</code> you set globally earlier.)</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ nano mars.txt
+</code></pre>
+</div>
+
+<p>Type the text below into the <code class="highlighter-rouge">mars.txt</code> file:</p>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>Cold and dry, but everything is my favorite color
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">mars.txt</code> now contains a single line, which we can see by running:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ ls
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>mars.txt
+</code></pre>
+</div>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ cat mars.txt
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>Cold and dry, but everything is my favorite color
+</code></pre>
+</div>
+
+<p>If we check the status of our project again,
+Git tells us that it’s noticed the new file:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git status
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code># On branch master
+#
+# Initial commit
+#
+# Untracked files:
+#   (use "git add &lt;file&gt;..." to include in what will be committed)
+#
+#	mars.txt
+nothing added to commit but untracked files present (use "git add" to track)
+</code></pre>
+</div>
+
+<p>The “untracked files” message means that there’s a file in the directory
+that Git isn’t keeping track of.
+We can tell Git to track a file using <code class="highlighter-rouge">git add</code>:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git add mars.txt
+</code></pre>
+</div>
+
+<p>and then check that the right thing happened:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git status
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code># On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#   (use "git rm --cached &lt;file&gt;..." to unstage)
+#
+#	new file:   mars.txt
+#
+</code></pre>
+</div>
+
+<p>Git now knows that it’s supposed to keep track of <code class="highlighter-rouge">mars.txt</code>,
+but it hasn’t recorded these changes as a commit yet.
+To get it to do that,
+we need to run one more command:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git commit -m "Start notes on Mars as a base"
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>[master (root-commit) f22b25e] Start notes on Mars as a base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 mars.txt
+</code></pre>
+</div>
+
+<p>When we run <code class="highlighter-rouge">git commit</code>,
+Git takes everything we have told it to save by using <code class="highlighter-rouge">git add</code>
+and stores a copy permanently inside the special <code class="highlighter-rouge">.git</code> directory.
+This permanent copy is called a <a href="reference.html#commit">commit</a>
+(or <a href="reference.html#revision">revision</a>) and its short identifier is <code class="highlighter-rouge">f22b25e</code>
+(Your commit may have another identifier.)</p>
+
+<p>We use the <code class="highlighter-rouge">-m</code> flag (for “message”)
+to record a short, descriptive, and specific comment that will help us remember later on what we did and why.
+If we just run <code class="highlighter-rouge">git commit</code> without the <code class="highlighter-rouge">-m</code> option,
+Git will launch <code class="highlighter-rouge">nano</code> (or whatever other editor we configured as <code class="highlighter-rouge">core.editor</code>)
+so that we can write a longer message.</p>
+
+<p><a href="http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">Good commit messages</a> start with a brief (&lt;50 characters) summary of
+changes made in the commit.  If you want to go into more detail, add
+a blank line between the summary line and your additional notes.</p>
+
+<p>If we run <code class="highlighter-rouge">git status</code> now:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git status
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code># On branch master
+nothing to commit, working directory clean
+</code></pre>
+</div>
+
+<p>it tells us everything is up to date.
+If we want to know what we’ve done recently,
+we can ask Git to show us the project’s history using <code class="highlighter-rouge">git log</code>:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git log
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
+Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;
+Date:   Thu Aug 22 09:51:46 2013 -0400
+
+    Start notes on Mars as a base
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">git log</code> lists all commits  made to a repository in reverse chronological order.
+The listing for each commit includes
+the commit’s full identifier
+(which starts with the same characters as
+the short identifier printed by the <code class="highlighter-rouge">git commit</code> command earlier),
+the commit’s author,
+when it was created,
+and the log message Git was given when the commit was created.</p>
+
+<blockquote class="callout">
+  <h2 id="where-are-my-changes">Where Are My Changes?</h2>
+
+  <p>If we run <code class="highlighter-rouge">ls</code> at this point, we will still see just one file called <code class="highlighter-rouge">mars.txt</code>.
+That’s because Git saves information about files’ history
+in the special <code class="highlighter-rouge">.git</code> directory mentioned earlier
+so that our filesystem doesn’t become cluttered
+(and so that we can’t accidentally edit or delete an old version).</p>
+</blockquote>
+
+<p>Now suppose Dracula adds more information to the file.
+(Again, we’ll edit with <code class="highlighter-rouge">nano</code> and then <code class="highlighter-rouge">cat</code> the file to show its contents;
+you may use a different editor, and don’t need to <code class="highlighter-rouge">cat</code>.)</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ nano mars.txt
+$ cat mars.txt
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+</code></pre>
+</div>
+
+<p>When we run <code class="highlighter-rouge">git status</code> now,
+it tells us that a file it already knows about has been modified:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git status
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code># On branch master
+# Changes not staged for commit:
+#   (use "git add &lt;file&gt;..." to update what will be committed)
+#   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+#
+#	modified:   mars.txt
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+</code></pre>
+</div>
+
+<p>The last line is the key phrase:
+“no changes added to commit”.
+We have changed this file,
+but we haven’t told Git we will want to save those changes
+(which we do with <code class="highlighter-rouge">git add</code>)
+nor have we saved them (which we do with <code class="highlighter-rouge">git commit</code>).
+So let’s do that now. It is good practice to always review
+our changes before saving them. We do this using <code class="highlighter-rouge">git diff</code>.
+This shows us the differences between the current state
+of the file and the most recently saved version:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git diff
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code><span class="gh">diff --git a/mars.txt b/mars.txt
+index df0654a..315bf3a 100644
+</span><span class="gd">--- a/mars.txt
+</span><span class="gi">+++ b/mars.txt
+</span><span class="gu">@@ -1 +1,2 @@
+</span> Cold and dry, but everything is my favorite color
+<span class="gi">+The two moons may be a problem for Wolfman
+</span></code></pre>
+</div>
+
+<p>The output is cryptic because
+it is actually a series of commands for tools like editors and <code class="highlighter-rouge">patch</code>
+telling them how to reconstruct one file given the other.
+If we break it down into pieces:</p>
+
+<ol>
+  <li>The first line tells us that Git is producing output similar to the Unix <code class="highlighter-rouge">diff</code> command
+comparing the old and new versions of the file.</li>
+  <li>The second line tells exactly which versions of the file
+Git is comparing;
+<code class="highlighter-rouge">df0654a</code> and <code class="highlighter-rouge">315bf3a</code> are unique computer-generated labels for those versions.</li>
+  <li>The third and fourth lines once again show the name of the file being changed.</li>
+  <li>The remaining lines are the most interesting, they show us the actual differences
+and the lines on which they occur.
+In particular,
+the <code class="highlighter-rouge">+</code> markers in the first column show where we have added lines.</li>
+</ol>
+
+<p>After reviewing our change, it’s time to commit it:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
+$ git status
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code># On branch master
+# Changes not staged for commit:
+#   (use "git add &lt;file&gt;..." to update what will be committed)
+#   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+#
+#	modified:   mars.txt
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+</code></pre>
+</div>
+
+<p>Whoops:
+Git won’t commit because we didn’t use <code class="highlighter-rouge">git add</code> first.
+Let’s fix that:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git add mars.txt
+$ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>[master 34961b1] Add concerns about effects of Mars' moons on Wolfman
+ 1 file changed, 1 insertion(+)
+</code></pre>
+</div>
+
+<p>Git insists that we add files to the set we want to commit
+before actually committing anything
+because we may not want to commit everything at once.
+For example,
+suppose we’re adding a few citations to our supervisor’s work
+to our thesis.
+We might want to commit those additions,
+and the corresponding addition to the bibliography,
+but <em>not</em> commit the work we’re doing on the conclusion
+(which we haven’t finished yet).</p>
+
+<p>To allow for this,
+Git has a special <em>staging area</em>
+where it keeps track of things that have been added to
+the current <a href="reference.html#change-set">change set</a>
+but not yet committed.</p>
+
+<blockquote class="callout">
+  <h2 id="staging-area">Staging Area</h2>
+
+  <p>If you think of Git as taking snapshots of changes over the life of a project,
+<code class="highlighter-rouge">git add</code> specifies <em>what</em> will go in a snapshot
+(putting things in the staging area),
+and <code class="highlighter-rouge">git commit</code> then <em>actually takes</em> the snapshot, and
+makes a permanent record of it (as a commit).
+If you don’t have anything staged when you type <code class="highlighter-rouge">git commit</code>,
+Git will prompt you to use <code class="highlighter-rouge">git commit -a</code> or <code class="highlighter-rouge">git commit --all</code>,
+which is kind of like gathering <em>everyone</em> for the picture!
+However, it’s almost always better to
+explicitly add things to the staging area, because you might
+commit changes you forgot you made. (Going back to snapshots,
+you might get the extra with incomplete makeup walking on
+the stage for the snapshot because you used <code class="highlighter-rouge">-a</code>!)
+Try to stage things manually,
+or you might find yourself searching for “git undo commit” more
+than you would like!</p>
+</blockquote>
+
+<p><img src="/swc-releases/2016.06/git-novice/fig/git-staging-area.svg" alt="The Git Staging Area" /></p>
+
+<p>Let’s watch as our changes to a file move from our editor
+to the staging area
+and into long-term storage.
+First,
+we’ll add another line to the file:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ nano mars.txt
+$ cat mars.txt
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+But the Mummy will appreciate the lack of humidity
+</code></pre>
+</div>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git diff
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code><span class="gh">diff --git a/mars.txt b/mars.txt
+index 315bf3a..b36abfd 100644
+</span><span class="gd">--- a/mars.txt
+</span><span class="gi">+++ b/mars.txt
+</span><span class="gu">@@ -1,2 +1,3 @@
+</span> Cold and dry, but everything is my favorite color
+ The two moons may be a problem for Wolfman
+<span class="gi">+But the Mummy will appreciate the lack of humidity
+</span></code></pre>
+</div>
+
+<p>So far, so good:
+we’ve added one line to the end of the file
+(shown with a <code class="highlighter-rouge">+</code> in the first column).
+Now let’s put that change in the staging area
+and see what <code class="highlighter-rouge">git diff</code> reports:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git add mars.txt
+$ git diff
+</code></pre>
+</div>
+
+<p>There is no output:
+as far as Git can tell,
+there’s no difference between what it’s been asked to save permanently
+and what’s currently in the directory.
+However,
+if we do this:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git diff --staged
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code><span class="gh">diff --git a/mars.txt b/mars.txt
+index 315bf3a..b36abfd 100644
+</span><span class="gd">--- a/mars.txt
+</span><span class="gi">+++ b/mars.txt
+</span><span class="gu">@@ -1,2 +1,3 @@
+</span> Cold and dry, but everything is my favorite color
+ The two moons may be a problem for Wolfman
+<span class="gi">+But the Mummy will appreciate the lack of humidity
+</span></code></pre>
+</div>
+
+<p>it shows us the difference between
+the last committed change
+and what’s in the staging area.
+Let’s save our changes:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git commit -m "Discuss concerns about Mars' climate for Mummy"
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>[master 005937f] Discuss concerns about Mars' climate for Mummy
+ 1 file changed, 1 insertion(+)
+</code></pre>
+</div>
+
+<p>check our status:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git status
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code># On branch master
+nothing to commit, working directory clean
+</code></pre>
+</div>
+
+<p>and look at the history of what we’ve done so far:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git log
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
+Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;
+Date:   Thu Aug 22 10:14:07 2013 -0400
+
+    Discuss concerns about Mars' climate for Mummy
+
+commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
+Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;
+Date:   Thu Aug 22 10:07:21 2013 -0400
+
+    Add concerns about effects of Mars' moons on Wolfman
+
+commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
+Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;
+Date:   Thu Aug 22 09:51:46 2013 -0400
+
+    Start notes on Mars as a base
+</code></pre>
+</div>
+
+<p>To recap, when we want to add changes to our repository,
+we first need to add the changed files to the staging area
+(<code class="highlighter-rouge">git add</code>) and then commit the staged changes to the
+repository (<code class="highlighter-rouge">git commit</code>):</p>
+
+<p><img src="/swc-releases/2016.06/git-novice/fig/git-committing.svg" alt="The Git Commit Workflow" /></p>
+
+<blockquote class="challenge">
+  <h2 id="choosing-a-commit-message">Choosing a Commit Message</h2>
+
+  <p>Which of the following commit messages would be most appropriate for the
+last commit made to <code class="highlighter-rouge">mars.txt</code>?</p>
+
+  <ol>
+    <li>“Changes”</li>
+    <li>“Added line ‘But the Mummy will appreciate the lack of humidity’ to mars.txt”</li>
+    <li>“Discuss effects of Mars’ climate on the Mummy”</li>
+  </ol>
+
+  <blockquote class="solution">
+    <h2 id="solution">Solution</h2>
+    <p>Answer 1 is not descriptive enough,
+and answer 2 is too descriptive and redundant,
+but answer 3 is good: short but descriptive.</p>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="committing-changes-to-git">Committing Changes to Git</h2>
+
+  <p>Which command(s) below would save the changes of <code class="highlighter-rouge">myfile.txt</code>
+to my local Git repository?</p>
+
+  <ol>
+    <li>
+      <p><code class="highlighter-rouge">$ git commit -m "my recent changes"</code></p>
+    </li>
+    <li>
+      <p><code class="highlighter-rouge">$ git init myfile.txt</code><br />
+<code class="highlighter-rouge">$ git commit -m "my recent changes"</code></p>
+    </li>
+    <li>
+      <p><code class="highlighter-rouge">$ git add myfile.txt</code><br />
+<code class="highlighter-rouge">$ git commit -m "my recent changes"</code></p>
+    </li>
+    <li>
+      <p><code class="highlighter-rouge">$ git commit -m myfile.txt "my recent changes"</code></p>
+    </li>
+  </ol>
+
+  <blockquote class="solution">
+    <h2 id="solution-1">Solution</h2>
+
+    <ol>
+      <li>Would only create a commit if files have already been staged.</li>
+      <li>Would try to create a new repository.</li>
+      <li>Is correct: first add the file to the staging area, then commit.</li>
+      <li>Would try to commit a file “my recent changes” with the message myfile.txt.</li>
+    </ol>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="committing-multiple-files">Committing Multiple Files</h2>
+
+  <p>The staging area can hold changes from any number of files
+that you want to commit as a single snapshot.</p>
+
+  <ol>
+    <li>Add some text to <code class="highlighter-rouge">mars.txt</code> noting your decision
+to consider Venus as a base</li>
+    <li>Create a new file <code class="highlighter-rouge">venus.txt</code> with your initial thoughts
+about Venus as a base for you and your friends</li>
+    <li>Add changes from both files to the staging area,
+and commit those changes.</li>
+  </ol>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="author-and-committer">Author and Committer</h2>
+
+  <p>For each of the commits you have done, Git stored your name twice.
+You are named as the author and as the committer. You can observe
+that by telling Git to show you more information about your last
+commits:</p>
+
+  <div class="bash highlighter-rouge"><pre class="highlight"><code>$ git log --format=full
+</code></pre>
+  </div>
+
+  <p>When commiting you can name someone else as the author:</p>
+
+  <div class="bash highlighter-rouge"><pre class="highlight"><code>$ git commit --author="Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;"
+</code></pre>
+  </div>
+
+  <p>Create a new repository and create two commits: one without the
+<code class="highlighter-rouge">--author</code> option and one by naming a colleague of yours as the
+author. Run <code class="highlighter-rouge">git log</code> and <code class="highlighter-rouge">git log --format=full</code>. Think about ways
+how that can allow you to collaborate with your colleagues.</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-2">Solution</h2>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ git add me.txt
+$ git commit -m "Updated Vlad's bio." --author="Frank N. Stein &lt;franky@monster.com&gt;"
+[master 4162a51] Updated Vlad's bio.
+Author: Frank N. Stein &lt;franky@monster.com&gt;
+1 file changed, 2 insertions(+), 2 deletions(-)
+
+$ git log --format=full
+commit 4162a51b273ba799a9d395dd70c45d96dba4e2ff
+Author: Frank N. Stein &lt;franky@monster.com&gt;
+Commit: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;
+
+Updated Vlad's bio.
+
+commit aaa3271e5e26f75f11892718e83a3e2743fab8ea
+Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;
+Commit: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;
+
+Vlad's initial bio.
+</code></pre>
+    </div>
+  </blockquote>
+</blockquote>
+
+
+<blockquote class="keypoints">
+  <h2>Key Points</h2>
+  <ul>
+    
+    <li><p><code class="highlighter-rouge">git status</code> shows the status of a repository.</p>
+</li>
+    
+    <li><p>Files can be stored in a project’s working directory (which users see), the staging area (where the next commit is being built up) and the local repository (where commits are permanently recorded).</p>
+</li>
+    
+    <li><p><code class="highlighter-rouge">git add</code> puts files in the staging area.</p>
+</li>
+    
+    <li><p><code class="highlighter-rouge">git commit</code> saves the staged content as a new commit in the local repository.</p>
+</li>
+    
+    <li><p>Always write a log message when committing changes.</p>
+</li>
+    
+  </ul>
+</blockquote>
+
+
+      
+      <hr/>
+<footer>
+  <div class="row">
+    <div class="col-md-6" align="left">
+      <h4>
+	Copyright &copy; 2016
+	<a href="https://software-carpentry.org">Software Carpentry Foundation</a>
+	
+      </h4>
+    </div>
+    <div class="col-md-6" align="right">
+      <h4>
+	<a href="/">Source</a>
+	/
+	<a href="/blob/gh-pages/CONTRIBUTING.md">Contributing</a>
+	/
+	<a href="mailto:lessons@software-carpentry.org">Contact</a>
+      </h4>
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    <script src="/swc-releases/2016.06/git-novice/assets/js/jquery.min.js"></script>
+<script src="/swc-releases/2016.06/git-novice/assets/js/bootstrap.min.js"></script>
+<script src="/swc-releases/2016.06/git-novice/assets/js/lesson.js"></script>
+
+  </body>
+</html>
