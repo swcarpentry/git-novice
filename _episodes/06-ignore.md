@@ -156,7 +156,7 @@ nothing to commit, working directory clean
 >
 > > ## Solution
 > > 
-> > As with most programming solutions, there are a few ways that you
+> > As with most programming issues, there are a few ways that you
 > > could solve this. If you only want to ignore the contents of 
 > > `results/plots`, you can change your `.gitignore` to ignore 
 > > only the `/plots/` subfolder by adding the following line to 
@@ -168,7 +168,8 @@ nothing to commit, working directory clean
 > > `results/data`, then you can add `results/` to your .gitignore 
 > > and create an exception for the `results/data/` folder. 
 > > The next challenge will cover this type of solution. 
-> {: .solution}wh
+> >
+> {: .solution} 
 {: .challenge}
 
 > ## Including Specific Files
@@ -180,6 +181,7 @@ nothing to commit, working directory clean
 > > ## Solution
 > > 
 > > You would add the following two lines to your .gitignore:
+> >
 > > ~~~
 > > *.data           # ignore all data files
 > > !final.data      # except final.data
@@ -204,7 +206,7 @@ nothing to commit, working directory clean
 > files in `result/data/position/gps`
 > Hint: What does appending `**` to a rule accomplish?
 >
-> > ## Challenge
+> > ## Solution
 > >
 > > Appending ** to a rule will match everything inside that folder, to 
 > > infinite depth. For this problem, appending your .gitignore with 
@@ -225,7 +227,7 @@ nothing to commit, working directory clean
 >
 > What will be the result?
 >
-> > ## Challenge
+> > ## Solution
 > >
 > > The ! modifier will negate an entry from a previously defined ignore pattern. 
 > > Because the `!*.data` entry negates all of the previous .data files in the .gitignore,
@@ -247,9 +249,9 @@ nothing to commit, working directory clean
 >
 > 4. Discuss with your neighbor what other types of files could reside in your directory that you do not want to track and thus would exclude via `.gitignore`.
 >
-> > ## Challenge
+> > ## Solution
 > >
-> > 1. add a `log_*` or `log*` line to your .gitignore
-> > 3. track `log_01` using `git add -f log_01` 
+> > 1. append either `log_*`  or  `log*`  as a new entry in your .gitignore
+> > 3. track `log_01` using   `git add -f log_01` 
 > {: .solution}
 {: .challenge}
