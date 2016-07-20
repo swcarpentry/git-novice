@@ -7,7 +7,7 @@ questions:
 - "How do I check the status of my version control repository?"
 - "How do I record notes about what changes I made and why?"
 objectives:
-- "Go through the modify-add-commit cycle for a single file."
+- "Go through the modify-add-commit cycle for one or more files."
 - "Explain where information is stored at each stage of Git commit workflow."
 keypoints:
 - "`git status` shows the status of a repository."
