@@ -306,8 +306,9 @@ $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
 {: .output}
 
 Git insists that we add files to the set we want to commit
-before actually committing anything
-because we may not want to commit everything at once.
+before actually committing anything. This allows us to commit our
+changes in stages and capture changes in logical portions rather than
+only large batches.
 For example,
 suppose we're adding a few citations to our supervisor's work
 to our thesis.
