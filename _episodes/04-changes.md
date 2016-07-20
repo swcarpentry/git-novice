@@ -267,7 +267,7 @@ If we break it down into pieces:
 4.  The remaining lines are the most interesting, they show us the actual differences
     and the lines on which they occur.
     In particular,
-    the `+` markers in the first column show where we have added lines.
+    the `+` marker in the first column shows where we added a line.
 
 After reviewing our change, it's time to commit it:
 
