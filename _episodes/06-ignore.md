@@ -153,6 +153,23 @@ nothing to commit, working directory clean
 > {: .bash}
 >
 > How would you ignore only `results/plots` and not `results/data`?
+>
+> > ## Solution
+> > 
+> > As with most programming issues, there are a few ways that you
+> > could solve this. If you only want to ignore the contents of 
+> > `results/plots`, you can change your `.gitignore` to ignore 
+> > only the `/plots/` subfolder by adding the following line to 
+> > your .gitignore: 
+> > 
+> > `results/plots/` 
+> > 
+> > If, instead, you want to ignore everything in `/results/`, but wanted to track
+> > `results/data`, then you can add `results/` to your .gitignore 
+> > and create an exception for the `results/data/` folder. 
+> > The next challenge will cover this type of solution. 
+> >
+> {: .solution} 
 {: .challenge}
 
 > ## Including Specific Files
@@ -160,6 +177,19 @@ nothing to commit, working directory clean
 > How would you ignore all `.data` files in your root directory except for
 > `final.data`?
 > Hint: Find out what `!` (the exclamation point operator) does
+>
+> > ## Solution
+> > 
+> > You would add the following two lines to your .gitignore:
+> >
+> > ~~~
+> > *.data           # ignore all data files
+> > !final.data      # except final.data
+> > ~~~
+> > {: .output}
+> > 
+> > The exclamation point operator will include a previously excluded entry.
+> {: .solution} 
 {: .challenge}
 
 > ## Ignoring Files Deep in a Directory
@@ -175,6 +205,14 @@ nothing to commit, working directory clean
 > What's the shortest `.gitignore` rule you could write to ignore all `.data`
 > files in `result/data/position/gps`
 > Hint: What does appending `**` to a rule accomplish?
+>
+> > ## Solution
+> >
+> > Appending ** to a rule will match everything inside that folder, to 
+> > infinite depth. For this problem, appending your .gitignore with 
+> > `result/data/**` will exclude useless.data and the folders it is nested 
+> > inside. 
+> {: .solution}
 {: .challenge}
 
 > ## The Order of Rules
@@ -188,6 +226,14 @@ nothing to commit, working directory clean
 > {: .bash}
 >
 > What will be the result?
+>
+> > ## Solution
+> >
+> > The ! modifier will negate an entry from a previously defined ignore pattern. 
+> > Because the `!*.data` entry negates all of the previous .data files in the .gitignore,
+> > none of them will be ignored, and all .data files will be tracked. 
+> > 
+> {: .solution}
 {: .challenge}
 
 > ## Log Files
@@ -202,4 +248,10 @@ nothing to commit, working directory clean
 > 3. You find that the file `log_01` is very important after all, add it to the tracked files without changing the `.gitignore` again.
 >
 > 4. Discuss with your neighbor what other types of files could reside in your directory that you do not want to track and thus would exclude via `.gitignore`.
+>
+> > ## Solution
+> >
+> > 1. append either `log_*`  or  `log*`  as a new entry in your .gitignore
+> > 3. track `log_01` using   `git add -f log_01` 
+> {: .solution}
 {: .challenge}

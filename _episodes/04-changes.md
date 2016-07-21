@@ -7,7 +7,7 @@ questions:
 - "How do I check the status of my version control repository?"
 - "How do I record notes about what changes I made and why?"
 objectives:
-- "Go through the modify-add-commit cycle for a single file."
+- "Go through the modify-add-commit cycle for one or more files."
 - "Explain where information is stored at each stage of Git commit workflow."
 keypoints:
 - "`git status` shows the status of a repository."
@@ -267,7 +267,7 @@ If we break it down into pieces:
 4.  The remaining lines are the most interesting, they show us the actual differences
     and the lines on which they occur.
     In particular,
-    the `+` markers in the first column show where we have added lines.
+    the `+` marker in the first column shows where we added a line.
 
 After reviewing our change, it's time to commit it:
 
@@ -306,8 +306,9 @@ $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
 {: .output}
 
 Git insists that we add files to the set we want to commit
-before actually committing anything
-because we may not want to commit everything at once.
+before actually committing anything. This allows us to commit our
+changes in stages and capture changes in logical portions rather than
+only large batches.
 For example,
 suppose we're adding a few citations to our supervisor's work
 to our thesis.
