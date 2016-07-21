@@ -563,6 +563,9 @@ repository (`git commit`):
 > > ~~~
 > > $ git add me.txt
 > > $ git commit -m "Updated Vlad's bio." --author="Frank N. Stein <franky@monster.com>"
+> > ~~~
+> > {: .bash}
+> > ~~~
 > > [master 4162a51] Updated Vlad's bio.
 > > Author: Frank N. Stein <franky@monster.com>
 > > 1 file changed, 2 insertions(+), 2 deletions(-)
@@ -580,6 +583,7 @@ repository (`git commit`):
 > >
 > > Vlad's initial bio.
 > > ~~~
+> > {: .output}
 > {: .solution}
 {: .challenge}
 

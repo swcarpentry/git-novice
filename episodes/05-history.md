@@ -24,25 +24,28 @@ We've been adding one line at a time to `mars.txt`, so it's easy to track our
 progress by looking, so let's do that using our `HEAD`s.  Before we start,
 let's make a change to `mars.txt`.
 
-~~~{.bash}
+~~~
 $ nano mars.txt
 $ cat mars.txt
 ~~~
+{: .bash}
 
-~~~{.output}
+~~~
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 An ill-considered change
 ~~~
+{: .output}
 
 Now, let's see what we get.
 
-~~~{.bash}
+~~~
 $ git diff HEAD mars.txt
 ~~~
+{: .bash}
 
-~~~{.output}
+~~~
 diff --git a/mars.txt b/mars.txt
 index b36abfd..0848c8d 100644
 --- a/mars.txt
@@ -53,14 +56,16 @@ index b36abfd..0848c8d 100644
  But the Mummy will appreciate the lack of humidity
 +An ill-considered change.
 ~~~
+{: .output}
 
 which is the same as what you would get if you leave out `HEAD` (try it).  The
 real goodness in all this is when you can refer to previous commits.  We do
 that by adding `~1` to refer to the commit one before `HEAD`.
 
-~~~{.bash}
+~~~
 $ git diff HEAD~1 mars.txt
 ~~~
+{: .bash}
 
 If we want to see what we changed at different steps, we can use `git diff`
 again, but with the notation `HEAD~1`, `HEAD~2`, and so on, to refer to old
