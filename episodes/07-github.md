@@ -29,16 +29,16 @@ Let's start by sharing the changes we've made to our current project with the
 world.  Log in to GitHub, then click on the icon in the top right corner to
 create a new repository called `planets`:
 
-![Creating a Repository on GitHub (Step 1)]({{ site.github.url }}/fig/github-create-repo-01.png)
+![Creating a Repository on GitHub (Step 1)](../fig/github-create-repo-01.png)
 
 Name your repository "planets" and then click "Create Repository":
 
-![Creating a Repository on GitHub (Step 2)]({{ site.github.url }}/fig/github-create-repo-02.png)
+![Creating a Repository on GitHub (Step 2)](../fig/github-create-repo-02.png)
 
 As soon as the repository is created, GitHub displays a page with a URL and some
 information on how to configure your local repository:
 
-![Creating a Repository on GitHub (Step 3)]({{ site.github.url }}/fig/github-create-repo-03.png)
+![Creating a Repository on GitHub (Step 3)](../fig/github-create-repo-03.png)
 
 This effectively does the following on GitHub's servers:
 
@@ -52,14 +52,14 @@ $ git init
 Our local repository still contains our earlier work on `mars.txt`, but the
 remote repository on GitHub doesn't contain any files yet:
 
-![Freshly-Made GitHub Repository]({{ site.github.url }}/fig/git-freshly-made-github-repo.svg)
+![Freshly-Made GitHub Repository](../fig/git-freshly-made-github-repo.svg)
 
 The next step is to connect the two repositories.  We do this by making the
 GitHub repository a [remote](reference.html#remote) for the local repository.
 The home page of the repository on GitHub includes the string we need to
 identify it:
 
-![Where to Find Repository URL on GitHub]({{ site.github.url }}/fig/github-find-repo-string.png)
+![Where to Find Repository URL on GitHub](../fig/github-find-repo-string.png)
 
 Click on the 'HTTPS' link to change the [protocol](reference.html#protocol) from
 SSH to HTTPS.
@@ -75,7 +75,7 @@ SSH to HTTPS.
 > (this one has a screencast).
 {: .callout}
 
-![Changing the Repository URL on GitHub]({{ site.github.url }}/fig/github-change-repo-string.png)
+![Changing the Repository URL on GitHub](../fig/github-change-repo-string.png)
 
 Copy that URL from the browser, go into the local `planets` repository, and run
 this command:
@@ -171,7 +171,7 @@ Branch master set up to track remote branch master from origin.
 
 Our local and remote repositories are now in this state:
 
-![GitHub Repository After First Push]({{ site.github.url }}/fig/github-repo-after-first-push.svg)
+![GitHub Repository After First Push](../fig/github-repo-after-first-push.svg)
 
 > ## The '-u' Flag
 >
