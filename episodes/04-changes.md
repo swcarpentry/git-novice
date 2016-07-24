@@ -474,6 +474,18 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 ~~~
 {: .output}
 
+> ## Too long of a `log`? {.callout}
+>
+>When the output of `git log` is too long to fit in your screen,
+>`git` uses a program to split it into pages of the size of your screen.
+>When the "pager" is called, you will notice that the last line in your
+>screen is a `:`, instead of your usual prompt.
+>
+>- To get out of the pager, press `q`.
+>- To move to the next page, press the space bar.
+>- To search for `some_word` in all pages, type `/some_word` and
+>navigate throught matches pressing `n`.
+
 To recap, when we want to add changes to our repository,
 we first need to add the changed files to the staging area
 (`git add`) and then commit the staged changes to the
