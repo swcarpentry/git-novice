@@ -54,7 +54,7 @@
 </ul>
 <p>For a growing number of scientists, though, the process looks like this:</p>
 <ul>
-<li>The data that the scientist collects is stored in an open access repository like <a href="http://figshare.com/">figshare</a> or <a href="http://zenodo.org">Zenodo</a>, possibly as soon as it’s collected, and given its own DOI. Or the data was already published and is stored in <a href="http://datadryad.org/">Dryad</a>.</li>
+<li>The data that the scientist collects is stored in an open access repository like <a href="http://figshare.com/">figshare</a> or <a href="http://zenodo.org">Zenodo</a>, possibly as soon as it’s collected, and given its own <a href="https://en.wikipedia.org/wiki/Digital_object_identifier">Digital Object Identifier</a> (DOI). Or the data was already published and is stored in <a href="http://datadryad.org/">Dryad</a>.</li>
 <li>The scientist creates a new repository on GitHub to hold her work.</li>
 <li>As she does her analysis, she pushes changes to her scripts (and possibly some output files) to that repository. She also uses the repository for her paper; that repository is then the hub for collaboration with her colleagues.</li>
 <li>When she’s happy with the state of her paper, she posts a version to <a href="http://arxiv.org/">arXiv</a> or some other preprint server to invite feedback from peers.</li>
@@ -64,7 +64,7 @@
 <p>This open model accelerates discovery: the more open work is, <a href="http://dx.doi.org/10.1371/journal.pone.0000308">the more widely it is cited and re-used</a>. However, people who want to work this way need to make some decisions about what exactly “open” means and how to do it.</p>
 <p>This is one of the (many) reasons we teach version control. When used diligently, it answers the “how” question by acting as a shareable electronic lab notebook for computational work:</p>
 <ul>
-<li>The conceptual stages of your work are documented, including who did what and when. Every step is stamped with an identifier (the commit ID) that is for most intents and purposes is unique.</li>
+<li>The conceptual stages of your work are documented, including who did what and when. Every step is stamped with an identifier (the commit ID) that is for most intents and purposes unique.</li>
 <li>You can tie documentation of rationale, ideas, and other intellectual work directly to the changes that spring from them.</li>
 <li>You can refer to what you used in your research to obtain your computational results in a way that is unique and recoverable.</li>
 <li>With a distributed version control system such as Git, the version control repository is easy to archive for perpetuity, and contains the entire history.</li>
@@ -98,5 +98,16 @@
     <!-- Javascript placed at the end of the document so the pages load faster -->
     <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
     <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-37305346-2', 'auto');
+      ga('send', 'pageview');
+    
+    </script>
   </body>
 </html>

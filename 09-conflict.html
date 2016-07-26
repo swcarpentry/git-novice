@@ -175,6 +175,64 @@ We removed the conflict on this line</code></pre>
 <p>What does Git do when there is a conflict in an image or some other non-textual file that is stored in version control?</p>
 </div>
 </section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>A typical work session</h2>
+</div>
+<div class="panel-body">
+<p>You sit down at your computer to work on a shared project that is tracked in a remote Git repository. During your work session, you take the following actions, but not in this order:</p>
+<ul>
+<li><em>Make changes</em> by appending the number <code>100</code> to a text file <code>numbers.txt</code></li>
+<li><em>Update remote</em> repository to match the local repository</li>
+<li><em>Celebrate</em> your success with beer(s)</li>
+<li><em>Update local</em> repository to match the remote repository</li>
+<li><em>Stage changes</em> to be committed</li>
+<li><em>Commit changes</em> to the local repository</li>
+</ul>
+<p>In what order should you perform these actions to minimize the chances of conflicts? Put the commands above in order in the <em>action</em> column of the table below. When you have the order right, see if you can write the corresponding commands in the <em>command</em> column. A few steps are populated to get you started.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">order</th>
+<th align="left">action . . . . . . . . . .</th>
+<th align="left">command . . . . . . . . . .</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left"><code>echo 100 &gt;&gt; numbers.txt</code></td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">5</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">6</td>
+<td align="left">Celebrate!</td>
+<td align="left"><code>AFK</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
         </div>
       </div>
       </article>
@@ -188,5 +246,16 @@ We removed the conflict on this line</code></pre>
     <!-- Javascript placed at the end of the document so the pages load faster -->
     <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
     <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-37305346-2', 'auto');
+      ga('send', 'pageview');
+    
+    </script>
   </body>
 </html>

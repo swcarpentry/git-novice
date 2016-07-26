@@ -28,9 +28,9 @@
         <div class="col-md-10 col-md-offset-1">
                     <a href="index.html"><h1 class="title">Version Control with Git</h1></a>
           <h2 class="subtitle">Instructor’s Guide</h2>
-          <p>Using a software tool to handle the versions of your project files lets you focus on the more interesting/innovative aspects of your project</p>
+          <p>Using a software tool to handle the versions of your project files lets you focus on the more interesting/innovative aspects of your project.</p>
 <ul>
-<li>Version control’s advantages:
+<li>Version control’s advantages
 <ul>
 <li>It’s easy to set up</li>
 <li>Every copy of a Git repository is a full backup of a project and its history</li>
@@ -39,10 +39,10 @@
 </ul></li>
 <li>Two main concepts
 <ul>
-<li><em>commit</em>: a recorded set of changes in your project’s file</li>
+<li><em>commit</em>: a recorded set of changes in your project’s files</li>
 <li><em>repository</em>: the history of all your project’s commits</li>
 </ul></li>
-<li>Why Use Github?
+<li>Why use Github?
 <ul>
 <li>No need for a server: easy to set up</li>
 <li>GitHub’s strong community: your colleagues are probably already there</li>
@@ -61,11 +61,18 @@
 <ul>
 <li><p>Make sure the network is working <em>before</em> starting this lesson.</p></li>
 <li><p>Drawings are particularly useful in this lesson: if you have a whiteboard, <a href="https://twitter.com/chendaniely/status/583689081151979520">use it!</a></p></li>
-<li><p>Version control is usually not the first subject in a workshop, so get learners to create a GitHub account after the session before.</p></li>
+<li><p>Version control is usually not the first subject in a workshop, so get learners to create a GitHub account after the session before. Remind learners that the username and email they use for GitHub (and setup<br />
+during Git configuration) will be viewable to the public by default. However, there are many reasons why a learner may not want their personal information viewable, and GitHub has <a href="https://help.github.com/articles/keeping-your-email-address-private/">resources for keeping an email address private</a>.</p></li>
 <li><p>If some learners are using Windows, there will inevitably be issues merging files with different line endings. (Even if everyone’s on some flavor of Unix, different editors may or may not add a newline to the last line of a file.) Take a moment to explain these issues, since learners will almost certainly trip over them again. If learners are running into line ending problems, GitHub has a <a href="https://help.github.com/articles/dealing-with-line-endings/#platform-all">page</a> that helps with troubleshooting.</p></li>
 <li><p>We don’t use a Git GUI in these notes because we haven’t found one that installs easily and runs reliably on the three major operating systems, and because we want learners to understand what commands are being run. That said, instructors should demo a GUI on their desktop at some point during this lesson and point learners at <a href="http://git-scm.com/downloads/guis">this page</a>.</p></li>
 <li><p>Instructors should show learners graphical diff/merge tools like <a href="https://sourcegear.com/diffmerge/">DiffMerge</a>.</p></li>
 <li><p>When appropriate, explain that we teach Git rather than CVS, Subversion, or Mercurial primarily because of GitHub’s growing popularity: CVS and Subversion are now seen as legacy systems, and Mercurial isn’t nearly as widely used in the sciences right now.</p></li>
+<li>Further resources:
+<ul>
+<li><a href="https://github.com/jlord/git-it">git-it</a> is a self-paced command-line Git demo, with <a href="https://github.com/jlord/git-it-electron">git-it-electron</a> its GitHub Desktop successor</li>
+<li><a href="https://www.codeschool.com/">Code School</a> has a free interactive course, <a href="https://try.github.io">Try Git</a></li>
+<li>for instructors, <a href="http://tom.preston-werner.com/2009/05/19/the-git-parable.html">the Git parable</a> is valuable background reading</li>
+</ul></li>
 </ul>
 <h2 id="automated-version-control"><a href="01-basics.html">Automated Version Control</a></h2>
 <ul>
@@ -89,13 +96,29 @@
 <li><p>The challenge “Places to create repositories” tries to reinforce the idea that the <code>.git</code> folder contains the whole Git repo and deleting this folder undoes a <code>git init</code>. It also gives the learner the way to fix the common mistake of putting unwanted folders (like <code>Desktop</code>) under version control.</p>
 <p>Instead of removing the <code>.git</code> folder directly, you can choose to move it first to a safer directory and remove it from there:</p>
 <pre class="input"><code>$ mv .git temp_git 
-$ rm -rf  temp_git </code></pre></li>
+$ rm -rf  temp_git </code></pre>
+<p>The challenge suggests that it is a bad idea to create a Git repo inside another repo. For more discussion on this topic, please see <a href="https://github.com/swcarpentry/git-novice/issues/272">this issue</a>.</p></li>
 </ul>
 <h2 id="tracking-changes"><a href="04-changes.html">Tracking Changes</a></h2>
 <ul>
-<li><p>It’s important that learners do a full commit cycle by themselves (make changes, <code>git add</code>, <code>git diff</code>, and <code>git commit</code>). The “<code>bio</code> repository” challenge does that.</p></li>
+<li><p>It’s important that learners do a full commit cycle by themselves (make changes, <code>git diff</code>, <code>git add</code>, and <code>git commit</code>). The “<code>bio</code> repository” challenge does that.</p></li>
 <li><p>This is a good moment to show a diff with a graphical diff tool. If you skip it because you’re short on time, show it once in GitHub.</p></li>
 </ul>
+<p>Solutions to exercises:</p>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="choosing-a-commit-message"><span class="glyphicon glyphicon-pencil"></span>Choosing a commit message</h2>
+</div>
+<div class="panel-body">
+<p>Which of the following commit messages would be most appropriate for the last commit made to <code>mars.txt</code>?</p>
+<ol style="list-style-type: decimal">
+<li>“Changes”</li>
+<li>“Added line ‘But the Mummy will appreciate the lack of humidity’ to mars.txt”</li>
+<li><strong>“Discuss effects of Mars’ climate on the Mummy”</strong></li>
+</ol>
+<p>Answer 1 is not descriptive enough, answer 2 is too descriptive and redundant, and answer 3 is good - short but descriptive.</p>
+</div>
+</section>
 <h2 id="exploring-history"><a href="05-history.html">Exploring History</a></h2>
 <ul>
 <li><p>One thing may cause confusion is recovering old versions. If, instead of doing <code>$ git checkout f22b25e mars.txt</code>, someone does <code>$ git checkout f22b25e</code>, they wind up in the “detached HEAD” state and confusion abounds. It’s then possible to keep on committing, but things like <code>git push origin master</code> a bit later will not give easily comprehensible results. It also makes it look like commits can be lost. To “fix” a “detached HEAD”, simply <code>git checkout master</code>.</p></li>
@@ -105,7 +128,7 @@ $ rm -rf  temp_git </code></pre></li>
 <p>Just remember that you can use wildcards and regular expressions to ignore a particular set of files in <code>.gitignore</code>.</p>
 <h2 id="remotes-in-github"><a href="07-github.html">Remotes in GitHub</a></h2>
 <ul>
-<li><p>Make it clear that Git and GitHub are not the same thing: Git is an open source version control tool, GitHub is a company that hosts Git repositories in the web and provides a web interface to interact with repos the host.</p></li>
+<li><p>Make it clear that Git and GitHub are not the same thing: Git is an open source version control tool, GitHub is a company that hosts Git repositories in the web and provides a web interface to interact with repos they host.</p></li>
 <li><p>If your learners are advanced enough to be comfortable with SSH, tell them they can use keys to authenticate on GitHub instead of passwords, but don’t try to set this up during class: it takes too long, and is a distraction from the core ideas of the lesson.</p></li>
 <li><p>It is very useful to draw a diagram showing the different repositories involved.</p></li>
 </ul>
@@ -124,7 +147,7 @@ $ rm -rf  temp_git </code></pre></li>
 </ul></li>
 <li><p>Before cloning the repo, be sure that nobody is inside another repo. The best way to achieve this is moving to the <code>Desktop</code> before cloning: <code>cd &amp;&amp; cd Desktop</code>.</p></li>
 <li><p>If both repos are in the <code>Desktop</code>, have them to clone their collaborator repo under a given directory using a second argument:</p>
-<pre class="input"><code>$ git clone https://github.com/vlad/planets.git vlad-planet`</code></pre></li>
+<pre class="input"><code>$ git clone https://github.com/vlad/planets.git vlad-planet</code></pre></li>
 <li><p>The most common mistake is that learners <code>push</code> before <code>pull</code>ing. If they <code>pull</code> afterward, they may get a conflict.</p></li>
 <li><p>Conflicts, sometimes weird, will start to arise. Stay tight: conflicts are next.</p></li>
 </ul>
@@ -134,7 +157,8 @@ $ rm -rf  temp_git </code></pre></li>
 <li><p>If you’re the only instructor, the best way to create a conflict is:</p>
 <ul>
 <li>Clone your repo in a different directory, pretending is your computer at work: <code>git clone https://github.com/vlad/planets.git planets-at-work</code>.</li>
-<li>At the office, you make a change, commit and push.<br /></li>
+<li>At the office, you make a change, commit and push.<br />
+</li>
 <li>At your laptop repo, you (forget to pull and) make a change, commit and try to push.</li>
 <li><code>git pull</code> now and show the conflict.</li>
 </ul></li>
@@ -149,7 +173,7 @@ $ rm -rf  temp_git </code></pre></li>
 <h2 id="open-science"><a href="10-open.html">Open Science</a></h2>
 <h2 id="licensing"><a href="11-licensing.html">Licensing</a></h2>
 <p>We teach about licensing because questions about who owns what, or can use what, arise naturally once we start talking about using public services like GitHub to store files. Also, the discussion gives learners a chance to catch their breath after what is often a frustrating couple of hours.</p>
-<h2 id="hosting"><a href="12-hosting.html">Hosting</a></h2>
+<h2 id="hosting"><a href="13-hosting.html">Hosting</a></h2>
 <p>A common concern for learners is having their work publicly available on GitHub. While we encourage open science, sometimes private repos are the only choice. It’s always interesting to mention the options to have web-hosted private repositories.</p>
         </div>
       </div>
@@ -164,5 +188,16 @@ $ rm -rf  temp_git </code></pre></li>
     <!-- Javascript placed at the end of the document so the pages load faster -->
     <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
     <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-37305346-2', 'auto');
+      ga('send', 'pageview');
+    
+    </script>
   </body>
 </html>
