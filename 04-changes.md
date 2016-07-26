@@ -404,6 +404,18 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
     Start notes on Mars as a base
 ~~~
 
+> ## Too long of a `log`? {.callout}
+>
+>When the output of `git log` is too long to fit in your screen,
+>`git` uses a program to split it into pages of the size of your screen.
+>When the "pager" is called, you will notice that the last line in your
+>screen is a `:`, instead of your usual prompt.
+>
+>- To get out of the pager, press `q`.
+>- To move to the next page, press the space bar.
+>- To search for `some_word` in all pages, type `/some_word` and
+>navigate throught matches pressing `n`.
+
 To recap, when we want to add changes to our repository,
 we first need to add the changed files to the staging area
 (`git add`) and then commit the staged changes to the
@@ -452,6 +464,18 @@ repository (`git commit`):
 >     ~~~
 >     $ git commit -m myfile.txt "my recent changes"
 >     ~~~
+
+> ## Committing Multiple Files {.challenge}
+>
+> The staging area can hold changes from any number of files
+> that you want to commit as a single snapshot.
+>
+> 1. Add some text to `mars.txt` noting your decision
+> to consider Venus as a base
+> 2. Create a new file `venus.txt` with your initial thoughts
+> about Venus as a base for you and your friends
+> 3. Add changes from both files to the staging area,
+> and commit those changes.
 
 > ## `bio` Repository {.challenge}
 >
