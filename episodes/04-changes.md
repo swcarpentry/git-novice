@@ -127,8 +127,8 @@ $ git commit -m "Start notes on Mars as a base"
 When we run `git commit`,
 Git takes everything we have told it to save by using `git add`
 and stores a copy permanently inside the special `.git` directory.
-This permanent copy is called a [commit](reference.html#commit)
-(or [revision](reference.html#revision)) and its short identifier is `f22b25e`
+This permanent copy is called a [commit]({{ site.github.url }}/reference/#commit)
+(or [revision]({{ site.github.url }}/reference/#revision)) and its short identifier is `f22b25e`
 (Your commit may have another identifier.)
 
 We use the `-m` flag (for "message")
@@ -320,7 +320,7 @@ but *not* commit the work we're doing on the conclusion
 To allow for this,
 Git has a special *staging area*
 where it keeps track of things that have been added to
-the current [change set](reference.html#change-set)
+the current [change set]({{ site.github.url }}/reference/#change-set)
 but not yet committed.
 
 > ## Staging Area
