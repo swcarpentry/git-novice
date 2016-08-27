@@ -114,7 +114,6 @@ $ git add a.dat
 The following paths are ignored by one of your .gitignore files:
 a.dat
 Use -f if you really want to add them.
-fatal: no files added
 ~~~
 {: .output}
 
