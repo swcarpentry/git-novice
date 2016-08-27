@@ -547,7 +547,7 @@ repository (`git commit`):
 > and commit those changes.
 > > ## Solution
 > >
-> > First we make the our changes to the 'mars.txt' and 'venus.txt' files:
+> > First we make our changes to the 'mars.txt' and 'venus.txt' files:
 > > ~~~
 > > $ nano mars.txt
 > > $ cat mars.txt
