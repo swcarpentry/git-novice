@@ -77,13 +77,13 @@ nothing to commit (create/copy files and use "git add" to track)
 > create one Git repository inside another:
 >
 > ~~~
-> cd             # return to home directory
-> mkdir planets  # make a new directory planets
-> cd planets     # go into planets
-> git init       # make the planets directory a Git repository
-> mkdir moons    # make a sub-directory planets/moons
-> cd moons       # go into planets/moons
-> git init       # make the moons sub-directory a Git repository
+> $ cd             # return to home directory
+> $ mkdir planets  # make a new directory planets
+> $ cd planets     # go into planets
+> $ git init       # make the planets directory a Git repository
+> $ mkdir moons    # make a sub-directory planets/moons
+> $ cd moons       # go into planets/moons
+> $ git init       # make the moons sub-directory a Git repository
 > ~~~
 > {: .bash}
 >
@@ -98,7 +98,7 @@ nothing to commit (create/copy files and use "git add" to track)
 > > repository as shown:
 > >
 > > ~~~
-> > git status
+> > $ git status
 > > ~~~
 > > {: .bash}
 > > ~~~
@@ -109,20 +109,20 @@ nothing to commit (create/copy files and use "git add" to track)
 > > Note that we can track files in directories within a Git:
 > >
 > > ~~~
-> > touch moon phobos deimos titan    # create moon files
-> > cd ..                             # return to planets directory
-> > ls moons                          # list contents of the moons directory
-> > git add moons/*                   # add all contents of planets/moons
-> > git status                        # show moons files in staging area
-> > git commit -m "add moon files"    # commit planets/moons to planets Git repository
+> > $ touch moon phobos deimos titan    # create moon files
+> > $ cd ..                             # return to planets directory
+> > $ ls moons                          # list contents of the moons directory
+> > $ git add moons/*                   # add all contents of planets/moons
+> > $ git status                        # show moons files in staging area
+> > $ git commit -m "add moon files"    # commit planets/moons to planets Git repository
 > > ~~~
 > > {: .bash}
 > >
 > > Similarly, we can ignore (as discussed later) entire directories, such as the `moons` directory:
 > >
 > > ~~~
-> > nano .gitignore # open the .gitignore file in the texteditor to add the moons directory
-> > cat .gitignore # if you run cat afterwards, it should look like this: 
+> > $ nano .gitignore # open the .gitignore file in the texteditor to add the moons directory
+> > $ cat .gitignore # if you run cat afterwards, it should look like this:
 > > ~~~
 > > {: .bash}
 > >
@@ -135,7 +135,7 @@ nothing to commit (create/copy files and use "git add" to track)
 > > folder in the moons subdirectory. To do so he can run the following command from inside the 'moons' directory:
 > >
 > > ~~~
-> > rm -rf moons/.git
+> > $ rm -rf moons/.git
 > > ~~~
 > > {: .bash}
 > >
