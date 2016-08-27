@@ -227,6 +227,44 @@ $ git checkout f22b25e mars.txt
 ~~~
 {: .bash}
 
+~~~
+$ cat mars.txt
+~~~
+{: .bash}
+
+~~~
+Cold and dry, but everything is my favorite color
+~~~
+{: .output}
+
+~~~
+$ git status
+~~~
+{: .bash}
+
+~~~
+# On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   mars.txt
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+~~~
+{: .output}
+
+Notice that the changes are on the staged area.
+Again, we can put things back the way they were with
+by using `git checkout`:
+
+~~~
+$ git checkout -f master mars.txt
+~~~
+{: .bash}
+
 > ## Don't Lose Your HEAD
 >
 > Above we used
