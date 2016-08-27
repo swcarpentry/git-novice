@@ -17,6 +17,21 @@ keypoints:
 - "Always write a log message when committing changes."
 ---
 
+First let's make sure we're still in the right directory.
+You should be in the `planets` directory.
+
+~~~
+$ pwd
+~~~
+{: .bash}
+
+If you are still in `moons` navigate back up to `planets`
+
+~~~
+$ cd ..
+~~~
+{: .bash}
+
 Let's create a file called `mars.txt` that contains some notes
 about the Red Planet's suitability as a base.
 (We'll use `nano` to edit the file;
