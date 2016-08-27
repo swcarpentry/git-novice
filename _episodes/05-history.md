@@ -202,7 +202,7 @@ We can put things back the way they were
 by using `git checkout`:
 
 ~~~
-$ git checkout HEAD mars.txt
+$ git checkout master mars.txt
 $ cat mars.txt
 ~~~
 {: .bash}
@@ -217,7 +217,7 @@ But the Mummy will appreciate the lack of humidity
 As you might guess from its name,
 `git checkout` checks out (i.e., restores) an old version of a file.
 In this case,
-we're telling Git that we want to recover the version of the file recorded in `HEAD`,
+we're telling Git that we want to recover the version of the file recorded in `master`,
 which is the last saved commit.
 If we want to go back even further,
 we can use a commit identifier instead:
