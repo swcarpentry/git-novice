@@ -487,6 +487,57 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 >     and navigate throught matches pressing `n`.
 {: .callout}
 
+> ## Limit Log Size
+>
+> To avoid that `git log` cover all your terminal screen you can
+> limit the numbers of commit that Git will list by using `-N`
+> where `N` is the number of commits that you want to receive
+> the information. For example, if you only want the information
+> from the last commit you can use
+>
+> ~~~
+> $ git log -1
+> ~~~
+> {: .bash}
+> 
+> ~~~
+> commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
+> Author: Vlad Dracula <vlad@tran.sylvan.ia>
+> Date:   Thu Aug 22 10:14:07 2013 -0400
+>
+>    Discuss concerns about Mars' climate for Mummy
+> ~~~
+> {: .output}
+>
+> You can also reduce the quantity of information using the
+> `--oneline` option:
+>
+> ~~~
+> $ git log --oneline
+> ~~~
+> {: .bash}
+> ~~~
+> * 005937f Thoughts about the climate
+> * 34961b1 Concerns about Mars's moons on my furry friend
+> * f22b25e Starting to think about Mars
+> ~~~
+> {: .output}
+>
+> You can also combine the `--oneline` options with others. One useful
+> combination is
+>
+> ~~~
+> $ git log --oneline --graph --all --decorate
+> ~~~
+> {: .bash}
+> ~~~
+> * 005937f Thoughts about the climate (HEAD, master)
+> * 34961b1 Concerns about Mars's moons on my furry friend
+> * f22b25e Starting to think about Mars
+> ~~~
+> {: .output}
+{: .callout}
+
 To recap, when we want to add changes to our repository,
 we first need to add the changed files to the staging area
 (`git add`) and then commit the staged changes to the
