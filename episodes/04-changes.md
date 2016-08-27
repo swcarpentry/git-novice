@@ -547,7 +547,7 @@ repository (`git commit`):
 > and commit those changes.
 > > ## Solution
 > >
-> > First we make our changes to the 'mars.txt' and 'venus.txt' files:
+> > First we make our changes to the `mars.txt` and `venus.txt` files:
 > > ~~~
 > > $ nano mars.txt
 > > $ cat mars.txt
@@ -578,9 +578,9 @@ repository (`git commit`):
 > > $ git add venus.txt
 > > ~~~
 > > {: .bash}
-> > Now the files are ready to commit. You can check that using `git status` first, or directly commit:
+> > Now the files are ready to commit. You can check that using `git status`. If you are ready to commit use:
 > > ~~~
-> > $ git commit -m"Wrote down my plans to start a base on Venus"
+> > $ git commit -m "Wrote down my plans to start a base on Venus"
 > > ~~~
 > > {: .bash}
 > > ~~~
@@ -590,8 +590,6 @@ repository (`git commit`):
 > > ~~~
 > > {: .output}
 > > ~~~
-
-
 > {: .solution}
 {: .challenge}
 
