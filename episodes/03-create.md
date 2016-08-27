@@ -91,9 +91,22 @@ nothing to commit (create/copy files and use "git add" to track)
 > How can Dracula undo his last `git init`?
 > > ## Solution
 > > Git repositories can interfere with each other if they are "nested" in the
-> > directory of another. We therefore advise to create each new git repository in a
-> > separate directory. Note that we can track files in directories within a git
+> > directory of another. Therefore, we advise to create each new Git
+> > repository in a separate directory. To be sure that there is no conflicting
+> > repository in the directory, check the output of `git status`. If it looks
+> > like a the following, you are good to go to create a new repository.
 > > repository as shown:
+> >
+> > ~~~
+> > git status
+> > ~~~
+> > {: .bash}
+> > ~~~
+> > fatal: Not a git repository (or any of the parent directories): .git
+> > ~~~
+> > {: .output}
+> >
+> > Note that we can track files in directories within a Git:
 > >
 > > ~~~
 > > touch moon phobos deimos titan    # create moon files
@@ -101,27 +114,33 @@ nothing to commit (create/copy files and use "git add" to track)
 > > ls moons                          # list contents of the moons directory
 > > git add moons/*                   # add all contents of planets/moons
 > > git status                        # show moons files in staging area
-> > git commit -m "add moon files"    # commit planets/moons to planets git repo
+> > git commit -m "add moon files"    # commit planets/moons to planets Git repository
 > > ~~~
 > > {: .bash}
 > >
-> > Similarly, we can ignore (as discussed later) entire directories, such as the moons directory:
+> > Similarly, we can ignore (as discussed later) entire directories, such as the `moons` directory:
 > >
 > > ~~~
-> > echo moons >> .gitignore           # ignore all files within moons
+> > nano .gitignore # open the .gitignore file in the texteditor to add the moons directory
+> > cat .gitignore # if you run cat afterwards, it should look like this: 
 > > ~~~
 > > {: .bash}
+> >
+> > ~~~
+> > moons
+> > ~~~
+> > {: .output}
 > >
 > > To recover from this little mistake, Dracula can just remove the `.git`
-> > folder in the moons subdirectory. To do so he can run the following command:
+> > folder in the moons subdirectory. To do so he can run the following command from inside the 'moons' directory:
 > >
 > > ~~~
-> > rm -rf .git
+> > rm -rf moons/.git
 > > ~~~
 > > {: .bash}
 > >
-> > But be careful! Running this command in the wrong directory, you will remove
-> > the entire git-history. Therefore, always check your current directory using the
-> > `pwd`-command.
+> > But be careful! Running this command in the wrong directory, will remove
+> > the entire git-history of a project you might wanted to keep. Therefore, always check your current directory using the
+> > command `pwd`.
 > {: .solution}
 {: .challenge}
