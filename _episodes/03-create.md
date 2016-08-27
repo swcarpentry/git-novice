@@ -120,7 +120,7 @@ nothing to commit (create/copy files and use "git add" to track)
 > > ~~~
 > > {: .bash}
 > >
-> > But be careful! running this command in the wrong directory, you will remove
+> > But be careful! Running this command in the wrong directory, you will remove
 > > the entire git-history. Therefore, always check your current directory using the
 > > `pwd`-command.
 > {: .solution}
