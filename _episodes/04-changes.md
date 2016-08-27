@@ -66,14 +66,14 @@ $ git status
 {: .bash}
 
 ~~~
-# On branch master
-#
-# Initial commit
-#
-# Untracked files:
-#   (use "git add <file>..." to include in what will be committed)
-#
-#	mars.txt
+On branch master
+
+Initial commit
+
+Untracked files:
+   (use "git add <file>..." to include in what will be committed)
+
+	mars.txt
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
 {: .output}
@@ -95,15 +95,15 @@ $ git status
 {: .bash}
 
 ~~~
-# On branch master
-#
-# Initial commit
-#
-# Changes to be committed:
-#   (use "git rm --cached <file>..." to unstage)
-#
-#	new file:   mars.txt
-#
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   mars.txt
+
 ~~~
 {: .output}
 
@@ -149,7 +149,7 @@ $ git status
 {: .bash}
 
 ~~~
-# On branch master
+On branch master
 nothing to commit, working directory clean
 ~~~
 {: .output}
@@ -215,13 +215,13 @@ $ git status
 {: .bash}
 
 ~~~
-# On branch master
-# Changes not staged for commit:
-#   (use "git add <file>..." to update what will be committed)
-#   (use "git checkout -- <file>..." to discard changes in working directory)
-#
-#	modified:   mars.txt
-#
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   mars.txt
+
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
 {: .output}
@@ -278,13 +278,13 @@ $ git status
 {: .bash}
 
 ~~~
-# On branch master
-# Changes not staged for commit:
-#   (use "git add <file>..." to update what will be committed)
-#   (use "git checkout -- <file>..." to discard changes in working directory)
-#
-#	modified:   mars.txt
-#
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   mars.txt
+
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
 {: .output}
@@ -441,7 +441,7 @@ $ git status
 {: .bash}
 
 ~~~
-# On branch master
+On branch master
 nothing to commit, working directory clean
 ~~~
 {: .output}

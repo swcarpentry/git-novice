@@ -30,14 +30,14 @@ $ git status
 {: .bash}
 
 ~~~
-# On branch master
-# Untracked files:
-#   (use "git add <file>..." to include in what will be committed)
-#
-#	a.dat
-#	b.dat
-#	c.dat
-#	results/
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	a.dat
+	b.dat
+	c.dat
+	results/
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
 {: .output}
@@ -75,11 +75,11 @@ $ git status
 {: .bash}
 
 ~~~
-# On branch master
-# Untracked files:
-#   (use "git add <file>..." to include in what will be committed)
-#
-#	.gitignore
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
 {: .output}
@@ -129,14 +129,14 @@ $ git status --ignored
 {: .bash}
 
 ~~~
-# On branch master
-# Ignored files:
-#  (use "git add -f <file>..." to include in what will be committed)
-#
-#        a.dat
-#        b.dat
-#        c.dat
-#        results/
+On branch master
+Ignored files:
+ (use "git add -f <file>..." to include in what will be committed)
+
+        a.dat
+        b.dat
+        c.dat
+        results/
 
 nothing to commit, working directory clean
 ~~~
