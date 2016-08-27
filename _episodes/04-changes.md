@@ -600,4 +600,4 @@ repository (`git commit`):
 > {: .solution}
 {: .challenge}
 
-[commit-messages]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+[commit-messages]: http://chris.beams.io/posts/git-commit/
