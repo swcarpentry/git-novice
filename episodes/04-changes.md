@@ -545,6 +545,54 @@ repository (`git commit`):
 > about Venus as a base for you and your friends
 > 3. Add changes from both files to the staging area,
 > and commit those changes.
+> > ## Solution
+> >
+> > First we make the our changes to the 'mars.txt' and 'venus.txt' files:
+> > ~~~
+> > $ nano mars.txt
+> > $ cat mars.txt
+> > ~~~
+> > {: .bash}
+> > ~~~
+> > Maybe I should start with a base on Venus.
+> > ~~~
+> > {: .output}
+> > ~~~
+> > $ nano venus.txt
+> > $ cat venus.txt
+> > ~~~
+> > {: .bash}
+> > ~~~
+> > Venus is a nice planet and I definitely should consider it as a base.
+> > ~~~
+> > {: .output}
+> > Now you can add both files to the staging area. We can do that in one line:
+> >
+> > ~~~
+> > $ git add mars.txt venus.txt
+> > ~~~
+> > {: .bash}
+> > Or with multiple commands:
+> > ~~~
+> > $ git add mars.txt
+> > $ git add venus.txt
+> > ~~~
+> > {: .bash}
+> > Now the files are ready to commit. You can check that using `git status` first, or directly commit:
+> > ~~~
+> > $ git commit -m"Wrote down my plans to start a base on Venus"
+> > ~~~
+> > {: .bash}
+> > ~~~
+> > [master cc127c2]
+> > Wrote down my plans to start a base on venus
+> > 2 files changed, 2 insertions(+)
+> > ~~~
+> > {: .output}
+> > ~~~
+
+
+> {: .solution}
 {: .challenge}
 
 > ## Author and Committer
