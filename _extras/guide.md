@@ -283,7 +283,7 @@ web-hosted private repositories.
 
 [code-school]: https://www.codeschool.com/
 [diffmerge]: https://sourcegear.com/diffmerge/
-[drawings]: https://twitter.com/chendaniely/status/583689081151979520
+[drawings]: https://marklodato.github.io/visual-git-guide/index-en.html
 [git-it]: https://github.com/jlord/git-it
 [git-it-electron]: https://github.com/jlord/git-it-electron
 [git-parable]: http://tom.preston-werner.com/2009/05/19/the-git-parable.html
