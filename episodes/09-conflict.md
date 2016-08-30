@@ -215,14 +215,14 @@ $ git status
 {: .bash}
 
 ~~~
-# On branch master
-# All conflicts fixed but you are still merging.
-#   (use "git commit" to conclude merge)
-#
-# Changes to be committed:
-#
-#	modified:   mars.txt
-#
+On branch master
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+
+	modified:   mars.txt
+
 ~~~
 {: .output}
 
