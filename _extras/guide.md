@@ -37,6 +37,8 @@ working in teams or not, because it is
 
 ## Teaching Notes
 
+*   Resources for "splitting" your shell so that recent commands remain in view: https://github.com/rgaiacs/swc-shell-split-window.
+
 *   Make sure the network is working *before* starting this lesson.
 
 *   Drawings are particularly useful in this lesson: if you have a whiteboard,
