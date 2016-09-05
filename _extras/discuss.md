@@ -13,7 +13,7 @@ Note that since this material isn't essential for basic Git usage, it won't be c
 
 ## More Advanced Git Configuration
 
-In [Setting Up Git]({{ site.github.url }}/02-setup/),
+In [Setting Up Git]({{ page.root }}/02-setup/),
 we used `git config --global` to set some default options for Git.
 It turns out that these configuration options get stored in your home directory
 in a plain text file called `.gitconfig`.
@@ -57,7 +57,7 @@ $ git config --global alias.co checkout
 ~~~
 {: .bash}
 
-Now if we return to the example from [Exploring History]({{ site.github.url }}/05-history/) where we ran:
+Now if we return to the example from [Exploring History]({{ page.root }}/05-history/) where we ran:
 
 ~~~
 $ git checkout f22b25e mars.txt
@@ -116,7 +116,7 @@ $ git config --global --unset format.pretty
 
 ## Non-text Files
 
-Recall when we discussed [Conflicts]({{ site.github.url }}/09-conflict/)
+Recall when we discussed [Conflicts]({{ page.root }}/09-conflict/)
 there was a challenge that asked,
 "What does Git do
 when there is a conflict in an image or some other non-textual file
