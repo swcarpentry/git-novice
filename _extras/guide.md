@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Instructor's Guide"
+title: "Instructor Notes"
 permalink: /guide/
 ---
 Using a software tool to handle the versions of your project files
