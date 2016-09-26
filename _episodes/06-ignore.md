@@ -209,7 +209,7 @@ nothing to commit, working directory clean
 >
 > > ## Solution
 > >
-> > Append 'results/data/position/gps/*.data` will match every file in `results/data/position/gps` that ends with `.data`.
+> > Appending `results/data/position/gps/*.data` will match every file in `results/data/position/gps` that ends with `.data`.
 > > The file `results/data/position/gps/info.txt` will not be ignored.
 > {: .solution}
 {: .challenge}
@@ -228,16 +228,16 @@ nothing to commit, working directory clean
 >
 > > ## Solution
 > >
-> > The ! modifier will negate an entry from a previously defined ignore pattern.
-> > Because the `!*.data` entry negates all of the previous .data files in the .gitignore,
-> > none of them will be ignored, and all .data files will be tracked.
+> > The `!` modifier will negate an entry from a previously defined ignore pattern.
+> > Because the `!*.data` entry negates all of the previous `.data` files in the `.gitignore`,
+> > none of them will be ignored, and all `.data` files will be tracked.
 > >
 > {: .solution}
 {: .challenge}
 
 > ## Log Files
 >
-> You wrote a script that creates many intermediate log-files of the form log_01, log_02, log_03, etc.
+> You wrote a script that creates many intermediate log-files of the form `log_01`, `log_02`, `log_03`, etc.
 > You want to keep them but you do not want to track them through `git`.
 >
 > 1. Write **one** `.gitignore` entry that excludes files of the form `log_01`, `log_02`, etc.
