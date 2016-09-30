@@ -47,7 +47,7 @@ He also has to set his favorite text editor, following this table:
 |:-------------------|:-------------------------------------------------|
 |Atom | `$ git config --global core.editor "atom --wait"`|
 | nano               | `$ git config --global core.editor "nano -w"`    |
-| Text Wrangler      | `$ git config --global core.editor "edit -w"`    |
+| Text Wrangler (Mac)      | `$ git config --global core.editor "edit -w"`    |
 | Sublime Text (Mac) | `$ git config --global core.editor "subl -n -w"` |
 | Sublime Text (Win, 32-bit install) | `$ git config --global core.editor "'c:/program files (x86)/sublime text 3/sublime_text.exe' -w"` |
 | Sublime Text (Win, 64-bit install) | `$ git config --global core.editor "'c:/program files/sublime text 3/sublime_text.exe' -w"` |
