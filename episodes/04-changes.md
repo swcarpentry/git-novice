@@ -596,6 +596,7 @@ repository (`git commit`):
 > about Venus as a base for you and your friends
 > 3. Add changes from both files to the staging area,
 > and commit those changes.
+>
 > > ## Solution
 > >
 > > First we make our changes to the `mars.txt` and `venus.txt` files:
