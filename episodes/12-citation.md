@@ -1,12 +1,14 @@
 ---
-layout: page
-title: Version Control with Git
-subtitle: Citation
-minutes: 2
+title: Citation
+teaching: 2
+exercises: 0
+questions:
+- "How can I make my work easier to cite?"
+objectives:
+- "Make your work easy to cite"
+keypoints:
+- "Add a CITATION file to a repository to explain how you want your work cited."
 ---
-> ## Learning Objectives {.objectives}
->
-> *   Make your work easy to cite
 
 You may want to include a file called `CITATION` or `CITATION.txt`
 that describes how to reference your project;
@@ -41,3 +43,4 @@ July 2013.
   eprint      = {1307.5448}
 }
 ~~~
+{: .source}

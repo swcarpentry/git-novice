@@ -1,14 +1,18 @@
 ---
-layout: page
-title: Version Control with Git
-subtitle: Licensing
-minutes: 5
+title: Licensing
+teaching: 5
+exercises: 0
+questions:
+- "What licensing information should I include with my work?"
+objectives:
+- "Explain why adding licensing information to a repository is important."
+- "Choose a proper license."
+- "Explain differences in licensing and social expectations."
+keypoints:
+- "People who incorporate GPL'd software into their own software must make their software also open under the GPL license; most other open licenses do not require this."
+- "The Creative Commons family of licenses allow people to mix and match requirements and restrictions on attribution, creation of derivative works, further sharing, and commercialization."
+- "People who are not lawyers should not try to write licenses from scratch."
 ---
-> ## Learning Objectives {.objectives}
->
-> *   Explain why adding licensing and citation information to a repository is important.
-> *   Choose a proper license.
-> *   Explain differences in licensing and social expectations.
 
 When a repository with source code, a manuscript or other creative
 works becomes public, it should include a file `LICENSE` or
@@ -41,13 +45,9 @@ Inititative](http://opensource.org/licenses) and [Free Software
 Foundation](http://www.gnu.org/licenses/license-list.html) both
 maintain lists of licenses which are good choices.
 
-The following article provides an excellent overview of licensing and
-licensing options from the perspective of scientists who also write
-code:
-
-> Morin, A., Urban, J., and Sliz, P. “[A Quick Guide to Software
-> Licensing for the Scientist-Programmer](http://dx.doi.org/10.1371/journal.pcbi.1002598)” PLoS Computational Biology
-> 8(7) (2012): e1002598.
+[This article][software-licensing] provides an excellent overview of
+licensing and licensing options from the perspective of scientists who
+also write code.
 
 At the end of the day what matters is that there is a clear statement
 as to what the license is. Also, the license is best chosen from the
@@ -56,21 +56,25 @@ decision only makes it more complicated later, because each time a new
 collaborator starts contributing, they, too, hold copyright and will
 thus need to be asked for approval once a license is chosen.
 
-> ## Can I Use Open License? {.challenge}
+> ## Can I Use Open License?
 >
 > Find out whether you are allowed to apply an open license to your software.
 > Can you do this unilaterally,
 > or do you need permission from someone in your institution?
 > If so, who?
+{: .challenge}
 
-> ## What licenses have I already accepted? {.challenge}
+> ## What licenses have I already accepted?
 >
 > Many of the software tools we use on a daily basis (including in this workshop) are
 > released as open-source software. Pick a project on GitHub from the list below, or
-> one of your own choosing. Find its license (usually in a file called `LICENSE` or 
+> one of your own choosing. Find its license (usually in a file called `LICENSE` or
 > `COPYING`) and talk about how it restricts your use of the software. Is it one of
 > the licenses discussed in this session? How is it different?
 > - [Git](https://github.com/git/git), the source-code management tool
 > - [CPython](https://github.com/python/cpython), the standard implementation of the Python language
 > - [Jupyter](https://github.com/jupyter), the project behind the web-based Python notebooks we'll be using
 > - [EtherPad](https://github.com/ether/etherpad-lite), a real-time collaborative editor
+{: .challenge}
+
+[software-licensing]: http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002598
