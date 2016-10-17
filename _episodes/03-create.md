@@ -89,12 +89,16 @@ nothing to commit (create/copy files and use "git add" to track)
 >
 > Why is it a bad idea to do this? (Notice here that the `planets` project is now also tracking the entire `mars` repository.)
 > How can Dracula undo his last `git init`?
+>
 > > ## Solution
+> >
 > > Git repositories can interfere with each other if they are "nested" in the
-> > directory of another. Therefore, we advise to create each new Git
+> > directory of another: the outer repository will try to version-control 
+> > the inner repository. Therefore, it's best to create each new Git
 > > repository in a separate directory. To be sure that there is no conflicting
 > > repository in the directory, check the output of `git status`. If it looks
-> > like a the following, you are good to go to create a new repository.
+> > like the following, you are good to go to create a new repository.
+> >
 > > repository as shown:
 > >
 > > ~~~
