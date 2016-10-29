@@ -642,7 +642,6 @@ repository (`git commit`):
 > >  create mode 100644 venus.txt
 > > ~~~
 > > {: .output}
-> > ~~~
 > {: .solution}
 {: .challenge}
 
