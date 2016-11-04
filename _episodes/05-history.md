@@ -371,6 +371,53 @@ moving backward and forward in time becomes much easier.
 > Error because you have changed venus.txt without committing the changes
 > ~~~
 > {: .output}
+>
+> > ## Solution
+> > 
+> > Line by line:
+> > ~~~
+> > $ cd planets
+> > ~~~
+> > {: .bash}
+> > Enters into the 'planets' directory
+> >
+> > ~~~
+> > $ nano venus.txt #input the following text: Venus is beautiful and full of love
+> > ~~~
+> > {: .bash}
+> > We created a new file and wrote a sentence in it, but the file is not tracked by git.  
+> > 
+> > ~~~
+> > $ git add venus.txt
+> > ~~~
+> > {: .bash}
+> > Now the file is stagged. The changes that have been made to the file until now will be commited in the next commit.
+> > 
+> > ~~~
+> > $ nano venus.txt #add the following text: Venus is too hot to be suitable as a base
+> > ~~~
+> > {: .bash}
+> > The file has been modified. The new changes are not staged because we have not added the file.
+> > 
+> > ~~~
+> > $ git commit -m "comments on Venus as an unsuitable base" 
+> > ~~~
+> > {: .bash}
+> > The changes that were stagged (Venus is beautiful and full of love) have been commited. The changes that were not stagged (Venus is too hot to be suitable as a base) have not. Our local working copy is different than the copy in our local repository.
+> > 
+> > ~~~
+> > $ git checkout HEAD venus.txt
+> > ~~~
+> > {: .bash}
+> > With checkout we discard the changes in the working directory so that our local copy is exactly the same as our HEAD, the most recent commit.
+> > 
+> > ~~~
+> > $ cat venus.txt #this will print the contents of venus.txt to the screen
+> > ~~~
+> > {: .bash}
+> > If we print venus.txt we will get answer 2. 
+> > 
+> {: .solution}
 {: .challenge}
 
 > ## Checking Understanding of `git diff`
