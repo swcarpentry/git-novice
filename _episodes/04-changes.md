@@ -641,7 +641,6 @@ repository (`git commit`):
 > > 2 files changed, 2 insertions(+)
 > > ~~~
 > > {: .output}
-> > ~~~
 > {: .solution}
 {: .challenge}
 
