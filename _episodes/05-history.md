@@ -303,6 +303,16 @@ moving backward and forward in time becomes much easier.
 > 4. `$ git checkout <unique ID of last commit> data_cruncher.py`
 >
 > 5. Both 2 and 4
+>
+> > ## Solution
+> >
+> > 1. Would fetch any changes she doesn't have (i.e. contributed by another user)
+> > 2. Would fetch the HEAD copy of data_cruncher.py, which was the working version **correct**
+> > 3. Would fetch the head-minus-one copy, *before* the latest commit, of data_cruncher.py
+> > 4. Would fetch the copy that was committed with that ID, which was the working version **correct**
+> > 5. Correct, both 2 and 4 achieve the same thing so long as she uses the ID of the last commit. Other people may have contributed new changes after Jennifer recorded the ID
+> > 
+> {: .solution}
 {: .challenge}
 
 > ## Reverting a Commit
@@ -326,6 +336,11 @@ moving backward and forward in time becomes much easier.
 > 4. Type in the new commit message.
 >
 > 5. Save and close
+>
+> >## Solution
+> >
+> > `git log` will show the history of the project
+> {: .solution}
 {: .challenge}
 
 > ## Understanding Workflow and History
@@ -371,6 +386,11 @@ moving backward and forward in time becomes much easier.
 > Error because you have changed venus.txt without committing the changes
 > ~~~
 > {: .output}
+>
+> >## Solution
+> >
+> > 2  because the second line was not added to the commit and `git checkout HEAD venus.txt` returns venus.txt to the last saved state
+> {: .solution}
 {: .challenge}
 
 > ## Checking Understanding of `git diff`
@@ -396,12 +416,12 @@ moving backward and forward in time becomes much easier.
 > Exploring history is an important part of git, often it is a challenge to find
 > the right commit ID, especially if the commit is from several months ago.
 >
-> Imaging the `planets` project has more than 50 files.
+> Imagine the `planets` project has more than 50 files.
 > You would like to find a commit with specific text in `mars.txt` is modified.
 > When you type `git log`, a very long list appeared,
 > How can you narrow down the search?
 >
-> Recorded that the `git diff` command allow us to explore one specific file,
+> Recall that the `git diff` command allow us to explore one specific file,
 > e.g. `git diff mars.txt`. We can apply the similar idea here.
 >
 > ~~~
