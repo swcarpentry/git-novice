@@ -422,7 +422,7 @@ moving backward and forward in time becomes much easier.
 > How can you narrow down the search?
 >
 > Recall that the `git diff` command allow us to explore one specific file,
-> e.g. `git diff mars.txt`. We can apply the similar idea here.
+> e.g. `git diff mars.txt`. We can apply a similar idea here.
 >
 > ~~~
 > $ git log mars.txt
