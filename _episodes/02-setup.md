@@ -54,7 +54,7 @@ He also has to set his favorite text editor, following this table:
 | Notepad++ (Win, 32-bit install)    | `$ git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
 | Notepad++ (Win, 64-bit install)    | `$ git config --global core.editor "'c:/program files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
 | Kate (Linux)       | `$ git config --global core.editor "kate"`       |
-| Gedit (Linux)      | `$ git config --global core.editor "gedit -s -w"`   |
+| Gedit (Linux)      | `$ git config --global core.editor "gedit --wait --new-window"`   |
 | Scratch (Linux)       | `$ git config --global core.editor "scratch-text-editor"`  |
 | emacs              | `$ git config --global core.editor "emacs"`   |
 | vim                | `$ git config --global core.editor "vim"`   |
