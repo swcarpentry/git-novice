@@ -294,14 +294,16 @@ We removed the conflict on this line
 
 We don't need to merge again because Git knows someone has already done that.
 
-Version control's ability to merge conflicting changes
-is another reason users tend to divide their programs and papers into multiple files
-instead of storing everything in one large file.
-There's another benefit too:
-whenever there are repeated conflicts in a particular file,
-the version control system is essentially trying to tell its users
-that they ought to clarify who's responsible for what,
-or find a way to divide the work up differently.
+Git's ability to resolve conflicts is very useful, but conflict resolution 
+costs time and effort, and can introduce errors if conflicts are not resolved 
+correctly. If you find yourself resolving a lot of conflicts in a project, 
+consider one of these approaches to reducing them:
+
+- Try breaking large files apart into smaller files so that it is less
+  likely that two authors will be working in the same file at the same time
+- Clarify who is responsible for what areas with your collaborators
+- Discuss what order tasks should be carried out in with your collaborators so
+  that tasks that will change the same file won't be worked on at the same time
 
 > ## Solving Conflicts that You Create
 >
