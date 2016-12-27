@@ -517,8 +517,8 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > ~~~
 > {: .bash}
 > ~~~
-> * 005937f Thoughts about the climate
-> * 34961b1 Concerns about Mars's moons on my furry friend
+> * 005937f Discuss concerns about Mars' climate for Mummy
+> * 34961b1 Add concerns about effects of Mars' moons on Wolfman
 > * f22b25e Starting to think about Mars
 > ~~~
 > {: .output}
@@ -531,8 +531,8 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > ~~~
 > {: .bash}
 > ~~~
-> * 005937f Thoughts about the climate (HEAD, master)
-> * 34961b1 Concerns about Mars's moons on my furry friend
+> * 005937f Discuss concerns about Mars' climate for Mummy (HEAD, master)
+> * 34961b1 Add concerns about effects of Mars' moons on Wolfman
 > * f22b25e Starting to think about Mars
 > ~~~
 > {: .output}
