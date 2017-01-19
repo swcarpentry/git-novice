@@ -489,11 +489,10 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 
 > ## Limit Log Size
 >
-> To avoid that `git log` cover all your terminal screen you can
-> limit the numbers of commit that Git will list by using `-N`
-> where `N` is the number of commits that you want to receive
-> the information. For example, if you only want the information
-> from the last commit you can use
+> To avoid having `git log` cover your entire terminal screen, you can limit the
+> number of commits that Git lists by using `-N`, where `N` is the number of
+> commits that you want to view. For example, if you only want information from
+> the last commit you can use:
 >
 > ~~~
 > $ git log -1
@@ -524,7 +523,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > {: .output}
 >
 > You can also combine the `--oneline` options with others. One useful
-> combination is
+> combination is:
 >
 > ~~~
 > $ git log --oneline --graph --all --decorate
