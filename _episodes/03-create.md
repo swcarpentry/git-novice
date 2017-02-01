@@ -87,7 +87,7 @@ nothing to commit (create/copy files and use "git add" to track)
 > ~~~
 > {: .bash}
 >
-> Why is it a bad idea to do this? (Notice here that the `planets` project is now also tracking the entire `mars` repository.)
+> Why is it a bad idea to do this? (Notice here that the `planets` project is now also tracking the entire `moons` repository.)
 > How can Dracula undo his last `git init`?
 >
 > > ## Solution
