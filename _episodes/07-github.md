@@ -175,9 +175,11 @@ Our local and remote repositories are now in this state:
 
 > ## The '-u' Flag
 >
-> You may see a `-u` option used with `git push` in some documentation.  It is
-> related to concepts we cover in our intermediate lesson, and can safely be
-> ignored for now.
+> You may see a `-u` option used with `git push` in some documentation.  This
+> option is synonymous with the `--set-upstream-to` option for the `git branch`
+> command, and is used to associate the current branch with a remote branch so
+> that the `git pull` command can be used without any arguments. To do this,
+> simply use `git push -u origin master` once the remote has been set up.
 {: .callout}
 
 We can pull changes from the remote repository to the local one as well:
