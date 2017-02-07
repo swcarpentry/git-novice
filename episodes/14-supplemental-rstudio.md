@@ -81,7 +81,7 @@ the history:
 > ## Are the Push/Pull Commands Grayed Out?
 >
 > If this is the case, it generally means that RStudio doesn't know the
-> location of any other version of your repository (i.e. the one on Github).
+> location of any other version of your repository (i.e. the one on GitHub).
 > To fix this, open a terminal to the repository and enter the command:
 > `git push -u origin master`. Then restart RStudio.
 {: .callout}

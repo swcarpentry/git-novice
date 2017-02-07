@@ -14,7 +14,7 @@ lets you focus on the more interesting/innovative aspects of your project.
 *   Two main concepts
     *   *commit*: a recorded set of changes in your project's files
     *   *repository*: the history of all your project's commits
-*   Why use Github?
+*   Why use GitHub?
     *   No need for a server: easy to set up
     *   GitHub's strong community: your colleagues are probably already there
 
