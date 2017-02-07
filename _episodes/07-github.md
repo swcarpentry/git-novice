@@ -211,7 +211,7 @@ GitHub, though, this command would download them to our local repository.
 >
 > Create a remote repository on GitHub.  Push the contents of your local
 > repository to the remote.  Make changes to your local repository and push
-> these changes.  Go to the repo you just created on Github and check the
+> these changes.  Go to the repo you just created on GitHub and check the
 > [timestamps]({{ page.root }}/reference/#timestamp) of the files.  How does GitHub record
 > times, and why?
 {: .challenge}
