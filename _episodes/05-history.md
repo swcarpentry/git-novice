@@ -274,7 +274,7 @@ $ git checkout -f master mars.txt
 > ~~~
 > {: .bash}
 >
-> to revert mars.txt to its state after the commit f22b25e.
+> to revert `mars.txt` to its state after the commit `f22b25e`.
 > If you forget `mars.txt` in that command, Git will tell you that "You are in
 > 'detached HEAD' state." In this state, you shouldn't make any changes.
 > You can fix this by reattaching your head using ``git checkout master``
