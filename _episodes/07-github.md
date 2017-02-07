@@ -101,7 +101,7 @@ origin   https://github.com/vlad/planets.git (fetch)
 ~~~
 {: .output}
 
-The name `origin` is a local nickname for your remote repository: we could use
+The name `origin` is a local nickname for your remote repository. We could use
 something else if we wanted to, but `origin` is by far the most common choice.
 
 Once the nickname `origin` is set up, this command will push the changes from
