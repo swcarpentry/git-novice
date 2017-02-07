@@ -637,11 +637,11 @@ repository (`git commit`):
 > > {: .bash}
 > > ~~~
 > > [master cc127c2]
-> > Wrote down my plans to start a base on venus
-> > 2 files changed, 2 insertions(+)
+> >  Wrote down my plans to start a base on venus
+> >  2 files changed, 2 insertions(+)
+> >  create mode 100644 venus.txt
 > > ~~~
 > > {: .output}
-> > ~~~
 > {: .solution}
 {: .challenge}
 
