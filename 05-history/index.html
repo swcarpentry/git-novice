@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2017-02-08 23:59:26 +0100">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="/swc-releases/2017.02/git-novice">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lesson.css" />
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon-swc.ico" />
+    
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <title>Version Control with Git: Exploring History</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+      <a href="https://software-carpentry.org" class="pull-left">
+        <img class="navbar-logo" src="../assets/img/swc-icon-blue.svg" alt="Software Carpentry logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="../">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="../conduct/">Code of Conduct</a></li>
+
+	
+        
+        <li><a href="../setup/">Setup</a></li>
+        <li><a href="../reference/">Reference</a></li>
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="../01-basics/">Automated Version Control</a></li>
+            
+            <li><a href="../02-setup/">Setting Up Git</a></li>
+            
+            <li><a href="../03-create/">Creating a Repository</a></li>
+            
+            <li><a href="../04-changes/">Tracking Changes</a></li>
+            
+            <li><a href="../05-history/">Exploring History</a></li>
+            
+            <li><a href="../06-ignore/">Ignoring Things</a></li>
+            
+            <li><a href="../07-github/">Remotes in GitHub</a></li>
+            
+            <li><a href="../08-collab/">Collaborating</a></li>
+            
+            <li><a href="../09-conflict/">Conflicts</a></li>
+            
+            <li><a href="../10-open/">Open Science</a></li>
+            
+            <li><a href="../11-licensing/">Licensing</a></li>
+            
+            <li><a href="../12-citation/">Citation</a></li>
+            
+            <li><a href="../13-hosting/">Hosting</a></li>
+            
+            <li><a href="../14-supplemental-rstudio/">Using Git from RStudio</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="../about/">About</a></li>
+            
+            <li><a href="../discuss/">Discussion</a></li>
+            
+            <li><a href="../figures/">Figures</a></li>
+            
+            <li><a href="../guide/">Instructor Notes</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="../license/">License</a></li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search..." aria-label="Google site search">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+<div class="row">
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../04-changes/"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-md-10">
+    
+    <h3 class="maintitle"><a href="../">Version Control with Git</a></h3>
+    <h1 class="maintitle">Exploring History</h1>
+    
+  </div>
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../06-ignore/"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+<blockquote class="objectives">
+  <h2>Overview</h2>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Teaching:</strong> 25 min
+      <br/>
+      <strong>Exercises:</strong> 0 min
+    </div>
+    <div class="col-md-9">
+      <strong>Questions</strong>
+      <ul>
+	
+	<li><p>How can I identify old versions of files?</p>
+</li>
+	
+	<li><p>How do I review my changes?</p>
+</li>
+	
+	<li><p>How can I recover old versions of files?</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9">
+      <strong>Objectives</strong>
+      <ul>
+	
+	<li><p>Explain what the HEAD of a repository is and how to use it.</p>
+</li>
+	
+	<li><p>Identify and use Git commit numbers.</p>
+</li>
+	
+	<li><p>Compare various versions of tracked files.</p>
+</li>
+	
+	<li><p>Restore old versions of files.</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+</blockquote>
+
+<p>As we saw in the previous lesson, we can refer to commits by their
+identifiers.  You can refer to the <em>most recent commit</em> of the working
+directory by using the identifier <code class="highlighter-rouge">HEAD</code>.</p>
+
+<p>We’ve been adding one line at a time to <code class="highlighter-rouge">mars.txt</code>, so it’s easy to track our
+progress by looking, so let’s do that using our <code class="highlighter-rouge">HEAD</code>s.  Before we start,
+let’s make a change to <code class="highlighter-rouge">mars.txt</code>.</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ nano mars.txt
+$ cat mars.txt
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+But the Mummy will appreciate the lack of humidity
+An ill-considered change
+</code></pre>
+</div>
+
+<p>Now, let’s see what we get.</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git diff HEAD mars.txt
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code><span class="gh">diff --git a/mars.txt b/mars.txt
+index b36abfd..0848c8d 100644
+</span><span class="gd">--- a/mars.txt
+</span><span class="gi">+++ b/mars.txt
+</span><span class="gu">@@ -1,3 +1,4 @@
+</span> Cold and dry, but everything is my favorite color
+ The two moons may be a problem for Wolfman
+ But the Mummy will appreciate the lack of humidity
+<span class="gi">+An ill-considered change.
+</span></code></pre>
+</div>
+
+<p>which is the same as what you would get if you leave out <code class="highlighter-rouge">HEAD</code> (try it).  The
+real goodness in all this is when you can refer to previous commits.  We do
+that by adding <code class="highlighter-rouge">~1</code> to refer to the commit one before <code class="highlighter-rouge">HEAD</code>.</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git diff HEAD~1 mars.txt
+</code></pre>
+</div>
+
+<p>If we want to see what we changed at different steps, we can use <code class="highlighter-rouge">git diff</code>
+again, but with the notation <code class="highlighter-rouge">HEAD~1</code>, <code class="highlighter-rouge">HEAD~2</code>, and so on, to refer to old
+commits:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git diff HEAD~1 mars.txt
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code><span class="gh">diff --git a/mars.txt b/mars.txt
+index 315bf3a..b36abfd 100644
+</span><span class="gd">--- a/mars.txt
+</span><span class="gi">+++ b/mars.txt
+</span><span class="gu">@@ -1,2 +1,3 @@
+</span> Cold and dry, but everything is my favorite color
+ The two moons may be a problem for Wolfman
+<span class="gi">+But the Mummy will appreciate the lack of humidity
+</span></code></pre>
+</div>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git diff HEAD~2 mars.txt
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code><span class="gh">diff --git a/mars.txt b/mars.txt
+index df0654a..b36abfd 100644
+</span><span class="gd">--- a/mars.txt
+</span><span class="gi">+++ b/mars.txt
+</span><span class="gu">@@ -1 +1,3 @@
+</span> Cold and dry, but everything is my favorite color
+<span class="gi">+The two moons may be a problem for Wolfman
++But the Mummy will appreciate the lack of humidity
+</span></code></pre>
+</div>
+
+<p>In this way,
+we can build up a chain of commits.
+The most recent end of the chain is referred to as <code class="highlighter-rouge">HEAD</code>;
+we can refer to previous commits using the <code class="highlighter-rouge">~</code> notation,
+so <code class="highlighter-rouge">HEAD~1</code> (pronounced “head minus one”)
+means “the previous commit”,
+while <code class="highlighter-rouge">HEAD~123</code> goes back 123 commits from where we are now.</p>
+
+<p>We can also refer to commits using
+those long strings of digits and letters
+that <code class="highlighter-rouge">git log</code> displays.
+These are unique IDs for the changes,
+and “unique” really does mean unique:
+every change to any set of files on any computer
+has a unique 40-character identifier.
+Our first commit was given the ID
+f22b25e3233b4645dabd0d81e651fe074bd8e73b,
+so let’s try this:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b mars.txt
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code><span class="gh">diff --git a/mars.txt b/mars.txt
+index df0654a..b36abfd 100644
+</span><span class="gd">--- a/mars.txt
+</span><span class="gi">+++ b/mars.txt
+</span><span class="gu">@@ -1 +1,3 @@
+</span> Cold and dry, but everything is my favorite color
+<span class="gi">+The two moons may be a problem for Wolfman
++But the Mummy will appreciate the lack of humidity
+</span></code></pre>
+</div>
+
+<p>That’s the right answer,
+but typing out random 40-character strings is annoying,
+so Git lets us use just the first few characters:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git diff f22b25e mars.txt
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code><span class="gh">diff --git a/mars.txt b/mars.txt
+index df0654a..b36abfd 100644
+</span><span class="gd">--- a/mars.txt
+</span><span class="gi">+++ b/mars.txt
+</span><span class="gu">@@ -1 +1,3 @@
+</span> Cold and dry, but everything is my favorite color
+<span class="gi">+The two moons may be a problem for Wolfman
++But the Mummy will appreciate the lack of humidity
+</span></code></pre>
+</div>
+
+<p>All right! So
+we can save changes to files and see what we’ve changed—now how
+can we restore older versions of things?
+Let’s suppose we accidentally overwrite our file:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ nano mars.txt
+$ cat mars.txt
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>We will need to manufacture our own oxygen
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">git status</code> now tells us that the file has been changed,
+but those changes haven’t been staged:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git status
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>On branch master
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+
+	modified:   mars.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+</code></pre>
+</div>
+
+<p>We can put things back the way they were
+by using <code class="highlighter-rouge">git checkout</code>:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git checkout HEAD mars.txt
+$ cat mars.txt
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+But the Mummy will appreciate the lack of humidity
+</code></pre>
+</div>
+
+<p>As you might guess from its name,
+<code class="highlighter-rouge">git checkout</code> checks out (i.e., restores) an old version of a file.
+In this case,
+we’re telling Git that we want to recover the version of the file recorded in <code class="highlighter-rouge">HEAD</code>,
+which is the last saved commit.
+If we want to go back even further,
+we can use a commit identifier instead:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git checkout f22b25e mars.txt
+</code></pre>
+</div>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ cat mars.txt
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>Cold and dry, but everything is my favorite color
+</code></pre>
+</div>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git status
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code># On branch master
+Changes to be committed:
+  (use "git reset HEAD &lt;file&gt;..." to unstage)
+# Changes not staged for commit:
+#   (use "git add &lt;file&gt;..." to update what will be committed)
+#   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+#
+#	modified:   mars.txt
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+</code></pre>
+</div>
+
+<p>Notice that the changes are on the staged area.
+Again, we can put things back the way they were with
+by using <code class="highlighter-rouge">git checkout</code>:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git checkout -f master mars.txt
+</code></pre>
+</div>
+
+<blockquote class="callout">
+  <h2 id="dont-lose-your-head">Don’t Lose Your HEAD</h2>
+
+  <p>Above we used</p>
+
+  <div class="bash highlighter-rouge"><pre class="highlight"><code>$ git checkout f22b25e mars.txt
+</code></pre>
+  </div>
+
+  <p>to revert <code class="highlighter-rouge">mars.txt</code> to its state after the commit <code class="highlighter-rouge">f22b25e</code>.
+If you forget <code class="highlighter-rouge">mars.txt</code> in that command, Git will tell you that “You are in
+‘detached HEAD’ state.” In this state, you shouldn’t make any changes.
+You can fix this by reattaching your head using <code class="highlighter-rouge">git checkout master</code></p>
+</blockquote>
+
+<p>It’s important to remember that
+we must use the commit number that identifies the state of the repository
+<em>before</em> the change we’re trying to undo.
+A common mistake is to use the number of
+the commit in which we made the change we’re trying to get rid of.
+In the example below, we want to retrieve the state from before the most
+recent commit (<code class="highlighter-rouge">HEAD~1</code>), which is commit <code class="highlighter-rouge">f22b25e</code>:</p>
+
+<p><img src="../fig/git-checkout.svg" alt="Git Checkout" /></p>
+
+<p>So, to put it all together,
+here’s how Git works in cartoon form:</p>
+
+<p><img src="../fig/git_staging.svg" alt="http://figshare.com/articles/How_Git_works_a_cartoon/1328266" /></p>
+
+<blockquote class="callout">
+  <h2 id="simplifying-the-common-case">Simplifying the Common Case</h2>
+
+  <p>If you read the output of <code class="highlighter-rouge">git status</code> carefully,
+you’ll see that it includes this hint:</p>
+
+  <div class="bash highlighter-rouge"><pre class="highlight"><code>(use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+</code></pre>
+  </div>
+
+  <p>As it says,
+<code class="highlighter-rouge">git checkout</code> without a version identifier restores files to the state saved in <code class="highlighter-rouge">HEAD</code>.
+The double dash <code class="highlighter-rouge">--</code> is needed to separate the names of the files being recovered
+from the command itself:
+without it,
+Git would try to use the name of the file as the commit identifier.</p>
+</blockquote>
+
+<p>The fact that files can be reverted one by one
+tends to change the way people organize their work.
+If everything is in one large document,
+it’s hard (but not impossible) to undo changes to the introduction
+without also undoing changes made later to the conclusion.
+If the introduction and conclusion are stored in separate files,
+on the other hand,
+moving backward and forward in time becomes much easier.</p>
+
+<blockquote class="challenge">
+  <h2 id="recovering-older-versions-of-a-file">Recovering Older Versions of a File</h2>
+
+  <p>Jennifer has made changes to the Python script that she has been working on for weeks, and the
+modifications she made this morning “broke” the script and it no longer runs. She has spent
+~ 1hr trying to fix it, with no luck…</p>
+
+  <p>Luckily, she has been keeping track of her project’s versions using Git! Which commands below will
+let her recover the last committed version of her Python script called
+<code class="highlighter-rouge">data_cruncher.py</code>?</p>
+
+  <ol>
+    <li>
+      <p><code class="highlighter-rouge">$ git checkout HEAD</code></p>
+    </li>
+    <li>
+      <p><code class="highlighter-rouge">$ git checkout HEAD data_cruncher.py</code></p>
+    </li>
+    <li>
+      <p><code class="highlighter-rouge">$ git checkout HEAD~1 data_cruncher.py</code></p>
+    </li>
+    <li>
+      <p><code class="highlighter-rouge">$ git checkout &lt;unique ID of last commit&gt; data_cruncher.py</code></p>
+    </li>
+    <li>
+      <p>Both 2 and 4</p>
+    </li>
+  </ol>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="reverting-a-commit">Reverting a Commit</h2>
+
+  <p>Jennifer is collaborating on her Python script with her colleagues and
+realises her last commit to the group repository is wrong and wants to
+undo it.  Jennifer needs to undo correctly so everyone in the group
+repository gets the correct change.  <code class="highlighter-rouge">git revert [wrong commit ID]</code>
+will make a new commit that undoes Jennifer’s previous wrong
+commit. Therefore <code class="highlighter-rouge">git revert</code> is different than <code class="highlighter-rouge">git checkout [commit
+ID]</code> because <code class="highlighter-rouge">checkout</code> is for local changes not committed to the
+group repository.  Below are the right steps and explanations for
+Jennifer to use <code class="highlighter-rouge">git revert</code>, what is the missing command?</p>
+
+  <ol>
+    <li>
+      <p><strong>__</strong>__ # Look at the git history of the project to find the commit ID</p>
+    </li>
+    <li>
+      <p>Copy the ID (the first few characters of the ID, e.g. 0b1d055).</p>
+    </li>
+    <li>
+      <p><code class="highlighter-rouge">git revert [commit ID]</code></p>
+    </li>
+    <li>
+      <p>Type in the new commit message.</p>
+    </li>
+    <li>
+      <p>Save and close</p>
+    </li>
+  </ol>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="understanding-workflow-and-history">Understanding Workflow and History</h2>
+
+  <p>What is the output of cat venus.txt at the end of this set of commands?</p>
+
+  <div class="bash highlighter-rouge"><pre class="highlight"><code>$ cd planets
+$ nano venus.txt #input the following text: Venus is beautiful and full of love
+$ git add venus.txt
+$ nano venus.txt #add the following text: Venus is too hot to be suitable as a base
+$ git commit -m "comments on Venus as an unsuitable base"
+$ git checkout HEAD venus.txt
+$ cat venus.txt #this will print the contents of venus.txt to the screen
+</code></pre>
+  </div>
+
+  <p>1.</p>
+
+  <div class="output highlighter-rouge"><pre class="highlight"><code>Venus is too hot to be suitable as a base
+</code></pre>
+  </div>
+
+  <p>2.</p>
+
+  <div class="output highlighter-rouge"><pre class="highlight"><code>Venus is beautiful and full of love
+</code></pre>
+  </div>
+
+  <p>3.</p>
+
+  <div class="output highlighter-rouge"><pre class="highlight"><code>Venus is beautiful and full of love
+Venus is too hot to be suitable as a base
+</code></pre>
+  </div>
+
+  <p>4.</p>
+
+  <div class="output highlighter-rouge"><pre class="highlight"><code>Error because you have changed venus.txt without committing the changes
+</code></pre>
+  </div>
+
+  <blockquote class="solution">
+    <h2 id="solution">Solution</h2>
+
+    <p>Line by line:</p>
+    <div class="bash highlighter-rouge"><pre class="highlight"><code>$ cd planets
+</code></pre>
+    </div>
+    <p>Enters into the ‘planets’ directory</p>
+
+    <div class="bash highlighter-rouge"><pre class="highlight"><code>$ nano venus.txt #input the following text: Venus is beautiful and full of love
+</code></pre>
+    </div>
+    <p>We created a new file and wrote a sentence in it, but the file is not tracked by git.</p>
+
+    <div class="bash highlighter-rouge"><pre class="highlight"><code>$ git add venus.txt
+</code></pre>
+    </div>
+    <p>Now the file is stagged. The changes that have been made to the file until now will be commited in the next commit.</p>
+
+    <div class="bash highlighter-rouge"><pre class="highlight"><code>$ nano venus.txt #add the following text: Venus is too hot to be suitable as a base
+</code></pre>
+    </div>
+    <p>The file has been modified. The new changes are not staged because we have not added the file.</p>
+
+    <div class="bash highlighter-rouge"><pre class="highlight"><code>$ git commit -m "comments on Venus as an unsuitable base" 
+</code></pre>
+    </div>
+    <p>The changes that were stagged (Venus is beautiful and full of love) have been commited. The changes that were not stagged (Venus is too hot to be suitable as a base) have not. Our local working copy is different than the copy in our local repository.</p>
+
+    <div class="bash highlighter-rouge"><pre class="highlight"><code>$ git checkout HEAD venus.txt
+</code></pre>
+    </div>
+    <p>With checkout we discard the changes in the working directory so that our local copy is exactly the same as our HEAD, the most recent commit.</p>
+
+    <div class="bash highlighter-rouge"><pre class="highlight"><code>$ cat venus.txt #this will print the contents of venus.txt to the screen
+</code></pre>
+    </div>
+    <p>If we print venus.txt we will get answer 2.</p>
+
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="checking-understanding-of-git-diff">Checking Understanding of <code class="highlighter-rouge">git diff</code></h2>
+
+  <p>Consider this command: <code class="highlighter-rouge">git diff HEAD~3 mars.txt</code>. What do you predict this command
+will do if you execute it? What happens when you do execute it? Why?</p>
+
+  <p>Try another command, <code class="highlighter-rouge">git diff [ID] mars.txt</code>, where [ID] is replaced with
+the unique identifier for your most recent commit. What do you think will happen,
+and what does happen?</p>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="getting-rid-of-staged-changes">Getting Rid of Staged Changes</h2>
+
+  <p><code class="highlighter-rouge">git checkout</code> can be used to restore a previous commit when unstaged changes have
+been made, but will it also work for changes that have been staged but not committed?
+Make a change to <code class="highlighter-rouge">mars.txt</code>, add that change, and use <code class="highlighter-rouge">git checkout</code> to see if
+you can remove your change.</p>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="explore-and-summarize-histories">Explore and Summarize Histories</h2>
+
+  <p>Exploring history is an important part of git, often it is a challenge to find
+the right commit ID, especially if the commit is from several months ago.</p>
+
+  <p>Imaging the <code class="highlighter-rouge">planets</code> project has more than 50 files.
+You would like to find a commit with specific text in <code class="highlighter-rouge">mars.txt</code> is modified.
+When you type <code class="highlighter-rouge">git log</code>, a very long list appeared,
+How can you narrow down the search?</p>
+
+  <p>Recorded that the <code class="highlighter-rouge">git diff</code> command allow us to explore one specific file,
+e.g. <code class="highlighter-rouge">git diff mars.txt</code>. We can apply the similar idea here.</p>
+
+  <div class="bash highlighter-rouge"><pre class="highlight"><code>$ git log mars.txt
+</code></pre>
+  </div>
+
+  <p>Unfortunately some of these commit messages are very ambiguous e.g. <code class="highlighter-rouge">update files</code>.
+How can you search through these files?</p>
+
+  <p>Both <code class="highlighter-rouge">git diff</code> and <code class="highlighter-rouge">git log</code> are very useful and they summarize different part of the history for you.
+Is that possible to combine both? Let’s try the following:</p>
+
+  <div class="bash highlighter-rouge"><pre class="highlight"><code>$ git log --patch mars.txt
+</code></pre>
+  </div>
+
+  <p>You should get a long list of output, and you should be able to see both commit messages and the difference between each commit.</p>
+
+  <p>Question: What does the following command do?</p>
+
+  <div class="bash highlighter-rouge"><pre class="highlight"><code>$ git log --patch HEAD~3 HEAD~1 *.txt
+</code></pre>
+  </div>
+</blockquote>
+
+<blockquote class="keypoints">
+  <h2>Key Points</h2>
+  <ul>
+    
+    <li><p><code class="highlighter-rouge">git diff</code> displays differences between commits.</p>
+</li>
+    
+    <li><p><code class="highlighter-rouge">git checkout</code> recovers old versions of files.</p>
+</li>
+    
+  </ul>
+</blockquote>
+
+
+
+
+
+<div class="row">
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../04-changes/"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-md-10">
+    
+  </div>
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../06-ignore/"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+      
+      <footer>
+  <div class="row">
+    <div class="col-md-6" align="left">
+      <h4>
+	Copyright &copy; 2016
+	<a href="https://software-carpentry.org">Software Carpentry Foundation</a>
+	
+      </h4>
+    </div>
+    <div class="col-md-6" align="right">
+      <h4>
+	<a href="/">Source</a>
+	/
+	<a href="/blob/gh-pages/CONTRIBUTING.md">Contributing</a>
+	/
+	<a href="mailto:lessons@software-carpentry.org">Contact</a>
+      </h4>
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    <script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/lesson.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37305346-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2017-02-08 23:59:26 +0100">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="/swc-releases/2017.02/git-novice">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lesson.css" />
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon-swc.ico" />
+    
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <title>Version Control with Git: Remotes in GitHub</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+      <a href="https://software-carpentry.org" class="pull-left">
+        <img class="navbar-logo" src="../assets/img/swc-icon-blue.svg" alt="Software Carpentry logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="../">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="../conduct/">Code of Conduct</a></li>
+
+	
+        
+        <li><a href="../setup/">Setup</a></li>
+        <li><a href="../reference/">Reference</a></li>
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="../01-basics/">Automated Version Control</a></li>
+            
+            <li><a href="../02-setup/">Setting Up Git</a></li>
+            
+            <li><a href="../03-create/">Creating a Repository</a></li>
+            
+            <li><a href="../04-changes/">Tracking Changes</a></li>
+            
+            <li><a href="../05-history/">Exploring History</a></li>
+            
+            <li><a href="../06-ignore/">Ignoring Things</a></li>
+            
+            <li><a href="../07-github/">Remotes in GitHub</a></li>
+            
+            <li><a href="../08-collab/">Collaborating</a></li>
+            
+            <li><a href="../09-conflict/">Conflicts</a></li>
+            
+            <li><a href="../10-open/">Open Science</a></li>
+            
+            <li><a href="../11-licensing/">Licensing</a></li>
+            
+            <li><a href="../12-citation/">Citation</a></li>
+            
+            <li><a href="../13-hosting/">Hosting</a></li>
+            
+            <li><a href="../14-supplemental-rstudio/">Using Git from RStudio</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="../about/">About</a></li>
+            
+            <li><a href="../discuss/">Discussion</a></li>
+            
+            <li><a href="../figures/">Figures</a></li>
+            
+            <li><a href="../guide/">Instructor Notes</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="../license/">License</a></li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search..." aria-label="Google site search">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+<div class="row">
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../06-ignore/"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-md-10">
+    
+    <h3 class="maintitle"><a href="../">Version Control with Git</a></h3>
+    <h1 class="maintitle">Remotes in GitHub</h1>
+    
+  </div>
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../08-collab/"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+<blockquote class="objectives">
+  <h2>Overview</h2>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Teaching:</strong> 30 min
+      <br/>
+      <strong>Exercises:</strong> 0 min
+    </div>
+    <div class="col-md-9">
+      <strong>Questions</strong>
+      <ul>
+	
+	<li><p>How do I share my changes with others on the web?</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9">
+      <strong>Objectives</strong>
+      <ul>
+	
+	<li><p>Explain what remote repositories are and why they are useful.</p>
+</li>
+	
+	<li><p>Push to or pull from a remote repository.</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+</blockquote>
+
+<p>Version control really comes into its own when we begin to collaborate with
+other people.  We already have most of the machinery we need to do this; the
+only thing missing is to copy changes from one repository to another.</p>
+
+<p>Systems like Git allow us to move work between any two repositories.  In
+practice, though, it’s easiest to use one copy as a central hub, and to keep it
+on the web rather than on someone’s laptop.  Most programmers use hosting
+services like <a href="http://github.com">GitHub</a>, <a href="http://bitbucket.org">BitBucket</a> or
+<a href="http://gitlab.com/">GitLab</a> to hold those master copies; we’ll explore the pros
+and cons of this in the final section of this lesson.</p>
+
+<p>Let’s start by sharing the changes we’ve made to our current project with the
+world.  Log in to GitHub, then click on the icon in the top right corner to
+create a new repository called <code class="highlighter-rouge">planets</code>:</p>
+
+<p><img src="../fig/github-create-repo-01.png" alt="Creating a Repository on GitHub (Step 1)" /></p>
+
+<p>Name your repository “planets” and then click “Create Repository”:</p>
+
+<p><img src="../fig/github-create-repo-02.png" alt="Creating a Repository on GitHub (Step 2)" /></p>
+
+<p>As soon as the repository is created, GitHub displays a page with a URL and some
+information on how to configure your local repository:</p>
+
+<p><img src="../fig/github-create-repo-03.png" alt="Creating a Repository on GitHub (Step 3)" /></p>
+
+<p>This effectively does the following on GitHub’s servers:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ mkdir planets
+$ cd planets
+$ git init
+</code></pre>
+</div>
+
+<p>Our local repository still contains our earlier work on <code class="highlighter-rouge">mars.txt</code>, but the
+remote repository on GitHub doesn’t contain any files yet:</p>
+
+<p><img src="../fig/git-freshly-made-github-repo.svg" alt="Freshly-Made GitHub Repository" /></p>
+
+<p>The next step is to connect the two repositories.  We do this by making the
+GitHub repository a <a href="../reference/#remote">remote</a> for the local repository.
+The home page of the repository on GitHub includes the string we need to
+identify it:</p>
+
+<p><img src="../fig/github-find-repo-string.png" alt="Where to Find Repository URL on GitHub" /></p>
+
+<p>Click on the ‘HTTPS’ link to change the <a href="../reference/#protocol">protocol</a> from
+SSH to HTTPS.</p>
+
+<blockquote class="callout">
+  <h2 id="https-vs-ssh">HTTPS vs. SSH</h2>
+
+  <p>We use HTTPS here because it does not require additional configuration.  After
+the workshop you may want to set up SSH access, which is a bit more secure, by
+following one of the great tutorials from
+<a href="https://help.github.com/articles/generating-ssh-keys">GitHub</a>,
+<a href="https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Git">Atlassian/BitBucket</a>
+and <a href="https://about.gitlab.com/2014/03/04/add-ssh-key-screencast/">GitLab</a>
+(this one has a screencast).</p>
+</blockquote>
+
+<p><img src="../fig/github-change-repo-string.png" alt="Changing the Repository URL on GitHub" /></p>
+
+<p>Copy that URL from the browser, go into the local <code class="highlighter-rouge">planets</code> repository, and run
+this command:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git remote add origin https://github.com/vlad/planets.git
+</code></pre>
+</div>
+
+<p>Make sure to use the URL for your repository rather than Vlad’s: the only
+difference should be your username instead of <code class="highlighter-rouge">vlad</code>.</p>
+
+<p>We can check that the command has worked by running <code class="highlighter-rouge">git remote -v</code>:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git remote -v
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>origin   https://github.com/vlad/planets.git (push)
+origin   https://github.com/vlad/planets.git (fetch)
+</code></pre>
+</div>
+
+<p>The name <code class="highlighter-rouge">origin</code> is a local nickname for your remote repository. We could use
+something else if we wanted to, but <code class="highlighter-rouge">origin</code> is by far the most common choice.</p>
+
+<p>Once the nickname <code class="highlighter-rouge">origin</code> is set up, this command will push the changes from
+our local repository to the repository on GitHub:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git push origin master
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>Counting objects: 9, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (9/9), 821 bytes, done.
+Total 9 (delta 2), reused 0 (delta 0)
+To https://github.com/vlad/planets
+ * [new branch]      master -&gt; master
+Branch master set up to track remote branch master from origin.
+</code></pre>
+</div>
+
+<blockquote class="callout">
+  <h2 id="proxy">Proxy</h2>
+
+  <p>If the network you are connected to uses a proxy there is an chance that your
+last command failed with “Could not resolve hostname” as the error message. To
+solve this issue you need to tell Git about the proxy:</p>
+
+  <div class="bash highlighter-rouge"><pre class="highlight"><code>$ git config --global http.proxy http://user:password@proxy.url
+$ git config --global https.proxy http://user:password@proxy.url
+</code></pre>
+  </div>
+
+  <p>When you connect to another network that doesn’t use a proxy you will need to
+tell Git to disable the proxy using:</p>
+
+  <div class="bash highlighter-rouge"><pre class="highlight"><code>$ git config --global --unset http.proxy
+$ git config --global --unset https.proxy
+</code></pre>
+  </div>
+</blockquote>
+
+<blockquote class="callout">
+  <h2 id="password-managers">Password Managers</h2>
+
+  <p>If your operating system has a password manager configured, <code class="highlighter-rouge">git push</code> will
+try to use it when it needs your username and password.  For example, this
+is the default behavior for Git Bash on Windows. If you want to type your
+username and password at the terminal instead of using a password manager,
+type:</p>
+
+  <div class="bash highlighter-rouge"><pre class="highlight"><code>$ unset SSH_ASKPASS
+</code></pre>
+  </div>
+
+  <p>in the terminal, before you run <code class="highlighter-rouge">git push</code>.  Despite the name, <a href="http://git-scm.com/docs/gitcredentials#_requesting_credentials">git uses
+<code class="highlighter-rouge">SSH_ASKPASS</code> for all credential
+entry</a>, so
+you may want to unset <code class="highlighter-rouge">SSH_ASKPASS</code> whether you are using git via SSH or
+https.</p>
+
+  <p>You may also want to add <code class="highlighter-rouge">unset SSH_ASKPASS</code> at the end of your <code class="highlighter-rouge">~/.bashrc</code>
+to make git default to using the terminal for usernames and passwords.</p>
+</blockquote>
+
+<p>Our local and remote repositories are now in this state:</p>
+
+<p><img src="../fig/github-repo-after-first-push.svg" alt="GitHub Repository After First Push" /></p>
+
+<blockquote class="callout">
+  <h2 id="the--u-flag">The ‘-u’ Flag</h2>
+
+  <p>You may see a <code class="highlighter-rouge">-u</code> option used with <code class="highlighter-rouge">git push</code> in some documentation.  This
+option is synonymous with the <code class="highlighter-rouge">--set-upstream-to</code> option for the <code class="highlighter-rouge">git branch</code>
+command, and is used to associate the current branch with a remote branch so
+that the <code class="highlighter-rouge">git pull</code> command can be used without any arguments. To do this,
+simply use <code class="highlighter-rouge">git push -u origin master</code> once the remote has been set up.</p>
+</blockquote>
+
+<p>We can pull changes from the remote repository to the local one as well:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git pull origin master
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>From https://github.com/vlad/planets
+ * branch            master     -&gt; FETCH_HEAD
+Already up-to-date.
+</code></pre>
+</div>
+
+<p>Pulling has no effect in this case because the two repositories are already
+synchronized.  If someone else had pushed some changes to the repository on
+GitHub, though, this command would download them to our local repository.</p>
+
+<blockquote class="challenge">
+  <h2 id="github-gui">GitHub GUI</h2>
+
+  <p>Browse to your <code class="highlighter-rouge">planets</code> repository on GitHub.
+Under the Code tab, find and click on the text that says “XX commits” (where “XX” is some number).
+Hover over, and click on, the three buttons to the right of each commit.
+What information can you gather/explore from these buttons?
+How would you get that same information in the shell?</p>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="github-timestamp">GitHub Timestamp</h2>
+
+  <p>Create a remote repository on GitHub.  Push the contents of your local
+repository to the remote.  Make changes to your local repository and push
+these changes.  Go to the repo you just created on GitHub and check the
+<a href="../reference/#timestamp">timestamps</a> of the files.  How does GitHub record
+times, and why?</p>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="push-vs-commit">Push vs. Commit</h2>
+
+  <p>In this lesson, we introduced the “git push” command.
+How is “git push” different from “git commit”?</p>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="fixing-remote-settings">Fixing Remote Settings</h2>
+
+  <p>It happens quite often in practice that you made a typo in the
+remote URL. This exercice is about how to fix this kind of issues.
+First start by adding a remote with an invalid URL:</p>
+
+  <div class="bash highlighter-rouge"><pre class="highlight"><code>git remote add broken https://github.com/this/url/is/invalid
+</code></pre>
+  </div>
+
+  <p>Do you get an error when adding the remote? Can you think of a
+command that would make it obvious that your remote URL was not
+valid? Can you figure out how to fix the URL (tip: use <code class="highlighter-rouge">git remote
+-h</code>)? Don’t forget to clean up and remove this remote once you are
+done with this exercise.</p>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="github-license-and-readme-files">GitHub License and README files</h2>
+
+  <p>In this section we learned about creating a remote repository on GitHub, but when you initialized your
+GitHub repo, you didn’t add a README.md or a license file. If you had, what do you think would have happened when
+you tried to link your local and remote repositories?</p>
+</blockquote>
+
+<blockquote class="keypoints">
+  <h2>Key Points</h2>
+  <ul>
+    
+    <li><p>A local Git repository can be connected to one or more remote repositories.</p>
+</li>
+    
+    <li><p>Use the HTTPS protocol to connect to remote repositories until you have learned how to set up SSH.</p>
+</li>
+    
+    <li><p><code class="highlighter-rouge">git push</code> copies changes from a local repository to a remote repository.</p>
+</li>
+    
+    <li><p><code class="highlighter-rouge">git pull</code> copies changes from a remote repository to a local repository.</p>
+</li>
+    
+  </ul>
+</blockquote>
+
+
+
+
+
+<div class="row">
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../06-ignore/"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-md-10">
+    
+  </div>
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../08-collab/"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+      
+      <footer>
+  <div class="row">
+    <div class="col-md-6" align="left">
+      <h4>
+	Copyright &copy; 2016
+	<a href="https://software-carpentry.org">Software Carpentry Foundation</a>
+	
+      </h4>
+    </div>
+    <div class="col-md-6" align="right">
+      <h4>
+	<a href="/">Source</a>
+	/
+	<a href="/blob/gh-pages/CONTRIBUTING.md">Contributing</a>
+	/
+	<a href="mailto:lessons@software-carpentry.org">Contact</a>
+      </h4>
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    <script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/lesson.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37305346-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>

@@ -67,3 +67,7 @@ exclude:
 
 # Turn off built-in syntax highlighting.
 highlighter: false
+
+github:
+  url: '/swc-releases/2017.02/git-novice'
+
