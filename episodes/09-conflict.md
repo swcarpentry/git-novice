@@ -294,9 +294,9 @@ We removed the conflict on this line
 
 We don't need to merge again because Git knows someone has already done that.
 
-Git's ability to resolve conflicts is very useful, but conflict resolution 
-costs time and effort, and can introduce errors if conflicts are not resolved 
-correctly. If you find yourself resolving a lot of conflicts in a project, 
+Git's ability to resolve conflicts is very useful, but conflict resolution
+costs time and effort, and can introduce errors if conflicts are not resolved
+correctly. If you find yourself resolving a lot of conflicts in a project,
 consider one of these approaches to reducing them:
 
 - Try breaking large files apart into smaller files so that it is less
@@ -320,6 +320,146 @@ consider one of these approaches to reducing them:
 > What does Git do
 > when there is a conflict in an image or some other non-textual file
 > that is stored in version control?
+>
+> > ## Solution
+> >
+> > Let's try it. Suppose Dracula takes a picture of Martian surface and
+> > and adds it to the repository:
+> >
+> > ~~~
+> > $ git add mars.jpg
+> > $ git commit -m "Picture of Martian surface"
+> > ~~~
+> > {: .bash}
+> >
+> > ~~~
+> > [master 8e4115c] Picture of Martian surface
+> >  1 file changed, 0 insertions(+), 0 deletions(-)
+> >  create mode 100644 mars.jpg
+> > ~~~
+> > {: .output}
+> >
+> > Suppose that Wolfman has added a similar picture in the meantime.
+> > His is a picture of the Martian sky, but it is *also* called `mars.jpg`.
+> > When Dracula tries to push, he gets a familiar message:
+> >
+> > ~~~
+> > $ git push origin master
+> > ~~~
+> > {: .bash}
+> >
+> > ~~~
+> > To https://github.com/vlad/planets.git
+> >  ! [rejected]        master -> master (fetch first)
+> > error: failed to push some refs to 'https://github.com/vlad/planets.git'
+> > hint: Updates were rejected because the remote contains work that you do
+> > hint: not have locally. This is usually caused by another repository pushing
+> > hint: to the same ref. You may want to first integrate the remote changes
+> > hint: (e.g., 'git pull ...') before pushing again.
+> > hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+> > ~~~
+> > {: .output}
+> >
+> > We've learned that we must pull first and resolve any conflicts:
+> >
+> > ~~~
+> > $ git pull origin master
+> > ~~~
+> > {: .bash}
+> >
+> > ~~~
+> > $ git pull origin master
+> > remote: Counting objects: 3, done.
+> > remote: Compressing objects: 100% (3/3), done.
+> > remote: Total 3 (delta 0), reused 0 (delta 0)
+> > Unpacking objects: 100% (3/3), done.
+> > From https://github.com/vlad/planets.git
+> >  * branch            master     -> FETCH_HEAD
+> >    6a67967..439dc8c  master     -> origin/master
+> > warning: Cannot merge binary files: mars.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)
+> > Auto-merging mars.jpg
+> > CONFLICT (add/add): Merge conflict in mars.jpg
+> > Automatic merge failed; fix conflicts and then commit the result.
+> > ~~~
+> > {: .output}
+> >
+> > The conflict message here is mostly the same as it was for `mars.txt`, but
+> > there is one key additional line:
+> >
+> > ~~~
+> > warning: Cannot merge binary files: mars.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)
+> > ~~~
+> >
+> > Git cannot automatically insert conflict markers into an image as it does
+> > for text files. So, instead of editing the image file, we must check out
+> > the version we want to keep. Then we can add and commit this version.
+> >
+> > On the key line above, Git has conveniently given us commit identifiers
+> > for the two versions of `mars.jpg`. Our version is `HEAD`, and Wolfman's
+> > version is `439dc8c0...`. If we want to use our version, we can use
+> > `git checkout`:
+> >
+> > ~~~
+> > $ git checkout HEAD mars.jpg
+> > $ git add mars.jpg
+> > $ git commit -m "Use image of surface instead of sky"
+> > ~~~
+> > {: .bash}
+> >
+> > ~~~
+> > [master 21032c3] Use image of surface instead of sky
+> > ~~~
+> > {: .output}
+> >
+> > If instead we want to use Wolfman's version, we can use `git checkout` with
+> > Wolfman's commit identifier, `439dc8c0`:
+> >
+> > ~~~
+> > $ git checkout 439dc8c0 mars.jpg
+> > $ git add mars.jpg
+> > $ git commit -m "Use image of sky instead of surface"
+> > ~~~
+> > {: .bash}
+> >
+> > ~~~
+> > [master da21b34] Use image of sky instead of surface
+> > ~~~
+> > {: .output}
+> >
+> > We can also keep *both* images. The catch is that we cannot keep them
+> > under the same name. But, we can check out each version in succession
+> > and *rename* it, then add the renamed versions. First, check out each
+> > image and rename it:
+> >
+> > ~~~
+> > $ git checkout HEAD mars.jpg
+> > $ git mv mars.jpg mars-surface.jpg
+> > $ git checkout 439dc8c0 mars.jpg
+> > $ mv mars.jpg mars-sky.jpg
+> > ~~~
+> > {: .bash}
+> >
+> > Then, remove the old `mars.jpg` and add the two new files:
+> >
+> > ~~~
+> > $ git rm mars.jpg
+> > $ git add mars-surface.jpg
+> > $ git add mars-sky.jpg
+> > $ git commit -m "Use two images: surface and sky"
+> > ~~~
+> > {: .bash}
+> >
+> > ~~~
+> > [master 94ae08c] Use two images: surface and sky
+> >  2 files changed, 0 insertions(+), 0 deletions(-)
+> >  create mode 100644 mars-sky.jpg
+> >  rename mars.jpg => mars-surface.jpg (100%)
+> > ~~~
+> > {: .output}
+> >
+> > Now both images of Mars are checked into the repository, and `mars.jpg`
+> > no longer exists.
+> {: .solution}
 {: .challenge}
 
 > ## A Typical Work Session
@@ -349,4 +489,17 @@ consider one of these approaches to reducing them:
 > |4    |                           |                            |
 > |5    |                           |                            |
 > |6    | Celebrate!                | `AFK`                      |
+>
+> > ## Solution
+> >
+> > |order|action . . . . . . |command . . . . . . . . . . . . . . . . . . . |
+> > |-----|-------------------|----------------------------------------------|
+> > |1    | Update local      | `git pull origin master`                     |
+> > |2    | Make changes      | `echo 100 >> numbers.txt`                    |
+> > |3    | Stage changes     | `git add numbers.txt`                        |
+> > |4    | Commit changes    | `git commit -m "Added 100 to numbers.txt"`   |
+> > |5    | Update remote     | `git push origin master`                     |
+> > |6    | Celebrate!        | `AFK`                                        |
+> >
+> {: .solution}
 {: .challenge}
