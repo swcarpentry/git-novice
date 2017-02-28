@@ -367,6 +367,9 @@ consider one of these approaches to reducing them:
 > > ~~~
 > > {: .bash}
 > >
+> > When there is a conflict on an image or other binary file, git prints
+> > a message like this:
+> >
 > > ~~~
 > > $ git pull origin master
 > > remote: Counting objects: 3, done.
