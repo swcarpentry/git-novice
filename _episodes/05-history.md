@@ -67,9 +67,8 @@ $ git diff HEAD~1 mars.txt
 ~~~
 {: .bash}
 
-If we want to see what we changed at different steps we can use `git diff`
-again, but with the notation `HEAD~1`, `HEAD~2`, and so on, to refer to old
-commits:
+If we want to see the differences between older commits we can use `git diff`
+again, but with the notation `HEAD~1`, `HEAD~2`, and so on, to refer to them:
 
 
 ~~~
@@ -89,7 +88,7 @@ index df0654a..b36abfd 100644
 ~~~
 {: .output}
 
-We could also use `git show` which shows us what change at that step as well as the commit message, rather than the _differences_ between a commit and our working directory that we see by using `git diff`.
+We could also use `git show` which shows us what changes we made at an older commit as well as the commit message, rather than the _differences_ between a commit and our working directory that we see by using `git diff`.
 
 ~~~
 $ git show HEAD~2 mars.txt
