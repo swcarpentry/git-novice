@@ -67,26 +67,9 @@ $ git diff HEAD~1 mars.txt
 ~~~
 {: .bash}
 
-If we want to see what we changed at different steps, we can use `git diff`
-again, but with the notation `HEAD~1`, `HEAD~2`, and so on, to refer to old
-commits:
+If we want to see the differences between older commits we can use `git diff`
+again, but with the notation `HEAD~1`, `HEAD~2`, and so on, to refer to them:
 
-~~~
-$ git diff HEAD~1 mars.txt
-~~~
-{: .bash}
-
-~~~
-diff --git a/mars.txt b/mars.txt
-index 315bf3a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
-~~~
-{: .output}
 
 ~~~
 $ git diff HEAD~2 mars.txt
@@ -102,6 +85,30 @@ index df0654a..b36abfd 100644
  Cold and dry, but everything is my favorite color
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity
+~~~
+{: .output}
+
+We could also use `git show` which shows us what changes we made at an older commit as well as the commit message, rather than the _differences_ between a commit and our working directory that we see by using `git diff`.
+
+~~~
+$ git show HEAD~2 mars.txt
+~~~
+{: .bash}
+
+~~~
+commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
+Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Date:   Thu Aug 22 10:07:21 2013 -0400
+
+    Add concerns about effects of Mars' moons on Wolfman
+
+diff --git a/mars.txt b/mars.txt
+index df0654a..315bf3a 100644
+--- a/mars.txt
++++ b/mars.txt
+@@ -1 +1,2 @@
+ Cold and dry, but everything is my favorite color
++The two moons may be a problem for Wolfman
 ~~~
 {: .output}
 
@@ -411,7 +418,7 @@ moving backward and forward in time becomes much easier.
 > {: .output}
 >
 > > ## Solution
-> > 
+> >
 > > Line by line:
 > > ~~~
 > > $ cd planets
@@ -424,37 +431,37 @@ moving backward and forward in time becomes much easier.
 > > ~~~
 > > {: .bash}
 > > We created a new file and wrote a sentence in it, but the file is not tracked by git.  
-> > 
+> >
 > > ~~~
 > > $ git add venus.txt
 > > ~~~
 > > {: .bash}
 > > Now the file is stagged. The changes that have been made to the file until now will be commited in the next commit.
-> > 
+> >
 > > ~~~
 > > $ nano venus.txt #add the following text: Venus is too hot to be suitable as a base
 > > ~~~
 > > {: .bash}
 > > The file has been modified. The new changes are not staged because we have not added the file.
-> > 
+> >
 > > ~~~
-> > $ git commit -m "comments on Venus as an unsuitable base" 
+> > $ git commit -m "comments on Venus as an unsuitable base"
 > > ~~~
 > > {: .bash}
 > > The changes that were stagged (Venus is beautiful and full of love) have been commited. The changes that were not stagged (Venus is too hot to be suitable as a base) have not. Our local working copy is different than the copy in our local repository.
-> > 
+> >
 > > ~~~
 > > $ git checkout HEAD venus.txt
 > > ~~~
 > > {: .bash}
 > > With checkout we discard the changes in the working directory so that our local copy is exactly the same as our HEAD, the most recent commit.
-> > 
+> >
 > > ~~~
 > > $ cat venus.txt #this will print the contents of venus.txt to the screen
 > > ~~~
 > > {: .bash}
-> > If we print venus.txt we will get answer 2. 
-> > 
+> > If we print venus.txt we will get answer 2.
+> >
 > {: .solution}
 {: .challenge}
 
