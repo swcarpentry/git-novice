@@ -545,10 +545,10 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > Try it for yourself:
 >
 > ~~~
-> mkdir directory
-> git status
-> git add directory
-> git status
+> $ mkdir directory
+> $ git status
+> $ git add directory
+> $ git status
 > ~~~
 > {: .bash}
 > 
@@ -559,6 +559,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > and their sole purpose is to populate a directory so that Git adds it to
 > the repository. In fact, you can name such files anything you like.
 >
+> {:start="2"}
 > 2. If you create a directory in your Git repository and populate it with files,
 > you can add all files in the directory at once by:
 >
