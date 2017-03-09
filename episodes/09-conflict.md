@@ -324,7 +324,26 @@ consider one of these approaches to reducing them:
 > > ## Solution
 > >
 > > Let's try it. Suppose Dracula takes a picture of Martian surface and
-> > and adds it to the repository:
+> > calls it `mars.jpg`.
+> >
+> > If you do not have an image file of Mars available, you can create
+> > a dummy binary file like this:
+> >
+> > ~~~
+> > $ head --bytes 1024 /dev/urandom > mars.jpg
+> > $ ls -lh mars.jpg
+> > ~~~
+> > {: .bash}
+> >
+> > ~~~
+> > -rw-r--r-- 1 vlad 57095 1.0K Mar  8 20:24 mars.jpg
+> > ~~~
+> > {: .output}
+> >
+> > `ls` shows us that this created a 1-kilobyte file. It is full of
+> > random bytes read from the special file, `/dev/urandom`.
+> >
+> > Now, suppose Dracula adds `mars.jpg` to his repository:
 > >
 > > ~~~
 > > $ git add mars.jpg
