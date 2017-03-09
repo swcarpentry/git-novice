@@ -474,6 +474,14 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 ~~~
 {: .output}
 
+> ## Word-based diffing
+>
+> Sometimes, e.g. in the case of the text documments a line-wise
+> diff is too coarse. That is where the `--color-words` option of
+> `git diff` comes in very useful as it highlights the changed 
+> words using colors.
+{: .callout}
+
 > ## Paging the Log
 >
 > When the output of `git log` is too long to fit in your screen,
