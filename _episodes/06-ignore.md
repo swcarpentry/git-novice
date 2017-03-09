@@ -168,6 +168,9 @@ nothing to commit, working directory clean
 > > and create an exception for the `results/data/` folder.
 > > The next challenge will cover this type of solution.
 > >
+> > Sometimes the `**` pattern comes in handy, too, which matches
+> > multiple directory levels. E.g. `**/results/plots/*` would make git ignore
+> > the `results/plots` directory in any root directory.
 > {: .solution}
 {: .challenge}
 
