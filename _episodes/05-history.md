@@ -348,6 +348,30 @@ moving backward and forward in time becomes much easier.
 > 4. `$ git checkout <unique ID of last commit> data_cruncher.py`
 >
 > 5. Both 2 and 4
+>
+> > ## Solution
+> >
+> > Lets look at each command to see what will happen.
+> > 
+> > 1. `$ git checkout HEAD`
+> >
+> > When Jennifer runs this command, git will not change any of her files because this command does not specify which files she wants to checkout.
+> >
+> > 2. `$ git checkout HEAD data_cruncher.py`
+> >
+> > With this command, git will replace Jennifer's "broken" copy of data_cruncher.py with the previous commit's unmodified version.  She'll be given a "pre-break" file and have a chance to try editing it again.
+> >
+> > 3. `$ git checkout HEAD~1 data_cruncher.py`
+> >
+> > If Jennifer uses this command, her copy of data_cruncher.py will be replaced with the version of data_cruncher.py from 2 commits prior. HEAD~1 (head minus one) refers to the commit before the previous one, so this will return a file that is not guaranteed to be up-to-date with the most recent commit.
+> >
+> > 4. `$ git checkout <unique ID of last commit> data_cruncher.py`
+> >
+> > As long as Jennifer has the last commit's unique ID, this command will replace her copy of data_cruncher.py with the previous commit's version the same way `$ git checkout HEAD data_cruncher.py` did.  Jennifer can obtain the unique ID of the last commit by using the command `$ git show HEAD`.
+> >
+> > Using commands 2 or 4 will replace Jennifer's data_cruncher.py file with the previous commit's unedited version.  5 is the solution.
+> >
+> {: .solution}
 {: .challenge}
 
 > ## Reverting a Commit
@@ -371,6 +395,19 @@ moving backward and forward in time becomes much easier.
 > 4. Type in the new commit message.
 >
 > 5. Save and close
+>
+> > ## Solution
+> >
+> > To view the git commit history of the project, Jennifer should run the following command:
+> >
+> > ~~~
+> > $ git log
+> > ~~~
+> > {: .bash}
+> >
+> > This will list the all commits of the project in reverse-chronological order (most recent commits show up first).  Jennifer can find the commit she wants to revert on this list and obtain its unique commit ID from here.
+> >
+> {: .solution}
 {: .challenge}
 
 > ## Understanding Workflow and History
