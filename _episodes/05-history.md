@@ -382,7 +382,7 @@ moving backward and forward in time becomes much easier.
 > $ nano venus.txt #input the following text: Venus is beautiful and full of love
 > $ git add venus.txt
 > $ nano venus.txt #add the following text: Venus is too hot to be suitable as a base
-> $ git commit -m "comments on Venus as an unsuitable base"
+> $ git commit -m "Comment on Venus as an unsuitable base"
 > $ git checkout HEAD venus.txt
 > $ cat venus.txt #this will print the contents of venus.txt to the screen
 > ~~~
@@ -445,7 +445,7 @@ moving backward and forward in time becomes much easier.
 > > The file has been modified. The new changes are not staged because we have not added the file.
 > >
 > > ~~~
-> > $ git commit -m "comments on Venus as an unsuitable base"
+> > $ git commit -m "Comment on Venus as an unsuitable base"
 > > ~~~
 > > {: .bash}
 > > The changes that were stagged (Venus is beautiful and full of love) have been commited. The changes that were not stagged (Venus is too hot to be suitable as a base) have not. Our local working copy is different than the copy in our local repository.
