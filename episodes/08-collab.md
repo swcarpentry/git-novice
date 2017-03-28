@@ -64,7 +64,7 @@ It is so a planet!
 
 ~~~
 $ git add pluto.txt
-$ git commit -m "Some notes about Pluto"
+$ git commit -m "Add notes about Pluto"
 ~~~
 {: .bash}
 
