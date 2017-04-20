@@ -672,12 +672,12 @@ repository (`git commit`):
 > > {: .bash}
 > > Now the files are ready to commit. You can check that using `git status`. If you are ready to commit use:
 > > ~~~
-> > $ git commit -m "Wrote down my plans to start a base on Venus"
+> > $ git commit -m "Write plans to start a base on Venus"
 > > ~~~
 > > {: .bash}
 > > ~~~
 > > [master cc127c2]
-> >  Wrote down my plans to start a base on venus
+> >  Write plans to start a base on Venus
 > >  2 files changed, 2 insertions(+)
 > >  create mode 100644 venus.txt
 > > ~~~
@@ -713,11 +713,11 @@ repository (`git commit`):
 > >
 > > ~~~
 > > $ git add me.txt
-> > $ git commit -m "Updated Vlad's bio." --author="Frank N. Stein <franky@monster.com>"
+> > $ git commit -m "Update Vlad's bio." --author="Frank N. Stein <franky@monster.com>"
 > > ~~~
 > > {: .bash}
 > > ~~~
-> > [master 4162a51] Updated Vlad's bio.
+> > [master 4162a51] Update Vlad's bio.
 > > Author: Frank N. Stein <franky@monster.com>
 > > 1 file changed, 2 insertions(+), 2 deletions(-)
 > >
@@ -726,7 +726,7 @@ repository (`git commit`):
 > > Author: Frank N. Stein <franky@monster.com>
 > > Commit: Vlad Dracula <vlad@tran.sylvan.ia>
 > >
-> > Updated Vlad's bio.
+> > Update Vlad's bio.
 > >
 > > commit aaa3271e5e26f75f11892718e83a3e2743fab8ea
 > > Author: Vlad Dracula <vlad@tran.sylvan.ia>

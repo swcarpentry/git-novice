@@ -55,12 +55,12 @@ and then push the change to GitHub:
 
 ~~~
 $ git add mars.txt
-$ git commit -m "Adding a line in our home copy"
+$ git commit -m "Add a line in our home copy"
 ~~~
 {: .bash}
 
 ~~~
-[master 5ae9631] Adding a line in our home copy
+[master 5ae9631] Add a line in our home copy
  1 file changed, 1 insertion(+)
 ~~~
 {: .output}
@@ -103,12 +103,12 @@ We can commit the change locally:
 
 ~~~
 $ git add mars.txt
-$ git commit -m "Adding a line in my copy"
+$ git commit -m "Add a line in my copy"
 ~~~
 {: .bash}
 
 ~~~
-[master 07ebc69] Adding a line in my copy
+[master 07ebc69] Add a line in my copy
  1 file changed, 1 insertion(+)
 ~~~
 {: .output}
@@ -227,12 +227,12 @@ Changes to be committed:
 {: .output}
 
 ~~~
-$ git commit -m "Merging changes from GitHub"
+$ git commit -m "Merge changes from GitHub"
 ~~~
 {: .bash}
 
 ~~~
-[master 2abf2b1] Merging changes from GitHub
+[master 2abf2b1] Merge changes from GitHub
 ~~~
 {: .output}
 
@@ -347,12 +347,12 @@ consider one of these approaches to reducing them:
 > >
 > > ~~~
 > > $ git add mars.jpg
-> > $ git commit -m "Picture of Martian surface"
+> > $ git commit -m "Add picture of Martian surface"
 > > ~~~
 > > {: .bash}
 > >
 > > ~~~
-> > [master 8e4115c] Picture of Martian surface
+> > [master 8e4115c] Add picture of Martian surface
 > >  1 file changed, 0 insertions(+), 0 deletions(-)
 > >  create mode 100644 mars.jpg
 > > ~~~
@@ -519,7 +519,7 @@ consider one of these approaches to reducing them:
 > > |1    | Update local      | `git pull origin master`                     |
 > > |2    | Make changes      | `echo 100 >> numbers.txt`                    |
 > > |3    | Stage changes     | `git add numbers.txt`                        |
-> > |4    | Commit changes    | `git commit -m "Added 100 to numbers.txt"`   |
+> > |4    | Commit changes    | `git commit -m "Add 100 to numbers.txt"`     |
 > > |5    | Update remote     | `git push origin master`                     |
 > > |6    | Celebrate!        | `AFK`                                        |
 > >
