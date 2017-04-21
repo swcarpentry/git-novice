@@ -31,7 +31,9 @@ $ git config --global color.ui "auto"
 ~~~
 {: .bash}
 
-Please use your own name and email address instead of Dracula's.
+Please use your own name and email address instead of Dracula's. This should be the same address you used when setting up GitHub. If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private][git-privacy]. 
+If you elect to use a private email address with GitHub, then use that same email address for the `user.email` value, e.g. `username@users.noreply.github.com` with your `username`.
+
 This user name and email will be associated with your subsequent Git activity,
 which means that any changes pushed to
 [GitHub](http://github.com/),
@@ -39,7 +41,6 @@ which means that any changes pushed to
 [GitLab](http://gitlab.com/) or
 another Git host server
 in a later lesson will include this information.
-If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private][git-privacy].
 
 He also has to set his favorite text editor, following this table:
 
