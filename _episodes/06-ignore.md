@@ -22,7 +22,7 @@ $ touch a.dat b.dat c.dat results/a.out results/b.out
 ~~~
 {: .bash}
 
-and see what Git says:
+and after initializing Git, see what Git says:
 
 ~~~
 $ git status
