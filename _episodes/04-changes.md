@@ -492,7 +492,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > *   To get out of the pager, press `q`.
 > *   To move to the next page, press the space bar.
 > *   To search for `some_word` in all pages, type `/some_word`
->     and navigate throught matches pressing `n`.
+>     and navigate through the matches pressing `n`.
 {: .callout}
 
 > ## Limit Log Size
@@ -506,7 +506,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > $ git log -1
 > ~~~
 > {: .bash}
-> 
+>
 > ~~~
 > commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
 > Author: Vlad Dracula <vlad@tran.sylvan.ia>
@@ -608,10 +608,10 @@ repository (`git commit`):
 >
 > 1. `$ git commit -m "my recent changes"`
 >
-> 2. `$ git init myfile.txt`  
+> 2. `$ git init myfile.txt`
 >    `$ git commit -m "my recent changes"`
 >
-> 3. `$ git add myfile.txt`  
+> 3. `$ git add myfile.txt`
 >    `$ git commit -m "my recent changes"`
 >
 > 4. `$ git commit -m myfile.txt "my recent changes"`
