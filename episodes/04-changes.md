@@ -492,7 +492,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > *   To get out of the pager, press `q`.
 > *   To move to the next page, press the space bar.
 > *   To search for `some_word` in all pages, type `/some_word`
->     and navigate throught matches pressing `n`.
+>     and navigate through matches pressing `n`.
 {: .callout}
 
 > ## Limit Log Size
