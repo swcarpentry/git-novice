@@ -353,7 +353,7 @@ moving backward and forward in time becomes much easier.
 > ## Reverting a Commit
 >
 > Jennifer is collaborating on her Python script with her colleagues and
-> realises her last commit to the group repository is wrong and wants to
+> realizes her last commit to the group repository is wrong and wants to
 > undo it.  Jennifer needs to undo correctly so everyone in the group
 > repository gets the correct change.  `git revert [wrong commit ID]`
 > will make a new commit that undoes Jennifer's previous wrong
@@ -436,7 +436,7 @@ moving backward and forward in time becomes much easier.
 > > $ git add venus.txt
 > > ~~~
 > > {: .bash}
-> > Now the file is stagged. The changes that have been made to the file until now will be commited in the next commit.
+> > Now the file is staged. The changes that have been made to the file until now will be committed in the next commit.
 > >
 > > ~~~
 > > $ nano venus.txt #add the following text: Venus is too hot to be suitable as a base
@@ -448,7 +448,7 @@ moving backward and forward in time becomes much easier.
 > > $ git commit -m "Comment on Venus as an unsuitable base"
 > > ~~~
 > > {: .bash}
-> > The changes that were stagged (Venus is beautiful and full of love) have been commited. The changes that were not stagged (Venus is too hot to be suitable as a base) have not. Our local working copy is different than the copy in our local repository.
+> > The changes that were staged (Venus is beautiful and full of love) have been committed. The changes that were not staged (Venus is too hot to be suitable as a base) have not. Our local working copy is different than the copy in our local repository.
 > >
 > > ~~~
 > > $ git checkout HEAD venus.txt
