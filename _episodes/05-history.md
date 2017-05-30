@@ -264,7 +264,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 {: .output}
 
 Notice that the changes are on the staged area.
-Again, we can put things back the way they were with
+Again, we can put things back the way they were
 by using `git checkout`:
 
 ~~~
