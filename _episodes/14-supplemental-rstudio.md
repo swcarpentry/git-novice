@@ -55,7 +55,7 @@ to use Git:
 ![](../fig/RStudio_screenshot_afterclone.png)
 
 To edit the files in your repository, you can click on them from the panel in
-the lower right. Let's add some more information about pluto:
+the lower right. Let's add some more information about Pluto:
 
 ![](../fig/RStudio_screenshot_editfiles.png)
 
