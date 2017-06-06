@@ -488,7 +488,7 @@ moving backward and forward in time becomes much easier.
 > Exploring history is an important part of git, often it is a challenge to find
 > the right commit ID, especially if the commit is from several months ago.
 >
-> Imaging the `planets` project has more than 50 files.
+> Imagine the `planets` project has more than 50 files.
 > You would like to find a commit with specific text in `mars.txt` is modified.
 > When you type `git log`, a very long list appeared,
 > How can you narrow down the search?
