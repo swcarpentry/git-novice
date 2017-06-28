@@ -36,13 +36,6 @@ HTTP
 :   The Hypertext Transfer [Protocol](#protocol) used for sharing web pages and other data
     on the World Wide Web.
 
-infective license
-:   A license, such as the [GPL](http://opensource.org/licenses/GPL-3.0),
-    that legally requires people who incorporate material under the
-    infective license
-    into their own work to also release under the same infective license
-    (e.g. under the GPL license).
-
 merge
 :   (a repository): To reconcile two sets of changes to a
     [repository](#repository).
