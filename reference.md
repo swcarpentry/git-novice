@@ -14,15 +14,15 @@ permalink: /reference/
 ## Glossary
 
 {:auto_ids}
-change set
+changeset
 :   A group of changes to one or more files that are or will be added
     to a single [commit](#commit) in a [version control](#version-control)
     [repository](#repository).
 
 commit
-:   To record the current state of a set of files (a [change set](#change-set))
+:   To record the current state of a set of files (a [changeset](#changeset))
     in a [version control](#version-control) [repository](#repository). As a noun,
-    the result of committing, i.e. a recorded change set in a repository.
+    the result of committing, i.e. a recorded changeset in a repository.
     If a commit contains changes to multiple files,
     all of the changes are recorded together.
 
