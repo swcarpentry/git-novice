@@ -47,7 +47,7 @@ He also has to set his favorite text editor, following this table:
 
 | Editor             | Configuration command                            |
 |:-------------------|:-------------------------------------------------|
-|Atom | `$ git config --global core.editor "atom --wait"`|
+| Atom | `$ git config --global core.editor "atom --wait"`|
 | nano               | `$ git config --global core.editor "nano -w"`    |
 | Text Wrangler (Mac)      | `$ git config --global core.editor "edit -w"`    |
 | Sublime Text (Mac) | `$ git config --global core.editor "subl -n -w"` |
@@ -104,7 +104,7 @@ same commands to choose another editor or update your email address.
 
 > ## Git Help and Manual
 >
-> Always remember that if you forget a git command, you can access the list of command by using -h and access the git manual by using --help :
+> Always remember that if you forget a git command, you can access the list of commands by using -h and access the git manual by using --help :
 >
 > ~~~
 > $ git config -h
