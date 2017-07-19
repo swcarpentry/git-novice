@@ -43,7 +43,7 @@ For these lessons, we will be interacting with [GitHub](http://github.com/) and 
 If you elect to use a private email address with GitHub, then use that same email address for the `user.email` value, e.g. `username@users.noreply.github.com` replacing `username` with your GitHub one. You can change the email address later on by using the `git config` command again.
 
 
-He also has to set his favorite text editor, following this table:
+Dracula also has to set his favorite text editor, following this table:
 
 | Editor             | Configuration command                            |
 |:-------------------|:-------------------------------------------------|

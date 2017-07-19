@@ -43,7 +43,7 @@ same document.
 
 ![Different Versions Can be Saved](../fig/versions.svg)
 
-If there aren't conflicts, you can even play two sets of changes onto the same base document.
+Unless there are conflicts, you can even play two sets of changes onto the same base document.
 
 ![Multiple Versions Can be Merged](../fig/merge.svg)
 
