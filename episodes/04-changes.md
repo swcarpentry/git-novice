@@ -335,7 +335,7 @@ but *not* commit the work we're doing on the conclusion
 To allow for this,
 Git has a special *staging area*
 where it keeps track of things that have been added to
-the current [change set]({{ page.root }}/reference/#change-set)
+the current [changeset]({{ page.root }}/reference/#changeset)
 but not yet committed.
 
 > ## Staging Area
