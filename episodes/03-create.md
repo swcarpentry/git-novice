@@ -97,9 +97,8 @@ nothing to commit (create/copy files and use "git add" to track)
 > > the inner repository. Therefore, it's best to create each new Git
 > > repository in a separate directory. To be sure that there is no conflicting
 > > repository in the directory, check the output of `git status`. If it looks
-> > like the following, you are good to go to create a new repository.
-> >
-> > repository as shown:
+> > like the following, you are good to go to create a new repository as shown 
+> > above:
 > >
 > > ~~~
 > > $ git status
