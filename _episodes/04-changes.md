@@ -9,6 +9,7 @@ questions:
 objectives:
 - "Go through the modify-add-commit cycle for one or more files."
 - "Explain where information is stored at each stage of Git commit workflow."
+- "Distinguish between descriptive and non-descriptive commit messages."
 keypoints:
 - "`git status` shows the status of a repository."
 - "Files can be stored in a project's working directory (which users see), the staging area (where the next commit is being built up) and the local repository (where commits are permanently recorded)."
@@ -493,7 +494,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 >
 > Sometimes, e.g. in the case of the text documments a line-wise
 > diff is too coarse. That is where the `--color-words` option of
-> `git diff` comes in very useful as it highlights the changed 
+> `git diff` comes in very useful as it highlights the changed
 > words using colors.
 {: .callout}
 
@@ -521,7 +522,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > $ git log -1
 > ~~~
 > {: .bash}
-> 
+>
 > ~~~
 > commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
 > Author: Vlad Dracula <vlad@tran.sylvan.ia>
@@ -574,7 +575,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > $ git status
 > ~~~
 > {: .bash}
-> 
+>
 > Note, our newly created empty directory `directory` does not appear in
 > the list of untracked files even if we explicitly add it (_via_ `git add`) to our
 > repository. This is the reason why you will sometimes see `.gitkeep` files
@@ -623,10 +624,10 @@ repository (`git commit`):
 >
 > 1. `$ git commit -m "my recent changes"`
 >
-> 2. `$ git init myfile.txt`  
+> 2. `$ git init myfile.txt`
 >    `$ git commit -m "my recent changes"`
 >
-> 3. `$ git add myfile.txt`  
+> 3. `$ git add myfile.txt`
 >    `$ git commit -m "my recent changes"`
 >
 > 4. `$ git commit -m myfile.txt "my recent changes"`
