@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2017-08-04 00:20:07 +0200">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="/swc-releases/2017.08/git-novice">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lesson.css" />
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon-swc.ico" />
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <title>Version Control with Git: Creating a Repository</title>
+  </head>
+  <body>
+    <div class="container">
+      
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+
+      
+      <a class="navbar-brand" href="../">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="../conduct/">Code of Conduct</a></li>
+
+	
+        
+        <li><a href="../setup/">Setup</a></li>
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="../01-basics/">Automated Version Control</a></li>
+            
+            <li><a href="../02-setup/">Setting Up Git</a></li>
+            
+            <li><a href="../03-create/">Creating a Repository</a></li>
+            
+            <li><a href="../04-changes/">Tracking Changes</a></li>
+            
+            <li><a href="../05-history/">Exploring History</a></li>
+            
+            <li><a href="../06-ignore/">Ignoring Things</a></li>
+            
+            <li><a href="../07-github/">Remotes in GitHub</a></li>
+            
+            <li><a href="../08-collab/">Collaborating</a></li>
+            
+            <li><a href="../09-conflict/">Conflicts</a></li>
+            
+            <li><a href="../10-open/">Open Science</a></li>
+            
+            <li><a href="../11-licensing/">Licensing</a></li>
+            
+            <li><a href="../12-citation/">Citation</a></li>
+            
+            <li><a href="../13-hosting/">Hosting</a></li>
+            
+            <li><a href="../14-supplemental-rstudio/">Using Git from RStudio</a></li>
+            
+	    <li role="separator" class="divider"></li>
+            <li><a href="../aio/">All in one page (Beta)</a></li>
+          </ul>
+        </li>
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../reference/">Reference</a></li>
+            
+            <li><a href="../about/">About</a></li>
+            
+            <li><a href="../discuss/">Discussion</a></li>
+            
+            <li><a href="../figures/">Figures</a></li>
+            
+            <li><a href="../guide/">Instructor Notes</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="../license/">License</a></li>
+	
+	<li><a href="/edit/gh-pages/_episodes/03-create.md">Improve this page <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
+	
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search..." aria-label="Google site search">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<div class="row">
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../02-setup/"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-md-10">
+    
+    <h3 class="maintitle"><a href="../">Version Control with Git</a></h3>
+    
+  </div>
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../04-changes/"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+<article>
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-10">
+    <h1 class="maintitle">Creating a Repository</h1>
+  </div>
+  <div class="col-md-1">
+  </div>
+</div>
+
+
+<blockquote class="objectives">
+  <h2>Overview</h2>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Teaching:</strong> 10 min
+      <br/>
+      <strong>Exercises:</strong> 0 min
+    </div>
+    <div class="col-md-9">
+      <strong>Questions</strong>
+      <ul>
+	
+	<li><p>Where does Git store information?</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9">
+      <strong>Objectives</strong>
+      <ul>
+	
+	<li><p>Create a local Git repository.</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+</blockquote>
+
+<p>Once Git is configured,
+we can start using it.
+Let’s create a directory for our work and then move into that directory:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ mkdir planets
+$ cd planets
+</code></pre>
+</div>
+
+<p>Then we tell Git to make <code class="highlighter-rouge">planets</code> a <a href="../reference/#repository">repository</a>—a place where
+Git can store versions of our files:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git init
+</code></pre>
+</div>
+
+<p>If we use <code class="highlighter-rouge">ls</code> to show the directory’s contents,
+it appears that nothing has changed:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ ls
+</code></pre>
+</div>
+
+<p>But if we add the <code class="highlighter-rouge">-a</code> flag to show everything,
+we can see that Git has created a hidden directory within <code class="highlighter-rouge">planets</code> called <code class="highlighter-rouge">.git</code>:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ ls -a
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>.	..	.git
+</code></pre>
+</div>
+
+<p>Git stores information about the project in this special sub-directory.
+If we ever delete it,
+we will lose the project’s history.</p>
+
+<p>We can check that everything is set up correctly
+by asking Git to tell us the status of our project:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git status
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code># On branch master
+#
+# Initial commit
+#
+nothing to commit (create/copy files and use "git add" to track)
+</code></pre>
+</div>
+
+<blockquote class="challenge">
+  <h2 id="places-to-create-git-repositories">Places to Create Git Repositories</h2>
+
+  <p>Dracula starts a new project, <code class="highlighter-rouge">moons</code>, related to his <code class="highlighter-rouge">planets</code> project.
+Despite Wolfman’s concerns, he enters the following sequence of commands to
+create one Git repository inside another:</p>
+
+  <div class="bash highlighter-rouge"><pre class="highlight"><code>$ cd             # return to home directory
+$ mkdir planets  # make a new directory planets
+$ cd planets     # go into planets
+$ git init       # make the planets directory a Git repository
+$ mkdir moons    # make a sub-directory planets/moons
+$ cd moons       # go into planets/moons
+$ git init       # make the moons sub-directory a Git repository
+</code></pre>
+  </div>
+
+  <p>Why is it a bad idea to do this? (Notice here that the <code class="highlighter-rouge">planets</code> project is now also tracking the entire <code class="highlighter-rouge">moons</code> repository.)
+How can Dracula undo his last <code class="highlighter-rouge">git init</code>?</p>
+
+  <blockquote class="solution">
+    <h2 id="solution">Solution</h2>
+
+    <p>Git repositories can interfere with each other if they are “nested” in the
+directory of another: the outer repository will try to version-control 
+the inner repository. Therefore, it’s best to create each new Git
+repository in a separate directory. To be sure that there is no conflicting
+repository in the directory, check the output of <code class="highlighter-rouge">git status</code>. If it looks
+like the following, you are good to go to create a new repository as shown 
+above:</p>
+
+    <div class="bash highlighter-rouge"><pre class="highlight"><code>$ git status
+</code></pre>
+    </div>
+    <div class="output highlighter-rouge"><pre class="highlight"><code>fatal: Not a git repository (or any of the parent directories): .git
+</code></pre>
+    </div>
+
+    <p>Note that we can track files in directories within a Git:</p>
+
+    <div class="bash highlighter-rouge"><pre class="highlight"><code>$ touch moon phobos deimos titan    # create moon files
+$ cd ..                             # return to planets directory
+$ ls moons                          # list contents of the moons directory
+$ git add moons/*                   # add all contents of planets/moons
+$ git status                        # show moons files in staging area
+$ git commit -m "add moon files"    # commit planets/moons to planets Git repository
+</code></pre>
+    </div>
+
+    <p>Similarly, we can ignore (as discussed later) entire directories, such as the <code class="highlighter-rouge">moons</code> directory:</p>
+
+    <div class="bash highlighter-rouge"><pre class="highlight"><code>$ nano .gitignore # open the .gitignore file in the texteditor to add the moons directory
+$ cat .gitignore # if you run cat afterwards, it should look like this:
+</code></pre>
+    </div>
+
+    <div class="output highlighter-rouge"><pre class="highlight"><code>moons
+</code></pre>
+    </div>
+
+    <p>To recover from this little mistake, Dracula can just remove the <code class="highlighter-rouge">.git</code>
+folder in the moons subdirectory. To do so he can run the following command from inside the ‘moons’ directory:</p>
+
+    <div class="bash highlighter-rouge"><pre class="highlight"><code>$ rm -rf moons/.git
+</code></pre>
+    </div>
+
+    <p>But be careful! Running this command in the wrong directory, will remove
+the entire git-history of a project you might wanted to keep. Therefore, always check your current directory using the
+command <code class="highlighter-rouge">pwd</code>.</p>
+  </blockquote>
+</blockquote>
+
+
+<blockquote class="keypoints">
+  <h2>Key Points</h2>
+  <ul>
+    
+    <li><p><code class="highlighter-rouge">git init</code> initializes a repository.</p>
+</li>
+    
+  </ul>
+</blockquote>
+
+</article>
+
+<div class="row">
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../02-setup/"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-md-10">
+    
+  </div>
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../04-changes/"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+      
+      
+<footer>
+  <div class="row">
+    <div class="col-md-6" align="left">
+      <h4>
+	Copyright &copy; 2016–2017
+	
+	<a href="https://software-carpentry.org">Software Carpentry Foundation</a>
+	
+      </h4>
+    </div>
+    <div class="col-md-6" align="right">
+      <h4>
+	
+	<a href="/edit/gh-pages/_episodes/03-create.md">Edit on GitHub</a>
+	
+	/
+	<a href="/blob/gh-pages/CONTRIBUTING.md">Contributing</a>
+	/
+	<a href="/">Source</a>
+	/
+	<a href="/blob/gh-pages/CITATION">Cite</a>
+	/
+	<a href="">Contact</a>
+      </h4>
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/lesson.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37305346-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>

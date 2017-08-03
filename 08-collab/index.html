@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2017-08-04 00:20:07 +0200">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="/swc-releases/2017.08/git-novice">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lesson.css" />
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon-swc.ico" />
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <title>Version Control with Git: Collaborating</title>
+  </head>
+  <body>
+    <div class="container">
+      
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+
+      
+      <a class="navbar-brand" href="../">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="../conduct/">Code of Conduct</a></li>
+
+	
+        
+        <li><a href="../setup/">Setup</a></li>
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="../01-basics/">Automated Version Control</a></li>
+            
+            <li><a href="../02-setup/">Setting Up Git</a></li>
+            
+            <li><a href="../03-create/">Creating a Repository</a></li>
+            
+            <li><a href="../04-changes/">Tracking Changes</a></li>
+            
+            <li><a href="../05-history/">Exploring History</a></li>
+            
+            <li><a href="../06-ignore/">Ignoring Things</a></li>
+            
+            <li><a href="../07-github/">Remotes in GitHub</a></li>
+            
+            <li><a href="../08-collab/">Collaborating</a></li>
+            
+            <li><a href="../09-conflict/">Conflicts</a></li>
+            
+            <li><a href="../10-open/">Open Science</a></li>
+            
+            <li><a href="../11-licensing/">Licensing</a></li>
+            
+            <li><a href="../12-citation/">Citation</a></li>
+            
+            <li><a href="../13-hosting/">Hosting</a></li>
+            
+            <li><a href="../14-supplemental-rstudio/">Using Git from RStudio</a></li>
+            
+	    <li role="separator" class="divider"></li>
+            <li><a href="../aio/">All in one page (Beta)</a></li>
+          </ul>
+        </li>
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../reference/">Reference</a></li>
+            
+            <li><a href="../about/">About</a></li>
+            
+            <li><a href="../discuss/">Discussion</a></li>
+            
+            <li><a href="../figures/">Figures</a></li>
+            
+            <li><a href="../guide/">Instructor Notes</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="../license/">License</a></li>
+	
+	<li><a href="/edit/gh-pages/_episodes/08-collab.md">Improve this page <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
+	
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search..." aria-label="Google site search">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<div class="row">
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../07-github/"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-md-10">
+    
+    <h3 class="maintitle"><a href="../">Version Control with Git</a></h3>
+    
+  </div>
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../09-conflict/"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+<article>
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-10">
+    <h1 class="maintitle">Collaborating</h1>
+  </div>
+  <div class="col-md-1">
+  </div>
+</div>
+
+
+<blockquote class="objectives">
+  <h2>Overview</h2>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Teaching:</strong> 25 min
+      <br/>
+      <strong>Exercises:</strong> 0 min
+    </div>
+    <div class="col-md-9">
+      <strong>Questions</strong>
+      <ul>
+	
+	<li><p>How can I use version control to collaborate with other people?</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9">
+      <strong>Objectives</strong>
+      <ul>
+	
+	<li><p>Clone a remote repository.</p>
+</li>
+	
+	<li><p>Collaborate pushing to a common repository.</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+</blockquote>
+
+<p>For the next step, get into pairs.  One person will be the “Owner” and the other
+will be the “Collaborator”. The goal is that the Collaborator add changes into
+the Owner’s repository. We will switch roles at the end, so both persons will
+play Owner and Collaborator.</p>
+
+<blockquote class="callout">
+  <h2 id="practicing-by-yourself">Practicing By Yourself</h2>
+
+  <p>If you’re working through this lesson on your own, you can carry on by opening
+a second terminal window.
+This window will represent your partner, working on another computer. You
+won’t need to give anyone access on GitHub, because both ‘partners’ are you.</p>
+</blockquote>
+
+<p>The Owner needs to give the Collaborator access.
+On GitHub, click the settings button on the right,
+then select Collaborators, and enter your partner’s username.</p>
+
+<p><img src="../fig/github-add-collaborators.png" alt="Adding Collaborators on GitHub" /></p>
+
+<p>To accept access to the Owner’s repo, the Collaborator
+needs to go to <a href="https://github.com/notifications">https://github.com/notifications</a>.
+Once there she can accept access to the Owner’s repo.</p>
+
+<p>Next, the Collaborator needs to download a copy of the Owner’s repository to her
+ machine. This is called “cloning a repo”. To clone the Owner’s repo into
+her <code class="highlighter-rouge">Desktop</code> folder, the Collaborator enters:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/vlad/planets.git ~/Desktop/vlad-planets
+</code></pre>
+</div>
+
+<p>Replace ‘vlad’ with the Owner’s username.</p>
+
+<p><img src="../fig/github-collaboration.svg" alt="After Creating Clone of Repository" /></p>
+
+<p>The Collaborator can now make a change in her clone of the Owner’s repository,
+exactly the same way as we’ve been doing before:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ cd ~/Desktop/vlad-planets
+$ nano pluto.txt
+$ cat pluto.txt
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>It is so a planet!
+</code></pre>
+</div>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git add pluto.txt
+$ git commit -m "Add notes about Pluto"
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code> 1 file changed, 1 insertion(+)
+ create mode 100644 pluto.txt
+</code></pre>
+</div>
+
+<p>Then push the change to the <em>Owner’s repository</em> on GitHub:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git push origin master
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 306 bytes, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/vlad/planets.git
+   9272da5..29aba7c  master -&gt; master
+</code></pre>
+</div>
+
+<p>Note that we didn’t have to create a remote called <code class="highlighter-rouge">origin</code>: Git uses this
+name by default when we clone a repository.  (This is why <code class="highlighter-rouge">origin</code> was a
+sensible choice earlier when we were setting up remotes by hand.)</p>
+
+<p>Take a look to the Owner’s repository on its GitHub website now (maybe you need
+to refresh your browser.) You should be able to see the new commit made by the
+Collaborator.</p>
+
+<p>To download the Collaborator’s changes from GitHub, the Owner now enters:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git pull origin master
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0)
+Unpacking objects: 100% (3/3), done.
+From https://github.com/vlad/planets
+ * branch            master     -&gt; FETCH_HEAD
+Updating 9272da5..29aba7c
+Fast-forward
+ pluto.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 pluto.txt
+</code></pre>
+</div>
+
+<p>Now the three repositories (Owner’s local, Collaborator’s local, and Owner’s on
+GitHub) are back in sync.</p>
+
+<blockquote class="callout">
+  <h2 id="a-basic-collaborative-workflow">A Basic Collaborative Workflow</h2>
+
+  <p>In practice, it is good to be sure that you have an updated version of the
+repository you are collaborating on, so you should <code class="highlighter-rouge">git pull</code> before making
+our changes. The basic collaborative workflow would be:</p>
+
+  <ul>
+    <li>update your local repo with <code class="highlighter-rouge">git pull origin master</code>,</li>
+    <li>make your changes and stage them with <code class="highlighter-rouge">git add</code>,</li>
+    <li>commit your changes with <code class="highlighter-rouge">git commit -m</code>, and</li>
+    <li>upload the changes to GitHub with <code class="highlighter-rouge">git push origin master</code></li>
+  </ul>
+
+  <p>It is better to make many commits with smaller changes rather than
+of one commit with massive changes: small commits are easier to
+read and review.</p>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="switch-roles-and-repeat">Switch Roles and Repeat</h2>
+
+  <p>Switch roles and repeat the whole process.</p>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="review-changes">Review Changes</h2>
+
+  <p>The Owner push commits to the repository without giving any information
+to the Collaborator. How can the Collaborator find out what has changed with
+command line? And on GitHub?</p>
+
+  <blockquote class="solution">
+    <h2 id="solution">Solution</h2>
+    <p>On the command line, the Collaborator can use <code class="highlighter-rouge">git fetch origin master</code>
+to get the remote changes into the local repository, but without merging
+them. Then by running <code class="highlighter-rouge">git diff master origin/master</code> the Collaborator
+will see the changes output in the terminal.</p>
+
+    <p>On GitHub, the Collaborator can go to their own fork of the repository and
+look right above the light blue latest commit bar for a gray bar saying
+“This branch is 1 commit behind Our-Respository:master.” On the far right of
+that gray bar is a Compare icon and link. On the Compare page the
+Collaborator should change the base fork to their own repository, then click
+the link in the paragraph above to “compare across forks”, and finally
+change the head fork to the main repository. This will show all the commits
+that are different.</p>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="comment-changes-in-github">Comment Changes in GitHub</h2>
+
+  <p>The Collaborator has some questions about one line change made by the Owner and
+has some suggestions to propose.</p>
+
+  <p>With GitHub, it is possible to comment the diff of a commit. Over the line of
+code to comment, a blue comment icon appears to open a comment window.</p>
+
+  <p>The Collaborator posts its comments and suggestions using GitHub interface.</p>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="version-history-backup-and-version-control">Version History, Backup, and Version Control</h2>
+
+  <p>Some backup software can keep a history of the versions of your files. They also
+allows you to recover specific versions. How is this functionality different from version control?
+What are some of the benifits of using version control, Git and GitHub?</p>
+</blockquote>
+
+
+<blockquote class="keypoints">
+  <h2>Key Points</h2>
+  <ul>
+    
+    <li><p><code class="highlighter-rouge">git clone</code> copies a remote repository to create a local repository with a remote called <code class="highlighter-rouge">origin</code> automatically set up.</p>
+</li>
+    
+  </ul>
+</blockquote>
+
+</article>
+
+<div class="row">
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../07-github/"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-md-10">
+    
+  </div>
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../09-conflict/"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+      
+      
+<footer>
+  <div class="row">
+    <div class="col-md-6" align="left">
+      <h4>
+	Copyright &copy; 2016–2017
+	
+	<a href="https://software-carpentry.org">Software Carpentry Foundation</a>
+	
+      </h4>
+    </div>
+    <div class="col-md-6" align="right">
+      <h4>
+	
+	<a href="/edit/gh-pages/_episodes/08-collab.md">Edit on GitHub</a>
+	
+	/
+	<a href="/blob/gh-pages/CONTRIBUTING.md">Contributing</a>
+	/
+	<a href="/">Source</a>
+	/
+	<a href="/blob/gh-pages/CITATION">Cite</a>
+	/
+	<a href="">Contact</a>
+      </h4>
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/lesson.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37305346-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2017-08-04 00:20:07 +0200">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="/swc-releases/2017.08/git-novice">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lesson.css" />
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon-swc.ico" />
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <title>Version Control with Git: Discussion</title>
+  </head>
+  <body>
+    <div class="container">
+      
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+
+      
+      <a class="navbar-brand" href="../">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="../conduct/">Code of Conduct</a></li>
+
+	
+        
+        <li><a href="../setup/">Setup</a></li>
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="../01-basics/">Automated Version Control</a></li>
+            
+            <li><a href="../02-setup/">Setting Up Git</a></li>
+            
+            <li><a href="../03-create/">Creating a Repository</a></li>
+            
+            <li><a href="../04-changes/">Tracking Changes</a></li>
+            
+            <li><a href="../05-history/">Exploring History</a></li>
+            
+            <li><a href="../06-ignore/">Ignoring Things</a></li>
+            
+            <li><a href="../07-github/">Remotes in GitHub</a></li>
+            
+            <li><a href="../08-collab/">Collaborating</a></li>
+            
+            <li><a href="../09-conflict/">Conflicts</a></li>
+            
+            <li><a href="../10-open/">Open Science</a></li>
+            
+            <li><a href="../11-licensing/">Licensing</a></li>
+            
+            <li><a href="../12-citation/">Citation</a></li>
+            
+            <li><a href="../13-hosting/">Hosting</a></li>
+            
+            <li><a href="../14-supplemental-rstudio/">Using Git from RStudio</a></li>
+            
+	    <li role="separator" class="divider"></li>
+            <li><a href="../aio/">All in one page (Beta)</a></li>
+          </ul>
+        </li>
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../reference/">Reference</a></li>
+            
+            <li><a href="../about/">About</a></li>
+            
+            <li><a href="../discuss/">Discussion</a></li>
+            
+            <li><a href="../figures/">Figures</a></li>
+            
+            <li><a href="../guide/">Instructor Notes</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="../license/">License</a></li>
+	
+	<li><a href="/edit/gh-pages/_extras/discuss.md">Improve this page <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
+	
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search..." aria-label="Google site search">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<h1 class="maintitle"><a href="../">Version Control with Git</a>: Discussion</h1>
+
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+
+<p>People often have questions about Git beyond the scope of the core material.
+Students who have completed the rest of the lessons might find value in looking through the following topics.</p>
+
+<p>Note that since this material isn’t essential for basic Git usage, it won’t be covered by the instructor.</p>
+
+<h2 id="more-advanced-git-configuration">More Advanced Git Configuration</h2>
+
+<p>In <a href="../02-setup/">Setting Up Git</a>,
+we used <code class="highlighter-rouge">git config --global</code> to set some default options for Git.
+It turns out that these configuration options get stored in your home directory
+in a plain text file called <code class="highlighter-rouge">.gitconfig</code>.</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ cat ~/.gitconfig
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>[user]
+	name = Vlad Dracula
+	email = vlad@tran.sylvan.ia
+[color]
+	ui = true
+[core]
+	editor = nano
+</code></pre>
+</div>
+
+<p>This file can be opened in your preferred text editor.
+(Note that it is recommended to continue using the <code class="highlighter-rouge">git config</code> command,
+as this helps avoid introducing syntax errors.)</p>
+
+<p>Eventually, you will want to start customizing Git’s behaviour.
+This can be done by adding more entries to your <code class="highlighter-rouge">.gitconfig</code>.
+The available options are described in the manual:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git config --help
+</code></pre>
+</div>
+
+<p>In particular, you might find it useful to add aliases.
+These are like shortcuts for longer git commands.
+For example, if you get sick of typing <code class="highlighter-rouge">git checkout</code> all the time,
+you could run the command:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git config --global alias.co checkout
+</code></pre>
+</div>
+
+<p>Now if we return to the example from <a href="../05-history/">Exploring History</a> where we ran:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git checkout f22b25e mars.txt
+</code></pre>
+</div>
+
+<p>we could now instead type:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git co f22b25e mars.txt
+</code></pre>
+</div>
+
+<h2 id="styling-gits-log">Styling Git’s Log</h2>
+
+<p>A good target for customization is output from the log.
+The default log is quite verbose but gives no graphical hints
+such as information about which commits were done locally
+and which were pulled from remotes.</p>
+
+<p>You can use <code class="highlighter-rouge">git log --help</code> and <code class="highlighter-rouge">git config --help</code> to look for different ways to change
+the log output.
+Try the following commands and see what effect they have:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git config --global alias.lg "log --graph"
+$ git config --global log.abbrevCommit true
+$ git config --global format.pretty oneline
+$ git lg
+</code></pre>
+</div>
+
+<p>If you don’t like the effects,
+you can undo them with:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git config --global --unset alias.lg
+$ git config --global --unset log.abbrevCommit
+$ git config --global --unset format.pretty
+</code></pre>
+</div>
+
+<blockquote class="callout">
+  <h2 id="undoing-git-configuration-changes">Undoing Git Configuration Changes</h2>
+
+  <p>You can use the <code class="highlighter-rouge">--unset</code> flag to delete unwanted options from <code class="highlighter-rouge">.gitconfig</code>.
+Another way to roll back changes is to store your <code class="highlighter-rouge">.gitconfig</code> using Git.</p>
+
+  <p>For hints on what you might want to configure,
+go to GitHub and search for “gitconfig”.
+You will find hundreds of repositories in which people have stored
+their own Git configuration files.
+Sort them by the number of stars and have a look at the top few.
+If you find some you like,
+please check that they’re covered by an open source license before you clone them.</p>
+</blockquote>
+
+<h2 id="non-text-files">Non-text Files</h2>
+
+<p>Recall when we discussed <a href="../09-conflict/">Conflicts</a>
+there was a challenge that asked,
+“What does Git do
+when there is a conflict in an image or some other non-textual file
+that is stored in version control?”</p>
+
+<p>We will now revisit this in more detail.</p>
+
+<p>Many people want to version control non-text files, such as images, PDFs and Microsoft Office or LibreOffice documents.
+It is true that Git can handle these filetypes (which fall under the banner of “binary” file types).
+However, just because it <em>can</em> be done doesn’t mean it <em>should</em> be done.</p>
+
+<p>Much of Git’s magic comes from being able to do line-by-line comparisons (“diffs”) between files.
+This is generally easy for programming source code and marked up text.
+For non-text files, a diff can usually only detect that the files have changed
+but can’t say how or where.</p>
+
+<p>This has various impacts on Git’s performance and will make it difficult to
+compare different versions of your project.</p>
+
+<p>For a basic example to show the difference it makes,
+we’re going to go see what would have happened if Dracula had tried
+using outputs from a word processor instead of plain text.</p>
+
+<p>Create a new directory and go into it:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ mkdir planets-nontext
+$ cd planets-nontext
+</code></pre>
+</div>
+
+<p>Use a program such as Microsoft Word or LibreOffice Writer to create a new document.
+Enter the same text that we began with before:</p>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>Cold and dry, but everything is my favorite color
+</code></pre>
+</div>
+
+<p>Save the document into the <code class="highlighter-rouge">planets-nontext</code> directory with the name of <code class="highlighter-rouge">mars.doc</code>.
+Back in the terminal, run the usual commands for setting up a new Git repository:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git init
+$ git add mars.doc
+$ git commit -m "Starting to think about Mars"
+</code></pre>
+</div>
+
+<p>Then make the same changes to <code class="highlighter-rouge">mars.doc</code> that we (or Vlad) previously made to <code class="highlighter-rouge">mars.txt</code>.</p>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+</code></pre>
+</div>
+
+<p>Save and close the word processor.
+Now see what Git thinks of your changes:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git diff
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code><span class="gh">diff --git a/mars.doc b/mars.doc
+index 53a66fd..6e988e9 100644
+</span>Binary files a/mars.doc and b/mars.doc differ
+</code></pre>
+</div>
+
+<p>Compare this to the earlier <code class="highlighter-rouge">git diff</code> obtained when using text files:</p>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code><span class="gh">diff --git a/mars.txt b/mars.txt
+index df0654a..315bf3a 100644
+</span><span class="gd">--- a/mars.txt
+</span><span class="gi">+++ b/mars.txt
+</span><span class="gu">@@ -1 +1,2 @@
+</span> Cold and dry, but everything is my favorite color
+<span class="gi">+The two moons may be a problem for Wolfman
+</span></code></pre>
+</div>
+
+<p>Notice how plain text files give a much more informative diff.
+You can see exactly which lines changed and what the changes were.</p>
+
+<p>An uninformative <code class="highlighter-rouge">git diff</code> is not the only consequence of using Git on binary files.
+However, most of the other problems boil down to whether or not a good diff is possible.</p>
+
+<p>This isn’t to say you should <em>never</em> use Git on binary files.
+A rule of thumb is that it’s OK if the binary file won’t change very often,
+and if it does change, you don’t care about merging in small differences between versions.</p>
+
+<p>We’ve already seen how a word processed report will fail this test.
+An example that passes the test is a logo for your organization or project.
+Even though a logo will be stored in a binary format such as <code class="highlighter-rouge">jpg</code> or <code class="highlighter-rouge">png</code>,
+you can expect it will remain fairly static through the lifetime of your repository.
+On the rare occasion that branding does change,
+you will probably just want to replace the logo completely rather than merge little differences in.</p>
+
+<h2 id="removing-a-file">Removing a File</h2>
+
+<p>Adding and modifying files are not the only actions one might take
+when working on a project.  It might be required to remove a file
+from the repository.</p>
+
+<p>Create a new file for the planet Nibiru:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ echo "This is another name for fake planet X" &gt; nibiru.txt
+</code></pre>
+</div>
+
+<p>Now add to the repository like you have learned earlier:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git add nibiru.txt
+$ git commit -m 'adding info on nibiru'
+$ git status
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>On branch master
+nothing to commit, working directory clean
+</code></pre>
+</div>
+
+<p>Nibiru is not a real planet.  That was a silly idea.  Let us remove
+it from the disk and let Git know about it:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git rm nibiru.txt
+$ git status
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>On branch master
+Changes to be committed:
+   (use "git reset HEAD &lt;file&gt;..." to unstage)
+
+   deleted:    nibiru.txt
+
+</code></pre>
+</div>
+
+<p>The change has been staged.  Now commit the removal, and remove the
+file from the repository itself.  Note that the file will be removed
+in the new commit.  The previous commit will still
+have the file, if you were to retrieve that specific commit.</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git commit -m 'Removing info on Nibiru.  It is not a real planet!'
+</code></pre>
+</div>
+
+<h2 id="removing-a-file-with-unix">Removing a File with Unix</h2>
+
+<p>Sometimes we might forget to remove the file through Git. If you removed the
+file with Unix <code class="highlighter-rouge">rm</code> instead of using <code class="highlighter-rouge">git rm</code>, no worries,
+Git is smart enough to notice the missing file. Let us recreate the file and
+commit it again.</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ echo "This is another name for fake planet X" &gt; nibiru.txt
+$ git add nibiru.txt
+$ git commit -m 'adding nibiru again'
+</code></pre>
+</div>
+
+<p>Now we remove the file with Unix <code class="highlighter-rouge">rm</code>:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ rm nibiru.txt
+$ git status
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>On branch master
+Changes not staged for commit:
+   (use "git add/rm &lt;file&gt;..." to update what will be committed)
+   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+
+    deleted:    nibiru.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+</code></pre>
+</div>
+
+<p>See how Git has noticed that the file <code class="highlighter-rouge">nibiru.txt</code> has been removed
+from the disk.  The next step is to “stage” the removal of the file
+from the repository.  This is done with the command <code class="highlighter-rouge">git rm</code> just as
+before.</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git rm nibiru.txt
+$ git status
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>On branch master
+Changes to be committed:
+   (use "git reset HEAD &lt;file&gt;..." to unstage)
+
+   deleted:    nibiru.txt
+
+</code></pre>
+</div>
+
+<p>The change that was made in Unix has now been staged and needs to be
+committed.</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git commit -m 'Removing info on Nibiru, again!'
+</code></pre>
+</div>
+
+<h2 id="renaming-a-file">Renaming a File</h2>
+
+<p>Another common change when working on a project is to rename a file.</p>
+
+<p>Create a file for the planet Krypton:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ echo "Superman's home planet" &gt; krypton.txt
+</code></pre>
+</div>
+
+<p>Add it to the repository:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git add krypton.txt
+$ git commit -m 'Adding planet Krypton'
+</code></pre>
+</div>
+
+<p>We all know that Superman moved to Earth.  Not that he had much
+choice.  Now his home planet is Earth.</p>
+
+<p>Rename the file <code class="highlighter-rouge">krypton.txt</code> to <code class="highlighter-rouge">earth.txt</code> with Git:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git mv krypton.txt earth.txt
+$ git status
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code># On branch master
+# Changes to be committed:
+#   (use "git reset HEAD &lt;file&gt;..." to unstage)
+#
+#	renamed:    krypton.txt -&gt; earth.txt
+#
+</code></pre>
+</div>
+<p>The final step is commit our change to the repository:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git commit -m 'Superman's home is now Earth'
+</code></pre>
+</div>
+
+<h2 id="renaming-a-file-with-unix">Renaming a File with Unix</h2>
+
+<p>If you forgot to use Git and you used Unix <code class="highlighter-rouge">mv</code> instead
+of <code class="highlighter-rouge">git mv</code>, you will have a touch more work to do but Git will
+be able to deal with it. Let’s try again renaming the file,
+this time with Unix <code class="highlighter-rouge">mv</code>. First, we need to recreate the
+<code class="highlighter-rouge">krypton.txt</code> file:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ echo "Superman's home planet" &gt; krypton.txt
+$ git add krypton.txt
+$ git commit -m 'Adding planet Krypton again.'
+</code></pre>
+</div>
+
+<p>Let us rename the file and see what Git can figured out by itself:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ mv krypton.txt earth.txt
+$ git status
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>On branch master
+Changes not staged for commit:
+  (use "git add/rm &lt;file&gt;..." to update what will be committed)
+  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+
+        deleted:    krypton.txt
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+
+    earth.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+</code></pre>
+</div>
+
+<p>Git has noticed that the file <code class="highlighter-rouge">krypton.txt</code> has disappeared from the
+file system and a new file <code class="highlighter-rouge">earth.txt</code> has showed up.</p>
+
+<p>Add those changes to the staging area:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git add krypton.txt earth.txt
+$ git status
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>On branch master
+Changes to be committed:
+  (use "git reset HEAD &lt;file&gt;..." to unstage)
+
+    renamed:    krypton.txt -&gt; earth.txt
+
+</code></pre>
+</div>
+
+<p>Notice how Git has now figure out that the <code class="highlighter-rouge">krypton.txt</code> has not
+disappeared it has simply been renamed.</p>
+
+<p>The final step, as before, is to commit our change to the repository:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ git commit -m 'Superman's home is Earth, told you before.'
+</code></pre>
+</div>
+
+
+
+      
+      
+<footer>
+  <div class="row">
+    <div class="col-md-6" align="left">
+      <h4>
+	Copyright &copy; 2016–2017
+	
+	<a href="https://software-carpentry.org">Software Carpentry Foundation</a>
+	
+      </h4>
+    </div>
+    <div class="col-md-6" align="right">
+      <h4>
+	
+	<a href="/edit/gh-pages/_extras/discuss.md">Edit on GitHub</a>
+	
+	/
+	<a href="/blob/gh-pages/CONTRIBUTING.md">Contributing</a>
+	/
+	<a href="/">Source</a>
+	/
+	<a href="/blob/gh-pages/CITATION">Cite</a>
+	/
+	<a href="">Contact</a>
+      </h4>
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/lesson.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37305346-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>
