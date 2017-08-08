@@ -128,7 +128,7 @@ and "unique" really does mean unique:
 every change to any set of files on any computer
 has a unique 40-character identifier.
 Our first commit was given the ID
-f22b25e3233b4645dabd0d81e651fe074bd8e73b,
+`f22b25e3233b4645dabd0d81e651fe074bd8e73b`,
 so let's try this:
 
 ~~~
