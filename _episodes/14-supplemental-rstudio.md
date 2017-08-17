@@ -59,7 +59,7 @@ the lower right. Let's add some more information about Pluto:
 
 ![](../fig/RStudio_screenshot_editfiles.png)
 
-We can also use RStudio to commit these changes. Go to the git menu and click
+Once we have saved our edited files, we can also use RStudio to commit these changes. Go to the git menu and click
 "commit":
 
 ![](../fig/RStudio_screenshot_commit.png)
