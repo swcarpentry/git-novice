@@ -34,7 +34,7 @@ and to meet some of our community members.
 2.  If you have a [GitHub][github] account,
     or are willing to [create one][github-join],
     but do not know how to use Git,
-    you can report problems or suggest improvements by [creating an issue][issues].
+    you can report problems or suggest improvements by [creating an issue][new-issue].
     This allows us to assign the item to someone
     and to respond to it in a threaded discussion.
 
@@ -69,7 +69,7 @@ and to meet some of our community members.
 There are many ways to contribute,
 from writing new exercises and improving existing ones
 to updating or filling in the documentation
-and and submitting [bug reports][issues]
+and submitting [bug reports][new-issue]
 about things that don't work, aren't clear, or are missing.
 If you are looking for ideas,
 please see [the list of issues for this repository][issues],
@@ -144,8 +144,9 @@ You can also [reach us by email][contact].
 [github-flow]: https://guides.github.com/introduction/flow/
 [github-join]: https://github.com/join
 [how-contribute]: https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github
-[issues]: https://github.com/swcarpentry/FIXME/issues/
-[repo]: https://github.com/swcarpentry/FIXME/
+[new-issue]: https://github.com/swcarpentry/git-novice/issues/new
+[issues]: https://github.com/swcarpentry/git-novice/issues/
+[repo]: https://github.com/swcarpentry/git-novice/
 [swc-issues]: https://github.com/issues?q=user%3Aswcarpentry
 [swc-lessons]: http://software-carpentry.org/lessons/
 [swc-site]: http://software-carpentry.org/
