@@ -1,0 +1,86 @@
+[main]
+host = https://www.transifex.com
+
+[git-novice-es.01-basics-md]
+file_filter = _episodes_<lang>/01-basics.md
+source_file = _episodes/01-basics.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[git-novice-es.02-setup-md]
+file_filter = _episodes_<lang>/02-setup.md
+source_file = _episodes/02-setup.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[git-novice-es.03-create-md]
+file_filter = _episodes_<lang>/03-create.md
+source_file = _episodes/03-create.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[git-novice-es.04-changes-md]
+file_filter = _episodes_<lang>/04-changes.md
+source_file = _episodes/04-changes.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[git-novice-es.05-history-md]
+file_filter = _episodes_<lang>/05-history.md
+source_file = _episodes/05-history.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[git-novice-es.06-ignore-md]
+file_filter = _episodes_<lang>/06-ignore.md
+source_file = _episodes/06-ignore.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[git-novice-es.07-github-md]
+file_filter = _episodes_<lang>/07-github.md
+source_file = _episodes/07-github.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[git-novice-es.08-collab-md]
+file_filter = _episodes_<lang>/08-collab.md
+source_file = _episodes/08-collab.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[git-novice-es.09-conflict-md]
+file_filter = _episodes_<lang>/09-conflict.md
+source_file = _episodes/09-conflict.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[git-novice-es.10-open-md]
+file_filter = _episodes_<lang>/10-open.md
+source_file = _episodes/10-open.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[git-novice-es.11-licensing-md]
+file_filter = _episodes_<lang>/11-licensing.md
+source_file = _episodes/11-licensing.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[git-novice-es.12-citation-md]
+file_filter = _episodes_<lang>/12-citation.md
+source_file = _episodes/12-citation.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[git-novice-es.13-hosting-md]
+file_filter = _episodes_<lang>/13-hosting.md
+source_file = _episodes/13-hosting.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[git-novice-es.14-supplemental-rstudio-md]
+file_filter = _episodes_<lang>/14-supplemental-rstudio.md
+source_file = _episodes/14-supplemental-rstudio.md
+source_lang = en
+type = GITHUBMARKDOWN
