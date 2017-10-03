@@ -39,6 +39,38 @@ which means that any changes pushed to
 another Git host server
 in a later lesson will include this information.
 
+> ## Line Endings
+>
+> As with other keys, when you hit the 'return' key on your keyboard, 
+> your computer is encodes this input. 
+> For reasons that are long to explain, different operating systems
+> use different character(s) to represent the end of a line. 
+> (You may also hear these referred to as newlines or line breaks.)
+> Because git uses these characters to compare files, 
+> it may cause unexpected issues when editing a file on different machines. 
+> 
+> You can change the way git recognizes and encodes line endings
+> using the 'core.autocrlf' command to 'git config'.
+> The following settings are recommended:
+>
+> On OS X and Linux:
+>
+> ~~~
+> $ git config --global core.autocrlf input
+> ~~~
+> {: .bash}
+>
+> And on Windows:
+>
+> ~~~
+> $ git config --global core.autocrlf true
+> ~~~
+> {: .bash}
+> 
+> You can read more about this issue 
+> [on this GitHub page](https://help.github.com/articles/dealing-with-line-endings/).
+{: .callout}
+
 For these lessons, we will be interacting with [GitHub](http://github.com/) and so the email address used should be the same as the one used when setting up your GitHub account. If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private][git-privacy]. 
 If you elect to use a private email address with GitHub, then use that same email address for the `user.email` value, e.g. `username@users.noreply.github.com` replacing `username` with your GitHub one. You can change the email address later on by using the `git config` command again.
 
