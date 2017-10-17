@@ -1,18 +1,17 @@
-@@ -0,0 +1,526 @@
 ---
-Título: Explorando el History
+título: Explorando el History
 curso: 25
 ejercicios: 0
 preguntas:
-- "¿Cómo puedo identificar versiones anteriores de archivos ?"
-- "¿Cómo puedo revisar mis cambios ?"
+- "¿Cómo puedo identificar versiones anteriores de archivos?"
+- "¿Cómo puedo revisar mis cambios?"
 - "¿Cómo puedo recuperar versiones anteriores de archivos?"
 objetivos:
 - "Explicar qué es el HEAD de un repositorio y cómo usarlo."
 - "Identificar y usar  el número de commit the Git."
 - "Comparar varias versiones de archivos."
 - "Restaurar versiones anteriores de archivos."
-Puntos Clave:
+puntos clave:
 - "`git diff` despliega diferencias entre commits."
 - "`git checkout` recupera versiones anteriores de archivos."
 ---
