@@ -1,15 +1,15 @@
 ---
-title: Control Automática de versiones
+title: Control Automático de versiones
 teaching: 5
 exercises: 0
 questions:
-- "What is version control and why should I use it?"
+- "¿Qué es el control de versiones y por qué debo usarlo?"
 objectives:
-- "Understand the benefits of an automated version control system."
-- "Understand the basics of how Git works."
+- "Comprender las ventajas de un sistema de control de versiones automatizado."
+- "Entender los fundamentos de cómo funciona Git."
 keypoints:
-- "Version control is like an unlimited 'undo'."
-- "Version control also allows many people to work in parallel."
+- "El control de versiones es como un "deshacer" ilimitado."
+- "El control de versiones también permite que muchas personas trabajen en simultáneo."
 ---
 
 Empezaremos por explorar como el control de versiones puede ser usado
