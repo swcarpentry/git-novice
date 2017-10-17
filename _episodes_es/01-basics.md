@@ -8,7 +8,7 @@ objectives:
 - "Comprender las ventajas de un sistema de control de versiones automatizado."
 - "Entender los fundamentos de cómo funciona Git."
 keypoints:
-- "El control de versiones es como un "deshacer" ilimitado."
+- 'El control de versiones es como un "deshacer" ilimitado.'
 - "El control de versiones también permite que muchas personas trabajen en simultáneo."
 ---
 
