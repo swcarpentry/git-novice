@@ -14,15 +14,15 @@ keypoints:
 - "`git pull` copies changes from a remote repository to a local repository."
 ---
 
-Cuando se trabaja en colaboración con otras personas es cuando el sistema de control de veriones alcanza su pleno potencial. Ya hemos visto la mayor parte de las herramientas que necesitamos para ello, tan sólo nos falta ver cómo copiar los cambios realizados de un repositorio a otro.
+Cuando se trabaja en colaboración con otras personas es cuando el sistema de control de versiones alcanza su pleno potencial. Ya hemos visto la mayor parte de las herramientas que necesitamos para ello, tan sólo nos falta ver cómo copiar los cambios realizados de un repositorio a otro.
 
 Sistemas como Git ya nos permiten mover el trabajo realizado entre dos repositorios cualesquiera. Sin embargo, en la práctica es más sencillo establecer uno de ellos como repositorio central y tenerlo en la red en lugar de en el ordenador particular. La mayoría de desarrolladores usan servicios de alojamiento en la red, tales como [GitHub](http://github.com), [BitBucket](http://bitbucket.org) o [GitLab](http://gitlab.com/), para alojar ese repositorio central; en la última sección de esta lección exploraremos los pros y los contras de cada uno de ellos.
 
-Empezemos por compartir con todo el mundo los cambios que hemos realizado en nuestro proyecto actual. Para ello, ingresa en tu cuenta de GitHub y haz click en el icono que hay en la esquina superior derecha para crear un nuevo repositorio llamado `planets`:
+Empecemos por compartir con todos los demás los cambios que hemos realizado en nuestro proyecto actual. Para ello, ingresa en tu cuenta de GitHub y haz click en el icono que hay en la esquina superior derecha para crear un nuevo repositorio llamado `planets`:
 
 ![Creando un Repositorio en GitHub (Paso 1)](../fig/github-create-repo-01.png)
 
-Dale a tu repositorio el nombre "planets" y haz click en "Create Repository":
+Dale a tu repositorio el nombre "planets" y haz click en "Create repository":
 
 ![Creando un Repositorio en GitHub (Paso 2)](../fig/github-create-repo-02.png)
 
@@ -62,7 +62,7 @@ Haz click en el enlace 'HTTPS' para cambiar el [protocol0]({{ page.root }}/refer
 
 ![Cambiando la URL del Repositorio en GitHub](../fig/github-change-repo-string.png)
 
-Copia dicha URL desde el navegador, ve al repositorio local `planets` y ejecuta este comando:
+Copia dicha URL desde el navegador, ve al repositorio local `planets` y ejecuta allí este comando:
 
 ~~~
 $ git remote add origin https://github.com/vlad/planets.git
@@ -163,7 +163,7 @@ Nuestros repositorios local y remoto se encuentran ahora en el siguiente estado:
 > una vez el repositorio remoto haya sido creado.
 {: .callout}
 
-También podemos hacer pull, es decir, traernos cambios desde el repositorio remoto al repositorio local:
+También podemos hacer **pull**, es decir, traernos cambios desde el repositorio remoto al repositorio local:
 
 ~~~
 $ git pull origin master
@@ -177,35 +177,35 @@ Already up-to-date.
 ~~~
 {: .output}
 
-En este caso, hacer pull no ha tenido ningun efecto porque los dos repositorios están ya sincronizados. Por el contrario, si alguien hubiera subido con push algunos cambios al repositorio en GitHub, este comando los habría incorporado a nuestro repositorio local.
+En este caso, hacer **pull** no ha tenido ningun efecto porque los dos repositorios están ya sincronizados. Por el contrario, si alguien antes hubiera subido con **push** algunos cambios al repositorio en GitHub, este comando los habría incorporado a nuestro repositorio local.
 
 > ## Interfaz gráfica de GitHub
 >
 > Navega hasta tu repositorio `planets` en GitHub.
 > En la pestaña Code, localiza el texto "XX commits" (donde "XX" es algún número) y haz click en él.
-> Mueve el cursor sobre los tres botones que hay a la derecha de cada commit, y haz click en ellos.
+> Mueve el cursor sobre los tres botones que hay a la derecha de cada **commit**, y haz click en ellos.
 > ¿Qué información puedes obtener/explorar con estos botones?
 > ¿Cómo obtendrías la misma información en la terminal?
 >
 > > ## Solución
-> > El botón más a la izquierda (con el dibujo de un portapapeles) sirve para copiar en el portapapeles el identificador completo del commit en cuestión. En la terminal, ```git log``` muestra los identificadores completos de cada commit.
+> > El botón más a la izquierda (con el dibujo de un portapapeles) sirve para copiar en el portapapeles el identificador completo del **commit** en cuestión. En la terminal, ```git log``` muestra los identificadores completos de cada **commit**.
 > >
-> > Haciendo click en el botón del medio, se pueden ver todos los cambios efectuados con el commit en cuestión. Las líneas verdes sobreadas indican adiciones y las rojas eliminaciones. En la terminal se puede ver lo mismo con ```git diff```. En particular, ```git diff ID1..ID2``` donde ID1 y ID2 son identificadores de commits (e.g. ```git diff a3bf1e5..041e637```) mostrará las diferencias entre esos dos commits.
+> > Haciendo click en el botón del medio, se pueden ver todos los cambios efectuados con el **commit** en cuestión. Las líneas verdes sobreadas indican adiciones y las rojas eliminaciones. En la terminal se puede ver lo mismo con ```git diff```. En particular, ```git diff ID1..ID2``` donde ID1 y ID2 son identificadores de **commits** (e.g. ```git diff a3bf1e5..041e637```) mostrará las diferencias entre esos dos **commits**.
 > >
-> > El botón más a la derecha permite ver todos los ficheros que existían en el repositorio en el momento del commit en cuestión. Para ver lo mismo en la terminal sería necesario hacer checkout del repositorio a ese momento del tiempo. Para ello se ejecutaría ```git checkout ID``` donde ID es el identificador del commit que queremos investigar. ¡Si se hace esto hay que acordarse luego de poner el repositorio de nuevo en el estado correcto!
+> > El botón más a la derecha permite ver todos los ficheros que existían en el repositorio en el momento del **commit** en cuestión. Para ver lo mismo en la terminal sería necesario hacer checkout del repositorio a ese momento del tiempo. Para ello se ejecutaría ```git checkout ID``` donde ID es el identificador del **commit** que queremos investigar. ¡Si se hace esto hay que acordarse luego de poner el repositorio de nuevo en el estado correcto!
 > {: .solution}
 {: .challenge}
 
 > ## Fecha y Hora en GitHub
 >
-> Crea un repositorio remoto en GitHub. Haz push de los contenidos de tu repositorio local
-> al remoto. Haz cambios en tu repositorio local y haz push de dichos cambios.
-> Ve al repo recién creado en GitHub and comprueba las fechas y horas, también llamadas
+> Crea un repositorio remoto en GitHub. Haz **push** de los contenidos de tu repositorio local
+> al remoto. Haz cambios en tu repositorio local y haz **push** de dichos cambios.
+> Ve al repo recién creado en GitHub y comprueba las fechas y horas, también llamadas
 > [timestamps]({{ page.root }}/reference/#timestamp) de los ficheros.  ¿Cómo registra
 > GitHub los tiempos, y por qué?
 >
 > > ## Solución
-> > Github muestra los tiempos en formato relativo legible para los humanos (i.e. "22 hours ago" or "three weeks ago"). Sin embargo, si mueves el cursor sobre un timestamp, podrás ver el tiempo exacto en el que se realizó el último cambio al fichero.
+> > Github muestra los tiempos en formato relativo legible para los humanos (i.e. "22 hours ago" or "three weeks ago"). Sin embargo, si mueves el cursor sobre un **timestamp**, podrás ver el tiempo exacto en el que se realizó el último cambio al fichero.
 > {: .solution}
 {: .challenge}
 
@@ -215,7 +215,7 @@ En este caso, hacer pull no ha tenido ningun efecto porque los dos repositorios 
 > ¿En qué se diferencia "git push" de "git commit"?
 >
 > > ## Solución
-> > Cuando enviamos cambios con push, estamos interaccionando con un repositorio remoto para actualizarlo con los cambios que hemos hecho localmente (a menudo esto supone compartir con otros los cambios realizados). Commit únicamente actualiza tu repositorio local.
+> > Cuando enviamos cambios con **push**, estamos interaccionando con un repositorio remoto para actualizarlo con los cambios que hemos hecho localmente (a menudo esto supone compartir con otros los cambios realizados). Por el contrario, **commit** únicamente actualiza tu repositorio local.
 > {: .solution}
 {: .challenge}
 
@@ -232,8 +232,8 @@ En este caso, hacer pull no ha tenido ningun efecto porque los dos repositorios 
 >
 > ¿Obtienes un error al añadir el repositorio remoto? ¿Se te ocurre algún
 > comando que hiciera obvio que la URL de tu repositorio remoto no es t
-> válida? ¿Se te ocurre cómo corregir la URL (pista: usa `git remote
-> -h`)? No olvides vaciar y eliminar este repositorio remoto una vez
+> válida? ¿Se te ocurre cómo corregir la URL? (pista: usa `git remote
+> -h`). No olvides vaciar y eliminar este repositorio remoto una vez
 > hayas terminado este ejercicio.
 >
 > > ## Solución
@@ -248,6 +248,6 @@ En este caso, hacer pull no ha tenido ningun efecto porque los dos repositorios 
 > intentaste enlazar tus repositorios local y remoto?
 >
 > > ## Solución
-> > En este caso, puesto que ya teníamos un fichero README en nuestro propio repositorio (local), habríamos visto un conficto de unión, conocido como merge conflict (que es cuando git se da cuenta de que hay dos versiones de un mismo fichero y nos pide que resolvamos las diferencias).
+> > En este caso, puesto que ya teníamos un fichero README en nuestro propio repositorio (local), habríamos visto un conficto de unión, conocido como **merge conflict** (que es cuando git se da cuenta de que hay dos versiones de un mismo fichero y nos pide que resolvamos las diferencias).
 > {: .solution}
 {: .challenge}
