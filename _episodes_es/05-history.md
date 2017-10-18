@@ -480,55 +480,58 @@ retroceder y avanzar en el tiempo se vuelve mucho más fácil.
 > {: .solution}
 {: .challenge}
 
-> ## Comprobando la compresión de `git diff`
+> ## Comprobando lo que entendiste de `git diff`
 >
 > Considera este comando: `git diff HEAD~3 mars.txt`. ¿Qué predices que hará este comando si lo ejecutas? ¿Qué sucede cuando lo ejecutas? ¿Por qué?
 >
-> Try another command, `git diff [ID] mars.txt`, where [ID] is replaced with
-> the unique identifier for your most recent commit. What do you think will happen,
-> and what does happen?
+> Prueba éste otro comando, `git diff [ID] mars.txt`, donde [ID] es 
+> el identificador único para tu commit más reciente. ¿Qué piensas tú que sucederá,
+> y qué es lo que pasa?
+
 {: .challenge}
 
-> ## Getting Rid of Staged Changes
+> ## Deshacer los cambios almacenados
 >
-> `git checkout` can be used to restore a previous commit when unstaged changes have
-> been made, but will it also work for changes that have been staged but not committed?
-> Make a change to `mars.txt`, add that change, and use `git checkout` to see if
-> you can remove your change.
+> `git checkout` puede usarse para restaurar un commit anterior cuando  cambios no marcados se han 
+> hecho, pero también funcionará para los cambios que se han realizado pero no se han confirmado?
+> Haz un cambio a `mars.txt`, agrega un cambio y use` git checkout` para ver si
+> puedes eliminar tu cambio.
+
 {: .challenge}
 
-> ## Explore and Summarize Histories
+> ## Explorar y resumir el History
 >
-> Exploring history is an important part of git, often it is a challenge to find
-> the right commit ID, especially if the commit is from several months ago.
+> Explorar el history es una parte importante de git, a menudo es un desafío encontrar
+> el ID de confirmación correcto, especialmente si el commit es de hace varios meses.
 >
-> Imagine the `planets` project has more than 50 files.
-> You would like to find a commit with specific text in `mars.txt` is modified.
-> When you type `git log`, a very long list appeared,
-> How can you narrow down the search?
+> Imagina que el proyecto `planets` tiene más de 50 archivos.
+> Deseas encontrar un commit con texto específico en `mars.txt`.
+> Cuando escribes `git log`, apareció una lista muy larga,
+> ¿Cómo puede reducir la búsqueda?
 >
-> Recorded that the `git diff` command allow us to explore one specific file,
-> e.g. `git diff mars.txt`. We can apply the similar idea here.
+> Recuerda que el comando `git diff` nos permite explorar un archivo específico,
+> p. ej. `git diff mars.txt`. Podemos aplicar la idea similar aquí.
 >
 > ~~~
 > $ git log mars.txt
 > ~~~
 > {: .bash}
 >
-> Unfortunately some of these commit messages are very ambiguous e.g. `update files`.
-> How can you search through these files?
+> Desafortunadamente, algunos de estos mensajes de los commits son muy ambiguos, p. Ej. `update files`.
+> ¿Cómo puedes buscar a través de estos archivos?
 >
-> Both `git diff` and `git log` are very useful and they summarize different part of the history for you.
-> Is that possible to combine both? Let's try the following:
+> Tanto `git diff` y` git log` son muy útiles y resumen una parte diferente del history para ti.
+> ¿Es posible combinar ambos? Vamos a intentar lo siguiente:
 >
 > ~~~
 > $ git log --patch mars.txt
 > ~~~
 > {: .bash}
 >
-> You should get a long list of output, and you should be able to see both commit messages and the difference between each commit.
+> Deberías obtener una larga lista de resultados, y deberías poder ver los dos mensajes del commit y la diferencia entre cada 
+> commit.
 >
-> Question: What does the following command do?
+> Pregunta: ¿Qué hace el siguiente comando?
 >
 > ~~~
 > $ git log --patch HEAD~3 *.txt
