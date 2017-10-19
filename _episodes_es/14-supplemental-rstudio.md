@@ -55,8 +55,8 @@ Ahora que hemos guardado nuestros archivos, podemos usar RStudio to **commit** l
 ![](../fig/RStudio_screenshot_commit.png)
 
 Esto va abrir una ventana donde puedes seleccionar que archivos quieres hacer **commit** (marca
-las casillas en la columna "**staged**") luego escribe un mensaje para el commit (en la parte
-superior derecha). Los iconos en la columna de "**status**" indican el estado actual de cada
+las casillas en la columna "**Staged**") luego escribe un mensaje para el commit (en la parte
+superior derecha). Los iconos en la columna de "**Status**" indican el estado actual de cada
 archivo. También puedes ver los cambios de cada archivo haciendo un click en su nombre. Una vez
 que todo esté de la forma que quieres, dale un click en "**commit**":
 
@@ -64,7 +64,7 @@ que todo esté de la forma que quieres, dale un click en "**commit**":
 
 Puedes subir los cambios seleccionando "**push**" en el menú de Git. Allí hay
 opciones para subir cambios a una versión remota de este repositorio, y ver
-la historia de cambios:
+la historia de cambios **History**:
 
 ![](../fig/RStudio_screenshot_history.png)
 
@@ -76,7 +76,7 @@ la historia de cambios:
 > `git push -u origin master`. Luego reinicia RStudio.
 {: .callout}
 
-Si le damos un click a la "historia" de cambios, podemos ver una versión gráfica de lo 
+Si le damos un click a la historia de cambios **History**, podemos ver una versión gráfica de lo 
 que nos diría el comando `git log`:
 
 ![](../fig/RStudio_screenshot_viewhistory.png)
