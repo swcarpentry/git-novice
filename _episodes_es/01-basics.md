@@ -1,15 +1,15 @@
 ---
-title: Control Automático de versiones
+title: Control Automática de versiones
 teaching: 5
 exercises: 0
 questions:
-- "¿Qué es el control de versiones y por qué debo usarlo?"
+- "What is version control and why should I use it?"
 objectives:
-- "Comprender las ventajas de un sistema de control de versiones automatizado."
-- "Entender los fundamentos de cómo funciona Git."
+- "Understand the benefits of an automated version control system."
+- "Understand the basics of how Git works."
 keypoints:
-- 'El control de versiones es como un "deshacer" ilimitado.'
-- "El control de versiones también permite que muchas personas trabajen en simultáneo."
+- "Version control is like an unlimited 'undo'."
+- "Version control also allows many people to work in parallel."
 ---
 
 Empezaremos por explorar como el control de versiones puede ser usado
@@ -28,9 +28,9 @@ Word [Track Changes] (https://support.office.com/en-us/article/Track-changes-in-
 history] (https://support.google.com/docs/answer/190843?hl=en) o LibreOffice [Grabación y visualización de cambios] (https://help.libreoffice.org/Common/Recording_and_Displaying_Changes).
 
 Los sistemas de control de versiones comienzan con una versión básica del documento y 
-luego guardan sólo los cambios que hicieron en cada paso del proceso. Tu puedes 
-pensar en ello como una cinta: si rebobina la cinta e inicia en el documento 
-base, entonces podrías reproducir cada cambio y terminar con
+luego guardan sólo los cambios que se hicieron en cada paso del proceso. Se puede 
+pensar en ello como en una cinta: si se rebobina la cinta y se inicia de nuevo en el documento 
+base se puede reproducir cada cambio y terminar con
 la versión más reciente.
 
 ![Changes Are Saved Sequentially](../fig/play-changes.svg)
@@ -55,7 +55,7 @@ en diferentes computadoras facilitando la colaboración entre diferentes persona
 >
 > Los sistemas automatizados de control de versiones no son nada nuevo.
 > Herramientas como RCS, CVS o Subversion han existido desde principios de los 1980  y son utilizadas por muchas grandes empresas.
-> Sin embargo, muchos de éstos ahora se están considerando como sistemas legado debido a las varias limitaciones en sus capacidades.
+> Sin embargo, muchos de estos han sido relegados debido a lo limitado de su capacidad
 > En particular, los sistemas más modernos, como Git y [Mercurial] (http://swcarpentry.github.io/hg-novice/) 
 > son * distribuidos *, lo que significa que no necesitan un servidor centralizado para alojar el repositorio. 
 > Estos sistemas modernos también incluyen potentes herramientas de fusión que hacen posible que múltiples autores trabajen dentro de 
