@@ -1,12 +1,12 @@
 ---
-title: Ciencia abierta
-teaching: 5
-exercises: 5
-questions:
+título: Ciencia abierta
+enseñanza: 5
+ejercicios: 5
+preguntas:
 - "¿Cómo control de versiones con Git me puede ayudar a tener mi trabajo abierto?"
-objectives:
+objectivos:
 - "Explica como el control de versiones nos ayuda a tener un cuaderno de notas electrónico para todo nuestro trabajo computacional."
-keypoints:
+puntos clave:
 - "Trabajo científico abierto es más útil y puede ser más citado que si no lo es."
 ---
 
