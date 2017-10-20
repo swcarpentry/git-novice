@@ -1,13 +1,13 @@
 ---
-title: Configurando Git
-teaching: 5
-exercises: 0
-Preguntas:
+título: Configurando Git
+enseñanza: 5
+ejercicios: 0
+preguntas:
 - "Cómo me preparo para utilizar Git?"
-Objectivos:
+objectivos:
 - "Configurar `git` la primera vez que utilice la computadora."
 - "Comprenda el significado de la bandera de configuración `--global`."
-keypoints:
+puntos clave:
 -   "Use `git config` para configurar un nombre de usuario, email, editor, y otras preferencias."
 ---
 
