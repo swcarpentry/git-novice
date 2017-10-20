@@ -1,14 +1,14 @@
 ---
-title: Licencia
-teaching: 5
-exercises: 0
-questions:
+título: Licencia
+enseñanza: 5
+ejercicios: 0
+preguntas:
 - "¿Qué información sobre licencias debería incluir en mi trabajo?"
-objectives:
+objectivos:
 - "Explicar la importancia de agregar información de licencias a nuestro trabajo."
 - "Escoger la licencia apropiada."
 - "Explicar las diferencias en licencias y algunas expectativas sociales."
-keypoints:
+palabras clave:
 - "Las personas que usan la licencia **GPL** en su software tienen que asegurarse de que toda la estructura esté bajo esta licencia; muchas otras licencias no requieren de esto."
 - La familia de licencias **Creative Commons** permite a las personas adaptarse a varios requerimientos y restricciones de atribución, la creación de trabajo derivado, compartir el trabajo, y comercialización."
 - "Personas sin conocimientos de leyes no deberían tratar de escribir nuevas licencias desde cero."
