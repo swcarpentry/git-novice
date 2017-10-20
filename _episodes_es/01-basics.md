@@ -23,7 +23,7 @@ el control automatizado de versiones es mucho mejor que la siguiente situación:
 
 Todos hemos estado en esta situación alguna vez: parece ridículo tener 
 varias versiones casi idénticas del mismo documento. Algunos procesadores de texto 
-nos permiten lidiar con esto un poco mejor, como por ejemplo el [*Track Changes* de Microsoft Word] (https://support.office.com/en-us/article/Track-changes-in-Word-197ba630-0f5f-4a8e-9a77-3712475e806a), el [historial de versiones de Google] (https://support.google.com/docs/answer/190843?hl=en) o la [grabación y visualización de cambios de LibreOffice] (https://help.libreoffice.org/Common/Recording_and_Displaying_Changes).
+nos permiten lidiar con esto un poco mejor, como por ejemplo el [*Track Changes* de Microsoft Word](https://support.office.com/en-us/article/Track-changes-in-Word-197ba630-0f5f-4a8e-9a77-3712475e806a), el [historial de versiones de Google](https://support.google.com/docs/answer/190843?hl=en) o la [grabación y visualización de cambios de LibreOffice](https://help.libreoffice.org/Common/Recording_and_Displaying_Changes).
 
 Los sistemas de control de versiones comienzan con una versión básica del documento y 
 luego van guardando sólo los cambios que se hicieron en cada paso del proceso. Se puede 
@@ -53,7 +53,7 @@ en diferentes computadoras, facilitando así la colaboración entre diferentes p
 > Los sistemas automatizados de control de versiones no son nada nuevo.
 > Herramientas como RCS, CVS o Subversion han existido desde principios de los 1980  y son utilizadas por muchas grandes empresas.
 > Sin embargo, muchos de estos han sido relegados debido a lo limitado de su capacidad
-> En particular, los sistemas más modernos, como Git y [Mercurial] (http://swcarpentry.github.io/hg-novice/) 
+> En particular, los sistemas más modernos, como Git y [Mercurial](http://swcarpentry.github.io/hg-novice/) 
 > son *distribuidos*, lo que significa que no necesitan un servidor centralizado para alojar el repositorio. 
 > Estos sistemas modernos también incluyen potentes herramientas de fusión que hacen posible que múltiples autores trabajen dentro de 
 > los mismos archivos simultáneamente. {:.callout}
