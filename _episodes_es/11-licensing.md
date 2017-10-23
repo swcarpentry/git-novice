@@ -9,12 +9,12 @@ objectivos:
 - "Escoger la licencia apropiada."
 - "Explicar las diferencias en licencias y algunas expectativas sociales."
 palabras clave:
-- "Las personas que usan la licencia **GPL** en su software tienen que asegurarse de que toda la estructura esté bajo esta licencia; muchas otras licencias no requieren de esto."
+- "Las personas que usan la licencia **GPL** en su software tienen que asegurarse de que toda la estructura esté bajo ésta licencia; muchas otras licencias no requieren esto."
 - La familia de licencias **Creative Commons** permite a las personas adaptarse a varios requerimientos y restricciones de atribución, la creación de trabajo derivado, compartir el trabajo, y comercialización."
 - "Personas sin conocimientos de leyes no deberían tratar de escribir nuevas licencias desde cero."
 ---
 
-Cuando un repositorio público contiene código fuente, un manuscrito u otro trabajo creativo, éste debe incluir un archivo con el nombre `LICENCIA` o `LICENCIA.txt` en el directorio base del repositorio, que indique claramente bajo que licencia se pone a  disposición el contenido. Esto se debe a que se aplica automáticamente la protección de propiedad intelectual (y por lo tanto derechos de autor) a las obras creativas. La reutilización de trabajos creativos sin licencia es peligrosa, ya que los titulares de los derechos de autor podrían realiza una demanda por infringir la misma.
+Cuando un repositorio público contiene código fuente, un manuscrito u otro trabajo creativo, éste debe incluir un archivo con el nombre `LICENCIA` o `LICENCIA.txt` en el directorio base del repositorio, que indique claramente bajo que licencia se pone a  disposición el contenido. Esto se debe a que se aplica automáticamente a las obras creativas la protección de propiedad intelectual (y por lo tanto derechos de autor). La reutilización de trabajos creativos sin licencia es peligrosa, ya que los titulares de los derechos de autor podrían realiza una demanda por infringir la misma.
 
 Una licencia resuelve el problema otorgando derechos a otros (los licenciatarios) que de otro modo no tendrían. ¿Qué derechos se otorgan bajo qué condiciones difieren, a menudo de forma leve, de una licencia a otra? En la práctica, algunas licencias son las más populares, y [choosealicense.com] (http://choosealicense.com/) te ayudará a encontrar una licencia que se adapte a tus necesidades. Las consideraciones importantes incluyen:
 
@@ -38,10 +38,10 @@ Al final del día lo que importa es que haya un informe claro sobre cuál es la 
 > ## ¿Qué licencias ya he aceptado?
 >
 > Muchas herramientas de **software** que usamos día a día (incluyento las herramientas en este **workshop**) son
-> **open-source software**. Escoge uno de los proyectos de GitHub de la lista de abajo, o algún otro que te interese. Encuentra la licencia (usualmente es un archivo que se llama `LICENSE` o `COPYING`) y luego habla con tus compañeros sobre como ésta licencia te permite o te restringe el uno del **software**. ¿Es una de las licencias que hemos visto en esta session? ¿Qué tan diferente es ésta licencia?
-> - [Git](https://github.com/git/git), the source-code management tool
-> - [CPython](https://github.com/python/cpython), the standard implementation of the Python language
-> - [Jupyter](https://github.com/jupyter), the project behind the web-based Python notebooks we'll be using
-> - [EtherPad](https://github.com/ether/etherpad-lite), a real-time collaborative editor
+> **open-source software**. Escoge uno de los proyectos de GitHub de la lista de abajo, o algún otro que te interese. Encuentra la licencia (usualmente es un archivo que se llama `LICENSE` o `COPYING`) y luego habla con tus compañeros sobre como ésta licencia te permite o te restringe el uso del **software**. ¿Es una de las licencias que hemos visto en esta sesión? ¿Qué tan diferente es ésta licencia?
+> - [Git](https://github.com/git/git), herramientas para el manejo de código fuente.
+> - [CPython](https://github.com/python/cpython), implementación estándar del lenguaje Python.
+> - [Jupyter](https://github.com/jupyter), proyectos web en Python para **notebooks**.
+> - [EtherPad](https://github.com/ether/etherpad-lite), un editor colaborativo en tiempo real.
 
 [licencia de software]: http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002598
