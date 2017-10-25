@@ -3,13 +3,13 @@ title: Conflictos
 teaching: 15
 exercises: 0
 questions:
-"¿Qué hago cuando mis cambios entran en conflicto con los de otra persona?"
+- "¿Qué hago cuando mis cambios entran en conflicto con los de otra persona?"
 objetivos:
 - "Explicar qué son los conflictos y cuándo pueden ocurrir."
 - "Resolver conflictos resultantes de una fusión."
 keypoints:
 - "Los conflictos ocurren cuando dos o más personas cambian el mismo archivo(s) al mismo tiempo."
-- El sistema de control de versiones no permite a las personas sobreescribir ciegamente los cambios del otro, pero resalta los conflictos para poder resolverlos".
+- "El sistema de control de versiones no permite a las personas sobreescribir ciegamente los cambios del otro, pero resalta los conflictos para poder resolverlos".
 ---
 
 Tan pronto como podemos trabajar en paralelo, es probable que alquien deshaga lo que otro hizo. Esto incluso es probable con una única persona: si estamos trabajando en un software al mismo tiempo en nuestra computadora portátil y un servidor en el laboratorio, podríamos hacer cambios diferentes a cada copia del trabajo. El control de versiones nos ayuda a manejar estos [confictos]({{ page.root }}/reference/#conflicts) al darnos herramientas para [resolver]({{ page.root }}/reference/#resolve) cambios que se hayan solapado. 
