@@ -1,4 +1,19 @@
 ---
+title: Conflicts
+teaching: 15
+exercises: 0
+questions:
+- "What do I do when my changes conflict with someone else's?"
+objectives:
+- "Explain what conflicts are and when they can occur."
+- "Resolve conflicts resulting from a merge."
+keypoints:
+- "Conflicts occur when two or more people change the same file(s) at the same time."
+- "The version control system does not allow people to overwrite each other's changes blindly, but highlights conflicts so that they can be resolved."
+---
+
+
+ #---
 título: Conflictos
 enseñanza: 15
 ejercicios: 0
@@ -11,7 +26,7 @@ puntos clave:
 - "Los conflictos ocurren cuando dos o más personas cambian el mismo archivo(s) al mismo tiempo."
 - "El sistema de control de versiones no permite a las personas sobreescribir ciegamente los 
 cambios del otro, pero resalta los conflictos para poder resolverlos".
----
+  #---
 
 Tan pronto como podemos trabajar en paralelo, es probable que alquien deshaga lo que otro hizo. Esto incluso es probable con una única persona: si estamos trabajando en un software al mismo tiempo en nuestra computadora portátil y un servidor en el laboratorio, podríamos hacer cambios diferentes a cada copia del trabajo. El control de versiones nos ayuda a manejar estos [confictos]({{ page.root }}/reference/#conflicts) al darnos herramientas para [resolver]({{ page.root }}/reference/#resolve) cambios que se hayan solapado. 
 
