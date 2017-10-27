@@ -291,7 +291,7 @@ Los conflictos también pueden ser minimizados con estrategias de administració
 > Cuando tu instructor te lo pida, 
 > trae los cambios -haciendo 'pull'- desde el repositorio para crear un conflicto,
 > y luego resolverlo.
-{: .desafío}
+{: .challenge}
 
 > ## Conflictos en archivos no textuales
 >
