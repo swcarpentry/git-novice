@@ -16,9 +16,9 @@ es necesario configurar algunas cosas. A continuación se presentan algunos ejem
 de configuraciones que estableceremos a medida que trabajemos con Git:
 
 *   nombre y correo electrónico,
-*   color de nuestra salida
+*   color de nuestra salida,
 *   cual es nuestro editor de texto preferido,
-*   y que queremos utilizar estos ajustes globalmente (es decir, para cada proyecto)
+*   y que queremos utilizar éstos ajustes globalmente (es decir, para cada proyecto)
 
 En línea de comandos, los comandos de Git se escriben como `git verb`, 
 donde` verb` es lo que queremos hacer. Así es como 
@@ -64,7 +64,7 @@ Es posible reconfigurar el editor de texto para Git siempre que quieras.
 
 > ## Saliendo de Vim
 >
->Ten en cuenta que `vim` es el editor por defecto para muchos programas, si no has utilizado` vim` antes y deseas salir de una sesión, presiona la tecla `Esc` y posteriormente escribe `: q! `Y` Enter`.
+>Ten en cuenta que `vim` es el editor por defecto para muchos programas, si no has utilizado` vim` antes y deseas salir de una sesión, presiona la tecla `Esc` y posteriormente escribe `: q!` y `Enter`.
 {: .callout}
 
 Los cuatro comandos que acabamos de ejecutar sólo se tienen que ejecutar una vez: la opción `--global` le dice a Git que use la configuración para cada proyecto, en tu cuenta de usuario, en esta computadora.
