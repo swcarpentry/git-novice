@@ -28,15 +28,15 @@ nos permiten lidiar con esto un poco mejor, como por ejemplo el [*Track Changes*
 Los sistemas de control de versiones comienzan con una versión básica del documento y 
 luego van guardando sólo los cambios que se hicieron en cada paso del proceso. Se puede 
 pensar en ello como en una cinta: si se rebobina la cinta y se inicia de nuevo en el documento 
-base se puede reproducir cada cambio y terminar con la versión más reciente.
+base, se puede reproducir cada cambio y terminar con la versión más reciente.
 
 ![Changes Are Saved Sequentially](../fig/play-changes.svg)
 
-Una vez se piensa en los cambios como separados del documento en si, entonces se puede pensar en "deshacer" diferentes conjuntos de cambios en el documento base y obtener así diferentes versiones del documento. Por ejemplo, dos usuarios pueden hacer conjuntos independientes de cambios basados en el mismo documento.
+Una vez que piensas en los cambios como separados del documento en sí, entonces se puede pensar en "deshacer" diferentes conjuntos de cambios en el documento base y obtener así diferentes versiones del documento. Por ejemplo, dos usuarios pueden hacer conjuntos independientes de cambios basados en el mismo documento.
 
 ![Different Versions Can be Saved](../fig/versions.svg)
 
-A menos que haya conflictos, se puede incluso incluir dos conjuntos de cambios en el mismo documento base.
+A menos que haya conflictos, se puede incluso tener dos conjuntos de cambios en el mismo documento base.
 
 ![Multiple Versions Can be Merged](../fig/merge.svg)
 
@@ -52,7 +52,7 @@ en diferentes computadoras, facilitando así la colaboración entre diferentes p
 >
 > Los sistemas automatizados de control de versiones no son nada nuevo.
 > Herramientas como RCS, CVS o Subversion han existido desde principios de los 1980  y son utilizadas por muchas grandes empresas.
-> Sin embargo, muchos de estos han sido relegados debido a lo limitado de su capacidad
+> Sin embargo, muchos de estos han sido relegados debido a lo limitado de su capacidad.
 > En particular, los sistemas más modernos, como Git y [Mercurial](http://swcarpentry.github.io/hg-novice/) 
 > son *distribuidos*, lo que significa que no necesitan un servidor centralizado para alojar el repositorio. 
 > Estos sistemas modernos también incluyen potentes herramientas de fusión que hacen posible que múltiples autores trabajen dentro de 
@@ -61,7 +61,7 @@ en diferentes computadoras, facilitando así la colaboración entre diferentes p
 >## Escritura de artículos 
 >
 > Imagina que has redactado un excelente párrafo para un artículo que estás escribiendo, pero más tarde lo estropeas. ¿Cómo recuperarías 
-> aquella *excelente* versión de la conclusión? ¿Es ello posible?
+> aquella *excelente* versión de la conclusión? ¿Es esto posible?
 >
 > Imagina que tienes 5 coautores. ¿Cómo administrarías los cambios y comentarios que ellos hagan en el artículo? 
 > Si usas LibreOffice Writer o Microsoft Word, ¿qué sucede si aceptas los cambios realizados con la opción 
