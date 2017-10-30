@@ -11,8 +11,8 @@ puntos clave:
 ---
 
 Una vez que Git está configurado,
-nosotros podemos comenzar a usarlo.
-Vamos a crear un directorio para nuestro trabajo y enseguida nos movemos dentro de ese directorio:
+podemos comenzar a usarlo.
+Vamos a crear un directorio para nuestro trabajo y nos movemos dentro de ese directorio:
 
 ~~~
 $ mkdir planets
@@ -121,10 +121,10 @@ nothing to commit (create/copy files and use "git add" to track)
 > > ~~~
 > > {: .bash}
 > >
-> > De manera similar, podemos ignorar (como comentamor anteriormete) directorios completos, como el directorio `moons`:
+> > De manera similar, podemos ignorar (como comentamos anteriormente) directorios completos, como el directorio `moons`:
 > >
 > > ~~~
-> > $ nano .gitignore # abrir el archivo .gitignore en el editor de texto para agregar el directorio moons
+> > $ nano .gitignore # abrir el archivo .gitignore en un editor de textos para agregar el directorio moons
 > > $ cat .gitignore # si después se ejecuta el comando cat, debería verse así:
 > > ~~~
 > > {: .bash}
