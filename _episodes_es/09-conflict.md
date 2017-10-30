@@ -101,7 +101,7 @@ We added a different line in the other copy
 
 Podemos hacer **commit** del cambio localmente
 
-~~~~
+~~~
 $ git add mars.txt
 $ git commit -m "Add a line in my copy"
 ~~~
