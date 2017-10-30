@@ -107,13 +107,16 @@ $ git commit -m "Add a line in my copy"
 ~~~
 {: .bash}
 
+
 ~~~
 [master 07ebc69] Add a line in my copy
  1 file changed, 1 insertion(+)
  ~~~
 {: .output}
 
+
 pero Git no ns dejará hacer **push** a GitHub:
+
 ~~~
 $ git push origin master
 ~~~
