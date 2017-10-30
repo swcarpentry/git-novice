@@ -8,14 +8,14 @@ preguntas:
 - "¿Cómo registro notas acerca de los cambios que he hecho y por qué?"
 objetivos:
 - "Ir a traves del ciclo modificar-agregar-commit para uno o más archivos."
-- "Explicar donde se almacena la información en cada etapa del flujo de trabajo de un commit de Git."
-- "Distinguir entre mensajes descriptivos y no-descriptivos de un commit."
+- "Explicar donde se almacena la información en cada etapa del flujo de trabajo de un **commit** de Git."
+- "Distinguir entre mensajes descriptivos y no-descriptivos de un **commit**."
 Puntos clave:
 - "`git status` muestra el estatus de un repositorio."
-- "Los archivos pueden ser almacenados en un directorio de trabajo del proyecto (el cual ven los usuarios), el área de ensayo (donde el siguiente commit está siendo construido) y el repositorio local (donde los commits son registrados permanentemente)."
+- "Los archivos pueden ser almacenados en un directorio de trabajo del proyecto (el cual ven los usuarios), el área de ensayo (donde el siguiente **commit** está siendo construido) y el repositorio local (donde los **commits** son registrados permanentemente)."
 - "`git add` pone archivos en el área de ensayo."
-- "`git commit` guarda el contenido del área de ensayo como un nuevo commit en el repositorio local."
-- "Siempre escribe un mensaje de registro cuando hagas un commit con cambios."
+- "`git commit` guarda el contenido del **staging area** como un nuevo **commit** en el repositorio local."
+- "Siempre escribe un mensaje de registro cuando hagas un **commit** con cambios."
 ---
 
 Primero asegúrate que estamos aún en el directorio correcto.
@@ -195,7 +195,7 @@ el identificador completo del **commit**
 el identificador corto que imprime el comando `git commit` anteriormente ),
 el autor del **commit**,
 cuándo fue creado,
-y el mensaje de registro que se le dio a Git cuando el commit fue creado.
+y el mensaje de registro que se le dio a Git cuando el **commit** fue creado.
 
 > ## ¿Dónde están mis cambios?
 >
@@ -306,7 +306,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 {: .output}
 
 Vaya:
-Git no hará commit porque no usamos `git add` primero.
+Git no hará **commit** porque no usamos `git add` primero.
 Arreglemos esto:
 
 ~~~
@@ -328,9 +328,9 @@ solo lotes grandes.
 Por ejemplo,
 supongamos que agregamos pocas citas para nuestro supervisor de trabajo
 en nuestra tesis.
-Podríamos querer hacer commit a esas adiciones,
+Podríamos querer hacer **commit** a esas adiciones,
 y su correspondiente adición a la bibliografía,
-pero *no* hacer commit del trabajo que estamos haciendo en la conclusión
+pero *no* hacer **commit** del trabajo que estamos haciendo en la conclusión
 (el cual no hemos terminado aún).
 
 
@@ -347,7 +347,7 @@ pero aún no se hace **commit**.
 > (poniendo cosas en el **staging area**),
 > y `git commit` entonces *realmente toma* la instantánea, y
 > hace un registro permanente de esto (como un **commit**).
-> Si no tienes nada en el stage area cuando escribes  `git commit`,
+> Si no tienes nada en el staging area cuando escribes  `git commit`,
 > Git te pedirá que uses `git commit -a` o `git commit --all`,
 > que es como reunir ¡*a todos* para la foto!
 > Sin embargo, es casi siempre mejor
@@ -598,15 +598,15 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 
 Recapitulando, cuando queremos agregar cambios a nuestro repositorio,
 primero necesitamos agregar los archivos cambiados al área de ensayo
-(`git add`) y luego hacer un commit de los cambios al
+(`git add`) y luego hacer un **commit** de los cambios al
 repositorio (`git commit`):
 
 ![The Git Commit Workflow](../fig/git-committing.svg)
 
-> ## Escogiendo un Mensaje para el Commit
+> ## Escogiendo un Mensaje para el **Commit**
 >
-> ¿Cuál de los siguientes mensajes de un commit debería ser más apropiado para el
-> último commit hecho a `mars.txt`?
+> ¿Cuál de los siguientes mensajes de un **commit** debería ser más apropiado para el
+> último **commit** hecho a `mars.txt`?
 >
 > 1. "Changes"
 > 2. "Added line 'But the Mummy will appreciate the lack of humidity' to mars.txt"
@@ -619,7 +619,7 @@ repositorio (`git commit`):
 > {: .solution}
 {: .challenge}
 
-> ## Haciendo Committ de Cambios a Git
+> ## Haciendo Commit de Cambios a Git
 >
 > ¿Cuál comando(s) de abajo deberían guardar los cambios de `myfile.txt`
 > a mi repositorio local Git?
@@ -688,7 +688,7 @@ repositorio (`git commit`):
 > > $ git add venus.txt
 > > ~~~
 > > {: .bash}
-> > Ahora los archivos están listos para hacer **commit**. Puedes verificar esto usando `git status`. Si estás listo para hacer commit usa:
+> > Ahora los archivos están listos para hacer **commit**. Puedes verificar esto usando `git status`. Si estás listo para hacer **commit** usa:
 > > ~~~
 > > $ git commit -m "Write plans to start a base on Venus"
 > > ~~~
