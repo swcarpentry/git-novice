@@ -1,19 +1,19 @@
 ---
-title: Conflictos
-teaching: 15
-exercises: 0
-questions:
+título: Conflictos
+enseñanza: 15
+ejercicios: 0
+preguntas:
 - "¿Qué hago cuando mis cambios entran en conflicto con los de otra persona?"
-objectives:
+objetivos:
 - "Explicar qué son los conflictos y cuándo pueden ocurrir."
 - "Resolver conflictos resultantes de una fusión."
-keypoints:
+puntos clave:
 - "Los conflictos ocurren cuando dos o más personas cambian el mismo archivo(s) al mismo tiempo."
 - "El sistema de control de versiones no permite a las personas sobreescribir ciegamente los
 cambios del otro, pero resalta los conflictos para poder resolverlos."
 ---
 
-Tan pronto como podemos trabajar en paralelo, es probable que alquien deshaga lo que otro hizo. Esto incluso es probable con una única persona: si estamos trabajando en un software al mismo tiempo en nuestra computadora portátil y un servidor en el laboratorio, podríamos hacer cambios diferentes a cada copia del trabajo. El control de versiones nos ayuda a manejar estos [confictos]({{ page.root }}/reference/#conflicts) al darnos herramientas para [resolver]({{ page.root }}/reference/#resolve) cambios que se hayan solapado. 
+Tan pronto como podemos trabajar en paralelo, es probable que alquien deshaga lo que otro hizo. Esto incluso es probable con una única persona: si estamos trabajando en un software al mismo tiempo en nuestra computadora portátil y un servidor en el laboratorio, podríamos hacer cambios diferentes a cada copia del trabajo. El control de versiones nos ayuda a manejar estos [confictos]({{ page.root }}/reference/#conflicts) al darnos herramientas para [resolver]({{ page.root }}/reference/#resolve) cambios que se hayan sobrelapado. 
 
 Para ver cómo podemos resolver conflictos, primero debemos crear uno. Actualmente, el archivo `mars.txt` luce de la siguiente manera en dos copias de diferentes compañeros en nuestro repositorio `planetas`:
 
@@ -24,9 +24,9 @@ $ cat mars.txt
 
 
 ~~~
-Frío y seco, pero todo es mi color favorito
-Las dos lunas pueden ser un problema para Wolfman
-Pero la Momia apreciará la falta de humedad
+Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+But the Mummy will appreciate the lack of humidity
 ~~~
 {: .output}
 
@@ -40,10 +40,10 @@ $ cat mars.txt
 
 
 ~~~
-Frío y seco, pero todo es mi color favorito
-Las dos lunas pueden ser un problema para Wolfman
-Pero la Momia apreciará la falta de humedad
-Esta línea es agregada en la copia de Wolfman
+Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+But the Mummy will appreciate the lack of humidity
+This line added to Wolfman's copy
 ~~~
 {: .output}
 
@@ -53,13 +53,13 @@ y luego hacer `push` al cambio a GitHub:
 
 ~~~
 $ git add mars.txt
-$ git commit -m "Agrego una línea en nuestra copia local"
+$ git commit -m "Add a line in our home copy"
 ~~~
 {: .bash}
 
 ~~~
-[master 5ae9631] Agregar una línea en nuestra copia local
- 1 archivo modificado, 1 inserción(+)
+[master 5ae9631] Add a line in our home copy
+ 1 file changed, 1 insertion(+)
 ~~~
 {: .output}
 
@@ -69,12 +69,12 @@ $ git push origin master
 {: .bash}
 
 ~~~
-Contando objetos: 5, hecho.
-Compresión delta usando hasta 4 threads.
-Comprimiendo objetos: 100% (3/3), hecho.
-Escribiendo objetos: 100% (3/3), 352 bytes, hecho.
-Total 3 (delta 1), reutilizado 0 (delta 0)
-A https://github.com/vlad/planets
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 352 bytes, done.
+Total 3 (delta 1), reused 0 (delta 0)
+To https://github.com/vlad/planets
    29aba7c..dabb4c8  master -> master
 ~~~
 {: .output}
@@ -89,20 +89,50 @@ $ cat mars.txt
 ~~~
 {: .bash}
 
+
 ~~~
-A https://github.com/vlad/planets.git
- ! [rechazado]        master -> master (non-fast-forward)
-error: fallo al hacer push en algunas refs a 'https://github.com/vlad/planets.git'
-pista: Se rechazaron actualizaciones porque la punta de su rama actual esta atrasada
-pista: con respecto a su contraparte remota. Unificar los cambios remotos (e.g. 'git pull')
-pista: antes de hacer push nuevamente.
-pista: Ver la 'Nota sobre fast-forwards' en 'git push --help' por más detalles.
+Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+But the Mummy will appreciate the lack of humidity
+We added a different line in the other copy
+~~~
+{: .output}
+
+
+Podemos hacer **commit** del cambio localmente
+
+~~~~
+$ git add mars.txt
+$ git commit -m "Add a line in my copy"
+~~~
+{: .bash}
+
+~~~
+[master 07ebc69] Add a line in my copy
+ 1 file changed, 1 insertion(+)
+ ~~~
+{: .output}
+
+pero Git no ns dejará hacer **push** a GitHub:
+~~~
+$ git push origin master
+~~~
+{: .bash}
+
+~~~
+To https://github.com/vlad/planets.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/vlad/planets.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
+hint: before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ~~~
 {: .output}
 
 ![The Conflicting Changes](../fig/conflict.svg)
 
-Git detecta que los cambios hechos en una copia se solapan con los hechos en la otra
+Git detecta que los cambios hechos en una copia se solapan con los cambios hechos en la otra
 y nos impide pisotear nuestro trabajo previo.
 Lo que debemos hacer es traer -`pull`- los cambios desde GitHub,
 [unirlos]({{ page.root }}/reference/#merge) dentro de la copia en la que estamos trabajando actualmente,
@@ -115,15 +145,15 @@ $ git pull origin master
 {: .bash}
 
 ~~~
-remoto: Contando objetos: 5. Hecho.
-remoto: Comprimiendo objetos: 100% (2/2), hecho.
-remoto: Total 3 (delta 1), reutilizado 3 (delta 1)
-Desempacando objetos: 100% (3/3), hecho.
-Desde https://github.com/vlad/planets
- * rama maestra     -> FETCH_HEAD
+remote: Counting objects: 5, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 3 (delta 1)
+Unpacking objects: 100% (3/3), done.
+From https://github.com/vlad/planets
+ * branch            master     -> FETCH_HEAD
 Auto-merging mars.txt
-CONFLICTO (contenido): Conflicto de unión en mars.txt
-Unión automática fracasó; corregir contenido y luego hacer 'commit' al resultado.
+CONFLICT (content): Merge conflict in mars.txt
+Automatic merge failed; fix conflicts and then commit the result.
 ~~~
 {: .output}
 
@@ -136,18 +166,18 @@ $ cat mars.txt
 {: .bash}
 
 ~~~
-Frío y seco, pero todo es mi color favorito
-Las dos lunas pueden ser un problema para Wolfman
-Pero la Momia apreciará la falta de humedad
+Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+But the Mummy will appreciate the lack of humidity
 <<<<<<< HEAD
-Agregamos una línea diferente en la otra copia
+We added a different line in the other copy
 =======
-Esta línea es agregada en la copia de Wolfman
+This line added to Wolfman's copy
 >>>>>>> dabb4c8c450e8475aee9b14b4383acc99f42af1d
 ~~~
 {: .output}
 
-Nuestro cambio —señalado por `HEAD`— es precedido por `<<<<<<<`.
+Nuestro cambio —señalado en `HEAD`— es precedido por `<<<<<<<`.
 Luego, Git insertó `=======` como un separador entre los cambios conflictivos
 y marcó el fin del contenido descargado desde GitHub con `>>>>>>>`.
 (El código  de letras y números luego del marcador
@@ -166,10 +196,10 @@ $ cat mars.txt
 {: .bash}
 
 ~~~
-Frío y seco, pero todo es mi color favorito
-Las dos lunas pueden ser un problema para Wolfman
-Pero la Momia apreciará la falta de humedad
-Eliminamos el conflicto en esta línea
+Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+But the Mummy will appreciate the lack of humidity
+We removed the conflict on this line
 ~~~
 {: .output}
 
@@ -184,24 +214,24 @@ $ git status
 {: .bash}
 
 ~~~
-En rama maestra:
-Todos los conflictos arreglados pero aun realizando unión
-  (usar "git commit" para concluir unión)
+On branch master
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
 
-Cambios a ser guardados:
+Changes to be committed:
 
-    modificados:   mars.txt
+	modified:   mars.txt
 
 ~~~
 {: .output}
 
 ~~~
-$ git commit -m "Unir cambios desde GitHub"
+$ git commit -m "Merge changes from GitHub"
 ~~~
 {: .bash}
 
 ~~~
-[master 2abf2b1] Unir cambios desde GitHub
+[master 2abf2b1] Merge changes from GitHub
 ~~~
 {: .output}
 
@@ -213,19 +243,19 @@ $ git push origin master
 {: .bash}
 
 ~~~
-Contando objetos: 10, hecho.
-Compresión delta usando hasta 4 threads.
-Comprimiendo objetos: 100% (6/6), hecho.
-Escribiendo objetos: 100% (6/6), 697 bytes, hecho.
-Total 6 (delta 2), reutilizado 0 (delta 0)
-A https://github.com/vlad/planets.git
+Counting objects: 10, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 697 bytes, done.
+Total 6 (delta 2), reused 0 (delta 0)
+To https://github.com/vlad/planets.git
    dabb4c8..2abf2b1  master -> master
 ~~~
 {: .output}
 
 Git lleva el registro de qué hemos unificado con qué,
 de manera que no debemos arreglar las cosas a mano nuevamente
-cuando el colaborador que hizo el primer cambio hacer pull de nuevo:
+cuando el colaborador que hizo el primer cambio hace **pull** de nuevo:
 
 ~~~
 $ git pull origin master
@@ -233,16 +263,16 @@ $ git pull origin master
 {: .bash}
 
 ~~~
-remoto: Contando objetos: 10, hecho.
-remoto: Comprimiendo objetos: 100% (4/4), hecho.
-remoto: Total 6 (delta 2), reutilizado 6 (delta 2)
-Desempacando objetos: 100% (6/6), hecho.
-Desde https://github.com/vlad/planets
+remote: Counting objects: 10, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 2), reused 6 (delta 2)
+Unpacking objects: 100% (6/6), done.
+From https://github.com/vlad/planets
  * branch            master     -> FETCH_HEAD
-Actualizando dabb4c8..2abf2b1
+Updating dabb4c8..2abf2b1
 Fast-forward
  mars.txt | 2 +-
- 1 archivo modificado, 1 inserción(+), 1 delección(-)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 ~~~
 {: .output}
 
@@ -254,10 +284,10 @@ $ cat mars.txt
 {: .bash}
 
 ~~~
-Frío y seco, pero todo es mi color favorito
-Las dos lunas pueden ser un problema para Wolfman
-Pero la Momia apreciará la falta de humedad
-Eliminamos el conflicto en esta línea
+Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+But the Mummy will appreciate the lack of humidity
+We removed the conflict on this line
 ~~~
 {: .output}
 
@@ -290,7 +320,7 @@ Los conflictos también pueden ser minimizados con estrategias de administració
 > y modificar un archivo existente (tu instructor te dirá cuál).
 > Cuando tu instructor te lo pida, 
 > trae los cambios -haciendo 'pull'- desde el repositorio para crear un conflicto,
-> y luego resolverlo.
+> y luego resuélvelo.
 {: .challenge}
 
 > ## Conflictos en archivos no textuales
@@ -301,7 +331,7 @@ Los conflictos también pueden ser minimizados con estrategias de administració
 >
 > > ## Solución
 > >
-> > Intentémoslo. Supón que Drácula toma una foto de la superficie de Marte y la llama `mars.jpg`.
+> > Intentémoslo. Supón que **Dracula** toma una foto de la superficie de Marte y la llama `mars.jpg`.
 > >
 > > Si no tienes una imagen de Marte, puedes crear un archivo
 > > binario de prueba de la siguiente manera:
@@ -320,7 +350,7 @@ Los conflictos también pueden ser minimizados con estrategias de administració
 > > `ls` nos muestra que se creó un archivo de 1-kilobyte. Está lleno de bytes al azar
 > > leídos a partir del archivo especial, `/dev/urandom`.
 > >
-> > Ahora, supón que Drácula agrega `mars.jpg` a su repositorio:
+> > Ahora, supón que **Dracula** agrega `mars.jpg` a su repositorio:
 > >
 > > ~~~
 > > $ git add mars.jpg
@@ -329,15 +359,15 @@ Los conflictos también pueden ser minimizados con estrategias de administració
 > > {: .bash}
 > >
 > > ~~~
-> > [master 8e4115c] Agrego imagen de superficie de Marte
-> >  1 archivo cambiado, 0 inserciones(+), 0 delecciones(-)
-> >  crear modo 100644 mars.jpg
+> > [master 8e4115c] Add picture of Martian surface
+> >  1 file changed, 0 insertions(+), 0 deletions(-)
+> >  create mode 100644 mars.jpg
 > > ~~~
 > > {: .output}
 > >
 > > Supón que Wolfman agregó una imagen similar al mismo tiempo. 
 > > La suya es una imagen del cielo de Marte, pero *también* se llama `mars.jpg`.
-> > Cuando Drácula intenta hacer push, recibe un mensaje familiar:
+> > Cuando **Dracula** intenta hacer push, recibe un mensaje familiar:
 > >
 > > ~~~
 > > $ git push origin master
@@ -345,18 +375,18 @@ Los conflictos también pueden ser minimizados con estrategias de administració
 > > {: .bash}
 > >
 > > ~~~
-> > Hacia https://github.com/vlad/planets.git
-> >  ! [rechazaco]        master -> master (fetch first)
-> > error: fracaso al hacer push a algunas refs hacia 'https://github.com/vlad/planets.git'
-> > pista: Actualizaciones rechazadas porque repositorio remoto contiene trabajo que no
-> > pista: tienes localmente. Esto usualmente es causado por otro repositorio haciendo push
-> > pista: a la misma referencia. Integrar los cambios remotos
-> > pista: (e.g., 'git pull ...') antes de volver a hacer push.
-> > pista: Ver 'Nota sobre fast-forwards' en 'git push --help' por detalle.
+> > To https://github.com/vlad/planets.git
+> >  ! [rejected]        master -> master (fetch first)
+> > error: failed to push some refs to 'https://github.com/vlad/planets.git'
+> > hint: Updates were rejected because the remote contains work that you do
+> > hint: not have locally. This is usually caused by another repository pushing
+> > hint: to the same ref. You may want to first integrate the remote changes
+> > hint: (e.g., 'git pull ...') before pushing again.
+> > hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 > > ~~~
 > > {: .output}
 > >
-> > Hemos aprendido que primero debemos hacer pull y resolver conflictos:
+> > Hemos aprendido que primero debemos hacer **pull** y resolver conflictos:
 > >
 > > ~~~
 > > $ git pull origin master
@@ -368,17 +398,17 @@ Los conflictos también pueden ser minimizados con estrategias de administració
 > >
 > > ~~~
 > > $ git pull origin master
-> > remoto: Contando objetos: 3, hecho.
-> > remoto: Comprimiendo objetos: 100% (3/3), hecho.
-> > remoto: Total 3 (delta 0), reutilizados 0 (delta 0)
-> > Desempacando objetos: 100% (3/3), hecho.
-> > Desde https://github.com/vlad/planets.git
-> >  * rama principal     -> FETCH_HEAD
+> > remote: Counting objects: 3, done.
+> > remote: Compressing objects: 100% (3/3), done.
+> > remote: Total 3 (delta 0), reused 0 (delta 0)
+> > Unpacking objects: 100% (3/3), done.
+> > From https://github.com/vlad/planets.git
+> >  * branch            master     -> FETCH_HEAD
 > >    6a67967..439dc8c  master     -> origin/master
-> > advertencia: No se pueden fusionar archivos binarios: mars.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)
-> > Auto-fusionar mars.jpg
-> > CONFLICTO (add/add): fusionar conflicto en mars.jpg
-> > Fusion automática falló; arreglar conflictos y luego hacer commit al resultado.
+> > warning: Cannot merge binary files: mars.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)
+> > Auto-merging mars.jpg
+> > CONFLICT (add/add): Merge conflict in mars.jpg
+> > Automatic merge failed; fix conflicts and then commit the result.
 > > ~~~
 > > {: .output}
 > >
@@ -386,43 +416,43 @@ Los conflictos también pueden ser minimizados con estrategias de administració
 > > hay una línea adicional:
 > >
 > > ~~~
-> > advertencia: No se pueden fusionar archivos binarios: mars.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)
+> > warning: Cannot merge binary files: mars.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)
 
 > > ~~~
 > >
 > > Git no puede insertar indicadores de conflicto en una imagen como sí lo hace en los
 > > archivos de texto. Por lo tanto, en vez de editar la imagen, debemos revisar la versión que 
-> > queremos mantener. Luego podemos agregar y hacer commit a estar version.
+> > queremos mantener. Luego podemos agregar y hacer **commit** a esta versión.
 > >
-> > En la línea agregada de arriba, Git convenientemente nos dió identificadores de commit
+> > En la línea agregada de arriba, Git convenientemente nos dió identificadores de **commit**
 > > para las dos versiones de `mars.jpg`. Nuestra version es  `HEAD`, y la de Wolfman
-> > es `439dc8c0...`. Si queremos usar nuestra version, podemos usar
+> > es `439dc8c0...`. Si queremos usar nuestra versión, podemos usar
 > > `git checkout`:
 > >
 > > ~~~
 > > $ git checkout HEAD mars.jpg
 > > $ git add mars.jpg
-> > $ git commit -m "Usar imagen de superficie en vez de cielo"
+> > $ git commit -m "Use image of surface instead of sky"
 > > ~~~
 > > {: .bash}
 > >
 > > ~~~
-> > [master 21032c3] Usar imagen de superficie en vez de cielo
+> > [master 21032c3] Use image of surface instead of sky
 > > ~~~
 > > {: .output}
 > >
-> > Si en cambio queremos usar la versión de Wolfman, podemos usar `git checkout` con
-> > el identificador de commit de Wolfman, `439dc8c0`:
+> > En cambio si queremos usar la versión de Wolfman, podemos usar `git checkout` con
+> > el identificador de **commit** de Wolfman, `439dc8c0`:
 > >
 > > ~~~
 > > $ git checkout 439dc8c0 mars.jpg
 > > $ git add mars.jpg
-> > $ git commit -m "Usar imagen de superficie en vez de cielo"
+> > $ git commit -m "Use image of sky instead of surface"
 > > ~~~
 > > {: .bash}
 > >
 > > ~~~
-> > [master da21b34] Usar imagen de superficie en vez de cielo
+> > [master da21b34] Use image of sky instead of surface
 > > ~~~
 > > {: .output}
 > >
@@ -444,15 +474,15 @@ Los conflictos también pueden ser minimizados con estrategias de administració
 > > $ git rm mars.jpg
 > > $ git add mars-surface.jpg
 > > $ git add mars-sky.jpg
-> > $ git commit -m "Usar dos imágenes: superficie y cielo"
+> > $ git commit -m "Use two images: surface and sky"
 > > ~~~
 > > {: .bash}
 > >
 > > ~~~
-> > [master 94ae08c] Usar dos imágenes: superficie y cielo
-> >  2 archivos modificados, 0 inserciones(+), 0 delecciones(-)
-> >  crear modo 100644 mars-sky.jpg
-> >  renombrar mars.jpg => mars-surface.jpg (100%)
+> > [master 94ae08c] Use two images: surface and sky
+> >  2 files changed, 0 insertions(+), 0 deletions(-)
+> >  create mode 100644 mars-sky.jpg
+> >  rename mars.jpg => mars-surface.jpg (100%)
 > > ~~~
 > > {: .output}
 > >
@@ -463,7 +493,7 @@ Los conflictos también pueden ser minimizados con estrategias de administració
 >
 > ## Una típica sesión de trabajo
 >
-> Te sientas en tu computadora para trabjar en un projecto compartido que es mantenido en un
+> Te sientas en tu computadora para trabajar en un proyecto compartido que es mantenido en un
 > repositorio Git remoto. Durante tu sesión de trabajo, realizas las siguientes acciones, 
 > pero no en éste orden:
 >

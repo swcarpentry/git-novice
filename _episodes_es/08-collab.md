@@ -1,12 +1,13 @@
 ---
 título: "Trabajos en colaboración"
-puntos clave: '`git clone` copies a remote repository to create a local repository with a remote called `origin` automatically set up.'
-objectivos:
+enseñanza: 5
+ejercicios: 0
+preguntas:
+- "¿Cómo puedo usar el control de versiones para colaborar con otras personas? 
+objetivos:
 - Clonar un repositorio remoto.
 - Colaborar en crear un repositorio común.
-preguntas: ¿Cómo puedo usar el control de versiones para colaborar con otras personas?
-enseñanza: 25
-ejercicios: 0
+puntos clave: '`git clone` copies a remote repository to create a local repository with a remote called `origin` automatically set up.'
 ---
 
 Para el siguiente paso, formen parejas. Una persona será el "dueño" y la otra el "colaborador". El objetivo es que el colaborador agregue cambios al repositorio del dueño. Vamos a cambiar roles al final, de modo que ambas personas puedan participar como dueño y colaborador
@@ -14,7 +15,7 @@ Para el siguiente paso, formen parejas. Una persona será el "dueño" y la otra 
 > ## Practicando por tu cuenta
 >
 > Si estás trabajando en esta lección por tu cuenta, puedes hacerlo abriendo una segunda sesión en la 
-> ventana del terminal. Esta ventana representará a tu compañero, trabajando en otra computadora. No necesitas darle acceso a nadie en GitHub, pues tu serás ambos "compañeros".
+> ventana de la terminal. Esta ventana representará a tu compañero, trabajando en otra computadora. No necesitas darle acceso a nadie en GitHub, pues tu serás ambos "compañeros".
 {: .callout}
 
 El dueño debe dar acceso al colaborador. En GitHub, haz click en el botón de configuración arriba a la derecha,
@@ -24,9 +25,9 @@ luego selecciona "Colaboradores" e ingresa el nombre de tu colaborador.
 
 Para aceptar la invitación de acceso al repositorio, el Colaborador
 debe ingresar a [https://github.com/notifications](https://github.com/notifications).
-Una vez allá, se puede aceptar la invitación a dicho repositorio.
+Una vez allí, se puede aceptar la invitación a dicho repositorio.
 
-Luego, el colaborador debe descargar una copia del repositorio del dueño a su máquina. Esto se conoce como "clonar un repositorio". Para clonar el repositorio del dueño en su carpeta de `Escritorio`, el colaborador debe correr las siguientes líneas:
+Luego, el colaborador debe descargar una copia del repositorio del dueño a su máquina. Esto se conoce como "clonar un repositorio". Para clonar el repositorio del dueño en su carpeta de `Desktop`, el colaborador debe correr las siguientes líneas:
 
 ~~~
 $ git clone https://github.com/vlad/planets.git ~/Desktop/vlad-planets
@@ -81,7 +82,7 @@ To https://github.com/vlad/planets.git
 ~~~
 {: .output}
 
-Notar que no es necesario crear un directorio remoto llamado `origin`: Git utiliza este nombre de manera automática cuando clonamos un repositorio. (Esta es la razón por la cual `origin` era una opción sensata a la hora de configurar directorios remotos a mano).
+Nota que no es necesario crear un directorio remoto llamado `origin`: Git utiliza este nombre de manera automática cuando clonamos un repositorio. (Esta es la razón por la cual `origin` era una opción sensata a la hora de configurar directorios remotos a mano).
 
 Ahora echa un vistazo al repositorio del dueño en su sitio de Github (quizás debas refrescar la página). Deberás ver el nuevo commit hecho por el colaborador.
 
@@ -109,7 +110,7 @@ Fast-forward
 
 Ahora hay tres repositorios sincronizados (el local del Dueño, el local del colaborador y el del dueño en GitHub).
 
-## A Basic Collaborative Workflow
+## Un flujo de trabajo colaborativo básico
 
 En la practica, es bueno estar seguro que tienes una versión actualizada del repositorio en el que colaboras. Para ello, es bueno hacer un `git pull` antes de hacer cambios. El enfoque sería:
 
@@ -119,23 +120,23 @@ En la practica, es bueno estar seguro que tienes una versión actualizada del re
 * realizar un commit `git commit -m`, y
 * cargar las actualizaciones a GitHub con `git push origin master`
 
-Es mejor hacer varias actualizaciones pequeñas que un commit grande con cambios enormes. Commits pequeños son más fáciles de leer y revisar.
+Es mejor hacer varias actualizaciones pequeñas que un **commit** grande con cambios enormes. **Commits** pequeños son más fáciles de leer y revisar.
 {: .callout}
 
 ## Cambiar roles
 
-Switch roles and repeat the whole process.
+Cambie los roles y repita todo el proceso.
 {: .challenge}
 
 ## Revisar Cambios
 
-El dueño hace un push de los commits al repositorio sin dar información al colaborador. Cómo puede éste saberlo desde la linea de comandos y desde GitHub?
+El dueño hace un **push** de los **commits** al repositorio sin dar información al colaborador. Cómo puede éste saberlo desde la linea de comandos y desde GitHub?
 
 ## Solution
 
-En la linea de comandos, el colaborador puede usar ```git fetch origin master``` para acceder a los cambios remotos en el repositorio local, sin hacer un merge. Luego, corriendo ```git diff master origin/master```,  el colaborador verá los cambios en el terminal.  
+En la linea de comandos, el colaborador puede usar ```git fetch origin master``` para acceder a los cambios remotos en el repositorio local, sin hacer un **merge*. Luego, corriendo ```git diff master origin/master```,  el colaborador verá los cambios en la terminal.  
 
-En GitHub, el colaborador puede realizar su propio fork y hallar la barra gris que indica "Esta rama está 1 commit por detrás del repositorio maestro". Lejos, a la derecha de la barra gris, hay un link para comparar. En la página para comparar, el colaborador debe cambiar el fork hacia su propio repositorio, luego hacer click en el link para "comparar entre forks" y, finalmente, cambiar el fork al repositorio principal. Esto mostrará todos los commits que sean distintos. 
+En GitHub, el colaborador puede realizar su propio **fork** y hallar la barra gris que indica "This branch is 1 commit behind Our-Respository:master.". Lejos, a la derecha de la barra gris, hay un link para comparar. En la página para comparar, el colaborador debe cambiar el **fork** hacia su propio repositorio, luego hacer click en el link para "comparar entre forks" y, finalmente, cambiar el **fork** al repositorio principal. Esto mostrará todos los **commits** que sean distintos. 
 
 {: .solution}
 {: .challenge}
@@ -144,12 +145,12 @@ En GitHub, el colaborador puede realizar su propio fork y hallar la barra gris q
 
 El colaborador tiene algunas preguntas sobre cambios en una línea hechos por el dueño. 
 
-Con GitHub, es posible comentar la diferencia en un commit. Sobre la línea de código a comentar, el botón azul aparece para abrir una ventana. 
+Con GitHub, es posible comentar la diferencia en un **commit**. Sobre la línea de código a comentar, el botón azul aparece para abrir una ventana. 
 
-El colaborador postea los comenatios y sugerencias usando la interfaz de GitHub.
+El colaborador postea los comentarios y sugerencias usando la interfaz de GitHub.
 {: .challenge}
 
 ## Historial de versiones, backup y control de versiones
 
-Algunos softwares que permiten hacer backup también permiten guardar un historial de versiones y recuperar versiones específicas. Cómo es esta funcionalidad distinta del control de versiones? Cuáles son los beneficios de usar control de versiones, Git y GitHub? 
+Algunos softwares que permiten hacer **backups** también permiten guardar un historial de versiones y recuperar versiones específicas. ¿Cómo es esta funcionalidad distinta del control de versiones? ¿Cuáles son los beneficios de usar control de versiones, Git y GitHub? 
 {: .challenge}

@@ -1,6 +1,6 @@
 ---
 título: Ignorando cosas
-enseñando: 5
+enseñanza: 5
 ejercicios: 0
 preguntas:
 - "¿Cómo puedo decirle a Git que ignore los archivos que no quiero rastrear?"
@@ -64,7 +64,7 @@ results/
 Estos patrones le dicen a Git que ignore cualquier archivo cuyo nombre termine en `.dat`
 y todo lo que haya en el directorio `results`.
 (Si alguno de estos archivos ya estaba siendo rastreado, 
-Git seguiría rastreándolos.)
+Git seguirá rastreándolos.)
 
 Una vez que hemos creado este archivo, 
 la salida de `git status` es mucho más limpia:
@@ -84,7 +84,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 ~~~
 {: .output}
 
-Lo único que Git advierte ahora es el archivo `.gitignore` recién creado.
+Lo único que Git advierte ahora, es el archivo `.gitignore` recién creado.
 Podrías pensar que no queremos rastrearlo, 
 pero todos aquellos con los que compartimos nuestro repositorio probablemente desearán
 ignorar las mismas cosas que nosotros.
@@ -184,8 +184,8 @@ nothing to commit, working directory clean
 > > Agrega las siguientes dos líneas a tu .gitignore:
 > >
 > > ~~~
-> > *.data # ignore all data files
-> > !final.data # except final.data
+> > *.data # ignora todo los archivos .data
+> > !final.data # excepto final.data
 > > ~~~
 > > {: .bash}
 > >
@@ -206,7 +206,7 @@ nothing to commit, working directory clean
 > ~~~
 > {: .bash}
 >
-> ¿Cuál es la regla más corta en `.gitignore` que debería ignorar todos los archivos `.data`
+> ¿Cuál es la regla más corta en `.gitignore` para ignorar todos los archivos `.data`
 > en `result/data/position/gps`? No ignores el archivo `info.txt`.
 >
 > > ## Solución

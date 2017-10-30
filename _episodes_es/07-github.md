@@ -1,22 +1,22 @@
 ---
-title: Repositorios remotos en GitHub
-teaching: 30
-exercises: 0
-questions:
-- "How do I share my changes with others on the web?"
-objectives:
-- "Explain what remote repositories are and why they are useful."
-- "Push to or pull from a remote repository."
-keypoints:
-- "A local Git repository can be connected to one or more remote repositories."
-- "Use the HTTPS protocol to connect to remote repositories until you have learned how to set up SSH."
-- "`git push` copies changes from a local repository to a remote repository."
-- "`git pull` copies changes from a remote repository to a local repository."
+título: Repositorios remotos en GitHub
+enseñanza: 30
+ejercicios: 0
+preguntas:
+- "¿Cómo puedo compartir is cambios con otros en el web?"
+objetivos:
+- "Explica qué es un repositorio remoto y porqué es útil."
+- "Poner y tomar de un repositorio remoto"
+puntos clave:
+- "Un repositorio Git local puede ser conectado a uno o más repositorios remotos."
+- "Usa el protocolo HTTPS para conectarte a un repositorio remoto hasta que hayas aprendido como hacerlo con SSH."
+- "`git push` copia los cambios desde el repositorio local a un repositorio remoto."
+- "`git pull` copia los cambios desde un repositorio remoto a un repositorio local."
 ---
 
 Cuando se trabaja en colaboración con otras personas es cuando el sistema de control de versiones alcanza su pleno potencial. Ya hemos visto la mayor parte de las herramientas que necesitamos para ello, tan sólo nos falta ver cómo copiar los cambios realizados de un repositorio a otro.
 
-Sistemas como Git ya nos permiten mover el trabajo realizado entre dos repositorios cualesquiera. Sin embargo, en la práctica es más sencillo establecer uno de ellos como repositorio central y tenerlo en la red en lugar de en el ordenador particular. La mayoría de desarrolladores usan servicios de alojamiento en la red, tales como [GitHub](http://github.com), [BitBucket](http://bitbucket.org) o [GitLab](http://gitlab.com/), para alojar ese repositorio central; en la última sección de esta lección exploraremos los pros y los contras de cada uno de ellos.
+Sistemas como Git ya nos permiten mover el trabajo realizado entre dos repositorios cualesquiera. Sin embargo, en la práctica es más sencillo establecer uno de ellos como repositorio central y tenerlo en la red en lugar de tu computadora particular. La mayoría de desarrolladores usan servicios de alojamiento en la red, tales como [GitHub](http://github.com), [BitBucket](http://bitbucket.org) o [GitLab](http://gitlab.com/), para alojar ese repositorio central; en la última sección de esta lección exploraremos los pros y los contras de cada uno de ellos.
 
 Empecemos por compartir con todos los demás los cambios que hemos realizado en nuestro proyecto actual. Para ello, ingresa en tu cuenta de GitHub y haz click en el icono que hay en la esquina superior derecha para crear un nuevo repositorio llamado `planets`:
 
@@ -26,7 +26,7 @@ Dale a tu repositorio el nombre "planets" y haz click en "Create repository":
 
 ![Creando un Repositorio en GitHub (Paso 2)](../fig/github-create-repo-02.png)
 
-Nada más crearse el repositorio, GitHub muestra una página con una URL y algo de información sobre cómo configurar tu repositorio local.
+Tan pronto es creado el repositorio, GitHub muestra una página con una URL y algo de información sobre cómo configurar tu repositorio local.
 
 ![Creando un Repositorio en GitHub (Paso 3)](../fig/github-create-repo-03.png)
 
@@ -52,7 +52,7 @@ Haz click en el enlace 'HTTPS' para cambiar el [protocol0]({{ page.root }}/refer
 > ## HTTPS vs. SSH
 >
 >Usamos aquí HTTPS porque no necesita ninguna configuración adicional.
->Si tras el curso quieres configurar el acceso mediante SSH, que es un poco más seguro,
+>Si en el curso quieres configurar el acceso mediante SSH, que es un poco más seguro,
 >puedes seguir cualquiera de los excelentes tutoriales que existen en
 >[GitHub](https://help.github.com/articles/generating-ssh-keys), 
 >[Atlassian/BitBucket](https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Git) y
@@ -190,9 +190,9 @@ En este caso, hacer **pull** no ha tenido ningun efecto porque los dos repositor
 > > ## Solución
 > > El botón más a la izquierda (con el dibujo de un portapapeles) sirve para copiar en el portapapeles el identificador completo del **commit** en cuestión. En la terminal, ```git log``` muestra los identificadores completos de cada **commit**.
 > >
-> > Haciendo click en el botón del medio, se pueden ver todos los cambios efectuados con el **commit** en cuestión. Las líneas verdes sobreadas indican adiciones y las rojas eliminaciones. En la terminal se puede ver lo mismo con ```git diff```. En particular, ```git diff ID1..ID2``` donde ID1 y ID2 son identificadores de **commits** (e.g. ```git diff a3bf1e5..041e637```) mostrará las diferencias entre esos dos **commits**.
+> > Haciendo click en el botón de en medio, se pueden ver todos los cambios efectuados con el **commit** en cuestión. Las líneas verdes sombreadas indican adiciones y las rojas eliminaciones. En la terminal se puede ver lo mismo con ```git diff```. En particular, ```git diff ID1..ID2``` donde ID1 y ID2 son identificadores de **commits** (e.g. ```git diff a3bf1e5..041e637```) mostrará las diferencias entre esos dos **commits**.
 > >
-> > El botón más a la derecha permite ver todos los ficheros que existían en el repositorio en el momento del **commit** en cuestión. Para ver lo mismo en la terminal sería necesario hacer checkout del repositorio a ese momento del tiempo. Para ello se ejecutaría ```git checkout ID``` donde ID es el identificador del **commit** que queremos investigar. ¡Si se hace esto hay que acordarse luego de poner el repositorio de nuevo en el estado correcto!
+> > El botón más a la derecha permite ver todos los ficheros que existían en el repositorio en el momento del **commit** en cuestión. Para ver lo mismo en la terminal sería necesario hacer **checkout** del repositorio a ese momento del tiempo. Para ello se ejecutaría ```git checkout ID``` donde ID es el identificador del **commit** que queremos investigar. ¡Si se hace esto hay que acordarse luego de poner el repositorio de nuevo en el estado correcto!
 > {: .solution}
 {: .challenge}
 
@@ -231,7 +231,7 @@ En este caso, hacer **pull** no ha tenido ningun efecto porque los dos repositor
 > {: .bash}
 >
 > ¿Obtienes un error al añadir el repositorio remoto? ¿Se te ocurre algún
-> comando que hiciera obvio que la URL de tu repositorio remoto no es t
+> comando que hiciera obvio que la URL de tu repositorio remoto no es 
 > válida? ¿Se te ocurre cómo corregir la URL? (pista: usa `git remote
 > -h`). No olvides vaciar y eliminar este repositorio remoto una vez
 > hayas terminado este ejercicio.
