@@ -4,9 +4,9 @@ enseñanza: 5
 ejercicios: 0
 preguntas:
 - "Cómo me preparo para utilizar Git?"
-objectivos:
+objetivos:
 - "Configurar `git` la primera vez que utilice la computadora."
-- "Comprenda el significado de la bandera de configuración `--global`."
+- "Comprender el significado de la bandera de configuración `--global`."
 puntos clave:
 -   "Use `git config` para configurar un nombre de usuario, email, editor, y otras preferencias."
 ---
