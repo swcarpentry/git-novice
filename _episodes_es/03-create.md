@@ -124,7 +124,7 @@ nothing to commit (create/copy files and use "git add" to track)
 > > De manera similar, podemos ignorar (como comentamos anteriormente) directorios completos, como el directorio `moons`:
 > >
 > > ~~~
-> > $ nano .gitignore # abrir el archivo .gitignore en un editor de textos para agregar el directorio moons
+> > $ nano .gitignore # abrir el archivo .gitignore en un editor para agregar el directorio moons
 > > $ cat .gitignore # si después se ejecuta el comando cat, debería verse así:
 > > ~~~
 > > {: .bash}
