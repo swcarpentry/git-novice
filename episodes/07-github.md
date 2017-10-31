@@ -126,9 +126,9 @@ Branch master set up to track remote branch master from origin.
 
 > ## Proxy
 >
-> If the network you are connected to uses a proxy there is a chance that your
+> If the network you are connected to uses a proxy, there is a chance that your
 > last command failed with "Could not resolve hostname" as the error message. To
-> solve this issue you need to tell Git about the proxy:
+> solve this issue, you need to tell Git about the proxy:
 >
 > ~~~
 > $ git config --global http.proxy http://user:password@proxy.url
@@ -136,7 +136,7 @@ Branch master set up to track remote branch master from origin.
 > ~~~
 > {: .bash}
 >
-> When you connect to another network that doesn't use a proxy you will need to
+> When you connect to another network that doesn't use a proxy, you will need to
 > tell Git to disable the proxy using:
 >
 > ~~~
@@ -243,7 +243,7 @@ GitHub, though, this command would download them to our local repository.
 > ## Fixing Remote Settings
 >
 > It happens quite often in practice that you made a typo in the
-> remote URL. This exercice is about how to fix this kind of issues.
+> remote URL. This exercise is about how to fix this kind of issue.
 > First start by adding a remote with an invalid URL:
 >
 > ~~~
