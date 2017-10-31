@@ -19,14 +19,14 @@ RStudio te permite crear un proyecto [project][rstudio-projects] asociado a un d
 Una nueva ventana se abrirá y preguntará cómo queremos crear el proyecto. Tenemos
 aquí varias opciones. Supongamos que queremos usar RStudio con el repositorio de planetas
 que ya hemos creado. Como ese repositorio ya está en una carpeta en tu computadora,
-podemos escoger la opción "directorio existente": 
+podemos escoger la opción "Existing Directory": 
 
 ![](../fig/RStudio_screenshot_existingdirectory.png)
 
-> ## ¿Puedes ver la opción de "Control de versiones"?
+> ## ¿Puedes ver la opción de "Version Control"?
 >
 > Aunque no vamos a usar ésta opción aquí, deberías poder ver una opción en el menú que diga
-> "version control". Esta es la opción que debes escoger cuando quieras crear
+> "Version Control". Esta es la opción que debes escoger cuando quieras crear
 > un proyecto en tu computadora mediante una clonación de un repositorio de GitHub.
 > Si esta opción no es visible, probablemente significa que RStudio no sabe
 > donde está tu ejecutable de Git. Mira 
@@ -36,8 +36,8 @@ podemos escoger la opción "directorio existente":
 {: .callout}
 
 En el siguiente paso, RStudio va a preguntar cuál es la carpeta existente que queremos usar. Haremos 
-click en "browse" para navegar a la carpeta correcta en tu computadora, y luego haremos click en 
-"create project":
+click en "Browse" para navegar a la carpeta correcta en tu computadora, y luego haremos click en 
+"Create Project":
 
 ![](../fig/RStudio_screenshot_navigateexisting.png)
 
