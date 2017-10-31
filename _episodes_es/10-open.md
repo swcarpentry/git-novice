@@ -4,7 +4,7 @@ enseñanza: 5
 ejercicios: 5
 preguntas:
 - "¿Cómo un control de versiones me puede ayudar a tener mi trabajo más abierto?"
-objectivos:
+objetivos:
 - "Explica como el control de versiones nos ayuda a tener un cuaderno de notas electrónico para todo nuestro trabajo computacional."
 puntos clave:
 - "Trabajo científico abierto es más útil y puede ser más citado que si no lo es."
@@ -26,7 +26,7 @@ En la práctica cotidiana vemos situaciones como la siguiente:
     Ella revisa su artículo para satisfacer las revisiones propuestas. Durante ese tiempo ella también podría modificar los **scripts** que escribió anteriormente,y vuelve a enviar.
 *   Pasa más tiempo.
 *   El artículo finalmente se publica. 
-Se podría incluir un enlace a una copia online de sus datos, pero el mismo artículo está detrás de un paywall: sólo las personas que tienen acceso personal o institucional serán capaz de leerlo.
+Se podría incluir un enlace a una copia online de sus datos, pero el mismo artículo está detrás de un paywall: sólo las personas que tienen acceso personal o institucional serán capaces de leerlo.
 
 Para otros muchos científicos, el proceso se ve así:
 
@@ -34,11 +34,11 @@ Para otros muchos científicos, el proceso se ve así:
 *   El científico crea un nuevo repositorio en GitHub para guardar su trabajo.
 *   Al hacer el análisis de los datos, guarda los cambios de sus **scripts** (y posiblemente algunos archivos de salida)
     en ese repositorio. Utiliza el repositorio para su artículo. Usa ese repositorio como centro de colaboración con sus colegas.
-*   Cuando está satisfecho con el estado de su artículo, publica una versión en [arXiv](http://arxiv.org/) o en algún otro servidor de preimpresión para invitar a sus compañeros a una devolución. 
-*   Basado en esa devolución, puede escribir varias revisiones antes de enviar finalmente su artículo a la revista. 
+*   Cuando está satisfecho con el estado de su artículo, publica una versión en [arXiv](http://arxiv.org/) o en algún otro servidor de preimpresión para invitar a sus compañeros a una retroalimentación. 
+*   Basado en esa retroalimentación, puede escribir varias revisiones antes de enviar finalmente su artículo a la revista. 
 *   El artículo publicado incluye enlaces a su preimpresión y a sus repositorios de código y datos, lo que lo hace mucho más fácil para otros científicos utilizar este trabajo como punto de partida para su propia investigación.
 
-Este modelo abierto acelera la investigación: el trabajo abierto [se cita y se reutiliza]  (http://dx.doi.org/10.1371/journal.pone.0000308). Sin embargo, las personas que quieren trabajar de esta manera necesitan tomar algunas decisiones sobre qué significa exactamente "abierto" y cómo hacerlo. Puede encontrar más información sobre los diferentes aspectos de la Ciencia Abierta en [el libro] (http://link.springer.com/book/10.1007/978-3-319-00026-8).
+Este modelo abierto acelera la investigación: el trabajo abierto [se cita y se reutiliza]  (http://dx.doi.org/10.1371/journal.pone.0000308). Sin embargo, las personas que quieren trabajar de esta manera necesitan tomar algunas decisiones sobre qué significa exactamente "abierto" y cómo hacerlo. Puede encontrar más información sobre los diferentes aspectos de la Ciencia Abierta en [el libro](http://link.springer.com/book/10.1007/978-3-319-00026-8).
 
 Ésta es una de las muchas razones por las que enseñamos el control de versiones. Cuando se utiliza con diligencia, responde a "cómo" actúa un cuaderno de laboratorio electrónico compartible:
 
@@ -65,7 +65,7 @@ Este modelo abierto acelera la investigación: el trabajo abierto [se cita y se 
 
 > ## ¿Cómo encontrar un repositorio de datos adecuado?
 >
-> Navega por Internet durante un par de minutos y echa un vistazo a los repositorios de datos mencionado anteriormente: [Figshare](http://figshare.com/), [Zenodo](http://zenodo.org), [Dryad](http://datadryad.org/). Dependiendo de tu campo de investigación, encuentra repositorios reconocidos por la comunidad en tu campo. También puede ser útil [estos repositorios de datos recomendados por Nature] (http://www.nature.com/sdata/data-policies/repositories). Discute con tu vecino qué repositorio de datos deseas abordar para tu proyecto actual y explicale por qué.
+> Navega por Internet durante un par de minutos y echa un vistazo a los repositorios de datos mencionado anteriormente: [Figshare](http://figshare.com/), [Zenodo](http://zenodo.org), [Dryad](http://datadryad.org/). Dependiendo de tu campo de investigación, encuentra repositorios reconocidos por la comunidad en tu campo. También puede ser útil [estos repositorios de datos recomendados por Nature](http://www.nature.com/sdata/data-policies/repositories). Discute con tu vecino qué repositorio de datos deseas abordar para tu proyecto actual y explicale por qué.
 
 
 > ## ¿Puedo también publicar código?

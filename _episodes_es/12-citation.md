@@ -1,19 +1,19 @@
 ---
-title: Citas
-teaching: 2
-exercises: 0
-questions:
-- "How can I make my work easier to cite?"
-objectives:
-- "Make your work easy to cite"
-keypoints:
-- "Add a CITATION file to a repository to explain how you want your work cited."
+título: Citas
+enseñanza: 2
+ejercicios: 0
+preguntas:
+- " ¿Cómo puedo hacer que mi trabajo sea más fácil de citar?
+objetivos:
+- "Haz que tu trabajo sea más fácil de citar"
+puntos clave:
+- "Agrega un archivo CITATION a el repositorio y explica cómo quieres que tu trabajo sea citado."
 ---
 
 Puedes incluir un archivo llamado `CITATION` o `CITATION.txt`
 que describa cómo referenciar tu proyecto;
 el siguiente es el de 
-[Software Carpentry] (https://github.com/swcarpentry/website/blob/gh-pages/CITATION):
+[Software Carpentry](https://github.com/swcarpentry/website/blob/gh-pages/CITATION):
 
 ~~~
 To reference Software Carpentry in publications, please cite both of the following:

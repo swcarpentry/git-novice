@@ -1,14 +1,14 @@
 ---
-title: Hospedaje
-teaching: 10
-exercises: 0
-questions:
-- "Where should I host my version control repositories?"
-objectives:
-- "Explain different options for hosting scientific work."
-keypoints:
-- "Projects can be hosted on university servers, on personal domains, or on public forges."
-- "Rules regarding intellectual property and storage of sensitive information apply no matter where code and data are hosted."
+título: Hospedaje
+enseñanza: 10
+ejercicios: 0
+preguntas:
+- "¿Dónde debería alojar mis repositorios de control de versiones?"
+objetivos:
+- "Explicar diferentes opciones para realizar trabajos científicos."
+puntos clave:
+- "Los proyectos pueden alojarse en servidores de la universidad, en dominios personales o públicas."
+- "Las reglas con respecto a la propiedad intelectual y el almacenamiento de información confidencial se aplican sin importar dónde se alojan el código y los datos."
 ---
 
 La segunda gran pregunta para los grupos que quieren liberar su trabajo es dónde
@@ -38,7 +38,7 @@ páginas wiki, notificaciones de correo electrónico y revisiones de código. Es
 servicios se benefician de economías de escalamiento y efectos de redes: es más
 fácil correr un servicio grande bien que correr varios pequeños servicios al
 mismo estándar. También es más fácil para la gente colaborar. Usando un servicio 
-popular puede ayudar a conectar tu proyecto con comunidad que ya están usando el
+popular puede ayudar a conectar tu proyecto con una comunidad que ya está usando el
 mismo servicio.
 
 Como un ejemplo, Software Carpentry [está en 

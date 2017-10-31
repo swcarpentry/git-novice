@@ -4,7 +4,7 @@ enseñanza: 5
 ejercicios: 0
 preguntas:
 - "¿Qué información sobre licencias debería incluir en mi trabajo?"
-objectivos:
+objetivos:
 - "Explicar la importancia de agregar información de licencias a nuestro trabajo."
 - "Escoger la licencia apropiada."
 - "Explicar las diferencias en licencias y algunas expectativas sociales."
@@ -14,9 +14,9 @@ palabras clave:
 - "Personas sin conocimientos de leyes no deberían tratar de escribir nuevas licencias desde cero."
 ---
 
-Cuando un repositorio público contiene código fuente, un manuscrito u otro trabajo creativo, éste debe incluir un archivo con el nombre `LICENCIA` o `LICENCIA.txt` en el directorio base del repositorio, que indique claramente bajo que licencia se pone a  disposición el contenido. Esto se debe a que se aplica automáticamente a las obras creativas la protección de propiedad intelectual (y por lo tanto derechos de autor). La reutilización de trabajos creativos sin licencia es peligrosa, ya que los titulares de los derechos de autor podrían realiza una demanda por infringir la misma.
+Cuando un repositorio público contiene código fuente, un manuscrito u otro trabajo creativo, éste debe incluir un archivo con el nombre `LICENCIA` o `LICENCIA.txt` en el directorio base del repositorio, que indique claramente bajo que licencia se pone a  disposición el contenido. Esto se debe, a que se aplica automáticamente a las obras creativas la protección de propiedad intelectual (y por lo tanto derechos de autor). La reutilización de trabajos creativos sin licencia es peligrosa, ya que los titulares de los derechos de autor podrían realiza una demanda por infringir la misma.
 
-Una licencia resuelve el problema otorgando derechos a otros (los licenciatarios) que de otro modo no tendrían. ¿Qué derechos se otorgan bajo qué condiciones difieren, a menudo de forma leve, de una licencia a otra? En la práctica, algunas licencias son las más populares, y [choosealicense.com] (http://choosealicense.com/) te ayudará a encontrar una licencia que se adapte a tus necesidades. Las consideraciones importantes incluyen:
+Una licencia resuelve el problema otorgando derechos a otros (los licenciatarios) que de otro modo no tendrían. ¿Qué derechos se otorgan bajo qué condiciones difieren, a menudo de forma leve, de una licencia a otra? En la práctica, algunas licencias son las más populares, y [choosealicense.com](http://choosealicense.com/) te ayudará a encontrar una licencia que se adapte a tus necesidades. Las consideraciones importantes incluyen:
 
 * Si deseas abordar los derechos de patente.
 * Si necesitas personas que distribuyan los trabajos derivados de tu código fuente.
@@ -24,7 +24,7 @@ Una licencia resuelve el problema otorgando derechos a otros (los licenciatarios
 * Si deseas licenciar todo el código.
 
 Elegir una licencia que sea de uso común hace la vida más fácil para los contribuyentes y los usuarios, porque es probable que ya estén familiarizados con la licencia y no tengan que sortear una jerga específica para decidir si está bien.
-La [Iniciativa Open Source] (http://opensource.org/licenses) y [Free Software Foundation] (http://www.gnu.org/licenses/license-list.html) mantienen listas de licencias que pueden ser buenas elecciones.
+La [Iniciativa Open Source](http://opensource.org/licenses) y [Free Software Foundation](http://www.gnu.org/licenses/license-list.html) mantienen listas de licencias que pueden ser buenas elecciones.
 
 [Este artículo] [licencia de software] proporciona una excelente descripción de licencias y de opciones de licencias desde la perspectiva de los científicos que escriben código.
 
@@ -32,7 +32,7 @@ Al final del día lo que importa es que haya un informe claro sobre cuál es la 
 
 > ## ¿Puedes usar **Open License**?
 >
-> Investiga si puedes usar una **Open license** o "Licencia Abierta" en tu **software**. ¿Puedes hacer eso por tí mismo?, ¿o necesitas permiso de alguien dentro de tu institución? Si necesitas permiso, ¿ de quién?
+> Investiga si puedes usar una **Open license** o "Licencia Abierta" en tu **software**. ¿Puedes hacer eso por tí mismo?, ¿o necesitas permiso de alguien dentro de tu institución? Si necesitas permiso, ¿de quién?
 
 
 > ## ¿Qué licencias ya he aceptado?

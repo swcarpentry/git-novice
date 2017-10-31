@@ -26,18 +26,18 @@ podemos escoger la opción "directorio existente":
 > ## ¿Puedes ver la opción de "Control de versiones"?
 >
 > Aunque no vamos a usar ésta opción aquí, deberías poder ver una opción en el menú que diga
-> "Control de versiones". Esta es la opción que debes escoger cuando quieras crear
+> "version control". Esta es la opción que debes escoger cuando quieras crear
 > un proyecto en tu computadora mediante una clonación de un repositorio de GitHub.
 > Si esta opción no es visible, probablemente significa que RStudio no sabe
 > donde está tu ejecutable de Git. Mira 
 > [esta página](https://stat545-ubc.github.io/git03_rstudio-meet-git.html)
-> para encontrar algunos consejos. Incluso después de instalar Git, si estás usando MacOX
+> para encontrar algunos consejos. Incluso después de instalar Git, si estás usando MacOSX
 > algunas veces puede ser necesario que tengas que aceptar la licencia de XCode
 {: .callout}
 
 En el siguiente paso, RStudio va a preguntar cuál es la carpeta existente que queremos usar. Haremos 
-click en "Seleccionar" para navegar a la carpeta correcta en tu computadora, y luego haremos click en 
-"Crear proyecto":
+click en "browse" para navegar a la carpeta correcta en tu computadora, y luego haremos click en 
+"create project":
 
 ![](../fig/RStudio_screenshot_navigateexisting.png)
 
