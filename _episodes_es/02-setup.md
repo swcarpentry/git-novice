@@ -31,7 +31,7 @@ $ git config --global color.ui "auto"
 ~~~
 {: .bash}
 
-Utiliza tu propio nombre y dirección de correo electrónico en lugar del de Dracula. El nombre de usuario y el correo electrónico se asociarán con tu actividad posterior de Git, 
+Utiliza tu propio nombre y dirección de correo electrónico en lugar del de Drácula. El nombre de usuario y el correo electrónico se asociarán con tu actividad posterior de Git, 
 lo que significa que cualquier cambio realizado en
 [GitHub] (http://github.com/), 
 [BitBucket] (http://bitbucket.org/), 
@@ -50,10 +50,10 @@ Drácula también tiene que establecer su editor de texto favorito, siguiendo es
 | nano               | `$ git config --global core.editor "nano -w"`    |
 | TextWrangler (Mac)      | `$ git config --global core.editor "edit -w"`    |
 | Sublime Text (Mac) | `$ git config --global core.editor "subl -n -w"` |
-| Sublime Text (Win, 32-bit) | `$ git config --global core.editor "'c:/Archivos de programas (x86)/sublime text 3/sublime_text.exe' -w"` |
-| Sublime Text (Win, 64-bit) | `$ git config --global core.editor "'c:/Archivos de programas/sublime text 3/sublime_text.exe' -w"` |
-| Notepad++ (Win, 32-bitl)    | `$ git config --global core.editor "'c:/Archivos de programas (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
-| Notepad++ (Win, 64-bit)    | `$ git config --global core.editor "'c:/Archivos de programas/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
+| Sublime Text (Win, 32-bit) | `$ git config --global core.editor "'c:/program files (x86)/sublime text 3/sublime_text.exe' -w"` |
+| Sublime Text (Win, 64-bit) | `$ git config --global core.editor "'c:/program files/sublime text 3/sublime_text.exe' -w"` |
+| Notepad++ (Win, 32-bitl)    | `$ git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
+| Notepad++ (Win, 64-bit)    | `$ git config --global core.editor "'c:/program files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
 | Kate (Linux)       | `$ git config --global core.editor "kate"`       |
 | Gedit (Linux)      | `$ git config --global core.editor "gedit --wait --new-window"`   |
 | Scratch (Linux)       | `$ git config --global core.editor "scratch-text-editor"`  |

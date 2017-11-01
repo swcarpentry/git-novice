@@ -3,9 +3,9 @@ title: Repositorios remotos en GitHub
 teaching 30
 exercises: 0
 questions:
-- "¿Cómo puedo compartir is cambios con otros en el web?"
+- "¿Cómo puedo compartir los cambios con otros en el web?"
 objectives:
-- "Explica qué es un repositorio remoto y porqué es útil."
+- "Explica qué es un repositorio remoto y por qué es útil."
 - "Poner y tomar de un repositorio remoto"
 keypoints:
 - "Un repositorio Git local puede ser conectado a uno o más repositorios remotos."
@@ -39,7 +39,7 @@ $ git init
 ~~~
 {: .bash}
 
-Nuestro repositorio local contiene nuestro trabajo previo en `mars.txt`, pero el repositorio remoto en GitHub todavía no contiene ningún fichero:
+Nuestro repositorio local contiene nuestro trabajo previo en `mars.txt`, pero el repositorio remoto en GitHub todavía no contiene ningún archivo:
 
 ![Repositorio en GitHub recién creado](../fig/git-freshly-made-github-repo.svg)
 
@@ -69,7 +69,7 @@ $ git remote add origin https://github.com/vlad/planets.git
 ~~~
 {: .bash}
 
-Asegúrate de usar la URL de tu repositorio en lugar de la de Vlad: la única diferencia debería ser tu nombre de usuario en lugar de `vlad`.
+Asegúrate de usar la URL de tu repositorio en lugar de la de vlad: la única diferencia debería ser tu nombre de usuario en lugar de `vlad`.
 
 Podemos comprobar que el comando ha funcionado bien ejecutando `git remote -v`:
 
@@ -84,7 +84,7 @@ origin   https://github.com/vlad/planets.git (fetch)
 ~~~
 {: .output}
 
-El nombre `origin` es un apodo local para tu repositorio remoto. Se puede usar cualquier otro nombre si se desea, pero `origin` es con mucho la elección más habitual.
+El nombre `origin` es un apodo local para tu repositorio remoto. Se puede usar cualquier otro nombre si se desea, pero `origin` es la elección más habitual.
 
 Una vez seleccionado el apodo local `origin`, el siguiente comando enviará los cambios realizados en nuestro repositorio local al repositorio en GitHub:
 
@@ -160,7 +160,7 @@ Nuestros repositorios local y remoto se encuentran ahora en el siguiente estado:
 > Esta opción es sinónimo de la opción `--set-upstream-to` para el comando `git branch` y se usa
 > para asociar la rama actual con una rama remota, de modo que el comando `git pull`
 > pueda usarse sin argumentos. Para hacer esto simplemente ejecuta `git push -u origin master`
-> una vez el repositorio remoto haya sido creado.
+> una vez que el repositorio remoto haya sido creado.
 {: .callout}
 
 También podemos hacer **pull**, es decir, traernos cambios desde el repositorio remoto al repositorio local:
@@ -177,7 +177,7 @@ Already up-to-date.
 ~~~
 {: .output}
 
-En este caso, hacer **pull** no ha tenido ningun efecto porque los dos repositorios están ya sincronizados. Por el contrario, si alguien antes hubiera subido con **push** algunos cambios al repositorio en GitHub, este comando los habría incorporado a nuestro repositorio local.
+En este caso, hacer **pull** no ha tenido ningún efecto porque los dos repositorios están ya sincronizados. Por el contrario, si alguien antes hubiera subido con **push** algunos cambios al repositorio en GitHub, este comando los habría incorporado a nuestro repositorio local.
 
 > ## Interfaz gráfica de GitHub
 >
@@ -192,7 +192,7 @@ En este caso, hacer **pull** no ha tenido ningun efecto porque los dos repositor
 > >
 > > Haciendo click en el botón de en medio, se pueden ver todos los cambios efectuados con el **commit** en cuestión. Las líneas verdes sombreadas indican adiciones y las rojas eliminaciones. En la terminal se puede ver lo mismo con ```git diff```. En particular, ```git diff ID1..ID2``` donde ID1 y ID2 son identificadores de **commits** (e.g. ```git diff a3bf1e5..041e637```) mostrará las diferencias entre esos dos **commits**.
 > >
-> > El botón más a la derecha permite ver todos los ficheros que existían en el repositorio en el momento del **commit** en cuestión. Para ver lo mismo en la terminal sería necesario hacer **checkout** del repositorio a ese momento del tiempo. Para ello se ejecutaría ```git checkout ID``` donde ID es el identificador del **commit** que queremos investigar. ¡Si se hace esto hay que acordarse luego de poner el repositorio de nuevo en el estado correcto!
+> > El botón más a la derecha permite ver todos los archivos que existían en el repositorio en el momento del **commit** en cuestión. Para ver lo mismo en la terminal sería necesario hacer **checkout** del repositorio a ese momento del tiempo. Para ello se ejecutaría ```git checkout ID``` donde ID es el identificador del **commit** que queremos investigar. ¡Si se hace esto hay que acordarse luego de poner el repositorio de nuevo en el estado correcto!
 > {: .solution}
 {: .challenge}
 
