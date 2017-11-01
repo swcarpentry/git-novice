@@ -1,12 +1,12 @@
 ---
-título: Creando un repositorio
-enseñanza: 10
-ejercicios: 0
-preguntas:
+title: Creando un repositorio
+teaching 10
+exercises: 0
+questions:
 - "¿Dónde almacena Git la información?"
-objetivos:
+objectives:
 - "Crear un repositorio local de Git."
-puntos clave:
+keypoints:
 - "`git init` inicializa un repositorio."
 ---
 
