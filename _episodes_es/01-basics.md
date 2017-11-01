@@ -1,13 +1,13 @@
 ---
-título: Control Automatizado de Versiones
-enseñanza: 5
-ejercicios: 0
-preguntas:
+title: Control Automatizado de Versiones
+teaching: 5
+exercises: 0
+questions:
 - "¿Qué es el control de versiones y por qué se deberá usar?"
-objetivos:
+objectives:
 - "Comprender los beneficios de usar un sistema automático de control de versiones."
 - "Comprender los fundamentos básicos del funcionamiento de Git."
-puntos clave:
+keypoints:
 - "El control de versiones es como un 'deshacer' sin límites."
 - "El control de versiones permite que mucha gente trabaje en lo mismo en paralelo."
 ---
