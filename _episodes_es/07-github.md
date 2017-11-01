@@ -1,13 +1,13 @@
 ---
-título: Repositorios remotos en GitHub
-enseñanza: 30
-ejercicios: 0
-preguntas:
+title: Repositorios remotos en GitHub
+teaching 30
+exercises: 0
+questions:
 - "¿Cómo puedo compartir is cambios con otros en el web?"
-objetivos:
+objectives:
 - "Explica qué es un repositorio remoto y porqué es útil."
 - "Poner y tomar de un repositorio remoto"
-puntos clave:
+keypoints:
 - "Un repositorio Git local puede ser conectado a uno o más repositorios remotos."
 - "Usa el protocolo HTTPS para conectarte a un repositorio remoto hasta que hayas aprendido como hacerlo con SSH."
 - "`git push` copia los cambios desde el repositorio local a un repositorio remoto."

@@ -1,12 +1,12 @@
 ---
 title: Rastreando Cambios
-enseñanza: 20
-ejercicios: 0
-preguntas:
+teaching 20
+exercises: 0
+questions:
 - "¿Cómo registro cambios en Git?"
 - "¿Cómo reviso el estatus de mi repositorio de control de versiones?"
 - "¿Cómo registro notas acerca de los cambios que he hecho y por qué?"
-objetivos:
+objectives:
 - "Ir a traves del ciclo modificar-agregar-commit para uno o más archivos."
 - "Explicar donde se almacena la información en cada etapa del flujo de trabajo de un **commit** de Git."
 - "Distinguir entre mensajes descriptivos y no-descriptivos de un **commit**."

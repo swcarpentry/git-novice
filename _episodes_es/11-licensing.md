@@ -1,10 +1,10 @@
 ---
-título: Licencia
-enseñanza: 5
-ejercicios: 0
-preguntas:
+title: Licencia
+teaching 5
+exercises: 0
+questions:
 - "¿Qué información sobre licencias debería incluir en mi trabajo?"
-objetivos:
+objectives:
 - "Explicar la importancia de agregar información de licencias a nuestro trabajo."
 - "Escoger la licencia apropiada."
 - "Explicar las diferencias en licencias y algunas expectativas sociales."

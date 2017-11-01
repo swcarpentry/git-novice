@@ -1,13 +1,13 @@
 ---
-título: "Trabajos en colaboración"
-enseñanza: 5
-ejercicios: 0
-preguntas:
+title: "Trabajos en colaboración"
+teaching 5
+exercises: 0
+questions:
 - "¿Cómo puedo usar el control de versiones para colaborar con otras personas? 
-objetivos:
+objectives:
 - Clonar un repositorio remoto.
 - Colaborar en crear un repositorio común.
-puntos clave: '`git clone` copies a remote repository to create a local repository with a remote called `origin` automatically set up.'
+keypoints: '`git clone` copies a remote repository to create a local repository with a remote called `origin` automatically set up.'
 ---
 
 Para el siguiente paso, formen parejas. Una persona será el "dueño" y la otra el "colaborador". El objetivo es que el colaborador agregue cambios al repositorio del dueño. Vamos a cambiar roles al final, de modo que ambas personas puedan participar como dueño y colaborador

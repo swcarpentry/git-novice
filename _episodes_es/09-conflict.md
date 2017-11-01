@@ -1,13 +1,13 @@
 ---
-título: Conflictos
-enseñanza: 15
-ejercicios: 0
-preguntas:
+title: Conflictos
+teaching 15
+exercises: 0
+questions:
 - "¿Qué hago cuando mis cambios entran en conflicto con los de otra persona?"
-objetivos:
+objectives:
 - "Explicar qué son los conflictos y cuándo pueden ocurrir."
 - "Resolver conflictos resultantes de una fusión."
-puntos clave:
+keypoints:
 - "Los conflictos ocurren cuando dos o más personas cambian el mismo archivo(s) al mismo tiempo."
 - "El sistema de control de versiones no permite a las personas sobreescribir ciegamente los
 cambios del otro, pero resalta los conflictos para poder resolverlos."

@@ -1,13 +1,13 @@
 ---
-título: Ignorando cosas
-enseñanza: 5
-ejercicios: 0
-preguntas:
+title: Ignorando cosas
+teaching 5
+exercises: 0
+questions:
 - "¿Cómo puedo decirle a Git que ignore los archivos que no quiero rastrear?"
-objetivos:
+objectives:
 - "Configure Git para ignorar archivos específicos."
 - "Explica por qué ignorar los archivos puede ser útil."
-puntos clave:
+keypoints:
 - "El archivo `.gitignore` le dice a Git qué archivos ignorar."
 ---
 
@@ -240,7 +240,7 @@ nothing to commit, working directory clean
 
 > ## Archivos de bitácora
 >
-> Supón que escribiste un script que crea muchos archivos de registro con la estructura `log_01`, `log_02`, `log_03`, etc. Deseas conservarlos pero no rastrearlos a través de `git`.
+> Supón que escribiste un **script** que crea muchos archivos de registro con la estructura `log_01`, `log_02`, `log_03`, etc. Deseas conservarlos pero no rastrearlos a través de `git`.
 >
 > 1. Escribe **una entrada** `.gitignore` que excluya los archivos con estructura `log_01`, `log_02`, etc.
 >

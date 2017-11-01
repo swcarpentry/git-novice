@@ -1,17 +1,17 @@
 ---
-título: Explorando el **History**
+title: Explorando el **History**
 curso: 25
-ejercicios: 0
-preguntas:
+exercises: 0
+questions:
 - "¿Cómo puedo identificar versiones anteriores de archivos?"
 - "¿Cómo puedo revisar mis cambios?"
 - "¿Cómo puedo recuperar versiones anteriores de archivos?"
-objetivos:
+objectives:
 - "Explicar qué es el **HEAD** de un repositorio y cómo usarlo."
 - "Identificar y usar  el número de **commit** the Git."
 - "Comparar varias versiones de archivos."
 - "Restaurar versiones anteriores de archivos."
-puntos clave:
+keypoints:
 - "`git diff` despliega diferencias entre **commits**."
 - "`git checkout` recupera versiones anteriores de archivos."
 ---
@@ -343,12 +343,12 @@ retroceder y avanzar en el tiempo se vuelve mucho más fácil.
 
 > ## Recuperando versiones anteriores de un archivo
 >
-> Jennifer ha realizado cambios en el script de Python en el que ha estado trabajando durante semanas, y las
-> modificaciones que hizo esta mañana "corrompieron" el script y ya no funciona. Ella ha pasado
+> Jennifer ha realizado cambios en el **script**  de Python en el que ha estado trabajando durante semanas, y las
+> modificaciones que hizo esta mañana "corrompieron" el **script**  y ya no funciona. Ella ha pasado
 > ~ 1hr tratando de solucionarlo, sin tener suerte...
 >
 > Por suerte, ella ha estado haciendo un seguimiento de las versiones de su proyecto usando Git! ¿Cuáles comandos 
-> le permitirán recuperar la última versión estable de su script Python llamado 
+> le permitirán recuperar la última versión estable de su **script**  Python llamado 
 > `data_cruncher.py`?
 >
 > 1. `$ git checkout HEAD`
@@ -365,7 +365,7 @@ retroceder y avanzar en el tiempo se vuelve mucho más fácil.
 
 > ## Revertir un commit
 >
-> Jennifer está colaborando en su script de Python con sus colegas y
+> Jennifer está colaborando en su **script**  de Python con sus colegas y
 > se da cuenta de que su último **commit** en el repositorio del grupo es incorrecto y quiere
 > deshacerlo. Jennifer necesita deshacer correctamente para que todos en el repositorio
 > del grupo tengan el cambio correcto. `git revert [ID de commit incorrecto]`

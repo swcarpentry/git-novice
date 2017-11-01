@@ -1,12 +1,12 @@
 ---
-título: Ciencia abierta
-enseñanza: 5
-ejercicios: 5
-preguntas:
+title: Ciencia abierta
+teaching 5
+exercises: 5
+questions:
 - "¿Cómo un control de versiones me puede ayudar a tener mi trabajo más abierto?"
-objetivos:
+objectives:
 - "Explica como el control de versiones nos ayuda a tener un cuaderno de notas electrónico para todo nuestro trabajo computacional."
-puntos clave:
+keypoints:
 - "Trabajo científico abierto es más útil y puede ser más citado que si no lo es."
 ---
 
