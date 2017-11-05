@@ -1,12 +1,12 @@
 ---
-title: Citas
-teaching 2
-exercises: 0
-questions:
+Título: Citas
+Enseñanza: 2
+Ejercicios: 0
+Preguntas:
 - " ¿Cómo puedo hacer que mi trabajo sea más fácil de citar?
-objectives:
+objetivo:
 - "Haz que tu trabajo sea más fácil de citar"
-keypoints:
+Puntos Claves:
 - "Agrega un archivo CITATION a el repositorio y explica cómo quieres que tu trabajo sea citado."
 ---
 
