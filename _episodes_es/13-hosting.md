@@ -1,12 +1,12 @@
 ---
-title: Hospedaje
-teaching 10
-exercises: 0
-questions:
+Titulo: Hospedaje
+Enseñanza: 10
+Ejercicios: 0
+Preguntas:
 - "¿Dónde debería alojar mis repositorios de control de versiones?"
-objectives:
+objetivos:
 - "Explicar diferentes opciones para realizar trabajos científicos."
-keypoints:
+Puntos Clave:
 - "Los proyectos pueden alojarse en servidores de la universidad, en dominios personales o públicas."
 - "Las reglas con respecto a la propiedad intelectual y el almacenamiento de información confidencial se aplican sin importar dónde se alojan el código y los datos."
 ---
