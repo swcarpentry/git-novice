@@ -37,7 +37,7 @@ Para otros muchos científicos, el proceso se ve así:
 *   Basado en esa retroalimentación, puede escribir varias revisiones antes de enviar finalmente su artículo a la revista. 
 *   El artículo publicado incluye enlaces a su preimpresión y a sus repositorios de código y datos, lo que hace mucho más fácil para otros científicos utilizar este trabajo como punto de partida para su propia investigación.
 
-Este modelo abierto acelera la investigación: el trabajo abierto [se cita y se reutiliza](http://dx.doi.org/10.1371/journal.pone.0000308). Sin embargo, las personas que quieren trabajar de esta manera necesitan tomar algunas decisiones sobre qué significa exactamente "abierto" y cómo hacerlo. Puede encontrar más información sobre los diferentes aspectos de la Ciencia Abierta en [el libro](http://link.springer.com/book/10.1007/978-3-319-00026-8).
+Este modelo abierto acelera la investigación: el trabajo abierto [se cita y se reutiliza](http://dx.doi.org/10.1371/journal.pone.0000308). Sin embargo, las personas que quieren trabajar de esta manera necesitan tomar algunas decisiones sobre qué significa exactamente "abierto" y cómo hacerlo. Puedes encontrar más información sobre los diferentes aspectos de la Ciencia Abierta en [el libro](http://link.springer.com/book/10.1007/978-3-319-00026-8).
 
 Ésta es una de las muchas razones por las que enseñamos el control de versiones. Cuando se utiliza con diligencia, responde a "cómo" actúa un cuaderno de laboratorio electrónico compartible:
 
