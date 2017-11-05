@@ -33,7 +33,7 @@ La tercera opción es utilizar un servicio de hospedaje público como
 [BitBucket](http://bitbucket.org) o [SourceForge](http://sourceforge.net).
 Cada uno de estos servicios provee una interfaz web que permite a las personas
 crear, ver y editar sus repositorios de código. Estos servicios también proveen 
-herramientas de comunicación y gestión de proyectos que incluyen `issue tracking`,
+herramientas de comunicación y gestión de proyectos que incluyen `seguimiento de problemas`,
 páginas wiki, notificaciones de correo electrónico y revisiones de código. Estos
 servicios se benefician de economías de escalamiento y efectos de redes: es más
 fácil correr un servicio grande bien que correr varios pequeños servicios al
