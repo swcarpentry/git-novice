@@ -48,10 +48,8 @@ Este modelo abierto acelera la investigación: el trabajo abierto [se cita y se 
 
 > ## Haciendo código citable
 >
-> [Esta breve guía](https://guides.github.com/activities/citable-code/) from GitHub
-> explica cómo crear un "Digital Object Identifier (DOI)" para tu código,
-> tus artículos,
-> o cualquier cosa alojada en un repositorio de control de versiones.
+> [Esta breve guía](https://guides.github.com/activities/citable-code/) de GitHub
+> explica cómo crear un "Digital Object Identifier (DOI)" para tu código, tus artículos, o cualquier cosa alojada en un repositorio de control de versiones.
 {: .callout}
 
 > ## ¿Cuán reproducible es mi trabajo?
