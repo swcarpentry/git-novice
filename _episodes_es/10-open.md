@@ -35,7 +35,7 @@ Para otros muchos científicos, el proceso se ve así:
 *   Al hacer su análisis de los datos, guarda los cambios de sus **scripts** (y posiblemente algunos archivos de salida) en ese repositorio. También utiliza el repositorio para su artículo. Entonces ese repositorio es el centro de colaboración con sus colegas.
 *   Cuando está satisfecha con el estado de su artículo, publica una versión en [arXiv](http://arxiv.org/) o en algún otro servidor de preimpresión para invitar a sus compañeros a una retroalimentación. 
 *   Basado en esa retroalimentación, puede escribir varias revisiones antes de enviar finalmente su artículo a la revista. 
-*   El artículo publicado incluye enlaces a su preimpresión y a sus repositorios de código y datos, lo que lo hace mucho más fácil para otros científicos utilizar este trabajo como punto de partida para su propia investigación.
+*   El artículo publicado incluye enlaces a su preimpresión y a sus repositorios de código y datos, lo que hace mucho más fácil para otros científicos utilizar este trabajo como punto de partida para su propia investigación.
 
 Este modelo abierto acelera la investigación: el trabajo abierto [se cita y se reutiliza]  (http://dx.doi.org/10.1371/journal.pone.0000308). Sin embargo, las personas que quieren trabajar de esta manera necesitan tomar algunas decisiones sobre qué significa exactamente "abierto" y cómo hacerlo. Puede encontrar más información sobre los diferentes aspectos de la Ciencia Abierta en [el libro](http://link.springer.com/book/10.1007/978-3-319-00026-8).
 
