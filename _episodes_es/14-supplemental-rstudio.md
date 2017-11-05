@@ -36,7 +36,7 @@ podemos escoger la opción "Existing Directory":
 {: .callout}
 
 En el siguiente paso, RStudio va a preguntar cuál es la carpeta existente que queremos usar. Haremos 
-click en "Browse" para navegar a la carpeta correcta en tu computadora, y luego haremos click en 
+click en el navegador de archivos para navegar a la carpeta correcta en tu computadora, y luego haremos click en 
 "Create Project":
 
 ![](../fig/RStudio_screenshot_navigateexisting.png)
