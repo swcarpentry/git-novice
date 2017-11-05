@@ -49,7 +49,7 @@ Para editar los archivos en tu repositorio, puedes hacer click en el archivo des
 
 ![](../fig/RStudio_screenshot_editfiles.png)
 
-Ahora que hemos guardado nuestros archivos, podemos usar RStudio para hacer un **commit** los cambios. Usa el botón y haz clik a "Commit":
+Ahora que hemos guardado nuestros archivos, podemos usar RStudio para hacer permanentes los cambios. Usa el botón y haz clik a "Commit":
 
 ![](../fig/RStudio_screenshot_commit.png)
 
