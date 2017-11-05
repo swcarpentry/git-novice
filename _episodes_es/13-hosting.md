@@ -20,7 +20,7 @@ que involucran sujetos humanos o pueden ser usados en una patente). Las principa
 desventajas son el costo de proveer el servicio y su longevidad: un científico
 que ha pasado diez años colectando datos quisiera asegurarse de que estos estarán
 disponibles en diez años más, pero eso está más allá del tiempo de vida de muchos 
-de los subsidios que financían la infraestructura académica.
+de los subsidios que financian la infraestructura académica.
 
 Otra opción es comprar un dominio y pagar a un Proveedor de Servicios de Internet
 (ISP por sus siglas en inglés) para hospedarlo. Esto da al individuo o grupo mayor
