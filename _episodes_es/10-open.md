@@ -1,5 +1,5 @@
 ---
-title: Ciencia abierta
+título: Ciencia abierta
 Enseñaza: 5
 Ejercicios: 5
 Preguntas:
@@ -13,7 +13,7 @@ keypoints:
 > Lo opuesto a "abierto" no es "cerrado". 
 > Lo opuesto a "abierto" es "quebrado".
 >
->--- John Wlbanks
+>--- John Wilbanks
 
 El libre intercambio de información podría ser el ideal en Ciencia. Pero la realidad, a menudo, es mucho más complicada.
 En la práctica cotidiana vemos situaciones como la siguiente:  
