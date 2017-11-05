@@ -31,7 +31,7 @@ opción anterior o siguiente.
 La tercera opción es utilizar un servicio de hospedaje público como
 [GitHub](http://github.com), [GitLab](http://gitlab.com),
 [BitBucket](http://bitbucket.org) o [SourceForge](http://sourceforge.net).
-Cada uno de estos servicios proveé una interfaz web que permite a las personas
+Cada uno de estos servicios provee una interfaz web que permite a las personas
 crear, ver y editar sus repositorios de código. Estos servicios también proveen 
 herramientas de comunicación y gestión de proyectos que incluyen `issue tracking`,
 páginas wiki, notificaciones de correo electrónico y revisiones de código. Estos
