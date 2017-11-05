@@ -8,7 +8,9 @@ objetivos:
 - "Explicar la importancia de agregar información de licencias a nuestro trabajo."
 - "Escoger la licencia apropiada."
 - "Explicar las diferencias en licencias y algunas expectativas sociales."
-palabras clave:
+
+
+## palabras clave:
 - "Las personas que usan la licencia **GPL** en su software tienen que asegurarse de que toda la estructura esté bajo ésta licencia; muchas otras licencias no requieren esto."
 - La familia de licencias **Creative Commons** permite a las personas adaptarse a varios requerimientos y restricciones de atribución, la creación de trabajo derivado, compartir el trabajo, y comercialización."
 - "Personas sin conocimientos de leyes no deberían tratar de escribir nuevas licencias desde cero."
@@ -26,7 +28,7 @@ Una licencia resuelve el problema otorgando derechos a otros (los licenciatarios
 Elegir una licencia que sea de uso común hace la vida más fácil para los contribuyentes y los usuarios, porque es probable que ya estén familiarizados con la licencia y no tengan que sortear una jerga específica para decidir si está bien.
 La [Iniciativa Open Source](http://opensource.org/licenses) y [Free Software Foundation](http://www.gnu.org/licenses/license-list.html) mantienen listas de licencias que pueden ser buenas elecciones.
 
-[Este artículo] [licencia de software] proporciona una excelente descripción de licencias y de opciones de licencias desde la perspectiva de los científicos que escriben código.
+Este artículo [licencia de software](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.10h02598) proporciona una excelente descripción de licencias y de opciones de licencias desde la perspectiva de los científicos que escriben código.
 
 Al final del día lo que importa es que haya un informe claro sobre cuál es la licencia. Es mejor elegir la licencia desde el principio, incluso si se trata de un repositorio que no es público. Retrasar la decisión de elección, solo hace más complicado en adelante, porque cada vez que un nuevo colaborador comienza a contribuir, ellos también tienen derechos de autor y, por lo tanto, se les debe pedir aprobación una vez que se elige una licencia.
 
@@ -44,4 +46,4 @@ Al final del día lo que importa es que haya un informe claro sobre cuál es la 
 > - [Jupyter](https://github.com/jupyter), proyectos web en Python para **notebooks**.
 > - [EtherPad](https://github.com/ether/etherpad-lite), un editor colaborativo en tiempo real.
 
-[licencia de software]: http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002598
+
