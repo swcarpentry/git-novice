@@ -8,9 +8,7 @@ objetivos:
 - "Explicar la importancia de agregar información de licencias a nuestro trabajo."
 - "Escoger la licencia apropiada."
 - "Explicar las diferencias en licencias y algunas expectativas sociales."
-
-
-## palabras clave:
+puntos clave:
 - "Las personas que usan la licencia **GPL** en su software tienen que asegurarse de que toda la estructura esté bajo ésta licencia; muchas otras licencias no requieren esto."
 - La familia de licencias **Creative Commons** permite a las personas adaptarse a varios requerimientos y restricciones de atribución, la creación de trabajo derivado, compartir el trabajo, y comercialización."
 - "Personas sin conocimientos de leyes no deberían tratar de escribir nuevas licencias desde cero."
