@@ -31,10 +31,9 @@ Se podría incluir un enlace a una copia online de sus datos, pero el mismo art�
 Para otros muchos científicos, el proceso se ve así:
 
 *   Los datos que obtiene son almacenados, tan pronto como los colecta, en un repositorio de acceso abierto, como puede ser [figshare](http://figshare.com/) o [Zenodo](http://zenodo.org), obteniendo su propio [Digital Object Identifier] (https://en.wikipedia.org/wiki/Digital_object_identifier) (DOI). O los datos que han sido recientemente publicados, son almacenados en [Dryad](http://datadryad.org/).
-*   El científico crea un nuevo repositorio en GitHub para guardar su trabajo.
-*   Al hacer el análisis de los datos, guarda los cambios de sus **scripts** (y posiblemente algunos archivos de salida)
-    en ese repositorio. Utiliza el repositorio para su artículo. Usa ese repositorio como centro de colaboración con sus colegas.
-*   Cuando está satisfecho con el estado de su artículo, publica una versión en [arXiv](http://arxiv.org/) o en algún otro servidor de preimpresión para invitar a sus compañeros a una retroalimentación. 
+*   La científica crea un nuevo repositorio en GitHub para guardar su trabajo.
+*   Al hacer su análisis de los datos, guarda los cambios de sus **scripts** (y posiblemente algunos archivos de salida) en ese repositorio. También utiliza el repositorio para su artículo. Entonces ese repositorio es el centro de colaboración con sus colegas.
+*   Cuando está satisfecha con el estado de su artículo, publica una versión en [arXiv](http://arxiv.org/) o en algún otro servidor de preimpresión para invitar a sus compañeros a una retroalimentación. 
 *   Basado en esa retroalimentación, puede escribir varias revisiones antes de enviar finalmente su artículo a la revista. 
 *   El artículo publicado incluye enlaces a su preimpresión y a sus repositorios de código y datos, lo que lo hace mucho más fácil para otros científicos utilizar este trabajo como punto de partida para su propia investigación.
 
