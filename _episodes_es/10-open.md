@@ -54,7 +54,7 @@ Este modelo abierto acelera la investigación: el trabajo abierto [se cita y se 
 
 > ## ¿Cuán reproducible es mi trabajo?
 >
-> Pide a uno de tus compañeros de laboratorio que reproduzca un resultado que obtuvo recientemente
+> Pide a uno de tus compañeros de laboratorio que reproduzca un resultado que obtuviste recientemente
 > utilizando sólo lo que ellos puedan encontrar en tus artículos o en la web.
 > Trata de hacer lo mismo para uno de sus resultados,
 > luego trata de hacerlo para obtener un resultado de un laboratorio con el que trabajas.
