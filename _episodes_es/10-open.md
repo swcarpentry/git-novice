@@ -6,7 +6,7 @@ Preguntas:
 - "¿Cómo un control de versiones me puede ayudar a tener mi trabajo más abierto?"
 objetivos:
 - "Explica como el control de versiones nos ayuda a tener un cuaderno de notas electrónico para todo nuestro trabajo computacional."
-keypoints:
+Puntos Clave:
 - "Trabajo científico abierto es más útil y puede ser más citado que si no lo es."
 ---
 
@@ -26,7 +26,7 @@ En la práctica cotidiana vemos situaciones como la siguiente:
     Ella revisa su artículo para satisfacer las revisiones propuestas. Durante ese tiempo ella también podría modificar los **scripts** que escribió anteriormente,y vuelve a enviar.
 *   Pasa más tiempo.
 *   El artículo finalmente se publica. 
-Se podría incluir un enlace a una copia online de sus datos, pero el mismo artículo está detrás de un paywall: sólo las personas que tienen acceso personal o institucional serán capaces de leerlo.
+Se podría incluir un enlace a una copia online de sus datos, pero el mismo artículo está detrás de un sito web de pago: sólo las personas que tienen acceso personal o institucional serán capaces de leerlo.
 
 Para otros muchos científicos, el proceso se ve así:
 
