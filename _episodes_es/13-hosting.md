@@ -48,7 +48,7 @@ Cualquiera con una cuenta de GitHub puede sugerir cambios a este texto.
 
 Usando servicios grandes y bien establecidos puede también ayudarte a tomar
 ventaja rápidamente de herramientas poderosas tales como la Integración 
-Continua (CI por sus siglas en inglés). CI puede correr `builds` y tests de 
+Continua (CI por sus siglas en inglés). CI puede automaticamente construir el ejecutable a partir del codigo fuente  y probar el 
 software automáticamente cada vez que se hace un `commit` o se somete un 
 `pull request`. La integración directa de CI con un servicio de hospedaje en 
 línea significa que esta información está presente en cualquier `pull request`
