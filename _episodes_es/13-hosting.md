@@ -26,7 +26,7 @@ Otra opción es comprar un dominio y pagar a un Proveedor de Servicios de Intern
 (ISP por sus siglas en inglés) para hospedarlo. Esto da al individuo o grupo mayor
 control, y le da la vuelta a problemas que pueden surgir cuando se cambien de una 
 institución a otra, pero requiere más tiempo y esfuerzo para configurar que la
-opcion anterior o siguiente.
+opción anterior o siguiente.
 
 La tercera opción es utilizar un servicio de hospedaje público como
 [GitHub](http://github.com), [GitLab](http://gitlab.com),
