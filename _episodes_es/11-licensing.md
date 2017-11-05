@@ -37,7 +37,7 @@ Al final del día lo que importa es que haya un informe claro sobre cuál es la 
 
 > ## ¿Qué licencias ya he aceptado?
 >
-> Muchas herramientas de **software** que usamos día a día (incluyento las herramientas en este **workshop**) son
+> Muchas herramientas de **software** que usamos día a día (incluyendo las herramientas en este **workshop**) son
 > **open-source software**. Escoge uno de los proyectos de GitHub de la lista de abajo, o algún otro que te interese. Encuentra la licencia (usualmente es un archivo que se llama `LICENSE` o `COPYING`) y luego habla con tus compañeros sobre como ésta licencia te permite o te restringe el uso del **software**. ¿Es una de las licencias que hemos visto en esta sesión? ¿Qué tan diferente es ésta licencia?
 > - [Git](https://github.com/git/git), herramientas para el manejo de código fuente.
 > - [CPython](https://github.com/python/cpython), implementación estándar del lenguaje Python.
