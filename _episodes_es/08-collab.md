@@ -7,7 +7,7 @@ questions:
 objectives:
 - Clonar un repositorio remoto.
 - Colaborar en crear un repositorio común.
-keypoints: '`git clone` copies a remote repository to create a local repository with a remote called `origin` automatically set up.'
+keypoints: '`git clone` copia un repositorio remoto para crear un repositorio local llamado `origin` configurado automáticamente.'
 ---
 
 Para el siguiente paso, formen parejas. Una persona será el "dueño" y la otra el "colaborador". El objetivo es que el colaborador agregue cambios al repositorio del dueño. Vamos a cambiar roles al final, de modo que ambas personas puedan participar como dueño y colaborador
@@ -18,8 +18,8 @@ Para el siguiente paso, formen parejas. Una persona será el "dueño" y la otra 
 > ventana de la terminal. Esta ventana representará a tu compañero, trabajando en otra computadora. No necesitas darle acceso a nadie en GitHub, pues tu serás ambos "compañeros".
 {: .callout}
 
-El dueño debe dar acceso al colaborador. En GitHub, haz click en el botón de configuración arriba a la derecha,
-luego selecciona "Colaboradores" e ingresa el nombre de tu colaborador.
+El dueño debe dar acceso al colaborador. En GitHub, haz clic en el botón de configuración arriba a la derecha,
+luego selecciona "Collaborators" e ingresa el nombre de tu colaborador.
 
 ![Adding Collaborators on GitHub](../fig/github-add-collaborators.png)
 
