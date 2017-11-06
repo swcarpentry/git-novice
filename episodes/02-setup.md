@@ -50,7 +50,7 @@ in a later lesson will include this information.
 > it may cause unexpected issues when editing a file on different machines. 
 > 
 > You can change the way git recognizes and encodes line endings
-> using the 'core.autocrlf' command to 'git config'.
+> using the `core.autocrlf` command to `git config`.
 > The following settings are recommended:
 >
 > On OS X and Linux:
