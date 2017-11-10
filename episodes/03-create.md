@@ -93,11 +93,11 @@ nothing to commit (create/copy files and use "git add" to track)
 > > ## Solution
 > >
 > > Git repositories can interfere with each other if they are "nested" in the
-> > directory of another: the outer repository will try to version-control 
+> > directory of another: the outer repository will try to version-control
 > > the inner repository. Therefore, it's best to create each new Git
 > > repository in a separate directory. To be sure that there is no conflicting
 > > repository in the directory, check the output of `git status`. If it looks
-> > like the following, you are good to go to create a new repository as shown 
+> > like the following, you are good to go to create a new repository as shown
 > > above:
 > >
 > > ~~~
@@ -124,7 +124,7 @@ nothing to commit (create/copy files and use "git add" to track)
 > > Similarly, we can ignore (as discussed later) entire directories, such as the `moons` directory:
 > >
 > > ~~~
-> > $ nano .gitignore # open the .gitignore file in the texteditor to add the moons directory
+> > $ nano .gitignore # open the .gitignore file in the text editor to add the moons directory
 > > $ cat .gitignore # if you run cat afterwards, it should look like this:
 > > ~~~
 > > {: .bash}
