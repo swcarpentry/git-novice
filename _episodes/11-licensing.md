@@ -37,11 +37,11 @@ considerations include:
 * Whether the content you are licensing is source code.
 * Whether you want to license the code at all.
 
-Choosing a licence that is in common use makes life easier for
+Choosing a license that is in common use makes life easier for
 contributors and users, because they are more likely to already be
 familiar with the license and don't have to wade through a bunch of
 jargon to decide if they're ok with it.  The [Open Source
-Inititative](http://opensource.org/licenses) and [Free Software
+Initiative](http://opensource.org/licenses) and [Free Software
 Foundation](http://www.gnu.org/licenses/license-list.html) both
 maintain lists of licenses which are good choices.
 
