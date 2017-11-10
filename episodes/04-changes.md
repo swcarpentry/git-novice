@@ -713,7 +713,7 @@ repository (`git commit`):
 > ~~~
 > {: .bash}
 >
-> When commiting you can name someone else as the author:
+> When committing you can name someone else as the author:
 >
 > ~~~
 > $ git commit --author="Vlad Dracula <vlad@tran.sylvan.ia>"
