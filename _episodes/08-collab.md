@@ -160,7 +160,7 @@ GitHub) are back in sync.
 > >
 > > On GitHub, the Collaborator can go to their own fork of the repository and
 > > look right above the light blue latest commit bar for a gray bar saying
-> > "This branch is 1 commit behind Our-Respository:master." On the far right of
+> > "This branch is 1 commit behind Our-Repository:master." On the far right of
 > > that gray bar is a Compare icon and link. On the Compare page the
 > > Collaborator should change the base fork to their own repository, then click
 > > the link in the paragraph above to "compare across forks", and finally
