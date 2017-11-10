@@ -226,7 +226,7 @@ GitHub, though, this command would download them to our local repository.
 > times, and why?
 >
 > > ## Solution
-> > Github displays timestamps in a human readable relative format (i.e. "22 hours ago" or "three weeks ago"). However, if you hover over the timestamp, you can see the exact time at which the last change to the file occurred.
+> > GitHub displays timestamps in a human readable relative format (i.e. "22 hours ago" or "three weeks ago"). However, if you hover over the timestamp, you can see the exact time at which the last change to the file occurred.
 > {: .solution}
 {: .challenge}
 
