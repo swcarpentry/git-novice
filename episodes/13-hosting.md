@@ -45,6 +45,11 @@ GitHub]({{ swc_github }}) where you can find the [source for this
 page]({{page.root}}/_episodes/13-hosting.md).
 Anyone with a GitHub account can suggest changes to this text.
 
+GitHub repositories can also be assigned DOIs, [by connecting its releases to
+Zenodo](https://guides.github.com/activities/citable-code/). For example,
+[`10.5281/zenodo.57467`](https://zenodo.org/record/57467) is the DOI that has
+been "minted" for this introduction to Git.
+
 Using large, well-established services can also help you quickly take advantage
 of powerful tools.  One such tool, continuous integration (CI), can
 automatically run software builds and tests whenever code is committed or pull

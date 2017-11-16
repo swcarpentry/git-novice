@@ -44,3 +44,9 @@ July 2013.
 }
 ~~~
 {: .source}
+
+More detailed advice, and other ways to make your code citable  can be found in
+[here](https://www.software.ac.uk/how-cite-and-describe-software) and in:
+
+>  Smith AM, Katz DS, Niemeyer KE, FORCE11 Software Citation Working Group. 
+>  (2016) Software citation principles. [PeerJ Computer Science 2:e86](https://peerj.com/articles/cs-86/) https://doi.org/10.7717/peerj-cs.86
