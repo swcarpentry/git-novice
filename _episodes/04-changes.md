@@ -754,4 +754,4 @@ repository (`git commit`):
 > {: .solution}
 {: .challenge}
 
-[commit-messages]: http://chris.beams.io/posts/git-commit/
+[commit-messages]: https://chris.beams.io/posts/git-commit/

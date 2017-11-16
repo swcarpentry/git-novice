@@ -29,8 +29,8 @@ but requires more time and effort to set up than either the option above or the
 option below.
 
 The third option is to use a public hosting service like
-[GitHub](http://github.com), [GitLab](http://gitlab.com),
-[BitBucket](http://bitbucket.org), or [SourceForge](http://sourceforge.net).
+[GitHub](https://github.com), [GitLab](https://gitlab.com),
+[BitBucket](https://bitbucket.org), or [SourceForge](http://sourceforge.net).
 Each of these services provides a web interface that enables people to create,
 view, and edit their code repositories.  These services also provide
 communication and project management tools including issue tracking, wiki pages,
@@ -78,5 +78,5 @@ open source projects, and are also available for private repositories for a fee.
 >
 > Does your institution have a repository or repositories that you can
 > use to share your papers, data and software? How do institutional repositories
-> differ from services like [arXiV](http://arxiv.org/), [figshare](http://figshare.com/) and [GitHub](http://github.com/)?
+> differ from services like [arXiV](https://arxiv.org/), [figshare](https://figshare.com/) and [GitHub](https://github.com/)?
 {: .challenge}
