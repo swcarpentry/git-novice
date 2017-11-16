@@ -3,50 +3,60 @@ layout: lesson
 root: .
 ---
 
-Wolfman and Dracula have been hired by Universal Missions (a space
-services spinoff from Euphoric State University) to investigate if it
-is possible to send their next planetary lander to Mars.  They want to
-be able to work on the plans at the same time, but they have run into
-problems doing this in the past.  If they take turns, each one will
-spend a lot of time waiting for the other to finish, but if they work
-on their own copies and email changes back and forth things will be
-lost, overwritten, or duplicated.
+El Hombre Lobo y Drácula han sido contratados por Universal Missions (una
+spinoff de servicios de Euphoric State University) para investigar si es
+posible enviar su próximo explorador planetario a Marte. Ellos quieren
+poder trabajar al mismo tiempo en los planes, pero ya han experimentado
+ciertos problemas anteriormente al hacer algo similar. Si se rotan por
+turnos entonces cada uno gastará mucho tiempo esperando a que el otro
+termine, pero si trabajan en sus propias copias e intercambian los cambios
+por email las cosas se perderán, se sobreescribirán o se duplicarán.
 
-A colleague suggests using [version control]({{ page.root }}/reference/#version-control) to
-manage their work. Version control is better than mailing files back and forth:
+Un colega sugiere utilizar [control de versiones]({{ page.root }}/reference/#version-control)
+para lidiar con el trabajo. El control de versiones es mejor que el intercambio de ficheros:
 
-*   Nothing that is committed to version control is ever lost, unless
-    you work really, really hard at it. Since all old versions of
-    files are saved, it's always possible to go back in time to see
-    exactly who wrote what on a particular day, or what version of a
-    program was used to generate a particular set of results.
+*   Nada se pierde una vez que se incluye bajo control de versiones,
+    a no ser que se haga un esfuerzo sustancial. Como se van guardando
+    todas las versiones precedentes de los ficheros, siempre es posible
+    volver atrás en el tiempo y ver exactamente quién escribió qué en
+    un día en particular, o que versión de un programa fue utilizada
+    para generar un conjunto de resultados en particular.
 
-*   As we have this record of who made what changes when, we know who to ask
-    if we have questions later on, and, if needed, revert to a previous
-    version, much like the "undo" feature in an editor.
+*   Como se tienen estos registros de quién hizo qué y en qué momento,
+    es posible saber a quién preguntar si se tiene una pregunta en un
+    momento posterior y, si es necesario, revertir el contenido a una
+    versión anterior, de forma similar a como funciona el comando "undo"
+    de los editores de texto.
 
-*   When several people collaborate in the same project, it's possible to
-    accidentally overlook or overwrite someone's changes. The version control
-    system automatically notifies users whenever there's a conflict between one
-    person's work and another's.
+*   Cuando varias personas colaboran en el mismo proyecto, es posible
+    pasar por alto o sobreescribir de manera accidental los cambios
+    hechos por otra persona. El sistema de control de versiones
+    notifica automáticamente a los usuarios cada vez que hay un
+    conflicto entre el trabajo de una persona y la otra.
 
-Teams are not the only ones to benefit from version control: lone
-researchers can benefit immensely.  Keeping a record of what was
-changed, when, and why is extremely useful for all researchers if they
-ever need to come back to the project later on (e.g., a year later,
-when memory has faded).
+Los equipos no son los únicos que se benefician del control de
+versiones: los investigadores independientes se pueden beneficiar
+en gran medida. Mantener un registro de qué ha cambiado,
+cuando y porqué es extremadamente útil para todos los investigadores
+si alguna vez necesitan retomar el proyecto en un momento
+posterior (e.g. un año después, cuando el se ha desvanecido el
+recuerdo de los detalles).
 
-Version control is the lab notebook of the digital world: it's what
-professionals use to keep track of what they've done and to
-collaborate with other people.  Every large software development
-project relies on it, and most programmers use it for their small jobs
-as well.  And it isn't just for software: books,
-papers, small data sets, and anything that changes over time or needs
-to be shared can and should be stored in a version control system.
+El control de versiones es la bitácora de laboratorio del mundo
+digital: es lo que los profesionales utilizan para darle
+seguimiento a lo que han hecho y colaborar con otras personas.
+Todos los proyectos de desarrollo de software de grandes dimensiones
+utilizan estas herramientas, y la mayoría de los programadores
+lo utilizan también para sus pequeños proyectos. No solamente se
+limita al software: libros, artículos científicos, pequeños
+conjuntos de datos, en fin, todo lo que pueda ser modificado en el
+tiempo o necesite ser compartido puede y debe ser almacenado
+en un sistema de control de versiones.
 
-> ## Prerequisites
->
-> In this lesson we use Git from the Unix Shell.
-> Some previous experience with the shell is expected,
-> *but isn't mandatory*.
+> ## Pre-requisitos
+> 
+> En esta lección utilizamos Git desde el terminal de Unix.
+> Se espera de los participantes alguna experiencia previa,
+> *pero esto no es requisito indispensable*.
 {: .prereq}
+
