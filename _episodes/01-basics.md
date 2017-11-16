@@ -55,6 +55,10 @@ complete history of commits for a particular project and their metadata make up
 a [repository]({{ page.root }}/reference/#repository). Repositories can be kept in sync
 across different computers facilitating collaboration among different people.
 
+The image below summarises what has been mentioned above.
+
+[![Version Control System summarised using an html file as an example](../fig/what-is-vcs.png)](https://www.git-tower.com/learn/git)
+
 > ## The Long History of Version Control Systems
 >
 > Automated version control systems are nothing new.
