@@ -268,7 +268,7 @@ Again, we can put things back the way they were
 by using `git checkout`:
 
 ~~~
-$ git checkout -f master mars.txt
+$ git checkout HEAD mars.txt
 ~~~
 {: .bash}
 
