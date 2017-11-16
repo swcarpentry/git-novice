@@ -96,10 +96,9 @@ by acting as a shareable electronic lab notebook for computational work:
 
 > ## Making Code Citable
 >
-> [This short guide](https://guides.github.com/activities/citable-code/) from GitHub
-> explains how to create a Digital Object Identifier (DOI) for your code,
-> your papers,
-> or anything else hosted in a version control repository.
+> Anything that is hosted in a version control repository (data, code, papers, 
+> etc.) can be turned into a citable object. You'll learn how to do this in
+> [lesson 12: Citation](https://swcarpentry.github.io/git-novice/12-citation/).
 {: .callout}
 
 > ## How Reproducible Is My Work?
@@ -120,14 +119,4 @@ by acting as a shareable electronic lab notebook for computational work:
 > https://www.nature.com/sdata/data-policies/repositories).
 > Discuss with your neighbor which data repository you might want to
 > approach for your current project and explain why.
-{: .challenge}
-
-> ## Can I Also Publish Code?
->
-> There are many new ways to publish code and to make it citable. One
-> way is described [on the homepage of GitHub itself](
-> https://guides.github.com/activities/citable-code/).
-> Basically it's a combination of GitHub (where the code is) and Zenodo (the
-> repository creating the DOI). Read through this page while being aware
-> that this is only one of many ways to making your code citable.
 {: .challenge}
