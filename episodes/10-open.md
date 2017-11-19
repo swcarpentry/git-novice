@@ -98,7 +98,7 @@ by acting as a shareable electronic lab notebook for computational work:
 >
 > Anything that is hosted in a version control repository (data, code, papers, 
 > etc.) can be turned into a citable object. You'll learn how to do this in
-> [lesson 12: Citation](https://swcarpentry.github.io/git-novice/12-citation/).
+> [lesson 12: Citation]({{ page.root }}/12-citation/).
 {: .callout}
 
 > ## How Reproducible Is My Work?
