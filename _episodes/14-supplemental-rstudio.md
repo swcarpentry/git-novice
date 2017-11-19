@@ -91,8 +91,8 @@ If we click on "history", we can see a pretty graphical version of what
 
 ![](../fig/RStudio_screenshot_viewhistory.png)
 
-generally don't want to track these, so adding them to your .gitignore file
 RStudio creates some files that it uses to keep track of your project. You
+generally don't want to track these, so adding them to your `.gitignore` file
 is a good idea:
 
 ![](../fig/RStudio_screenshot_gitignore.png)
