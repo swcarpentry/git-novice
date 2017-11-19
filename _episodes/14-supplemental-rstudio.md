@@ -33,12 +33,12 @@ our computer, we'll choose "existing directory":
 >
 > Although we're not going to use it here, there should be a "version control"
 > option on this menu. That is what you would click on if you wanted to
-> create a project on your computer by cloning a repository from github.
+> create a project on your computer by cloning a repository from GitHub.
 > If that option is not present, it probably means that RStudio doesn't know
 > where your Git executable is. See
 > [this page](https://stat545-ubc.github.io/git03_rstudio-meet-git.html)
 > for some debugging advice. Even if you have Git installed, you may need
-> to accept the XCode license if you are using MacOSX.
+> to accept the XCode license if you are using macOS.
 {: .callout}
 
 Next, RStudio will ask which existing directory we want to use. Click "browse"
