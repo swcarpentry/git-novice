@@ -83,5 +83,5 @@ open source projects, and are also available for private repositories for a fee.
 >
 > Does your institution have a repository or repositories that you can
 > use to share your papers, data and software? How do institutional repositories
-> differ from services like [arXiV](https://arxiv.org/), [figshare](https://figshare.com/) and [GitHub](https://github.com/)?
+> differ from services like [arXiV](https://arxiv.org/), [figshare](https://figshare.com/), [GitHub](https://github.com/) or [GitLab](https://about.gitlab.com/)?
 {: .challenge}
