@@ -61,7 +61,7 @@ open source projects, and are also available for private repositories for a fee.
 > but many institutions place restrictions on sharing,
 > for example to protect potentially patentable intellectual property.
 > If you encounter such restrictions,
-> it can be productive to inquire about the underlying motivations
+> it can be productive to inquire about the underlying motivations and
 > either to request an exception for a specific project or domain,
 > or to push more broadly for institutional reform to support more open science.
 {: .callout}
