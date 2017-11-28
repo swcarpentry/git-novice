@@ -61,6 +61,9 @@ $ git status
 ~~~
 {: .bash}
 
+If you are using a different version of git than I am, then then the exact
+wording of the output might be slightly different.
+
 ~~~
 # On branch master
 #
