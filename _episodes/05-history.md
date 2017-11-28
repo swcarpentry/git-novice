@@ -81,10 +81,11 @@ diff --git a/mars.txt b/mars.txt
 index df0654a..b36abfd 100644
 --- a/mars.txt
 +++ b/mars.txt
-@@ -1 +1,3 @@
+@@ -1 +1,4 @@
  Cold and dry, but everything is my favorite color
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity
++An ill-considered change
 ~~~
 {: .output}
 
@@ -100,15 +101,15 @@ commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 10:07:21 2013 -0400
 
-    Add concerns about effects of Mars' moons on Wolfman
+    Start notes on Mars as a base
 
 diff --git a/mars.txt b/mars.txt
-index df0654a..315bf3a 100644
---- a/mars.txt
+new file mode 100644
+index 0000000..df0654a
+--- /dev/null
 +++ b/mars.txt
-@@ -1 +1,2 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
+@@ -0,0 +1 @@
++Cold and dry, but everything is my favorite color
 ~~~
 {: .output}
 
@@ -138,13 +139,14 @@ $ git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b mars.txt
 
 ~~~
 diff --git a/mars.txt b/mars.txt
-index df0654a..b36abfd 100644
+index df0654a..93a3e13 100644
 --- a/mars.txt
 +++ b/mars.txt
-@@ -1 +1,3 @@
+@@ -1 +1,4 @@
  Cold and dry, but everything is my favorite color
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity
++An ill-considered change
 ~~~
 {: .output}
 
@@ -159,13 +161,14 @@ $ git diff f22b25e mars.txt
 
 ~~~
 diff --git a/mars.txt b/mars.txt
-index df0654a..b36abfd 100644
+index df0654a..93a3e13 100644
 --- a/mars.txt
 +++ b/mars.txt
-@@ -1 +1,3 @@
+@@ -1 +1,4 @@
  Cold and dry, but everything is my favorite color
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity
++An ill-considered change
 ~~~
 {: .output}
 
