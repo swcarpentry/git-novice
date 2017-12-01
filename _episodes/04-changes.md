@@ -8,7 +8,7 @@ questions:
 - "How do I record notes about what changes I made and why?"
 objectives:
 - "Go through the modify-add-commit cycle for one or more files."
-- "Explain where information is stored at each stage of Git commit workflow."
+- "Explain where information is stored at each stage that cycle."
 - "Distinguish between descriptive and non-descriptive commit messages."
 keypoints:
 - "`git status` shows the status of a repository."
