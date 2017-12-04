@@ -328,8 +328,8 @@ only large batches.
 For example,
 suppose we're adding a few citations to relevant research to our thesis.
 We might want to commit those additions,
-and the corresponding addition to the bibliography,
-but *not* commit the work we're doing on the conclusion
+and the corresponding bibliography entries,
+but *not* commit some of our work drafting the conclusion
 (which we haven't finished yet).
 
 To allow for this,
