@@ -326,8 +326,7 @@ before actually committing anything. This allows us to commit our
 changes in stages and capture changes in logical portions rather than
 only large batches.
 For example,
-suppose we're adding a few citations to our supervisor's work
-to our thesis.
+suppose we're adding a few citations to relevant research to our thesis.
 We might want to commit those additions,
 and the corresponding addition to the bibliography,
 but *not* commit the work we're doing on the conclusion
