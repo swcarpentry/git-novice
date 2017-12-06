@@ -148,7 +148,7 @@ GitHub) are back in sync.
 
 > ## Review Changes
 >
-> The Owner push commits to the repository without giving any information
+> The Owner pushed commits to the repository without giving any information
 > to the Collaborator. How can the Collaborator find out what has changed with
 > command line? And on GitHub?
 >
