@@ -323,6 +323,30 @@ Conflicts can also be minimized with project management strategies:
 > pull her changes from the repository to create a conflict,
 > then resolve it.
 {: .challenge}
+>
+> >##Solution
+> >
+> > when you meet a conflict running git pull, you first save your local modification away and restore a clean working directory:
+> >
+> > ~~~
+> > $ git stash
+> > ~~~
+> > {: .bash}
+> >
+> > in the second step, you will pull the instructor's change:
+> >
+> > ~~~
+> > $ git pull
+> > ~~~
+> > {: .bash}
+> >
+> > finally, you can add your modifications on top of the current file:
+> >
+> > ~~~
+> > $ git stash pop
+> > ~~~
+> > {: .bash}
+> >
 
 > ## Conflicts on Non-textual files
 >
