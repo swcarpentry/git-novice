@@ -496,8 +496,8 @@ moving backward and forward in time becomes much easier.
 > When you type `git log`, a very long list appeared,
 > How can you narrow down the search?
 >
-> Recorded that the `git diff` command allow us to explore one specific file,
-> e.g. `git diff mars.txt`. We can apply the similar idea here.
+> Recall that the `git diff` command allow us to explore one specific file,
+> e.g. `git diff mars.txt`. We can apply a similar idea here.
 >
 > ~~~
 > $ git log mars.txt
@@ -507,8 +507,8 @@ moving backward and forward in time becomes much easier.
 > Unfortunately some of these commit messages are very ambiguous e.g. `update files`.
 > How can you search through these files?
 >
-> Both `git diff` and `git log` are very useful and they summarize different part of the history for you.
-> Is that possible to combine both? Let's try the following:
+> Both `git diff` and `git log` are very useful and they summarize a different part of the history for you.
+> Is it possible to combine both? Let's try the following:
 >
 > ~~~
 > $ git log --patch mars.txt
