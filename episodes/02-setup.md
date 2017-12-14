@@ -8,7 +8,7 @@ objectives:
 - "Configure `git` the first time it is used on a computer."
 - "Understand the meaning of the `--global` configuration flag."
 keypoints:
--   "Use `git config` to configure a user name, email address, editor, and other preferences once per machine."
+-   "Use `git config` with the `--global` option to configure a user name, email address, editor, and other preferences once per machine."
 ---
 
 When we use Git on a new computer for the first time,
