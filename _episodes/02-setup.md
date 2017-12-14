@@ -42,7 +42,7 @@ in a later lesson will include this information.
 > ## Line Endings
 >
 > As with other keys, when you hit the 'return' key on your keyboard, 
-> your computer encodes this input. 
+> your computer encodes this input as a character. 
 > For reasons that are long to explain, different operating systems
 > use different character(s) to represent the end of a line. 
 > (You may also hear these referred to as newlines or line breaks.)
