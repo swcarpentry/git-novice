@@ -21,8 +21,8 @@ only thing missing is to copy changes from one repository to another.
 Systems like Git allow us to move work between any two repositories.  In
 practice, though, it's easiest to use one copy as a central hub, and to keep it
 on the web rather than on someone's laptop.  Most programmers use hosting
-services like [GitHub](http://github.com), [BitBucket](http://bitbucket.org) or
-[GitLab](http://gitlab.com/) to hold those master copies; we'll explore the pros
+services like [GitHub](https://github.com), [BitBucket](https://bitbucket.org) or
+[GitLab](https://gitlab.com/) to hold those master copies; we'll explore the pros
 and cons of this in the final section of this lesson.
 
 Let's start by sharing the changes we've made to our current project with the
@@ -161,7 +161,7 @@ Branch master set up to track remote branch master from origin.
 >
 > in the terminal, before you run `git push`.  Despite the name, [git uses
 > `SSH_ASKPASS` for all credential
-> entry](http://git-scm.com/docs/gitcredentials#_requesting_credentials), so
+> entry](https://git-scm.com/docs/gitcredentials#_requesting_credentials), so
 > you may want to unset `SSH_ASKPASS` whether you are using git via SSH or
 > https.
 >

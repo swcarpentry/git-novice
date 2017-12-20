@@ -33,9 +33,9 @@ $ git config --global color.ui "auto"
 
 Please use your own name and email address instead of Dracula's. This user name and email will be associated with your subsequent Git activity,
 which means that any changes pushed to
-[GitHub](http://github.com/),
-[BitBucket](http://bitbucket.org/),
-[GitLab](http://gitlab.com/) or
+[GitHub](https://github.com/),
+[BitBucket](https://bitbucket.org/),
+[GitLab](https://gitlab.com/) or
 another Git host server
 in a later lesson will include this information.
 
@@ -71,7 +71,7 @@ in a later lesson will include this information.
 > [on this GitHub page](https://help.github.com/articles/dealing-with-line-endings/).
 {: .callout}
 
-For these lessons, we will be interacting with [GitHub](http://github.com/) and so the email address used should be the same as the one used when setting up your GitHub account. If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private][git-privacy]. 
+For these lessons, we will be interacting with [GitHub](https://github.com/) and so the email address used should be the same as the one used when setting up your GitHub account. If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private][git-privacy]. 
 If you elect to use a private email address with GitHub, then use that same email address for the `user.email` value, e.g. `username@users.noreply.github.com` replacing `username` with your GitHub one. You can change the email address later on by using the `git config` command again.
 
 Dracula also has to set his favorite text editor, following this table:
