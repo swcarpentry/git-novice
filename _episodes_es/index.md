@@ -59,4 +59,3 @@ en un sistema de control de versiones.
 > Se espera de los participantes alguna experiencia previa,
 > *pero esto no es requisito indispensable*.
 {: .prereq}
-
