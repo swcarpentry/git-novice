@@ -58,7 +58,7 @@ en diferentes computadoras, facilitando así la colaboración entre diferentes p
 > Estos sistemas modernos también incluyen potentes herramientas de fusión que hacen posible que múltiples autores trabajen dentro de 
 > los mismos archivos simultáneamente. {:.callout}
 
->## Escritura de artículos 
+> ## Escritura de artículos 
 >
 > Imagina que has redactado un excelente párrafo para un artículo que estás escribiendo, pero más tarde lo estropeas. ¿Cómo recuperarías 
 > aquella *excelente* versión de la conclusión? ¿Es esto posible?
