@@ -30,7 +30,7 @@ option below.
 
 The third option is to use a public hosting service like
 [GitHub](https://github.com), [GitLab](https://gitlab.com),
-[BitBucket](https://bitbucket.org), or [SourceForge](http://sourceforge.net).
+[BitBucket](https://bitbucket.org).
 Each of these services provides a web interface that enables people to create,
 view, and edit their code repositories.  These services also provide
 communication and project management tools including issue tracking, wiki pages,
