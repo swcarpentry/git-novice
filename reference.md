@@ -3,78 +3,78 @@ layout: reference
 permalink: /reference/
 ---
 
-## Git Cheatsheets for Quick Reference
+## Cheatsheets de Git para Referencia Rápida
 
-*   A great [printable git cheatsheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf) is available in PDF from the
-[GitHub training website](https://services.github.com/resources/).
-*   An [interactive one-page visualisation](http://ndpsoftware.com/git-cheatsheet.html)
-    about the relationships between workspace, staging area, local repository, upstream repository, and the commands associated with each (with explanations).
-*   Both resources are also available in other languages e.g. Spanish, French, and more
+*   Un excelente [cheatsheet de git listo para impresión](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf) está disponible en formato PDF desde
+[el sitio de preparación de GitHub](https://services.github.com/resources/).
+*   Una [visualización interactiva](http://ndpsoftware.com/git-cheatsheet.html)
+    sobre las relaciones entre entorno de trabajo, área de staging, repositorio local y remoto, así los comandos asociados con cada caso (y sus explicaciones)
+*   Ambos recursos están disponibles en varios lenguajes e.g. español, francés, y muchos más.
 
-## Glossary
+## Glosario
 
 {:auto_ids}
 changeset
-:   A group of changes to one or more files that are or will be added
-    to a single [commit](#commit) in a [version control](#version-control)
-    [repository](#repository).
+:   Un grupo de cambios a uno o más ficheros que son o serán añadidos
+    en un solo [commit](#commit) en un [repositorio](#repositorio)
+    de [control de versiones](#control-de-versiones).
 
 commit
-:   To record the current state of a set of files (a [changeset](#changeset))
-    in a [version control](#version-control) [repository](#repository). As a noun,
-    the result of committing, i.e. a recorded changeset in a repository.
-    If a commit contains changes to multiple files,
-    all of the changes are recorded together.
+:   Como verbo *hacer un commit* es la acción de registrar el estado
+    de un conjunto de ficheros en un momento determinado (un [changeset](#changeset))
+    en un [repositorio](#repositorio) de [control de versiones](#control-de-versiones). Como sustantivo,
+    *un commit* es el resultado de esta acción, i.e. un changeset almacenado en un repositorio.
+    Si un commit contiene cambios hechos a múltiples ficheros,
+    todos los cambios son almacenados juntos.
 
-conflict
-:   A change made by one user of a [version control system](#version-control)
-    that is incompatible with changes made by other users.
-    Helping users [resolve](#resolve) conflicts
-    is one of version control's major tasks.
+conflicto
+:   Un cambio hecho por un usuario de un [sistema de control de versiones](#control-de-versiones)
+    que es incompatible con cambios hechos por otros usuarios.
+    Asistir a los usuarios a [resolver](#resolver) conflictos
+    es una de las funciones más importantes del control de versiones.
 
 HTTP
-:   The Hypertext Transfer [Protocol](#protocol) used for sharing web pages and other data
-    on the World Wide Web.
+:   Siglas de Hypertext Transfer Protocol, el [protocolo](#protocolo) utilizado para compartir páginas web y otros datos
+    en la World Wide Web.
 
-merge
-:   (a repository): To reconcile two sets of changes to a
-    [repository](#repository).
+mezclar
+:   (un repositorio): Reconciliar dos conjuntos de cambios en un
+    [repositorio](#repositorio).
 
-protocol
-:   A set of rules that define how one computer communicates with another.
-    Common protocols on the Internet include [HTTP](#http) and [SSH](#ssh).
+protocolo
+:   Un conjunto de reglas que definen cómo una computadora se comunica con otra.
+    Entre los protocolos más utilizados en la Internet se encuentran [HTTP](#http) y [SSH](#ssh).
 
 remote
-:   (of a repository) A version control [repository](#repository) connected to another,
-    in such way that both can be kept in sync exchanging [commits](#commit).
+:   (de un repositorio) Un [repositorio](#repositorio) de [control de versiones](#control-de-versiones) conectado con otro
+    de forma tal que ambos pueden ser actualizados intercambiando [commits](#commit).
 
-repository
-:   A storage area where a [version control](#version-control) system
-    stores the full history of [commits](#commit) of a project and information
-    about who changed what, when.
+repositorio
+:   Un área de almacenamiento donde un sistema de [control de versiones](#control-de-versiones)
+    almacena la historia completa de [commits](#commit) de un proyecto, así como información
+    sobre quién cambio qué, cuándo.
 
-resolve
-:   To eliminate the [conflicts](#conflict) between two or more incompatible changes to a file or set of files
-    being managed by a [version control](#version-control) system.
+resolver
+:   Eliminar los [conflictos](#conflicto) entre dos o más cambios incompatibles sobre un fichero o un conjunto de ficheros
+    administrados por un sistema de [control de versiones](#control-de-versiones).
 
-revision
-:   A synonym for [commit](#commit).
+revisión
+:   Un sinónimo de [commit](#commit).
 
 SHA-1
-:   [SHA-1 hashes](http://en.wikipedia.org/wiki/SHA-1) is what Git uses to compute identifiers, including for commits.
-    To compute these, Git uses not only the actual change of a commit, but also its metadata (such as date, author,
-    message), including the identifiers of all commits of preceding changes. This makes Git commit IDs virtually unique.
-    I.e., the likelihood that two commits made independently, even of the same change, receive the same ID is exceedingly
-    small.
+:   [SHA-1 hashes](http://en.wikipedia.org/wiki/SHA-1) es lo que Git utiliza para generar identificadores, incluyendo los de los commits.
+    Para calcularlos, Git no solamente utiliza los cambios que forman parte de un commit, sino también sus metadatos (tales como fecha, autor,
+    mensaje), incluyendo los identificadores de todos los commits hechos para cambios anteriores. Esto hace que los ID de commits de Git san virtualmente únicos.
+    I.e., es ínfima la probabilidad de que un mismo ID se refiera a dos commits hechos de forma independiente, incluso si tuvieran los mismos cambios.
 
 SSH
-:   The Secure Shell [protocol](#protocol) used for secure communication between computers.
+:   Abreviatura de Secure Shell, un [protocolo](#protocolo) utilizado para la comunicación de forma segura entre computadoras.
 
 timestamp
-:   A record of when a particular event occurred.
+:   Un registro de cuando ocurrió un evento específico.
 
-version control
-:   A tool for managing changes to a set of files.
-    Each set of changes creates a new [commit](#commit) of the files;
-    the version control system allows users to recover old commits reliably,
-    and helps manage conflicting changes made by different users.
+control de versiones
+:   Una herramienta para administrar los cambios hechos a un conjunto de ficheros.
+    Cada conjunto de cambios crea un nuevo[commit](#commit) de los ficheros;
+    el sistema de control de versiones permite a los usuarios recibir de manera fiable los commits precedentes,
+    y ayuda a solventar cambios conflictivos hechos por diferentes usuarios.

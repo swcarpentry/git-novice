@@ -1,13 +1,13 @@
 git-novice
 ==========
 
-An introduction to version control for novices using Git.
-Please see <https://swcarpentry.github.io/git-novice/> for a rendered version of this material,
-[the lesson template documentation][lesson-example]
-for instructions on formatting, building, and submitting material,
-or run `make` in this directory for a list of helpful commands.
+Una introducción al control de versiones para principiantes con Git.
+Por favor consulte <https://swcarpentry.github.io/git-novice/> para una versión visual de este material,
+[la documentación de la plantilla de las lecciones][lesson-example]
+para instrucciones sobre formato, confección y envío de materiales,
+o ejecute `make` en este directorio para ver una lista de comandos de utilidad.
 
-Maintainers:
+Responsables:
 
 * [Ivan Gonzalez][gonzalez_ivan]
 * [Daisie Huang][huang_daisie]

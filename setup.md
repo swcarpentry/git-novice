@@ -4,10 +4,10 @@ title: Setup
 permalink: /setup/
 ---
 
-Please see [this section of the workshop template][workshop-setup]
-for instructions on installing Git.
+Por favor consulte [esta sección de la plantilla de los talleres][workshop-setup]
+para conocer más instrucciones de instalación de Git.
 
-We'll do our work in the `Desktop` folder so make sure you change your working directory to it with:
+Haremos nuestro trabajo en la carpeta `Desktop`. Por favor asegúrese de cambiar su directorio de trabajo con:
 
 ~~~
 $ cd
