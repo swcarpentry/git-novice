@@ -1,11 +1,11 @@
 git-novice
 ==========
 
-Una introdución para principiantes en control de versiones usando Git.
+Una introdución para principiantes sobre control de versiones usando Git.
 Puedes encontrar la traducción de este material en <https://github.com/Carpentries-ES/git-novice/tree/gh-pages/_episodes_es/>
 y también puedes ver el [modelo de documentación][lesson-example]
 para las instrucciones de formato y como mejorar el material, 
-o también run `make` en este directorio para una lista de comandos útiles.
+o también puedes run `make` en este directorio para ver una lista de comandos útiles.
 
 Maintainers:
 
