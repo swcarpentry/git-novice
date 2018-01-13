@@ -96,7 +96,8 @@ It is possible to reconfigure the text editor for Git whenever you want to chang
 
 > ## Exiting Vim
 >
-> Note that `vim` is the default editor for many programs. If you haven't used `vim` before and wish to exit a session, type `Esc` then `:q!` and `Enter`.
+> Note that `vim` is the default editor for many programs. If you haven't used `vim` before and wish to exit a session without saving
+your changes, type `Esc` then `:q!` and `Enter`. If you want to save your changes and quit, type `Esc` then `:wq` and `Enter`.
 {: .callout}
 
 The four commands we just ran above only need to be run once: the flag `--global` tells Git
