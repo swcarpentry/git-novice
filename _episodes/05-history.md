@@ -365,7 +365,7 @@ moving backward and forward in time becomes much easier.
 > group repository.  Below are the right steps and explanations for
 > Jennifer to use `git revert`, what is the missing command?
 >
-> 1. ________ # Look at the git history of the project to find the commit ID
+> 1. `________ # Look at the git history of the project to find the commit ID`
 >
 > 2. Copy the ID (the first few characters of the ID, e.g. 0b1d055).
 >
