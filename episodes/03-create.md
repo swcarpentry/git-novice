@@ -112,7 +112,7 @@ nothing to commit (create/copy files and use "git add" to track)
 > > ~~~
 > > {: .output}
 > >
-> > Note that we can track files in directories within a Git:
+> > Note that we can track files in directories within a Git repository:
 > >
 > > ~~~
 > > $ touch moon phobos deimos titan    # create moon files
