@@ -158,7 +158,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 ~~~
 {: .output}
 
-The `git pull` command combines a `git fetch` with a `git merge` to update the local repository to include
+The `git pull` command updates the local repository to include those
 changes already included in the remote repository.
 After the changes from remote branch have been fetched, Git detects that changes made to the local copy 
 overlap with those made to the remote repository, and therefore refuses to merge the two versions to
