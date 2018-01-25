@@ -133,8 +133,8 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 ![The Conflicting Changes](../fig/conflict.svg)
 
-Git detects that the changes made in one copy overlap with those made in the other
-and stops us from trampling on our previous work.
+Git rejects the push because it detects that the remote repository has new updates that have not been
+incorporated into the local branch.
 What we have to do is pull the changes from GitHub,
 [merge]({{ page.root }}/reference/#merge) them into the copy we're currently working in,
 and then push that.
@@ -158,8 +158,12 @@ Automatic merge failed; fix conflicts and then commit the result.
 ~~~
 {: .output}
 
-`git pull` tells us there's a conflict,
-and marks that conflict in the affected file:
+The `git pull` command updates the local repository to include those
+changes already included in the remote repository.
+After the changes from remote branch have been fetched, Git detects that changes made to the local copy 
+overlap with those made to the remote repository, and therefore refuses to merge the two versions to
+stop us from trampling on our previous work. The conflict is marked in
+in the affected file:
 
 ~~~
 $ cat mars.txt
