@@ -77,4 +77,4 @@ thus need to be asked for approval once a license is chosen.
 > - [EtherPad](https://github.com/ether/etherpad-lite), a real-time collaborative editor
 {: .challenge}
 
-[software-licensing]: http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002598
+[software-licensing]: https://doi.org/10.1371/journal.pcbi.1002598
