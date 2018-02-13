@@ -1,12 +1,12 @@
 ---
-Título: Usando Git desde RStudio
-Enseñanaza: 10
-Ejercicios: 0
-Preguntas:
+title: Usando Git desde RStudio
+teaching: 10
+exercises: 0
+questions:
 - "¿Cómo puedo usar Git desde RStudio?"
-objetivos:
+objectives:
 - "Entender cómo usar Git desde RStudio."
-Puntos Clave:
+keypoints:
 - "Crear un proyecto en RStudio"
 ---
 

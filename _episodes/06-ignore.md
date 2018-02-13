@@ -1,6 +1,6 @@
 ---
 title: Ignorando cosas
-teaching 5
+teaching: 5
 exercises: 0
 questions:
 - "¿Cómo puedo decirle a Git que ignore los archivos que no quiero rastrear?"

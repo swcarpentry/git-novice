@@ -1,6 +1,6 @@
 ---
 title: Repositorios remotos en GitHub
-teaching 30
+teaching: 30
 exercises: 0
 questions:
 - "¿Cómo puedo compartir los cambios con otros en el web?"

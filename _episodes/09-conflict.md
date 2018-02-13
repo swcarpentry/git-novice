@@ -1,6 +1,6 @@
 ---
 title: Conflictos
-teaching 15
+teaching: 15
 exercises: 0
 questions:
 - "¿Qué hago cuando mis cambios entran en conflicto con los de otra persona?"

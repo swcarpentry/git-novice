@@ -1,9 +1,9 @@
 ---
-title: "Trabajos en colaboración"
-teaching 5
+title: Trabajos en colaboración
+teaching: 5
 exercises: 0
 questions:
-- "¿Cómo puedo usar el control de versiones para colaborar con otras personas? 
+- "¿Cómo puedo usar el control de versiones para colaborar con otras personas?" 
 objectives:
 - Clonar un repositorio remoto.
 - Colaborar en crear un repositorio común.

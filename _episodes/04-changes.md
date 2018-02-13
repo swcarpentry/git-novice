@@ -1,6 +1,6 @@
 ---
 title: Rastreando Cambios
-teaching 20
+teaching: 20
 exercises: 0
 questions:
 - "¿Cómo registro cambios en Git?"
