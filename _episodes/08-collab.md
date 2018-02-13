@@ -1,54 +1,44 @@
 ---
-title: Collaborating
-teaching: 25
+title: "Trabajos en colaboración"
+teaching 5
 exercises: 0
 questions:
-- "How can I use version control to collaborate with other people?"
+- "¿Cómo puedo usar el control de versiones para colaborar con otras personas? 
 objectives:
-- "Clone a remote repository."
-- "Collaborate pushing to a common repository."
-keypoints:
-- "`git clone` copies a remote repository to create a local repository with a remote called `origin` automatically set up."
+- Clonar un repositorio remoto.
+- Colaborar en crear un repositorio común.
+keypoints: '`git clone` copia un repositorio remoto para crear un repositorio local llamado `origin` configurado automáticamente.'
 ---
 
-For the next step, get into pairs.  One person will be the "Owner" and the other
-will be the "Collaborator". The goal is that the Collaborator add changes into
-the Owner's repository. We will switch roles at the end, so both persons will
-play Owner and Collaborator.
+Para el siguiente paso, formen parejas. Una persona será el "dueño" y la otra el "colaborador". El objetivo es que el colaborador agregue cambios al repositorio del dueño. Vamos a cambiar roles al final, de modo que ambas personas puedan participar como dueño y colaborador
 
-> ## Practicing By Yourself
+> ## Practicando por tu cuenta
 >
-> If you're working through this lesson on your own, you can carry on by opening
-> a second terminal window.
-> This window will represent your partner, working on another computer. You
-> won't need to give anyone access on GitHub, because both 'partners' are you.
+> Si estás trabajando en esta lección por tu cuenta, puedes hacerlo abriendo una segunda sesión en la 
+> ventana de la terminal. Esta ventana representará a tu compañero, trabajando en otra computadora. No necesitas darle acceso a nadie en GitHub, pues tu serás ambos "compañeros".
 {: .callout}
 
-The Owner needs to give the Collaborator access.
-On GitHub, click the settings button on the right,
-then select Collaborators, and enter your partner's username.
+El dueño debe dar acceso al colaborador. En GitHub, haz clic en el botón de configuración arriba a la derecha,
+luego selecciona "Collaborators" e ingresa el nombre de tu colaborador.
 
 ![Adding Collaborators on GitHub](../fig/github-add-collaborators.png)
 
-To accept access to the Owner's repo, the Collaborator
-needs to go to [https://github.com/notifications](https://github.com/notifications).
-Once there she can accept access to the Owner's repo.
+Para aceptar la invitación de acceso al repositorio, el Colaborador
+debe ingresar a [https://github.com/notifications](https://github.com/notifications).
+Una vez allí, se puede aceptar la invitación a dicho repositorio.
 
-Next, the Collaborator needs to download a copy of the Owner's repository to her
- machine. This is called "cloning a repo". To clone the Owner's repo into
-her `Desktop` folder, the Collaborator enters:
+Luego, el colaborador debe descargar una copia del repositorio del dueño a su máquina. Esto se conoce como "clonar un repositorio". Para clonar el repositorio del dueño en su carpeta de `Desktop`, el colaborador debe correr las siguientes líneas:
 
 ~~~
 $ git clone https://github.com/vlad/planets.git ~/Desktop/vlad-planets
 ~~~
 {: .bash}
 
-Replace 'vlad' with the Owner's username.
+Remplazar 'vlad' con el nombre de usuario del dueño.
 
 ![After Creating Clone of Repository](../fig/github-collaboration.svg)
 
-The Collaborator can now make a change in her clone of the Owner's repository,
-exactly the same way as we've been doing before:
+El colaborador puede ahora hacer cambios en la versión clonada del repositorio del dueño,en la misma forma en que se hacían previamente:
 
 ~~~
 $ cd ~/Desktop/vlad-planets
@@ -74,7 +64,7 @@ $ git commit -m "Add notes about Pluto"
 ~~~
 {: .output}
 
-Then push the change to the *Owner's repository* on GitHub:
+Luego enviar, "push", los cambios hacia el *repositorio del dueño* en GitHub:
 
 ~~~
 $ git push origin master
@@ -88,19 +78,15 @@ Compressing objects: 100% (2/2), done.
 Writing objects: 100% (3/3), 306 bytes, done.
 Total 3 (delta 0), reused 0 (delta 0)
 To https://github.com/vlad/planets.git
-   9272da5..29aba7c  master -> master
+   9272da5..29aba7c master -> master
 ~~~
 {: .output}
 
-Note that we didn't have to create a remote called `origin`: Git uses this
-name by default when we clone a repository.  (This is why `origin` was a
-sensible choice earlier when we were setting up remotes by hand.)
+Nota que no es necesario crear un directorio remoto llamado `origin`: Git utiliza este nombre de manera automática cuando clonamos un repositorio. (Esta es la razón por la cual `origin` era una opción sensata a la hora de configurar directorios remotos a mano).
 
-Take a look to the Owner's repository on its GitHub website now (maybe you need
-to refresh your browser.) You should be able to see the new commit made by the
-Collaborator.
+Ahora echa un vistazo al repositorio del dueño en su sitio de Github (quizás debas refrescar la página). Deberás ver el nuevo commit hecho por el colaborador.
 
-To download the Collaborator's changes from GitHub, the Owner now enters:
+Para descargar los cambios hechos por el colaborador desde GitHub, el dueño corre las siguientes líneas:
 
 ~~~
 $ git pull origin master
@@ -113,7 +99,7 @@ remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 3 (delta 0)
 Unpacking objects: 100% (3/3), done.
 From https://github.com/vlad/planets
- * branch            master     -> FETCH_HEAD
+ * branch master -> FETCH_HEAD
 Updating 9272da5..29aba7c
 Fast-forward
  pluto.txt | 1 +
@@ -122,67 +108,49 @@ Fast-forward
 ~~~
 {: .output}
 
-Now the three repositories (Owner's local, Collaborator's local, and Owner's on
-GitHub) are back in sync.
+Ahora hay tres repositorios sincronizados (el local del Dueño, el local del colaborador y el del dueño en GitHub).
 
-> ## A Basic Collaborative Workflow
->
-> In practice, it is good to be sure that you have an updated version of the
-> repository you are collaborating on, so you should `git pull` before making
-> our changes. The basic collaborative workflow would be:
->
-> * update your local repo with `git pull origin master`,
-> * make your changes and stage them with `git add`,
-> * commit your changes with `git commit -m`, and
-> * upload the changes to GitHub with `git push origin master`
->
-> It is better to make many commits with smaller changes rather than
-> of one commit with massive changes: small commits are easier to
-> read and review.
+## Un flujo de trabajo colaborativo básico
+
+En la practica, es bueno estar seguro que tienes una versión actualizada del repositorio en el que colaboras. Para ello, es bueno hacer un `git pull` antes de hacer cambios. El enfoque sería:
+
+
+* actualizar el repositorio local `git pull origin master`,
+* realizar cambios `git add`,
+* realizar un commit `git commit -m`, y
+* cargar las actualizaciones a GitHub con `git push origin master`
+
+Es mejor hacer varias actualizaciones pequeñas que un **commit** grande con cambios enormes. **Commits** pequeños son más fáciles de leer y revisar.
 {: .callout}
 
-> ## Switch Roles and Repeat
->
-> Switch roles and repeat the whole process.
+## Cambiar roles
+
+Cambie los roles y repita todo el proceso.
 {: .challenge}
 
-> ## Review Changes
->
-> The Owner push commits to the repository without giving any information
-> to the Collaborator. How can the Collaborator find out what has changed with
-> command line? And on GitHub?
->
-> > ## Solution
-> > On the command line, the Collaborator can use ```git fetch origin master```
-> > to get the remote changes into the local repository, but without merging
-> > them. Then by running ```git diff master origin/master``` the Collaborator
-> > will see the changes output in the terminal.
-> >
-> > On GitHub, the Collaborator can go to their own fork of the repository and
-> > look right above the light blue latest commit bar for a gray bar saying
-> > "This branch is 1 commit behind Our-Respository:master." On the far right of
-> > that gray bar is a Compare icon and link. On the Compare page the
-> > Collaborator should change the base fork to their own repository, then click
-> > the link in the paragraph above to "compare across forks", and finally
-> > change the head fork to the main repository. This will show all the commits
-> > that are different.
-> {: .solution}
+## Revisar Cambios
+
+El dueño hace un **push** de los **commits** al repositorio sin dar información al colaborador. Cómo puede éste saberlo desde la linea de comandos y desde GitHub?
+
+## Solution
+
+En la linea de comandos, el colaborador puede usar ```git fetch origin master``` para acceder a los cambios remotos en el repositorio local, sin hacer un **merge*. Luego, corriendo ```git diff master origin/master```,  el colaborador verá los cambios en la terminal.  
+
+En GitHub, el colaborador puede realizar su propio **fork** y hallar la barra gris que indica "This branch is 1 commit behind Our-Respository:master.". Lejos, a la derecha de la barra gris, hay un link para comparar. En la página para comparar, el colaborador debe cambiar el **fork** hacia su propio repositorio, luego hacer click en el link para "comparar entre forks" y, finalmente, cambiar el **fork** al repositorio principal. Esto mostrará todos los **commits** que sean distintos. 
+
+{: .solution}
 {: .challenge}
 
-> ## Comment Changes in GitHub
->
-> The Collaborator has some questions about one line change made by the Owner and
-> has some suggestions to propose.
->
-> With GitHub, it is possible to comment the diff of a commit. Over the line of
-> code to comment, a blue comment icon appears to open a comment window.
->
-> The Collaborator posts its comments and suggestions using GitHub interface.
+## Comentar cambios en GitHub
+
+El colaborador tiene algunas preguntas sobre cambios en una línea hechos por el dueño. 
+
+Con GitHub, es posible comentar la diferencia en un **commit**. Sobre la línea de código a comentar, el botón azul aparece para abrir una ventana. 
+
+El colaborador postea los comentarios y sugerencias usando la interfaz de GitHub.
 {: .challenge}
 
-> ## Version History, Backup, and Version Control
->
-> Some backup software can keep a history of the versions of your files. They also
-> allows you to recover specific versions. How is this functionality different from version control?
-> What are some of the benifits of using version control, Git and GitHub?
+## Historial de versiones, backup y control de versiones
+
+Algunos softwares que permiten hacer **backups** también permiten guardar un historial de versiones y recuperar versiones específicas. ¿Cómo es esta funcionalidad distinta del control de versiones? ¿Cuáles son los beneficios de usar control de versiones, Git y GitHub? 
 {: .challenge}

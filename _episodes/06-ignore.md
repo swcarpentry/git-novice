@@ -1,20 +1,20 @@
 ---
-title: Ignoring Things
-teaching: 5
+title: Ignorando cosas
+teaching 5
 exercises: 0
 questions:
-- "How can I tell Git to ignore files I don't want to track?"
+- "¿Cómo puedo decirle a Git que ignore los archivos que no quiero rastrear?"
 objectives:
-- "Configure Git to ignore specific files."
-- "Explain why ignoring files can be useful."
+- "Configure Git para ignorar archivos específicos."
+- "Explica por qué ignorar los archivos puede ser útil."
 keypoints:
-- "The `.gitignore` file tells Git what files to ignore."
+- "El archivo `.gitignore` le dice a Git qué archivos ignorar."
 ---
 
-What if we have files that we do not want Git to track for us,
-like backup files created by our editor
-or intermediate files created during data analysis.
-Let's create a few dummy files:
+¿Qué pasa si tenemos archivos que no queremos que Git rastree,
+como archivos de copia de seguridad creados por nuestro editor
+o archivos intermedios creados durante el análisis de datos?.
+Vamos a crear algunos archivos ficticios:
 
 ~~~
 $ mkdir results
@@ -22,7 +22,7 @@ $ touch a.dat b.dat c.dat results/a.out results/b.out
 ~~~
 {: .bash}
 
-and see what Git says:
+Mira lo que Git dice:
 
 ~~~
 $ git status
@@ -42,12 +42,12 @@ nothing added to commit but untracked files present (use "git add" to track)
 ~~~
 {: .output}
 
-Putting these files under version control would be a waste of disk space.
-What's worse,
-having them all listed could distract us from changes that actually matter,
-so let's tell Git to ignore them.
+Colocar estos archivos bajo el control de versiones sería un desperdicio de espacio en disco. 
+Y lo que es peor, 
+al tenerlos todos listados, podría distraernos de los cambios que realmente importan, 
+así que vamos a decirle a Git que los ignore.
 
-We do this by creating a file in the root directory of our project called `.gitignore`:
+Lo hacemos creando un archivo en el directorio raíz de nuestro proyecto llamado `.gitignore`:
 
 ~~~
 $ nano .gitignore
@@ -61,13 +61,13 @@ results/
 ~~~
 {: .output}
 
-These patterns tell Git to ignore any file whose name ends in `.dat`
-and everything in the `results` directory.
-(If any of these files were already being tracked,
-Git would continue to track them.)
+Estos patrones le dicen a Git que ignore cualquier archivo cuyo nombre termine en `.dat`
+y todo lo que haya en el directorio `results`.
+(Si alguno de estos archivos ya estaba siendo rastreado, 
+Git seguirá rastreándolos.)
 
-Once we have created this file,
-the output of `git status` is much cleaner:
+Una vez que hemos creado este archivo, 
+la salida de `git status` es mucho más limpia:
 
 ~~~
 $ git status
@@ -84,11 +84,11 @@ nothing added to commit but untracked files present (use "git add" to track)
 ~~~
 {: .output}
 
-The only thing Git notices now is the newly-created `.gitignore` file.
-You might think we wouldn't want to track it,
-but everyone we're sharing our repository with will probably want to ignore
-the same things that we're ignoring.
-Let's add and commit `.gitignore`:
+Lo único que Git advierte ahora, es el archivo `.gitignore` recién creado.
+Podrías pensar que no queremos rastrearlo, 
+pero todos aquellos con los que compartimos nuestro repositorio probablemente desearán
+ignorar las mismas cosas que nosotros.
+Vamos a agregar y hacer "commit" de `.gitignore`:
 
 ~~~
 $ git add .gitignore
@@ -103,7 +103,7 @@ nothing to commit, working directory clean
 ~~~
 {: .output}
 
-As a bonus, using `.gitignore` helps us avoid accidentally adding to the repository files that we don't want to track:
+Como ventaja, usar `.gitignore` nos ayuda a evitar agregar accidentalmente al repositorio los archivos que no queremos rastrear:
 
 ~~~
 $ git add a.dat
@@ -117,10 +117,10 @@ Use -f if you really want to add them.
 ~~~
 {: .output}
 
-If we really want to override our ignore settings,
-we can use `git add -f` to force Git to add something. For example,
+Si realmente queremos anular la configuración de ignorar, 
+podemos usar `git add -f` para obligar a Git a añadir algo. Por ejemplo, 
 `git add -f a.dat`.
-We can also always see the status of ignored files if we want:
+También podemos ver siempre el estado de los archivos ignorados si queremos:
 
 ~~~
 $ git status --ignored
@@ -141,9 +141,9 @@ nothing to commit, working directory clean
 ~~~
 {: .output}
 
-> ## Ignoring Nested Files
+> ## Ignorar archivos anidados
 >
-> Given a directory structure that looks like:
+> Dado un directorio con la siguiente estructura:
 >
 > ~~~
 > results/data
@@ -151,52 +151,51 @@ nothing to commit, working directory clean
 > ~~~
 > {: .bash}
 >
-> How would you ignore only `results/plots` and not `results/data`?
+> ¿Cómo ignorarías sólo `results/plots` y no `results/data`?
 >
-> > ## Solution
+> > ## Solución
 > >
-> > As with most programming issues, there are a few ways that you
-> > could solve this. If you only want to ignore the contents of
-> > `results/plots`, you can change your `.gitignore` to ignore
-> > only the `/plots/` subfolder by adding the following line to
-> > your .gitignore:
+> > Como ocurre con la mayoría de los problemas de programación, hay 
+> > varias maneras de resolver esto. Si sólo deseas ignorar el 
+> > contenido de `results/plots`, puedes cambiar tu `.gitignore` para 
+> > ignorar solamente la subcarpeta `/plots/` añadiendo la siguiente línea a su .gitignore:
 > >
 > > `results/plots/`
 > >
-> > If, instead, you want to ignore everything in `/results/`, but wanted to track
-> > `results/data`, then you can add `results/` to your .gitignore
-> > and create an exception for the `results/data/` folder.
-> > The next challenge will cover this type of solution.
+> > Si, en cambio, deseas ignorar todo en `/results/`, pero deseas realizar el
+> > seguimiento de `results/data`, puedes agregar `results/` a su .gitignore y
+> > crear una excepción para la carpeta `results/data/`.
+> > El siguiente reto cubrirá este tipo de solución.
 > >
-> > Sometimes the `**` pattern comes in handy, too, which matches
-> > multiple directory levels. E.g. `**/results/plots/*` would make git ignore
-> > the `results/plots` directory in any root directory.
+> >
+> > A veces el patrón `**` viene muy bien para referirse a múltiples
+> > niveles de directorio. E.g. `**/results/plots/*` hará que git ignore el
+> > directorio `results/plots` en cualquier directorio raíz.
 > {: .solution}
 {: .challenge}
 
-> ## Including Specific Files
+> ## Incluyendo archivos específicos
 >
-> How would you ignore all `.data` files in your root directory except for
-> `final.data`?
-> Hint: Find out what `!` (the exclamation point operator) does
+> ¿Cómo ignorarías todos los archivos `.data` en tu directorio raíz, excepto` final.data`?
+> Sugerencia: Descubre lo que `!` (el signo de exclamación) hace
 >
-> > ## Solution
+> > ## Solución
 > >
-> > You would add the following two lines to your .gitignore:
+> > Agrega las siguientes dos líneas a tu .gitignore:
 > >
 > > ~~~
-> > *.data           # ignore all data files
-> > !final.data      # except final.data
+> > *.data # ignora todo los archivos .data
+> > !final.data # excepto final.data
 > > ~~~
-> > {: .output}
+> > {: .bash}
 > >
-> > The exclamation point operator will include a previously excluded entry.
+> > El signo de exclamación incluirá una entrada previamente excluida.
 > {: .solution}
 {: .challenge}
 
-> ## Ignoring all data Files in a Directory
+> ##Ignorando todos los archivos de datos en un directorio
 >
-> Given a directory structure that looks like:
+> Dado un directorio con la siguiente estructura:
 >
 > ~~~
 > results/data/position/gps/a.data
@@ -207,19 +206,20 @@ nothing to commit, working directory clean
 > ~~~
 > {: .bash}
 >
-> What's the shortest `.gitignore` rule you could write to ignore all `.data`
-> files in `result/data/position/gps`? Do not ignore the `info.txt`.
+> ¿Cuál es la regla más corta en `.gitignore` para ignorar todos los archivos `.data`
+> en `result/data/position/gps`? No ignores el archivo `info.txt`.
 >
-> > ## Solution
+> > ## Solución
 > >
-> > Appending `results/data/position/gps/*.data` will match every file in `results/data/position/gps` that ends with `.data`.
-> > The file `results/data/position/gps/info.txt` will not be ignored.
+> > Agregando `results/data/position/gps/*.data` coincidirá con cada archivo en
+> > `results/data/position/gps` que termine con `.data`.
+> > El archivo `results/data/position/gps/info.txt` no será ignorado.
 > {: .solution}
 {: .challenge}
 
-> ## The Order of Rules
+> ## El orden de las reglas
 >
-> Given a `.gitignore` file with the following contents:
+> Dado un archivo `.gitignore` con el siguiente contenido:
 >
 > ~~~
 > *.data
@@ -227,33 +227,32 @@ nothing to commit, working directory clean
 > ~~~
 > {: .bash}
 >
-> What will be the result?
+> ¿Cuál será el resultado?
 >
-> > ## Solution
+> > ## Solución
 > >
-> > The `!` modifier will negate an entry from a previously defined ignore pattern.
-> > Because the `!*.data` entry negates all of the previous `.data` files in the `.gitignore`,
-> > none of them will be ignored, and all `.data` files will be tracked.
+> > El modificador `!` anulará algún patrón ignorado previamente definido.
+> > Debido a que la entrada `!*.data` anula todos los archivos` .data` anteriores en `.gitignore`,
+> > ninguno de ellos será ignorado, y todos los archivos` .data` serán rastreados.
 > >
 > {: .solution}
-{: .challenge}
+{: .reto}
 
-> ## Log Files
+> ## Archivos de bitácora
 >
-> You wrote a script that creates many intermediate log-files of the form `log_01`, `log_02`, `log_03`, etc.
-> You want to keep them but you do not want to track them through `git`.
+> Supón que escribiste un **script** que crea muchos archivos de registro con la estructura `log_01`, `log_02`, `log_03`, etc. Deseas conservarlos pero no rastrearlos a través de `git`.
 >
-> 1. Write **one** `.gitignore` entry that excludes files of the form `log_01`, `log_02`, etc.
+> 1. Escribe **una entrada** `.gitignore` que excluya los archivos con estructura `log_01`, `log_02`, etc.
 >
-> 2. Test your "ignore pattern" by creating some dummy files of the form `log_01`, etc.
+> 2. Prueba tu "patrón de ignorar" creando algunos archivos ficticios `log_01`, etc.
 >
-> 3. You find that the file `log_01` is very important after all, add it to the tracked files without changing the `.gitignore` again.
+> 3. Te das cuenta de que el archivo `log_01` es muy importante después de todo, así que lo tienes que agregar a los archivos rastreados sin cambiar el` .gitignore` de nuevo
 >
-> 4. Discuss with your neighbor what other types of files could reside in your directory that you do not want to track and thus would exclude via `.gitignore`.
+> 4. Discute con tu compañero de al lado qué otros tipos de archivos podrían residir en tu directorio que no deseas seguir y por tanto excluir a través de `.gitignore`.
 >
-> > ## Solution
+> > ## Solución
 > >
-> > 1. append either `log_*`  or  `log*`  as a new entry in your .gitignore
-> > 3. track `log_01` using   `git add -f log_01`
+> > 1. Agrega `log_*` o `log*` como nueva entrada en tu .gitignore
+> > 3. Rastrea `log_01` usando `git add -f log_01`
 > {: .solution}
 {: .challenge}

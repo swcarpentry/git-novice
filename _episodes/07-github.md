@@ -1,46 +1,36 @@
 ---
-title: Remotes in GitHub
-teaching: 30
+title: Repositorios remotos en GitHub
+teaching 30
 exercises: 0
 questions:
-- "How do I share my changes with others on the web?"
+- "¿Cómo puedo compartir los cambios con otros en el web?"
 objectives:
-- "Explain what remote repositories are and why they are useful."
-- "Push to or pull from a remote repository."
+- "Explica qué es un repositorio remoto y por qué es útil."
+- "Poner y tomar de un repositorio remoto"
 keypoints:
-- "A local Git repository can be connected to one or more remote repositories."
-- "Use the HTTPS protocol to connect to remote repositories until you have learned how to set up SSH."
-- "`git push` copies changes from a local repository to a remote repository."
-- "`git pull` copies changes from a remote repository to a local repository."
+- "Un repositorio Git local puede ser conectado a uno o más repositorios remotos."
+- "Usa el protocolo HTTPS para conectarte a un repositorio remoto hasta que hayas aprendido como hacerlo con SSH."
+- "`git push` copia los cambios desde el repositorio local a un repositorio remoto."
+- "`git pull` copia los cambios desde un repositorio remoto a un repositorio local."
 ---
 
-Version control really comes into its own when we begin to collaborate with
-other people.  We already have most of the machinery we need to do this; the
-only thing missing is to copy changes from one repository to another.
+Cuando se trabaja en colaboración con otras personas es cuando el sistema de control de versiones alcanza su pleno potencial. Ya hemos visto la mayor parte de las herramientas que necesitamos para ello, tan sólo nos falta ver cómo copiar los cambios realizados de un repositorio a otro.
 
-Systems like Git allow us to move work between any two repositories.  In
-practice, though, it's easiest to use one copy as a central hub, and to keep it
-on the web rather than on someone's laptop.  Most programmers use hosting
-services like [GitHub](http://github.com), [BitBucket](http://bitbucket.org) or
-[GitLab](http://gitlab.com/) to hold those master copies; we'll explore the pros
-and cons of this in the final section of this lesson.
+Sistemas como Git ya nos permiten mover el trabajo realizado entre dos repositorios cualesquiera. Sin embargo, en la práctica es más sencillo establecer uno de ellos como repositorio central y tenerlo en la red en lugar de tu computadora particular. La mayoría de desarrolladores usan servicios de alojamiento en la red, tales como [GitHub](http://github.com), [BitBucket](http://bitbucket.org) o [GitLab](http://gitlab.com/), para alojar ese repositorio central; en la última sección de esta lección exploraremos los pros y los contras de cada uno de ellos.
 
-Let's start by sharing the changes we've made to our current project with the
-world.  Log in to GitHub, then click on the icon in the top right corner to
-create a new repository called `planets`:
+Empecemos por compartir con todos los demás los cambios que hemos realizado en nuestro proyecto actual. Para ello, ingresa en tu cuenta de GitHub y haz click en el icono que hay en la esquina superior derecha para crear un nuevo repositorio llamado `planets`:
 
-![Creating a Repository on GitHub (Step 1)](../fig/github-create-repo-01.png)
+![Creando un Repositorio en GitHub (Paso 1)](../fig/github-create-repo-01.png)
 
-Name your repository "planets" and then click "Create Repository":
+Dale a tu repositorio el nombre "planets" y haz click en "Create repository":
 
-![Creating a Repository on GitHub (Step 2)](../fig/github-create-repo-02.png)
+![Creando un Repositorio en GitHub (Paso 2)](../fig/github-create-repo-02.png)
 
-As soon as the repository is created, GitHub displays a page with a URL and some
-information on how to configure your local repository:
+Tan pronto es creado el repositorio, GitHub muestra una página con una URL y algo de información sobre cómo configurar tu repositorio local.
 
-![Creating a Repository on GitHub (Step 3)](../fig/github-create-repo-03.png)
+![Creando un Repositorio en GitHub (Paso 3)](../fig/github-create-repo-03.png)
 
-This effectively does the following on GitHub's servers:
+Esto en realidad ejecuta lo siguiente en los servidores de GitHub:
 
 ~~~
 $ mkdir planets
@@ -49,46 +39,39 @@ $ git init
 ~~~
 {: .bash}
 
-Our local repository still contains our earlier work on `mars.txt`, but the
-remote repository on GitHub doesn't contain any files yet:
+Nuestro repositorio local contiene nuestro trabajo previo en `mars.txt`, pero el repositorio remoto en GitHub todavía no contiene ningún archivo:
 
-![Freshly-Made GitHub Repository](../fig/git-freshly-made-github-repo.svg)
+![Repositorio en GitHub recién creado](../fig/git-freshly-made-github-repo.svg)
 
-The next step is to connect the two repositories.  We do this by making the
-GitHub repository a [remote]({{ page.root }}/reference/#remote) for the local repository.
-The home page of the repository on GitHub includes the string we need to
-identify it:
+El siguiente paso es conectar los dos repositorios. Ello se consigue convirtiendo al repositorio en GitHub en un [repositorio remoto]({{ page.root }}/reference/#remote) del repositorio local. La página de inicio del repositorio en GitHub incluye la secuencia de caracteres que necesitamos para identificarlo:
 
-![Where to Find Repository URL on GitHub](../fig/github-find-repo-string.png)
+![Dónde encontrar la URL del Repositorio en GitHub](../fig/github-find-repo-string.png)
 
-Click on the 'HTTPS' link to change the [protocol]({{ page.root }}/reference/#protocol) from
-SSH to HTTPS.
+Haz click en el enlace 'HTTPS' para cambiar el [protocol0]({{ page.root }}/reference/#protocol) de SSH a HTTPS.
 
 > ## HTTPS vs. SSH
 >
-> We use HTTPS here because it does not require additional configuration.  After
-> the workshop you may want to set up SSH access, which is a bit more secure, by
-> following one of the great tutorials from
-> [GitHub](https://help.github.com/articles/generating-ssh-keys),
-> [Atlassian/BitBucket](https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Git)
-> and [GitLab](https://about.gitlab.com/2014/03/04/add-ssh-key-screencast/)
-> (this one has a screencast).
+>Usamos aquí HTTPS porque no necesita ninguna configuración adicional.
+>Si en el curso quieres configurar el acceso mediante SSH, que es un poco más seguro,
+>puedes seguir cualquiera de los excelentes tutoriales que existen en
+>[GitHub](https://help.github.com/articles/generating-ssh-keys), 
+>[Atlassian/BitBucket](https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Git) y
+>[GitLab](https://about.gitlab.com/2014/03/04/add-ssh-key-screencast/)
+>(este último con capturas animadas de pantalla).
 {: .callout}
 
-![Changing the Repository URL on GitHub](../fig/github-change-repo-string.png)
+![Cambiando la URL del Repositorio en GitHub](../fig/github-change-repo-string.png)
 
-Copy that URL from the browser, go into the local `planets` repository, and run
-this command:
+Copia dicha URL desde el navegador, ve al repositorio local `planets` y ejecuta allí este comando:
 
 ~~~
 $ git remote add origin https://github.com/vlad/planets.git
 ~~~
 {: .bash}
 
-Make sure to use the URL for your repository rather than Vlad's: the only
-difference should be your username instead of `vlad`.
+Asegúrate de usar la URL de tu repositorio en lugar de la de vlad: la única diferencia debería ser tu nombre de usuario en lugar de `vlad`.
 
-We can check that the command has worked by running `git remote -v`:
+Podemos comprobar que el comando ha funcionado bien ejecutando `git remote -v`:
 
 ~~~
 $ git remote -v
@@ -101,11 +84,9 @@ origin   https://github.com/vlad/planets.git (fetch)
 ~~~
 {: .output}
 
-The name `origin` is a local nickname for your remote repository. We could use
-something else if we wanted to, but `origin` is by far the most common choice.
+El nombre `origin` es un apodo local para tu repositorio remoto. Se puede usar cualquier otro nombre si se desea, pero `origin` es la elección más habitual.
 
-Once the nickname `origin` is set up, this command will push the changes from
-our local repository to the repository on GitHub:
+Una vez seleccionado el apodo local `origin`, el siguiente comando enviará los cambios realizados en nuestro repositorio local al repositorio en GitHub:
 
 ~~~
 $ git push origin master
@@ -126,9 +107,9 @@ Branch master set up to track remote branch master from origin.
 
 > ## Proxy
 >
-> If the network you are connected to uses a proxy there is a chance that your
-> last command failed with "Could not resolve hostname" as the error message. To
-> solve this issue you need to tell Git about the proxy:
+> Si la red a la que estás conectado usa un proxy es posible que tu último
+> comando fallara con el siguiente mensaje de error: "Could not resolve hostname".
+> Para solucionarlo es necesario informar a Git sobre el proxy:
 >
 > ~~~
 > $ git config --global http.proxy http://user:password@proxy.url
@@ -136,8 +117,8 @@ Branch master set up to track remote branch master from origin.
 > ~~~
 > {: .bash}
 >
-> When you connect to another network that doesn't use a proxy you will need to
-> tell Git to disable the proxy using:
+> Si después te conectas a otra red que no usa un proxy es necesario decirle
+> a Git que deshabilite el proxy:
 >
 > ~~~
 > $ git config --global --unset http.proxy
@@ -146,43 +127,43 @@ Branch master set up to track remote branch master from origin.
 > {: .bash}
 {: .callout}
 
-> ## Password Managers
+> ## Gestores de contraseñas
 >
-> If your operating system has a password manager configured, `git push` will
-> try to use it when it needs your username and password.  For example, this
-> is the default behavior for Git Bash on Windows. If you want to type your
-> username and password at the terminal instead of using a password manager,
-> type:
+> Si tu sistema operativo tiene un gestor de contraseñas configurado, `git push`
+> intentará usarlo cuando necesite un nombre de usuario y contraseña. Al menos
+> ese es el comportamiento por defecto para Git Bash en Windows.
+> Si quieres que haya que introducir el nombre de usuario y contraseña en la terminal,
+> en lugar de usar el gestor de contraseñas, hay que ejecutar el siguiente
+> comando en la terminal antes de lanzar `git push`:
 >
 > ~~~
 > $ unset SSH_ASKPASS
 > ~~~
 > {: .bash}
 >
-> in the terminal, before you run `git push`.  Despite the name, [git uses
-> `SSH_ASKPASS` for all credential
-> entry](http://git-scm.com/docs/gitcredentials#_requesting_credentials), so
-> you may want to unset `SSH_ASKPASS` whether you are using git via SSH or
-> https.
+> A pesar de lo que se podría deducir por el nombre, [git usa `SSH_ASKPASS`
+> para todas las peticiones de credenciales](http://git-scm.com/docs/gitcredentials#_requesting_credentials),
+> tanto si se está usando git vía SSH como si se está usando vía https, por lo
+> que es posible que quieras deshabilitarlo en ambos casos con `unset SSH_ASKPASS` .
 >
-> You may also want to add `unset SSH_ASKPASS` at the end of your `~/.bashrc`
-> to make git default to using the terminal for usernames and passwords.
+> Otra alternativa es añadir `unset SSH_ASKPASS` al final de tu `~/.bashrc` para que
+> git use por defecto la terminal para los nombres de usuario y las contraseñas.
 {: .callout}
 
-Our local and remote repositories are now in this state:
+Nuestros repositorios local y remoto se encuentran ahora en el siguiente estado:
 
-![GitHub Repository After First Push](../fig/github-repo-after-first-push.svg)
+![Repositorio en GitHub después del primer envío](../fig/github-repo-after-first-push.svg)
 
-> ## The '-u' Flag
+> ## La opción '-u'
 >
-> You may see a `-u` option used with `git push` in some documentation.  This
-> option is synonymous with the `--set-upstream-to` option for the `git branch`
-> command, and is used to associate the current branch with a remote branch so
-> that the `git pull` command can be used without any arguments. To do this,
-> simply use `git push -u origin master` once the remote has been set up.
+> En la documentación puedes ver que en ocasiones se usa la opción `-u` con el comando `git push`.
+> Esta opción es sinónimo de la opción `--set-upstream-to` para el comando `git branch` y se usa
+> para asociar la rama actual con una rama remota, de modo que el comando `git pull`
+> pueda usarse sin argumentos. Para hacer esto simplemente ejecuta `git push -u origin master`
+> una vez que el repositorio remoto haya sido creado.
 {: .callout}
 
-We can pull changes from the remote repository to the local one as well:
+También podemos hacer **pull**, es decir, traernos cambios desde el repositorio remoto al repositorio local:
 
 ~~~
 $ git pull origin master
@@ -196,79 +177,77 @@ Already up-to-date.
 ~~~
 {: .output}
 
-Pulling has no effect in this case because the two repositories are already
-synchronized.  If someone else had pushed some changes to the repository on
-GitHub, though, this command would download them to our local repository.
+En este caso, hacer **pull** no ha tenido ningún efecto porque los dos repositorios están ya sincronizados. Por el contrario, si alguien antes hubiera subido con **push** algunos cambios al repositorio en GitHub, este comando los habría incorporado a nuestro repositorio local.
 
-> ## GitHub GUI
+> ## Interfaz gráfica de GitHub
 >
-> Browse to your `planets` repository on GitHub.
-> Under the Code tab, find and click on the text that says "XX commits" (where "XX" is some number).
-> Hover over, and click on, the three buttons to the right of each commit.
-> What information can you gather/explore from these buttons?
-> How would you get that same information in the shell?
+> Navega hasta tu repositorio `planets` en GitHub.
+> En la pestaña Code, localiza el texto "XX commits" (donde "XX" es algún número) y haz click en él.
+> Mueve el cursor sobre los tres botones que hay a la derecha de cada **commit**, y haz click en ellos.
+> ¿Qué información puedes obtener/explorar con estos botones?
+> ¿Cómo obtendrías la misma información en la terminal?
 >
-> > ## Solution
-> > The left-most button (with the picture of a clipboard) copies the full identifier of the commit to the clipboard. In the shell, ```git log``` will show you the full commit identifier for each commit.
+> > ## Solución
+> > El botón más a la izquierda (con el dibujo de un portapapeles) sirve para copiar en el portapapeles el identificador completo del **commit** en cuestión. En la terminal, ```git log``` muestra los identificadores completos de cada **commit**.
 > >
-> > When you click on the middle button, you'll see all of the changes that were made in that particular commit. Green shaded lines indicate additions and red ones removals. In the shell we can do the same thing with ```git diff```. In particular, ```git diff ID1..ID2``` where ID1 and ID2 are commit identifiers (e.g. ```git diff a3bf1e5..041e637```) will show the differences between those two commits.
+> > Haciendo click en el botón de en medio, se pueden ver todos los cambios efectuados con el **commit** en cuestión. Las líneas verdes sombreadas indican adiciones y las rojas eliminaciones. En la terminal se puede ver lo mismo con ```git diff```. En particular, ```git diff ID1..ID2``` donde ID1 y ID2 son identificadores de **commits** (e.g. ```git diff a3bf1e5..041e637```) mostrará las diferencias entre esos dos **commits**.
 > >
-> > The right-most button lets you view all of the files in the repository at the time of that commit. To do this in the shell, we'd need to checkout the repository at that particular time. We can do this with ```git checkout ID``` where ID is the identifier of the commit we want to look at. If we do this, we need to remember to put the repository back to the right state afterwards!
+> > El botón más a la derecha permite ver todos los archivos que existían en el repositorio en el momento del **commit** en cuestión. Para ver lo mismo en la terminal sería necesario hacer **checkout** del repositorio a ese momento del tiempo. Para ello se ejecutaría ```git checkout ID``` donde ID es el identificador del **commit** que queremos investigar. ¡Si se hace esto hay que acordarse luego de poner el repositorio de nuevo en el estado correcto!
 > {: .solution}
 {: .challenge}
 
-> ## GitHub Timestamp
+> ## Fecha y Hora en GitHub
 >
-> Create a remote repository on GitHub.  Push the contents of your local
-> repository to the remote.  Make changes to your local repository and push
-> these changes.  Go to the repo you just created on GitHub and check the
-> [timestamps]({{ page.root }}/reference/#timestamp) of the files.  How does GitHub record
-> times, and why?
+> Crea un repositorio remoto en GitHub. Haz **push** de los contenidos de tu repositorio local
+> al remoto. Haz cambios en tu repositorio local y haz **push** de dichos cambios.
+> Ve al repo recién creado en GitHub y comprueba las fechas y horas, también llamadas
+> [timestamps]({{ page.root }}/reference/#timestamp) de los ficheros.  ¿Cómo registra
+> GitHub los tiempos, y por qué?
 >
-> > ## Solution
-> > Github displays timestamps in a human readable relative format (i.e. "22 hours ago" or "three weeks ago"). However, if you hover over the timestamp, you can see the exact time at which the last change to the file occurred.
+> > ## Solución
+> > Github muestra los tiempos en formato relativo legible para los humanos (i.e. "22 hours ago" or "three weeks ago"). Sin embargo, si mueves el cursor sobre un **timestamp**, podrás ver el tiempo exacto en el que se realizó el último cambio al fichero.
 > {: .solution}
 {: .challenge}
 
 > ## Push vs. Commit
 >
-> In this lesson, we introduced the "git push" command.
-> How is "git push" different from "git commit"?
+> En esta lección hemos introducido el comando "git push".
+> ¿En qué se diferencia "git push" de "git commit"?
 >
-> > ## Solution
-> > When we push changes, we're interacting with a remote repository to update it with the changes we've made locally (often this corresponds to sharing the changes we've made with others). Commit only updates your local repository.
+> > ## Solución
+> > Cuando enviamos cambios con **push**, estamos interaccionando con un repositorio remoto para actualizarlo con los cambios que hemos hecho localmente (a menudo esto supone compartir con otros los cambios realizados). Por el contrario, **commit** únicamente actualiza tu repositorio local.
 > {: .solution}
 {: .challenge}
 
-> ## Fixing Remote Settings
+> ## Corrigiendo ajustes en el repositorio remoto
 >
-> It happens quite often in practice that you made a typo in the
-> remote URL. This exercice is about how to fix this kind of issues.
-> First start by adding a remote with an invalid URL:
+> Es muy frecuente cometer un error al especificar la URL del repositorio remoto.
+> Este ejercicio trata de cómo corregir este tipo de errores.
+> Empecemos por añadir un repositorio remoto con una URL inválida:
 >
 > ~~~
 > git remote add broken https://github.com/this/url/is/invalid
 > ~~~
 > {: .bash}
 >
-> Do you get an error when adding the remote? Can you think of a
-> command that would make it obvious that your remote URL was not
-> valid? Can you figure out how to fix the URL (tip: use `git remote
-> -h`)? Don't forget to clean up and remove this remote once you are
-> done with this exercise.
+> ¿Obtienes un error al añadir el repositorio remoto? ¿Se te ocurre algún
+> comando que hiciera obvio que la URL de tu repositorio remoto no es 
+> válida? ¿Se te ocurre cómo corregir la URL? (pista: usa `git remote
+> -h`). No olvides vaciar y eliminar este repositorio remoto una vez
+> hayas terminado este ejercicio.
 >
-> > ## Solution
-> > We don't see any error message when we add the remote (adding the remote tells git about it, but doesn't try to use it yet). As soon as we try to use ```git push``` we'll see an error message. The command ```git remote set-url``` allows us to change the remote's URL to fix it.
+> > ## Solución
+> > No aparece ningún error cuando añadimos el repositorio remoto (añadir un repositorio remoto informa a git sobre dicho repositorio, pero no intenta usarlo todavía). Sí que veremos un error en cuanto intentemos usarlo con ```git push```. El comando ```git remote set-url``` nos permite cambiar la URL del repositorio remoto para corregirla.
 > {: .solution}
 {: .challenge}
 
-> ## GitHub License and README files
+> ## Licencia GitHub y ficheros README
 >
-> In this section we learned about creating a remote repository on GitHub, but when you initialized your
-> GitHub repo, you didn't add a README.md or a license file. If you had, what do you think would have happened when
-> you tried to link your local and remote repositories?
+> En esta sección hemos aprendido cómo crear un repositorio remoto en GitHub, pero cuando lo hicimos
+> no añadimos ningún fichero README.md ni ningún fichero de licencia. Si lo hubiéramos hecho, ¿qué crees que hubiera sucedido cuando
+> intentaste enlazar tus repositorios local y remoto?
 >
-> > ## Solution
-> > In this case, since we already had a README file in our own (local) repository, we'd see a merge conflict (when git realises that there are two versions of the file and asks us to reconcile the differences).
+> > ## Solución
+> > En este caso, puesto que ya teníamos un fichero README en nuestro propio repositorio (local), habríamos visto un conficto de unión, conocido como **merge conflict** (que es cuando git se da cuenta de que hay dos versiones de un mismo fichero y nos pide que resolvamos las diferencias).
 > {: .solution}
 {: .challenge}

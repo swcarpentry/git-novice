@@ -1,133 +1,71 @@
 ---
-title: Open Science
-teaching: 5
-exercises: 5
-questions:
-- "How can version control help me make my work more open?"
-objectives:
-- "Explain how a version control system can be leveraged as an electronic lab notebook for computational work."
-keypoints:
-- "Open scientific work is more useful and more highly cited than closed."
+título: Ciencia abierta
+Enseñaza: 5
+Ejercicios: 5
+Preguntas:
+- "¿Cómo un control de versiones me puede ayudar a tener mi trabajo más abierto?"
+objetivos:
+- "Explica como el control de versiones nos ayuda a tener un cuaderno de notas electrónico para todo nuestro trabajo computacional."
+Puntos Clave:
+- "Trabajo científico abierto es más útil y puede ser más citado que si no lo es."
 ---
 
-> The opposite of "open" isn't "closed".
-> The opposite of "open" is "broken".
+> Lo opuesto a "abierto" no es "cerrado". 
+> Lo opuesto a "abierto" es "quebrado".
 >
-> --- John Wilbanks
-{: .quotation}
+>--- John Wilbanks
 
-Free sharing of information might be the ideal in science,
-but the reality is often more complicated.
-Normal practice today looks something like this:
+El libre intercambio de información podría ser el ideal en Ciencia. Pero la realidad, a menudo, es mucho más complicada.
+En la práctica cotidiana vemos situaciones como la siguiente:  
 
-*   A scientist collects some data and stores it on a machine
-    that is occasionally backed up by her department.
-*   She then writes or modifies a few small programs
-    (which also reside on her machine)
-    to analyze that data.
-*   Once she has some results,
-    she writes them up and submits her paper.
-    She might include her data—a growing number of journals require this—but
-    she probably doesn't include her code.
-*   Time passes.
-*   The journal sends her reviews written anonymously by a handful of other people in her field.
-    She revises her paper to satisfy them,
-    during which time she might also modify the scripts she wrote earlier,
-    and resubmits.
-*   More time passes.
-*   The paper is eventually published.
-    It might include a link to an online copy of her data,
-    but the paper itself will be behind a paywall:
-    only people who have personal or institutional access
-    will be able to read it.
+*   Una científica recoge algunos datos y los almacena en una máquina que seguramente tiene en su oficina.
+*   Luego ella escribe y modifica unos pocos programas para analizar los datos (los cuales residen en su computadora).
+*   Una vez que tiene algunos resultados, ella escribe y presenta su artículo. Podría incluir sus datos -en varias revistas que los requieran- pero probablemente no incluya su código.
+*   El tiempo pasa.
+*   La revista envía las revisiones de un puñado de personas anónimas que trabajan en su campo de actividad.
+    Ella revisa su artículo para satisfacer las revisiones propuestas. Durante ese tiempo ella también podría modificar los **scripts** que escribió anteriormente,y vuelve a enviar.
+*   Pasa más tiempo.
+*   El artículo finalmente se publica. 
+Se podría incluir un enlace a una copia online de sus datos, pero el mismo artículo está detrás de un sito web de pago: sólo las personas que tienen acceso personal o institucional serán capaces de leerlo.
 
-For a growing number of scientists,
-though,
-the process looks like this:
+Para otros muchos científicos, el proceso se ve así:
 
-*   The data that the scientist collects is stored in an open access repository
-    like [figshare](http://figshare.com/) or
-    [Zenodo](http://zenodo.org), possibly as soon as it's collected,
-    and given its own
-    [Digital Object Identifier](https://en.wikipedia.org/wiki/Digital_object_identifier) (DOI).
-    Or the data was already published and is stored in
-    [Dryad](http://datadryad.org/).
-*   The scientist creates a new repository on GitHub to hold her work.
-*   As she does her analysis,
-    she pushes changes to her scripts
-    (and possibly some output files)
-    to that repository.
-    She also uses the repository for her paper;
-    that repository is then the hub for collaboration with her colleagues.
-*   When she's happy with the state of her paper,
-    she posts a version to [arXiv](http://arxiv.org/)
-    or some other preprint server
-    to invite feedback from peers.
-*   Based on that feedback,
-    she may post several revisions
-    before finally submitting her paper to a journal.
-*   The published paper includes links to her preprint
-    and to her code and data repositories,
-    which  makes it much easier for other scientists
-    to use her work as starting point for their own research.
+*   Los datos que obtiene son almacenados, tan pronto como los colecta, en un repositorio de acceso abierto, como puede ser [figshare](http://figshare.com/) o [Zenodo](http://zenodo.org), obteniendo su propio [Digital Object Identifier] (https://en.wikipedia.org/wiki/Digital_object_identifier) (DOI). O los datos que han sido recientemente publicados, son almacenados en [Dryad](http://datadryad.org/).
+*   La científica crea un nuevo repositorio en GitHub para guardar su trabajo.
+*   Al hacer su análisis de los datos, guarda los cambios de sus **scripts** (y posiblemente algunos archivos de salida) en ese repositorio. También utiliza el repositorio para su artículo. Entonces ese repositorio es el centro de colaboración con sus colegas.
+*   Cuando está satisfecha con el estado de su artículo, publica una versión en [arXiv](http://arxiv.org/) o en algún otro servidor de preimpresión para invitar a sus compañeros a una retroalimentación. 
+*   Basado en esa retroalimentación, puede escribir varias revisiones antes de enviar finalmente su artículo a la revista. 
+*   El artículo publicado incluye enlaces a su preimpresión y a sus repositorios de código y datos, lo que hace mucho más fácil para otros científicos utilizar este trabajo como punto de partida para su propia investigación.
 
-This open model accelerates discovery:
-the more open work is,
-[the more widely it is cited and re-used](http://dx.doi.org/10.1371/journal.pone.0000308).
-However,
-people who want to work this way need to make some decisions
-about what exactly "open" means and how to do it. You can find more on the different aspects of Open Science in [this book](http://link.springer.com/book/10.1007/978-3-319-00026-8).
+Este modelo abierto acelera la investigación: el trabajo abierto [se cita y se reutiliza](http://dx.doi.org/10.1371/journal.pone.0000308). Sin embargo, las personas que quieren trabajar de esta manera necesitan tomar algunas decisiones sobre qué significa exactamente "abierto" y cómo hacerlo. Puedes encontrar más información sobre los diferentes aspectos de la Ciencia Abierta en [el libro](http://link.springer.com/book/10.1007/978-3-319-00026-8).
 
-This is one of the (many) reasons we teach version control.
-When used diligently,
-it answers the "how" question
-by acting as a shareable electronic lab notebook for computational work:
+Ésta es una de las muchas razones por las que enseñamos el control de versiones. Cuando se utiliza con diligencia, responde a "cómo" actúa un cuaderno de laboratorio electrónico compartible:
 
-*   The conceptual stages of your work are documented, including who did
-    what and when. Every step is stamped with an identifier (the commit ID)
-    that is for most intents and purposes unique.
-*   You can tie documentation of rationale, ideas, and other
-    intellectual work directly to the changes that spring from them.
-*   You can refer to what you used in your research to obtain your
-    computational results in a way that is unique and recoverable.
-*   With a distributed version control system such as Git, the version
-    control repository is easy to archive for perpetuity, and contains
-    the entire history.
+*   Las etapas conceptuales del trabajo están documentadas, qué y cuándo. Cada paso está marcado con un identificador (el ID de confirmación) de cada uno de los intentos y propósitos.
+*   Puedes vincular tu documentación de ideas y otros trabajos intelectuales directamente con los cambios que surgen de ellos.
+*   Puedes referirte a lo que utilizaste en tu investigación para obtener tus resultados computacionales de manera única y recuperable.
+*   Con un sistema de control de versiones distribuido como Git, la versión del repositorio de control es fácil de archivar a perpetuidad y contiene toda la historia.
 
-> ## Making Code Citable
+> ## Haciendo código citable
 >
-> [This short guide](https://guides.github.com/activities/citable-code/) from GitHub
-> explains how to create a Digital Object Identifier (DOI) for your code,
-> your papers,
-> or anything else hosted in a version control repository.
+> [Esta breve guía](https://guides.github.com/activities/citable-code/) de GitHub
+> explica cómo crear un "Digital Object Identifier (DOI)" para tu código, tus artículos, o cualquier cosa alojada en un repositorio de control de versiones.
 {: .callout}
 
-> ## How Reproducible Is My Work?
+> ## ¿Cuán reproducible es mi trabajo?
 >
-> Ask one of your labmates to reproduce a result you recently obtained
-> using only what they can find in your papers or on the web.
-> Try to do the same for one of their results,
-> then try to do it for a result from a lab you work with.
-{: .challenge}
+> Pide a uno de tus compañeros de laboratorio que reproduzca un resultado que obtuviste recientemente
+> utilizando sólo lo que ellos puedan encontrar en tus artículos o en la web.
+> Trata de hacer lo mismo para uno de sus resultados,
+> luego trata de hacerlo para obtener un resultado de un laboratorio con el que trabajas.
 
-> ## How to Find an Appropriate Data Repository?
->
-> Surf the internet for a couple of minutes and check out the data repositories
-> mentioned above: [Figshare](http://figshare.com/), [Zenodo](http://zenodo.org),
-> [Dryad](http://datadryad.org/). Depending on your field of research, you might
-> find community-recognized repositories that are well-known in your field.
-> You might also find useful [these data repositories recommended by Nature](
-> http://www.nature.com/sdata/data-policies/repositories).
-> Discuss with your neighbor which data repository you might want to
-> approach for your current project and explain why.
-{: .challenge}
 
-> ## Can I Also Publish Code?
+> ## ¿Cómo encontrar un repositorio de datos adecuado?
 >
-> There are many new ways to publish code and to make it citable. One
-> way is described [on the homepage of GitHub itself](
-> https://guides.github.com/activities/citable-code/).
-> Basically it's a combination of GitHub (where the code is) and Zenodo (the
-> repository creating the DOI). Read through this page while being aware
-> that this is only one of many ways to making your code citable.
-{: .challenge}
+> Navega por Internet durante un par de minutos y echa un vistazo a los repositorios de datos mencionado anteriormente: [Figshare](http://figshare.com/), [Zenodo](http://zenodo.org), [Dryad](http://datadryad.org/). Dependiendo de tu campo de investigación, encuentra repositorios reconocidos por la comunidad en tu campo. También puede ser útil [estos repositorios de datos recomendados por Nature](http://www.nature.com/sdata/data-policies/repositories). Discute con tu vecino qué repositorio de datos deseas abordar para tu proyecto actual y explicale por qué.
+
+
+> ## ¿Puedo también publicar código?
+>
+> Hay nuevas maneras de publicar código y hacer que sea citable. Uno de ellos se describe [en la página principal del mismo GitHub](https://guides.github.com/activities/citable-code/). Básicamente es una combinación de GitHub (donde está el código) y Zenodo (el repositorio que crea el DOI). Lee esta página mientras sabes que ésta es sólo una de las muchas maneras de hacer tu código citable.
+

@@ -1,77 +1,69 @@
 ---
-title: Automated Version Control
+title: Control Automatizado de Versiones
 teaching: 5
 exercises: 0
 questions:
-- "What is version control and why should I use it?"
+- "¿Qué es el control de versiones y por qué se deberá usar?"
 objectives:
-- "Understand the benefits of an automated version control system."
-- "Understand the basics of how Git works."
+- "Comprender los beneficios de usar un sistema automático de control de versiones."
+- "Comprender los fundamentos básicos del funcionamiento de Git."
 keypoints:
-- "Version control is like an unlimited 'undo'."
-- "Version control also allows many people to work in parallel."
+- "El control de versiones es como un 'deshacer' sin límites."
+- "El control de versiones permite que mucha gente trabaje en lo mismo en paralelo."
 ---
 
-We'll start by exploring how version control can be used
-to keep track of what one person did and when.
-Even if you aren't collaborating with other people,
-automated version control is much better than this situation:
+Empezaremos por explorar cómo el control de versiones puede ser usado
+para hacer un seguimiento de lo que hizo una persona y cuándo.
+Incluso si no se está colaborando con otras personas, 
+el control automatizado de versiones es mucho mejor que la siguiente situación:
 
 [![Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com/comics/archive_print.php?comicid=1531](../fig/phd101212s.png)](http://www.phdcomics.com)
 
-"Piled Higher and Deeper" by Jorge Cham, http://www.phdcomics.com
+"La pila mas alta y mas profunda" por Jorge Cham, http://www.phdcomics.com
 
-We've all been in this situation before: it seems ridiculous to have
-multiple nearly-identical versions of the same document. Some word
-processors let us deal with this a little better, such as Microsoft
-Word's [Track Changes](https://support.office.com/en-us/article/Track-changes-in-Word-197ba630-0f5f-4a8e-9a77-3712475e806a), Google Docs' [version
-history](https://support.google.com/docs/answer/190843?hl=en), or LibreOffice's [Recording and Displaying Changes](https://help.libreoffice.org/Common/Recording_and_Displaying_Changes).
+Todos hemos estado en esta situación alguna vez: parece ridículo tener 
+varias versiones casi idénticas del mismo documento. Algunos procesadores de texto 
+nos permiten lidiar con esto un poco mejor, como por ejemplo el [*Track Changes* de Microsoft Word](https://support.office.com/en-us/article/Track-changes-in-Word-197ba630-0f5f-4a8e-9a77-3712475e806a), el [historial de versiones de Google](https://support.google.com/docs/answer/190843?hl=en) o la [grabación y visualización de cambios de LibreOffice](https://help.libreoffice.org/Common/Recording_and_Displaying_Changes).
 
-Version control systems start with a base version of the document and
-then save just the changes you made at each step of the way. You can
-think of it as a tape: if you rewind the tape and start at the base
-document, then you can play back each change and end up with your
-latest version.
+Los sistemas de control de versiones comienzan con una versión básica del documento y 
+luego van guardando sólo los cambios que se hicieron en cada paso del proceso. Se puede 
+pensar en ello como en una cinta: si se rebobina la cinta y se inicia de nuevo en el documento 
+base, se puede reproducir cada cambio y terminar con la versión más reciente.
 
 ![Changes Are Saved Sequentially](../fig/play-changes.svg)
 
-Once you think of changes as separate from the document itself, you
-can then think about "playing back" different sets of changes onto the
-base document and getting different versions of the document. For
-example, two users can make independent sets of changes based on the
-same document.
+Una vez que piensas en los cambios como separados del documento en sí, entonces se puede pensar en "deshacer" diferentes conjuntos de cambios en el documento base y obtener así diferentes versiones del documento. Por ejemplo, dos usuarios pueden hacer conjuntos independientes de cambios basados en el mismo documento.
 
 ![Different Versions Can be Saved](../fig/versions.svg)
 
-Unless there are conflicts, you can even play two sets of changes onto the same base document.
+A menos que haya conflictos, se puede incluso tener dos conjuntos de cambios en el mismo documento base.
 
 ![Multiple Versions Can be Merged](../fig/merge.svg)
 
-A version control system is a tool that keeps track of these changes for us and
-helps us version and merge our files. It allows you to
-decide which changes make up the next version, called a
-[commit]({{ page.root }}/reference/#commit), and keeps useful metadata about them. The
-complete history of commits for a particular project and their metadata make up
-a [repository]({{ page.root }}/reference/#repository). Repositories can be kept in sync
-across different computers facilitating collaboration among different people.
+Un sistema de control de versiones es una herramienta que realiza un seguimiento de estos cambios para nosotros y
+nos ayuda a controlar la versión y fusionar nuestros archivos. Nos permite
+decidir qué cambios conforman la siguiente versión, a lo que llamamos hacer un
+[**commit**]({{ page.root }}/reference/#commit), y mantiene metadatos útiles sobre dichos cambios. El
+historial completo de **commits** para un proyecto en particular y sus metadatos forman un
+[repositorio]({{ page.root }}/reference/#repository). Los repositorios pueden mantenerse sincronizados
+en diferentes computadoras, facilitando así la colaboración entre diferentes personas.
 
-> ## The Long History of Version Control Systems
+> ## La larga historia de los sistemas de control de versiones 
 >
-> Automated version control systems are nothing new.
-> Tools like RCS, CVS, or Subversion have been around since the early 1980s and are used by many large companies.
-> However, many of these are now becoming considered as legacy systems due to various limitations in their capabilities.
-> In particular, the more modern systems, such as Git and [Mercurial](http://swcarpentry.github.io/hg-novice/)
-> are *distributed*, meaning that they do not need a centralized server to host the repository.
-> These modern systems also include powerful merging tools that make it possible for multiple authors to work within
-> the same files concurrently.
-{: .callout}
-
+> Los sistemas automatizados de control de versiones no son nada nuevo.
+> Herramientas como RCS, CVS o Subversion han existido desde principios de los 1980  y son utilizadas por muchas grandes empresas.
+> Sin embargo, muchos de estos han sido relegados debido a lo limitado de su capacidad.
+> En particular, los sistemas más modernos, como Git y [Mercurial](http://swcarpentry.github.io/hg-novice/) 
+> son *distribuidos*, lo que significa que no necesitan un servidor centralizado para alojar el repositorio. 
+> Estos sistemas modernos también incluyen potentes herramientas de fusión que hacen posible que múltiples autores trabajen dentro de 
+> los mismos archivos simultáneamente. {:.callout}
+  
 > ## Paper Writing
 >
-> *   Imagine you drafted an excellent paragraph for a paper you are writing, but later ruin it. How would you retrieve
->     the *excellent* version of your conclusion? Is it even possible?
+> Imagina que has redactado un excelente párrafo para un artículo que estás escribiendo, pero más tarde lo estropeas. ¿Cómo recuperarías 
+> aquella *excelente* versión de la conclusión? ¿Es esto posible?
 >
-> *   Imagine you have 5 co-authors. How would you manage the changes and comments they make to your paper?
->     If you use LibreOffice Writer or Microsoft Word, what happens if you accept changes made using the
->     `Track Changes` option? Do you have a history of those changes?
+> Imagina que tienes 5 coautores. ¿Cómo administrarías los cambios y comentarios que ellos hagan en el artículo? 
+> Si usas LibreOffice Writer o Microsoft Word, ¿qué sucede si aceptas los cambios realizados con la opción 
+> ` Track Changes`? ¿Tienes un historial de esos cambios? 
 {: .challenge}

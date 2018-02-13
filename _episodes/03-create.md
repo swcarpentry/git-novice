@@ -1,18 +1,18 @@
 ---
-title: Creating a Repository
-teaching: 10
+title: Creando un repositorio
+teaching 10
 exercises: 0
 questions:
-- "Where does Git store information?"
+- "¿Dónde almacena Git la información?"
 objectives:
-- "Create a local Git repository."
+- "Crear un repositorio local de Git."
 keypoints:
-- "`git init` initializes a repository."
+- "`git init` inicializa un repositorio."
 ---
 
-Once Git is configured,
-we can start using it.
-Let's create a directory for our work and then move into that directory:
+Una vez que Git está configurado,
+podemos comenzar a usarlo.
+Vamos a crear un directorio para nuestro trabajo y nos movemos dentro de ese directorio:
 
 ~~~
 $ mkdir planets
@@ -20,24 +20,24 @@ $ cd planets
 ~~~
 {: .bash}
 
-Then we tell Git to make `planets` a [repository]({{ page.root }}/reference/#repository)—a place where
-Git can store versions of our files:
+Después le indicamos a Git hacer de `planets` un [repository]({{ page.root }}/reference/#repository)—lugar donde
+Git puede almacenar las versiones de nuestros archivos:
 
 ~~~
 $ git init
 ~~~
 {: .bash}
 
-If we use `ls` to show the directory's contents,
-it appears that nothing has changed:
+Si usamos `ls` para mostrar el contenido del directorio,
+parece que nada ha cambiado:
 
 ~~~
 $ ls
 ~~~
 {: .bash}
 
-But if we add the `-a` flag to show everything,
-we can see that Git has created a hidden directory within `planets` called `.git`:
+Pero si agregamos la opción `-a` para mostrar todo,
+podemos ver que Git ha creado un directorio oculto dentro de `planets` llamado `.git`:
 
 ~~~
 $ ls -a
@@ -49,12 +49,12 @@ $ ls -a
 ~~~
 {: .output}
 
-Git stores information about the project in this special sub-directory.
-If we ever delete it,
-we will lose the project's history.
+Git almacena información sobre el proyecto en este subdirectorio especial.
+Si alguna vez lo borramos,
+perderemos la historia del proyecto.
 
-We can check that everything is set up correctly
-by asking Git to tell us the status of our project:
+Podemos revisar que todo está configurado correctamente
+pidiendo a Git que nos informe el estado de nuestro proyecto:
 
 ~~~
 $ git status
@@ -70,35 +70,35 @@ nothing to commit (create/copy files and use "git add" to track)
 ~~~
 {: .output}
 
-> ## Places to Create Git Repositories
+> ## Lugares para crear repositorio Git
 >
-> Dracula starts a new project, `moons`, related to his `planets` project.
-> Despite Wolfman's concerns, he enters the following sequence of commands to
-> create one Git repository inside another:
+> Dracula comienza un nuevo proyecto, `moons`, relacionado a su proyecto `planets`.
+> A pesar de las preocupaciones de Wolfman, él ingresa la siguiente secuencia de comandos 
+> para crear un repositorio Git dentro de otro:
 >
 > ~~~
-> $ cd             # return to home directory
-> $ mkdir planets  # make a new directory planets
-> $ cd planets     # go into planets
-> $ git init       # make the planets directory a Git repository
-> $ mkdir moons    # make a sub-directory planets/moons
-> $ cd moons       # go into planets/moons
-> $ git init       # make the moons sub-directory a Git repository
+> $ cd             # volver al directorio de inicio
+> $ mkdir planets  # crear un nuevo diretorio llamado planets
+> $ cd planets     # entrar al directorio planets
+> $ git init       # hacer del directorio planets directory un repositorio Git
+> $ mkdir moons    # crear un subdirectorio planets/moons
+> $ cd moons       # entrar al directorio planets/moons
+> $ git init       # hacer del subdirectorio moons un repositorio Git
 > ~~~
 > {: .bash}
 >
-> Why is it a bad idea to do this? (Notice here that the `planets` project is now also tracking the entire `moons` repository.)
-> How can Dracula undo his last `git init`?
+> ¿Por qué es una mala idea hacer esto? (Observa aquí que el proyecto `planets` ahora también se encuentra controlando el repositorio completo de `moons`.)
+> ¿Cómo puede Dracula deshacer su último `git init`?
 >
-> > ## Solution
+> > ## Solución
 > >
-> > Git repositories can interfere with each other if they are "nested" in the
-> > directory of another: the outer repository will try to version-control 
-> > the inner repository. Therefore, it's best to create each new Git
-> > repository in a separate directory. To be sure that there is no conflicting
-> > repository in the directory, check the output of `git status`. If it looks
-> > like the following, you are good to go to create a new repository as shown 
-> > above:
+> > Los repositorios Git pueden interferir entre sí si están "anidados" dentro de
+> > otro directorio: el repositorio exterior intentará controlar la versión 
+> > del repositorio interno. Por lo tanto, lo mejor es crear cada nuevo repositorio Git 
+> > en un directorio separado. Para asegurarte que no hay un repositorio en conflicto
+> > en el directorio, revisa la salida de `git status`. Si se parece a 
+> > lo siguiente, podrás crear un nuevo  repositorio como se ha mostrado 
+> > arriba:
 > >
 > > ~~~
 > > $ git status
@@ -109,23 +109,23 @@ nothing to commit (create/copy files and use "git add" to track)
 > > ~~~
 > > {: .output}
 > >
-> > Note that we can track files in directories within a Git:
+> > Ten en cuenta que podemos rastrear archivos en directorios dentro de Git:
 > >
 > > ~~~
-> > $ touch moon phobos deimos titan    # create moon files
-> > $ cd ..                             # return to planets directory
-> > $ ls moons                          # list contents of the moons directory
-> > $ git add moons/*                   # add all contents of planets/moons
-> > $ git status                        # show moons files in staging area
-> > $ git commit -m "add moon files"    # commit planets/moons to planets Git repository
+> > $ touch moon phobos deimos titan    # crear archivos moon
+> > $ cd ..                             # regresar al directorio planets
+> > $ ls moons                          # listar el contenido del directorio moons
+> > $ git add moons/*                   # añadir todo el contenido de planets/moons
+> > $ git status                        # mostrar los archivos moons en el área de almacenamiento
+> > $ git commit -m "add moon files"    # ingresar planets/moons al repositorio Git planets 
 > > ~~~
 > > {: .bash}
 > >
-> > Similarly, we can ignore (as discussed later) entire directories, such as the `moons` directory:
+> > De manera similar, podemos ignorar (como comentamos anteriormente) directorios completos, como el directorio `moons`:
 > >
 > > ~~~
-> > $ nano .gitignore # open the .gitignore file in the texteditor to add the moons directory
-> > $ cat .gitignore # if you run cat afterwards, it should look like this:
+> > $ nano .gitignore # abrir el archivo .gitignore en un editor para agregar el directorio moons
+> > $ cat .gitignore # si después se ejecuta el comando cat, debería verse así:
 > > ~~~
 > > {: .bash}
 > >
@@ -134,16 +134,16 @@ nothing to commit (create/copy files and use "git add" to track)
 > > ~~~
 > > {: .output}
 > >
-> > To recover from this little mistake, Dracula can just remove the `.git`
-> > folder in the moons subdirectory. To do so he can run the following command from inside the 'moons' directory:
+> > Para recuperarse de este pequeño error, Dracula puede simplemente eliminar el directorio `.git`
+> > del subdirectorio moons. Para ello puede ejecutar el siguiente comando desde el interior del directorio 'moons':
 > >
 > > ~~~
 > > $ rm -rf moons/.git
 > > ~~~
 > > {: .bash}
 > >
-> > But be careful! Running this command in the wrong directory, will remove
-> > the entire git-history of a project you might wanted to keep. Therefore, always check your current directory using the
+> > !Pero ten cuidado! Ejecutar este comando en el directorio incorrecto, eliminará
+> > toda la historia git de un proyecto que tú habrías querido conservar. Por lo tanto, revisa siempre tu directorio actual usando el comando
 > > command `pwd`.
 > {: .solution}
 {: .challenge}

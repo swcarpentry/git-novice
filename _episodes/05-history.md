@@ -1,28 +1,29 @@
 ---
-title: Exploring History
-teaching: 25
+title: Explorando el **History**
+curso: 25
 exercises: 0
 questions:
-- "How can I identify old versions of files?"
-- "How do I review my changes?"
-- "How can I recover old versions of files?"
+- "¿Cómo puedo identificar versiones anteriores de archivos?"
+- "¿Cómo puedo revisar mis cambios?"
+- "¿Cómo puedo recuperar versiones anteriores de archivos?"
 objectives:
-- "Explain what the HEAD of a repository is and how to use it."
-- "Identify and use Git commit numbers."
-- "Compare various versions of tracked files."
-- "Restore old versions of files."
+- "Explicar qué es el **HEAD** de un repositorio y cómo usarlo."
+- "Identificar y usar  el número de **commit** the Git."
+- "Comparar varias versiones de archivos."
+- "Restaurar versiones anteriores de archivos."
 keypoints:
-- "`git diff` displays differences between commits."
-- "`git checkout` recovers old versions of files."
+- "`git diff` despliega diferencias entre **commits**."
+- "`git checkout` recupera versiones anteriores de archivos."
 ---
 
-As we saw in the previous lesson, we can refer to commits by their
-identifiers.  You can refer to the _most recent commit_ of the working
-directory by using the identifier `HEAD`.
 
-We've been adding one line at a time to `mars.txt`, so it's easy to track our
-progress by looking, so let's do that using our `HEAD`s.  Before we start,
-let's make a change to `mars.txt`.
+Como vimos en la lección anterior, podemos referirnos a los **commits** por sus
+identificadores. Puedes referirte a el _commit más reciente_ del directorio de trabajo 
+usando el identificador `HEAD`.
+
+Hemos estado agregando una línea a la vez a `mars.txt`, por lo que es fácil rastrear nuestro
+progreso, así que hagamos eso usando `HEAD`. Antes de iniciar,
+hagamos un cambio en `mars.txt`.
 
 ~~~
 $ nano mars.txt
@@ -38,7 +39,7 @@ An ill-considered change
 ~~~
 {: .output}
 
-Now, let's see what we get.
+Ahora, veamos lo que tenemos.
 
 ~~~
 $ git diff HEAD mars.txt
@@ -58,18 +59,17 @@ index b36abfd..0848c8d 100644
 ~~~
 {: .output}
 
-which is the same as what you would get if you leave out `HEAD` (try it).  The
-real goodness in all this is when you can refer to previous commits.  We do
-that by adding `~1` to refer to the commit one before `HEAD`.
+Lo mismo obtendrías si omites 'HEAD` (intentalo). 
+La verdadera bondad en todo esto es cuando puedes referirte a **commits** previos. Hacemos
+esto agregando `~1` para referirnos al **commit** anterior de `HEAD`.
 
 ~~~
 $ git diff HEAD~1 mars.txt
 ~~~
 {: .bash}
 
-If we want to see the differences between older commits we can use `git diff`
-again, but with the notation `HEAD~1`, `HEAD~2`, and so on, to refer to them:
-
+Si queremos ver las diferencias entre **commits** anteriores podemos usar `git diff`
+nuevamente, pero con la notación `HEAD~1`,`HEAD~2`, y así sucesivamente, para referirse a ellos:
 
 ~~~
 $ git diff HEAD~2 mars.txt
@@ -88,7 +88,8 @@ index df0654a..b36abfd 100644
 ~~~
 {: .output}
 
-We could also use `git show` which shows us what changes we made at an older commit as well as the commit message, rather than the _differences_ between a commit and our working directory that we see by using `git diff`.
+
+También podríamos usar `git show`, que nos muestra qué cambios hemos realizado en un **commit** anterior así como el mensaje del **commit**, en lugar de las _diferencias_ entre un **commit** y nuestro directorio de trabajo, que vemos usando `git diff`.
 
 ~~~
 $ git show HEAD~2 mars.txt
@@ -112,24 +113,25 @@ index df0654a..315bf3a 100644
 ~~~
 {: .output}
 
-In this way,
-we can build up a chain of commits.
-The most recent end of the chain is referred to as `HEAD`;
-we can refer to previous commits using the `~` notation,
-so `HEAD~1` (pronounced "head minus one")
-means "the previous commit",
-while `HEAD~123` goes back 123 commits from where we are now.
 
-We can also refer to commits using
-those long strings of digits and letters
-that `git log` displays.
-These are unique IDs for the changes,
-and "unique" really does mean unique:
-every change to any set of files on any computer
-has a unique 40-character identifier.
-Our first commit was given the ID
+De este modo,
+podemos construir una cadena de **commits**.
+El más reciente de la cadena es referido como `HEAD`;
+podemos referirnos a **commits** anteriores utilizando la notación `~`,
+así `HEAD~1` (pronunciado "head minus one")
+significa "el commit anterior",
+mientras que 'HEAD~123` regresa 123 **commits** desde donde estamos ahora.
+
+También podemos referirnos a los commits usando
+esas largas cadenas de dígitos y letras
+que `git log` despliega.
+Estos son ID únicos para los cambios,
+y "unique" realmente significa único:
+cada cambio a cualquier conjunto de archivos en cualquier computadora
+tiene un identificador único de 40 caracteres.
+Nuestro primer **commit** recibió el ID
 `f22b25e3233b4645dabd0d81e651fe074bd8e73b`,
-so let's try this:
+así que probemos esto:
 
 ~~~
 $ git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b mars.txt
@@ -148,9 +150,10 @@ index df0654a..b36abfd 100644
 ~~~
 {: .output}
 
-That's the right answer,
-but typing out random 40-character strings is annoying,
-so Git lets us use just the first few characters:
+
+Esa es la respuesta correcta,
+pero escribir cadenas aleatorias de 40 caracteres es molesto,
+entonces Git nos permite usar solo los primeros caracteres:
 
 ~~~
 $ git diff f22b25e mars.txt
@@ -169,10 +172,11 @@ index df0654a..b36abfd 100644
 ~~~
 {: .output}
 
-All right! So
-we can save changes to files and see what we've changed—now how
-can we restore older versions of things?
-Let's suppose we accidentally overwrite our file:
+
+¡Todo bien! Asi que
+podemos guardar cambios en los archivos y ver qué hemos cambiado ahora 
+¿cómo podemos restaurar versiones anteriores de las cosas?
+Supongamos que accidentalmente sobrescribimos nuestro archivo:
 
 ~~~
 $ nano mars.txt
@@ -185,8 +189,9 @@ We will need to manufacture our own oxygen
 ~~~
 {: .output}
 
-`git status` now tells us that the file has been changed,
-but those changes haven't been staged:
+
+`git status` ahora nos dice que el archivo ha sido cambiado,
+pero esos cambios no se han realizado:
 
 ~~~
 $ git status
@@ -205,8 +210,9 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
 {: .output}
 
-We can put things back the way they were
-by using `git checkout`:
+
+Podemos volver a poner las cosas tal como estaban
+usando `git checkout`:
 
 ~~~
 $ git checkout HEAD mars.txt
@@ -221,13 +227,14 @@ But the Mummy will appreciate the lack of humidity
 ~~~
 {: .output}
 
-As you might guess from its name,
-`git checkout` checks out (i.e., restores) an old version of a file.
-In this case,
-we're telling Git that we want to recover the version of the file recorded in `HEAD`,
-which is the last saved commit.
-If we want to go back even further,
-we can use a commit identifier instead:
+
+Como puedes adivinar por su nombre,
+`git checkout` recupera (es decir, restaura) una versión anterior de un archivo.
+En este caso,
+le estamos diciendo a Git que queremos recuperar la versión del archivo grabado en `HEAD`,
+que es el último **commit** guardado.
+Si queremos volver más allá,
+podemos usar un identificador de **commit** en su lugar:
 
 ~~~
 $ git checkout f22b25e mars.txt
@@ -263,80 +270,85 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
 {: .output}
 
-Notice that the changes are on the staged area.
-Again, we can put things back the way they were
-by using `git checkout`:
+
+Ten en cuenta que los cambios están en el **staging area** de almacenamiento.
+Nuevamente, podemos volver a poner las cosas tal como estaban
+usando `git checkout`:
 
 ~~~
 $ git checkout -f master mars.txt
 ~~~
 {: .bash}
 
-> ## Don't Lose Your HEAD
+> ## No puierdas tu HEAD
 >
-> Above we used
+> Arriba usamos
 >
 > ~~~
 > $ git checkout f22b25e mars.txt
 > ~~~
 > {: .bash}
 >
-> to revert `mars.txt` to its state after the commit `f22b25e`.
-> If you forget `mars.txt` in that command, Git will tell you that "You are in
-> 'detached HEAD' state." In this state, you shouldn't make any changes.
-> You can fix this by reattaching your head using ``git checkout master``
+> para revertir `mars.txt` a su estado después del **commit** `f22b25e`.
+> Si olvidas `mars.txt` en ese comando, Git te dirá que "You are in
+> 'detached HEAD' state". En este estado, no dno podrías hacer ningún cambio.
+> Puedes arreglar esto volviendo a conectar tu **head** usando ``git checkout master``
 {: .callout}
 
-It's important to remember that
-we must use the commit number that identifies the state of the repository
-*before* the change we're trying to undo.
-A common mistake is to use the number of
-the commit in which we made the change we're trying to get rid of.
-In the example below, we want to retrieve the state from before the most
-recent commit (`HEAD~1`), which is commit `f22b25e`:
+
+Es importante recordar que
+debemos usar el número de **commit** que identifica el estado del repositorio
+*antes* del cambio que intentamos deshacer.
+Un error común es usar el número de 
+**commit** en el cual hicimos el cambio del que estamos tratando de deshacer.
+En el siguiente ejemplo, queremos recuperar el estado antes del más reciente
+**commit** (`HEAD~1`), que es **commit** `f22b25e`:
+
 
 ![Git Checkout](../fig/git-checkout.svg)
 
-So, to put it all together,
-here's how Git works in cartoon form:
+
+Así que, para poner todo junto,
+aqui esta como Git trabaja en forma de dibujo:
 
 ![http://figshare.com/articles/How_Git_works_a_cartoon/1328266](../fig/git_staging.svg)
 
-> ## Simplifying the Common Case
+> ## Simplificando el caso común
 >
-> If you read the output of `git status` carefully,
-> you'll see that it includes this hint:
+> Si lees la salida de `git status` detenidamente,
+> verás que incluye esta sugerencia:
 >
 > ~~~
 > (use "git checkout -- <file>..." to discard changes in working directory)
 > ~~~
 > {: .bash}
 >
-> As it says,
-> `git checkout` without a version identifier restores files to the state saved in `HEAD`.
-> The double dash `--` is needed to separate the names of the files being recovered
-> from the command itself:
-> without it,
-> Git would try to use the name of the file as the commit identifier.
+> Como deciamos,
+> `git checkout` sin un identificador de versión restaura los archivos al estado guardado en `HEAD`.
+> El doble guión `--` es necesario para separar los nombres de los archivos que se están recuperando
+> desde el comando mismo:
+> sin esto,
+> Git intentaría usar el nombre del archivo como el identificador del **commit**.
 {: .callout}
 
-The fact that files can be reverted one by one
-tends to change the way people organize their work.
-If everything is in one large document,
-it's hard (but not impossible) to undo changes to the introduction
-without also undoing changes made later to the conclusion.
-If the introduction and conclusion are stored in separate files,
-on the other hand,
-moving backward and forward in time becomes much easier.
 
-> ## Recovering Older Versions of a File
+El hecho de que los archivos puedan revertirse uno por uno
+tiende a cambiar la forma en que las personas organizan su trabajo.
+Si todo está en un documento grande,
+es difícil (pero no imposible) deshacer cambios a la introducción
+sin deshacer los cambios posteriores a la conclusión.
+Si la introducción y la conclusión se almacenan en archivos separados,
+por otra parte,
+retroceder y avanzar en el tiempo se vuelve mucho más fácil.
+
+> ## Recuperando versiones anteriores de un archivo
 >
-> Jennifer has made changes to the Python script that she has been working on for weeks, and the
-> modifications she made this morning "broke" the script and it no longer runs. She has spent
-> ~ 1hr trying to fix it, with no luck...
+> Jennifer ha realizado cambios en el **script**  de Python en el que ha estado trabajando durante semanas, y las
+> modificaciones que hizo esta mañana "corrompieron" el **script**  y ya no funciona. Ella ha pasado
+> ~ 1hr tratando de solucionarlo, sin tener suerte...
 >
-> Luckily, she has been keeping track of her project's versions using Git! Which commands below will
-> let her recover the last committed version of her Python script called
+> Por suerte, ella ha estado haciendo un seguimiento de las versiones de su proyecto usando Git! ¿Cuáles comandos 
+> le permitirán recuperar la última versión estable de su **script**  Python llamado 
 > `data_cruncher.py`?
 >
 > 1. `$ git checkout HEAD`
@@ -347,44 +359,45 @@ moving backward and forward in time becomes much easier.
 >
 > 4. `$ git checkout <unique ID of last commit> data_cruncher.py`
 >
-> 5. Both 2 and 4
+> 5. Ambos 2 y 4
 {: .challenge}
 
-> ## Reverting a Commit
+
+> ## Revertir un commit
 >
-> Jennifer is collaborating on her Python script with her colleagues and
-> realizes her last commit to the group repository is wrong and wants to
-> undo it.  Jennifer needs to undo correctly so everyone in the group
-> repository gets the correct change.  `git revert [wrong commit ID]`
-> will make a new commit that undoes Jennifer's previous wrong
-> commit. Therefore `git revert` is different than `git checkout [commit
-> ID]` because `checkout` is for local changes not committed to the
-> group repository.  Below are the right steps and explanations for
-> Jennifer to use `git revert`, what is the missing command?
+> Jennifer está colaborando en su **script**  de Python con sus colegas y
+> se da cuenta de que su último **commit** en el repositorio del grupo es incorrecto y quiere
+> deshacerlo. Jennifer necesita deshacer correctamente para que todos en el repositorio
+> del grupo tengan el cambio correcto. `git revert [ID de commit incorrecto]`
+> hará un nuevo **commit** que va a deshacer el commit anterior erroneo de Jennifer. 
+> Por lo tanto, `git revert` es diferente de `git checkout [commit
+> ID]` porque `checkout` es para cambios locales no comprometidos con el
+> repositorio de grupo. A continuación se encuentran los pasos correctos y explicaciones para
+> que Jennifer use `git revert`, ¿cuál es el comando que falta?
 >
-> 1. ________ # Look at the git history of the project to find the commit ID
+> 1. ________ # Mira el historial de git del proyecto para encontrar el ID del **commit**
 >
-> 2. Copy the ID (the first few characters of the ID, e.g. 0b1d055).
+> 2. Copia el ID ( los primeros caracteres del ID, e.g. 0b1d055).
 >
 > 3. `git revert [commit ID]`
 >
-> 4. Type in the new commit message.
+> 4. Escriba el nuevo mensaje del **commit**.
 >
-> 5. Save and close
+> 5. Salva y cierra
 {: .challenge}
 
-> ## Understanding Workflow and History
+> ## Entendiendo Workflow y History
 >
-> What is the output of cat venus.txt at the end of this set of commands?
+> ¿Cuál es la salida de cat venus.txt al final de este conjunto de comandos?
 >
 > ~~~
 > $ cd planets
-> $ nano venus.txt #input the following text: Venus is beautiful and full of love
+> $ nano venus.txt #captura el siguiente texto: Venus is beautiful and full of love
 > $ git add venus.txt
-> $ nano venus.txt #add the following text: Venus is too hot to be suitable as a base
+> $ nano venus.txt #agrega el siguiente texto: Venus is too hot to be suitable as a base
 > $ git commit -m "Comment on Venus as an unsuitable base"
 > $ git checkout HEAD venus.txt
-> $ cat venus.txt #this will print the contents of venus.txt to the screen
+> $ cat venus.txt #esto imprimirá el contenido de venus.txt en la pantalla
 > ~~~
 > {: .bash}
 >
@@ -417,104 +430,107 @@ moving backward and forward in time becomes much easier.
 > ~~~
 > {: .output}
 >
-> > ## Solution
+> > ## Solución
 > >
-> > Line by line:
+> > Vamos línea por línea
 > > ~~~
 > > $ cd planets
 > > ~~~
 > > {: .bash}
-> > Enters into the 'planets' directory
+> > Entra al directorio 'planets'
 > >
 > > ~~~
-> > $ nano venus.txt #input the following text: Venus is beautiful and full of love
+> > $ nano venus.txt #agrega el siguiente texto: Venus is beautiful and full of love
 > > ~~~
 > > {: .bash}
-> > We created a new file and wrote a sentence in it, but the file is not tracked by git.  
+> > Creamos un nuevo archivo y escribimos una oración, pero el archivo no es rastreado por git.
 > >
 > > ~~~
 > > $ git add venus.txt
 > > ~~~
 > > {: .bash}
-> > Now the file is staged. The changes that have been made to the file until now will be committed in the next commit.
+> > Ahora el archivo está en escena. Los cambios que se han realizado en el archivo hasta ahora se confirmarán en el siguiente **commit**.
 > >
 > > ~~~
-> > $ nano venus.txt #add the following text: Venus is too hot to be suitable as a base
+> > $ nano venus.txt #agrega el siguiente texto: Venus is too hot to be suitable as a base
 > > ~~~
 > > {: .bash}
-> > The file has been modified. The new changes are not staged because we have not added the file.
+> > El archivo ha sido modificado. Los nuevos cambios no se realizan porque no hemos agregado el archivo.
 > >
 > > ~~~
 > > $ git commit -m "Comment on Venus as an unsuitable base"
 > > ~~~
 > > {: .bash}
-> > The changes that were staged (Venus is beautiful and full of love) have been committed. The changes that were not staged (Venus is too hot to be suitable as a base) have not. Our local working copy is different than the copy in our local repository.
+> > Los cambios que se incluyeron (Venus is beautiful and full of love) se han confirmado. Los cambios que no se realizaron (Venus is too hot to be suitable as a base) no. Nuestra copia de trabajo local es diferente a la copia en nuestro repositorio local.
 > >
 > > ~~~
 > > $ git checkout HEAD venus.txt
 > > ~~~
 > > {: .bash}
-> > With checkout we discard the changes in the working directory so that our local copy is exactly the same as our HEAD, the most recent commit.
+> > Con el **checkout**, descartamos los cambios en el directorio de trabajo para que nuestra copia local sea exactamente la misma que nuestra HEAD, el más reciente **commit**.
+
 > >
 > > ~~~
-> > $ cat venus.txt #this will print the contents of venus.txt to the screen
+> > $ cat venus.txt #esto imprimirá el contenido de venus.txt a la pantalla
 > > ~~~
 > > {: .bash}
-> > If we print venus.txt we will get answer 2.
+> > Si imprimirmos venus.txt obtendremos la respuesta 2.
 > >
 > {: .solution}
 {: .challenge}
 
-> ## Checking Understanding of `git diff`
+> ## Comprobando lo que entendiste de `git diff`
 >
-> Consider this command: `git diff HEAD~3 mars.txt`. What do you predict this command
-> will do if you execute it? What happens when you do execute it? Why?
+> Considera este comando: `git diff HEAD~3 mars.txt`. ¿Qué predices que hará este comando si lo ejecutas? ¿Qué sucede cuando lo ejecutas? ¿Por qué?
 >
-> Try another command, `git diff [ID] mars.txt`, where [ID] is replaced with
-> the unique identifier for your most recent commit. What do you think will happen,
-> and what does happen?
+> Prueba éste otro comando, `git diff [ID] mars.txt`, donde [ID] es 
+> el identificador único para tu commit más reciente. ¿Qué piensas tú que sucederá,
+> y qué es lo que pasa?
+
 {: .challenge}
 
-> ## Getting Rid of Staged Changes
+> ## Deshacer los cambios almacenados
 >
-> `git checkout` can be used to restore a previous commit when unstaged changes have
-> been made, but will it also work for changes that have been staged but not committed?
-> Make a change to `mars.txt`, add that change, and use `git checkout` to see if
-> you can remove your change.
+> `git checkout` puede usarse para restaurar un **commit** anterior cuando cambios no marcados se han 
+> hecho, pero también funcionará para los cambios que se han realizado pero no se han confirmado?
+> Haz un cambio a `mars.txt`, agrega un cambio y use` git checkout` para ver si
+> puedes eliminar tu cambio.
+
 {: .challenge}
 
-> ## Explore and Summarize Histories
+> ## Explorar y resumir el History
 >
-> Exploring history is an important part of git, often it is a challenge to find
-> the right commit ID, especially if the commit is from several months ago.
+> Explorar el **history** es una parte importante de git, a menudo es un desafío encontrar
+> el ID de confirmación correcto, especialmente si el **commit** es de hace varios meses.
 >
-> Imagine the `planets` project has more than 50 files.
-> You would like to find a commit with specific text in `mars.txt` is modified.
-> When you type `git log`, a very long list appeared,
-> How can you narrow down the search?
+> Imagina que el proyecto `planets` tiene más de 50 archivos.
+> Deseas encontrar un **commit** con texto específico en `mars.txt`.
+> Cuando escribes `git log`, apareció una lista muy larga,
+> ¿Cómo puede reducir la búsqueda?
 >
-> Recorded that the `git diff` command allow us to explore one specific file,
-> e.g. `git diff mars.txt`. We can apply the similar idea here.
+> Recuerda que el comando `git diff` nos permite explorar un archivo específico,
+> p. ej. `git diff mars.txt`. Podemos aplicar la idea similar aquí.
 >
 > ~~~
 > $ git log mars.txt
 > ~~~
 > {: .bash}
 >
-> Unfortunately some of these commit messages are very ambiguous e.g. `update files`.
-> How can you search through these files?
+> Desafortunadamente, algunos de estos mensajes de los **commits** son muy ambiguos, p. Ej. `update files`.
+> ¿Cómo puedes buscar a través de estos archivos?
 >
-> Both `git diff` and `git log` are very useful and they summarize different part of the history for you.
-> Is that possible to combine both? Let's try the following:
+> Tanto `git diff` y` git log` son muy útiles y resumen una parte diferente del **history** para ti.
+> ¿Es posible combinar ambos? Vamos a intentar lo siguiente:
 >
 > ~~~
 > $ git log --patch mars.txt
 > ~~~
 > {: .bash}
 >
-> You should get a long list of output, and you should be able to see both commit messages and the difference between each commit.
+> Deberías obtener una larga lista de resultados, y deberías poder ver los dos mensajes del **commit** y la diferencia entre cada 
+> **commit**.
 >
-> Question: What does the following command do?
+> Pregunta: ¿Qué hace el siguiente comando?
 >
 > ~~~
 > $ git log --patch HEAD~3 *.txt

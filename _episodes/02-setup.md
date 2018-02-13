@@ -1,28 +1,28 @@
 ---
-title: Setting Up Git
+title: Configurando Git
 teaching: 5
 exercises: 0
 questions:
-- "How do I get set up to use Git?"
+- "Cómo me preparo para utilizar Git?"
 objectives:
-- "Configure `git` the first time it is used on a computer."
-- "Understand the meaning of the `--global` configuration flag."
+- "Configurar `git` la primera vez que utilice la computadora."
+- "Comprender el significado de la bandera de configuración `--global`."
 keypoints:
--   "Use `git config` to configure a user name, email address, editor, and other preferences once per machine."
+-   "Use `git config` para configurar un nombre de usuario, email, editor, y otras preferencias."
 ---
 
-When we use Git on a new computer for the first time,
-we need to configure a few things. Below are a few examples
-of configurations we will set as we get started with Git:
+Cuando usamos Git en una computadora por primera vez, 
+es necesario configurar algunas cosas. A continuación se presentan algunos ejemplos 
+de configuraciones que estableceremos a medida que trabajemos con Git:
 
-*   our name and email address,
-*   to colorize our output,
-*   what our preferred text editor is,
-*   and that we want to use these settings globally (i.e. for every project)
+*   nombre y correo electrónico,
+*   color de nuestra salida,
+*   cual es nuestro editor de texto preferido,
+*   y que queremos utilizar éstos ajustes globalmente (es decir, para cada proyecto)
 
-On a command line, Git commands are written as `git verb`,
-where `verb` is what we actually want to do. So here is how
-Dracula sets up his new laptop:
+En línea de comandos, los comandos de Git se escriben como `git verb`, 
+donde` verb` es lo que queremos hacer. Así es como 
+Drácula configura su computadora:
 
 ~~~
 $ git config --global user.name "Vlad Dracula"
@@ -31,60 +31,58 @@ $ git config --global color.ui "auto"
 ~~~
 {: .bash}
 
-Please use your own name and email address instead of Dracula's. This user name and email will be associated with your subsequent Git activity,
-which means that any changes pushed to
-[GitHub](http://github.com/),
-[BitBucket](http://bitbucket.org/),
-[GitLab](http://gitlab.com/) or
-another Git host server
-in a later lesson will include this information.
+Utiliza tu propio nombre y dirección de correo electrónico en lugar del de Drácula. El nombre de usuario y el correo electrónico se asociarán con tu actividad posterior de Git, 
+lo que significa que cualquier cambio realizado en
+[GitHub] (http://github.com/), 
+[BitBucket] (http://bitbucket.org/), 
+[ GitLab] (http://gitlab.com/) u
+otro servidor de Git 
+en una lección posterior incluirá esta información.
 
-For these lessons, we will be interacting with [GitHub](http://github.com/) and so the email address used should be the same as the one used when setting up your GitHub account. If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private][git-privacy]. 
-If you elect to use a private email address with GitHub, then use that same email address for the `user.email` value, e.g. `username@users.noreply.github.com` replacing `username` with your GitHub one. You can change the email address later on by using the `git config` command again.
+Para estas lecciones, estaremos interactuando con [GitHub] (http://github.com/), por lo tanto la dirección de correo electrónico utilizada debe ser la misma que utilizaste al configurar tu cuenta de GitHub. Si te preocupa la privacidad, revisa [las instrucciones de GitHub para mantener tu dirección de correo electrónico privada] [git-privacy].
+Si eliges utilizar una dirección de correo electrónico privada con GitHub, usa la misma dirección de correo electrónico para el valor `user.email`, por ejemplo, `username@users.noreply.github.com`  reemplazando` username` con tu nombre de usuario de GitHub. Puedes cambiar la dirección de correo electrónico posteriormente utilizando el comando `git config` nuevamente.
 
-Dracula also has to set his favorite text editor, following this table:
+Drácula también tiene que establecer su editor de texto favorito, siguiendo esta tabla:
 
-| Editor             | Configuration command                            |
+| Editor             | Comando de configuración                            |
 |:-------------------|:-------------------------------------------------|
 | Atom | `$ git config --global core.editor "atom --wait"`|
 | nano               | `$ git config --global core.editor "nano -w"`    |
-| Text Wrangler (Mac)      | `$ git config --global core.editor "edit -w"`    |
+| TextWrangler (Mac)      | `$ git config --global core.editor "edit -w"`    |
 | Sublime Text (Mac) | `$ git config --global core.editor "subl -n -w"` |
-| Sublime Text (Win, 32-bit install) | `$ git config --global core.editor "'c:/program files (x86)/sublime text 3/sublime_text.exe' -w"` |
-| Sublime Text (Win, 64-bit install) | `$ git config --global core.editor "'c:/program files/sublime text 3/sublime_text.exe' -w"` |
-| Notepad++ (Win, 32-bit install)    | `$ git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
-| Notepad++ (Win, 64-bit install)    | `$ git config --global core.editor "'c:/program files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
+| Sublime Text (Win, 32-bit) | `$ git config --global core.editor "'c:/program files (x86)/sublime text 3/sublime_text.exe' -w"` |
+| Sublime Text (Win, 64-bit) | `$ git config --global core.editor "'c:/program files/sublime text 3/sublime_text.exe' -w"` |
+| Notepad++ (Win, 32-bitl)    | `$ git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
+| Notepad++ (Win, 64-bit)    | `$ git config --global core.editor "'c:/program files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
 | Kate (Linux)       | `$ git config --global core.editor "kate"`       |
 | Gedit (Linux)      | `$ git config --global core.editor "gedit --wait --new-window"`   |
 | Scratch (Linux)       | `$ git config --global core.editor "scratch-text-editor"`  |
 | emacs              | `$ git config --global core.editor "emacs"`   |
 | vim                | `$ git config --global core.editor "vim"`   |
 
-It is possible to reconfigure the text editor for Git whenever you want to change it.
+Es posible reconfigurar el editor de texto para Git siempre que quieras.
 
-> ## Exiting Vim
+> ## Saliendo de Vim
 >
-> Note that `vim` is the default editor for for many programs, if you haven't used `vim` before and wish to exit a session, type `Esc` then `:q!` and `Enter`.
+>Ten en cuenta que `vim` es el editor por defecto para muchos programas, si no has utilizado` vim` antes y deseas salir de una sesión, presiona la tecla `Esc` y posteriormente escribe `: q!` y `Enter`.
 {: .callout}
 
-The four commands we just ran above only need to be run once: the flag `--global` tells Git
-to use the settings for every project, in your user account, on this computer.
+Los cuatro comandos que acabamos de ejecutar sólo se tienen que ejecutar una vez: la opción `--global` le dice a Git que use la configuración para cada proyecto, en tu cuenta de usuario, en esta computadora.
 
-You can check your settings at any time:
+Puedes comprobar tu configuración en cualquier momento:
 
 ~~~
 $ git config --list
 ~~~
 {: .bash}
 
-You can change your configuration as many times as you want: just use the
-same commands to choose another editor or update your email address.
+Puedes cambiar la configuración tantas veces como quieras: sólo usa los mismos comandos para elegir otro editor o actualizar tu correo electrónico.
 
 > ## Proxy
 >
-> In some networks you need to use a
-> [proxy](https://en.wikipedia.org/wiki/Proxy_server). If this is the case, you
-> may also need to tell Git about the proxy:
+> En algunas redes es necesario usar un
+> [proxy](https://en.wikipedia.org/wiki/Proxy_server). Si este es el caso, es
+> posible que también necesites proporcionarle a Git el proxy:
 >
 > ~~~
 > $ git config --global http.proxy proxy-url
@@ -92,7 +90,7 @@ same commands to choose another editor or update your email address.
 > ~~~
 > {: .bash}
 >
-> To disable the proxy, use
+> Para deshabilitar el proxy, utiliza
 >
 > ~~~
 > $ git config --global --unset http.proxy
@@ -101,9 +99,9 @@ same commands to choose another editor or update your email address.
 > {: .bash}
 {: .callout}
 
-> ## Git Help and Manual
+> ## Ayuda y manual de Git
 >
-> Always remember that if you forget a `git` command, you can access the list of commands by using `-h` and access the Git manual by using `--help` :
+> Ten presente que si no recuerdas algún comando de  `git`, puedes acceder a la lista de comando utilizando la opción `-h` y al manual de Git con la opción `--help` :
 >
 > ~~~
 > $ git config -h
