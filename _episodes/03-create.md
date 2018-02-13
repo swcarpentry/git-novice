@@ -120,6 +120,7 @@ nothing to commit (create/copy files and use "git add" to track)
 > > fatal: Not a git repository (or any of the parent directories): .git
 > > ~~~
 > > {: .output}
+
 > {: .solution}
 {: .challenge}
 
