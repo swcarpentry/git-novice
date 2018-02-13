@@ -56,7 +56,8 @@ en diferentes computadoras, facilitando así la colaboración entre diferentes p
 > En particular, los sistemas más modernos, como Git y [Mercurial](http://swcarpentry.github.io/hg-novice/) 
 > son *distribuidos*, lo que significa que no necesitan un servidor centralizado para alojar el repositorio. 
 > Estos sistemas modernos también incluyen potentes herramientas de fusión que hacen posible que múltiples autores trabajen dentro de 
-> los mismos archivos simultáneamente. {:.callout}
+> los mismos archivos simultáneamente.
+{:.callout}
   
 > ## Paper Writing
 >

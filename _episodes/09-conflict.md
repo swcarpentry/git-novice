@@ -420,9 +420,9 @@ Los conflictos también pueden ser minimizados con estrategias de administració
 > >
 > > ~~~
 > > warning: Cannot merge binary files: mars.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)
-
 > > ~~~
-> >
+> > {: .output}
+> > 
 > > Git no puede insertar indicadores de conflicto en una imagen como sí lo hace en los
 > > archivos de texto. Por lo tanto, en vez de editar la imagen, debemos revisar la versión que 
 > > queremos mantener. Luego podemos agregar y hacer **commit** a esta versión.
@@ -493,7 +493,8 @@ Los conflictos también pueden ser minimizados con estrategias de administració
 > > ya no existe.
 > {: .solution}
 {: .challenge}
->
+
+
 > ## Una típica sesión de trabajo
 >
 > Te sientas en tu computadora para trabajar en un proyecto compartido que es mantenido en un
@@ -534,7 +535,5 @@ Los conflictos también pueden ser minimizados con estrategias de administració
 > > |5    | Actualizar repositorio remoto     | `git push origin master`                     |
 > > |6    | ¡Celebrar!        | `AFK`                                        |
 > >
->
->
 > {: .solution}
 {: .challenge}

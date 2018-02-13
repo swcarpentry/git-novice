@@ -33,7 +33,7 @@ Al final del día lo que importa es que haya un informe claro sobre cuál es la 
 > ## ¿Puedes usar **Open License**?
 >
 > Investiga si puedes usar una **Open license** o "Licencia Abierta" en tu **software**. ¿Puedes hacer eso por tí mismo?, ¿o necesitas permiso de alguien dentro de tu institución? Si necesitas permiso, ¿de quién?
-
+{: .challenge}
 
 > ## ¿Qué licencias ya he aceptado?
 >
@@ -43,5 +43,6 @@ Al final del día lo que importa es que haya un informe claro sobre cuál es la 
 > - [CPython](https://github.com/python/cpython), implementación estándar del lenguaje Python.
 > - [Jupyter](https://github.com/jupyter), proyectos web en Python para **notebooks**.
 > - [EtherPad](https://github.com/ether/etherpad-lite), un editor colaborativo en tiempo real.
+{: .challenge}
 
 

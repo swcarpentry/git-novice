@@ -1,6 +1,6 @@
 ---
 title: Explorando el **History**
-curso: 25
+teaching: 25
 exercises: 0
 questions:
 - "¿Cómo puedo identificar versiones anteriores de archivos?"
@@ -468,7 +468,6 @@ retroceder y avanzar en el tiempo se vuelve mucho más fácil.
 > > ~~~
 > > {: .bash}
 > > Con el **checkout**, descartamos los cambios en el directorio de trabajo para que nuestra copia local sea exactamente la misma que nuestra HEAD, el más reciente **commit**.
-
 > >
 > > ~~~
 > > $ cat venus.txt #esto imprimirá el contenido de venus.txt a la pantalla
@@ -486,7 +485,6 @@ retroceder y avanzar en el tiempo se vuelve mucho más fácil.
 > Prueba éste otro comando, `git diff [ID] mars.txt`, donde [ID] es 
 > el identificador único para tu commit más reciente. ¿Qué piensas tú que sucederá,
 > y qué es lo que pasa?
-
 {: .challenge}
 
 > ## Deshacer los cambios almacenados
@@ -495,7 +493,6 @@ retroceder y avanzar en el tiempo se vuelve mucho más fácil.
 > hecho, pero también funcionará para los cambios que se han realizado pero no se han confirmado?
 > Haz un cambio a `mars.txt`, agrega un cambio y use` git checkout` para ver si
 > puedes eliminar tu cambio.
-
 {: .challenge}
 
 > ## Explorar y resumir el History

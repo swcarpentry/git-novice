@@ -110,47 +110,46 @@ Fast-forward
 
 Ahora hay tres repositorios sincronizados (el local del Dueño, el local del colaborador y el del dueño en GitHub).
 
-## Un flujo de trabajo colaborativo básico
-
-En la practica, es bueno estar seguro que tienes una versión actualizada del repositorio en el que colaboras. Para ello, es bueno hacer un `git pull` antes de hacer cambios. El enfoque sería:
-
-
-* actualizar el repositorio local `git pull origin master`,
-* realizar cambios `git add`,
-* realizar un commit `git commit -m`, y
-* cargar las actualizaciones a GitHub con `git push origin master`
-
-Es mejor hacer varias actualizaciones pequeñas que un **commit** grande con cambios enormes. **Commits** pequeños son más fáciles de leer y revisar.
+> ## Un flujo de trabajo colaborativo básico
+> 
+> En la practica, es bueno estar seguro que tienes una versión actualizada del repositorio en el que colaboras. Para ello, es bueno hacer un `git pull` antes de hacer cambios. El enfoque sería:
+> 
+> 
+> * actualizar el repositorio local `git pull origin master`,
+> * realizar cambios `git add`,
+> * realizar un commit `git commit -m`, y
+> * cargar las actualizaciones a GitHub con `git push origin master`
+> 
+> Es mejor hacer varias actualizaciones pequeñas que un **commit** grande con cambios enormes. **Commits** pequeños son más fáciles de leer y revisar.
 {: .callout}
 
-## Cambiar roles
-
-Cambie los roles y repita todo el proceso.
+> ## Cambiar roles
+> 
+> Cambie los roles y repita todo el proceso.
 {: .challenge}
 
-## Revisar Cambios
-
+> ## Revisar Cambios
+> 
 El dueño hace un **push** de los **commits** al repositorio sin dar información al colaborador. Cómo puede éste saberlo desde la linea de comandos y desde GitHub?
-
-## Solution
-
-En la linea de comandos, el colaborador puede usar ```git fetch origin master``` para acceder a los cambios remotos en el repositorio local, sin hacer un **merge*. Luego, corriendo ```git diff master origin/master```,  el colaborador verá los cambios en la terminal.  
-
-En GitHub, el colaborador puede realizar su propio **fork** y hallar la barra gris que indica "This branch is 1 commit behind Our-Respository:master.". Lejos, a la derecha de la barra gris, hay un link para comparar. En la página para comparar, el colaborador debe cambiar el **fork** hacia su propio repositorio, luego hacer click en el link para "comparar entre forks" y, finalmente, cambiar el **fork** al repositorio principal. Esto mostrará todos los **commits** que sean distintos. 
-
-{: .solution}
+> 
+>> ## Solution
+>>
+>> En la linea de comandos, el colaborador puede usar ```git fetch origin master``` para acceder a los cambios remotos en el repositorio local, sin hacer un **merge*. Luego, corriendo ```git diff master origin/master```,  el colaborador verá los cambios en la terminal.  
+>> 
+>> En GitHub, el colaborador puede realizar su propio **fork** y hallar la barra gris que indica "This branch is 1 commit behind Our-Respository:master.". Lejos, a la derecha de la barra gris, hay un link para comparar. En la página para comparar, el colaborador debe cambiar el **fork** hacia su propio repositorio, luego hacer click en el link para "comparar entre forks" y, finalmente, cambiar el **fork** al repositorio principal. Esto mostrará todos los **commits** que sean distintos. 
+> {: .solution}
 {: .challenge}
 
-## Comentar cambios en GitHub
-
-El colaborador tiene algunas preguntas sobre cambios en una línea hechos por el dueño. 
-
-Con GitHub, es posible comentar la diferencia en un **commit**. Sobre la línea de código a comentar, el botón azul aparece para abrir una ventana. 
-
-El colaborador postea los comentarios y sugerencias usando la interfaz de GitHub.
+> ## Comentar cambios en GitHub
+> 
+> El colaborador tiene algunas preguntas sobre cambios en una línea hechos por el dueño. 
+> 
+> Con GitHub, es posible comentar la diferencia en un **commit**. Sobre la línea de código a comentar, el botón azul aparece para abrir una ventana. 
+> 
+> El colaborador postea los comentarios y sugerencias usando la interfaz de GitHub.
 {: .challenge}
 
-## Historial de versiones, backup y control de versiones
-
-Algunos softwares que permiten hacer **backups** también permiten guardar un historial de versiones y recuperar versiones específicas. ¿Cómo es esta funcionalidad distinta del control de versiones? ¿Cuáles son los beneficios de usar control de versiones, Git y GitHub? 
+> ## Historial de versiones, backup y control de versiones
+> 
+> Algunos softwares que permiten hacer **backups** también permiten guardar un historial de versiones y recuperar versiones específicas. ¿Cómo es esta funcionalidad distinta del control de versiones? ¿Cuáles son los beneficios de usar control de versiones, Git y GitHub? 
 {: .challenge}

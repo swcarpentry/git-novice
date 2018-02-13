@@ -193,7 +193,7 @@ nothing to commit, working directory clean
 > {: .solution}
 {: .challenge}
 
-> ##Ignorando todos los archivos de datos en un directorio
+> ## Ignorando todos los archivos de datos en un directorio
 >
 > Dado un directorio con la siguiente estructura:
 >
@@ -236,7 +236,7 @@ nothing to commit, working directory clean
 > > ninguno de ellos será ignorado, y todos los archivos` .data` serán rastreados.
 > >
 > {: .solution}
-{: .reto}
+{: .challenge}
 
 > ## Archivos de bitácora
 >

@@ -10,7 +10,7 @@ objectives:
 - "Ir a traves del ciclo modificar-agregar-commit para uno o más archivos."
 - "Explicar donde se almacena la información en cada etapa del flujo de trabajo de un **commit** de Git."
 - "Distinguir entre mensajes descriptivos y no-descriptivos de un **commit**."
-Puntos clave:
+keypoints:
 - "`git status` muestra el estatus de un repositorio."
 - "Los archivos pueden ser almacenados en un directorio de trabajo del proyecto (el cual ven los usuarios), el área de ensayo (donde el siguiente **commit** está siendo construido) y el repositorio local (donde los **commits** son registrados permanentemente)."
 - "`git add` pone archivos en el área de ensayo."
@@ -71,7 +71,6 @@ $ cat mars.txt
 ~~~
 Cold and dry, but everything is my favorite color
 ~~~
-
 {: .output}
 
 Si revisamos el estatus de nuestro proyecto otra vez,
@@ -704,7 +703,6 @@ repositorio (`git commit`):
 {: .challenge}
 
 > ## Author y Committer
-
 > Para cada uno de los  **commits** que hayas hecho, Git almacenó tu nombre 2 veces.
 > Tú eres nombrado como el **author** y el **committer**. Puedes observar
 > esto, diciendo a Git que te muestre más información acerca de tus últimos
@@ -734,6 +732,7 @@ repositorio (`git commit`):
 > > $ git commit -m "Update Vlad's bio." --author="Frank N. Stein <franky@monster.com>"
 > > ~~~
 > > {: .bash}
+> > 
 > > ~~~
 > > [master 4162a51] Update Vlad's bio.
 > > Author: Frank N. Stein <franky@monster.com>
@@ -752,6 +751,7 @@ repositorio (`git commit`):
 > >
 > > Vlad's initial bio.
 > > ~~~
+> > 
 > > {: .output}
 > {: .solution}
 {: .challenge}
