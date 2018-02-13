@@ -12,6 +12,6 @@ Maintainers:
 * [Ivan Gonzalez][gonzalez_ivan]
 * [Daisie Huang][huang_daisie]
 
-[gonzalez_ivan]: http://software-carpentry.org/team/#gonzalez_ivan
-[huang_daisie]: http://software-carpentry.org/team/#huang_daisie
+[gonzalez_ivan]: https://software-carpentry.org/team/#gonzalez_ivan
+[huang_daisie]: https://software-carpentry.org/team/#huang_daisie
 [lesson-example]: https://swcarpentry.github.io/lesson-example

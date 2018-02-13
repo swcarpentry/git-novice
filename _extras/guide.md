@@ -288,7 +288,7 @@ web-hosted private repositories.
 [git-it-electron]: https://github.com/jlord/git-it-electron
 [git-parable]: http://tom.preston-werner.com/2009/05/19/the-git-parable.html
 [github]: https://github.com/
-[github-gui]: http://git-scm.com/downloads/guis
+[github-gui]: https://git-scm.com/downloads/guis
 [github-line-endings]: https://help.github.com/articles/dealing-with-line-endings/#platform-all
 [github-privacy]: https://help.github.com/articles/keeping-your-email-address-private/
 [repos-in-repos]: https://github.com/swcarpentry/git-novice/issues/272

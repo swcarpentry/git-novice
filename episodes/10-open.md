@@ -46,12 +46,12 @@ though,
 the process looks like this:
 
 *   The data that the scientist collects is stored in an open access repository
-    like [figshare](http://figshare.com/) or
-    [Zenodo](http://zenodo.org), possibly as soon as it's collected,
+    like [figshare](https://figshare.com/) or
+    [Zenodo](https://zenodo.org), possibly as soon as it's collected,
     and given its own
     [Digital Object Identifier](https://en.wikipedia.org/wiki/Digital_object_identifier) (DOI).
     Or the data was already published and is stored in
-    [Dryad](http://datadryad.org/).
+    [Dryad](https://datadryad.org/).
 *   The scientist creates a new repository on GitHub to hold her work.
 *   As she does her analysis,
     she pushes changes to her scripts
@@ -60,7 +60,7 @@ the process looks like this:
     She also uses the repository for her paper;
     that repository is then the hub for collaboration with her colleagues.
 *   When she's happy with the state of her paper,
-    she posts a version to [arXiv](http://arxiv.org/)
+    she posts a version to [arXiv](https://arxiv.org/)
     or some other preprint server
     to invite feedback from peers.
 *   Based on that feedback,
@@ -73,10 +73,10 @@ the process looks like this:
 
 This open model accelerates discovery:
 the more open work is,
-[the more widely it is cited and re-used](http://dx.doi.org/10.1371/journal.pone.0000308).
+[the more widely it is cited and re-used](https://doi.org/10.1371/journal.pone.0000308).
 However,
 people who want to work this way need to make some decisions
-about what exactly "open" means and how to do it. You can find more on the different aspects of Open Science in [this book](http://link.springer.com/book/10.1007/978-3-319-00026-8).
+about what exactly "open" means and how to do it. You can find more on the different aspects of Open Science in [this book](https://link.springer.com/book/10.1007/978-3-319-00026-8).
 
 This is one of the (many) reasons we teach version control.
 When used diligently,
@@ -96,10 +96,9 @@ by acting as a shareable electronic lab notebook for computational work:
 
 > ## Making Code Citable
 >
-> [This short guide](https://guides.github.com/activities/citable-code/) from GitHub
-> explains how to create a Digital Object Identifier (DOI) for your code,
-> your papers,
-> or anything else hosted in a version control repository.
+> Anything that is hosted in a version control repository (data, code, papers, 
+> etc.) can be turned into a citable object. You'll learn how to do this in
+> [lesson 12: Citation]({{ page.root }}/12-citation/).
 {: .callout}
 
 > ## How Reproducible Is My Work?
@@ -113,21 +112,11 @@ by acting as a shareable electronic lab notebook for computational work:
 > ## How to Find an Appropriate Data Repository?
 >
 > Surf the internet for a couple of minutes and check out the data repositories
-> mentioned above: [Figshare](http://figshare.com/), [Zenodo](http://zenodo.org),
-> [Dryad](http://datadryad.org/). Depending on your field of research, you might
+> mentioned above: [Figshare](https://figshare.com/), [Zenodo](https://zenodo.org),
+> [Dryad](https://datadryad.org/). Depending on your field of research, you might
 > find community-recognized repositories that are well-known in your field.
 > You might also find useful [these data repositories recommended by Nature](
-> http://www.nature.com/sdata/data-policies/repositories).
+> https://www.nature.com/sdata/data-policies/repositories).
 > Discuss with your neighbor which data repository you might want to
 > approach for your current project and explain why.
-{: .challenge}
-
-> ## Can I Also Publish Code?
->
-> There are many new ways to publish code and to make it citable. One
-> way is described [on the homepage of GitHub itself](
-> https://guides.github.com/activities/citable-code/).
-> Basically it's a combination of GitHub (where the code is) and Zenodo (the
-> repository creating the DOI). Read through this page while being aware
-> that this is only one of many ways to making your code citable.
 {: .challenge}

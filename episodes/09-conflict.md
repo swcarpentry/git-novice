@@ -12,8 +12,8 @@ keypoints:
 - "The version control system does not allow people to overwrite each other's changes blindly, but highlights conflicts so that they can be resolved."
 ---
 
-As soon as people can work in parallel, it's likely someone's going to step on someone
-else's toes.  This will even happen with a single person: if we are working on
+As soon as people can work in parallel, they'll likely step on each other's
+toes.  This will even happen with a single person: if we are working on
 a piece of software on both our laptop and a server in the lab, we could make
 different changes to each copy.  Version control helps us manage these
 [conflicts]({{ page.root }}/reference/#conflicts) by giving us tools to
@@ -133,8 +133,8 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 ![The Conflicting Changes](../fig/conflict.svg)
 
-Git detects that the changes made in one copy overlap with those made in the other
-and stops us from trampling on our previous work.
+Git rejects the push because it detects that the remote repository has new updates that have not been
+incorporated into the local branch.
 What we have to do is pull the changes from GitHub,
 [merge]({{ page.root }}/reference/#merge) them into the copy we're currently working in,
 and then push that.
@@ -158,8 +158,12 @@ Automatic merge failed; fix conflicts and then commit the result.
 ~~~
 {: .output}
 
-`git pull` tells us there's a conflict,
-and marks that conflict in the affected file:
+The `git pull` command updates the local repository to include those
+changes already included in the remote repository.
+After the changes from remote branch have been fetched, Git detects that changes made to the local copy 
+overlap with those made to the remote repository, and therefore refuses to merge the two versions to
+stop us from trampling on our previous work. The conflict is marked in
+in the affected file:
 
 ~~~
 $ cat mars.txt
@@ -178,7 +182,7 @@ This line added to Wolfman's copy
 ~~~
 {: .output}
 
-Our change—the one in `HEAD`—is preceded by `<<<<<<<`.
+Our change is preceded by `<<<<<<< HEAD`.
 Git has then inserted `=======` as a separator between the conflicting changes
 and marked the end of the content downloaded from GitHub with `>>>>>>>`.
 (The string of letters and digits after that marker

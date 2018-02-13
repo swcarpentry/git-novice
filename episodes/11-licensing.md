@@ -27,7 +27,7 @@ A license solves this problem by granting rights to others (the
 licensees) that they would otherwise not have. What rights are being
 granted under which conditions differs, often only slightly, from one
 license to another. In practice, a few licenses are by far the most
-popular, and [choosealicense.com](http://choosealicense.com/) will
+popular, and [choosealicense.com](https://choosealicense.com/) will
 help you find a common license that suits your needs.  Important
 considerations include:
 
@@ -41,8 +41,8 @@ Choosing a license that is in common use makes life easier for
 contributors and users, because they are more likely to already be
 familiar with the license and don't have to wade through a bunch of
 jargon to decide if they're ok with it.  The [Open Source
-Initiative](http://opensource.org/licenses) and [Free Software
-Foundation](http://www.gnu.org/licenses/license-list.html) both
+Initiative](https://opensource.org/licenses) and [Free Software
+Foundation](https://www.gnu.org/licenses/license-list.html) both
 maintain lists of licenses which are good choices.
 
 [This article][software-licensing] provides an excellent overview of
@@ -77,4 +77,4 @@ thus need to be asked for approval once a license is chosen.
 > - [EtherPad](https://github.com/ether/etherpad-lite), a real-time collaborative editor
 {: .challenge}
 
-[software-licensing]: http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002598
+[software-licensing]: https://doi.org/10.1371/journal.pcbi.1002598
