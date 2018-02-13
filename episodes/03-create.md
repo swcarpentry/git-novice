@@ -8,6 +8,7 @@ objectives:
 - "Create a local Git repository."
 keypoints:
 - "`git init` initializes a repository."
+- "Git stores all of it's repository data in the `.git` directory."
 ---
 
 Once Git is configured,
@@ -49,8 +50,9 @@ $ ls -a
 ~~~
 {: .output}
 
-Git stores information about the project in this special sub-directory.
-If we ever delete it,
+Git uses this special sub-directory to store all the information about the project, 
+including all files and sub-directories located within the project's directory.
+If we ever delete the `.git` sub-directory,
 we will lose the project's history.
 
 We can check that everything is set up correctly
@@ -75,27 +77,34 @@ nothing to commit (create/copy files and use "git add" to track)
 
 > ## Places to Create Git Repositories
 >
-> Dracula starts a new project, `moons`, related to his `planets` project.
-> Despite Wolfman's concerns, he enters the following sequence of commands to
-> create one Git repository inside another:
+> Along with tracking information about planets (the project we have already created), 
+> Dracula would also like to track information about moons.
+> Despite Wolfman's concerns, Dracula creates a `moons` project inside his `planets` 
+> project with the following sequence of commands:
 >
 > ~~~
 > $ cd             # return to home directory
-> $ mkdir planets  # make a new directory planets
-> $ cd planets     # go into planets
-> $ git init       # make the planets directory a Git repository
+> $ cd planets     # go into planets directory, which is already a Git repository
+> $ ls -a          # ensure the .git sub-directory is still present in the planets directory
 > $ mkdir moons    # make a sub-directory planets/moons
-> $ cd moons       # go into planets/moons
+> $ cd moons       # go into moons sub-directory
 > $ git init       # make the moons sub-directory a Git repository
+> $ ls -a          # ensure the .git sub-directory is present indicating we have created a new Git repository
 > ~~~
 > {: .bash}
 >
-> Why is it a bad idea to do this? (Notice here that the `planets` project is now also tracking the entire `moons` repository.)
-> How can Dracula undo his last `git init`?
->
+> Is the `git init` command, run inside the `moons` sub-directory, required for 
+> tracking files stored in the `moons` sub-directory?
+> 
 > > ## Solution
 > >
-> > Git repositories can interfere with each other if they are "nested" in the
+> > No. Dracula does not need to make the `moons` sub-directory a Git repository 
+> > because the `planets` repository will track all files, sub-directories, and 
+> > sub-directory files under the `planets` directory.  Thus, in order to track 
+> > all information about moons, Dracula only needed to add the `moons` sub-directory
+> > to the `planets` directory.
+> > 
+> > Additionally, Git repositories can interfere with each other if they are "nested" in the
 > > directory of another: the outer repository will try to version-control
 > > the inner repository. Therefore, it's best to create each new Git
 > > repository in a separate directory. To be sure that there is no conflicting
@@ -111,34 +120,19 @@ nothing to commit (create/copy files and use "git add" to track)
 > > fatal: Not a git repository (or any of the parent directories): .git
 > > ~~~
 > > {: .output}
-> >
-> > Note that we can track files in directories within a Git repository:
-> >
-> > ~~~
-> > $ touch moon phobos deimos titan    # create moon files
-> > $ cd ..                             # return to planets directory
-> > $ ls moons                          # list contents of the moons directory
-> > $ git add moons/*                   # add all contents of planets/moons
-> > $ git status                        # show moons files in staging area
-> > $ git commit -m "add moon files"    # commit planets/moons to planets Git repository
-> > ~~~
-> > {: .bash}
-> >
-> > Similarly, we can ignore (as discussed later) entire directories, such as the `moons` directory:
-> >
-> > ~~~
-> > $ nano .gitignore # open the .gitignore file in the text editor to add the moons directory
-> > $ cat .gitignore # if you run cat afterwards, it should look like this:
-> > ~~~
-> > {: .bash}
-> >
-> > ~~~
-> > moons
-> > ~~~
-> > {: .output}
+
+> {: .solution}
+{: .challenge}
+
+> ## Correcting `git init` Mistakes
+> Wolfman explains to Dracula how a nested repository is redundant and may cause confusion
+> down the road. Dracula would like to remove the nested repository. How can Dracula undo 
+> his last `git init` in the `moons` sub-directory?
+>
+> > ## Solution -- USE WITH CAUTION!
 > >
 > > To recover from this little mistake, Dracula can just remove the `.git`
-> > folder in the moons subdirectory. To do so he can run the following command from inside the 'moons' directory:
+> > folder in the moons subdirectory by running the following command from inside the 'moons' directory:
 > >
 > > ~~~
 > > $ rm -rf moons/.git
@@ -146,7 +140,7 @@ nothing to commit (create/copy files and use "git add" to track)
 > > {: .bash}
 > >
 > > But be careful! Running this command in the wrong directory, will remove
-> > the entire git-history of a project you might wanted to keep. Therefore, always check your current directory using the
+> > the entire git-history of a project you might want to keep. Therefore, always check your current directory using the
 > > command `pwd`.
 > {: .solution}
 {: .challenge}
