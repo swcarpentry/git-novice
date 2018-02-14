@@ -120,12 +120,13 @@ nothing to commit (create/copy files and use "git add" to track)
 > > fatal: Not a git repository (or any of the parent directories): .git
 > > ~~~
 > > {: .output}
-> >
-> > ## Correcting `git init` Mistakes
-> > Wolfman explains to Dracula how a nested repository is redundant and may cause confusion
-> > down the road. Dracula would like to remove the nested repository. How can Dracula undo 
-> > his last `git init` in the `moons` sub-directory?
-> >
+> {: .solution}
+{: .challenge}
+> ## Correcting `git init` Mistakes
+> Wolfman explains to Dracula how a nested repository is redundant and may cause confusion
+> down the road. Dracula would like to remove the nested repository. How can Dracula undo 
+> his last `git init` in the `moons` sub-directory?
+>
 > > ## Solution -- USE WITH CAUTION!
 > >
 > > To recover from this little mistake, Dracula can just remove the `.git`
