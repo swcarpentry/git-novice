@@ -97,6 +97,33 @@ is a good idea:
 
 ![](../fig/RStudio_screenshot_gitignore.png)
 
+> ## Tip: versioning disposable output		
+>		
+> Generally you do not want to version disposable output (or read-only data).		
+> You should modify the `.gitignore` file to tell git to ignore these files		
+> and directories.		
+{: .callout}		
+
+> ## Challenge		
+>		
+> 1. Create a directory within your project called `graphs`.		
+> 2. Modify the `.gitignore` file to contain `graphs/`		
+> so that this disposable output isn't versioned.		
+>		
+> Add the newly created folders to version control using		
+> the git interface.		
+>		
+> > ## Solution to Challenge	
+> >		
+> > This can be done with the command line:		
+> > ```		
+> > $ mkdir graphs		
+> > $ echo "graphs/"> > .gitignore		
+> > ```		
+> > {: . shell}		
+> {: .solution}		
+{: .challenge}
+
 There are many more features buried in the RStudio git interface, but these
 should be enough to get you started!
 
