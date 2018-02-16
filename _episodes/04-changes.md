@@ -702,54 +702,55 @@ repository (`git commit`):
 
 ## `bio` Repository
 >
-> Create a new Git repository on your computer called `bio`.
-> Write a three-line biography for yourself in a file called `me.txt`,
-> commit your changes,
-> then modify one line, add a fourth line, and display the differences
+> * Create a new Git repository on your computer called `bio`.
+> * Write a three-line biography for yourself in a file called `me.txt`,
+> commit your changes
+> * Modify one line, add a fourth line
+> * Display the differences
 > between its updated state and its original state.
-> 
+>
 > > ## Solution
 > >
 > > If needed, move out of the `planets` folder:
-> > 
+> >
 > > ~~~
 > > $ cd ..
 > > ~~~
 > > {: .bash}
-> > 
+> >
 > > Create a new folder called `bio` and 'move' into it:
-> > 
+> >
 > > ~~~
 > > $ mkdir bio
 > > $ cd bio
 > > ~~~
 > > {: .bash}
-> > 
+> >
 > > Initialise git:
-> > 
+> >
 > > ~~~
 > > $ git init
 > > ~~~
 > > {: .bash}
-> > 
+> >
 > > Create your biography file `me.txt` using `nano` or another text editor.
 > > Once in place, add and commit it to the repository:
-> > 
+> >
 > > ~~~
 > > $ git add me.txt
 > > $ git commit -m'Adding biography file'
 > > ~~~
 > > {: .bash}
-> > 
+> >
 > > Modify the file as described (modify one line, add a fourth line).
 > > To display the differences
 > > between its updated state and its original state, use `git diff`:
-> > 
+> >
 > > ~~~
 > > $ git diff me.txt
 > > ~~~
 > > {: .bash}
-> > 
+> >
 > {: .solution}
 {: .challenge}
 
