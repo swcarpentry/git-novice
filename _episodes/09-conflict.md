@@ -1,32 +1,27 @@
 ---
-title: Conflicts
+title: Conflictos
 teaching: 15
 exercises: 0
 questions:
-- "What do I do when my changes conflict with someone else's?"
+- "¿Qué hago cuando mis cambios entran en conflicto con los de otra persona?"
 objectives:
-- "Explain what conflicts are and when they can occur."
-- "Resolve conflicts resulting from a merge."
+- "Explicar qué son los conflictos y cuándo pueden ocurrir."
+- "Resolver conflictos resultantes de una fusión."
 keypoints:
-- "Conflicts occur when two or more people change the same file(s) at the same time."
-- "The version control system does not allow people to overwrite each other's changes blindly, but highlights conflicts so that they can be resolved."
+- "Los conflictos ocurren cuando dos o más personas cambian el mismo archivo(s) al mismo tiempo."
+- "El sistema de control de versiones no permite a las personas sobreescribir ciegamente los
+cambios del otro, pero resalta los conflictos para poder resolverlos."
 ---
 
-As soon as people can work in parallel, it's likely someone's going to step on someone
-else's toes.  This will even happen with a single person: if we are working on
-a piece of software on both our laptop and a server in the lab, we could make
-different changes to each copy.  Version control helps us manage these
-[conflicts]({{ page.root }}/reference/#conflicts) by giving us tools to
-[resolve]({{ page.root }}/reference/#resolve) overlapping changes.
+Tan pronto como podemos trabajar en paralelo, es probable que alquien deshaga lo que otro hizo. Esto incluso es probable con una única persona: si estamos trabajando en un software al mismo tiempo en nuestra computadora portátil y un servidor en el laboratorio, podríamos hacer cambios diferentes a cada copia del trabajo. El control de versiones nos ayuda a manejar estos [confictos]({{ page.root }}/reference/#conflicts) al darnos herramientas para [resolver]({{ page.root }}/reference/#resolve) cambios que se hayan sobrelapado. 
 
-To see how we can resolve conflicts, we must first create one.  The file
-`mars.txt` currently looks like this in both partners' copies of our `planets`
-repository:
+Para ver cómo podemos resolver conflictos, primero debemos crear uno. Actualmente, el archivo `mars.txt` luce de la siguiente manera en dos copias de diferentes compañeros en nuestro repositorio `planetas`:
 
 ~~~
 $ cat mars.txt
 ~~~
 {: .bash}
+
 
 ~~~
 Cold and dry, but everything is my favorite color
@@ -35,13 +30,14 @@ But the Mummy will appreciate the lack of humidity
 ~~~
 {: .output}
 
-Let's add a line to one partner's copy only:
+Agreguemos una línea únicamente a la copia de uno de los dos compañeros:
 
 ~~~
 $ nano mars.txt
 $ cat mars.txt
 ~~~
 {: .bash}
+
 
 ~~~
 Cold and dry, but everything is my favorite color
@@ -51,7 +47,9 @@ This line added to Wolfman's copy
 ~~~
 {: .output}
 
-and then push the change to GitHub:
+
+y luego hacer `push` al cambio a GitHub:
+
 
 ~~~
 $ git add mars.txt
@@ -81,15 +79,16 @@ To https://github.com/vlad/planets
 ~~~
 {: .output}
 
-Now let's have the other partner
-make a different change to their copy
-*without* updating from GitHub:
+Ahora haremos que el otro compañero
+haga un cambio diferente a su copia
+*sin* actualizar desde GitHub:
 
 ~~~
 $ nano mars.txt
 $ cat mars.txt
 ~~~
 {: .bash}
+
 
 ~~~
 Cold and dry, but everything is my favorite color
@@ -99,7 +98,8 @@ We added a different line in the other copy
 ~~~
 {: .output}
 
-We can commit the change locally:
+
+Podemos hacer **commit** del cambio localmente
 
 ~~~
 $ git add mars.txt
@@ -107,13 +107,15 @@ $ git commit -m "Add a line in my copy"
 ~~~
 {: .bash}
 
+
 ~~~
 [master 07ebc69] Add a line in my copy
  1 file changed, 1 insertion(+)
-~~~
+ ~~~
 {: .output}
 
-but Git won't let us push it to GitHub:
+
+pero Git no ns dejará hacer **push** a GitHub:
 
 ~~~
 $ git push origin master
@@ -133,12 +135,12 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 ![The Conflicting Changes](../fig/conflict.svg)
 
-Git detects that the changes made in one copy overlap with those made in the other
-and stops us from trampling on our previous work.
-What we have to do is pull the changes from GitHub,
-[merge]({{ page.root }}/reference/#merge) them into the copy we're currently working in,
-and then push that.
-Let's start by pulling:
+Git detecta que los cambios hechos en una copia se solapan con los cambios hechos en la otra
+y nos impide pisotear nuestro trabajo previo.
+Lo que debemos hacer es traer -`pull`- los cambios desde GitHub,
+[unirlos]({{ page.root }}/reference/#merge) dentro de la copia en la que estamos trabajando actualmente,
+y luego hacer  `push` al resultado.
+Empecemos haciendo  `pull` a lo siguiente:
 
 ~~~
 $ git pull origin master
@@ -158,8 +160,8 @@ Automatic merge failed; fix conflicts and then commit the result.
 ~~~
 {: .output}
 
-`git pull` tells us there's a conflict,
-and marks that conflict in the affected file:
+`git pull` nos dice que hay un conflicto,
+y marca ese conflicto en el archivo afectado:
 
 ~~~
 $ cat mars.txt
@@ -178,18 +180,18 @@ This line added to Wolfman's copy
 ~~~
 {: .output}
 
-Our change—the one in `HEAD`—is preceded by `<<<<<<<`.
-Git has then inserted `=======` as a separator between the conflicting changes
-and marked the end of the content downloaded from GitHub with `>>>>>>>`.
-(The string of letters and digits after that marker
-identifies the commit we've just downloaded.)
+Nuestro cambio —señalado en `HEAD`— es precedido por `<<<<<<<`.
+Luego, Git insertó `=======` como un separador entre los cambios conflictivos
+y marcó el fin del contenido descargado desde GitHub con `>>>>>>>`.
+(El código  de letras y números luego del marcador
+identifica el 'commit' que acabamos de descargar.)
 
-It is now up to us to edit this file to remove these markers
-and reconcile the changes.
-We can do anything we want: keep the change made in the local repository, keep
-the change made in the remote repository, write something new to replace both,
-or get rid of the change entirely.
-Let's replace both so that the file looks like this:
+Ahora nosotros debemos editar este archivo para eliminar estos marcadores
+y reconciliar los cambios.
+Podemos hacer lo que querramos: mantener el cambio hecho en el repositorio local, mantener
+el cambio hecho en el repositorio nuevo, redactar algo nuevo para reemplazar ambos,
+o eliminar el cambio completamente.
+Reemplacemos ambos de manera que el archivo quede así:
 
 ~~~
 $ cat mars.txt
@@ -204,9 +206,9 @@ We removed the conflict on this line
 ~~~
 {: .output}
 
-To finish merging,
-we add `mars.txt` to the changes being made by the merge
-and then commit:
+Para finalizar la unión,
+agregamos `mars.txt` a los cambios hechos por la unión
+y luego hacemos 'commit':
 
 ~~~
 $ git add mars.txt
@@ -236,7 +238,7 @@ $ git commit -m "Merge changes from GitHub"
 ~~~
 {: .output}
 
-Now we can push our changes to GitHub:
+Ahora podemos hacer 'push' a nuestros cambios a GitHub:
 
 ~~~
 $ git push origin master
@@ -254,9 +256,9 @@ To https://github.com/vlad/planets.git
 ~~~
 {: .output}
 
-Git keeps track of what we've merged with what,
-so we don't have to fix things by hand again
-when the collaborator who made the first change pulls again:
+Git lleva el registro de qué hemos unificado con qué,
+de manera que no debemos arreglar las cosas a mano nuevamente
+cuando el colaborador que hizo el primer cambio hace **pull** de nuevo:
 
 ~~~
 $ git pull origin master
@@ -277,7 +279,7 @@ Fast-forward
 ~~~
 {: .output}
 
-We get the merged file:
+Obtenemos el archivo unificado:
 
 ~~~
 $ cat mars.txt
@@ -292,51 +294,50 @@ We removed the conflict on this line
 ~~~
 {: .output}
 
-We don't need to merge again because Git knows someone has already done that.
+No es necesario unificar el contenido nuevamente porque Git sabe que alguien ya ha hecho eso.
 
-Git's ability to resolve conflicts is very useful, but conflict resolution
-costs time and effort, and can introduce errors if conflicts are not resolved
-correctly. If you find yourself resolving a lot of conflicts in a project,
-consider these technical approaches to reducing them:
+La habilidad de Git de resolver conflictos es muy útil, pero la resolución de confilctos
+cuesta tiempo y esfuerzo, y puede introducir errores si los conflictos no son resueltos
+correctamente. Si te encuentras resolviendo muchos conflictos en un proyecto
+ten en cuenta estas aproximaciones técnicas para reducirlas:
 
-- Pull from upstream more frequently, especially before starting new work
-- Use topic branches to segregate work, merging to master when complete
-- Make smaller more atomic commits
-- Where logically appropriate, break large files into smaller ones so that it is
-  less likely that two authors will alter the same file simultaneously
+- Hacer 'pull' con mayor frecuencia, especialmente antes de empezar una nueva tarea
+- Usar ramas temáticas para separar trabajo, uniéndolas a la rama principal - `master`- cuando estén completas
+- Hacer comentarios mas cortos y concisos
+- Cuando sea apropiado, dividir archivos grandes en varios pequeños de manera que sea
+  menos probable que dos autores alteren el mismo archivo simultáneamente
 
-Conflicts can also be minimized with project management strategies:
+Los conflictos también pueden ser minimizados con estrategias de administración de proyectos:
 
-- Clarify who is responsible for what areas with your collaborators
-- Discuss what order tasks should be carried out in with your collaborators so
-  that tasks expected to change the same lines won't be worked on simultaneously
-- If the conflicts are stylistic churn (e.g. tabs vs. spaces), establish a
-  project convention that is governing and use code style tools (e.g.
-  `htmltidy`, `perltidy`, `rubocop`, etc.) to enforce, if necessary
+- Aclarar con tus colaboradores quién es responsable de cada área
+- Discutir con tus colaboradores en qué orden deben realizarse las tareas para que 
+  las tareas que puedan cambiar las mismas lineas no se trabajen simultáneamente. 
+- Si los conflictos son de estilo (e.g. tabulaciones vs. espacios), establecer una
+  convención que rija el proyecto y utilizar herramientas de estilo de código (e.g.
+  `htmltidy`, `perltidy`, `rubocop`, etc.) para forzarlas, si es necesario
 
-> ## Solving Conflicts that You Create
+> ## Solucionando conflictos creados por ti
 >
-> Clone the repository created by your instructor.
-> Add a new file to it,
-> and modify an existing file (your instructor will tell you which one).
-> When asked by your instructor,
-> pull her changes from the repository to create a conflict,
-> then resolve it.
+> Clona el repositorio creado por tu instructor
+> Agregarle un nuevo archivo 
+> y modificar un archivo existente (tu instructor te dirá cuál).
+> Cuando tu instructor te lo pida, 
+> trae los cambios -haciendo 'pull'- desde el repositorio para crear un conflicto,
+> y luego resuélvelo.
 {: .challenge}
 
-> ## Conflicts on Non-textual files
+> ## Conflictos en archivos no textuales
 >
-> What does Git do
-> when there is a conflict in an image or some other non-textual file
-> that is stored in version control?
+> ¿Qué hace Git 
+> cuando hay un conflicto en una imagen u otro archivo no de texto 
+> que está almacenado con control de versiones?
 >
-> > ## Solution
+> > ## Solución
 > >
-> > Let's try it. Suppose Dracula takes a picture of Martian surface and
-> > calls it `mars.jpg`.
+> > Intentémoslo. Supón que **Dracula** toma una foto de la superficie de Marte y la llama `mars.jpg`.
 > >
-> > If you do not have an image file of Mars available, you can create
-> > a dummy binary file like this:
+> > Si no tienes una imagen de Marte, puedes crear un archivo
+> > binario de prueba de la siguiente manera:
 > >
 > > ~~~
 > > $ head --bytes 1024 /dev/urandom > mars.jpg
@@ -349,10 +350,10 @@ Conflicts can also be minimized with project management strategies:
 > > ~~~
 > > {: .output}
 > >
-> > `ls` shows us that this created a 1-kilobyte file. It is full of
-> > random bytes read from the special file, `/dev/urandom`.
+> > `ls` nos muestra que se creó un archivo de 1-kilobyte. Está lleno de bytes al azar
+> > leídos a partir del archivo especial, `/dev/urandom`.
 > >
-> > Now, suppose Dracula adds `mars.jpg` to his repository:
+> > Ahora, supón que **Dracula** agrega `mars.jpg` a su repositorio:
 > >
 > > ~~~
 > > $ git add mars.jpg
@@ -367,9 +368,9 @@ Conflicts can also be minimized with project management strategies:
 > > ~~~
 > > {: .output}
 > >
-> > Suppose that Wolfman has added a similar picture in the meantime.
-> > His is a picture of the Martian sky, but it is *also* called `mars.jpg`.
-> > When Dracula tries to push, he gets a familiar message:
+> > Supón que Wolfman agregó una imagen similar al mismo tiempo. 
+> > La suya es una imagen del cielo de Marte, pero *también* se llama `mars.jpg`.
+> > Cuando **Dracula** intenta hacer push, recibe un mensaje familiar:
 > >
 > > ~~~
 > > $ git push origin master
@@ -388,15 +389,15 @@ Conflicts can also be minimized with project management strategies:
 > > ~~~
 > > {: .output}
 > >
-> > We've learned that we must pull first and resolve any conflicts:
+> > Hemos aprendido que primero debemos hacer **pull** y resolver conflictos:
 > >
 > > ~~~
 > > $ git pull origin master
 > > ~~~
 > > {: .bash}
 > >
-> > When there is a conflict on an image or other binary file, git prints
-> > a message like this:
+> > Cuando hay un conflicto en una imagen u otro archivo binario, git imprime
+> > un mensaje así:
 > >
 > > ~~~
 > > $ git pull origin master
@@ -414,20 +415,21 @@ Conflicts can also be minimized with project management strategies:
 > > ~~~
 > > {: .output}
 > >
-> > The conflict message here is mostly the same as it was for `mars.txt`, but
-> > there is one key additional line:
+> > El mensaje informando el conflicto es básicamente el mismo que se imprimió para `mars.txt`, pero
+> > hay una línea adicional:
 > >
 > > ~~~
 > > warning: Cannot merge binary files: mars.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)
 > > ~~~
+> > {: .output}
+> > 
+> > Git no puede insertar indicadores de conflicto en una imagen como sí lo hace en los
+> > archivos de texto. Por lo tanto, en vez de editar la imagen, debemos revisar la versión que 
+> > queremos mantener. Luego podemos agregar y hacer **commit** a esta versión.
 > >
-> > Git cannot automatically insert conflict markers into an image as it does
-> > for text files. So, instead of editing the image file, we must check out
-> > the version we want to keep. Then we can add and commit this version.
-> >
-> > On the key line above, Git has conveniently given us commit identifiers
-> > for the two versions of `mars.jpg`. Our version is `HEAD`, and Wolfman's
-> > version is `439dc8c0...`. If we want to use our version, we can use
+> > En la línea agregada de arriba, Git convenientemente nos dió identificadores de **commit**
+> > para las dos versiones de `mars.jpg`. Nuestra version es  `HEAD`, y la de Wolfman
+> > es `439dc8c0...`. Si queremos usar nuestra versión, podemos usar
 > > `git checkout`:
 > >
 > > ~~~
@@ -442,8 +444,8 @@ Conflicts can also be minimized with project management strategies:
 > > ~~~
 > > {: .output}
 > >
-> > If instead we want to use Wolfman's version, we can use `git checkout` with
-> > Wolfman's commit identifier, `439dc8c0`:
+> > En cambio si queremos usar la versión de Wolfman, podemos usar `git checkout` con
+> > el identificador de **commit** de Wolfman, `439dc8c0`:
 > >
 > > ~~~
 > > $ git checkout 439dc8c0 mars.jpg
@@ -457,10 +459,9 @@ Conflicts can also be minimized with project management strategies:
 > > ~~~
 > > {: .output}
 > >
-> > We can also keep *both* images. The catch is that we cannot keep them
-> > under the same name. But, we can check out each version in succession
-> > and *rename* it, then add the renamed versions. First, check out each
-> > image and rename it:
+> > También podemos mantener *ambas* imágenes. La clave es que no podemos mantenerlos con el mismo
+> > nombre. Pero podemos mirar cada versión de forma sucesiva y *renombrarla*, y luego agregar las versiones renombradas.
+> > Primero, revisar cada imagen y renombrarla:
 > >
 > > ~~~
 > > $ git checkout HEAD mars.jpg
@@ -470,7 +471,7 @@ Conflicts can also be minimized with project management strategies:
 > > ~~~
 > > {: .bash}
 > >
-> > Then, remove the old `mars.jpg` and add the two new files:
+> > Luego, eliminar la vieja imagen `mars.jpg` y agregar los dos archivos nuevos:
 > >
 > > ~~~
 > > $ git rm mars.jpg
@@ -488,49 +489,51 @@ Conflicts can also be minimized with project management strategies:
 > > ~~~
 > > {: .output}
 > >
-> > Now both images of Mars are checked into the repository, and `mars.jpg`
-> > no longer exists.
+> > Ahora ambas imágenes de Marte estan ingresadas en el repositorio, y `mars.jpg`
+> > ya no existe.
 > {: .solution}
 {: .challenge}
 
-> ## A Typical Work Session
+
+> ## Una típica sesión de trabajo
 >
-> You sit down at your computer to work on a shared project that is tracked in a
-> remote Git repository. During your work session, you take the following
-> actions, but not in this order:
+> Te sientas en tu computadora para trabajar en un proyecto compartido que es mantenido en un
+> repositorio Git remoto. Durante tu sesión de trabajo, realizas las siguientes acciones, 
+> pero no en éste orden:
 >
-> - *Make changes* by appending the number `100` to a text file `numbers.txt`
-> - *Update remote* repository to match the local repository
-> - *Celebrate* your success with beer(s)
-> - *Update local* repository to match the remote repository
-> - *Stage changes* to be committed
-> - *Commit changes* to the local repository
 >
-> In what order should you perform these actions to minimize the chances of
-> conflicts? Put the commands above in order in the *action* column of the table
-> below. When you have the order right, see if you can write the corresponding
-> commands in the *command* column. A few steps are populated to get you
-> started.
+> - *Hacer cambios* agregando el número `100` al archivo de texto `numbers.txt`
+> - *Actualizar repositorio remoto* para actualizar el repositorio local
+> - *Celebrar* tu éxito con cerveza(s)
+> - *Actualizar repositorio local* para actualizar el repositorio remoto
+> - *Realizar cambios* con los cuales voy a hacer commit
+> - *Hacer commit a los cambios* al repositorio local
 >
-> |order|action . . . . . . . . . . |command . . . . . . . . . . |
+> ¿En qué orden deberías hacer estas acciones para minimizar la posibilidad de conflictos?
+> Pon los comandos de arriba en orden en la columna *acción* de la tabla de abajo.
+> Cuando tengas el orden correcto, ve si puedes escribir los comandos correspondientes en la columna 
+> *comando*. Algunos campos ya están completados para ayudarte a 
+> comenzar.
+>
+> |orden|acción . . . . . . . . . . |comando . . . . . . . . . . |
 > |-----|---------------------------|----------------------------|
 > |1    |                           |                            |
 > |2    |                           | `echo 100 >> numbers.txt`  |
 > |3    |                           |                            |
 > |4    |                           |                            |
 > |5    |                           |                            |
-> |6    | Celebrate!                | `AFK`                      |
+> |6    | ¡Celebrar!                | `AFK`                      |
 >
-> > ## Solution
+> > ## Solución
 > >
-> > |order|action . . . . . . |command . . . . . . . . . . . . . . . . . . . |
+> > |orden|acción . . . . . . . . . . |comando . . . . . . . . . . |
 > > |-----|-------------------|----------------------------------------------|
-> > |1    | Update local      | `git pull origin master`                     |
-> > |2    | Make changes      | `echo 100 >> numbers.txt`                    |
-> > |3    | Stage changes     | `git add numbers.txt`                        |
-> > |4    | Commit changes    | `git commit -m "Add 100 to numbers.txt"`     |
-> > |5    | Update remote     | `git push origin master`                     |
-> > |6    | Celebrate!        | `AFK`                                        |
+> > |1    | Actualizar repositorio local      | `git pull origin master`                     |
+> > |2    | Hacer cambios      | `echo 100 >> numbers.txt`                    |
+> > |3    | Realizar cambios     | `git add numbers.txt`                        |
+> > |4    | Hacer commit a los cambios   | `git commit -m "Agregar 100 a numbers.txt"`     |
+> > |5    | Actualizar repositorio remoto     | `git push origin master`                     |
+> > |6    | ¡Celebrar!        | `AFK`                                        |
 > >
 > {: .solution}
 {: .challenge}

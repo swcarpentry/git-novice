@@ -4,19 +4,19 @@ title: Discussion
 permalink: /discuss/
 ---
 
-## Frequently Asked Questions
+## Preguntas frecuentes
 
-People often have questions about Git beyond the scope of the core material.
-Students who have completed the rest of the lessons might find value in looking through the following topics.
+La gente a menudo tiene preguntas sobre Git más allá del alcance del material central.
+Los estudiantes que han completado el resto de las lecciones pueden encontrar valor al examinar los siguientes temas.
 
-Note that since this material isn't essential for basic Git usage, it won't be covered by the instructor.
+Tenga en cuenta que dado que este material no es esencial para el uso básico de Git, no será cubierto por el instructor.
 
-## More Advanced Git Configuration
+## Más configuración avanzada de Git
 
-In [Setting Up Git]({{ page.root }}/02-setup/),
-we used `git config --global` to set some default options for Git.
-It turns out that these configuration options get stored in your home directory
-in a plain text file called `.gitconfig`.
+En [Configuración de Git]({{page.root}}/02-setup/),
+usamos `git config --global` para establecer algunas opciones predeterminadas para Git.
+Resulta que estas opciones de configuración se almacenan en su directorio de inicio
+en un archivo de texto sin formato llamado `.gitconfig`.
 
 ~~~
 $ cat ~/.gitconfig
@@ -34,53 +34,53 @@ $ cat ~/.gitconfig
 ~~~
 {: .output}
 
-This file can be opened in your preferred text editor.
-(Note that it is recommended to continue using the `git config` command,
-as this helps avoid introducing syntax errors.)
+Este archivo se puede abrir en su editor de texto preferido.
+(Tenga en cuenta que se recomienda continuar usando el comando `git config`,
+ya que esto ayuda a evitar la introducción de errores de sintaxis).
 
-Eventually, you will want to start customizing Git's behaviour.
-This can be done by adding more entries to your `.gitconfig`.
-The available options are described in the manual:
+Eventualmente, querrás comenzar a personalizar el comportamiento de Git.
+Esto se puede hacer agregando más entradas a su `.gitconfig`.
+Las opciones disponibles se describen en el manual:
 
 ~~~
 $ git config --help
 ~~~
 {: .bash}
 
-In particular, you might find it useful to add aliases.
-These are like shortcuts for longer git commands.
-For example, if you get sick of typing `git checkout` all the time,
-you could run the command:
+En particular, puede resultarle útil agregar alias.
+Estos son como accesos directos para comandos de git más largos.
+Por ejemplo, si te cansas de escribir `git checkout` todo el tiempo,
+podrías ejecutar el comando:
 
 ~~~
 $ git config --global alias.co checkout
 ~~~
 {: .bash}
 
-Now if we return to the example from [Exploring History]({{ page.root }}/05-history/) where we ran:
+Ahora, si volvemos al ejemplo de [Explorando el historial]({{ page.root }}/05-history/) where we ran:
 
 ~~~
 $ git checkout f22b25e mars.txt
 ~~~
 {: .bash}
 
-we could now instead type:
+ahora podríamos escribir:
 
 ~~~
 $ git co f22b25e mars.txt
 ~~~
 {: .bash}
 
-## Styling Git's Log
+## Diseñando el registro de Git
 
-A good target for customization is output from the log.
-The default log is quite verbose but gives no graphical hints
-such as information about which commits were done locally
-and which were pulled from remotes.
+Un buen objetivo para la personalización sale del registro.
+El registro predeterminado es bastante detallado pero no da pistas gráficas
+como información sobre qué confirmaciones se realizaron localmente
+y que fueron sacados de controles remotos.
 
-You can use `git log --help` and `git config --help` to look for different ways to change
-the log output.
-Try the following commands and see what effect they have:
+Puede usar `git log --help` y` git config --help` para buscar diferentes formas de cambiar
+la salida de registro.
+Pruebe los siguientes comandos y vea qué efecto tienen:
 
 ~~~
 $ git config --global alias.lg "log --graph"
@@ -90,8 +90,8 @@ $ git lg
 ~~~
 {: .bash}
 
-If you don't like the effects,
-you can undo them with:
+Si no te gustan los efectos,
+puedes deshacerlos con:
 
 ~~~
 $ git config --global --unset alias.lg
@@ -100,47 +100,47 @@ $ git config --global --unset format.pretty
 ~~~
 {: .bash}
 
-> ## Undoing Git Configuration Changes
+> ## Deshacer cambios en la configuración de Git
 >
-> You can use the `--unset` flag to delete unwanted options from `.gitconfig`.
-> Another way to roll back changes is to store your `.gitconfig` using Git.
+> Puede usar el indicador `--unset` para eliminar las opciones no deseadas de` .gitconfig`.
+> Otra forma de deshacer los cambios es almacenar su `.gitconfig` usando Git.
 >
-> For hints on what you might want to configure,
-> go to GitHub and search for "gitconfig".
-> You will find hundreds of repositories in which people have stored
-> their own Git configuration files.
-> Sort them by the number of stars and have a look at the top few.
-> If you find some you like,
-> please check that they're covered by an open source license before you clone them.
+> Para sugerencias sobre lo que puede querer configurar,
+> vaya a GitHub y busque "gitconfig".
+> Encontrará cientos de repositorios en los que las personas han almacenado
+> sus propios archivos de configuración de Git.
+> Ordenarlos por el número de estrellas y echar un vistazo a los mejores.
+> Si encuentras alguno que te guste,
+> compruebe que estén cubiertos por una licencia de código abierto antes de clonarlos.
 {: .callout}
 
-## Non-text Files
+## Archivos sin texto
 
-Recall when we discussed [Conflicts]({{ page.root }}/09-conflict/)
-there was a challenge that asked,
-"What does Git do
-when there is a conflict in an image or some other non-textual file
-that is stored in version control?"
+Recordar cuando discutimos [Conflictos]({{page.root}}/09-conflict/)
+hubo un desafío que preguntó,
+"¿Qué hace Git?
+cuando hay un conflicto en una imagen o algún otro archivo no textual
+que está almacenado en el control de la versión?"
 
-We will now revisit this in more detail.
+Ahora revisitaremos esto con más detalle.
 
-Many people want to version control non-text files, such as images, PDFs and Microsoft Office or LibreOffice documents.
-It is true that Git can handle these filetypes (which fall under the banner of "binary" file types).
-However, just because it *can* be done doesn't mean it *should* be done.
+Muchas personas desean controlar versiones que no sean archivos de texto, como imágenes, archivos PDF y documentos de Microsoft Office o LibreOffice.
+Es cierto que Git puede manejar estos tipos de archivos (que caen bajo el título de tipos de archivos "binarios").
+Sin embargo, solo porque *se puede* hacer no significa que *se deba* hacer.
 
-Much of Git's magic comes from being able to do line-by-line comparisons ("diffs") between files.
-This is generally easy for programming source code and marked up text.
-For non-text files, a diff can usually only detect that the files have changed
-but can't say how or where.
+Gran parte de la magia de Git proviene de poder hacer comparaciones línea por línea ("diffs") entre archivos.
+Esto es generalmente fácil para programar el código fuente y el texto marcado.
+Para archivos que no son de texto, un diff generalmente solo puede detectar que los archivos han cambiado
+pero no puedo decir cómo o dónde.
 
-This has various impacts on Git's performance and will make it difficult to
-compare different versions of your project.
+Esto tiene varios impactos en el rendimiento de Git y hará que sea difícil
+compare diferentes versiones de su proyecto.
 
-For a basic example to show the difference it makes,
-we're going to go see what would have happened if Dracula had tried
-using outputs from a word processor instead of plain text.
+Para un ejemplo básico para mostrar la diferencia que hace,
+vamos a ver qué hubiera pasado si Drácula hubiera intentado
+utilizando salidas de un procesador de texto en lugar de texto sin formato.
 
-Create a new directory and go into it:
+Crea un nuevo directorio y entra en él:
 
 ~~~
 $ mkdir planets-nontext
@@ -148,16 +148,16 @@ $ cd planets-nontext
 ~~~
 {: .bash}
 
-Use a program such as Microsoft Word or LibreOffice Writer to create a new document.
-Enter the same text that we began with before:
+Use un programa como Microsoft Word o LibreOffice Writer para crear un documento nuevo.
+Ingrese el mismo texto con el que comenzamos antes:
 
 ~~~
 Cold and dry, but everything is my favorite color
 ~~~
 {: .output}
 
-Save the document into the `planets-nontext` directory with the name of `mars.doc`.
-Back in the terminal, run the usual commands for setting up a new Git repository:
+Guarde el documento en el directorio `planets-nontext` con el nombre de `mars.doc`.
+De vuelta en la terminal, ejecute los comandos habituales para configurar un nuevo repositorio de Git:
 
 ~~~
 $ git init
@@ -166,7 +166,7 @@ $ git commit -m "Starting to think about Mars"
 ~~~
 {: .bash}
 
-Then make the same changes to `mars.doc` that we (or Vlad) previously made to `mars.txt`.
+Luego haga los mismos cambios a `mars.doc` que nosotros (o Vlad) previamente hicimos a `mars.txt`.
 
 ~~~
 Cold and dry, but everything is my favorite color
@@ -174,8 +174,8 @@ The two moons may be a problem for Wolfman
 ~~~
 {: .output}
 
-Save and close the word processor.
-Now see what Git thinks of your changes:
+Guarde y cierre el procesador de texto.
+Ahora mira lo que Git piensa de tus cambios:
 
 ~~~
 $ git diff
@@ -189,7 +189,7 @@ Binary files a/mars.doc and b/mars.doc differ
 ~~~
 {: .output}
 
-Compare this to the earlier `git diff` obtained when using text files:
+Compare esto con el anterior `git diff` obtenido al usar archivos de texto:
 
 ~~~
 diff --git a/mars.txt b/mars.txt
@@ -202,37 +202,37 @@ index df0654a..315bf3a 100644
 ~~~
 {: .output}
 
-Notice how plain text files give a much more informative diff.
-You can see exactly which lines changed and what the changes were.
+Observe cómo los archivos de texto plano dan una diferencia mucho más informativa.
+Puede ver exactamente qué líneas cambiaron y cuáles fueron los cambios.
 
-An uninformative `git diff` is not the only consequence of using Git on binary files.
-However, most of the other problems boil down to whether or not a good diff is possible.
+Un `git diff` no informativo no es la única consecuencia de usar Git en archivos binarios.
+Sin embargo, la mayoría de los otros problemas se reducen a si es posible o no una buena diferencia.
 
-This isn't to say you should *never* use Git on binary files.
-A rule of thumb is that it's OK if the binary file won't change very often,
-and if it does change, you don't care about merging in small differences between versions.
+Esto no quiere decir que *nunca* debes usar Git en archivos binarios.
+Una regla de oro es que está bien si el archivo binario no cambiará muy a menudo,
+y si cambia, no te importa fusionarte en pequeñas diferencias entre versiones.
 
-We've already seen how a word processed report will fail this test.
-An example that passes the test is a logo for your organization or project.
-Even though a logo will be stored in a binary format such as `jpg` or `png`,
-you can expect it will remain fairly static through the lifetime of your repository.
-On the rare occasion that branding does change,
-you will probably just want to replace the logo completely rather than merge little differences in.
+Ya hemos visto cómo un informe procesado por palabra no pasará esta prueba.
+Un ejemplo que pasa la prueba es un logotipo para su organización o proyecto.
+Aunque un logotipo se almacenará en un formato binario, como `jpg` o `png`,
+puede esperar que permanezca bastante estático durante la vida útil de su repositorio.
+En la rara ocasión en que la marca cambia,
+probablemente solo quiera reemplazar el logotipo por completo en lugar de combinar pequeñas diferencias.
 
-## Removing a File
+## Eliminar un archivo
 
-Adding and modifying files are not the only actions one might take
-when working on a project.  It might be required to remove a file
-from the repository.
+Agregar y modificar archivos no son las únicas acciones que uno podría tomar
+cuando se trabaja en un proyecto. Puede ser necesario para eliminar un archivo
+del repositorio.
 
-Create a new file for the planet Nibiru:
+Crea un nuevo archivo para el planeta Nibiru:
 
 ~~~
 $ echo "This is another name for fake planet X" > nibiru.txt
 ~~~
 {: .bash}
 
-Now add to the repository like you have learned earlier:
+Ahora agregue al repositorio como lo aprendió anteriormente:
 
 ~~~
 $ git add nibiru.txt
@@ -247,8 +247,8 @@ nothing to commit, working directory clean
 ~~~
 {: .output}
 
-Nibiru is not a real planet.  That was a silly idea.  Let us remove
-it from the disk and let Git know about it:
+Nibiru no es un planeta real. Esa fue una idea tonta. Vamos a eliminar
+desde el disco y deja que Git lo sepa:
 
 ~~~
 $ git rm nibiru.txt
@@ -266,22 +266,22 @@ Changes to be committed:
 ~~~
 {: .output}
 
-The change has been staged.  Now commit the removal, and remove the
-file from the repository itself.  Note that the file will be removed
-in the new commit.  The previous commit will still
-have the file, if you were to retrieve that specific commit.
+El cambio ha sido organizado. Ahora comprometa la eliminación y elimine
+archivo del propio repositorio. Tenga en cuenta que el archivo se eliminará
+en el nuevo compromiso La confirmación anterior seguirá
+tener el archivo, si fueras a recuperar esa confirmación específica.
 
 ~~~
 $ git commit -m 'Removing info on Nibiru.  It is not a real planet!'
 ~~~
 {: .bash}
 
-## Removing a File with Unix
+## Eliminar un archivo con Unix
 
-Sometimes we might forget to remove the file through Git. If you removed the
-file with Unix `rm` instead of using `git rm`, no worries,
-Git is smart enough to notice the missing file. Let us recreate the file and
-commit it again.
+A veces podríamos olvidar eliminar el archivo a través de Git. Si eliminaste el
+archivo con Unix `rm` en lugar de usar` git rm`, sin preocupaciones,
+Git es lo suficientemente inteligente como para notar el archivo perdido. Vamos a recrear el archivo y
+cometerlo de nuevo.
 
 ~~~
 $ echo "This is another name for fake planet X" > nibiru.txt
@@ -290,7 +290,7 @@ $ git commit -m 'adding nibiru again'
 ~~~
 {: .bash}
 
-Now we remove the file with Unix `rm`:
+Ahora eliminamos el archivo con Unix `rm`:
 
 ~~~
 $ rm nibiru.txt
@@ -310,10 +310,10 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
 {: .output}
 
-See how Git has noticed that the file `nibiru.txt` has been removed
-from the disk.  The next step is to "stage" the removal of the file
-from the repository.  This is done with the command `git rm` just as
-before.
+Vea cómo Git ha notado que el archivo `nibiru.txt` ha sido eliminado
+del disco. El siguiente paso es "escenificar" la eliminación del archivo
+del repositorio. Esto se hace con el comando `git rm` igual que
+antes de.
 
 ~~~
 $ git rm nibiru.txt
@@ -331,26 +331,26 @@ Changes to be committed:
 ~~~
 {: .output}
 
-The change that was made in Unix has now been staged and needs to be
-committed.
+El cambio que se hizo en Unix ahora se ha organizado y debe ser
+comprometido.
 
 ~~~
 $ git commit -m 'Removing info on Nibiru, again!'
 ~~~
 {: .bash}
 
-## Renaming a File
+## Renombrar un archivo
 
-Another common change when working on a project is to rename a file.
+Otro cambio común cuando se trabaja en un proyecto es cambiar el nombre de un archivo.
 
-Create a file for the planet Krypton:
+Crea un archivo para el planeta Krypton:
 
 ~~~
 $ echo "Superman's home planet" > krypton.txt
 ~~~
 {: .bash}
 
-Add it to the repository:
+Añádalo al repositorio:
 
 ~~~
 $ git add krypton.txt
@@ -358,10 +358,10 @@ $ git commit -m 'Adding planet Krypton'
 ~~~
 {: .bash}
 
-We all know that Superman moved to Earth.  Not that he had much
-choice.  Now his home planet is Earth.
+Todos sabemos que Superman se mudó a la Tierra. No es que tuviera mucho
+elección. Ahora su planeta de origen es la Tierra.
 
-Rename the file `krypton.txt` to `earth.txt` with Git:
+Cambie el nombre del archivo `krypton.txt` a` earth.txt` con Git:
 
 ~~~
 $ git mv krypton.txt earth.txt
@@ -378,20 +378,21 @@ $ git status
 #
 ~~~
 {: .output}
-The final step is commit our change to the repository:
+
+El último paso es comprometer nuestro cambio al repositorio:
 
 ~~~
 $ git commit -m 'Superman's home is now Earth'
 ~~~
 {: .bash}
 
-## Renaming a File with Unix
+## Renombrar un archivo con Unix
 
-If you forgot to use Git and you used Unix `mv` instead
-of `git mv`, you will have a touch more work to do but Git will
-be able to deal with it. Let's try again renaming the file,
-this time with Unix `mv`. First, we need to recreate the
-`krypton.txt` file:
+Si olvidó usar Git y usó Unix `mv` en su lugar
+de `git mv`, tendrás un poco más de trabajo que hacer, pero Git lo hará
+ser capaz de lidiar con eso. Intentemos nuevamente cambiar el nombre del archivo,
+esta vez con Unix `mv`. Primero, necesitamos recrear el
+archivo `krypton.txt`:
 
 ~~~
 $ echo "Superman's home planet" > krypton.txt
@@ -400,8 +401,7 @@ $ git commit -m 'Adding planet Krypton again.'
 ~~~
 {: .bash}
 
-Let us rename the file and see what Git can figured out by itself:
-
+Vamos a renombrar el archivo y ver lo que Git puede descifrar por sí mismo:
 ~~~
 $ mv krypton.txt earth.txt
 $ git status
@@ -425,10 +425,10 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
 {: .output}
 
-Git has noticed that the file `krypton.txt` has disappeared from the
-file system and a new file `earth.txt` has showed up.
+Git notó que el archivo `krypton.txt` ha desaparecido del
+sistema de archivos y un nuevo archivo `earth.txt` ha aparecido.
 
-Add those changes to the staging area:
+Agregue esos cambios al área de ensayo:
 
 ~~~
 $ git add krypton.txt earth.txt
@@ -446,10 +446,10 @@ Changes to be committed:
 ~~~
 {: .output}
 
-Notice how Git has now figure out that the `krypton.txt` has not
-disappeared it has simply been renamed.
+Observe cómo Git ahora ha descubierto que el `krypton.txt` no tiene
+desapareció simplemente ha sido renombrado.
 
-The final step, as before, is to commit our change to the repository:
+El último paso, como antes, es comprometer nuestro cambio al repositorio:
 
 ~~~
 $ git commit -m 'Superman's home is Earth, told you before.'
