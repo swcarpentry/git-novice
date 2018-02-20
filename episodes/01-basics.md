@@ -30,14 +30,14 @@ history](https://support.google.com/docs/answer/190843?hl=en), or LibreOffice's 
 Version control systems start with a base version of the document and
 then record changes you make each step of the way. You can
 think of it as a recording of your progress: you can rewind to start at the base
-document, play back each change you made, eventually arriving at your
+document and play back each change you made, eventually arriving at your
 more recent version.
 
 ![Changes Are Saved Sequentially](../fig/play-changes.svg)
 
 Once you think of changes as separate from the document itself, you
-can then think about "playing back" different sets of changes, resulting in 
-different versions of the document. For example, two users can make independent
+can then think about "playing back" different sets of changes on the base document, ultimately
+resulting in different versions of that document. For example, two users can make independent
 sets of changes on the same document. 
 
 ![Different Versions Can be Saved](../fig/versions.svg)
