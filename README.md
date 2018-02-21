@@ -1,6 +1,12 @@
 git-novice
 ==========
 
+#
+**NOTA**
+Este repositorio esta archivado y sólo tiene modo lectura. 
+Esta lección ahora se encuentra publicada en https://swcarpentry.github.io/git-novice-es/ con su respectivo repositorio
+#
+
 Una introdución para principiantes sobre control de versiones usando Git.
 Puedes encontrar la traducción de este material en <https://github.com/Carpentries-ES/git-novice/tree/gh-pages/_episodes_es/>
 y también puedes ver el [modelo de documentación][lesson-example]
