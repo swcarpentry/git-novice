@@ -8,7 +8,7 @@ objectives:
 - "Create a local Git repository."
 keypoints:
 - "`git init` initializes a repository."
-- "Git stores all of it's repository data in the `.git` directory."
+- "Git stores all of its repository data in the `.git` directory."
 ---
 
 Once Git is configured,
