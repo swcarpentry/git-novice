@@ -90,9 +90,8 @@ by acting as a shareable electronic lab notebook for computational work:
     intellectual work directly to the changes that spring from them.
 *   You can refer to what you used in your research to obtain your
     computational results in a way that is unique and recoverable.
-*   With a distributed version control system such as Git, the version
-    control repository is easy to archive for perpetuity, and contains
-    the entire history.
+*   With a version control system such as Git, 
+    the entire history of the repository is easy to archive for perpetuity.
 
 > ## Making Code Citable
 >
