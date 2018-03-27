@@ -7,6 +7,7 @@ questions:
 objectives:
 - "Clone a remote repository."
 - "Collaborate pushing to a common repository."
+- "Describe the basic collaborative workflow."
 keypoints:
 - "`git clone` copies a remote repository to create a local repository with a remote called `origin` automatically set up."
 ---
