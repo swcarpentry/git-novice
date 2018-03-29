@@ -1,17 +1,17 @@
 ---
-title: Remotes in GitHub
+title: "Remotes in GitHub"
+keypoints:
+- A local Git repository can be connected to one or more remote repositories.
+- Use the HTTPS protocol to connect to remote repositories until you have learned
+  how to set up SSH.
+- '`git push` copies changes from a local repository to a remote repository.'
+- '`git pull` copies changes from a remote repository to a local repository.'
+objectives:
+- Explain what remote repositories are and why they are useful.
+- Push to or pull from a remote repository.
+questions: How do I share my changes with others on the web?
 teaching: 30
 exercises: 0
-questions:
-- "How do I share my changes with others on the web?"
-objectives:
-- "Explain what remote repositories are and why they are useful."
-- "Push to or pull from a remote repository."
-keypoints:
-- "A local Git repository can be connected to one or more remote repositories."
-- "Use the HTTPS protocol to connect to remote repositories until you have learned how to set up SSH."
-- "`git push` copies changes from a local repository to a remote repository."
-- "`git pull` copies changes from a remote repository to a local repository."
 ---
 
 Version control really comes into its own when we begin to collaborate with
@@ -216,6 +216,15 @@ GitHub, though, this command would download them to our local repository.
 > > The right-most button lets you view all of the files in the repository at the time of that commit. To do this in the shell, we'd need to checkout the repository at that particular time. We can do this with ```git checkout ID``` where ID is the identifier of the commit we want to look at. If we do this, we need to remember to put the repository back to the right state afterwards!
 > {: .solution}
 {: .challenge}
+
+> ## Uploading files directly in GitHub browser
+>
+> Github also allows you to skip the command line and upload files directly to 
+> your repository without having to leave the broswer. There are two options. 
+> First you can click the "Upload files" button in the toolbar at the top of the
+> file tree. Or, you can drag and drop files from your desktop onto the file 
+> tree. You can read more about this [on this GitHub page](https://help.github.com/articles/adding-a-file-to-a-repository/)
+{: .callout}
 
 > ## GitHub Timestamp
 >
