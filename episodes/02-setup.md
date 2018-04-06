@@ -16,7 +16,6 @@ we need to configure a few things. Below are a few examples
 of configurations we will set as we get started with Git:
 
 *   our name and email address,
-*   to colorize our output,
 *   what our preferred text editor is,
 *   and that we want to use these settings globally (i.e. for every project)
 
@@ -27,7 +26,6 @@ Dracula sets up his new laptop:
 ~~~
 $ git config --global user.name "Vlad Dracula"
 $ git config --global user.email "vlad@tran.sylvan.ia"
-$ git config --global color.ui "auto"
 ~~~
 {: .bash}
 
