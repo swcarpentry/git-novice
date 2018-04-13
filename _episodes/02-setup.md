@@ -49,7 +49,7 @@ in a later lesson will include this information.
 > Because git uses these characters to compare files, 
 > it may cause unexpected issues when editing a file on different machines. 
 > 
-> You can change the way git recognizes and encodes line endings
+> You can change the way Git recognizes and encodes line endings
 > using the `core.autocrlf` command to `git config`.
 > The following settings are recommended:
 >
