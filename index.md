@@ -12,8 +12,6 @@ spend a lot of time waiting for the other to finish, but if they work
 on their own copies and email changes back and forth things will be
 lost, overwritten, or duplicated.
 
-![motivatingexample](./fig/motivatingexample.png)
-
 A colleague suggests using [version control]({{ page.root }}/reference/#version-control) to
 manage their work. Version control is better than mailing files back and forth:
 
