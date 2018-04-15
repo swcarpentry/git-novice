@@ -130,7 +130,7 @@ nothing to commit (create/copy files and use "git add" to track)
 > > ## Solution -- USE WITH CAUTION!
 > >
 > > To recover from this little mistake, Dracula can just remove the `.git`
-> > folder in the moons subdirectory by running the following command from inside the 'moons' directory:
+> > folder in the moons subdirectory by running the following command from inside the 'planets' directory:
 > >
 > > ~~~
 > > $ rm -rf moons/.git

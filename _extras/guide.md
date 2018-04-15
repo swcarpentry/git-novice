@@ -147,7 +147,7 @@ working in teams or not, because it is
     f22b25e`, they wind up in the "detached HEAD" state and confusion abounds.
     It's then possible to keep on committing, but things like `git push origin
     master` a bit later will not give easily comprehensible results.  It also
-    makes it look like commits can be lost.  To "fix" a "detached HEAD", simply
+    makes it look like commits can be lost.  To "re-attach" HEAD, use
     `git checkout master`.
 
 *   This is a good moment to show a log within a Git GUI. If you skip it
