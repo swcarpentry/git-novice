@@ -288,8 +288,9 @@ $ git checkout HEAD mars.txt
 > The command `checkout` has other important functionalities and Git will misunderstand
 > your intentions if you are not accurate with the typing. For example, 
 > if you forget `mars.txt` in that command, Git will tell you that "You are in
-> 'detached HEAD' state." In this state, you shouldn't make any changes.
-> You can fix this by reattaching your head using ``git checkout master``
+> 'detached HEAD' state." It's "look, but don't touch" here, so you shouldn't
+> make any changes in this state.
+> After investigating your repo's past state, reattach your HEAD with ``git checkout master``
 {: .callout}
 
 It's important to remember that
@@ -367,7 +368,7 @@ moving backward and forward in time becomes much easier.
 > group repository.  Below are the right steps and explanations for
 > Jennifer to use `git revert`, what is the missing command?
 >
-> 1. ________ # Look at the git history of the project to find the commit ID
+> 1. `________ # Look at the git history of the project to find the commit ID`
 >
 > 2. Copy the ID (the first few characters of the ID, e.g. 0b1d055).
 >
