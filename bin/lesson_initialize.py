@@ -45,7 +45,7 @@ This is a good way to introduce yourself
 and to meet some of our community members.
 
 1.  If you do not have a [GitHub][github] account,
-    you can [send us comments by email][contact].
+    you can [send us comments by email][email].
     However,
     we will be able to respond more quickly if you use one of the other methods described below.
 
@@ -87,11 +87,11 @@ and to meet some of our community members.
 There are many ways to contribute,
 from writing new exercises and improving existing ones
 to updating or filling in the documentation
-and and submitting [bug reports][issues]
+and submitting [bug reports][issues]
 about things that don't work, aren't clear, or are missing.
-If you are looking for ideas,
-please see [the list of issues for this repository][issues],
-or the issues for [Data Carpentry][dc-issues]
+If you are looking for ideas, please see the 'Issues' tab for
+a list of issues associated with this repository,
+or you may also look at the issues for [Data Carpentry][dc-issues]
 and [Software Carpentry][swc-issues] projects.
 
 Comments on issues and reviews of pull requests are just as welcome:
@@ -119,41 +119,39 @@ our lessons must run equally well on all three.
 
 ## Using GitHub
 
-If you choose to contribute via GitHub,
-you may want to look at
+If you choose to contribute via GitHub, you may want to look at
 [How to Contribute to an Open Source Project on GitHub][how-contribute].
-In brief:
+To manage changes, we follow [GitHub flow][github-flow]. 
+Each lesson has two maintainers who review issues and pull requests or encourage others to do so.
+The maintainers are community volunteers and have final say over what gets merged into the lesson.
+To use the web interface for contributing to a lesson:
 
-1.  The published copy of the lesson is in the `gh-pages` branch of the repository
-    (so that GitHub will regenerate it automatically).
-    Please create all branches from that,
-    and merge the [master repository][repo]'s `gh-pages` branch into your `gh-pages` branch
-    before starting work.
-    Please do *not* work directly in your `gh-pages` branch,
-    since that will make it difficult for you to work on other contributions.
+1.  Fork the originating repository to your GitHub profile.
+2.  Within your version of the forked repository, move to the `gh-pages` branch and
+create a new branch for each significant change being made.
+3.  Navigate to the file(s) you wish to change within the new branches and make revisions as required.
+4.  Commit all changed files within the appropriate branches.
+5.  Create individual pull requests from each of your changed branches
+to the `gh-pages` branch within the originating repository.
+6.  If you receive feedback, make changes using your issue-specific branches of the forked
+repository and the pull requests will update automatically.
+7.  Repeat as needed until all feedback has been addressed.
 
-2.  We use [GitHub flow][github-flow] to manage changes:
-    1.  Create a new branch in your desktop copy of this repository for each significant change.
-    2.  Commit the change in that branch.
-    3.  Push that branch to your fork of this repository on GitHub.
-    4.  Submit a pull request from that branch to the [master repository][repo].
-    5.  If you receive feedback,
-        make changes on your desktop and push to your branch on GitHub:
-        the pull request will update automatically.
-
-Each lesson has two maintainers who review issues and pull requests
-or encourage others to do so.
-The maintainers are community volunteers,
-and have final say over what gets merged into the lesson.
+When starting work, please make sure your clone of the originating `gh-pages` branch is up-to-date
+before creating your own revision-specific branch(es) from there.
+Additionally, please only work from your newly-created branch(es) and *not*
+your clone of the originating `gh-pages` branch.
+Lastly, published copies of all the lessons are available in the `gh-pages` branch of the originating
+repository for reference while revising.
 
 ## Other Resources
 
 General discussion of [Software Carpentry][swc-site] and [Data Carpentry][dc-site]
 happens on the [discussion mailing list][discuss-list],
 which everyone is welcome to join.
-You can also [reach us by email][contact].
+You can also [reach us by email][email].
 
-[contact]: mailto:admin@software-carpentry.org
+[email]: mailto:admin@software-carpentry.org
 [dc-issues]: https://github.com/issues?q=user%3Adatacarpentry
 [dc-lessons]: http://datacarpentry.org/lessons/
 [dc-site]: http://datacarpentry.org/
@@ -162,8 +160,7 @@ You can also [reach us by email][contact].
 [github-flow]: https://guides.github.com/introduction/flow/
 [github-join]: https://github.com/join
 [how-contribute]: https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github
-[issues]: https://github.com/swcarpentry/FIXME/issues/
-[repo]: https://github.com/swcarpentry/FIXME/
+[issues]: https://guides.github.com/features/issues/
 [swc-issues]: https://github.com/issues?q=user%3Aswcarpentry
 [swc-lessons]: https://software-carpentry.org/lessons/
 [swc-site]: https://software-carpentry.org/
@@ -183,7 +180,7 @@ title: "Lesson Title"
 # Contact.  This *must* include the protocol: if it's an email
 # address, it must look like "mailto:lessons@software-carpentry.org",
 # or if it's a URL, "https://gitter.im/username/ProjectName".
-contact: "mailto:lessons@software-carpentry.org"
+email: "mailto:lessons@software-carpentry.org"
 
 #------------------------------------------------------------
 # Generic settings (should not need to change).
@@ -202,7 +199,7 @@ dc_site: "http://datacarpentry.org"
 swc_github: "https://github.com/swcarpentry"
 swc_site: "https://software-carpentry.org"
 swc_pages: "https://swcarpentry.github.io"
-lc_site: "http://librarycarpentry.github.io/"
+lc_site: "https://librarycarpentry.github.io/"
 template_repo: "https://github.com/swcarpentry/styles"
 example_repo: "https://github.com/swcarpentry/lesson-example"
 example_site: "https://swcarpentry.github.com/lesson-example"
@@ -222,9 +219,10 @@ start_time: 0
 collections:
   episodes:
     output: true
-    permalink: /:path/
+    permalink: /:path/index.html
   extras:
     output: true
+    permalink: /:path/index.html
 
 # Set the default layout for things in the episodes collection.
 defaults:
@@ -241,14 +239,15 @@ exclude:
   - Makefile
   - bin
 
-# Turn off built-in syntax highlighting.
-highlighter: false
+# Turn on built-in syntax highlighting.
+highlighter: rouge
 '''
 
 ROOT_INDEX_MD = '''\
 ---
 layout: lesson
 root: .
+permalink: index.html  # Is the only page that don't follow the partner /:path/index.html
 ---
 FIXME: home page introduction
 
@@ -261,7 +260,7 @@ FIXME: home page introduction
 ROOT_REFERENCE_MD = '''\
 ---
 layout: reference
-permalink: /reference/
+root: .
 ---
 
 ## Glossary
@@ -273,7 +272,7 @@ ROOT_SETUP_MD = '''\
 ---
 layout: page
 title: Setup
-permalink: /setup/
+root: .
 ---
 FIXME
 '''
@@ -281,7 +280,7 @@ FIXME
 ROOT_AIO_MD = '''\
 ---
 layout: page 
-permalink: /aio/
+root: .
 ---
 <script>
   window.onload = function() {
@@ -335,7 +334,6 @@ EXTRAS_ABOUT_MD = '''\
 ---
 layout: page
 title: About
-permalink: /about/
 ---
 {% include carpentries.html %}
 '''
@@ -344,7 +342,6 @@ EXTRAS_DISCUSS_MD = '''\
 ---
 layout: page
 title: Discussion
-permalink: /discuss/
 ---
 FIXME
 '''
@@ -353,22 +350,50 @@ EXTRAS_FIGURES_MD = '''\
 ---
 layout: page
 title: Figures
-permalink: /figures/
 ---
-{% include all_figures.html %}
+<script>
+  window.onload = function() {
+    var lesson_episodes = [
+    {% for episode in site.episodes %}
+    "{{ episode.url}}"{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+    ];
+    var xmlHttp = [];  /* Required since we are going to query every episode. */
+    for (i=0; i < lesson_episodes.length; i++) {
+      xmlHttp[i] = new XMLHttpRequest();
+      xmlHttp[i].episode = lesson_episodes[i];  /* To enable use this later. */
+      xmlHttp[i].onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var article_here = document.getElementById(this.episode);
+          var parser = new DOMParser();
+          var htmlDoc = parser.parseFromString(this.responseText,"text/html");
+          var htmlDocArticle = htmlDoc.getElementsByTagName("article")[0];
+          article_here.appendChild(htmlDocArticle.getElementsByTagName("h1")[0]);
+          for (let image of htmlDocArticle.getElementsByTagName("img")) {
+            article_here.appendChild(image);
+          }
+        }
+      }
+      episode_url = "{{ page.root }}" + lesson_episodes[i];
+      xmlHttp[i].open("GET", episode_url);
+      xmlHttp[i].send(null);
+    }
+  }
+</script>
+{% comment %}
+Create anchor for each one of the episodes.
+{% endcomment %}
+{% for episode in site.episodes %}
+<article id="{{ episode.url }}"></article>
+{% endfor %}
 '''
 
 EXTRAS_GUIDE_MD = '''\
 ---
 layout: page
 title: "Instructor Notes"
-permalink: /guide/
 ---
 FIXME
-'''
-
-INCLUDES_ALL_FIGURES_HTML = '''\
-<!-- empty -->
 '''
 
 BOILERPLATE = (
@@ -385,7 +410,6 @@ BOILERPLATE = (
     ('_extras/discuss.md', EXTRAS_DISCUSS_MD),
     ('_extras/figures.md', EXTRAS_FIGURES_MD),
     ('_extras/guide.md', EXTRAS_GUIDE_MD),
-    ('_includes/all_figures.html', INCLUDES_ALL_FIGURES_HTML)
 )
 
 
