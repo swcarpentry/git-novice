@@ -111,8 +111,8 @@ nothing to commit (create/copy files and use "git add" to track)
 > > all information about moons, Dracula only needed to add the `moons` sub-directory
 > > to the `planets` directory.
 > > 
-> > Additionally, Git repositories can interfere with each other if they are "nested" in the
-> > directory of another: the outer repository will try to version-control
+> > Additionally, Git repositories can interfere with each other if they are "nested":
+> > the outer repository will try to version-control
 > > the inner repository. Therefore, it's best to create each new Git
 > > repository in a separate directory. To be sure that there is no conflicting
 > > repository in the directory, check the output of `git status`. If it looks
