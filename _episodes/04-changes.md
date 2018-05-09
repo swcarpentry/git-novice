@@ -15,7 +15,7 @@ keypoints:
 - "Files can be stored in a project's working directory (which users see), the staging area (where the next commit is being built up) and the local repository (where commits are permanently recorded)."
 - "`git add` puts files in the staging area."
 - "`git commit` saves the staged content as a new commit in the local repository."
-- "Always write a log message when committing changes."
+- "Write a commit message that accurately describes your changes."
 ---
 
 First let's make sure we're still in the right directory.
@@ -153,9 +153,9 @@ If we just run `git commit` without the `-m` option,
 Git will launch `nano` (or whatever other editor we configured as `core.editor`)
 so that we can write a longer message.
 
-[Good commit messages][commit-messages] start with a brief (<50 characters) summary of
-changes made in the commit.  If you want to go into more detail, add
-a blank line between the summary line and your additional notes.
+[Good commit messages][commit-messages] start with a brief (<50 characters) statement about the
+changes made in the commit. Generally, the message should complete the sentence "If applied, this commit will" <commit message here>.
+If you want to go into more detail, add a blank line between the summary line and your additional notes. Use this additional space to explain why you made changes and/or what their impact will be.
 
 If we run `git status` now:
 
@@ -610,9 +610,9 @@ repository (`git commit`):
 > 3. "Discuss effects of Mars' climate on the Mummy"
 >
 > > ## Solution
-> > Answer 1 is not descriptive enough,
-> > and answer 2 is too descriptive and redundant,
-> > but answer 3 is good: short but descriptive.
+> > Answer 1 is not descriptive enough, and the purpose of the commit is unclear; 
+> > and answer 2 is redundant to using "git diff" to see what changed in this commit;
+> > but answer 3 is good: short, descriptive, and imperative.
 > {: .solution}
 {: .challenge}
 
