@@ -39,19 +39,19 @@ in a later lesson will include this information.
 
 > ## Line Endings
 >
-> As with other keys, when you hit the 'return' key on your keyboard, 
-> your computer encodes this input as a character. 
+> As with other keys, when you hit <kbd>Return</kbd> on your keyboard,
+> your computer encodes this input as a character.
 > For reasons that are long to explain, different operating systems
-> use different character(s) to represent the end of a line. 
+> use different character(s) to represent the end of a line.
 > (You may also hear these referred to as newlines or line breaks.)
-> Because git uses these characters to compare files, 
-> it may cause unexpected issues when editing a file on different machines. 
-> 
+> Because Git uses these characters to compare files,
+> it may cause unexpected issues when editing a file on different machines.
+>
 > You can change the way Git recognizes and encodes line endings
 > using the `core.autocrlf` command to `git config`.
 > The following settings are recommended:
 >
-> On OS X and Linux:
+> On macOS and Linux:
 >
 > ~~~
 > $ git config --global core.autocrlf input
@@ -87,15 +87,16 @@ Dracula also has to set his favorite text editor, following this table:
 | Kate (Linux)       | `$ git config --global core.editor "kate"`       |
 | Gedit (Linux)      | `$ git config --global core.editor "gedit --wait --new-window"`   |
 | Scratch (Linux)       | `$ git config --global core.editor "scratch-text-editor"`  |
-| emacs              | `$ git config --global core.editor "emacs"`   |
-| vim                | `$ git config --global core.editor "vim"`   |
+| Emacs              | `$ git config --global core.editor "emacs"`   |
+| Vim                | `$ git config --global core.editor "vim"`   |
 
 It is possible to reconfigure the text editor for Git whenever you want to change it.
 
 > ## Exiting Vim
 >
-> Note that `vim` is the default editor for many programs. If you haven't used `vim` before and wish to exit a session without saving
-your changes, type `Esc` then `:q!` and `Enter`. If you want to save your changes and quit, type `Esc` then `:wq` and `Enter`.
+> Note that Vim is the default editor for many programs. If you haven't used Vim before and wish to exit a session without saving
+your changes, press <kbd>Esc</kbd> then type `:q!` and hit <kbd>Return</kbd>.
+> If you want to save your changes and quit, press <kbd>Esc</kbd> then type `:wq` and hit <kbd>Return</kbd>.
 {: .callout}
 
 The four commands we just ran above only need to be run once: the flag `--global` tells Git
