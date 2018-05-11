@@ -69,10 +69,6 @@ by asking Git to tell us the status of our project:
 $ git status
 ~~~
 {: .bash}
-
-If you are using a different version of `git`, the exact
-wording of the output might be slightly different.
-
 ~~~
 # On branch master
 #
@@ -81,6 +77,9 @@ wording of the output might be slightly different.
 nothing to commit (create/copy files and use "git add" to track)
 ~~~
 {: .output}
+
+If you are using a different version of `git`, the exact
+wording of the output might be slightly different.
 
 > ## Places to Create Git Repositories
 >
@@ -137,7 +136,7 @@ nothing to commit (create/copy files and use "git add" to track)
 > > ## Solution -- USE WITH CAUTION!
 > >
 > > To recover from this little mistake, Dracula can just remove the `.git`
-> > folder in the moons subdirectory by running the following command from inside the 'planets' directory:
+> > folder in the moons subdirectory by running the following command from inside the `planets` directory:
 > >
 > > ~~~
 > > $ rm -rf moons/.git
@@ -145,7 +144,7 @@ nothing to commit (create/copy files and use "git add" to track)
 > > {: .bash}
 > >
 > > But be careful! Running this command in the wrong directory, will remove
-> > the entire git-history of a project you might want to keep. Therefore, always check your current directory using the
+> > the entire Git history of a project you might want to keep. Therefore, always check your current directory using the
 > > command `pwd`.
 > {: .solution}
 {: .challenge}
