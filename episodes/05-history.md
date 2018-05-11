@@ -381,93 +381,42 @@ moving backward and forward in time becomes much easier.
 
 > ## Understanding Workflow and History
 >
-> What is the output of cat venus.txt at the end of this set of commands?
+> What is the output of the last command in
 >
 > ~~~
 > $ cd planets
-> $ nano venus.txt #input the following text: Venus is beautiful and full of love
+> $ echo "Venus is beautiful and full of love" > venus.txt
 > $ git add venus.txt
-> $ nano venus.txt #add the following text: Venus is too hot to be suitable as a base
+> $ echo "Venus is too hot to be suitable as a base" >> venus.txt
 > $ git commit -m "Comment on Venus as an unsuitable base"
 > $ git checkout HEAD venus.txt
 > $ cat venus.txt #this will print the contents of venus.txt to the screen
 > ~~~
 > {: .bash}
 >
-> 1.
->
-> ~~~
-> Venus is too hot to be suitable as a base
-> ~~~
-> {: .output}
->
-> 2.
->
-> ~~~
-> Venus is beautiful and full of love
-> ~~~
-> {: .output}
->
-> 3.
->
-> ~~~
-> Venus is beautiful and full of love
-> Venus is too hot to be suitable as a base
-> ~~~
-> {: .output}
->
-> 4.
->
-> ~~~
-> Error because you have changed venus.txt without committing the changes
-> ~~~
-> {: .output}
+> 1. ~~~
+>    Venus is too hot to be suitable as a base
+>    ~~~
+>    {: .output}
+> 2. ~~~
+>    Venus is beautiful and full of love
+>    ~~~
+>    {: .output}
+> 3. ~~~
+>    Venus is beautiful and full of love
+>    Venus is too hot to be suitable as a base
+>    ~~~
+>    {: .output}
+> 4. ~~~
+>    Error because you have changed venus.txt without committing the changes
+>    ~~~
+>    {: .output}
 >
 > > ## Solution
 > >
-> > Line by line:
-> > ~~~
-> > $ cd planets
-> > ~~~
-> > {: .bash}
-> > Enters into the 'planets' directory
-> >
-> > ~~~
-> > $ nano venus.txt #input the following text: Venus is beautiful and full of love
-> > ~~~
-> > {: .bash}
-> > We created a new file and wrote a sentence in it, but the file is not tracked by git.  
-> >
-> > ~~~
-> > $ git add venus.txt
-> > ~~~
-> > {: .bash}
-> > Now the file is staged. The changes that have been made to the file until now will be committed in the next commit.
-> >
-> > ~~~
-> > $ nano venus.txt #add the following text: Venus is too hot to be suitable as a base
-> > ~~~
-> > {: .bash}
-> > The file has been modified. The new changes are not staged because we have not added the file.
-> >
-> > ~~~
-> > $ git commit -m "Comment on Venus as an unsuitable base"
-> > ~~~
-> > {: .bash}
-> > The changes that were staged (Venus is beautiful and full of love) have been committed. The changes that were not staged (Venus is too hot to be suitable as a base) have not. Our local working copy is different than the copy in our local repository.
-> >
-> > ~~~
-> > $ git checkout HEAD venus.txt
-> > ~~~
-> > {: .bash}
-> > With checkout we discard the changes in the working directory so that our local copy is exactly the same as our HEAD, the most recent commit.
-> >
-> > ~~~
-> > $ cat venus.txt #this will print the contents of venus.txt to the screen
-> > ~~~
-> > {: .bash}
-> > If we print venus.txt we will get answer 2.
-> >
+> > The answer is 2 because `git add venus.txt` was used only before add the line
+> > `Venus is too hot to be suitable as a base`.
+> > And the flag `-a` was not used with `git commit`.
 > {: .solution}
 {: .challenge}
 
