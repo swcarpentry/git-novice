@@ -117,7 +117,7 @@ In this way,
 we can build up a chain of commits.
 The most recent end of the chain is referred to as `HEAD`;
 we can refer to previous commits using the `~` notation,
-so `HEAD~1` (pronounced "head minus one")
+so `HEAD~1`
 means "the previous commit",
 while `HEAD~123` goes back 123 commits from where we are now.
 
