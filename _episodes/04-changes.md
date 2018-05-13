@@ -25,9 +25,21 @@ You should be in the `planets` directory.
 $ pwd
 ~~~
 {: .bash}
+~~~
+/home/vlad/Desktop/planets
+~~~
+{: .output}
 
-If you are still in `moons` navigate back up to `planets`
+If you are still in `moons`, navigate back up to `planets`
 
+~~~
+$ pwd
+~~~
+{: .bash}
+~~~
+/home/vlad/Desktop/planets/moons
+~~~
+{: .output}
 ~~~
 $ cd ..
 ~~~
@@ -49,7 +61,6 @@ Type the text below into the `mars.txt` file:
 ~~~
 Cold and dry, but everything is my favorite color
 ~~~
-{: .output}
 
 `mars.txt` now contains a single line, which we can see by running:
 
@@ -144,8 +155,8 @@ When we run `git commit`,
 Git takes everything we have told it to save by using `git add`
 and stores a copy permanently inside the special `.git` directory.
 This permanent copy is called a [commit]({{ page.root }}/reference/#commit)
-(or [revision]({{ page.root }}/reference/#revision)) and its short identifier is `f22b25e`
-(Your commit may have another identifier.)
+(or [revision]({{ page.root }}/reference/#revision)) and its short identifier is `f22b25e`.
+Your commit may have another identifier.
 
 We use the `-m` flag (for "message")
 to record a short, descriptive, and specific comment that will help us remember later on what we did and why.
@@ -504,10 +515,12 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > When this "pager" is called, you will notice that the last line in your
 > screen is a `:`, instead of your usual prompt.
 >
-> *   To get out of the pager, press `q`.
-> *   To move to the next page, press the space bar.
-> *   To search for `some_word` in all pages, type `/some_word`
->     and navigate through matches pressing `n`.
+> *   To get out of the pager, press <kbd>Q</kbd>.
+> *   To move to the next page, press <kbd>Spacebar</kbd>.
+> *   To search for `some_word` in all pages,
+>     press <kbd>/</kbd>
+>     and type `some_word`.
+>     Navigate through matches pressing <kbd>N</kbd>.
 {: .callout}
 
 > ## Limit Log Size
@@ -565,31 +578,30 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > Two important facts you should know about directories in Git.
 >
 > 1. Git does not track directories on their own, only files within them.
-> Try it for yourself:
+>    Try it for yourself:
 >
-> ~~~
-> $ mkdir directory
-> $ git status
-> $ git add directory
-> $ git status
-> ~~~
-> {: .bash}
+>    ~~~
+>    $ mkdir directory
+>    $ git status
+>    $ git add directory
+>    $ git status
+>    ~~~
+>    {: .bash}
 >
-> Note, our newly created empty directory `directory` does not appear in
-> the list of untracked files even if we explicitly add it (_via_ `git add`) to our
-> repository. This is the reason why you will sometimes see `.gitkeep` files
-> in otherwise empty directories. Unlike `.gitignore`, these files are not special
-> and their sole purpose is to populate a directory so that Git adds it to
-> the repository. In fact, you can name such files anything you like.
+>    Note, our newly created empty directory `directory` does not appear in
+>    the list of untracked files even if we explicitly add it (_via_ `git add`) to our
+>    repository. This is the reason why you will sometimes see `.gitkeep` files
+>    in otherwise empty directories. Unlike `.gitignore`, these files are not special
+>    and their sole purpose is to populate a directory so that Git adds it to
+>    the repository. In fact, you can name such files anything you like.
 >
-> {:start="2"}
 > 2. If you create a directory in your Git repository and populate it with files,
-> you can add all files in the directory at once by:
+>    you can add all files in the directory at once by:
 >
-> ~~~
-> git add <directory-with-files>
-> ~~~
-> {: .bash}
+>    ~~~
+>    git add <directory-with-files>
+>    ~~~
+>    {: .bash}
 >
 {: .callout}
 
@@ -621,15 +633,24 @@ repository (`git commit`):
 > Which command(s) below would save the changes of `myfile.txt`
 > to my local Git repository?
 >
-> 1. `$ git commit -m "my recent changes"`
->
-> 2. `$ git init myfile.txt`
->    `$ git commit -m "my recent changes"`
->
-> 3. `$ git add myfile.txt`
->    `$ git commit -m "my recent changes"`
->
-> 4. `$ git commit -m myfile.txt "my recent changes"`
+> 1. ~~~
+>    $ git commit -m "my recent changes"
+>    ~~~
+>    {: .bash}
+> 2. ~~~
+>    $ git init myfile.txt
+>    $ git commit -m "my recent changes"
+>    ~~~
+>    {: .bash}
+> 3. ~~~
+>    $ git add myfile.txt
+>    $ git commit -m "my recent changes"
+>    ~~~
+>    {: .bash}
+> 4. ~~~
+>    $ git commit -m myfile.txt "my recent changes"
+>    ~~~
+>    {: .bash}
 >
 > > ## Solution
 > >
@@ -700,7 +721,7 @@ repository (`git commit`):
 > {: .solution}
 {: .challenge}
 
-## `bio` Repository
+> ## `bio` Repository
 >
 > * Create a new Git repository on your computer called `bio`.
 > * Write a three-line biography for yourself in a file called `me.txt`,
