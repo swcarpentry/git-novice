@@ -415,8 +415,9 @@ moving backward and forward in time becomes much easier.
 > > ## Solution
 > >
 > > The answer is 2 because `git add venus.txt` was used only before add the line
-> > `Venus is too hot to be suitable as a base`.
-> > And the flag `-a` was not used with `git commit`.
+> > `Venus is too hot to be suitable as a base`
+> > which was lost when `git checkout` was executed.
+> > Use the flag `-a` with `git commit` would have prevent the lost.
 > {: .solution}
 {: .challenge}
 
