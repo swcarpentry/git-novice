@@ -60,7 +60,9 @@ index b36abfd..0848c8d 100644
 
 which is the same as what you would get if you leave out `HEAD` (try it).  The
 real goodness in all this is when you can refer to previous commits.  We do
-that by adding `~1` to refer to the commit one before `HEAD`.
+that by adding `~1` 
+(where "~" is "tilde", pronounced [**til**-d*uh*]) 
+to refer to the commit one before `HEAD`.
 
 ~~~
 $ git diff HEAD~1 mars.txt
@@ -117,7 +119,7 @@ In this way,
 we can build up a chain of commits.
 The most recent end of the chain is referred to as `HEAD`;
 we can refer to previous commits using the `~` notation,
-so `HEAD~1` (pronounced "head minus one")
+so `HEAD~1`
 means "the previous commit",
 while `HEAD~123` goes back 123 commits from where we are now.
 
