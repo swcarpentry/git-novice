@@ -256,9 +256,8 @@ no changes added to commit (use "git add" and/or "git commit -a")
 The last line is the key phrase:
 "no changes added to commit".
 We have changed this file,
-but we haven't told Git we will want to save those changes
-(which we do with `git add`)
-nor have we saved them (which we do with `git commit`).
+but we haven't told Git we will want to save those changes 
+(which we do with `git commit`).
 So let's do that now. It is good practice to always review
 our changes before saving them. We do this using `git diff`.
 This shows us the differences between the current state
@@ -317,12 +316,12 @@ no changes added to commit (use "git add" and/or "git commit -a")
 {: .output}
 
 Whoops:
-Git won't commit because we didn't use `git add` first.
+Notice it says "no changes added to commit" because we didn't specify 
+which the commit message belongs to.
 Let's fix that:
 
 ~~~
-$ git add mars.txt
-$ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
+$ git commit -m "Add concerns about effects of Mars' moons on Wolfman" mars.txt
 ~~~
 {: .bash}
 
@@ -332,10 +331,12 @@ $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
 ~~~
 {: .output}
 
-Git insists that we add files to the set we want to commit
-before actually committing anything. This allows us to commit our
+Git insists that we indicate the files we want to commit. This allows us to commit our
 changes in stages and capture changes in logical portions rather than
-only large batches.
+only large batches. Git expects we will have different commit messages for each file
+we changed, but it's also possible to use the "-a" flag for "all" to indicate the message
+applies to all the files that were changed.
+
 For example,
 suppose we're adding a few citations to relevant research to our thesis.
 We might want to commit those additions,
