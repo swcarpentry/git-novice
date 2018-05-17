@@ -49,10 +49,18 @@ $ git init
 ~~~
 {: .bash}
 
-Our local repository still contains our earlier work on `mars.txt`, but the
-remote repository on GitHub doesn't contain any files yet:
+If you remember back to the earlier [lesson](./04-changes.html) where we added and
+commited our earlier work on `mars.txt`, we had a diagram of the local repository
+which looked like this:
+
+![The Local Repository with Git Staging Area](../fig/git-staging-area.svg)
+
+Now that we have two repositories, we need a diagram like this:
 
 ![Freshly-Made GitHub Repository](../fig/git-freshly-made-github-repo.svg)
+
+Note that our local repository still contains our earlier work on `mars.txt`, but the
+remote repository on GitHub appears empty as it doesn't contain any files yet.
 
 The next step is to connect the two repositories.  We do this by making the
 GitHub repository a [remote]({{ page.root }}/reference/#remote) for the local repository.
