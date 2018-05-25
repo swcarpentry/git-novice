@@ -98,7 +98,7 @@ history:
 > - 'where git' (Windows)
 > Copy the path to the git executable (e.g. On a Windows computer the path was:
 > 'C:/Users/UserName/AppData/Local/GitHubDesktop/app-1.1.1/resources/app/git/cmd/git.exe')
-> # Tell RStudio where to find GitHub
+> <b>Tell RStudio where to find GitHub</b>
 > In RStudio, go to the 'Tools' menu > 'Global Options' > 'Git/SVN' and then
 > browse to the git executable you found in the command prompt or shell. Now restart
 > RStudio.
