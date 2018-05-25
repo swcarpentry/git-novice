@@ -44,8 +44,8 @@ our computer, we choose the option "Existing Directory":
 > or [GitHub](https://desktop.github.com/) on your computer.
 > Next, open your shell on Mac or Linux, or on Windows open the command prompt.
 > and then type:
-> - `which git' (Mac, Linux)
-> - `where git' (Windows)
+> - `which git` (Mac, Linux)
+> - `where git` (Windows)
 > Copy the path to the git executable (e.g. On a Windows computer the path was:
 > 'C:/Users/UserName/AppData/Local/GitHubDesktop/app-1.1.1/resources/app/git/cmd/git.exe')
 > ### Tell RStudio where to find GitHub
