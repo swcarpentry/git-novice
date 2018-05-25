@@ -48,7 +48,8 @@ our computer, we choose the option "Existing Directory":
 > - `where git` (Windows)
 > Copy the path to the git executable (e.g. On one Windows computer which had
 > GitHub Desktop installed on it, the path was:
-> `C:/Users/UserName/AppData/Local/GitHubDesktop/app-1.1.1/resources/app/git/cmd/git.exe`)
+> `C:/Users/UserName/AppData/Local/GitHubDesktop/app-1.1.1/resources/app/git/cmd/git.exe`
+> NOTE: The path on your computer will be different)
 > ### Tell RStudio where to find GitHub
 > In RStudio, go to the 'Tools' menu > 'Global Options' > 'Git/SVN' and then
 > browse to the git executable you found in the command prompt or shell. Now restart
