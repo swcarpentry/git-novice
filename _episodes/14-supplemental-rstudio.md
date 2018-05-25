@@ -39,7 +39,7 @@ our computer, we choose the option "Existing Directory":
 > If that option is not present, it probably means that RStudio doesn't know
 > where your Git executable is, and you won't be able to progress further
 > in this lesson until you tell RStudio where it is.  
-> # Find your Git Executiable
+> ### Find your Git Executiable
 > First make sure that you have installed either [Git](https://git-scm.com/downloads/)
 > or [GitHub](https://desktop.github.com/) on your computer.
 > Next, open your shell on Mac or Linux, or on Windows open the command prompt.
@@ -48,7 +48,7 @@ our computer, we choose the option "Existing Directory":
 > - 'where git' (Windows)
 > Copy the path to the git executable (e.g. On a Windows computer the path was:
 > 'C:/Users/UserName/AppData/Local/GitHubDesktop/app-1.1.1/resources/app/git/cmd/git.exe')
-> # Tell RStudio where to find GitHub
+> ### Tell RStudio where to find GitHub
 > In RStudio, go to the 'Tools' menu > 'Global Options' > 'Git/SVN' and then
 > browse to the git executable you found in the command prompt or shell. Now restart
 > RStudio.
