@@ -20,9 +20,10 @@ is possible to send a planetary lander to Mars.
 ![motivatingexample](../fig/motivatingexample.png)
 
 
-First, let's create a directory for our work and then move into that directory:
+First, let's create a directory in `Desktop` folder for our work and then move into that directory:
 
 ~~~
+$ cd ~/Desktop
 $ mkdir planets
 $ cd planets
 ~~~
@@ -89,7 +90,7 @@ wording of the output might be slightly different.
 > project with the following sequence of commands:
 >
 > ~~~
-> $ cd             # return to home directory
+> $ cd ~/Desktop   # return to Desktop directory
 > $ cd planets     # go into planets directory, which is already a Git repository
 > $ ls -a          # ensure the .git sub-directory is still present in the planets directory
 > $ mkdir moons    # make a sub-directory planets/moons
