@@ -19,7 +19,7 @@ keypoints:
 
 Now, we will see how GitHub can be used as a powerful collaboration tool. To begin, we need to navigate to the countries repository the instructor created during the set up for this lesson. In the search box on the top, search for the name of the repository.
 
-GitHub allows users to search on different levels. If you are already it in a repository, it will automatically search within that repo. As an indicator, "this repository" will appear in the search bar. Since we want to search all GitHub repositories, click the GitHub icon to reset the search settings.
+GitHub allows users to search on different levels. If you are already in a repository, it will automatically search within that repo. As an indicator, "this repository" will appear in the search bar. Since we want to search all GitHub repositories, click the GitHub icon to reset the search settings.
 
 
 ![Searching all repos](../fig/01-fig_01.png)
