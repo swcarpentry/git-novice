@@ -1,189 +1,113 @@
 ---
 title: Collaborating
-teaching: 25
+teaching: 45
 exercises: 0
 questions:
 - "How can I use version control to collaborate with other people?"
 objectives:
+- "Fork an existing repository."
 - "Clone a remote repository."
 - "Collaborate pushing to a common repository."
-- "Describe the basic collaborative workflow."
+- "Merge in changes from an upstream repository."
 keypoints:
+- "To work on someone else's code, you will typically need to fork their repository."
+- "Collaboration on GitHub is driven by Pull Requests."
 - "`git clone` copies a remote repository to create a local repository with a remote called `origin` automatically set up."
 ---
 
-For the next step, get into pairs.  One person will be the "Owner" and the other
-will be the "Collaborator". The goal is that the Collaborator add changes into
-the Owner's repository. We will switch roles at the end, so both persons will
-play Owner and Collaborator.
+## Finding Repositories on GitHub
 
-> ## Practicing By Yourself
->
-> If you're working through this lesson on your own, you can carry on by opening
-> a second terminal window.
-> This window will represent your partner, working on another computer. You
-> won't need to give anyone access on GitHub, because both 'partners' are you.
+Now, we will see how GitHub can be used as a powerful collaboration tool. To begin, we need to navigate to the countries repository the instructor created during the set up for this lesson. In the search box on the top, search for the name of the repository.
+
+GitHub allows users to search on different levels. If you are already in a repository, it will automatically search within that repo. As an indicator, "this repository" will appear in the search bar. Since we want to search all GitHub repositories, click the GitHub icon to reset the search settings.
+
+
+![Searching all repos](../fig/01-fig_01.png)
+
+![Searching within a specific repo](../fig/01-fig_02.png)
+
+
+Once we have located the repository, clicking the title will take us to the repo. There is one folder and a README.md file within the directory. We can explore the files within the GitHub interface. Click on countries and then any of the markdown(.md) files.
+
+
+>## README.md
+>Remember that it is best practice to always have a README.md file within your repository. It should be descriptive so others (or you in a few months) will understand the purpose/structure of your code.
 {: .callout}
 
-The Owner needs to give the Collaborator access.
-On GitHub, click the settings button on the right,
-then select Collaborators, and enter your partner's username.
+Each of these files contains spaces for information about the population, capital, offical language, and interesting trivia for a specific country. Our goal today is to update a few of the files with information about the designated country.
 
-![Adding Collaborators on GitHub](../fig/github-add-collaborators.png)
+Unlike our earlier experience GitHub, we do not own this repository. We can quickly identify the owner by looking at the repostiory name located directly beneath the search bar. The first part of the name is the GitHub user who owns the repository followed by a slash and the repository's name. The owner could be an individual or organizaiton.
 
-To accept access to the Owner's repo, the Collaborator
-needs to go to [https://github.com/notifications](https://github.com/notifications).
-Once there she can accept access to the Owner's repo.
+![The owner of this repo is oulib-swc](../fig/01-fig_03.png)
 
-Next, the Collaborator needs to download a copy of the Owner's repository to her
- machine. This is called "cloning a repo". To clone the Owner's repo into
-her `Desktop` folder, the Collaborator enters:
+## Forking a Project on GitHub
 
-~~~
-$ git clone https://github.com/vlad/planets.git ~/Desktop/vlad-planets
-~~~
-{: .bash}
+Since we do not own this project, we don't want to make changes directly to this code. Instead, we should make a copy of the code, make our changes, and submit it to the owner. If the owner likes our changes, she can then incorporate it into the original repo.
 
-Replace 'vlad' with the Owner's username.
+In GitHub, making a copy of a repository is called forking. In the top right corner of the page, under your profile picture, there are three buttons. Click on Fork to create a forked copy of the repo. The number beside Fork indicates the number of times the original repo has been forked.
 
-![After Creating Clone of Repository](../fig/github-collaboration.svg)
+![Fork the Repo](../fig/01-fig_04.png)
 
-The Collaborator can now make a change in her clone of the Owner's repository,
-exactly the same way as we've been doing before:
+After you fork the repo, GitHub will automatically redirect you to your forked verison. The forked repository is identical to the original repo. The forked verison includes all of the commits and contributors as the original.
 
-~~~
-$ cd ~/Desktop/vlad-planets
-$ nano pluto.txt
-$ cat pluto.txt
-~~~
-{: .bash}
-
-~~~
-It is so a planet!
-~~~
-{: .output}
-
-~~~
-$ git add pluto.txt
-$ git commit -m "Add notes about Pluto"
-~~~
-{: .bash}
-
-~~~
- 1 file changed, 1 insertion(+)
- create mode 100644 pluto.txt
-~~~
-{: .output}
-
-Then push the change to the *Owner's repository* on GitHub:
-
-~~~
-$ git push origin master
-~~~
-{: .bash}
-
-~~~
-Counting objects: 4, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (2/2), done.
-Writing objects: 100% (3/3), 306 bytes, done.
-Total 3 (delta 0), reused 0 (delta 0)
-To https://github.com/vlad/planets.git
-   9272da5..29aba7c  master -> master
-~~~
-{: .output}
-
-Note that we didn't have to create a remote called `origin`: Git uses this
-name by default when we clone a repository.  (This is why `origin` was a
-sensible choice earlier when we were setting up remotes by hand.)
-
-Take a look to the Owner's repository on its GitHub website now (maybe you need
-to refresh your browser.) You should be able to see the new commit made by the
-Collaborator.
-
-To download the Collaborator's changes from GitHub, the Owner now enters:
-
-~~~
-$ git pull origin master
-~~~
-{: .bash}
-
-~~~
-remote: Counting objects: 4, done.
-remote: Compressing objects: 100% (2/2), done.
-remote: Total 3 (delta 0), reused 3 (delta 0)
-Unpacking objects: 100% (3/3), done.
-From https://github.com/vlad/planets
- * branch            master     -> FETCH_HEAD
-Updating 9272da5..29aba7c
-Fast-forward
- pluto.txt | 1 +
- 1 file changed, 1 insertion(+)
- create mode 100644 pluto.txt
-~~~
-{: .output}
-
-Now the three repositories (Owner's local, Collaborator's local, and Owner's on
-GitHub) are back in sync.
-
-> ## A Basic Collaborative Workflow
->
-> In practice, it is good to be sure that you have an updated version of the
-> repository you are collaborating on, so you should `git pull` before making
-> our changes. The basic collaborative workflow would be:
->
-> * update your local repo with `git pull origin master`,
-> * make your changes and stage them with `git add`,
-> * commit your changes with `git commit -m`, and
-> * upload the changes to GitHub with `git push origin master`
->
-> It is better to make many commits with smaller changes rather than
-> of one commit with massive changes: small commits are easier to
-> read and review.
+>## Selecting where to fork
+> If you are a member of organizations on GitHub, you will need to select where you want to fork the repository. For this exercise, please select your personal GitHub account.
 {: .callout}
 
-> ## Switch Roles and Repeat
->
-> Switch roles and repeat the whole process.
-{: .challenge}
+If we look at the title, we can see that the owner has changed. Now, our account name is listed before the name of the repository. There is also a link to the original repo.
 
-> ## Review Changes
->
-> The Owner pushed commits to the repository without giving any information
-> to the Collaborator. How can the Collaborator find out what has changed with
-> command line? And on GitHub?
->
-> > ## Solution
-> > On the command line, the Collaborator can use ```git fetch origin master```
-> > to get the remote changes into the local repository, but without merging
-> > them. Then by running ```git diff master origin/master``` the Collaborator
-> > will see the changes output in the terminal.
-> >
-> > On GitHub, the Collaborator can go to their own fork of the repository and
-> > look right above the light blue latest commit bar for a gray bar saying
-> > "This branch is 1 commit behind Our-Repository:master." On the far right of
-> > that gray bar is a Compare icon and link. On the Compare page the
-> > Collaborator should change the base fork to their own repository, then click
-> > the link in the paragraph above to "compare across forks", and finally
-> > change the head fork to the main repository. This will show all the commits
-> > that are different.
-> {: .solution}
-{: .challenge}
+![The Forked Repo](../fig/01-fig_05.png)
 
-> ## Comment Changes in GitHub
->
-> The Collaborator has some questions about one line change made by the Owner and
-> has some suggestions to propose.
->
-> With GitHub, it is possible to comment the diff of a commit. Over the line of
-> code to comment, a blue comment icon appears to open a comment window.
->
-> The Collaborator posts its comments and suggestions using GitHub interface.
-{: .challenge}
+## Cloning your fork
 
-> ## Version History, Backup, and Version Control
->
-> Some backup software can keep a history of the versions of your files. They also
-> allows you to recover specific versions. How is this functionality different from version control?
-> What are some of the benefits of using version control, Git and GitHub?
-{: .challenge}
+Now that we have our own fork, we are ready to start adding information.
+
+First, we'll clone our fork so that we can modify it.
+
+~~~
+$ cd ~/Desktop
+$ git clone https://github.com/YOUR-ACCOUNT/countries.git
+
+~~~
+
+## Working Locally On Your Fork
+
+In your locally cloned repository, edit the file in the `countries` folder, make your changes to the country that you wish to update.
+
+~~~
+$ cd countries
+$ nano United_States.md
+~~~
+
+Once you're happy with your changes, commit and push them to your forked repository as normal:
+
+~~~
+
+$ git add United_States.md
+$ git commit -m "Updating facts about the US."
+$ git push
+~~~
+
+
+## Sharing Your Work on GitHub
+
+With your new changes pushed to GitHub, you can use the GitHub web interface to create a Pull Request to share your changes with owners of the upstream repository.
+
+
+## Updating Your Fork
+
+In order to keep your fork up dated and get any new changes made in the upstream repository, you'll need to merge in upstream changes manually.
+
+Begin by adding your
+
+~~~
+$ git remote add upstream https://github.com/oulib-swc/countries.git
+$ git fetch
+$ git branch -a
+~~~
+
+
+~~~
+$ git merge upstream/master
+$ git push
+~~~
