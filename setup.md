@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Setup
-permalink: /setup/
 ---
 
 Please see [this section of the workshop template][workshop-setup]
