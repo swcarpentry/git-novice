@@ -281,16 +281,21 @@ GitHub, though, this command would download them to our local repository.
 ~~~
 git pull origin master
 ~~~
+{: .bash}
+
 ~~~
 From https://github.com/vlad/planets
  * branch            master     -> FETCH_HEAD
  * [new branch]      master     -> origin/master
 fatal: refusing to merge unrelated histories
 ~~~
-You can force git to merge the two repositories with the option `--allow-unrelated-histories`. Be careful when you use this option and carefully examine the contents of local and remote repositories before merging.
+{: .output}
+> > You can force git to merge the two repositories with the option `--allow-unrelated-histories`. Be careful when you use this option and carefully examine the contents of local and remote repositories before merging.
 ~~~
 git pull --allow-unrelated-histories origin master
 ~~~
+{: .bash}
+
 ~~~
 From https://github.com/vlad/planets
  * branch            master     -> FETCH_HEAD
@@ -299,5 +304,6 @@ Merge made by the 'recursive' strategy.
  1 file changed, 1 insertion(+)
  create mode 100644 README.md
 ~~~
+{: .output}
 > {: .solution}
 {: .challenge}
