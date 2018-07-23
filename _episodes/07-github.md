@@ -277,6 +277,27 @@ GitHub, though, this command would download them to our local repository.
 > you tried to link your local and remote repositories?
 >
 > > ## Solution
-> > In this case, since we already had a README file in our own (local) repository, we'd see a merge conflict (when git realises that there are two versions of the file and asks us to reconcile the differences).
+> > In this case, we'd see a merge conflict due to unrelated histories. When Github creates a README file, it performs a commit in the remote repository. When you try to pull the remote repository to your local repository, it detects that they have histories that do not share a common origin and refuses to merge.
+~~~
+git pull origin master
+~~~
+~~~
+From https://github.com/vlad/planets
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> origin/master
+fatal: refusing to merge unrelated histories
+~~~
+You can force git to merge the two repositories with the option `--allow-unrelated-histories`. Be careful when you use this option and carefully examine the contents of local and remote repositories before merging.
+~~~
+git pull --allow-unrelated-histories origin master
+~~~
+~~~
+From https://github.com/vlad/planets
+ * branch            master     -> FETCH_HEAD
+Merge made by the 'recursive' strategy.
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+~~~
 > {: .solution}
 {: .challenge}
