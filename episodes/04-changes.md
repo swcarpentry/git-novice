@@ -155,7 +155,7 @@ When we run `git commit`,
 Git takes everything we have told it to save by using `git add`
 and stores a copy permanently inside the special `.git` directory.
 This permanent copy is called a [commit]({{ page.root }}/reference)
-(or [revision]({{ page.root }}/reference/#revision)) and its short identifier is `f22b25e`.
+(or [revision]({{ page.root }}/reference#revision)) and its short identifier is `f22b25e`.
 Your commit may have another identifier.
 
 We use the `-m` flag (for "message")
