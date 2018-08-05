@@ -49,9 +49,9 @@ Unless there are conflicts, you can even incorporate two sets of changes into th
 A version control system is a tool that keeps track of these changes for us,
 effectively creating different versions of our files. It allows us to
 decide which changes will be made to the next version (each record of these changes is called a
-[commit]({{ page.root }}/reference/#commit)), and keeps useful metadata about them. The
+[commit]({{ page.root }}/reference#commit)), and keeps useful metadata about them. The
 complete history of commits for a particular project and their metadata make up
-a [repository]({{ page.root }}/reference/#repository). Repositories can be kept in sync
+a [repository]({{ page.root }}/reference#repository). Repositories can be kept in sync
 across different computers, facilitating collaboration among different people.
 
 > ## The Long History of Version Control Systems

@@ -3,7 +3,7 @@ layout: reference
 
 ---
 
-## Git Cheatsheets for Quick Reference (Modified)
+## Git Cheatsheets for Quick Reference
 
 *   A great [printable git cheatsheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf) is available in PDF from the
 [GitHub training website](https://services.github.com/resources/).
