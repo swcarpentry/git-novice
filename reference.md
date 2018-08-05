@@ -3,7 +3,7 @@ layout: reference
 
 ---
 
-## Git Cheatsheets for Quick Reference
+## Git Cheatsheets for Quick Reference (Modified)
 
 *   A great [printable git cheatsheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf) is available in PDF from the
 [GitHub training website](https://services.github.com/resources/).
@@ -12,7 +12,7 @@ layout: reference
 *   Both resources are also available in other languages (e.g. Spanish, French, and more).
 * "[Happy Git and GitHub for the useR](http://happygitwithr.com)" is an accessible, free online book by Jenny Bryan on how to setup and use git and GitHub with specific references on the integration of git with RStudio and working with git in R.
 
-## Glossary 
+## Glossary
 
 {:auto_ids}
 changeset
