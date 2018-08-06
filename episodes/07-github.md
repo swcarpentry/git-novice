@@ -63,13 +63,13 @@ Note that our local repository still contains our earlier work on `mars.txt`, bu
 remote repository on GitHub appears empty as it doesn't contain any files yet.
 
 The next step is to connect the two repositories.  We do this by making the
-GitHub repository a [remote]({{ page.root }}/reference/#remote) for the local repository.
+GitHub repository a [remote]({{ page.root }}/reference#remote) for the local repository.
 The home page of the repository on GitHub includes the string we need to
 identify it:
 
 ![Where to Find Repository URL on GitHub](../fig/github-find-repo-string.png)
 
-Click on the 'HTTPS' link to change the [protocol]({{ page.root }}/reference/#protocol) from
+Click on the 'HTTPS' link to change the [protocol]({{ page.root }}/reference#protocol) from
 SSH to HTTPS.
 
 > ## HTTPS vs. SSH
@@ -230,7 +230,7 @@ GitHub, though, this command would download them to our local repository.
 > Create a remote repository on GitHub.  Push the contents of your local
 > repository to the remote.  Make changes to your local repository and push
 > these changes.  Go to the repo you just created on GitHub and check the
-> [timestamps]({{ page.root }}/reference/#timestamp) of the files.  How does GitHub record
+> [timestamps]({{ page.root }}/reference#timestamp) of the files.  How does GitHub record
 > times, and why?
 >
 > > ## Solution

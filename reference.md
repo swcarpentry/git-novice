@@ -12,7 +12,7 @@ layout: reference
 *   Both resources are also available in other languages (e.g. Spanish, French, and more).
 * "[Happy Git and GitHub for the useR](http://happygitwithr.com)" is an accessible, free online book by Jenny Bryan on how to setup and use git and GitHub with specific references on the integration of git with RStudio and working with git in R.
 
-## Glossary 
+## Glossary
 
 {:auto_ids}
 changeset
