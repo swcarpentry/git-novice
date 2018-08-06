@@ -154,8 +154,8 @@ $ git commit -m "Start notes on Mars as a base"
 When we run `git commit`,
 Git takes everything we have told it to save by using `git add`
 and stores a copy permanently inside the special `.git` directory.
-This permanent copy is called a [commit]({{ page.root }}/reference/#commit)
-(or [revision]({{ page.root }}/reference/#revision)) and its short identifier is `f22b25e`.
+This permanent copy is called a [commit]({{ page.root }}/reference#commit)
+(or [revision]({{ page.root }}/reference#revision)) and its short identifier is `f22b25e`.
 Your commit may have another identifier.
 
 We use the `-m` flag (for "message")
@@ -346,7 +346,7 @@ but *not* commit some of our work drafting the conclusion
 To allow for this,
 Git has a special *staging area*
 where it keeps track of things that have been added to
-the current [changeset]({{ page.root }}/reference/#changeset)
+the current [changeset]({{ page.root }}/reference#changeset)
 but not yet committed.
 
 > ## Staging Area
@@ -622,7 +622,7 @@ repository (`git commit`):
 > 3. "Discuss effects of Mars' climate on the Mummy"
 >
 > > ## Solution
-> > Answer 1 is not descriptive enough, and the purpose of the commit is unclear; 
+> > Answer 1 is not descriptive enough, and the purpose of the commit is unclear;
 > > and answer 2 is redundant to using "git diff" to see what changed in this commit;
 > > but answer 3 is good: short, descriptive, and imperative.
 > {: .solution}
