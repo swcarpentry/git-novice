@@ -27,7 +27,7 @@ $ cd ~/Desktop
 $ mkdir planets
 $ cd planets
 ~~~
-{: .bash}
+{: .language-bash}
 
 Then we tell Git to make `planets` a [repository]({{ page.root }}/reference#repository)—a place where
 Git can store versions of our files:
@@ -35,7 +35,7 @@ Git can store versions of our files:
 ~~~
 $ git init
 ~~~
-{: .bash}
+{: .language-bash}
 
 It is important to note that `git init` will create a repository that
 includes subdirectories and their files---there is no need to create
@@ -50,7 +50,7 @@ it appears that nothing has changed:
 ~~~
 $ ls
 ~~~
-{: .bash}
+{: .language-bash}
 
 But if we add the `-a` flag to show everything,
 we can see that Git has created a hidden directory within `planets` called `.git`:
@@ -58,7 +58,7 @@ we can see that Git has created a hidden directory within `planets` called `.git
 ~~~
 $ ls -a
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 .	..	.git
@@ -76,7 +76,7 @@ by asking Git to tell us the status of our project:
 ~~~
 $ git status
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 # On branch master
 #
@@ -105,7 +105,7 @@ wording of the output might be slightly different.
 > $ git init       # make the moons sub-directory a Git repository
 > $ ls -a          # ensure the .git sub-directory is present indicating we have created a new Git repository
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > Is the `git init` command, run inside the `moons` sub-directory, required for 
 > tracking files stored in the `moons` sub-directory?
@@ -129,7 +129,7 @@ wording of the output might be slightly different.
 > > ~~~
 > > $ git status
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > > ~~~
 > > fatal: Not a git repository (or any of the parent directories): .git
 > > ~~~
@@ -149,7 +149,7 @@ wording of the output might be slightly different.
 > > ~~~
 > > $ rm -rf moons/.git
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > >
 > > But be careful! Running this command in the wrong directory, will remove
 > > the entire Git history of a project you might want to keep. Therefore, always check your current directory using the
