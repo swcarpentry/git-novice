@@ -27,7 +27,7 @@ Dracula sets up his new laptop:
 $ git config --global user.name "Vlad Dracula"
 $ git config --global user.email "vlad@tran.sylvan.ia"
 ~~~
-{: .bash}
+{: .language-bash}
 
 Please use your own name and email address instead of Dracula's. This user name and email will be associated with your subsequent Git activity,
 which means that any changes pushed to
@@ -56,14 +56,14 @@ in a later lesson will include this information.
 > ~~~
 > $ git config --global core.autocrlf input
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > And on Windows:
 >
 > ~~~
 > $ git config --global core.autocrlf true
 > ~~~
-> {: .bash}
+> {: .language-bash}
 > 
 > You can read more about this issue 
 > [on this GitHub page](https://help.github.com/articles/dealing-with-line-endings/).
@@ -107,7 +107,7 @@ You can check your settings at any time:
 ~~~
 $ git config --list
 ~~~
-{: .bash}
+{: .language-bash}
 
 You can change your configuration as many times as you want: just use the
 same commands to choose another editor or update your email address.
@@ -122,7 +122,7 @@ same commands to choose another editor or update your email address.
 > $ git config --global http.proxy proxy-url
 > $ git config --global https.proxy proxy-url
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > To disable the proxy, use
 >
@@ -130,7 +130,7 @@ same commands to choose another editor or update your email address.
 > $ git config --global --unset http.proxy
 > $ git config --global --unset https.proxy
 > ~~~
-> {: .bash}
+> {: .language-bash}
 {: .callout}
 
 > ## Git Help and Manual
@@ -141,7 +141,7 @@ same commands to choose another editor or update your email address.
 > $ git config -h
 > $ git config --help
 > ~~~
-> {: .bash}
+> {: .language-bash}
 {: .callout}
 
 [git-privacy]: https://help.github.com/articles/keeping-your-email-address-private/

@@ -28,7 +28,7 @@ let's make a change to `mars.txt`.
 $ nano mars.txt
 $ cat mars.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 Cold and dry, but everything is my favorite color
@@ -43,7 +43,7 @@ Now, let's see what we get.
 ~~~
 $ git diff HEAD mars.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 diff --git a/mars.txt b/mars.txt
@@ -67,7 +67,7 @@ to refer to the commit one before `HEAD`.
 ~~~
 $ git diff HEAD~1 mars.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 If we want to see the differences between older commits we can use `git diff`
 again, but with the notation `HEAD~1`, `HEAD~2`, and so on, to refer to them:
@@ -76,7 +76,7 @@ again, but with the notation `HEAD~1`, `HEAD~2`, and so on, to refer to them:
 ~~~
 $ git diff HEAD~2 mars.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 diff --git a/mars.txt b/mars.txt
@@ -96,7 +96,7 @@ We could also use `git show` which shows us what changes we made at an older com
 ~~~
 $ git show HEAD~2 mars.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
@@ -137,7 +137,7 @@ so let's try this:
 ~~~
 $ git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b mars.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 diff --git a/mars.txt b/mars.txt
@@ -159,7 +159,7 @@ so Git lets us use just the first few characters:
 ~~~
 $ git diff f22b25e mars.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 diff --git a/mars.txt b/mars.txt
@@ -183,7 +183,7 @@ Let's suppose we accidentally overwrite our file:
 $ nano mars.txt
 $ cat mars.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 We will need to manufacture our own oxygen
@@ -196,7 +196,7 @@ but those changes haven't been staged:
 ~~~
 $ git status
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 On branch master
@@ -217,7 +217,7 @@ by using `git checkout`:
 $ git checkout HEAD mars.txt
 $ cat mars.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 Cold and dry, but everything is my favorite color
@@ -237,12 +237,12 @@ we can use a commit identifier instead:
 ~~~
 $ git checkout f22b25e mars.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 $ cat mars.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 Cold and dry, but everything is my favorite color
@@ -252,7 +252,7 @@ Cold and dry, but everything is my favorite color
 ~~~
 $ git status
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 # On branch master
@@ -275,7 +275,7 @@ by using `git checkout`:
 ~~~
 $ git checkout HEAD mars.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 > ## Don't Lose Your HEAD
 >
@@ -284,7 +284,7 @@ $ git checkout HEAD mars.txt
 > ~~~
 > $ git checkout f22b25e mars.txt
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > to revert `mars.txt` to its state after the commit `f22b25e`. But be careful! 
 > The command `checkout` has other important functionalities and Git will misunderstand
@@ -294,7 +294,7 @@ $ git checkout HEAD mars.txt
 > ~~~
 > $ git checkout f22b25e
 > ~~~
-> {: .bash}
+> {: .language-bash}
 > ~~~
 > Note: checking out 'f22b25e'.
 >
@@ -339,7 +339,7 @@ here's how Git works in cartoon form:
 > ~~~
 > (use "git checkout -- <file>..." to discard changes in working directory)
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > As it says,
 > `git checkout` without a version identifier restores files to the state saved in `HEAD`.
@@ -415,7 +415,7 @@ moving backward and forward in time becomes much easier.
 > $ git checkout HEAD venus.txt
 > $ cat venus.txt #this will print the contents of venus.txt to the screen
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > 1. ~~~
 >    Venus is too hot to be suitable as a base
@@ -478,7 +478,7 @@ moving backward and forward in time becomes much easier.
 > ~~~
 > $ git log mars.txt
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > Unfortunately some of these commit messages are very ambiguous e.g. `update files`.
 > How can you search through these files?
@@ -489,7 +489,7 @@ moving backward and forward in time becomes much easier.
 > ~~~
 > $ git log --patch mars.txt
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > You should get a long list of output, and you should be able to see both commit messages and the difference between each commit.
 >
@@ -498,5 +498,5 @@ moving backward and forward in time becomes much easier.
 > ~~~
 > $ git log --patch HEAD~3 *.txt
 > ~~~
-> {: .bash}
+> {: .language-bash}
 {: .challenge}
