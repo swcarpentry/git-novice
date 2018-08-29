@@ -42,7 +42,7 @@ her `Desktop` folder, the Collaborator enters:
 ~~~
 $ git clone https://github.com/vlad/planets.git ~/Desktop/vlad-planets
 ~~~
-{: .bash}
+{: .language-bash}
 
 Replace 'vlad' with the Owner's username.
 
@@ -56,7 +56,7 @@ $ cd ~/Desktop/vlad-planets
 $ nano pluto.txt
 $ cat pluto.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 It is so a planet!
@@ -67,7 +67,7 @@ It is so a planet!
 $ git add pluto.txt
 $ git commit -m "Add notes about Pluto"
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
  1 file changed, 1 insertion(+)
@@ -80,7 +80,7 @@ Then push the change to the *Owner's repository* on GitHub:
 ~~~
 $ git push origin master
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 Counting objects: 4, done.
@@ -106,7 +106,7 @@ To download the Collaborator's changes from GitHub, the Owner now enters:
 ~~~
 $ git pull origin master
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 remote: Counting objects: 4, done.
