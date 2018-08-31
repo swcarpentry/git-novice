@@ -9,19 +9,18 @@ objectives:
 - "Resolve conflicts resulting from a merge."
 keypoints:
 - "Conflicts occur when two or more people change the same file(s) at the same time."
-- "The version control system does not allow people to overwrite each other's changes blindly, but highlights conflicts so that they can be resolved."
+- "The version control system does not allow people to overwrite each other's changes blindly, but
+  highlights conflicts so that they can be resolved."
 ---
 
-As soon as people can work in parallel, they'll likely step on each other's
-toes.  This will even happen with a single person: if we are working on
-a piece of software on both our laptop and a server in the lab, we could make
-different changes to each copy.  Version control helps us manage these
-[conflicts]({{ page.root }}/reference#conflicts) by giving us tools to
-[resolve]({{ page.root }}/reference#resolve) overlapping changes.
+As soon as people can work in parallel, they'll likely step on each other's toes. This will even
+happen with a single person: if we are working on a piece of software on both our laptop and a
+server in the lab, we could make different changes to each copy. Version control helps us manage
+these [conflicts]({{ page.root }}/reference#conflicts) by giving us tools to [resolve]({{ page.root
+}}/reference#resolve) overlapping changes.
 
-To see how we can resolve conflicts, we must first create one.  The file
-`mars.txt` currently looks like this in both partners' copies of our `planets`
-repository:
+To see how we can resolve conflicts, we must first create one. The file `mars.txt` currently looks
+like this in both partners' copies of our `planets` repository:
 
 ~~~
 $ cat mars.txt
@@ -81,9 +80,8 @@ To https://github.com/vlad/planets
 ~~~
 {: .output}
 
-Now let's have the other partner
-make a different change to their copy
-*without* updating from GitHub:
+Now let's have the other partner make a different change to their copy *without* updating from
+GitHub:
 
 ~~~
 $ nano mars.txt
@@ -133,12 +131,10 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 ![The Conflicting Changes](../fig/conflict.svg)
 
-Git rejects the push because it detects that the remote repository has new updates that have not been
-incorporated into the local branch.
-What we have to do is pull the changes from GitHub,
-[merge]({{ page.root }}/reference#merge) them into the copy we're currently working in,
-and then push that.
-Let's start by pulling:
+Git rejects the push because it detects that the remote repository has new updates that have not
+been incorporated into the local branch. What we have to do is pull the changes from GitHub,
+[merge]({{ page.root }}/reference#merge) them into the copy we're currently working in, and then
+push that. Let's start by pulling:
 
 ~~~
 $ git pull origin master
@@ -158,12 +154,11 @@ Automatic merge failed; fix conflicts and then commit the result.
 ~~~
 {: .output}
 
-The `git pull` command updates the local repository to include those
-changes already included in the remote repository.
-After the changes from remote branch have been fetched, Git detects that changes made to the local copy 
-overlap with those made to the remote repository, and therefore refuses to merge the two versions to
-stop us from trampling on our previous work. The conflict is marked in
-in the affected file:
+The `git pull` command updates the local repository to include those changes already included in the
+remote repository. After the changes from remote branch have been fetched, Git detects that changes
+made to the local copy overlap with those made to the remote repository, and therefore refuses to
+merge the two versions to stop us from trampling on our previous work. The conflict is marked in in
+the affected file:
 
 ~~~
 $ cat mars.txt
@@ -182,18 +177,14 @@ This line added to Wolfman's copy
 ~~~
 {: .output}
 
-Our change is preceded by `<<<<<<< HEAD`.
-Git has then inserted `=======` as a separator between the conflicting changes
-and marked the end of the content downloaded from GitHub with `>>>>>>>`.
-(The string of letters and digits after that marker
-identifies the commit we've just downloaded.)
+Our change is preceded by `<<<<<<< HEAD`. Git has then inserted `=======` as a separator between the
+conflicting changes and marked the end of the content downloaded from GitHub with `>>>>>>>`. (The
+string of letters and digits after that marker identifies the commit we've just downloaded.)
 
-It is now up to us to edit this file to remove these markers
-and reconcile the changes.
-We can do anything we want: keep the change made in the local repository, keep
-the change made in the remote repository, write something new to replace both,
-or get rid of the change entirely.
-Let's replace both so that the file looks like this:
+It is now up to us to edit this file to remove these markers and reconcile the changes. We can do
+anything we want: keep the change made in the local repository, keep the change made in the remote
+repository, write something new to replace both, or get rid of the change entirely. Let's replace
+both so that the file looks like this:
 
 ~~~
 $ cat mars.txt
@@ -208,9 +199,7 @@ We removed the conflict on this line
 ~~~
 {: .output}
 
-To finish merging,
-we add `mars.txt` to the changes being made by the merge
-and then commit:
+To finish merging, we add `mars.txt` to the changes being made by the merge and then commit:
 
 ~~~
 $ git add mars.txt
@@ -258,9 +247,8 @@ To https://github.com/vlad/planets.git
 ~~~
 {: .output}
 
-Git keeps track of what we've merged with what,
-so we don't have to fix things by hand again
-when the collaborator who made the first change pulls again:
+Git keeps track of what we've merged with what, so we don't have to fix things by hand again when
+the collaborator who made the first change pulls again:
 
 ~~~
 $ git pull origin master
@@ -298,49 +286,43 @@ We removed the conflict on this line
 
 We don't need to merge again because Git knows someone has already done that.
 
-Git's ability to resolve conflicts is very useful, but conflict resolution
-costs time and effort, and can introduce errors if conflicts are not resolved
-correctly. If you find yourself resolving a lot of conflicts in a project,
-consider these technical approaches to reducing them:
+Git's ability to resolve conflicts is very useful, but conflict resolution costs time and effort,
+and can introduce errors if conflicts are not resolved correctly. If you find yourself resolving a
+lot of conflicts in a project, consider these technical approaches to reducing them:
 
 - Pull from upstream more frequently, especially before starting new work
 - Use topic branches to segregate work, merging to master when complete
 - Make smaller more atomic commits
-- Where logically appropriate, break large files into smaller ones so that it is
-  less likely that two authors will alter the same file simultaneously
+- Where logically appropriate, break large files into smaller ones so that it is less likely that
+  two authors will alter the same file simultaneously
 
 Conflicts can also be minimized with project management strategies:
 
 - Clarify who is responsible for what areas with your collaborators
-- Discuss what order tasks should be carried out in with your collaborators so
-  that tasks expected to change the same lines won't be worked on simultaneously
-- If the conflicts are stylistic churn (e.g. tabs vs. spaces), establish a
-  project convention that is governing and use code style tools (e.g.
-  `htmltidy`, `perltidy`, `rubocop`, etc.) to enforce, if necessary
+- Discuss what order tasks should be carried out in with your collaborators so that tasks expected
+  to change the same lines won't be worked on simultaneously
+- If the conflicts are stylistic churn (e.g. tabs vs. spaces), establish a project convention that
+  is governing and use code style tools (e.g. `htmltidy`, `perltidy`, `rubocop`, etc.) to enforce,
+  if necessary
 
 > ## Solving Conflicts that You Create
 >
-> Clone the repository created by your instructor.
-> Add a new file to it,
-> and modify an existing file (your instructor will tell you which one).
-> When asked by your instructor,
-> pull her changes from the repository to create a conflict,
-> then resolve it.
+> Clone the repository created by your instructor. Add a new file to it, and modify an existing file
+> (your instructor will tell you which one). When asked by your instructor, pull her changes from
+> the repository to create a conflict, then resolve it.
 {: .challenge}
 
 > ## Conflicts on Non-textual files
 >
-> What does Git do
-> when there is a conflict in an image or some other non-textual file
-> that is stored in version control?
+> What does Git do when there is a conflict in an image or some other non-textual file that is
+> stored in version control?
 >
 > > ## Solution
 > >
-> > Let's try it. Suppose Dracula takes a picture of Martian surface and
-> > calls it `mars.jpg`.
+> > Let's try it. Suppose Dracula takes a picture of Martian surface and calls it `mars.jpg`.
 > >
-> > If you do not have an image file of Mars available, you can create
-> > a dummy binary file like this:
+> > If you do not have an image file of Mars available, you can create a dummy binary file like
+> > this:
 > >
 > > ~~~
 > > $ head --bytes 1024 /dev/urandom > mars.jpg
@@ -353,8 +335,8 @@ Conflicts can also be minimized with project management strategies:
 > > ~~~
 > > {: .output}
 > >
-> > `ls` shows us that this created a 1-kilobyte file. It is full of
-> > random bytes read from the special file, `/dev/urandom`.
+> > `ls` shows us that this created a 1-kilobyte file. It is full of random bytes read from the
+> > special file, `/dev/urandom`.
 > >
 > > Now, suppose Dracula adds `mars.jpg` to his repository:
 > >
@@ -371,9 +353,9 @@ Conflicts can also be minimized with project management strategies:
 > > ~~~
 > > {: .output}
 > >
-> > Suppose that Wolfman has added a similar picture in the meantime.
-> > His is a picture of the Martian sky, but it is *also* called `mars.jpg`.
-> > When Dracula tries to push, he gets a familiar message:
+> > Suppose that Wolfman has added a similar picture in the meantime. His is a picture of the
+> > Martian sky, but it is *also* called `mars.jpg`. When Dracula tries to push, he gets a familiar
+> > message:
 > >
 > > ~~~
 > > $ git push origin master
@@ -399,8 +381,7 @@ Conflicts can also be minimized with project management strategies:
 > > ~~~
 > > {: .language-bash}
 > >
-> > When there is a conflict on an image or other binary file, git prints
-> > a message like this:
+> > When there is a conflict on an image or other binary file, git prints a message like this:
 > >
 > > ~~~
 > > $ git pull origin master
@@ -424,15 +405,15 @@ Conflicts can also be minimized with project management strategies:
 > > ~~~
 > > warning: Cannot merge binary files: mars.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)
 > > ~~~
+> > {: .error}
 > >
-> > Git cannot automatically insert conflict markers into an image as it does
-> > for text files. So, instead of editing the image file, we must check out
-> > the version we want to keep. Then we can add and commit this version.
+> > Git cannot automatically insert conflict markers into an image as it does for text files. So,
+> > instead of editing the image file, we must check out the version we want to keep. Then we can add
+> > and commit this version.
 > >
-> > On the key line above, Git has conveniently given us commit identifiers
-> > for the two versions of `mars.jpg`. Our version is `HEAD`, and Wolfman's
-> > version is `439dc8c0...`. If we want to use our version, we can use
-> > `git checkout`:
+> > On the key line above, Git has conveniently given us commit identifiers for the two versions of
+> > `mars.jpg`. Our version is `HEAD`, and Wolfman's version is `439dc8c0...`. If we want to use our
+> > version, we can use `git checkout`:
 > >
 > > ~~~
 > > $ git checkout HEAD mars.jpg
@@ -446,8 +427,8 @@ Conflicts can also be minimized with project management strategies:
 > > ~~~
 > > {: .output}
 > >
-> > If instead we want to use Wolfman's version, we can use `git checkout` with
-> > Wolfman's commit identifier, `439dc8c0`:
+> > If instead we want to use Wolfman's version, we can use `git checkout` with Wolfman's commit
+> > identifier, `439dc8c0`:
 > >
 > > ~~~
 > > $ git checkout 439dc8c0 mars.jpg
@@ -461,10 +442,9 @@ Conflicts can also be minimized with project management strategies:
 > > ~~~
 > > {: .output}
 > >
-> > We can also keep *both* images. The catch is that we cannot keep them
-> > under the same name. But, we can check out each version in succession
-> > and *rename* it, then add the renamed versions. First, check out each
-> > image and rename it:
+> > We can also keep *both* images. The catch is that we cannot keep them under the same name. But,
+> > we can check out each version in succession and *rename* it, then add the renamed versions.
+> > First, check out each image and rename it:
 > >
 > > ~~~
 > > $ git checkout HEAD mars.jpg
@@ -492,16 +472,14 @@ Conflicts can also be minimized with project management strategies:
 > > ~~~
 > > {: .output}
 > >
-> > Now both images of Mars are checked into the repository, and `mars.jpg`
-> > no longer exists.
+> > Now both images of Mars are checked into the repository, and `mars.jpg` no longer exists.
 > {: .solution}
 {: .challenge}
 
 > ## A Typical Work Session
 >
-> You sit down at your computer to work on a shared project that is tracked in a
-> remote Git repository. During your work session, you take the following
-> actions, but not in this order:
+> You sit down at your computer to work on a shared project that is tracked in a remote Git
+> repository. During your work session, you take the following actions, but not in this order:
 >
 > - *Make changes* by appending the number `100` to a text file `numbers.txt`
 > - *Update remote* repository to match the local repository
@@ -510,11 +488,10 @@ Conflicts can also be minimized with project management strategies:
 > - *Stage changes* to be committed
 > - *Commit changes* to the local repository
 >
-> In what order should you perform these actions to minimize the chances of
-> conflicts? Put the commands above in order in the *action* column of the table
-> below. When you have the order right, see if you can write the corresponding
-> commands in the *command* column. A few steps are populated to get you
-> started.
+> In what order should you perform these actions to minimize the chances of conflicts? Put the
+> commands above in order in the *action* column of the table below. When you have the order right,
+> see if you can write the corresponding commands in the *command* column. A few steps are populated
+> to get you started.
 >
 > |order|action . . . . . . . . . . |command . . . . . . . . . . |
 > |-----|---------------------------|----------------------------|
