@@ -19,8 +19,8 @@ of configurations we will set as we get started with Git:
 *   what our preferred text editor is,
 *   and that we want to use these settings globally (i.e. for every project).
 
-On a command line, Git commands are written as `git verb`,
-where `verb` is what we actually want to do. So here is how
+On a command line, Git commands are written as `git verb options`,
+where `verb` is what we actually want to do and `options` is additional optional information which may be needed for the `verb`. So here is how
 Dracula sets up his new laptop:
 
 ~~~
