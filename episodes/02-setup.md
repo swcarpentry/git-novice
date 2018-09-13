@@ -41,8 +41,7 @@ in a later lesson will include this information.
 >
 > As with other keys, when you hit <kbd>Return</kbd> on your keyboard,
 > your computer encodes this input as a character.
-> For reasons that are long to explain, different operating systems
-> use different character(s) to represent the end of a line.
+> Different operating systems use different character(s) to represent the end of a line.
 > (You may also hear these referred to as newlines or line breaks.)
 > Because Git uses these characters to compare files,
 > it may cause unexpected issues when editing a file on different machines.
