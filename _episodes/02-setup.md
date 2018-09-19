@@ -45,7 +45,7 @@ in a later lesson will include this information.
 > (You may also hear these referred to as newlines or line breaks.)
 > Because Git uses these characters to compare files,
 > it may cause unexpected issues when editing a file on different machines. 
-> Don't hesitate to read more about this issue on your own time
+> Though it is beyond the scope of this lesson, you can read more about this issue on
 > [on this GitHub page](https://help.github.com/articles/dealing-with-line-endings/).
 {: .callout}
 >
