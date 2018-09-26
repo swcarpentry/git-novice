@@ -446,8 +446,8 @@ Changes to be committed:
 ~~~
 {: .output}
 
-Notice how Git has now figure out that the `krypton.txt` has not
-disappeared it has simply been renamed.
+Notice how Git has now figured out that the `krypton.txt` has not
+disappeared - it has simply been renamed.
 
 The final step, as before, is to commit our change to the repository:
 
