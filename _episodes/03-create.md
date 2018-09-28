@@ -143,6 +143,16 @@ wording of the output might be slightly different.
 >
 > > ## Solution -- USE WITH CAUTION!
 > >
+> > ### Background
+> > Removing files from a git repository needs to be done with caution. To remove files from the working tree and not from your working directory, use
+> > ~~~
+> > $ rm filename
+> > {: .language-bash}
+> > 
+> > The file being removed has to be in sync with the branch head with no updates. If there are updates, the file can be removed by force by using the `-f` option. Similarly a directory can be removed from git using `rm -r dirname` or `rm -rf dirname`.
+> >
+> > ### Solution
+> > Git keeps all of its files in the `.git` directory.
 > > To recover from this little mistake, Dracula can just remove the `.git`
 > > folder in the moons subdirectory by running the following command from inside the `planets` directory:
 > >
