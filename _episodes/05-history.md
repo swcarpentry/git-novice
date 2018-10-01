@@ -464,7 +464,7 @@ moving backward and forward in time becomes much easier.
 
 > ## Explore and Summarize Histories
 >
-> Exploring history is an important part of git, often it is a challenge to find
+> Exploring history is an important part of Git, often it is a challenge to find
 > the right commit ID, especially if the commit is from several months ago.
 >
 > Imagine the `planets` project has more than 50 files.
