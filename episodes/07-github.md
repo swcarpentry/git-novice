@@ -167,14 +167,14 @@ Branch master set up to track remote branch master from origin.
 > ~~~
 > {: .language-bash}
 >
-> in the terminal, before you run `git push`.  Despite the name, [git uses
+> in the terminal, before you run `git push`.  Despite the name, [Git uses
 > `SSH_ASKPASS` for all credential
 > entry](https://git-scm.com/docs/gitcredentials#_requesting_credentials), so
-> you may want to unset `SSH_ASKPASS` whether you are using git via SSH or
+> you may want to unset `SSH_ASKPASS` whether you are using Git via SSH or
 > https.
 >
 > You may also want to add `unset SSH_ASKPASS` at the end of your `~/.bashrc`
-> to make git default to using the terminal for usernames and passwords.
+> to make Git default to using the terminal for usernames and passwords.
 {: .callout}
 
 Our local and remote repositories are now in this state:
