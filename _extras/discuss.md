@@ -48,7 +48,7 @@ $ git config --help
 {: .language-bash}
 
 In particular, you might find it useful to add aliases.
-These are like shortcuts for longer git commands.
+These are like shortcuts for longer Git commands.
 For example, if you get sick of typing `git checkout` all the time,
 you could run the command:
 
