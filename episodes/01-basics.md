@@ -42,7 +42,7 @@ sets of changes on the same document.
 
 ![Different Versions Can be Saved](../fig/versions.svg)
 
-Unless there are conflicts, you can even incorporate two sets of changes into the same base document.
+Unless multiple users make changes to the same section of the document - a conflict - you can incorporate two sets of changes into the same base document.
 
 ![Multiple Versions Can be Merged](../fig/merge.svg)
 
