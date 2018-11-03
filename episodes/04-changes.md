@@ -515,12 +515,12 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > When this "pager" is called, you will notice that the last line in your
 > screen is a `:`, instead of your usual prompt.
 >
-> *   To get out of the pager, press <kbd>q</kbd>.
+> *   To get out of the pager, press <kbd>Q</kbd>.
 > *   To move to the next page, press <kbd>Spacebar</kbd>.
 > *   To search for `some_word` in all pages,
 >     press <kbd>/</kbd>
 >     and type `some_word`.
->     Navigate through matches pressing <kbd>n</kbd>.
+>     Navigate through matches pressing <kbd>N</kbd>.
 {: .callout}
 
 > ## Limit Log Size
