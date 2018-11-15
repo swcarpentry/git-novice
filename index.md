@@ -33,7 +33,7 @@ manage their work. Version control is better than mailing files back and forth:
 Teams are not the only ones to benefit from version control: lone
 researchers can benefit immensely.  Keeping a record of what was
 changed, when, and why is extremely useful for all researchers if they
-ever need to come back to the project later on (e.g., a year later,
+ever need to come back to the project later on (e.g. a year later,
 when memory has faded).
 
 Version control is the lab notebook of the digital world: it's what
