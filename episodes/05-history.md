@@ -22,7 +22,7 @@ directory by using the identifier `HEAD`.
 
 We've been adding one line at a time to `mars.txt`, so it's easy to track our
 progress by looking, so let's do that using our `HEAD`s.  Before we start,
-let's make a change to `mars.txt`.
+let's make a change to `mars.txt`, adding yet another line.
 
 ~~~
 $ nano mars.txt
@@ -177,18 +177,8 @@ index df0654a..93a3e13 100644
 All right! So
 we can save changes to files and see what we've changed—now how
 can we restore older versions of things?
-Let's suppose we accidentally overwrite our file:
-
-~~~
-$ nano mars.txt
-$ cat mars.txt
-~~~
-{: .language-bash}
-
-~~~
-We will need to manufacture our own oxygen
-~~~
-{: .output}
+Let's suppose we change our mind about the last update to
+`mars.txt` (the "ill-considered change").
 
 `git status` now tells us that the file has been changed,
 but those changes haven't been staged:
