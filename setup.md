@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Setup
-permalink: /setup/
 ---
 
 Please see [this section of the workshop template][workshop-setup]
@@ -13,6 +12,6 @@ We'll do our work in the `Desktop` folder so make sure you change your working d
 $ cd
 $ cd Desktop
 ~~~
-{: .bash}
+{: .language-bash}
 
-[workshop-setup]: https://swcarpentry.github.io/workshop-template/#git
+[workshop-setup]: https://carpentries.github.io/workshop-template/#git
