@@ -114,7 +114,7 @@ sensible choice earlier when we were setting up remotes by hand.)
 > and not something intrinstic to the remote repository.
 >
 > The `git remote` family of commands is used to set up and alter the remotes
-> associated with our repository. Here are some of the most useful ones:
+> associated with a repository. Here are some of the most useful ones:
 >
 > * `git remote -v` lists all the remotes that are configured (we already used
 > this in the last episode)
