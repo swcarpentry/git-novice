@@ -142,6 +142,37 @@ GitHub) are back in sync.
 > read and review.
 {: .callout}
 
+> ## Some more about remotes
+>
+> In this episode and the previous one, our local repository has had
+> a single "remote", called `origin`. A remote is a copy of the repository
+> that is hosted somewhere else, that we can push to and pull from, and 
+> there's no reason that you have to work with only one. For example, 
+> on some large projects you might have your own copy in your own Github
+> account (you'd probably call this `origin`) and also the main "upstream"
+> project repository (let's call this `upstream` for the sake of examples).
+> You would pull from `upstream` from time to 
+> time to get the latest updates that other people have comitted.
+>
+> Remember that the name you give to a remote only exists locally. It's
+> an alias that you choose - whether `origin`, or `upstream`, or `fred` -
+> and not something intrinstic to the remote repository.
+>
+> The `git remote` family of commands is used to set up and alter the remotes
+> associated with our repository. Here are some of the most useful ones:
+>
+> * `git remote -v` lists all the remotes that are configured (we already used
+> this in the last episode)
+> * `git remote add [name] [url]` is used to add a new remote
+> * `git remote remove [name]` removes a remote. Note that it doesn't affect the 
+> remote repository at all - it just removes the link to it from the local repo.
+> * `git remote set-url [name] [newurl]` changes the URL that is associated 
+> with the remote. This is useful if it has moved, e.g. to a different Github
+> account, or from Github to a different hosting service.
+> * `git remote rename [oldname] [newname]` changes the local alias by which a remote 
+> is known - its name. For example, one could use this to change `upstream` to `fred`.
+{: .callout}
+
 > ## Switch Roles and Repeat
 >
 > Switch roles and repeat the whole process.
