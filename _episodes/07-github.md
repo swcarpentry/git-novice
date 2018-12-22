@@ -96,6 +96,10 @@ $ git remote add origin https://github.com/vlad/planets.git
 Make sure to use the URL for your repository rather than Vlad's: the only
 difference should be your username instead of `vlad`.
 
+`origin` is a local name used to refer to the remote repository. It could be called
+anything else, but `origin` is a convention that is often used by default in git
+and github. We'll discuss remotes in more detail in the next episode.
+
 We can check that the command has worked by running `git remote -v`:
 
 ~~~
@@ -109,10 +113,7 @@ origin   https://github.com/vlad/planets.git (fetch)
 ~~~
 {: .output}
 
-The name `origin` is a local nickname for your remote repository. We could use
-something else if we wanted to, but `origin` is by far the most common choice.
-
-Once the nickname `origin` is set up, this command will push the changes from
+Once the remote is set up, this command will push the changes from
 our local repository to the repository on GitHub:
 
 ~~~
