@@ -590,9 +590,11 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 >
 >    Note, our newly created empty directory `directory` does not appear in
 >    the list of untracked files even if we explicitly add it (_via_ `git add`) to our
->    repository. You can also use a `ReadMe.md` with a short explanation of why
->    the otherwise empty folder needs to be tracked by Git. This has the added benefit
->    of GitHub rendering that explanation when someone browses to the folder.
+>    repository. This is due to Git only operating on files, and is sometimes worked-
+>    around by creating empty `.gitkeep` files if an otherwise empty folder is deemed 
+>    to be tracked by Git. However, it's better to avoid this and look for ways to 
+>    automatically create such folders when your code needs them, or try to very 
+>    briefly explain the need for the empty folder with a `.keep-because-...` file.
 >
 > 2. If you create a directory in your Git repository and populate it with files,
 >    you can add all files in the directory at once by:
