@@ -101,15 +101,12 @@ your changes, press <kbd>Esc</kbd> then type `:q!` and hit <kbd>Return</kbd>.
 The four commands we just ran above only need to be run once: the flag `--global` tells Git
 to use the settings for every project, in your user account, on this computer.
 
-You can check your settings at any time:
+You can check your settings at any time, change them and add new ones more comfortably than through the command line:
 
 ~~~
-$ git config --list
+$ git config --global --edit
 ~~~
 {: .language-bash}
-
-You can change your configuration as many times as you want: use the
-same commands to choose another editor or update your email address.
 
 > ## Proxy
 >
