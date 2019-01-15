@@ -146,7 +146,7 @@ wording of the output might be slightly different.
 > > ### Background
 > > Removing files from a git repository needs to be done with caution. To remove files from the working tree and not from your working directory, use
 > > ~~~
-> > $ rm filename
+> > $ git rm filename
 > > ~~~
 > > {: .language-bash}
 > > 
