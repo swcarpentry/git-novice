@@ -113,7 +113,7 @@ origin   https://github.com/vlad/planets.git (fetch)
 ~~~
 {: .output}
 
-We'll discuss remotes in more detail in the next episode.
+We'll discuss remotes in more detail in the next episode, while talking about collaboration.
 
 Once the remote is set up, this command will push the changes from
 our local repository to the repository on GitHub:
