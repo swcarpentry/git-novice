@@ -123,7 +123,8 @@ sensible choice earlier when we were setting up remotes by hand.)
 > remote repository at all - it just removes the link to it from the local repo.
 > * `git remote set-url [name] [newurl]` changes the URL that is associated 
 > with the remote. This is useful if it has moved, e.g. to a different Github
-> account, or from Github to a different hosting service.
+> account, or from Github to a different hosting service. Or, if we made a typo when
+> adding it!
 > * `git remote rename [oldname] [newname]` changes the local alias by which a remote 
 > is known - its name. For example, one could use this to change `upstream` to `fred`.
 {: .callout}
