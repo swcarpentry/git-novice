@@ -371,17 +371,17 @@ moving backward and forward in time becomes much easier.
 > > 
 > > The checkout command restores files from the repository, overwriting the files in your working 
 > > directory. Answers 2 and 4 both restore the *latest* version *in the repository* of the file 
-> > *data_cruncher.py*. Answer 2 uses HEAD to indicate the *latest*, whereas answer 4 uses the 
-> > unique ID of the last commit, which is what HEAD means. 
+> > `data_cruncher.py`. Answer 2 uses `HEAD` to indicate the *latest*, whereas answer 4 uses the 
+> > unique ID of the last commit, which is what `HEAD` means. 
 > > 
-> > Answer 3 gets the version of *data_cruncher.py* from the commit *before HEAD*, which is NOT what 
+> > Answer 3 gets the version of `data_cruncher.py` from the commit *before* `HEAD`, which is NOT what 
 > > we wanted.
 > > 
 > > Answer 1 can be dangerous! Without a filename, the *git checkout* command will restore **all files** 
 > > in the current directory (and all directories below it) to their state at the commit specified. This
-> > command will restore *data_cruncher.py* to the latest commit version, but it will also restore
+> > command will restore `data_cruncher.py` to the latest commit version, but it will also restore
 > > *any other files that are changed* to that version, erasing any changes you may have made to those files!
-> > As discussed above, you are left in a *detached HEAD* state, and you don't want to be there.
+> > As discussed above, you are left in a *detached* `HEAD` state, and you don't want to be there.
 > {: .solution}
 {: .challenge}
 
@@ -445,10 +445,10 @@ moving backward and forward in time becomes much easier.
 > >
 > > The answer is 2. 
 > > 
-> > The command `git add venus.txt` places the *current version* of venus.txt
-> > into the staging area. Subsequent changes to venus.txt are not included in the version in the 
+> > The command `git add venus.txt` places the *current version* of `venus.txt`
+> > into the staging area. Subsequent changes to `venus.txt` are not included in the version in the 
 > > staging area. Thus, when `git add venus.txt` is issued, there is just one line in the file, and so
-> > the copy in the staging area has just one line. When the second line is appended to venus.txt, 
+> > the copy in the staging area has just one line. When the second line is appended to `venus.txt`, 
 > > the change resides in the working directory, but the copy in the staging area still has just one line.
 > > So, when the commit is issued, the file committed to the repository has just one line. The working 
 > > copy still has the second line (and `git status` will show that the file is modified). 
