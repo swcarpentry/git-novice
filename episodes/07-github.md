@@ -96,6 +96,10 @@ $ git remote add origin https://github.com/vlad/planets.git
 Make sure to use the URL for your repository rather than Vlad's: the only
 difference should be your username instead of `vlad`.
 
+`origin` is a local name used to refer to the remote repository. It could be called
+anything, but `origin` is a convention that is often used by default in git
+and github, so it's helpful to stick with this unless there's a reason not to.
+
 We can check that the command has worked by running `git remote -v`:
 
 ~~~
@@ -109,10 +113,10 @@ origin   https://github.com/vlad/planets.git (fetch)
 ~~~
 {: .output}
 
-The name `origin` is a local nickname for your remote repository. We could use
-something else if we wanted to, but `origin` is by far the most common choice.
+We'll discuss remotes in more detail in the next episode, while 
+talking about how they might be used for collaboration.
 
-Once the nickname `origin` is set up, this command will push the changes from
+Once the remote is set up, this command will push the changes from
 our local repository to the repository on GitHub:
 
 ~~~
@@ -167,14 +171,14 @@ Branch master set up to track remote branch master from origin.
 > ~~~
 > {: .language-bash}
 >
-> in the terminal, before you run `git push`.  Despite the name, [git uses
+> in the terminal, before you run `git push`.  Despite the name, [Git uses
 > `SSH_ASKPASS` for all credential
 > entry](https://git-scm.com/docs/gitcredentials#_requesting_credentials), so
-> you may want to unset `SSH_ASKPASS` whether you are using git via SSH or
+> you may want to unset `SSH_ASKPASS` whether you are using Git via SSH or
 > https.
 >
 > You may also want to add `unset SSH_ASKPASS` at the end of your `~/.bashrc`
-> to make git default to using the terminal for usernames and passwords.
+> to make Git default to using the terminal for usernames and passwords.
 {: .callout}
 
 Our local and remote repositories are now in this state:
@@ -245,28 +249,6 @@ GitHub, though, this command would download them to our local repository.
 >
 > > ## Solution
 > > When we push changes, we're interacting with a remote repository to update it with the changes we've made locally (often this corresponds to sharing the changes we've made with others). Commit only updates your local repository.
-> {: .solution}
-{: .challenge}
-
-> ## Fixing Remote Settings
->
-> It happens quite often in practice that you made a typo in the
-> remote URL. This exercise is about how to fix this kind of issue.
-> First start by adding a remote with an invalid URL:
->
-> ~~~
-> git remote add broken https://github.com/this/url/is/invalid
-> ~~~
-> {: .language-bash}
->
-> Do you get an error when adding the remote? Can you think of a
-> command that would make it obvious that your remote URL was not
-> valid? Can you figure out how to fix the URL (tip: use `git remote
-> -h`)? Don't forget to clean up and remove this remote once you are
-> done with this exercise.
->
-> > ## Solution
-> > We don't see any error message when we add the remote (adding the remote tells git about it, but doesn't try to use it yet). As soon as we try to use ```git push``` we'll see an error message. The command ```git remote set-url``` allows us to change the remote's URL to fix it.
 > {: .solution}
 {: .challenge}
 
