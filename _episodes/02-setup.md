@@ -19,8 +19,8 @@ of configurations we will set as we get started with Git:
 *   what our preferred text editor is,
 *   and that we want to use these settings globally (i.e. for every project).
 
-On a command line, Git commands are written as `git verb`,
-where `verb` is what we actually want to do. So here is how
+On a command line, Git commands are written as `git verb options`,
+where `verb` is what we actually want to do and `options` is additional optional information which may be needed for the `verb`. So here is how
 Dracula sets up his new laptop:
 
 ~~~
@@ -41,11 +41,13 @@ in a later lesson will include this information.
 >
 > As with other keys, when you hit <kbd>Return</kbd> on your keyboard,
 > your computer encodes this input as a character.
-> For reasons that are long to explain, different operating systems
-> use different character(s) to represent the end of a line.
+> Different operating systems use different character(s) to represent the end of a line.
 > (You may also hear these referred to as newlines or line breaks.)
 > Because Git uses these characters to compare files,
-> it may cause unexpected issues when editing a file on different machines.
+> it may cause unexpected issues when editing a file on different machines. 
+> Though it is beyond the scope of this lesson, you can read more about this issue 
+> [on this GitHub page](https://help.github.com/articles/dealing-with-line-endings/).
+{: .callout}
 >
 > You can change the way Git recognizes and encodes line endings
 > using the `core.autocrlf` command to `git config`.
@@ -65,9 +67,6 @@ in a later lesson will include this information.
 > ~~~
 > {: .language-bash}
 > 
-> You can read more about this issue 
-> [on this GitHub page](https://help.github.com/articles/dealing-with-line-endings/).
-{: .callout}
 
 For these lessons, we will be interacting with [GitHub](https://github.com/) and so the email address used should be the same as the one used when setting up your GitHub account. If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private][git-privacy]. 
 If you elect to use a private email address with GitHub, then use that same email address for the `user.email` value, e.g. `username@users.noreply.github.com` replacing `username` with your GitHub one. You can change the email address later on by using the `git config` command again.
@@ -109,7 +108,7 @@ $ git config --list
 ~~~
 {: .language-bash}
 
-You can change your configuration as many times as you want: just use the
+You can change your configuration as many times as you want: use the
 same commands to choose another editor or update your email address.
 
 > ## Proxy
