@@ -103,11 +103,11 @@ sensible choice earlier when we were setting up remotes by hand.)
 > a single "remote", called `origin`. A remote is a copy of the repository
 > that is hosted somewhere else, that we can push to and pull from, and 
 > there's no reason that you have to work with only one. For example, 
-> on some large projects you might have your own copy in your own Github
+> on some large projects you might have your own copy in your own GitHub
 > account (you'd probably call this `origin`) and also the main "upstream"
 > project repository (let's call this `upstream` for the sake of examples).
 > You would pull from `upstream` from time to 
-> time to get the latest updates that other people have comitted.
+> time to get the latest updates that other people have committed.
 >
 > Remember that the name you give to a remote only exists locally. It's
 > an alias that you choose - whether `origin`, or `upstream`, or `fred` -
@@ -122,8 +122,8 @@ sensible choice earlier when we were setting up remotes by hand.)
 > * `git remote remove [name]` removes a remote. Note that it doesn't affect the 
 > remote repository at all - it just removes the link to it from the local repo.
 > * `git remote set-url [name] [newurl]` changes the URL that is associated 
-> with the remote. This is useful if it has moved, e.g. to a different Github
-> account, or from Github to a different hosting service. Or, if we made a typo when
+> with the remote. This is useful if it has moved, e.g. to a different GitHub
+> account, or from GitHub to a different hosting service. Or, if we made a typo when
 > adding it!
 > * `git remote rename [oldname] [newname]` changes the local alias by which a remote 
 > is known - its name. For example, one could use this to change `upstream` to `fred`.
