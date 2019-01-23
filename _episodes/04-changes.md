@@ -593,9 +593,10 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 >    repository. This is the reason why you will sometimes see `.gitkeep` files
 >    in otherwise empty directories. Unlike `.gitignore`, these files are not special
 >    and their sole purpose is to populate a directory so that Git adds it to
->    the repository. However, it's better to avoid this and look for ways to 
->    automatically create such folders when your code needs them, or try to very 
->    briefly explain the need for the empty folder with a `.gitkeep-because-...` file.
+>    the repository. In fact, you can name such files anything you like, for example
+>    `.gitkeep-because-...` in order to very briefly explain the need for an empty folder.
+>    However, it's better to avoid this and look for ways to automatically create such
+>    folders when your code needs them.
 >
 > 2. If you create a directory in your Git repository and populate it with files,
 >    you can add all files in the directory at once by:
