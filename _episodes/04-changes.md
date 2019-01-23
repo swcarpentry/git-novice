@@ -590,9 +590,10 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 >
 >    Note, our newly created empty directory `directory` does not appear in
 >    the list of untracked files even if we explicitly add it (_via_ `git add`) to our
->    repository. This is due to Git only operating on files, and is sometimes worked-
->    around by creating empty `.gitkeep` files if an otherwise empty folder is deemed 
->    to be tracked by Git. However, it's better to avoid this and look for ways to 
+>    repository. This is the reason why you will sometimes see `.gitkeep` files
+>    in otherwise empty directories. Unlike `.gitignore`, these files are not special
+>    and their sole purpose is to populate a directory so that Git adds it to
+>    the repository. However, it's better to avoid this and look for ways to 
 >    automatically create such folders when your code needs them, or try to very 
 >    briefly explain the need for the empty folder with a `.gitkeep-because-...` file.
 >
