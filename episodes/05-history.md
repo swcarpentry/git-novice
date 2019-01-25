@@ -377,7 +377,7 @@ moving backward and forward in time becomes much easier.
 > > Answer 3 gets the version of `data_cruncher.py` from the commit *before* `HEAD`, which is NOT what 
 > > we wanted.
 > > 
-> > Answer 1 can be dangerous! Without a filename, the *git checkout* command will restore **all files** 
+> > Answer 1 can be dangerous! Without a filename, `git checkout` will restore **all files** 
 > > in the current directory (and all directories below it) to their state at the commit specified. This
 > > command will restore `data_cruncher.py` to the latest commit version, but it will also restore
 > > *any other files that are changed* to that version, erasing any changes you may have made to those files!
