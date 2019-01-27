@@ -1,19 +1,23 @@
 [cc-by-human]: https://creativecommons.org/licenses/by/4.0/
 [cc-by-legal]: https://creativecommons.org/licenses/by/4.0/legalcode
-[concept-maps]: https://swcarpentry.github.io/instructor-training/08-memory/
-[contact]: mailto:lessons@software-carpentry.org
+[ci]: http://communityin.org/
+[coc-reporting]: https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html#reporting-guidelines
+[coc]: https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html
+[concept-maps]: https://carpentries.github.io/instructor-training/05-memory/
 [contrib-covenant]: https://contributor-covenant.org/
 [contributing]: {{ site.github.repository_url }}/blob/gh-pages/CONTRIBUTING.md
-[cran-checkpoint]: https://cran.r-project.org/web/packages/checkpoint/index.html
-[cran-knitr]: https://cran.r-project.org/web/packages/knitr/index.html
-[cran-stringr]: https://cran.r-project.org/web/packages/stringr/index.html
+[cran-checkpoint]: https://cran.r-project.org/package=checkpoint
+[cran-knitr]: https://cran.r-project.org/package=knitr
+[cran-stringr]: https://cran.r-project.org/package=stringr
+[email]: mailto:team@carpentries.org
 [github-importer]: https://import.github.com/
-[importer]: https://import.github.com/new
+[importer]: https://github.com/new/import
 [jekyll-collection]: https://jekyllrb.com/docs/collections/
 [jekyll-install]: https://jekyllrb.com/docs/installation/
 [jekyll-windows]: http://jekyll-windows.juthilo.com/
 [jekyll]: https://jekyllrb.com/
 [jupyter]: https://jupyter.org/
+[lesson-example]: https://carpentries.github.io/lesson-example/
 [mit-license]: https://opensource.org/licenses/mit-license.html
 [morea]: https://morea-framework.github.io/
 [numfocus]: https://numfocus.org/
@@ -27,9 +31,7 @@
 [ruby-install-guide]: https://www.ruby-lang.org/en/downloads/
 [ruby-installer]: https://rubyinstaller.org/
 [rubygems]: https://rubygems.org/pages/download/
-[styles]: https://github.com/swcarpentry/styles/
-[training]: https://swcarpentry.github.io/instructor-training/
+[styles]: https://github.com/carpentries/styles/
+[swc-releases]: https://github.com/swcarpentry/swc-releases
 [workshop-repo]: {{ site.workshop_repo }}
 [yaml]: http://yaml.org/
-[coc]: https://software-carpentry.org/conduct/
-[coc-reporting]: https://software-carpentry.org/CoC-reporting/

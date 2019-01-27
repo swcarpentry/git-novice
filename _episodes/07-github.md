@@ -47,21 +47,29 @@ $ mkdir planets
 $ cd planets
 $ git init
 ~~~
-{: .bash}
+{: .language-bash}
 
-Our local repository still contains our earlier work on `mars.txt`, but the
-remote repository on GitHub doesn't contain any files yet:
+If you remember back to the earlier [lesson](./04-changes.html) where we added and
+commited our earlier work on `mars.txt`, we had a diagram of the local repository
+which looked like this:
+
+![The Local Repository with Git Staging Area](../fig/git-staging-area.svg)
+
+Now that we have two repositories, we need a diagram like this:
 
 ![Freshly-Made GitHub Repository](../fig/git-freshly-made-github-repo.svg)
 
+Note that our local repository still contains our earlier work on `mars.txt`, but the
+remote repository on GitHub appears empty as it doesn't contain any files yet.
+
 The next step is to connect the two repositories.  We do this by making the
-GitHub repository a [remote]({{ page.root }}/reference/#remote) for the local repository.
+GitHub repository a [remote]({{ page.root }}/reference#remote) for the local repository.
 The home page of the repository on GitHub includes the string we need to
 identify it:
 
 ![Where to Find Repository URL on GitHub](../fig/github-find-repo-string.png)
 
-Click on the 'HTTPS' link to change the [protocol]({{ page.root }}/reference/#protocol) from
+Click on the 'HTTPS' link to change the [protocol]({{ page.root }}/reference#protocol) from
 SSH to HTTPS.
 
 > ## HTTPS vs. SSH
@@ -83,17 +91,21 @@ this command:
 ~~~
 $ git remote add origin https://github.com/vlad/planets.git
 ~~~
-{: .bash}
+{: .language-bash}
 
 Make sure to use the URL for your repository rather than Vlad's: the only
 difference should be your username instead of `vlad`.
+
+`origin` is a local name used to refer to the remote repository. It could be called
+anything, but `origin` is a convention that is often used by default in git
+and github, so it's helpful to stick with this unless there's a reason not to.
 
 We can check that the command has worked by running `git remote -v`:
 
 ~~~
 $ git remote -v
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 origin   https://github.com/vlad/planets.git (push)
@@ -101,16 +113,16 @@ origin   https://github.com/vlad/planets.git (fetch)
 ~~~
 {: .output}
 
-The name `origin` is a local nickname for your remote repository. We could use
-something else if we wanted to, but `origin` is by far the most common choice.
+We'll discuss remotes in more detail in the next episode, while 
+talking about how they might be used for collaboration.
 
-Once the nickname `origin` is set up, this command will push the changes from
+Once the remote is set up, this command will push the changes from
 our local repository to the repository on GitHub:
 
 ~~~
 $ git push origin master
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 Counting objects: 9, done.
@@ -134,7 +146,7 @@ Branch master set up to track remote branch master from origin.
 > $ git config --global http.proxy http://user:password@proxy.url
 > $ git config --global https.proxy http://user:password@proxy.url
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > When you connect to another network that doesn't use a proxy, you will need to
 > tell Git to disable the proxy using:
@@ -143,7 +155,7 @@ Branch master set up to track remote branch master from origin.
 > $ git config --global --unset http.proxy
 > $ git config --global --unset https.proxy
 > ~~~
-> {: .bash}
+> {: .language-bash}
 {: .callout}
 
 > ## Password Managers
@@ -157,16 +169,16 @@ Branch master set up to track remote branch master from origin.
 > ~~~
 > $ unset SSH_ASKPASS
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
-> in the terminal, before you run `git push`.  Despite the name, [git uses
+> in the terminal, before you run `git push`.  Despite the name, [Git uses
 > `SSH_ASKPASS` for all credential
 > entry](https://git-scm.com/docs/gitcredentials#_requesting_credentials), so
-> you may want to unset `SSH_ASKPASS` whether you are using git via SSH or
+> you may want to unset `SSH_ASKPASS` whether you are using Git via SSH or
 > https.
 >
 > You may also want to add `unset SSH_ASKPASS` at the end of your `~/.bashrc`
-> to make git default to using the terminal for usernames and passwords.
+> to make Git default to using the terminal for usernames and passwords.
 {: .callout}
 
 Our local and remote repositories are now in this state:
@@ -187,7 +199,7 @@ We can pull changes from the remote repository to the local one as well:
 ~~~
 $ git pull origin master
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 From https://github.com/vlad/planets
@@ -222,7 +234,7 @@ GitHub, though, this command would download them to our local repository.
 > Create a remote repository on GitHub.  Push the contents of your local
 > repository to the remote.  Make changes to your local repository and push
 > these changes.  Go to the repo you just created on GitHub and check the
-> [timestamps]({{ page.root }}/reference/#timestamp) of the files.  How does GitHub record
+> [timestamps]({{ page.root }}/reference#timestamp) of the files.  How does GitHub record
 > times, and why?
 >
 > > ## Solution
@@ -240,28 +252,6 @@ GitHub, though, this command would download them to our local repository.
 > {: .solution}
 {: .challenge}
 
-> ## Fixing Remote Settings
->
-> It happens quite often in practice that you made a typo in the
-> remote URL. This exercise is about how to fix this kind of issue.
-> First start by adding a remote with an invalid URL:
->
-> ~~~
-> git remote add broken https://github.com/this/url/is/invalid
-> ~~~
-> {: .bash}
->
-> Do you get an error when adding the remote? Can you think of a
-> command that would make it obvious that your remote URL was not
-> valid? Can you figure out how to fix the URL (tip: use `git remote
-> -h`)? Don't forget to clean up and remove this remote once you are
-> done with this exercise.
->
-> > ## Solution
-> > We don't see any error message when we add the remote (adding the remote tells git about it, but doesn't try to use it yet). As soon as we try to use ```git push``` we'll see an error message. The command ```git remote set-url``` allows us to change the remote's URL to fix it.
-> {: .solution}
-{: .challenge}
-
 > ## GitHub License and README files
 >
 > In this section we learned about creating a remote repository on GitHub, but when you initialized your
@@ -269,6 +259,35 @@ GitHub, though, this command would download them to our local repository.
 > you tried to link your local and remote repositories?
 >
 > > ## Solution
-> > In this case, since we already had a README file in our own (local) repository, we'd see a merge conflict (when git realises that there are two versions of the file and asks us to reconcile the differences).
+> > In this case, we'd see a merge conflict due to unrelated histories. When Github creates a README.md file, it performs a commit in the remote repository. When you try to pull the remote repository to your local repository, Git detects that they have histories that do not share a common origin and refuses to merge.
+> > ~~~
+> > $ git pull origin master
+> > ~~~
+> > {: .language-bash}
+> > 
+> > ~~~
+> > From https://github.com/vlad/planets
+> >  * branch            master     -> FETCH_HEAD
+> >  * [new branch]      master     -> origin/master
+> > fatal: refusing to merge unrelated histories
+> > ~~~
+> > {: .output}
+> > 
+> > You can force git to merge the two repositories with the option `--allow-unrelated-histories`. Be careful when you use this option and carefully examine the contents of local and remote repositories before merging.
+> > ~~~
+> > $ git pull --allow-unrelated-histories origin master
+> > ~~~
+> > {: .language-bash}
+> > 
+> > ~~~
+> > From https://github.com/vlad/planets
+> >  * branch            master     -> FETCH_HEAD
+> > Merge made by the 'recursive' strategy.
+> >  README.md | 1 +
+> >  1 file changed, 1 insertion(+)
+> >  create mode 100644 README.md
+> > ~~~
+> > {: .output}
+> > 
 > {: .solution}
 {: .challenge}

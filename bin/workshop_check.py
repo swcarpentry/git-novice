@@ -1,10 +1,10 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 '''Check that a workshop's index.html metadata is valid.  See the
 docstrings on the checking functions for a summary of the checks.
 '''
 
-from __future__ import print_function
+
 import sys
 import os
 import re
@@ -21,7 +21,7 @@ URL_PATTERN = r'https?://.+'
 CARPENTRIES = ("dc", "swc")
 DEFAULT_CONTACT_EMAIL = 'admin@software-carpentry.org'
 
-USAGE = 'Usage: "check-workshop path/to/root/directory"'
+USAGE = 'Usage: "workshop_check.py path/to/root/directory"'
 
 # Country and language codes.  Note that codes mean different things: 'ar'
 # is 'Arabic' as a language but 'Argentina' as a country.
@@ -174,8 +174,8 @@ def check_latitude_longitude(latlng):
     try:
         lat, lng = latlng.split(',')
         lat = float(lat)
-        long = float(lng)
-        return (-90.0 <= lat <= 90.0) and (-180.0 <= long <= 180.0)
+        lng = float(lng)
+        return (-90.0 <= lat <= 90.0) and (-180.0 <= lng <= 180.0)
     except ValueError:
         return False
 
@@ -203,15 +203,22 @@ def check_helpers(helpers):
 
 
 @look_for_fixme
-def check_email(email):
+def check_emails(emails):
     """
-    'contact' must be a valid email address consisting of characters,
-    an '@', and more characters.  It should not be the default contact
-    email address 'admin@software-carpentry.org'.
+    'emails' must be a comma-separated list of valid email addresses.
+    The list may be empty. A valid email address consists of characters,
+    an '@', and more characters.  It should not contain the default contact
     """
 
-    return bool(re.match(EMAIL_PATTERN, email)) and \
-           (email != DEFAULT_CONTACT_EMAIL)
+    # YAML automatically loads list-like strings as lists.
+    if (isinstance(emails, list) and len(emails) >= 0):
+        for email in emails:
+            if ((not bool(re.match(EMAIL_PATTERN, email))) or (email == DEFAULT_CONTACT_EMAIL)):
+                return False
+    else:
+        return False
+
+    return True
 
 
 def check_eventbrite(eventbrite):
@@ -227,12 +234,12 @@ def check_eventbrite(eventbrite):
 
 
 @look_for_fixme
-def check_etherpad(etherpad):
+def check_collaborative_notes(collaborative_notes):
     """
-    'etherpad' must be a valid URL.
+    'collaborative_notes' must be a valid URL.
     """
 
-    return bool(re.match(URL_PATTERN, etherpad))
+    return bool(re.match(URL_PATTERN, collaborative_notes))
 
 
 @look_for_fixme
@@ -286,13 +293,14 @@ HANDLERS = {
                    'helper list isn\'t a valid list of format ' +
                    '["First helper", "Second helper",..]'),
 
-    'contact':    (True, check_email,
-                   'contact email invalid or still set to ' +
-                   '"{0}".'.format(DEFAULT_CONTACT_EMAIL)),
+    'email':    (True, check_emails,
+                 'contact email list isn\'t a valid list of format ' +
+                 '["me@example.org", "you@example.org",..] or contains incorrectly formatted email addresses or ' +
+                 '"{0}".'.format(DEFAULT_CONTACT_EMAIL)),
 
     'eventbrite': (False, check_eventbrite, 'Eventbrite key appears invalid'),
 
-    'etherpad':   (False, check_etherpad, 'Etherpad URL appears invalid'),
+    'collaborative_notes':   (False, check_collaborative_notes, 'Collaborative Notes URL appears invalid'),
 
     'venue':      (False, check_pass, 'venue name not specified'),
 
@@ -300,10 +308,10 @@ HANDLERS = {
 }
 
 # REQUIRED is all required categories.
-REQUIRED = set([k for k in HANDLERS if HANDLERS[k][0]])
+REQUIRED = {k for k in HANDLERS if HANDLERS[k][0]}
 
 # OPTIONAL is all optional categories.
-OPTIONAL = set([k for k in HANDLERS if not HANDLERS[k][0]])
+OPTIONAL = {k for k in HANDLERS if not HANDLERS[k][0]}
 
 
 def check_blank_lines(reporter, raw):
@@ -311,7 +319,8 @@ def check_blank_lines(reporter, raw):
     Blank lines are not allowed in category headers.
     """
 
-    lines = [(i, x) for (i, x) in enumerate(raw.strip().split('\n')) if not x.strip()]
+    lines = [(i, x) for (i, x) in enumerate(
+        raw.strip().split('\n')) if not x.strip()]
     reporter.check(not lines,
                    None,
                    'Blank line(s) in header: {0}',

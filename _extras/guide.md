@@ -37,7 +37,7 @@ working in teams or not, because it is
 
 ## Teaching Notes
 
-*   Resources for "splitting" your shell so that recent commands remain in view: https://github.com/rgaiacs/swc-shell-split-window.
+*   You can "split" your shell so that recent commands remain in view using [this](https://github.com/rgaiacs/swc-shell-split-window) script.
 
 *   Make sure the network is working *before* starting this lesson.
 
@@ -128,7 +128,7 @@ working in teams or not, because it is
     $ mv .git temp_git
     $ rm -rf  temp_git
     ~~~
-    {: .bash}
+    {: .language-bash}
 
     The challenge suggests that it is a bad idea to create a Git repo inside another repo.
     For more discussion on this topic, please see [this issue][repos-in-repos].
@@ -147,7 +147,7 @@ working in teams or not, because it is
     f22b25e`, they wind up in the "detached HEAD" state and confusion abounds.
     It's then possible to keep on committing, but things like `git push origin
     master` a bit later will not give easily comprehensible results.  It also
-    makes it look like commits can be lost.  To "fix" a "detached HEAD", simply
+    makes it look like commits can be lost.  To "re-attach" HEAD, use
     `git checkout master`.
 
 *   This is a good moment to show a log within a Git GUI. If you skip it
@@ -212,7 +212,7 @@ particular set of files in `.gitignore`.
     ~~~
     $ git clone https://github.com/vlad/planets.git planets-at-work
     ~~~
-    {: .bash}
+    {: .language-bash}
 
 *   It's very common that learners mistype the remote alias or the remote URL
     when adding a remote, so they cannot `push`. You can diagnose this with
@@ -230,7 +230,7 @@ particular set of files in `.gitignore`.
     ~~~
     $ git clone https://github.com/vlad/planets.git vlad-planet
     ~~~
-    {: .bash}
+    {: .language-bash}
 
 *   The most common mistake is that learners `push` before `pull`ing. If they
     `pull` afterward, they may get a conflict.
