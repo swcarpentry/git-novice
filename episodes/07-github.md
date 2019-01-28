@@ -98,7 +98,7 @@ difference should be your username instead of `vlad`.
 
 `origin` is a local name used to refer to the remote repository. It could be called
 anything, but `origin` is a convention that is often used by default in git
-and github, so it's helpful to stick with this unless there's a reason not to.
+and GitHub, so it's helpful to stick with this unless there's a reason not to.
 
 We can check that the command has worked by running `git remote -v`:
 
@@ -113,7 +113,7 @@ origin   https://github.com/vlad/planets.git (fetch)
 ~~~
 {: .output}
 
-We'll discuss remotes in more detail in the next episode, while 
+We'll discuss remotes in more detail in the next episode, while
 talking about how they might be used for collaboration.
 
 Once the remote is set up, this command will push the changes from
@@ -259,12 +259,12 @@ GitHub, though, this command would download them to our local repository.
 > you tried to link your local and remote repositories?
 >
 > > ## Solution
-> > In this case, we'd see a merge conflict due to unrelated histories. When Github creates a README.md file, it performs a commit in the remote repository. When you try to pull the remote repository to your local repository, Git detects that they have histories that do not share a common origin and refuses to merge.
+> > In this case, we'd see a merge conflict due to unrelated histories. When GitHub creates a README.md file, it performs a commit in the remote repository. When you try to pull the remote repository to your local repository, Git detects that they have histories that do not share a common origin and refuses to merge.
 > > ~~~
 > > $ git pull origin master
 > > ~~~
 > > {: .language-bash}
-> > 
+> >
 > > ~~~
 > > From https://github.com/vlad/planets
 > >  * branch            master     -> FETCH_HEAD
@@ -272,13 +272,13 @@ GitHub, though, this command would download them to our local repository.
 > > fatal: refusing to merge unrelated histories
 > > ~~~
 > > {: .output}
-> > 
+> >
 > > You can force git to merge the two repositories with the option `--allow-unrelated-histories`. Be careful when you use this option and carefully examine the contents of local and remote repositories before merging.
 > > ~~~
 > > $ git pull --allow-unrelated-histories origin master
 > > ~~~
 > > {: .language-bash}
-> > 
+> >
 > > ~~~
 > > From https://github.com/vlad/planets
 > >  * branch            master     -> FETCH_HEAD
@@ -288,6 +288,6 @@ GitHub, though, this command would download them to our local repository.
 > >  create mode 100644 README.md
 > > ~~~
 > > {: .output}
-> > 
+> >
 > {: .solution}
 {: .challenge}
