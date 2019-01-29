@@ -259,7 +259,10 @@ GitHub, though, this command would download them to our local repository.
 > you tried to link your local and remote repositories?
 >
 > > ## Solution
-> > In this case, we'd see a merge conflict due to unrelated histories. When GitHub creates a README.md file, it performs a commit in the remote repository. When you try to pull the remote repository to your local repository, Git detects that they have histories that do not share a common origin and refuses to merge.
+> > In this case, we'd see a merge conflict due to unrelated histories. When GitHub creates a 
+> > README.md file, it performs a commit in the remote repository. When you try to pull the remote 
+> > repository to your local repository, Git detects that they have histories that do not share a 
+> > common origin and refuses to merge.
 > > ~~~
 > > $ git pull origin master
 > > ~~~
