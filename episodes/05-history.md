@@ -369,7 +369,7 @@ moving backward and forward in time becomes much easier.
 > >
 > > The answer is (5)-Both 2 and 4. 
 > > 
-> > The checkout command restores files from the repository, overwriting the files in your working 
+> > The `checkout` command restores files from the repository, overwriting the files in your working 
 > > directory. Answers 2 and 4 both restore the *latest* version *in the repository* of the file 
 > > `data_cruncher.py`. Answer 2 uses `HEAD` to indicate the *latest*, whereas answer 4 uses the 
 > > unique ID of the last commit, which is what `HEAD` means. 
