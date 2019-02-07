@@ -716,6 +716,11 @@ repository (`git commit`):
 > > $ git add venus.txt
 > > ~~~
 > > {: .language-bash}
+> > The more efficient way is using the following command:
+> > ~~~
+> > $ git add .
+> > ~~~
+> > {: .language-bash}
 > > Now the files are ready to commit. You can check that using `git status`. If you are ready to commit use:
 > > ~~~
 > > $ git commit -m "Write plans to start a base on Venus"
