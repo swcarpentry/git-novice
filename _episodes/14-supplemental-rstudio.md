@@ -46,8 +46,11 @@ our computer, we choose the option "Existing Directory":
 > - `which git` (Mac, Linux)
 > - `where git` (Windows)
 >
-> If there is no version of Git on your computer, please either install [Git](https://git-scm.com/downloads/)
-> or [GitHub](https://desktop.github.com/) now. Next open your shell or command prompt 
+> If there is no version of Git on your computer, 
+please follow the 
+[Git installation 
+instructions](https://swcarpentry.github.io/git-novice/setup.html)
+> in the setup of this lesson to install Git now. Next open your shell or command prompt 
 > and type `which git` (Mac, Linux), or `where git` (Windows).
 > Copy the path to the git executable.
 >
