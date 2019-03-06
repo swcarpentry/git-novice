@@ -615,9 +615,9 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 >
 >    Before moving on, we will commit these changes.
 >
->    ---
+>    ~~~
 >    $ git commit -m "Add some initial thoughts on spaceships"
->    ---
+>    ~~~
 >    {: .language-bash}
 >
 {: .callout}
