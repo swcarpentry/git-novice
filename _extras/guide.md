@@ -265,6 +265,13 @@ particular set of files in `.gitignore`.
 
 ## [Open Science]({{ page.root }}/10-open/)
 
+We teach about Open Science in this episode because Open Science is a relevant framework while using Git and sharing code with others. 
+Pausing to talk about this topic is important for the learner to be able to grasp the benefits of sharing code as a scientist. 
+
+It might be helpful if the instructor has a few personal example to share. It's always interesting to mention if there are services promoting Open Science (ie. The Library, the Research Office) at the institution the Software Carpentry training takes place.
+
+Depending on the audience, the discussion will flow. Be aware that there might be strong and contradicting opinions about the topic of Open Science.
+
 ## [Licensing]({{ page.root }}/11-licensing/)
 
 We teach about licensing because questions about who owns what, or can use
@@ -273,6 +280,8 @@ GitHub to store files. Also, the discussion gives learners a chance to catch
 their breath after what is often a frustrating couple of hours.
 
 ## [Citation]({{ page.root }}/12-citation/)
+
+We teach about citation because it is important to give learners the tools to respect the licensing chosen for the code.
 
 ## [Hosting]({{ page.root }}/13-hosting/)
 
