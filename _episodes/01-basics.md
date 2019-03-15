@@ -67,7 +67,7 @@ across different computers, facilitating collaboration among different people.
 
 > ## Paper Writing
 >
-> *   Imagine you drafted an excellent paragraph for a paper you are writing, but later ruin it. How would you retrieve
+> *   Imagine you drafted an excellent paragraph for a paper you are writing, but you ruined it later. How would you retrieve
 >     the *excellent* version of your conclusion? Is it even possible?
 >
 > *   Imagine you have 5 co-authors. How would you manage the changes and comments they make to your paper?
