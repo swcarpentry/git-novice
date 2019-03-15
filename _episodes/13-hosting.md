@@ -46,7 +46,7 @@ page](https://github.com/swcarpentry/git-novice/blob/gh-pages/_episodes/13-hosti
 Anyone with a GitHub account can suggest changes to this text.
 
 GitHub repositories can also be assigned DOIs, [by connecting its releases to
-Zenodo](https://guides.github.com/activities/citable-code/). For example,
+Zenodo](https://guides.github.com/activities/citable-code/) or [Figshare](https://figshare.com/blog/figshare_launches_revamped_GitHub_integration/243). For example,
 [`10.5281/zenodo.57467`](https://zenodo.org/record/57467) is the DOI that has
 been "minted" for this introduction to Git.
 
