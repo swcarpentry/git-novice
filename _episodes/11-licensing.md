@@ -14,7 +14,7 @@ keypoints:
 - "People who are not lawyers should not try to write licenses from scratch."
 ---
 
-When a repository with source code, a manuscript or other creative
+When a repository with source code, a manuscript, or other creative
 works becomes public, it should include a file `LICENSE` or
 `LICENSE.txt` in the base directory of the repository that clearly
 states under which license the content is being made available. This
@@ -27,7 +27,8 @@ A license solves this problem by granting rights to others (the
 licensees) that they would otherwise not have. What rights are being
 granted under which conditions differs, often only slightly, from one
 license to another. In practice, a few licenses are by far the most
-popular, and [choosealicense.com](https://choosealicense.com/) will
+popular, and [choosealicense.com](https://choosealicense.com/) and 
+the [Open Source Guide](https://opensource.guide/legal/) will
 help you find a common license that suits your needs.  Important
 considerations include:
 
@@ -36,6 +37,25 @@ considerations include:
   distribute their source code.
 * Whether the content you are licensing is source code.
 * Whether you want to license the code at all.
+
+You may also want to consider the communities you hope will use and 
+contribute to your project:
+
+* Do you want your project to be used as a dependency by other projects? 
+  * It's probably best to use the most popular license in your relevant 
+    community. For example, [MIT](https://choosealicense.com/licenses/mit/)
+    is the most popular license for 
+    [npm libraries](https://libraries.io/search?platforms=NPM).
+* Do you want your project to appeal to large businesses? 
+  * A large  business will likely want an express patent license from all 
+    contributors. In this case, 
+    [Apache 2.0](https://choosealicense.com/licenses/apache-2.0/) has you 
+    (and them) covered.
+* Do you want your project to appeal to contributors who do not want their
+  contributions to be used in closed source software? 
+  * [GPLv3](https://choosealicense.com/licenses/gpl-3.0/) or (if they also 
+    do not wish to contribute to closed source services) 
+    [AGPLv3](https://choosealicense.com/licenses/agpl-3.0/) will go over well.
 
 Choosing a license that is in common use makes life easier for
 contributors and users, because they are more likely to already be
