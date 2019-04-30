@@ -62,17 +62,18 @@ Type the text below into the `mars.txt` file:
 Cold and dry, but everything is my favorite color
 ~~~
 
-`mars.txt` now contains a single line, which we can see by running:
-
+Let's first check if the file was properly created by running the list command (ls):
 ~~~
 $ ls
 ~~~
 {: .language-bash}
 
 ~~~
-mars.txt
+mars.txt moons/
 ~~~
 {: .output}
+
+`mars.txt` contains a single line, which we can see by running:
 
 ~~~
 $ cat mars.txt
@@ -83,6 +84,10 @@ $ cat mars.txt
 Cold and dry, but everything is my favorite color
 ~~~
 {: .output}
+
+
+
+
 
 If we check the status of our project again,
 Git tells us that it's noticed the new file:
