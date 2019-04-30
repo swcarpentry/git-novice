@@ -62,7 +62,7 @@ Type the text below into the `mars.txt` file:
 Cold and dry, but everything is my favorite color
 ~~~
 
-Let's first check if the file was properly created by running the list command (ls):
+Let's first verify that the file was properly created by running the list command (`ls`):
 ~~~
 $ ls
 ~~~
@@ -84,10 +84,6 @@ $ cat mars.txt
 Cold and dry, but everything is my favorite color
 ~~~
 {: .output}
-
-
-
-
 
 If we check the status of our project again,
 Git tells us that it's noticed the new file:
