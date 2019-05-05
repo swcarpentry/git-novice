@@ -32,6 +32,7 @@ create a new repository called `planets`:
 ![Creating a Repository on GitHub (Step 1)](../fig/github-create-repo-01.png)
 
 Name your repository "planets" and then click "Create Repository":
+(Note: Since this repository will be connected to a local repository, it needs to be empty. Leave "Initialize this repository with a README" unchecked, and keep "None" as options for both "Add .gitignore" and "Add a license." This will make connecting the local and remote repositories easier.)
 
 ![Creating a Repository on GitHub (Step 2)](../fig/github-create-repo-02.png)
 
