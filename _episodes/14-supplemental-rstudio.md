@@ -135,8 +135,7 @@ file:
 > 1. Create a new directory within your project called `graphs`.
 > 2. Modify the `.gitignore` so that the `graphs` directory is not version controlled.
 >
-> Add the newly created folders to version control using
-> the Git interface.
+
 >
 > > ## Solution to Challenge
 > >
