@@ -7,7 +7,7 @@ questions:
 objectives:
 - "Understand how to use Git from RStudio."
 keypoints:
-- "Create an RStudio project"
+- "Using R Studio with Git allows you to version control a project over time. "
 ---
 
 Version control can be very useful when developing data analysis scripts. For
