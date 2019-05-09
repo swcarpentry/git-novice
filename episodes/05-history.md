@@ -508,7 +508,7 @@ moving backward and forward in time becomes much easier.
 > Question: What does the following command do?
 >
 > ~~~
-> $ git log --patch HEAD~3 *.txt
+> $ git log --patch HEAD~9 *.txt
 > ~~~
 > {: .language-bash}
 {: .challenge}
