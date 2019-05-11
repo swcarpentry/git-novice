@@ -458,7 +458,7 @@ moving backward and forward in time becomes much easier.
 
 > ## Checking Understanding of `git diff`
 >
-> Consider this command: `git diff HEAD~3 mars.txt`. What do you predict this command
+> Consider this command: `git diff HEAD~9 mars.txt`. What do you predict this command
 > will do if you execute it? What happens when you do execute it? Why?
 >
 > Try another command, `git diff [ID] mars.txt`, where [ID] is replaced with
@@ -508,7 +508,7 @@ moving backward and forward in time becomes much easier.
 > Question: What does the following command do?
 >
 > ~~~
-> $ git log --patch HEAD~3 *.txt
+> $ git log --patch HEAD~9 *.txt
 > ~~~
 > {: .language-bash}
 {: .challenge}
