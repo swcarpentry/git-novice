@@ -7,7 +7,7 @@ questions:
 objectives:
 - "Understand how to use Git from RStudio."
 keypoints:
-- "Using R Studio with Git allows you to version control a project over time. "
+- "Using RStudio's Git integration allows you to version control a project over time."
 ---
 
 Version control can be very useful when developing data analysis scripts. For
@@ -135,7 +135,6 @@ file:
 > 1. Create a new directory within your project called `graphs`.
 > 2. Modify the `.gitignore` so that the `graphs` directory is not version controlled.
 >
-
 >
 > > ## Solution to Challenge
 > >
