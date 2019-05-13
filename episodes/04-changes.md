@@ -69,7 +69,7 @@ $ ls
 {: .language-bash}
 
 ~~~
-mars.txt moons/
+mars.txt 
 ~~~
 {: .output}
 
