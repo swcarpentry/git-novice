@@ -38,6 +38,7 @@ Untracked files:
 	b.dat
 	c.dat
 	results/
+
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
 {: .output}
@@ -80,6 +81,7 @@ Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
 	.gitignore
+
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
 {: .output}
