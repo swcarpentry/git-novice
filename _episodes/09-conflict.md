@@ -16,7 +16,7 @@ As soon as people can work in parallel, they'll likely step on each other's
 toes.  This will even happen with a single person: if we are working on
 a piece of software on both our laptop and a server in the lab, we could make
 different changes to each copy.  Version control helps us manage these
-[conflicts]({{ page.root }}/reference#conflicts) by giving us tools to
+[conflicts]({{ page.root }}/reference#conflict) by giving us tools to
 [resolve]({{ page.root }}/reference#resolve) overlapping changes.
 
 To see how we can resolve conflicts, we must first create one.  The file
