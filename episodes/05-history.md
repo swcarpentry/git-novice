@@ -74,7 +74,7 @@ again, but with the notation `HEAD~1`, `HEAD~2`, and so on, to refer to them:
 
 
 ~~~
-$ git diff HEAD~2 mars.txt
+$ git diff HEAD~3 mars.txt
 ~~~
 {: .language-bash}
 
@@ -94,7 +94,7 @@ index df0654a..b36abfd 100644
 We could also use `git show` which shows us what changes we made at an older commit as well as the commit message, rather than the _differences_ between a commit and our working directory that we see by using `git diff`.
 
 ~~~
-$ git show HEAD~2 mars.txt
+$ git show HEAD~3 mars.txt
 ~~~
 {: .language-bash}
 
