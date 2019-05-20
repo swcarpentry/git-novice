@@ -33,7 +33,10 @@ create a new repository called `planets`:
 
 Name your repository "planets" and then click "Create Repository".
 
-Note: Since this repository will be connected to a local repository, it needs to be empty. Leave "Initialize this repository with a README" unchecked, and keep "None" as options for both "Add .gitignore" and "Add a license." See the "GitHub License and README files" exercise below for a full explanation of why the repository needs to be empty.
+Note: Since this repository will be connected to a local repository, it needs to be empty. Leave 
+"Initialize this repository with a README" unchecked, and keep "None" as options for both "Add 
+.gitignore" and "Add a license." See the "GitHub License and README files" exercise below for a full 
+explanation of why the repository needs to be empty.
 
 ![Creating a Repository on GitHub (Step 2)](../fig/github-create-repo-02.png)
 
@@ -223,11 +226,21 @@ GitHub, though, this command would download them to our local repository.
 > How would you get that same information in the shell?
 >
 > > ## Solution
-> > The left-most button (with the picture of a clipboard) copies the full identifier of the commit to the clipboard. In the shell, ```git log``` will show you the full commit identifier for each commit.
+> > The left-most button (with the picture of a clipboard) copies the full identifier of the commit 
+> > to the clipboard. In the shell, ```git log``` will show you the full commit identifier for each 
+> > commit.
 > >
-> > When you click on the middle button, you'll see all of the changes that were made in that particular commit. Green shaded lines indicate additions and red ones removals. In the shell we can do the same thing with ```git diff```. In particular, ```git diff ID1..ID2``` where ID1 and ID2 are commit identifiers (e.g. ```git diff a3bf1e5..041e637```) will show the differences between those two commits.
+> > When you click on the middle button, you'll see all of the changes that were made in that 
+> > particular commit. Green shaded lines indicate additions and red ones removals. In the shell we 
+> > can do the same thing with ```git diff```. In particular, ```git diff ID1..ID2``` where ID1 and 
+> > ID2 are commit identifiers (e.g. ```git diff a3bf1e5..041e637```) will show the differences 
+> > between those two commits.
 > >
-> > The right-most button lets you view all of the files in the repository at the time of that commit. To do this in the shell, we'd need to checkout the repository at that particular time. We can do this with ```git checkout ID``` where ID is the identifier of the commit we want to look at. If we do this, we need to remember to put the repository back to the right state afterwards!
+> > The right-most button lets you view all of the files in the repository at the time of that 
+> > commit. To do this in the shell, we'd need to checkout the repository at that particular time. 
+> > We can do this with ```git checkout ID``` where ID is the identifier of the commit we want to 
+> > look at. If we do this, we need to remember to put the repository back to the right state 
+> > afterwards!
 > {: .solution}
 {: .challenge}
 
@@ -240,7 +253,9 @@ GitHub, though, this command would download them to our local repository.
 > times, and why?
 >
 > > ## Solution
-> > GitHub displays timestamps in a human readable relative format (i.e. "22 hours ago" or "three weeks ago"). However, if you hover over the timestamp, you can see the exact time at which the last change to the file occurred.
+> > GitHub displays timestamps in a human readable relative format (i.e. "22 hours ago" or "three 
+> > weeks ago"). However, if you hover over the timestamp, you can see the exact time at which the 
+> > last change to the file occurred.
 > {: .solution}
 {: .challenge}
 
@@ -250,15 +265,17 @@ GitHub, though, this command would download them to our local repository.
 > How is "git push" different from "git commit"?
 >
 > > ## Solution
-> > When we push changes, we're interacting with a remote repository to update it with the changes we've made locally (often this corresponds to sharing the changes we've made with others). Commit only updates your local repository.
+> > When we push changes, we're interacting with a remote repository to update it with the changes 
+> > we've made locally (often this corresponds to sharing the changes we've made with others). 
+> > Commit only updates your local repository.
 > {: .solution}
 {: .challenge}
 
 > ## GitHub License and README files
 >
-> In this section we learned about creating a remote repository on GitHub, but when you initialized your
-> GitHub repo, you didn't add a README.md or a license file. If you had, what do you think would have happened when
-> you tried to link your local and remote repositories?
+> In this section we learned about creating a remote repository on GitHub, but when you initialized 
+> your GitHub repo, you didn't add a README.md or a license file. If you had, what do you think 
+> would have happened when you tried to link your local and remote repositories?
 >
 > > ## Solution
 > > In this case, we'd see a merge conflict due to unrelated histories. When GitHub creates a 
@@ -271,6 +288,11 @@ GitHub, though, this command would download them to our local repository.
 > > {: .language-bash}
 > >
 > > ~~~
+> > warning: no common commits
+> > remote: Enumerating objects: 3, done.
+> > remote: Counting objects: 100% (3/3), done.
+> > remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+> > Unpacking objects: 100% (3/3), done.
 > > From https://github.com/vlad/planets
 > >  * branch            master     -> FETCH_HEAD
 > >  * [new branch]      master     -> origin/master
@@ -278,7 +300,9 @@ GitHub, though, this command would download them to our local repository.
 > > ~~~
 > > {: .output}
 > >
-> > You can force git to merge the two repositories with the option `--allow-unrelated-histories`. Be careful when you use this option and carefully examine the contents of local and remote repositories before merging.
+> > You can force git to merge the two repositories with the option `--allow-unrelated-histories`. 
+> > Be careful when you use this option and carefully examine the contents of local and remote 
+> > repositories before merging.
 > > ~~~
 > > $ git pull --allow-unrelated-histories origin master
 > > ~~~
@@ -288,9 +312,9 @@ GitHub, though, this command would download them to our local repository.
 > > From https://github.com/vlad/planets
 > >  * branch            master     -> FETCH_HEAD
 > > Merge made by the 'recursive' strategy.
-> >  README.md | 1 +
-> >  1 file changed, 1 insertion(+)
-> >  create mode 100644 README.md
+> > README.md | 1 +
+> > 1 file changed, 1 insertion(+)
+> > create mode 100644 README.md
 > > ~~~
 > > {: .output}
 > >
