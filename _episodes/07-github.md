@@ -52,7 +52,7 @@ $ git init
 {: .language-bash}
 
 If you remember back to the earlier [lesson](../04-changes/) where we added and
-commited our earlier work on `mars.txt`, we had a diagram of the local repository
+committed our earlier work on `mars.txt`, we had a diagram of the local repository
 which looked like this:
 
 ![The Local Repository with Git Staging Area](../fig/git-staging-area.svg)
