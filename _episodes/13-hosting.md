@@ -41,7 +41,7 @@ collaborate.  Using a popular service can help connect your project with
 communities already using the same service.
 
 As an example, Software Carpentry [is on
-GitHub]({{ swc_github }}) where you can find the [source for this
+GitHub]({{ site.swc_github }}) where you can find the [source for this
 page](https://github.com/swcarpentry/git-novice/blob/gh-pages/_episodes/13-hosting.md).
 Anyone with a GitHub account can suggest changes to this text.
 
