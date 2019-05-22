@@ -453,8 +453,8 @@ moving backward and forward in time becomes much easier.
 > > not the version in the staging area.
 > > 
 > > So, when `git commit -m "Comment on Venus as an unsuitable base"` is executed, 
-> > `venus.txt` committed to the repository is the version from the staging area and
-> >  has only one line.
+> > the version of `venus.txt` committed to the repository is the one from the staging area and
+> > has only one line.
 > >  
 > >  At this time, the working copy still has the second line (and 
 > >  `git status` will show that the file is modified). However, `git checkout HEAD venus.txt` 
