@@ -99,9 +99,9 @@ $ git show HEAD~3 mars.txt
 {: .language-bash}
 
 ~~~
-commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
+commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
-Date:   Thu Aug 22 10:07:21 2013 -0400
+Date:   Thu Aug 22 09:51:46 2013 -0400
 
     Start notes on Mars as a base
 
