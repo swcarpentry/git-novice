@@ -18,8 +18,15 @@ We will continue with the story of Wolfman and Dracula who are investigating if 
 is possible to send a planetary lander to Mars. 
 
 ![motivatingexample](../fig/motivatingexample.png)
-[Werewolf vs dracula](https://www.deviantart.com/b-maze/art/Werewolf-vs-Dracula-124893530): [Deviant Art](https://www.deviantart.com/) / [b-maze](https://www.deviantart.com/b-maze). [Planets](https://commons.wikimedia.org/wiki/File:Planets_are_us.png), [Mummy](https://commons.wikimedia.org/wiki/File:Mummy_icon_-_Noun_Project_4070.svg) (&copy; [TintoMeches](https://commons.wikimedia.org/wiki/User_talk:TintoMeches)),
-[Moon](https://commons.wikimedia.org/wiki/File:Lune_ico.png) (&copy; [ANGELUS](https://commons.wikimedia.org/wiki/User:ANGELUS)): [Wikimedia Commons](https://commons.wikimedia.org/wiki/Main_Page) / [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en).
+[Werewolf vs dracula](https://www.deviantart.com/b-maze/art/Werewolf-vs-Dracula-124893530):
+[Deviant Art](https://www.deviantart.com/) / [b-maze](https://www.deviantart.com/b-maze).
+[Planets](https://commons.wikimedia.org/wiki/File:Planets_are_us.png),
+[Mummy](https://commons.wikimedia.org/wiki/File:Mummy_icon_-_Noun_Project_4070.svg)
+(&copy; [TintoMeches](https://commons.wikimedia.org/wiki/User_talk:TintoMeches)),
+[Moon](https://commons.wikimedia.org/wiki/File:Lune_ico.png)
+(&copy; [ANGELUS](https://commons.wikimedia.org/wiki/User:ANGELUS)).
+[Wikimedia Commons](https://commons.wikimedia.org/wiki/Main_Page)
+[CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en).
 
 
 
