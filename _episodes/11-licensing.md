@@ -38,25 +38,6 @@ considerations include:
 * Whether the content you are licensing is source code.
 * Whether you want to license the code at all.
 
-You may also want to consider the communities you hope will use and 
-contribute to your project:
-
-* Do you want your project to be used as a dependency by other projects? 
-  * It's probably best to use the most popular license in your relevant 
-    community. For example, [MIT](https://choosealicense.com/licenses/mit/)
-    is the most popular license for 
-    [npm libraries](https://libraries.io/search?platforms=NPM).
-* Do you want your project to appeal to large businesses? 
-  * A large  business will likely want an express patent license from all 
-    contributors. In this case, 
-    [Apache 2.0](https://choosealicense.com/licenses/apache-2.0/) has you 
-    (and them) covered.
-* Do you want your project to appeal to contributors who do not want their
-  contributions to be used in closed source software? 
-  * [GPLv3](https://choosealicense.com/licenses/gpl-3.0/) or (if they also 
-    do not wish to contribute to closed source services) 
-    [AGPLv3](https://choosealicense.com/licenses/agpl-3.0/) will go over well.
-
 Choosing a license that is in common use makes life easier for
 contributors and users, because they are more likely to already be
 familiar with the license and don't have to wade through a bunch of
@@ -95,6 +76,27 @@ thus need to be asked for approval once a license is chosen.
 > - [CPython](https://github.com/python/cpython), the standard implementation of the Python language
 > - [Jupyter](https://github.com/jupyter), the project behind the web-based Python notebooks we'll be using
 > - [EtherPad](https://github.com/ether/etherpad-lite), a real-time collaborative editor
+{: .challenge}
+
+> ## Which license is appropriate for my project's community?
+>
+> When you release your project, you may also want to consider which license is most appropriate
+> for the communities that will use and contribute to your project.
+> * Do you want your project to be used as a dependency by other projects? 
+>   * It's probably best to use the most popular license in your relevant 
+>     community. For example, [MIT](https://choosealicense.com/licenses/mit/)
+>     is the most popular license for 
+>     [npm libraries](https://libraries.io/search?platforms=NPM).
+> * Do you want your project to appeal to large businesses? 
+>   * A large  business will likely want an express patent license from all 
+>     contributors. In this case, 
+>     [Apache 2.0](https://choosealicense.com/licenses/apache-2.0/) has you 
+>     (and them) covered.
+> * Do you want your project to appeal to contributors who do not want their
+>   contributions to be used in closed source software? 
+>   * [GPLv3](https://choosealicense.com/licenses/gpl-3.0/) or (if they also 
+>     do not wish to contribute to closed source services) 
+>     [AGPLv3](https://choosealicense.com/licenses/agpl-3.0/) will go over well.
 {: .challenge}
 
 [software-licensing]: https://doi.org/10.1371/journal.pcbi.1002598
