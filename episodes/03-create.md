@@ -22,9 +22,9 @@ is possible to send a planetary lander to Mars.
 [Deviant Art](https://www.deviantart.com/) / [b-maze](https://www.deviantart.com/b-maze).
 [Planets](https://commons.wikimedia.org/wiki/File:Planets_are_us.png),
 [Mummy](https://commons.wikimedia.org/wiki/File:Mummy_icon_-_Noun_Project_4070.svg)
-(&copy; [TintoMeches](https://commons.wikimedia.org/wiki/User_talk:TintoMeches)),
+(&copy; Gilad Fried [The Noun Project](https://thenounproject.com/)),
 [Moon](https://commons.wikimedia.org/wiki/File:Lune_ico.png)
-(&copy; [ANGELUS](https://commons.wikimedia.org/wiki/User:ANGELUS)).
+(&copy; [Luc Viatour](https://commons.wikimedia.org/wiki/User:Lviatour)):
 [Wikimedia Commons](https://commons.wikimedia.org/wiki/Main_Page)
 [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en).
 
