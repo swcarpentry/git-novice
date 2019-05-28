@@ -1,6 +1,5 @@
 ---
 layout: reference
-permalink: /reference/
 ---
 
 ## Git Cheatsheets for Quick Reference
