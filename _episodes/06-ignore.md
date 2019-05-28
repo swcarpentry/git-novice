@@ -20,14 +20,14 @@ Let's create a few dummy files:
 $ mkdir results
 $ touch a.dat b.dat c.dat results/a.out results/b.out
 ~~~
-{: .bash}
+{: .language-bash}
 
 and see what Git says:
 
 ~~~
 $ git status
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 On branch master
@@ -38,6 +38,7 @@ Untracked files:
 	b.dat
 	c.dat
 	results/
+
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
 {: .output}
@@ -53,7 +54,7 @@ We do this by creating a file in the root directory of our project called `.giti
 $ nano .gitignore
 $ cat .gitignore
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 *.dat
@@ -72,7 +73,7 @@ the output of `git status` is much cleaner:
 ~~~
 $ git status
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 On branch master
@@ -80,6 +81,7 @@ Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
 	.gitignore
+
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
 {: .output}
@@ -95,7 +97,7 @@ $ git add .gitignore
 $ git commit -m "Ignore data files and the results folder."
 $ git status
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 # On branch master
@@ -108,7 +110,7 @@ As a bonus, using `.gitignore` helps us avoid accidentally adding to the reposit
 ~~~
 $ git add a.dat
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 The following paths are ignored by one of your .gitignore files:
@@ -125,7 +127,7 @@ We can also always see the status of ignored files if we want:
 ~~~
 $ git status --ignored
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 On branch master
@@ -149,7 +151,7 @@ nothing to commit, working directory clean
 > results/data
 > results/plots
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > How would you ignore only `results/plots` and not `results/data`?
 >
@@ -205,7 +207,7 @@ nothing to commit, working directory clean
 > results/data/position/gps/info.txt
 > results/plots
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > What's the shortest `.gitignore` rule you could write to ignore all `.data`
 > files in `result/data/position/gps`? Do not ignore the `info.txt`.
@@ -225,7 +227,7 @@ nothing to commit, working directory clean
 > *.data
 > !*.data
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > What will be the result?
 >

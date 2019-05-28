@@ -127,7 +127,7 @@ working in teams or not, because it is
     $ mv .git temp_git
     $ rm -rf  temp_git
     ~~~
-    {: .bash}
+    {: .language-bash}
 
     The challenge suggests that it is a bad idea to create a Git repo inside another repo.
     For more discussion on this topic, please see [this issue][repos-in-repos].
@@ -211,7 +211,7 @@ particular set of files in `.gitignore`.
     ~~~
     $ git clone https://github.com/vlad/planets.git planets-at-work
     ~~~
-    {: .bash}
+    {: .language-bash}
 
 *   It's very common that learners mistype the remote alias or the remote URL
     when adding a remote, so they cannot `push`. You can diagnose this with
@@ -229,7 +229,7 @@ particular set of files in `.gitignore`.
     ~~~
     $ git clone https://github.com/vlad/planets.git vlad-planet
     ~~~
-    {: .bash}
+    {: .language-bash}
 
 *   The most common mistake is that learners `push` before `pull`ing. If they
     `pull` afterward, they may get a conflict.
