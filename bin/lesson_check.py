@@ -18,6 +18,9 @@ __version__ = '0.3'
 # Where to look for source Markdown files.
 SOURCE_DIRS = ['', '_episodes', '_extras']
 
+# Where to look for source Rmd files.
+SOURCE_RMD_DIRS = ['_episodes_rmd']
+
 # Required files: each entry is ('path': YAML_required).
 # FIXME: We do not yet validate whether any files have the required
 #   YAML headers, but should in the future.
@@ -99,6 +102,7 @@ BREAK_METADATA_FIELDS = {
 }
 
 # How long are lines allowed to be?
+# Please keep this in sync with .editorconfig!
 MAX_LINE_LEN = 100
 
 
@@ -108,6 +112,7 @@ def main():
     args = parse_args()
     args.reporter = Reporter()
     check_config(args.reporter, args.source_dir)
+    check_source_rmd(args.reporter, args.source_dir, args.parser)
     args.references = read_references(args.reporter, args.reference_path)
 
     docs = read_all_markdown(args.source_dir, args.parser)
@@ -184,6 +189,19 @@ def check_config(reporter, source_dir):
                    'configuration',
                    '"root" not set to "." in configuration')
 
+def check_source_rmd(reporter, source_dir, parser):
+    """Check that Rmd episode files include `source: Rmd`"""
+
+    episode_rmd_dir = [os.path.join(source_dir, d) for d in SOURCE_RMD_DIRS]
+    episode_rmd_files = [os.path.join(d, '*.Rmd') for d in episode_rmd_dir]
+    results = {}
+    for pat in episode_rmd_files:
+        for f in glob.glob(pat):
+            data = read_markdown(parser, f)
+            dy = data['metadata']
+            if dy:
+                reporter.check_field(f, 'episode_rmd',
+                                     dy, 'source', 'Rmd')
 
 def read_references(reporter, ref_path):
     """Read shared file of reference links, returning dictionary of valid references
@@ -324,7 +342,7 @@ class CheckBase:
                 n > MAX_LINE_LEN) and (not l.startswith('!'))]
             self.reporter.check(not over,
                                 self.filename,
-                                'Line(s) are too long: {0}',
+                                'Line(s) too long: {0}',
                                 ', '.join([str(i) for i in over]))
 
     def check_trailing_whitespace(self):
