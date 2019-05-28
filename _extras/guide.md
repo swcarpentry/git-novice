@@ -288,7 +288,7 @@ web-hosted private repositories.
 [git-parable]: http://tom.preston-werner.com/2009/05/19/the-git-parable.html
 [github]: https://github.com/
 [github-gui]: https://git-scm.com/downloads/guis
-[github-line-endings]: https://help.github.com/articles/dealing-with-line-endings/#platform-all
+[github-line-endings]: https://help.github.com/articles/dealing-with-line-endings
 [github-privacy]: https://help.github.com/articles/keeping-your-email-address-private/
 [repos-in-repos]: https://github.com/swcarpentry/git-novice/issues/272
 [try-git]: https://try.github.io

@@ -49,9 +49,9 @@ $ git init
 ~~~
 {: .bash}
 
-If you remember back to the earlier [lesson](./04-changes.html) where we added and
-commited our earlier work on `mars.txt`, we had a diagram of the local repository
-which looked like this:
+If you remember back to the earlier [lesson]({% link _episodes/04-changes.md %})
+where we added and commited our earlier work on `mars.txt`, we had a diagram of
+the local repository which looked like this:
 
 ![The Local Repository with Git Staging Area](../fig/git-staging-area.svg)
 
@@ -78,7 +78,7 @@ SSH to HTTPS.
 > the workshop you may want to set up SSH access, which is a bit more secure, by
 > following one of the great tutorials from
 > [GitHub](https://help.github.com/articles/generating-ssh-keys),
-> [Atlassian/BitBucket](https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Git)
+> [Atlassian/BitBucket](https://confluence.atlassian.com/bitbucket/set-up-an-ssh-key-728138079.html)
 > and [GitLab](https://about.gitlab.com/2014/03/04/add-ssh-key-screencast/)
 > (this one has a screencast).
 {: .callout}
