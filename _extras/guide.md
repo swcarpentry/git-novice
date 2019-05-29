@@ -173,6 +173,15 @@ particular set of files in `.gitignore`.
 *   It is very useful to draw a diagram showing the different repositories
     involved.
 
+*   When pushing to a remote, the output from Git can vary slightly depending 
+    on what leaners execute. The lesson displays the output from git if a 
+    learner executes `git push origin master`. However, some learners might 
+    use syntax suggested by GitHub for pushing to a remote with an existing 
+    repository, which is `git push -u origin master`. Learners using syntax from 
+    GitHub, `git push -u origin master`, will have slightly different output, 
+    including the line `Branch master set up to track remote branch master 
+    from origin by rebasing.`
+
 ## [Collaborating]({{ page.root }}/08-collab/)
 
 *   Decide in advance whether all the learners will work in one shared
