@@ -239,7 +239,7 @@ nothing to commit, working directory clean
 
 > ## Ignoring all data Files in a Directory
 >
-> Given a directory structure that looks like:
+> Assuming you have an empty .gitignore file, and given a directory structure that looks like:
 >
 > ~~~
 > results/data/position/gps/a.dat
