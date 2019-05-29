@@ -157,22 +157,25 @@ nothing to commit, working directory clean
 >
 > > ## Solution
 > >
-> > As with most programming issues, there are a few ways that you
-> > could solve this. If you only want to ignore the contents of
+> > If you only want to ignore the contents of
 > > `results/plots`, you can change your `.gitignore` to ignore
 > > only the `/plots/` subfolder by adding the following line to
 > > your .gitignore:
 > >
-> > `results/plots/`
+> > ~~~
+> > results/plots/
+> > ~~~
+> > {: .output}
 > >
-> > If, instead, you want to ignore everything in `/results/`, but wanted to track
-> > `results/data`, then you can add `results/` to your .gitignore
-> > and create an exception for the `results/data/` folder.
-> > The next challenge will cover this type of solution.
+> > This line will ensure only the contents of `results/plots` is ignored, and
+> > not the contents of `results/data`.
 > >
-> > Sometimes the `**` pattern comes in handy, too, which matches
-> > multiple directory levels. E.g. `**/results/plots/*` would make git ignore
-> > the `results/plots` directory in any root directory.
+> > As with most programming issues, there
+> > are a few alternative ways that one may ensure this ignore rule is followed.
+> > The "Ignoring Nested Files with More Directories" exercise has a slightly
+> > different directory structure
+> > that presents an alternative solution.
+> > Further, the discussion page has more detail on ignore rules.
 > {: .solution}
 {: .challenge}
 
