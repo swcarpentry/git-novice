@@ -173,6 +173,10 @@ particular set of files in `.gitignore`.
 *   It is very useful to draw a diagram showing the different repositories
     involved.
 
+*   Learners using syntax from GitHub, `git push -u origin master`, will have slightly different 
+    output, including the line `Branch master set up to track remote branch master from origin by 
+    rebasing.`
+
 ## [Collaborating]({{ page.root }}/08-collab/)
 
 *   Decide in advance whether all the learners will work in one shared
