@@ -178,8 +178,8 @@ nothing to commit, working directory clean
 
 > ## Including Specific Files
 >
-> How would you ignore all `.data` files in your root directory except for
-> `final.data`?
+> How would you ignore all `.dat` files in your root directory except for
+> `final.dat`?
 > Hint: Find out what `!` (the exclamation point operator) does
 >
 > > ## Solution
@@ -187,12 +187,16 @@ nothing to commit, working directory clean
 > > You would add the following two lines to your .gitignore:
 > >
 > > ~~~
-> > *.data           # ignore all data files
-> > !final.data      # except final.data
+> > *.dat           # ignore all data files
+> > !final.dat      # except final.data
 > > ~~~
 > > {: .output}
 > >
 > > The exclamation point operator will include a previously excluded entry.
+> >
+> > Note also that because you've previously committed `.dat` files in this
+> > lesson they will not be ignored with this new rule. Only future additions
+> > of `.dat` files added to the root directory will be ignored.
 > {: .solution}
 {: .challenge}
 
@@ -201,20 +205,21 @@ nothing to commit, working directory clean
 > Given a directory structure that looks like:
 >
 > ~~~
-> results/data/position/gps/a.data
-> results/data/position/gps/b.data
-> results/data/position/gps/c.data
+> results/data/position/gps/a.dat
+> results/data/position/gps/b.dat
+> results/data/position/gps/c.dat
 > results/data/position/gps/info.txt
 > results/plots
 > ~~~
 > {: .language-bash}
 >
-> What's the shortest `.gitignore` rule you could write to ignore all `.data`
+> What's the shortest `.gitignore` rule you could write to ignore all `.dat`
 > files in `result/data/position/gps`? Do not ignore the `info.txt`.
 >
 > > ## Solution
 > >
-> > Appending `results/data/position/gps/*.data` will match every file in `results/data/position/gps` that ends with `.data`.
+> > Appending `results/data/position/gps/*.dat` will match every file in `results/data/position/gps`
+> > that ends with `.dat`.
 > > The file `results/data/position/gps/info.txt` will not be ignored.
 > {: .solution}
 {: .challenge}
@@ -224,8 +229,8 @@ nothing to commit, working directory clean
 > Given a `.gitignore` file with the following contents:
 >
 > ~~~
-> *.data
-> !*.data
+> *.dat
+> !*.dat
 > ~~~
 > {: .language-bash}
 >
@@ -234,8 +239,8 @@ nothing to commit, working directory clean
 > > ## Solution
 > >
 > > The `!` modifier will negate an entry from a previously defined ignore pattern.
-> > Because the `!*.data` entry negates all of the previous `.data` files in the `.gitignore`,
-> > none of them will be ignored, and all `.data` files will be tracked.
+> > Because the `!*.dat` entry negates all of the previous `.dat` files in the `.gitignore`,
+> > none of them will be ignored, and all `.dat` files will be tracked.
 > >
 > {: .solution}
 {: .challenge}
