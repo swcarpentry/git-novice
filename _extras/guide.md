@@ -238,6 +238,9 @@ particular set of files in `.gitignore`.
 *   Conflicts, sometimes weird, will start to arise. Stay tight: conflicts are
     next.
 
+*   Learners may have slightly different output from `git push` and `git pull` depending 
+    on the version of git, and if upstream (`-u`) is used.
+
 ## [Conflicts]({{ page.root }}/09-conflict/)
 
 *   Expect the learners to make mistakes. Expect *yourself* to make mistakes. This
