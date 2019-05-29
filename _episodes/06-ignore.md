@@ -172,7 +172,7 @@ nothing to commit, working directory clean
 > >
 > > As with most programming issues, there
 > > are a few alternative ways that one may ensure this ignore rule is followed.
-> > The "Ignoring Nested Files with More Directories" exercise has a slightly
+> > The "Ignoring Nested Files: Variation" exercise has a slightly
 > > different directory structure
 > > that presents an alternative solution.
 > > Further, the discussion page has more detail on ignore rules.
@@ -200,6 +200,40 @@ nothing to commit, working directory clean
 > > Note also that because you've previously committed `.dat` files in this
 > > lesson they will not be ignored with this new rule. Only future additions
 > > of `.dat` files added to the root directory will be ignored.
+> {: .solution}
+{: .challenge}
+
+> ## Ignoring Nested Files: Variation
+>
+> Given a directory structure that looks similar to the earlier Nested Files
+> exercise, but with a slightly different directory structure:
+>
+> ~~~
+> results/data
+> results/images
+> results/plots
+> results/analysis
+> ~~~
+> {: .language-bash}
+>
+> How would you ignore all of the contents in the results folder, but not `results/data`?
+>
+> Hint: think a bit about how you created an exception with the `!` operator
+> before.
+>
+> > ## Solution
+> >
+> > If you want to ignore the contents of
+> > `results/` but not those of `results/data/`, you can change your `.gitignore` to ignore
+> > the contents of results folder, but create an exception for the contents of the
+> > `results/data` subfolder. Your .gitignore would look like this:
+> >
+> > ~~~
+> > results/*               # ignore everything in results folder
+> > !results/data/          # do not ignore results/data/ contents
+> > ~~~
+> > {: .output}
+> >
 > {: .solution}
 {: .challenge}
 
