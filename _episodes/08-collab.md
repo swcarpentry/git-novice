@@ -83,6 +83,7 @@ $ git push origin master
 {: .language-bash}
 
 ~~~
+Enumerating objects: 4, done.
 Counting objects: 4, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (2/2), done.
@@ -141,12 +142,14 @@ $ git pull origin master
 {: .language-bash}
 
 ~~~
-remote: Counting objects: 4, done.
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
 remote: Compressing objects: 100% (2/2), done.
-remote: Total 3 (delta 0), reused 3 (delta 0)
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
 Unpacking objects: 100% (3/3), done.
 From https://github.com/vlad/planets
  * branch            master     -> FETCH_HEAD
+   9272da5..29aba7c  master     -> origin/master
 Updating 9272da5..29aba7c
 Fast-forward
  pluto.txt | 1 +
