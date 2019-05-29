@@ -275,6 +275,9 @@ particular set of files in `.gitignore`.
     You still have to `git add` and `git commit` after this. This is
     particularly useful when working with binary files.
 
+*   Keep in mind that depending on the Git version used, the outputs for
+    `git push` and `git pull` can vary slightly. 
+
 ## [Open Science]({{ page.root }}/10-open/)
 
 ## [Licensing]({{ page.root }}/11-licensing/)
