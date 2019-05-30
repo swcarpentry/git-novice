@@ -157,29 +157,32 @@ nothing to commit, working directory clean
 >
 > > ## Solution
 > >
-> > As with most programming issues, there are a few ways that you
-> > could solve this. If you only want to ignore the contents of
+> > If you only want to ignore the contents of
 > > `results/plots`, you can change your `.gitignore` to ignore
 > > only the `/plots/` subfolder by adding the following line to
 > > your .gitignore:
 > >
-> > `results/plots/`
+> > ~~~
+> > results/plots/
+> > ~~~
+> > {: .output}
 > >
-> > If, instead, you want to ignore everything in `/results/`, but wanted to track
-> > `results/data`, then you can add `results/` to your .gitignore
-> > and create an exception for the `results/data/` folder.
-> > The next challenge will cover this type of solution.
+> > This line will ensure only the contents of `results/plots` is ignored, and
+> > not the contents of `results/data`.
 > >
-> > Sometimes the `**` pattern comes in handy, too, which matches
-> > multiple directory levels. E.g. `**/results/plots/*` would make git ignore
-> > the `results/plots` directory in any root directory.
+> > As with most programming issues, there
+> > are a few alternative ways that one may ensure this ignore rule is followed.
+> > The "Ignoring Nested Files: Variation" exercise has a slightly
+> > different directory structure
+> > that presents an alternative solution.
+> > Further, the discussion page has more detail on ignore rules.
 > {: .solution}
 {: .challenge}
 
 > ## Including Specific Files
 >
-> How would you ignore all `.data` files in your root directory except for
-> `final.data`?
+> How would you ignore all `.dat` files in your root directory except for
+> `final.dat`?
 > Hint: Find out what `!` (the exclamation point operator) does
 >
 > > ## Solution
@@ -187,34 +190,73 @@ nothing to commit, working directory clean
 > > You would add the following two lines to your .gitignore:
 > >
 > > ~~~
-> > *.data           # ignore all data files
-> > !final.data      # except final.data
+> > *.dat           # ignore all data files
+> > !final.dat      # except final.data
 > > ~~~
 > > {: .output}
 > >
 > > The exclamation point operator will include a previously excluded entry.
+> >
+> > Note also that because you've previously committed `.dat` files in this
+> > lesson they will not be ignored with this new rule. Only future additions
+> > of `.dat` files added to the root directory will be ignored.
+> {: .solution}
+{: .challenge}
+
+> ## Ignoring Nested Files: Variation
+>
+> Given a directory structure that looks similar to the earlier Nested Files
+> exercise, but with a slightly different directory structure:
+>
+> ~~~
+> results/data
+> results/images
+> results/plots
+> results/analysis
+> ~~~
+> {: .language-bash}
+>
+> How would you ignore all of the contents in the results folder, but not `results/data`?
+>
+> Hint: think a bit about how you created an exception with the `!` operator
+> before.
+>
+> > ## Solution
+> >
+> > If you want to ignore the contents of
+> > `results/` but not those of `results/data/`, you can change your `.gitignore` to ignore
+> > the contents of results folder, but create an exception for the contents of the
+> > `results/data` subfolder. Your .gitignore would look like this:
+> >
+> > ~~~
+> > results/*               # ignore everything in results folder
+> > !results/data/          # do not ignore results/data/ contents
+> > ~~~
+> > {: .output}
+> >
 > {: .solution}
 {: .challenge}
 
 > ## Ignoring all data Files in a Directory
 >
-> Given a directory structure that looks like:
+> Assuming you have an empty .gitignore file, and given a directory structure that looks like:
 >
 > ~~~
-> results/data/position/gps/a.data
-> results/data/position/gps/b.data
-> results/data/position/gps/c.data
+> results/data/position/gps/a.dat
+> results/data/position/gps/b.dat
+> results/data/position/gps/c.dat
 > results/data/position/gps/info.txt
 > results/plots
 > ~~~
 > {: .language-bash}
 >
-> What's the shortest `.gitignore` rule you could write to ignore all `.data`
+> What's the shortest `.gitignore` rule you could write to ignore all `.dat`
 > files in `result/data/position/gps`? Do not ignore the `info.txt`.
 >
 > > ## Solution
 > >
-> > Appending `results/data/position/gps/*.data` will match every file in `results/data/position/gps` that ends with `.data`.
+> > Appending `results/data/position/gps/*.dat` will match every file in `results/data/position/gps`
+> > that ends with `.dat`.
 > > The file `results/data/position/gps/info.txt` will not be ignored.
 > {: .solution}
 {: .challenge}
@@ -224,8 +266,8 @@ nothing to commit, working directory clean
 > Given a `.gitignore` file with the following contents:
 >
 > ~~~
-> *.data
-> !*.data
+> *.dat
+> !*.dat
 > ~~~
 > {: .language-bash}
 >
@@ -234,8 +276,8 @@ nothing to commit, working directory clean
 > > ## Solution
 > >
 > > The `!` modifier will negate an entry from a previously defined ignore pattern.
-> > Because the `!*.data` entry negates all of the previous `.data` files in the `.gitignore`,
-> > none of them will be ignored, and all `.data` files will be tracked.
+> > Because the `!*.dat` entry negates all of the previous `.dat` files in the `.gitignore`,
+> > none of them will be ignored, and all `.dat` files will be tracked.
 > >
 > {: .solution}
 {: .challenge}
