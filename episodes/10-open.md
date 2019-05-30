@@ -112,7 +112,7 @@ by acting as a shareable electronic lab notebook for computational work:
 >
 > Surf the internet for a couple of minutes and check out the data repositories
 > mentioned above: [Figshare](https://figshare.com/), [Zenodo](https://zenodo.org),
-> [Dryad](https://datadryad.org/). Depending on your field of research, you might
+> [Dryad](https://datadryad.org/). The [Registry of Data Repositories](https://www.re3data.org/), is a great resource for finding a repository. Depending on your field of research, you might
 > find community-recognized repositories that are well-known in your field.
 > You might also find useful [these data repositories recommended by Nature](
 > https://www.nature.com/sdata/data-policies/repositories).
