@@ -1,13 +1,16 @@
 {% comment %}
   Display key points of all episodes for reference.
 {% endcomment %}
+
+{% include base_path.html %}
+
 <h2>Key Points</h2>
 <table class="table table-striped">
 {% for episode in site.episodes %}
   {% unless episode.break %}
     <tr>
       <td class="col-md-3">
-        <a href="{{ page.root }}{{ episode.url }}">{{ episode.title }}</a>
+        <a href="{{ relative_root_path }}{{ episode.url }}">{{ episode.title }}</a>
       </td>
       <td class="col-md-9">
         <ul>
