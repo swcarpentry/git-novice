@@ -6,7 +6,7 @@ questions:
 - "How can I use version control to collaborate with other people?"
 objectives:
 - "Clone a remote repository."
-- "Collaborate pushing to a common repository."
+- "Collaborate by pushing to a common repository."
 - "Describe the basic collaborative workflow."
 keypoints:
 - "`git clone` copies a remote repository to create a local repository with a remote called `origin` automatically set up."
@@ -42,7 +42,7 @@ her `Desktop` folder, the Collaborator enters:
 ~~~
 $ git clone https://github.com/vlad/planets.git ~/Desktop/vlad-planets
 ~~~
-{: .bash}
+{: .language-bash}
 
 Replace 'vlad' with the Owner's username.
 
@@ -56,7 +56,7 @@ $ cd ~/Desktop/vlad-planets
 $ nano pluto.txt
 $ cat pluto.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 It is so a planet!
@@ -67,7 +67,7 @@ It is so a planet!
 $ git add pluto.txt
 $ git commit -m "Add notes about Pluto"
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
  1 file changed, 1 insertion(+)
@@ -80,9 +80,10 @@ Then push the change to the *Owner's repository* on GitHub:
 ~~~
 $ git push origin master
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
+Enumerating objects: 4, done.
 Counting objects: 4, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (2/2), done.
@@ -97,6 +98,38 @@ Note that we didn't have to create a remote called `origin`: Git uses this
 name by default when we clone a repository.  (This is why `origin` was a
 sensible choice earlier when we were setting up remotes by hand.)
 
+> ## Some more about remotes
+>
+> In this episode and the previous one, our local repository has had
+> a single "remote", called `origin`. A remote is a copy of the repository
+> that is hosted somewhere else, that we can push to and pull from, and 
+> there's no reason that you have to work with only one. For example, 
+> on some large projects you might have your own copy in your own GitHub
+> account (you'd probably call this `origin`) and also the main "upstream"
+> project repository (let's call this `upstream` for the sake of examples).
+> You would pull from `upstream` from time to 
+> time to get the latest updates that other people have committed.
+>
+> Remember that the name you give to a remote only exists locally. It's
+> an alias that you choose - whether `origin`, or `upstream`, or `fred` -
+> and not something intrinstic to the remote repository.
+>
+> The `git remote` family of commands is used to set up and alter the remotes
+> associated with a repository. Here are some of the most useful ones:
+>
+> * `git remote -v` lists all the remotes that are configured (we already used
+> this in the last episode)
+> * `git remote add [name] [url]` is used to add a new remote
+> * `git remote remove [name]` removes a remote. Note that it doesn't affect the 
+> remote repository at all - it just removes the link to it from the local repo.
+> * `git remote set-url [name] [newurl]` changes the URL that is associated 
+> with the remote. This is useful if it has moved, e.g. to a different GitHub
+> account, or from GitHub to a different hosting service. Or, if we made a typo when
+> adding it!
+> * `git remote rename [oldname] [newname]` changes the local alias by which a remote 
+> is known - its name. For example, one could use this to change `upstream` to `fred`.
+{: .callout}
+
 Take a look to the Owner's repository on its GitHub website now (maybe you need
 to refresh your browser.) You should be able to see the new commit made by the
 Collaborator.
@@ -106,15 +139,17 @@ To download the Collaborator's changes from GitHub, the Owner now enters:
 ~~~
 $ git pull origin master
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
-remote: Counting objects: 4, done.
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
 remote: Compressing objects: 100% (2/2), done.
-remote: Total 3 (delta 0), reused 3 (delta 0)
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
 Unpacking objects: 100% (3/3), done.
 From https://github.com/vlad/planets
  * branch            master     -> FETCH_HEAD
+   9272da5..29aba7c  master     -> origin/master
 Updating 9272da5..29aba7c
 Fast-forward
  pluto.txt | 1 +
