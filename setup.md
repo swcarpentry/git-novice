@@ -12,6 +12,6 @@ We'll do our work in the `Desktop` folder so make sure you change your working d
 $ cd
 $ cd Desktop
 ~~~
-{: .bash}
+{: .language-bash}
 
 [workshop-setup]: https://carpentries.github.io/workshop-template/#git

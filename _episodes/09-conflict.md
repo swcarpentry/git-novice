@@ -8,7 +8,7 @@ objectives:
 - "Explain what conflicts are and when they can occur."
 - "Resolve conflicts resulting from a merge."
 keypoints:
-- "Conflicts occur when two or more people change the same file(s) at the same time."
+- "Conflicts occur when two or more people change the same lines of the same file."
 - "The version control system does not allow people to overwrite each other's changes blindly, but highlights conflicts so that they can be resolved."
 ---
 
@@ -16,8 +16,8 @@ As soon as people can work in parallel, they'll likely step on each other's
 toes.  This will even happen with a single person: if we are working on
 a piece of software on both our laptop and a server in the lab, we could make
 different changes to each copy.  Version control helps us manage these
-[conflicts]({{ page.root }}/reference/#conflicts) by giving us tools to
-[resolve]({{ page.root }}/reference/#resolve) overlapping changes.
+[conflicts]({{ page.root }}/reference#conflict) by giving us tools to
+[resolve]({{ page.root }}/reference#resolve) overlapping changes.
 
 To see how we can resolve conflicts, we must first create one.  The file
 `mars.txt` currently looks like this in both partners' copies of our `planets`
@@ -26,7 +26,7 @@ repository:
 ~~~
 $ cat mars.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 Cold and dry, but everything is my favorite color
@@ -41,7 +41,7 @@ Let's add a line to one partner's copy only:
 $ nano mars.txt
 $ cat mars.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 Cold and dry, but everything is my favorite color
@@ -57,7 +57,7 @@ and then push the change to GitHub:
 $ git add mars.txt
 $ git commit -m "Add a line in our home copy"
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 [master 5ae9631] Add a line in our home copy
@@ -68,15 +68,17 @@ $ git commit -m "Add a line in our home copy"
 ~~~
 $ git push origin master
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
-Counting objects: 5, done.
-Delta compression using up to 4 threads.
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
 Compressing objects: 100% (3/3), done.
-Writing objects: 100% (3/3), 352 bytes, done.
-Total 3 (delta 1), reused 0 (delta 0)
-To https://github.com/vlad/planets
+Writing objects: 100% (3/3), 331 bytes | 331.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/vlad/planets.git
    29aba7c..dabb4c8  master -> master
 ~~~
 {: .output}
@@ -89,7 +91,7 @@ make a different change to their copy
 $ nano mars.txt
 $ cat mars.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 Cold and dry, but everything is my favorite color
@@ -105,7 +107,7 @@ We can commit the change locally:
 $ git add mars.txt
 $ git commit -m "Add a line in my copy"
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 [master 07ebc69] Add a line in my copy
@@ -118,15 +120,16 @@ but Git won't let us push it to GitHub:
 ~~~
 $ git push origin master
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 To https://github.com/vlad/planets.git
- ! [rejected]        master -> master (non-fast-forward)
+ ! [rejected]        master -> master (fetch first)
 error: failed to push some refs to 'https://github.com/vlad/planets.git'
-hint: Updates were rejected because the tip of your current branch is behind
-hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
-hint: before pushing again.
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ~~~
 {: .output}
@@ -136,22 +139,24 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 Git rejects the push because it detects that the remote repository has new updates that have not been
 incorporated into the local branch.
 What we have to do is pull the changes from GitHub,
-[merge]({{ page.root }}/reference/#merge) them into the copy we're currently working in,
+[merge]({{ page.root }}/reference#merge) them into the copy we're currently working in,
 and then push that.
 Let's start by pulling:
 
 ~~~
 $ git pull origin master
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
-remote: Counting objects: 5, done.
-remote: Compressing objects: 100% (2/2), done.
-remote: Total 3 (delta 1), reused 3 (delta 1)
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 3 (delta 2), reused 3 (delta 2), pack-reused 0
 Unpacking objects: 100% (3/3), done.
 From https://github.com/vlad/planets
  * branch            master     -> FETCH_HEAD
+    29aba7c..dabb4c8  master     -> origin/master
 Auto-merging mars.txt
 CONFLICT (content): Merge conflict in mars.txt
 Automatic merge failed; fix conflicts and then commit the result.
@@ -168,7 +173,7 @@ in the affected file:
 ~~~
 $ cat mars.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 Cold and dry, but everything is my favorite color
@@ -198,7 +203,7 @@ Let's replace both so that the file looks like this:
 ~~~
 $ cat mars.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 Cold and dry, but everything is my favorite color
@@ -216,7 +221,7 @@ and then commit:
 $ git add mars.txt
 $ git status
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 On branch master
@@ -233,7 +238,7 @@ Changes to be committed:
 ~~~
 $ git commit -m "Merge changes from GitHub"
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 [master 2abf2b1] Merge changes from GitHub
@@ -245,14 +250,16 @@ Now we can push our changes to GitHub:
 ~~~
 $ git push origin master
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
-Counting objects: 10, done.
-Delta compression using up to 4 threads.
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 8 threads
 Compressing objects: 100% (6/6), done.
-Writing objects: 100% (6/6), 697 bytes, done.
-Total 6 (delta 2), reused 0 (delta 0)
+Writing objects: 100% (6/6), 645 bytes | 645.00 KiB/s, done.
+Total 6 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 2 local objects.
 To https://github.com/vlad/planets.git
    dabb4c8..2abf2b1  master -> master
 ~~~
@@ -265,15 +272,17 @@ when the collaborator who made the first change pulls again:
 ~~~
 $ git pull origin master
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
-remote: Counting objects: 10, done.
-remote: Compressing objects: 100% (4/4), done.
-remote: Total 6 (delta 2), reused 6 (delta 2)
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 6 (delta 4), reused 6 (delta 4), pack-reused 0
 Unpacking objects: 100% (6/6), done.
 From https://github.com/vlad/planets
  * branch            master     -> FETCH_HEAD
+    dabb4c8..2abf2b1  master     -> origin/master
 Updating dabb4c8..2abf2b1
 Fast-forward
  mars.txt | 2 +-
@@ -286,7 +295,7 @@ We get the merged file:
 ~~~
 $ cat mars.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 Cold and dry, but everything is my favorite color
@@ -346,7 +355,7 @@ Conflicts can also be minimized with project management strategies:
 > > $ head --bytes 1024 /dev/urandom > mars.jpg
 > > $ ls -lh mars.jpg
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > >
 > > ~~~
 > > -rw-r--r-- 1 vlad 57095 1.0K Mar  8 20:24 mars.jpg
@@ -362,7 +371,7 @@ Conflicts can also be minimized with project management strategies:
 > > $ git add mars.jpg
 > > $ git commit -m "Add picture of Martian surface"
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > >
 > > ~~~
 > > [master 8e4115c] Add picture of Martian surface
@@ -378,7 +387,7 @@ Conflicts can also be minimized with project management strategies:
 > > ~~~
 > > $ git push origin master
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > >
 > > ~~~
 > > To https://github.com/vlad/planets.git
@@ -397,7 +406,7 @@ Conflicts can also be minimized with project management strategies:
 > > ~~~
 > > $ git pull origin master
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > >
 > > When there is a conflict on an image or other binary file, git prints
 > > a message like this:
@@ -439,7 +448,7 @@ Conflicts can also be minimized with project management strategies:
 > > $ git add mars.jpg
 > > $ git commit -m "Use image of surface instead of sky"
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > >
 > > ~~~
 > > [master 21032c3] Use image of surface instead of sky
@@ -454,7 +463,7 @@ Conflicts can also be minimized with project management strategies:
 > > $ git add mars.jpg
 > > $ git commit -m "Use image of sky instead of surface"
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > >
 > > ~~~
 > > [master da21b34] Use image of sky instead of surface
@@ -472,7 +481,7 @@ Conflicts can also be minimized with project management strategies:
 > > $ git checkout 439dc8c0 mars.jpg
 > > $ mv mars.jpg mars-sky.jpg
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > >
 > > Then, remove the old `mars.jpg` and add the two new files:
 > >
@@ -482,7 +491,7 @@ Conflicts can also be minimized with project management strategies:
 > > $ git add mars-sky.jpg
 > > $ git commit -m "Use two images: surface and sky"
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > >
 > > ~~~
 > > [master 94ae08c] Use two images: surface and sky
