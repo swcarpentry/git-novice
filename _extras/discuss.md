@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Discussion
-permalink: /discuss/
 ---
 
 ## Frequently Asked Questions

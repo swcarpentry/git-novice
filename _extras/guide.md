@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Instructor Notes"
-permalink: /guide/
 ---
 Using a software tool to handle the versions of your project files
 lets you focus on the more interesting/innovative aspects of your project.
