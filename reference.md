@@ -1,6 +1,5 @@
 ---
 layout: reference
-
 ---
 
 ## Git Cheatsheets for Quick Reference
