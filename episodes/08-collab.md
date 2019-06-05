@@ -194,14 +194,8 @@ GitHub) are back in sync.
 > > them. Then by running ```git diff master origin/master``` the Collaborator
 > > will see the changes output in the terminal.
 > >
-> > On GitHub, the Collaborator can go to their own fork of the repository and
-> > look right above the light blue latest commit bar for a gray bar saying
-> > "This branch is 1 commit behind Our-Repository:master." On the far right of
-> > that gray bar is a Compare icon and link. On the Compare page the
-> > Collaborator should change the base fork to their own repository, then click
-> > the link in the paragraph above to "compare across forks", and finally
-> > change the head fork to the main repository. This will show all the commits
-> > that are different.
+> > On GitHub, the Collaborator can go to the repository and click on 
+> > "commits" to view the most recent commits pushed to the repository.
 > {: .solution}
 {: .challenge}
 
