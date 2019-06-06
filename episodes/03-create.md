@@ -40,8 +40,7 @@ $ cd planets
 ~~~
 {: .language-bash}
 
-Then we tell Git to make `planets` a [repository]({{ page.root }}/reference#repository)—a place where
-Git can store versions of our files:
+Then we tell Git to make `planets` a [repository]({% link reference.md %}#repository)—a place where Git can store versions of our files:
 
 ~~~
 $ git init
