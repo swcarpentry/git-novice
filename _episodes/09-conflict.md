@@ -16,8 +16,8 @@ As soon as people can work in parallel, they'll likely step on each other's
 toes.  This will even happen with a single person: if we are working on
 a piece of software on both our laptop and a server in the lab, we could make
 different changes to each copy.  Version control helps us manage these
-[conflicts]({% link reference.md %}#conflict) by giving us tools to
-[resolve]({% link reference.md %}#resolve) overlapping changes.
+[conflicts]({{ page.root}}{% link reference.md %}#conflict) by giving us tools to
+[resolve]({{ page.root }}{% link reference.md %}#resolve) overlapping changes.
 
 To see how we can resolve conflicts, we must first create one.  The file
 `mars.txt` currently looks like this in both partners' copies of our `planets`
@@ -139,7 +139,7 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 Git rejects the push because it detects that the remote repository has new updates that have not been
 incorporated into the local branch.
 What we have to do is pull the changes from GitHub,
-[merge]({% link reference.md %}#merge) them into the copy we're currently working in, and then push that.
+[merge]({{ page.root }}{% link reference.md %}#merge) them into the copy we're currently working in, and then push that.
 Let's start by pulling:
 
 ~~~
