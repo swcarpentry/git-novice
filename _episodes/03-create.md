@@ -6,6 +6,7 @@ questions:
 - "Where does Git store information?"
 objectives:
 - "Create a local Git repository."
+- "Check the current status of a local Git repository."
 keypoints:
 - "`git init` initializes a repository."
 - "Git stores all of its repository data in the `.git` directory."
