@@ -256,7 +256,7 @@ Changes to be committed:
 ~~~
 {: .output}
 
-Notice that the changes are on the staged area.
+Notice that the changes are currently in the staging area.
 Again, we can put things back the way they were
 by using `git checkout`:
 
