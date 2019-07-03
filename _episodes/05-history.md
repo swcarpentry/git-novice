@@ -391,14 +391,14 @@ moving backward and forward in time becomes much easier.
 > ## Reverting a Commit
 >
 > Jennifer is collaborating on her Python script with her colleagues and
-> realizes her last commit to the group repository is wrong and wants to
-> undo it.  Jennifer needs to undo correctly so everyone in the group
-> repository gets the correct change.  `git revert [wrong commit ID]`
-> will make a new commit that undoes Jennifer's previous wrong
-> commit. Therefore `git revert` is different than `git checkout [commit
-> ID]` because `checkout` is for local changes not committed to the
-> group repository.  Below are the right steps and explanations for
-> Jennifer to use `git revert`, what is the missing command?
+> realizes her last commit to the project's repository contained an error and
+> she wants to undo it.  `git revert [erroneous commit ID]` will create a new 
+> commit that reverses Jennifer's erroneous commit. Therefore `git revert` is
+> different to `git checkout [commit ID]` because `git checkout` returns the
+> files within the local repository to a previous state, whereas `git revert`
+> reverses changes committed to the local and project repositories.  
+> Below are the right steps and explanations for Jennifer to use `git revert`,
+> what is the missing command?
 >
 > 1. `________ # Look at the git history of the project to find the commit ID`
 >
