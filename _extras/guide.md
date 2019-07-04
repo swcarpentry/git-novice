@@ -300,7 +300,12 @@ their breath after what is often a frustrating couple of hours.
 ## [Citation]({{ page.root }}{% link _episodes/12-citation.md %})
 
 We teach about citation because it is important to give learners the tools 
-to respect the licensing chosen for the code.
+to respect the licensing chosen for the code.  Adding a citation file that 
+includes a suggested citation makes it easier for people to 
+use content in the repository. Since they know exactly how they can use it and 
+how to cite it, they are more likely to use it.  Without this information, people
+are more likely to either look for a repository that includes this information, or
+use the content in the repository without citing it at all!
 
 ## [Hosting]({{ page.root }}{% link _episodes/13-hosting.md %})
 
