@@ -37,6 +37,14 @@ which means that any changes pushed to
 another Git host server
 in a later lesson will include this information.
 
+For these lessons, we will be interacting with [GitHub](https://github.com/) and so the email address used should be the same as the one used when setting up your GitHub account. If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private][git-privacy]. 
+
+>## Keeping your email private
+>
+>If you elect to use a private email address with GitHub, then use that same email address for the `user.email` value, e.g. `username@users.noreply.github.com` replacing `username` with your GitHub one.
+{: .callout}
+
+
 > ## Line Endings
 >
 > As with other keys, when you hit <kbd>Return</kbd> on your keyboard,
@@ -68,8 +76,6 @@ in a later lesson will include this information.
 > {: .language-bash}
 > 
 
-For these lessons, we will be interacting with [GitHub](https://github.com/) and so the email address used should be the same as the one used when setting up your GitHub account. If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private][git-privacy]. 
-If you elect to use a private email address with GitHub, then use that same email address for the `user.email` value, e.g. `username@users.noreply.github.com` replacing `username` with your GitHub one. You can change the email address later on by using the `git config` command again.
 
 Dracula also has to set his favorite text editor, following this table:
 
@@ -88,6 +94,7 @@ Dracula also has to set his favorite text editor, following this table:
 | Scratch (Linux)       | `$ git config --global core.editor "scratch-text-editor"`  |
 | Emacs              | `$ git config --global core.editor "emacs"`   |
 | Vim                | `$ git config --global core.editor "vim"`   |
+| VS Code                | `$ git config --global core.editor "code --wait"`   |
 
 It is possible to reconfigure the text editor for Git whenever you want to change it.
 

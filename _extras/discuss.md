@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Discussion
-permalink: /discuss/
 ---
 
 ## Frequently Asked Questions
@@ -456,3 +455,54 @@ $ git commit -m 'Superman's home is Earth, told you before.'
 ~~~
 {: .language-bash}
 	
+## Further .gitignore concepts
+
+For additional documentation on .gitignore, please reference
+[the official git documentation](https://git-scm.com/docs/gitignore).
+
+In the ignore exercise, learners were presented with two variations of ignoring
+nested files. Depending on the organization of your repository, one may suit
+your needs over another. Keep in mind that the way that Git travels along
+directory paths can be confusing. 
+
+Sometimes the `**` pattern comes in handy, too, which matches multiple
+directory levels. E.g. `**/results/plots/*` would make git ignore the
+`results/plots` directory in any root directory.  
+
+> ## Ignoring Nested Files: Challenge Problem
+>
+> Given a directory structure that looks like:
+>
+> ~~~
+> results/data
+> results/plots
+> results/run001.log
+> results/run002.log
+> ~~~
+> {: .language-bash}
+> 
+> And a .gitignore that looks like:
+>
+> ~~~
+> *.dat
+> ~~~
+> {: .output}
+>
+> How would you track all of the contents of `results/data/`, including `*.dat`
+> files, but ignore the rest of `results/`?
+>
+> > ## Solution
+> >
+> > To do this, your .gitignore would look like this:
+> >
+> > ~~~
+> > *.dat                 # ignore the .dat files
+> > results/*             # ignore the files in the results directory
+> > !results/data/        # do not ignore the files in results/data
+> > !results/data/*       # do not ignore the .dat files in reults/data
+> > ~~~
+> > {: .output}
+> > 
+> {: .solution}
+{: .challenge}
+
