@@ -22,28 +22,8 @@ First let's make sure we're still in the right directory.
 You should be in the `planets` directory.
 
 ~~~
-$ pwd
+$ cd ~/Desktop/planets
 ~~~
-{: .language-bash}
-~~~
-/home/vlad/Desktop/planets
-~~~
-{: .output}
-
-If you are still in `moons`, navigate back up to `planets`
-
-~~~
-$ pwd
-~~~
-{: .language-bash}
-~~~
-/home/vlad/Desktop/planets/moons
-~~~
-{: .output}
-~~~
-$ cd ..
-~~~
-{: .language-bash}
 
 Let's create a file called `mars.txt` that contains some notes
 about the Red Planet's suitability as a base.
