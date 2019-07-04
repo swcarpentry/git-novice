@@ -120,7 +120,7 @@ by acting as a shareable electronic lab notebook for computational work:
 > approach for your current project and explain why.
 {: .challenge}
 
-> ## How to Track Large Data or Image Files using GIT?
+> ## How to Track Large Data or Image Files using Git?
 >
 > Large data or image files such as .md5 or .psd file types can be tracked within 
 > a github repository using the [Git Large File Storage](https://git-lfs.github.com)
