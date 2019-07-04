@@ -43,7 +43,7 @@ For these lessons, we will be interacting with [GitHub](https://github.com/) and
 
 >## Keeping your email private
 >
->If you elect to use a private email address with GitHub, then use that same email address for the user.email value, e.g. username@users.noreply.github.com replacing username with your GitHub one.
+>If you elect to use a private email address with GitHub, then use that same email address for the `user.email` value, e.g. `username@users.noreply.github.com` replacing `username` with your GitHub one.
 {: .callout}
 
 
