@@ -1,17 +1,17 @@
 ---
-title: "Remotes in GitHub"
-keypoints:
-- A local Git repository can be connected to one or more remote repositories.
-- Use the HTTPS protocol to connect to remote repositories until you have learned
-  how to set up SSH.
-- '`git push` copies changes from a local repository to a remote repository.'
-- '`git pull` copies changes from a remote repository to a local repository.'
-objectives:
-- Explain what remote repositories are and why they are useful.
-- Push to or pull from a remote repository.
-questions: How do I share my changes with others on the web?
+title: Remotes in GitHub
 teaching: 30
 exercises: 0
+questions:
+- "How do I share my changes with others on the web?"
+objectives:
+- "Explain what remote repositories are and why they are useful."
+- "Push to or pull from a remote repository."
+keypoints:
+- "A local Git repository can be connected to one or more remote repositories."
+- "Use the HTTPS protocol to connect to remote repositories until you have learned how to set up SSH."
+- "`git push` copies changes from a local repository to a remote repository."
+- "`git pull` copies changes from a remote repository to a local repository."
 ---
 
 Version control really comes into its own when we begin to collaborate with
