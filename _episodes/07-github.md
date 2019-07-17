@@ -149,7 +149,7 @@ Branch master set up to track remote branch master from origin.
 >
 > ~~~
 > $ git config --global http.proxy http://user:password@proxy.url
-> $ git config --global https.proxy http://user:password@proxy.url
+> $ git config --global https.proxy https://user:password@proxy.url
 > ~~~
 > {: .language-bash}
 >
