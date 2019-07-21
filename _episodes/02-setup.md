@@ -148,6 +148,9 @@ same commands to choose another editor or update your email address.
 > $ git config --help
 > ~~~
 > {: .language-bash}
+>
+> While viewing the manual, remember the `:` is a prompt waiting for commands and you can press `q` to exit the manual.
+>
 {: .callout}
 
 [git-privacy]: https://help.github.com/articles/keeping-your-email-address-private/
