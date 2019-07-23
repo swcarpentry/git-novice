@@ -4,7 +4,7 @@ layout: reference
 
 ## Git Cheatsheets for Quick Reference
 
-*   Printable Git cheatsheets in several language are [available here](https://github.github.com/training-kit/) ([English version](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)). More material is available from the [GitHub training website](http://try.github.io/).
+*   Printable Git cheatsheets in several languages are [available here](https://github.github.com/training-kit/) ([English version](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)). More material is available from the [GitHub training website](http://try.github.io/).
 *   An [interactive one-page visualisation](http://ndpsoftware.com/git-cheatsheet.html)
     about the relationships between workspace, staging area, local repository, upstream repository, and the commands associated with each (with explanations).
 *   Both resources are also available in other languages (e.g. Spanish, French, and more).
