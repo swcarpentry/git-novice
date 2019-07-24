@@ -18,6 +18,17 @@ We will continue with the story of Wolfman and Dracula who are investigating if 
 is possible to send a planetary lander to Mars. 
 
 ![motivatingexample](../fig/motivatingexample.png)
+[Werewolf vs dracula](https://www.deviantart.com/b-maze/art/Werewolf-vs-Dracula-124893530)
+by [b-maze](https://www.deviantart.com/b-maze) / [Deviant Art](https://www.deviantart.com/).
+[Planets](https://commons.wikimedia.org/wiki/File:Planets_are_us.png) /
+[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
+[Mummy](https://commons.wikimedia.org/wiki/File:Mummy_icon_-_Noun_Project_4070.svg)
+&copy; Gilad Fried / [The Noun Project](https://thenounproject.com/) /
+[CC BY 3.0](https://creativecommons.org/licenses/by/3.0/deed.en).
+[Moon](https://commons.wikimedia.org/wiki/File:Lune_ico.png)
+&copy; Luc Viatour / [https://lucnix.be](https://lucnix.be/) /
+[CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en).
+
 
 
 First, let's create a directory in `Desktop` folder for our work and then move into that directory:
@@ -29,8 +40,7 @@ $ cd planets
 ~~~
 {: .language-bash}
 
-Then we tell Git to make `planets` a [repository]({{ page.root }}/reference#repository)—a place where
-Git can store versions of our files:
+Then we tell Git to make `planets` a [repository]({{ page.root }}{% link reference.md %}#repository)—a place where Git can store versions of our files:
 
 ~~~
 $ git init
