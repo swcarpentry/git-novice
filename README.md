@@ -18,10 +18,10 @@ Maintainers:
 * [Kat Koziar][koziar_kat]: [@kekoziar](https://github.com/kekoziar)
 * [Madicken Munk][munk_madicken]: [@munkm](https://github.com/munkm)
 
-[gonzalez_ivan]: https://software-carpentry.org/team/#gonzalez_ivan
-[hejazi_nima]: https://software-carpentry.org/team/#hejazi_nima
+[gonzalez_ivan]: https://carpentries.org/instructors/#iglpdc
+[hejazi_nima]: https://carpentries.org/instructors/#nhejazi
 [huang_daisie]: https://software-carpentry.org/team/#huang_daisie
-[koziar_kat]: https://software-carpentry.org/team/#koziar_kat
-[munk_madicken]: https://software-carpentry.org/team/#munk_madicken
+[koziar_kat]: https://carpentries.org/instructors/#kekoziar
+[munk_madicken]: https://carpentries.org/instructors/#munkm
 [lesson-example]: https://swcarpentry.github.io/lesson-example
 

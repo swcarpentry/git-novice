@@ -21,7 +21,7 @@ only thing missing is to copy changes from one repository to another.
 Systems like Git allow us to move work between any two repositories.  In
 practice, though, it's easiest to use one copy as a central hub, and to keep it
 on the web rather than on someone's laptop.  Most programmers use hosting
-services like [GitHub](https://github.com), [BitBucket](https://bitbucket.org) or
+services like [GitHub](https://github.com), [Bitbucket](https://bitbucket.org) or
 [GitLab](https://gitlab.com/) to hold those master copies; we'll explore the pros
 and cons of this in the final section of this lesson.
 
@@ -31,7 +31,12 @@ create a new repository called `planets`:
 
 ![Creating a Repository on GitHub (Step 1)](../fig/github-create-repo-01.png)
 
-Name your repository "planets" and then click "Create Repository":
+Name your repository "planets" and then click "Create Repository".
+
+Note: Since this repository will be connected to a local repository, it needs to be empty. Leave 
+"Initialize this repository with a README" unchecked, and keep "None" as options for both "Add 
+.gitignore" and "Add a license." See the "GitHub License and README files" exercise below for a full 
+explanation of why the repository needs to be empty.
 
 ![Creating a Repository on GitHub (Step 2)](../fig/github-create-repo-02.png)
 
@@ -49,8 +54,8 @@ $ git init
 ~~~
 {: .language-bash}
 
-If you remember back to the earlier [lesson](./04-changes.html) where we added and
-commited our earlier work on `mars.txt`, we had a diagram of the local repository
+If you remember back to the earlier [lesson](../04-changes/) where we added and
+committed our earlier work on `mars.txt`, we had a diagram of the local repository
 which looked like this:
 
 ![The Local Repository with Git Staging Area](../fig/git-staging-area.svg)
@@ -63,14 +68,13 @@ Note that our local repository still contains our earlier work on `mars.txt`, bu
 remote repository on GitHub appears empty as it doesn't contain any files yet.
 
 The next step is to connect the two repositories.  We do this by making the
-GitHub repository a [remote]({{ page.root }}/reference#remote) for the local repository.
+GitHub repository a [remote]({{ page.root}}{% link reference.md %}#remote) for the local repository.
 The home page of the repository on GitHub includes the string we need to
 identify it:
 
 ![Where to Find Repository URL on GitHub](../fig/github-find-repo-string.png)
 
-Click on the 'HTTPS' link to change the [protocol]({{ page.root }}/reference#protocol) from
-SSH to HTTPS.
+Click on the 'HTTPS' link to change the [protocol]({{ page.root }}{% link reference.md %}#protocol) from SSH to HTTPS.
 
 > ## HTTPS vs. SSH
 >
@@ -78,7 +82,7 @@ SSH to HTTPS.
 > the workshop you may want to set up SSH access, which is a bit more secure, by
 > following one of the great tutorials from
 > [GitHub](https://help.github.com/articles/generating-ssh-keys),
-> [Atlassian/BitBucket](https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Git)
+> [Atlassian/Bitbucket](https://confluence.atlassian.com/bitbucket/set-up-ssh-for-git-728138079.html)
 > and [GitLab](https://about.gitlab.com/2014/03/04/add-ssh-key-screencast/)
 > (this one has a screencast).
 {: .callout}
@@ -125,14 +129,15 @@ $ git push origin master
 {: .language-bash}
 
 ~~~
-Counting objects: 9, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (6/6), done.
-Writing objects: 100% (9/9), 821 bytes, done.
-Total 9 (delta 2), reused 0 (delta 0)
-To https://github.com/vlad/planets
+Enumerating objects: 16, done.
+Counting objects: 100% (16/16), done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (16/16), 1.45 KiB | 372.00 KiB/s, done.
+Total 16 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/vlad/planets.git
  * [new branch]      master -> master
-Branch master set up to track remote branch master from origin.
 ~~~
 {: .output}
 
@@ -221,24 +226,45 @@ GitHub, though, this command would download them to our local repository.
 > How would you get that same information in the shell?
 >
 > > ## Solution
-> > The left-most button (with the picture of a clipboard) copies the full identifier of the commit to the clipboard. In the shell, ```git log``` will show you the full commit identifier for each commit.
+> > The left-most button (with the picture of a clipboard) copies the full identifier of the commit 
+> > to the clipboard. In the shell, ```git log``` will show you the full commit identifier for each 
+> > commit.
 > >
-> > When you click on the middle button, you'll see all of the changes that were made in that particular commit. Green shaded lines indicate additions and red ones removals. In the shell we can do the same thing with ```git diff```. In particular, ```git diff ID1..ID2``` where ID1 and ID2 are commit identifiers (e.g. ```git diff a3bf1e5..041e637```) will show the differences between those two commits.
+> > When you click on the middle button, you'll see all of the changes that were made in that 
+> > particular commit. Green shaded lines indicate additions and red ones removals. In the shell we 
+> > can do the same thing with ```git diff```. In particular, ```git diff ID1..ID2``` where ID1 and 
+> > ID2 are commit identifiers (e.g. ```git diff a3bf1e5..041e637```) will show the differences 
+> > between those two commits.
 > >
-> > The right-most button lets you view all of the files in the repository at the time of that commit. To do this in the shell, we'd need to checkout the repository at that particular time. We can do this with ```git checkout ID``` where ID is the identifier of the commit we want to look at. If we do this, we need to remember to put the repository back to the right state afterwards!
+> > The right-most button lets you view all of the files in the repository at the time of that 
+> > commit. To do this in the shell, we'd need to checkout the repository at that particular time. 
+> > We can do this with ```git checkout ID``` where ID is the identifier of the commit we want to 
+> > look at. If we do this, we need to remember to put the repository back to the right state 
+> > afterwards!
 > {: .solution}
 {: .challenge}
 
+> ## Uploading files directly in GitHub browser
+>
+> Github also allows you to skip the command line and upload files directly to 
+> your repository without having to leave the broswer. There are two options. 
+> First you can click the "Upload files" button in the toolbar at the top of the
+> file tree. Or, you can drag and drop files from your desktop onto the file 
+> tree. You can read more about this [on this GitHub page](https://help.github.com/articles/adding-a-file-to-a-repository/)
+{: .callout}
+
 > ## GitHub Timestamp
 >
-> Create a remote repository on GitHub.  Push the contents of your local
-> repository to the remote.  Make changes to your local repository and push
-> these changes.  Go to the repo you just created on GitHub and check the
-> [timestamps]({{ page.root }}/reference#timestamp) of the files.  How does GitHub record
-> times, and why?
+> Create a remote repository on GitHub. Push the contents of your local
+> repository to the remote. Make changes to your local repository and push these
+> changes. Go to the repo you just created on GitHub and check the
+> [timestamps]({{ page.root }}{% link reference.md %}#timestamp) of the files. How does GitHub
+> record times, and why?
 >
 > > ## Solution
-> > GitHub displays timestamps in a human readable relative format (i.e. "22 hours ago" or "three weeks ago"). However, if you hover over the timestamp, you can see the exact time at which the last change to the file occurred.
+> > GitHub displays timestamps in a human readable relative format (i.e. "22 hours ago" or "three 
+> > weeks ago"). However, if you hover over the timestamp, you can see the exact time at which the 
+> > last change to the file occurred.
 > {: .solution}
 {: .challenge}
 
@@ -248,15 +274,17 @@ GitHub, though, this command would download them to our local repository.
 > How is "git push" different from "git commit"?
 >
 > > ## Solution
-> > When we push changes, we're interacting with a remote repository to update it with the changes we've made locally (often this corresponds to sharing the changes we've made with others). Commit only updates your local repository.
+> > When we push changes, we're interacting with a remote repository to update it with the changes 
+> > we've made locally (often this corresponds to sharing the changes we've made with others). 
+> > Commit only updates your local repository.
 > {: .solution}
 {: .challenge}
 
 > ## GitHub License and README files
 >
-> In this section we learned about creating a remote repository on GitHub, but when you initialized your
-> GitHub repo, you didn't add a README.md or a license file. If you had, what do you think would have happened when
-> you tried to link your local and remote repositories?
+> In this section we learned about creating a remote repository on GitHub, but when you initialized 
+> your GitHub repo, you didn't add a README.md or a license file. If you had, what do you think 
+> would have happened when you tried to link your local and remote repositories?
 >
 > > ## Solution
 > > In this case, we'd see a merge conflict due to unrelated histories. When GitHub creates a 
@@ -269,6 +297,11 @@ GitHub, though, this command would download them to our local repository.
 > > {: .language-bash}
 > >
 > > ~~~
+> > warning: no common commits
+> > remote: Enumerating objects: 3, done.
+> > remote: Counting objects: 100% (3/3), done.
+> > remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+> > Unpacking objects: 100% (3/3), done.
 > > From https://github.com/vlad/planets
 > >  * branch            master     -> FETCH_HEAD
 > >  * [new branch]      master     -> origin/master
@@ -276,7 +309,9 @@ GitHub, though, this command would download them to our local repository.
 > > ~~~
 > > {: .output}
 > >
-> > You can force git to merge the two repositories with the option `--allow-unrelated-histories`. Be careful when you use this option and carefully examine the contents of local and remote repositories before merging.
+> > You can force git to merge the two repositories with the option `--allow-unrelated-histories`. 
+> > Be careful when you use this option and carefully examine the contents of local and remote 
+> > repositories before merging.
 > > ~~~
 > > $ git pull --allow-unrelated-histories origin master
 > > ~~~
@@ -286,9 +321,9 @@ GitHub, though, this command would download them to our local repository.
 > > From https://github.com/vlad/planets
 > >  * branch            master     -> FETCH_HEAD
 > > Merge made by the 'recursive' strategy.
-> >  README.md | 1 +
-> >  1 file changed, 1 insertion(+)
-> >  create mode 100644 README.md
+> > README.md | 1 +
+> > 1 file changed, 1 insertion(+)
+> > create mode 100644 README.md
 > > ~~~
 > > {: .output}
 > >

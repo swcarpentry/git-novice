@@ -97,7 +97,7 @@ by acting as a shareable electronic lab notebook for computational work:
 >
 > Anything that is hosted in a version control repository (data, code, papers, 
 > etc.) can be turned into a citable object. You'll learn how to do this in
-> [lesson 12: Citation]({{ page.root }}/12-citation/).
+> [lesson 12: Citation]({{ page.root }}{% link _episodes/12-citation.md %}).
 {: .callout}
 
 > ## How Reproducible Is My Work?
@@ -118,4 +118,16 @@ by acting as a shareable electronic lab notebook for computational work:
 > https://www.nature.com/sdata/data-policies/repositories).
 > Discuss with your neighbor which data repository you might want to
 > approach for your current project and explain why.
+{: .challenge}
+
+> ## How to Track Large Data or Image Files using Git?
+>
+> Large data or image files such as `.md5` or `.psd` file types can be tracked within 
+> a github repository using the [Git Large File Storage](https://git-lfs.github.com)
+> open source extension tool.  This tool automatically uploads large file contents to 
+> a remote server and replaces the file with a text pointer within the github repository.
+> 
+> Try downloading and installing the Git Large File Storage extension tool, then add 
+> tracking of a large file to your github repository.  Ask a colleague to clone your
+> repository and describe what they see when they access that large file.   
 {: .challenge}
