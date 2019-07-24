@@ -22,26 +22,7 @@ First let's make sure we're still in the right directory.
 You should be in the `planets` directory.
 
 ~~~
-$ pwd
-~~~
-{: .language-bash}
-~~~
-/home/vlad/Desktop/planets
-~~~
-{: .output}
-
-If you are still in `moons`, navigate back up to `planets`
-
-~~~
-$ pwd
-~~~
-{: .language-bash}
-~~~
-/home/vlad/Desktop/planets/moons
-~~~
-{: .output}
-~~~
-$ cd ..
+$ cd ~/Desktop/planets
 ~~~
 {: .language-bash}
 
@@ -63,15 +44,18 @@ Cold and dry, but everything is my favorite color
 ~~~
 
 Let's first verify that the file was properly created by running the list command (`ls`):
+
+
 ~~~
 $ ls
 ~~~
 {: .language-bash}
 
 ~~~
-mars.txt 
+mars.txt
 ~~~
 {: .output}
+
 
 `mars.txt` contains a single line, which we can see by running:
 
@@ -155,9 +139,8 @@ $ git commit -m "Start notes on Mars as a base"
 When we run `git commit`,
 Git takes everything we have told it to save by using `git add`
 and stores a copy permanently inside the special `.git` directory.
-This permanent copy is called a [commit]({{ page.root }}/reference#commit)
-(or [revision]({{ page.root }}/reference#revision)) and its short identifier is `f22b25e`.
-Your commit may have another identifier.
+This permanent copy is called a [commit]({{ page.root }}{% link reference.md %}#commit)
+(or [revision]({{ page.root }}{% link reference.md %}#revision)) and its short identifier is `f22b25e`. Your commit may have another identifier.
 
 We use the `-m` flag (for "message")
 to record a short, descriptive, and specific comment that will help us remember later on what we did and why.
@@ -347,7 +330,7 @@ but *not* commit some of our work drafting the conclusion
 To allow for this,
 Git has a special *staging area*
 where it keeps track of things that have been added to
-the current [changeset]({{ page.root }}/reference#changeset)
+the current [changeset]({{ page.root }}{% link reference.md %}#changeset)
 but not yet committed.
 
 > ## Staging Area
@@ -794,3 +777,5 @@ repository (`git commit`):
 {: .challenge}
 
 [commit-messages]: https://chris.beams.io/posts/git-commit/
+
+{% include links.md %}
