@@ -24,6 +24,7 @@ You should be in the `planets` directory.
 ~~~
 $ cd ~/Desktop/planets
 ~~~
+{: .language-bash}
 
 Let's create a file called `mars.txt` that contains some notes
 about the Red Planet's suitability as a base.
@@ -42,7 +43,8 @@ Type the text below into the `mars.txt` file:
 Cold and dry, but everything is my favorite color
 ~~~
 
-`mars.txt` now contains a single line, which we can see by running:
+Let's first verify that the file was properly created by running the list command (`ls`):
+
 
 ~~~
 $ ls
@@ -53,6 +55,9 @@ $ ls
 mars.txt
 ~~~
 {: .output}
+
+
+`mars.txt` contains a single line, which we can see by running:
 
 ~~~
 $ cat mars.txt
