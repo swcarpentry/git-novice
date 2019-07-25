@@ -54,7 +54,7 @@ For these lessons, we will be interacting with [GitHub](https://github.com/) and
 > Because Git uses these characters to compare files,
 > it may cause unexpected issues when editing a file on different machines. 
 > Though it is beyond the scope of this lesson, you can read more about this issue 
-> [on this GitHub page](https://help.github.com/articles/dealing-with-line-endings/).
+> [in the Pro Git book](https://www.git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_autocrlf).
 {: .callout}
 >
 > You can change the way Git recognizes and encodes line endings
