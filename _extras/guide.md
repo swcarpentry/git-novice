@@ -58,6 +58,9 @@ working in teams or not, because it is
     these issues, since learners will almost certainly trip over them
     again.  If learners are running into line ending problems, GitHub
     has a [page][github-line-endings] that helps with troubleshooting.
+    Specifically, the [section on refreshing a repository][github-line-endings-refresh]
+    may be helpful if learners need to change the `core.autocrlf` setting
+    after already having made one or more commits.
 
 *   We don't use a Git GUI in these notes because we haven't found one that
     installs easily and runs reliably on the three major operating systems, and
@@ -302,7 +305,8 @@ web-hosted private repositories.
 [git-parable]: http://tom.preston-werner.com/2009/05/19/the-git-parable.html
 [github]: https://github.com/
 [github-gui]: https://git-scm.com/downloads/guis
-[github-line-endings]: https://help.github.com/articles/dealing-with-line-endings/#platform-all
+[github-line-endings]: https://docs.github.com/en/github/using-git/configuring-git-to-handle-line-endings
+[github-line-endings-refresh]: https://docs.github.com/en/github/using-git/configuring-git-to-handle-line-endings#refreshing-a-repository-after-changing-line-endings
 [github-privacy]: https://help.github.com/articles/keeping-your-email-address-private/
 [repos-in-repos]: https://github.com/swcarpentry/git-novice/issues/272
 [try-git]: https://try.github.io
