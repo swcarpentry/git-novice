@@ -775,7 +775,7 @@ repository (`git commit`):
 > >
 > > ~~~
 > > $ git add me.txt
-> > $ git commit -m'Add biography file'
+> > $ git commit -m "Add biography file" 
 > > ~~~
 > > {: .language-bash}
 > >
