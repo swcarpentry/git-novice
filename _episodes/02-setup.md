@@ -96,14 +96,7 @@ Dracula also has to set his favorite text editor, following this table:
 | Vim                | `$ git config --global core.editor "vim"`   |
 | VS Code                | `$ git config --global core.editor "code --wait"`   |
 
-It is possible to reconfigure the text editor for Git whenever you want to change it.
-
-> ## Exiting Vim
->
-> Note that Vim is the default editor for many programs. If you haven't used Vim before and wish to exit a session without saving
-your changes, press <kbd>Esc</kbd> then type `:q!` and hit <kbd>Return</kbd>.
-> If you want to save your changes and quit, press <kbd>Esc</kbd> then type `:wq` and hit <kbd>Return</kbd>.
-{: .callout}
+It is possible to reconfigure the text editor for Git whenever you want to change it. Note that Vim is usually the default editor for Git.
 
 The four commands we just ran above only need to be run once: the flag `--global` tells Git
 to use the settings for every project, in your user account, on this computer.
