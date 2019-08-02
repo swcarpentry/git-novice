@@ -139,5 +139,4 @@ same commands to choose another editor or update your email address.
 > {: .language-bash}
 {: .callout}
 
-[git-privacy]: https://help.github.com/articles/keeping-your-email-address-private/
-[editor-list]:https://git-scm.com/book/en/v2/Appendix-C%3A-Git-Commands-Setup-and-Config#_core_editor
+{% include links.md %}
