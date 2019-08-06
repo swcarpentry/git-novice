@@ -536,17 +536,20 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > ~~~
 > {: .language-bash}
 > ~~~
-> * 005937f Discuss concerns about Mars' climate for Mummy
-> * 34961b1 Add concerns about effects of Mars' moons on Wolfman
-> * f22b25e Start notes on Mars as a base
+> 005937f Discuss concerns about Mars' climate for Mummy
+> 34961b1 Add concerns about effects of Mars' moons on Wolfman
+> f22b25e Start notes on Mars as a base
 > ~~~
 > {: .output}
 >
-> You can also combine the `--oneline` options with others. One useful
-> combination is:
+> You can also combine the `--oneline` option with others. One useful
+> combination adds `--graph` to display the commit history as a text-based
+> graph and `--decorate` to indicate which commits are associated with the
+> current `HEAD`, the current branch `master`, or
+> [other Git references][git-references]:
 >
 > ~~~
-> $ git log --oneline --graph --all --decorate
+> $ git log --oneline --graph --decorate
 > ~~~
 > {: .language-bash}
 > ~~~
@@ -777,5 +780,6 @@ repository (`git commit`):
 {: .challenge}
 
 [commit-messages]: https://chris.beams.io/posts/git-commit/
+[git-references]: https://git-scm.com/book/en/v2/Git-Internals-Git-References
 
 {% include links.md %}
