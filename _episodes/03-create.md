@@ -3,12 +3,15 @@ title: Creating a Repository
 teaching: 10
 exercises: 0
 questions:
-- "Where does Git store information?"
+- "How do I start a Git-tracked project?"
+- "Where does Git store its information?"
 objectives:
 - "Create a local Git repository."
 keypoints:
-- "`git init` initializes a repository."
 - "Git stores all of its repository data in the `.git` directory."
+- "`git init` initializes a repository."
+- "Git repositories shall not be nested."
+- "`git status` checks the status of your project."
 ---
 
 Once Git is configured,
@@ -40,20 +43,35 @@ $ cd planets
 ~~~
 {: .language-bash}
 
-Then we tell Git to make `planets` a [repository]({{ page.root }}{% link reference.md %}#repository)—a place where Git can store versions of our files:
+We'll want Git to make `planets` a [repository]({{ page.root }}{% link reference.md %}#repository)—a place where Git can store versions of our files.
+We should first check if this is a good place to do so:
+a new repository shall not be nested in another repository placed higher up the directory hierarchy.
+This is because a Git repository takes care of files in its subdirectories, too,
+whether they are present from the beginning or added later.
 
+We'll use a command that normally checks the status of a repository:
+~~~
+$ git status
+~~~
+{: .language-bash}
+
+If we are outside of a repository (which is the expected outcome at this point), we get an error message:
+~~~
+fatal: not a git repository (or any of the parent directories): .git
+~~~
+{: .output}
+
+Later you'll see the output you'd get if you _were_ within an existing repository.
+If that is your case, do not proceed creating a new repository.
+Rather, investigate the situation. You may have placed your directory in a wrong location or you may be fine using the pre-existing repo.
+
+Assuming we are not within a repository yet, we can create one by the command:
 ~~~
 $ git init
 ~~~
 {: .language-bash}
 
-It is important to note that `git init` will create a repository that
-includes subdirectories and their files---there is no need to create
-separate repositories nested within the `planets` repository, whether
-subdirectories are present from the beginning or added later. Also, note
-that the creation of the `planets` directory and its initialization as a
-repository are completely separate processes.
-
+What happened?
 If we use `ls` to show the directory's contents,
 it appears that nothing has changed:
 
@@ -69,7 +87,6 @@ we can see that Git has created a hidden directory within `planets` called `.git
 $ ls -a
 ~~~
 {: .language-bash}
-
 ~~~
 .	..	.git
 ~~~
@@ -77,11 +94,27 @@ $ ls -a
 
 Git uses this special sub-directory to store all the information about the project, 
 including all files and sub-directories located within the project's directory.
-If we ever delete the `.git` sub-directory,
-we will lose the project's history.
+Should we accidentally delete it, we would lose the project's history.
 
-We can check that everything is set up correctly
-by asking Git to tell us the status of our project:
+> ## What's inside the `.git` Sub-Directory?
+>
+> > ## Solution
+> > Let's look inside the sub-directory:
+> > 
+> > ~~~
+> > $ ls -a .git
+> > ~~~
+> > {: .language-bash}
+> > ~~~
+> > .		..		HEAD		config		description	hooks		info		objects		refs
+> > ~~~
+> > {: .output}
+> > 
+> > All these files and directories are internal to Git and you should avoid changing them manually.
+> {: .solution}
+{: .challenge}
+
+Now, let's ask Git to tell us the status of our project:
 
 ~~~
 $ git status
@@ -96,8 +129,8 @@ nothing to commit (create/copy files and use "git add" to track)
 ~~~
 {: .output}
 
-If you are using a different version of `git`, the exact
-wording of the output might be slightly different.
+Note that for your version of `git` 
+the exact wording of the output might be slightly different.
 
 > ## Places to Create Git Repositories
 >
@@ -112,6 +145,7 @@ wording of the output might be slightly different.
 > $ ls -a          # ensure the .git sub-directory is still present in the planets directory
 > $ mkdir moons    # make a sub-directory planets/moons
 > $ cd moons       # go into moons sub-directory
+> $ git status     # ignore the fact that a Git repository already exists
 > $ git init       # make the moons sub-directory a Git repository
 > $ ls -a          # ensure the .git sub-directory is present indicating we have created a new Git repository
 > ~~~
@@ -130,20 +164,8 @@ wording of the output might be slightly different.
 > > 
 > > Additionally, Git repositories can interfere with each other if they are "nested":
 > > the outer repository will try to version-control
-> > the inner repository. Therefore, it's best to create each new Git
-> > repository in a separate directory. To be sure that there is no conflicting
-> > repository in the directory, check the output of `git status`. If it looks
-> > like the following, you are good to go to create a new repository as shown
-> > above:
-> >
-> > ~~~
-> > $ git status
-> > ~~~
-> > {: .language-bash}
-> > ~~~
-> > fatal: Not a git repository (or any of the parent directories): .git
-> > ~~~
-> > {: .output}
+> > the inner repository. 
+> > Therefore, do not skip the `git status` before running `git init`.
 > {: .solution}
 {: .challenge}
 > ## Correcting `git init` Mistakes
@@ -153,27 +175,18 @@ wording of the output might be slightly different.
 >
 > > ## Solution -- USE WITH CAUTION!
 > >
-> > ### Background
-> > Removing files from a git repository needs to be done with caution. To remove files from the working tree and not from your working directory, use
-> > ~~~
-> > $ rm filename
-> > ~~~
-> > {: .language-bash}
-> > 
-> > The file being removed has to be in sync with the branch head with no updates. If there are updates, the file can be removed by force by using the `-f` option. Similarly a directory can be removed from git using `rm -r dirname` or `rm -rf dirname`.
-> >
-> > ### Solution
 > > Git keeps all of its files in the `.git` directory.
 > > To recover from this little mistake, Dracula can just remove the `.git`
-> > folder in the moons subdirectory by running the following command from inside the `planets` directory:
+> > folder in the `moons` subdirectory by running the following command from inside the `planets` directory:
 > >
 > > ~~~
 > > $ rm -rf moons/.git
 > > ~~~
 > > {: .language-bash}
 > >
-> > But be careful! Running this command in the wrong directory, will remove
-> > the entire Git history of a project you might want to keep. Therefore, always check your current directory using the
-> > command `pwd`.
+> > Be careful though when deleting a `.git` subdirectory! 
+> > Deleting the wrong one will remove the entire Git history of a project you might want to keep. 
+> > Therefore, always check your current directory using the command `pwd`
+> > and always prepend the name of the subdirectory to the path to be deleted.
 > {: .solution}
 {: .challenge}
