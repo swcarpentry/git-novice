@@ -256,7 +256,7 @@ Changes to be committed:
 ~~~
 {: .output}
 
-Notice that the changes are on the staged area.
+Notice that the changes are currently in the staging area.
 Again, we can put things back the way they were
 by using `git checkout`:
 
@@ -308,7 +308,7 @@ It's important to remember that
 we must use the commit number that identifies the state of the repository
 *before* the change we're trying to undo.
 A common mistake is to use the number of
-the commit in which we made the change we're trying to get rid of.
+the commit in which we made the change we're trying to discard.
 In the example below, we want to retrieve the state from before the most
 recent commit (`HEAD~1`), which is commit `f22b25e`:
 
