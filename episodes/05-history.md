@@ -488,23 +488,23 @@ moving backward and forward in time becomes much easier.
 
 > ## Explore and Summarize Histories
 >
-> Exploring history is an important part of Git, often it is a challenge to find
+> Exploring history is an important part of Git, and often it is a challenge to find
 > the right commit ID, especially if the commit is from several months ago.
 >
 > Imagine the `planets` project has more than 50 files.
-> You would like to find a commit with specific text in `mars.txt` is modified.
-> When you type `git log`, a very long list appeared,
+> You would like to find a commit that modifies some specific text in `mars.txt`.
+> When you type `git log`, a very long list appeared.
 > How can you narrow down the search?
 >
-> Recall that the `git diff` command allow us to explore one specific file,
-> e.g. `git diff mars.txt`. We can apply a similar idea here.
+> Recall that the `git diff` command allows us to explore one specific file,
+> e.g., `git diff mars.txt`. We can apply a similar idea here.
 >
 > ~~~
 > $ git log mars.txt
 > ~~~
 > {: .language-bash}
 >
-> Unfortunately some of these commit messages are very ambiguous e.g. `update files`.
+> Unfortunately some of these commit messages are very ambiguous, e.g., `update files`.
 > How can you search through these files?
 >
 > Both `git diff` and `git log` are very useful and they summarize a different part of the history 
