@@ -247,7 +247,7 @@ GitHub, though, this command would download them to our local repository.
 > ## Uploading files directly in GitHub browser
 >
 > Github also allows you to skip the command line and upload files directly to 
-> your repository without having to leave the broswer. There are two options. 
+> your repository without having to leave the browser. There are two options. 
 > First you can click the "Upload files" button in the toolbar at the top of the
 > file tree. Or, you can drag and drop files from your desktop onto the file 
 > tree. You can read more about this [on this GitHub page](https://help.github.com/articles/adding-a-file-to-a-repository/)
