@@ -20,10 +20,10 @@ is possible to send a planetary lander to Mars.
 ![motivatingexample](../fig/motivatingexample.png)
 [Werewolf vs dracula](https://www.deviantart.com/b-maze/art/Werewolf-vs-Dracula-124893530)
 by [b-maze](https://www.deviantart.com/b-maze) / [Deviant Art](https://www.deviantart.com/).
-[Mars](https://en.wikipedia.org/wiki/File:OSIRIS_Mars_true_color.jpg) /
-[CC BY 3.0](https://creativecommons.org/licenses/by/3.0/deed.en).
+[Mars](https://en.wikipedia.org/wiki/File:OSIRIS_Mars_true_color.jpg) by European Space Agency /
+[CC-BY-SA 3.0 IGO](https://creativecommons.org/licenses/by/3.0/deed.en).
 [Pluto](https://commons.wikimedia.org/wiki/File:PIA19873-Pluto-NewHorizons-FlyingPastImage-20150714-transparent.png) /
-by NASA.
+Courtesy NASA/JPL-Caltech.
 [Mummy](https://commons.wikimedia.org/wiki/File:Mummy_icon_-_Noun_Project_4070.svg)
 &copy; Gilad Fried / [The Noun Project](https://thenounproject.com/) /
 [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/deed.en).
