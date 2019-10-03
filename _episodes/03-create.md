@@ -48,12 +48,12 @@ $ git init
 ~~~
 {: .language-bash}
 
-It is important to note that `git init` will create a repository that
-includes subdirectories and their files---there is no need to create
-separate repositories nested within the `planets` repository, whether
-subdirectories are present from the beginning or added later. Also, note
-that the creation of the `planets` directory and its initialization as a
-repository are completely separate processes.
+Note that `git init` includes all subdirectories of the current directory and
+their files in the repository, so there is no need to create separate
+repositories nested within the `planets` repository. Subdirectories will be
+part of this repository even if they are added later. Also, note that the
+creation of the `planets` directory and its initialization as a repository are
+completely separate processes.
 
 If we use `ls` to show the directory's contents,
 it appears that nothing has changed:
