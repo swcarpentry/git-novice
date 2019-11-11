@@ -323,8 +323,11 @@ Conflicts can also be minimized with project management strategies:
 - Discuss what order tasks should be carried out in with your collaborators so
   that tasks expected to change the same lines won't be worked on simultaneously
 - If the conflicts are stylistic churn (e.g. tabs vs. spaces), establish a
-  project convention that is governing and use code style tools (e.g.
-  `htmltidy`, `perltidy`, `rubocop`, etc.) to enforce, if necessary
+  project convention that is governing, use code style tools (e.g.
+  `styleR` or `Code > Reformat` in RStudio,
+  or [`pep8` in Python](https://swcarpentry.github.io/python-novice-gapminder/18-style/index.html#follow-standard-python-style-in-your-code),
+  [ShellCheck(.net)](http://swcarpentry.github.io/shell-novice/guide/#teaching-notes),
+  etc.) and note this in your project's ReadMe file.
 
 > ## Solving Conflicts that You Create
 >
