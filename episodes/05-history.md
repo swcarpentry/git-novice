@@ -156,7 +156,7 @@ index df0654a..93a3e13 100644
 
 That's the right answer,
 but typing out random 40-character strings is annoying,
-so Git lets us use just the first few characters:
+so Git lets us use just the first few characters (typically seven for normal size projects):
 
 ~~~
 $ git diff f22b25e mars.txt
