@@ -544,12 +544,12 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 >
 > You can also combine the `--oneline` option with others. One useful
 > combination adds `--graph` to display the commit history as a text-based
-> graph and `--decorate` to indicate which commits are associated with the
+> graph and to indicate which commits are associated with the
 > current `HEAD`, the current branch `master`, or
 > [other Git references][git-references]:
 >
 > ~~~
-> $ git log --oneline --graph --decorate
+> $ git log --oneline --graph
 > ~~~
 > {: .language-bash}
 > ~~~
