@@ -369,12 +369,11 @@ $ git status
 {: .language-bash}
 
 ~~~
-# On branch master
-# Changes to be committed:
-#   (use "git reset HEAD <file>..." to unstage)
-#
-#	renamed:    krypton.txt -> earth.txt
-#
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	renamed:    krypton.txt -> earth.txt
 ~~~
 {: .output}
 The final step is commit our change to the repository:
