@@ -100,7 +100,7 @@ $ git status
 {: .language-bash}
 
 ~~~
-# On branch master
+On branch master
 nothing to commit, working directory clean
 ~~~
 {: .output}
