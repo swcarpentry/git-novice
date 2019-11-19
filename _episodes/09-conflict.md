@@ -327,7 +327,7 @@ Conflicts can also be minimized with project management strategies:
   `styleR` or `Code > Reformat` in RStudio,
   or [`pep8` in Python](https://swcarpentry.github.io/python-novice-gapminder/18-style/index.html#follow-standard-python-style-in-your-code),
   [ShellCheck(.net)](http://swcarpentry.github.io/shell-novice/guide/#teaching-notes),
-  etc.) and note this in your project's ReadMe file.
+  etc.) and note this in your project's relevant documentation or ReadMe file.
 
 > ## Solving Conflicts that You Create
 >
