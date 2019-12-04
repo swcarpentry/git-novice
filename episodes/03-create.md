@@ -77,9 +77,9 @@ $ ls -a
 ~~~
 {: .output}
 
-Git uses this special sub-directory to store all the information about the project, 
+Git uses this special subdirectory to store all the information about the project, 
 including all files and sub-directories located within the project's directory.
-If we ever delete the `.git` sub-directory,
+If we ever delete the `.git` subdirectory,
 we will lose the project's history.
 
 We can check that everything is set up correctly
@@ -111,23 +111,23 @@ wording of the output might be slightly different.
 > ~~~
 > $ cd ~/Desktop   # return to Desktop directory
 > $ cd planets     # go into planets directory, which is already a Git repository
-> $ ls -a          # ensure the .git sub-directory is still present in the planets directory
-> $ mkdir moons    # make a sub-directory planets/moons
-> $ cd moons       # go into moons sub-directory
-> $ git init       # make the moons sub-directory a Git repository
-> $ ls -a          # ensure the .git sub-directory is present indicating we have created a new Git repository
+> $ ls -a          # ensure the .git subdirectory is still present in the planets directory
+> $ mkdir moons    # make a subdirectory planets/moons
+> $ cd moons       # go into moons subdirectory
+> $ git init       # make the moons subdirectory a Git repository
+> $ ls -a          # ensure the .git subdirectory is present indicating we have created a new Git repository
 > ~~~
 > {: .language-bash}
 >
-> Is the `git init` command, run inside the `moons` sub-directory, required for 
-> tracking files stored in the `moons` sub-directory?
+> Is the `git init` command, run inside the `moons` subdirectory, required for 
+> tracking files stored in the `moons` subdirectory?
 > 
 > > ## Solution
 > >
-> > No. Dracula does not need to make the `moons` sub-directory a Git repository 
+> > No. Dracula does not need to make the `moons` subdirectory a Git repository 
 > > because the `planets` repository will track all files, sub-directories, and 
-> > sub-directory files under the `planets` directory.  Thus, in order to track 
-> > all information about moons, Dracula only needed to add the `moons` sub-directory
+> > subdirectory files under the `planets` directory.  Thus, in order to track 
+> > all information about moons, Dracula only needed to add the `moons` subdirectory
 > > to the `planets` directory.
 > > 
 > > Additionally, Git repositories can interfere with each other if they are "nested":
@@ -151,7 +151,7 @@ wording of the output might be slightly different.
 > ## Correcting `git init` Mistakes
 > Wolfman explains to Dracula how a nested repository is redundant and may cause confusion
 > down the road. Dracula would like to remove the nested repository. How can Dracula undo 
-> his last `git init` in the `moons` sub-directory?
+> his last `git init` in the `moons` subdirectory?
 >
 > > ## Solution -- USE WITH CAUTION!
 > >
