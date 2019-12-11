@@ -48,7 +48,7 @@ What's worse,
 having them all listed could distract us from changes that actually matter,
 so let's tell Git to ignore them.
 
-We do this by creating a file in the root directory of our project called `.gitignore`:
+We do this by creating a file in the root directory of our project called `.gitignore` specifying we want to ignore the `.dat` and `results` directory we just created.
 
 ~~~
 $ nano .gitignore
@@ -62,7 +62,7 @@ results/
 ~~~
 {: .output}
 
-These patterns tell Git to ignore any file whose name ends in `.dat`
+The text in the `.gitignore` file is telling Git to ignore any file whose name ends in `.dat`
 and everything in the `results` directory.
 (If any of these files were already being tracked,
 Git would continue to track them.)
