@@ -48,7 +48,7 @@ What's worse,
 having them all listed could distract us from changes that actually matter,
 so let's tell Git to ignore them.
 
-We do this by creating a file in the root directory of our project called `.gitignore` specifying we want to ignore the `.dat` and `results` directory we just created.
+We do this by creating a file in the root directory of our project called `.gitignore` specifying we want to ignore the `.dat` files and `results` directory we just created.
 
 ~~~
 $ nano .gitignore
