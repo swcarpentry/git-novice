@@ -206,9 +206,14 @@ Our local and remote repositories are now in this state:
 > ~~~
 > {: .language-bash}
 >
-> This option instructs Git to send branch `master` to the remote `origin` and remember a
-> few things so that later we can send our changes to `origin` with `git pull` without any
-> additional arguments.
+> While the `-u` flag is cryptic, its full name -- `--set-upstream` -- is more revealing.
+> When `git push` is invoked with either of these two flags, Git updates specified branch (`master`
+> in our example) in the remote repository (`origin`) and sets that branch as
+> an _upstream branch_ for the local branch (also called `master`).
+> When a local branch knows its "upstream" branch, we can move the changes between the two (pull and
+> push) without specifying either the remote repository (e.g., `origin`) or the remote branch (e.g.,
+> `master`).
+>
 {: .callout}
 
 We can pull changes from the remote repository to the local one as well:
