@@ -197,7 +197,7 @@ Our local and remote repositories are now in this state:
 
 ![GitHub Repository After First Push](../fig/github-repo-after-first-push.svg)
 
-> ## Upstream branch
+> ## The '-u' Flag
 >
 > You may occasionally see `git push` with an additional `-u` flag, as in:
 >
@@ -207,12 +207,10 @@ Our local and remote repositories are now in this state:
 > {: .language-bash}
 >
 > While the `-u` flag is cryptic, its full name -- `--set-upstream` -- is more revealing.
-> When `git push` is invoked with either of these two flags, Git updates specified branch (`master`
-> in our example) in the remote repository (`origin`) and sets that branch as
-> an _upstream branch_ for the local branch (also called `master`).
-> When a local branch knows its "upstream" branch, we can move the changes between the two (pull and
-> push) without specifying either the remote repository (e.g., `origin`) or the remote branch (e.g.,
-> `master`).
+> When `git push` is invoked with either of these two flags, Git
+> sends specified branch to the specified remote and remembers a few things so that
+> later we can exchange changes with the remote using `git push` and `git pull` without any
+> additional arguments.
 >
 {: .callout}
 
