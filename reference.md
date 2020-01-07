@@ -48,7 +48,7 @@ remote
 :   (of a repository) A version control [repository](#repository) connected to another,
     in such way that both can be kept in sync exchanging [commits](#commit).
 
-repository
+<a id=repository>repository</a>
 :   A storage area where a [version control](#version-control) system
     stores the full history of [commits](#commit) of a project and information
     about who changed what, when.
