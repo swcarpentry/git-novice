@@ -52,9 +52,9 @@ incorporate two sets of changes into the same base document.
 A version control system is a tool that keeps track of these changes for us,
 effectively creating different versions of our files. It allows us to decide
 which changes will be made to the next version (each record of these changes is
-called a [commit]({{ page.root }}{% link reference.md %}#commit)), and keeps useful metadata
+called a [commit](../reference.md#commit)), and keeps useful metadata
 about them. The complete history of commits for a particular project and their
-metadata make up a [repository]({{ page.root }}{% link reference.md %}#repository).
+metadata make up a [repository](../reference.md#repository).
 Repositories can be kept in sync across different computers, facilitating
 collaboration among different people.
 
