@@ -19,7 +19,7 @@ changeset
     to a single [commit](#commit) in a [version control](#version-control)
     [repository](#repository).
 
-commit
+<a id=commit>commit</a>
 :   To record the current state of a set of files (a [changeset](#changeset))
     in a [version control](#version-control) [repository](#repository). As a noun,
     the result of committing, i.e. a recorded changeset in a repository.
