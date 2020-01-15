@@ -138,11 +138,12 @@ file:
 >
 > > ## Solution to Challenge
 > >
-> > This can be done with the command line:
+> > This can be done in Rstudio:
 > > ```
-> > $ mkdir graphs
-> > $ echo "graphs/" >> .gitignore
+> > dir.create("./graphs")
 > > ```
+> > Then open up the `.gitignore` file from the righ-hand panel of Rstudio and add 
+> > `graphs/` to the list of files to ignore.
 > > {: . shell}
 > {: .solution}
 {: .challenge}
