@@ -7,6 +7,7 @@ questions:
 - "Where does Git store its information?"
 objectives:
 - "Create a local Git repository."
+- "Describe the purpose of the `.git` directory."
 keypoints:
 - "Git stores all of its repository data in the `.git` directory."
 - "`git init` initializes a repository."
@@ -23,8 +24,10 @@ is possible to send a planetary lander to Mars.
 ![motivatingexample](../fig/motivatingexample.png)
 [Werewolf vs dracula](https://www.deviantart.com/b-maze/art/Werewolf-vs-Dracula-124893530)
 by [b-maze](https://www.deviantart.com/b-maze) / [Deviant Art](https://www.deviantart.com/).
-[Planets](https://commons.wikimedia.org/wiki/File:Planets_are_us.png) /
-[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
+[Mars](https://en.wikipedia.org/wiki/File:OSIRIS_Mars_true_color.jpg) by European Space Agency /
+[CC-BY-SA 3.0 IGO](https://creativecommons.org/licenses/by/3.0/deed.en).
+[Pluto](https://commons.wikimedia.org/wiki/File:PIA19873-Pluto-NewHorizons-FlyingPastImage-20150714-transparent.png) /
+Courtesy NASA/JPL-Caltech.
 [Mummy](https://commons.wikimedia.org/wiki/File:Mummy_icon_-_Noun_Project_4070.svg)
 &copy; Gilad Fried / [The Noun Project](https://thenounproject.com/) /
 [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/deed.en).
@@ -92,7 +95,7 @@ $ ls -a
 ~~~
 {: .output}
 
-Git uses this special sub-directory to store all the information about the project, 
+Git uses this special subdirectory to store all the information about the project, 
 including all files and sub-directories located within the project's directory.
 Should we accidentally delete it, we would lose the project's history.
 
@@ -121,10 +124,10 @@ $ git status
 ~~~
 {: .language-bash}
 ~~~
-# On branch master
-#
-# Initial commit
-#
+On branch master
+
+Initial commit
+
 nothing to commit (create/copy files and use "git add" to track)
 ~~~
 {: .output}
@@ -151,15 +154,15 @@ the exact wording of the output might be slightly different.
 > ~~~
 > {: .language-bash}
 >
-> Is the `git init` command, run inside the `moons` sub-directory, required for 
-> tracking files stored in the `moons` sub-directory?
+> Is the `git init` command, run inside the `moons` subdirectory, required for 
+> tracking files stored in the `moons` subdirectory?
 > 
 > > ## Solution
 > >
-> > No. Dracula does not need to make the `moons` sub-directory a Git repository 
+> > No. Dracula does not need to make the `moons` subdirectory a Git repository 
 > > because the `planets` repository will track all files, sub-directories, and 
-> > sub-directory files under the `planets` directory.  Thus, in order to track 
-> > all information about moons, Dracula only needed to add the `moons` sub-directory
+> > subdirectory files under the `planets` directory.  Thus, in order to track 
+> > all information about moons, Dracula only needed to add the `moons` subdirectory
 > > to the `planets` directory.
 > > 
 > > Additionally, Git repositories can interfere with each other if they are "nested":
@@ -171,7 +174,7 @@ the exact wording of the output might be slightly different.
 > ## Correcting `git init` Mistakes
 > Wolfman explains to Dracula how a nested repository is redundant and may cause confusion
 > down the road. Dracula would like to remove the nested repository. How can Dracula undo 
-> his last `git init` in the `moons` sub-directory?
+> his last `git init` in the `moons` subdirectory?
 >
 > > ## Solution -- USE WITH CAUTION!
 > >
