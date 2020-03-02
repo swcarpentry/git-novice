@@ -351,7 +351,7 @@ Conflicts can also be minimized with project management strategies:
 > > a dummy binary file like this:
 > >
 > > ~~~
-> > $ head --bytes 1024 /dev/urandom > mars.jpg
+> > $ head -c 1024 /dev/urandom > mars.jpg
 > > $ ls -lh mars.jpg
 > > ~~~
 > > {: .language-bash}
