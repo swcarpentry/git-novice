@@ -285,6 +285,10 @@ what, arise naturally once we start talking about using public services like
 GitHub to store files. Also, the discussion gives learners a chance to catch
 their breath after what is often a frustrating couple of hours.
 
+The Creative Commons family of licenses is recommended for many types of
+works but not software. Creative Commons [recommends][cc-faq-software]
+a software-specific license instead.
+
 ## [Citation]({{ page.root }}{% link _episodes/12-citation.md %})
 
 ## [Hosting]({{ page.root }}{% link _episodes/13-hosting.md %})
@@ -294,6 +298,7 @@ GitHub.  While we encourage open science, sometimes private repos are the
 only choice. It's always interesting to mention the options to have
 web-hosted private repositories.
 
+[cc-faq-software]: https://creativecommons.org/faq/#can-i-apply-a-creative-commons-license-to-software
 [code-school]: https://www.codeschool.com/
 [diffmerge]: https://sourcegear.com/diffmerge/
 [drawings]: https://marklodato.github.io/visual-git-guide/index-en.html
