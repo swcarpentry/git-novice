@@ -286,8 +286,9 @@ GitHub to store files. Also, the discussion gives learners a chance to catch
 their breath after what is often a frustrating couple of hours.
 
 The Creative Commons family of licenses is recommended for many types of
-works but not software. Creative Commons [recommends][cc-faq-software]
-a software-specific license instead.
+works (including software documentation and images used in software) but not
+software itself. Creative Commons [recommends][cc-faq-software] a
+software-specific license instead.
 
 ## [Citation]({{ page.root }}{% link _episodes/12-citation.md %})
 
