@@ -14,4 +14,4 @@ $ cd Desktop
 ~~~
 {: .language-bash}
 
-[workshop-setup]: https://carpentries.github.io/workshop-template/#git
+[workshop-setup]: https://github.com/carpentries/workshop-template/blob/gh-pages/_includes/swc/setup.html
