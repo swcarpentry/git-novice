@@ -36,7 +36,9 @@ needs to go to [https://github.com/notifications](https://github.com/notificatio
 Once there she can accept access to the Owner's repo.
 
 Next, the Collaborator needs to download a copy of the Owner's repository to her
- machine. This is called "cloning a repo". To clone the Owner's repo into
+ machine. This is called "cloning a repo". The Collaborator doesn't want to overwrite
+ her own version of `planets.git`, so needs to clone the Owner's repository to a 
+ different location to her own. To clone the Owner's repo into
 her `Desktop` folder, the Collaborator enters:
 
 ~~~
