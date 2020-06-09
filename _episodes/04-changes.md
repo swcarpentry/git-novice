@@ -195,7 +195,7 @@ and the log message Git was given when the commit was created.
 > ## Where Are My Changes?
 >
 > If we run `ls` at this point, we will still see just one file called `mars.txt`.
-> That's because Git saves information about files' history
+> That's because Git saves information about a file's history
 > in the special `.git` directory mentioned earlier
 > so that our filesystem doesn't become cluttered
 > (and so that we can't accidentally edit or delete an old version).
@@ -284,7 +284,6 @@ After reviewing our change, it's time to commit it:
 
 ~~~
 $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
-$ git status
 ~~~
 {: .language-bash}
 
@@ -486,7 +485,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 
 > ## Word-based diffing
 >
-> Sometimes, e.g. in the case of the text documents a line-wise
+> Sometimes, e.g., in the case of the text documents a line-wise
 > diff is too coarse. That is where the `--color-words` option of
 > `git diff` comes in very useful as it highlights the changed
 > words using colors.
@@ -763,7 +762,7 @@ repository (`git commit`):
 > >
 > > ~~~
 > > $ git add me.txt
-> > $ git commit -m "Add biography file" 
+> > $ git commit -m "Add biography file"
 > > ~~~
 > > {: .language-bash}
 > >
