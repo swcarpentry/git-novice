@@ -35,7 +35,7 @@ But the Mummy will appreciate the lack of humidity
 ~~~
 {: .output}
 
-Let's add a line to one partner's copy only:
+Let's add a line to the collaborator's copy only:
 
 ~~~
 $ nano mars.txt
@@ -83,7 +83,7 @@ To https://github.com/vlad/planets.git
 ~~~
 {: .output}
 
-Now let's have the other partner
+Now let's have the owner
 make a different change to their copy
 *without* updating from GitHub:
 
