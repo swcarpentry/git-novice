@@ -16,7 +16,7 @@ Once Git is configured,
 we can start using it.
 
 We will continue with the story of Wolfman and Dracula who are investigating if it
-is possible to send a planetary lander to Mars. 
+is possible to send a planetary lander to Mars.
 
 ![motivatingexample](../fig/motivatingexample.png)
 [Werewolf vs dracula](https://www.deviantart.com/b-maze/art/Werewolf-vs-Dracula-124893530)
@@ -34,7 +34,7 @@ Courtesy NASA/JPL-Caltech.
 
 
 
-First, let's create a directory in `Desktop` folder for our work and then move into that directory:
+First, let's create a directory in the `Desktop` folder for our work and then move into that directory:
 
 ~~~
 $ cd ~/Desktop
@@ -78,7 +78,7 @@ $ ls -a
 ~~~
 {: .output}
 
-Git uses this special subdirectory to store all the information about the project, 
+Git uses this special subdirectory to store all the information about the project,
 including all files and sub-directories located within the project's directory.
 If we ever delete the `.git` subdirectory,
 we will lose the project's history.
@@ -104,9 +104,9 @@ wording of the output might be slightly different.
 
 > ## Places to Create Git Repositories
 >
-> Along with tracking information about planets (the project we have already created), 
+> Along with tracking information about planets (the project we have already created),
 > Dracula would also like to track information about moons.
-> Despite Wolfman's concerns, Dracula creates a `moons` project inside his `planets` 
+> Despite Wolfman's concerns, Dracula creates a `moons` project inside his `planets`
 > project with the following sequence of commands:
 >
 > ~~~
@@ -120,17 +120,17 @@ wording of the output might be slightly different.
 > ~~~
 > {: .language-bash}
 >
-> Is the `git init` command, run inside the `moons` subdirectory, required for 
+> Is the `git init` command, run inside the `moons` subdirectory, required for
 > tracking files stored in the `moons` subdirectory?
-> 
+>
 > > ## Solution
 > >
-> > No. Dracula does not need to make the `moons` subdirectory a Git repository 
-> > because the `planets` repository will track all files, sub-directories, and 
-> > subdirectory files under the `planets` directory.  Thus, in order to track 
+> > No. Dracula does not need to make the `moons` subdirectory a Git repository
+> > because the `planets` repository will track all files, sub-directories, and
+> > subdirectory files under the `planets` directory.  Thus, in order to track
 > > all information about moons, Dracula only needed to add the `moons` subdirectory
 > > to the `planets` directory.
-> > 
+> >
 > > Additionally, Git repositories can interfere with each other if they are "nested":
 > > the outer repository will try to version-control
 > > the inner repository. Therefore, it's best to create each new Git
@@ -151,7 +151,7 @@ wording of the output might be slightly different.
 {: .challenge}
 > ## Correcting `git init` Mistakes
 > Wolfman explains to Dracula how a nested repository is redundant and may cause confusion
-> down the road. Dracula would like to remove the nested repository. How can Dracula undo 
+> down the road. Dracula would like to remove the nested repository. How can Dracula undo
 > his last `git init` in the `moons` subdirectory?
 >
 > > ## Solution -- USE WITH CAUTION!
@@ -162,7 +162,7 @@ wording of the output might be slightly different.
 > > $ rm filename
 > > ~~~
 > > {: .language-bash}
-> > 
+> >
 > > The file being removed has to be in sync with the branch head with no updates. If there are updates, the file can be removed by force by using the `-f` option. Similarly a directory can be removed from git using `rm -r dirname` or `rm -rf dirname`.
 > >
 > > ### Solution

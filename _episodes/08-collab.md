@@ -102,12 +102,12 @@ sensible choice earlier when we were setting up remotes by hand.)
 >
 > In this episode and the previous one, our local repository has had
 > a single "remote", called `origin`. A remote is a copy of the repository
-> that is hosted somewhere else, that we can push to and pull from, and 
-> there's no reason that you have to work with only one. For example, 
+> that is hosted somewhere else, that we can push to and pull from, and
+> there's no reason that you have to work with only one. For example,
 > on some large projects you might have your own copy in your own GitHub
 > account (you'd probably call this `origin`) and also the main "upstream"
 > project repository (let's call this `upstream` for the sake of examples).
-> You would pull from `upstream` from time to 
+> You would pull from `upstream` from time to
 > time to get the latest updates that other people have committed.
 >
 > Remember that the name you give to a remote only exists locally. It's
@@ -120,18 +120,18 @@ sensible choice earlier when we were setting up remotes by hand.)
 > * `git remote -v` lists all the remotes that are configured (we already used
 > this in the last episode)
 > * `git remote add [name] [url]` is used to add a new remote
-> * `git remote remove [name]` removes a remote. Note that it doesn't affect the 
+> * `git remote remove [name]` removes a remote. Note that it doesn't affect the
 > remote repository at all - it just removes the link to it from the local repo.
-> * `git remote set-url [name] [newurl]` changes the URL that is associated 
-> with the remote. This is useful if it has moved, e.g. to a different GitHub
+> * `git remote set-url [name] [newurl]` changes the URL that is associated
+> with the remote. This is useful if it has moved, e.g., to a different GitHub
 > account, or from GitHub to a different hosting service. Or, if we made a typo when
 > adding it!
-> * `git remote rename [oldname] [newname]` changes the local alias by which a remote 
+> * `git remote rename [oldname] [newname]` changes the local alias by which a remote
 > is known - its name. For example, one could use this to change `upstream` to `fred`.
 {: .callout}
 
 Take a look to the Owner's repository on its GitHub website now (maybe you need
-to refresh your browser.) You should be able to see the new commit made by the
+to refresh your browser). You should be able to see the new commit made by the
 Collaborator.
 
 To download the Collaborator's changes from GitHub, the Owner now enters:
@@ -170,7 +170,7 @@ GitHub) are back in sync.
 > * update your local repo with `git pull origin master`,
 > * make your changes and stage them with `git add`,
 > * commit your changes with `git commit -m`, and
-> * upload the changes to GitHub with `git push origin master`
+> * upload the changes to GitHub with `git push origin master`.
 >
 > It is better to make many commits with smaller changes rather than
 > of one commit with massive changes: small commits are easier to
@@ -181,6 +181,8 @@ GitHub) are back in sync.
 >
 > Switch roles and repeat the whole process.
 {: .challenge}
+
+[comment]: <> (Below in Review Changes we introduce fetch and merge, but these have not been discussed yet.  They are central to Git and should be discussed early on when "pull" is first introduced.)
 
 > ## Review Changes
 >
@@ -194,7 +196,7 @@ GitHub) are back in sync.
 > > them. Then by running ```git diff master origin/master``` the Collaborator
 > > will see the changes output in the terminal.
 > >
-> > On GitHub, the Collaborator can go to the repository and click on 
+> > On GitHub, the Collaborator can go to the repository and click on
 > > "commits" to view the most recent commits pushed to the repository.
 > {: .solution}
 {: .challenge}
@@ -204,7 +206,7 @@ GitHub) are back in sync.
 > The Collaborator has some questions about one line change made by the Owner and
 > has some suggestions to propose.
 >
-> With GitHub, it is possible to comment the diff of a commit. Over the line of
+> With GitHub, it is possible to comment the diff of a commit. Hover over the line of
 > code to comment, a blue comment icon appears to open a comment window.
 >
 > The Collaborator posts its comments and suggestions using GitHub interface.

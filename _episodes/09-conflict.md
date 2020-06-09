@@ -138,8 +138,8 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 Git rejects the push because it detects that the remote repository has new updates that have not been
 incorporated into the local branch.
-What we have to do is pull the changes from GitHub,
-[merge]({{ page.root }}{% link reference.md %}#merge) them into the copy we're currently working in, and then push that.
+What we have to do is pull the changes from GitHub (which will both [fetch](https://git-scm.com/docs/git-fetch) the changes and
+[merge]({{ page.root }}{% link reference.md %}#merge) them into the copy we're currently working in), and then push that.
 Let's start by pulling:
 
 ~~~
@@ -164,7 +164,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 The `git pull` command updates the local repository to include those
 changes already included in the remote repository.
-After the changes from remote branch have been fetched, Git detects that changes made to the local copy 
+After the changes from remote branch have been fetched, Git detects that changes made to the local copy
 overlap with those made to the remote repository, and therefore refuses to merge the two versions to
 stop us from trampling on our previous work. The conflict is marked in
 in the affected file:
@@ -322,14 +322,14 @@ Conflicts can also be minimized with project management strategies:
 - Clarify who is responsible for what areas with your collaborators
 - Discuss what order tasks should be carried out in with your collaborators so
   that tasks expected to change the same lines won't be worked on simultaneously
-- If the conflicts are stylistic churn (e.g. tabs vs. spaces), establish a
-  project convention that is governing and use code style tools (e.g.
+- If the conflicts are stylistic (e.g., tabs vs. spaces), establish a
+  project convention that is governing and use code style tools (e.g.,
   `htmltidy`, `perltidy`, `rubocop`, etc.) to enforce, if necessary
 
 > ## Solving Conflicts that You Create
 >
 > Clone the repository created by your instructor.
-> Add a new file to it,
+> Add a new file to it
 > and modify an existing file (your instructor will tell you which one).
 > When asked by your instructor,
 > pull her changes from the repository to create a conflict,

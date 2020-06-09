@@ -22,7 +22,7 @@ who has spent ten years collecting data would like to be sure that data will
 still be available ten years from now, but that's well beyond the lifespan of
 most of the grants that fund academic infrastructure.
 
-Another option is to purchase a domain and pay an Internet service provider
+Another option is to purchase a domain and pay an internet service provider
 (ISP) to host it.  This gives the individual or group more control, and
 sidesteps problems that can arise when moving from one institution to another,
 but requires more time and effort to set up than either the option above or the
@@ -62,7 +62,7 @@ open source projects, and are also available for private repositories for a fee.
 >
 > Sharing is the ideal for science,
 > but many institutions place restrictions on sharing,
-> for example to protect potentially patentable intellectual property.
+> for example, to protect potentially patentable intellectual property.
 > If you encounter such restrictions,
 > it can be productive to inquire about the underlying motivations and
 > either to request an exception for a specific project or domain,
@@ -74,7 +74,7 @@ open source projects, and are also available for private repositories for a fee.
 > Find out whether you are allowed to host your work openly on a public forge.
 > Can you do this unilaterally,
 > or do you need permission from someone in your institution?
-> If so, who?
+> If so, from whom?
 {: .challenge}
 
 > ## Where Can I Share My Work?

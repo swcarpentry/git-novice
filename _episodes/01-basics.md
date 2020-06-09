@@ -1,11 +1,11 @@
 ---
-title: Automated Version Control
+title: Explicit Version Control
 teaching: 5
 exercises: 0
 questions:
 - "What is version control and why should I use it?"
 objectives:
-- "Understand the benefits of an automated version control system."
+- "Understand the benefits of an explicit version control system."
 - "Understand the basics of how Git works."
 keypoints:
 - "Version control is like an unlimited 'undo'."
@@ -15,7 +15,7 @@ keypoints:
 We'll start by exploring how version control can be used
 to keep track of what one person did and when.
 Even if you aren't collaborating with other people,
-automated version control is much better than this situation:
+explicit version control is much better than this situation:
 
 [![Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com/comics/archive_print.php?comicid=1531]({{ page.root }}/fig/phd101212s.png)](http://www.phdcomics.com)
 
@@ -24,9 +24,9 @@ automated version control is much better than this situation:
 We've all been in this situation before: it seems ridiculous to have
 multiple nearly-identical versions of the same document. Some word
 processors let us deal with this a little better, such as Microsoft
-Word's 
-[Track Changes](https://support.office.com/en-us/article/Track-changes-in-Word-197ba630-0f5f-4a8e-9a77-3712475e806a), 
-Google Docs' [version history](https://support.google.com/docs/answer/190843?hl=en), or 
+Word's
+[Track Changes](https://support.office.com/en-us/article/Track-changes-in-Word-197ba630-0f5f-4a8e-9a77-3712475e806a),
+Google Docs' [version history](https://support.google.com/docs/answer/190843?hl=en), or
 LibreOffice's [Recording and Displaying Changes](https://help.libreoffice.org/Common/Recording_and_Displaying_Changes).
 
 Version control systems start with a base version of the document and
@@ -40,11 +40,11 @@ more recent version.
 Once you think of changes as separate from the document itself, you
 can then think about "playing back" different sets of changes on the base document, ultimately
 resulting in different versions of that document. For example, two users can make independent
-sets of changes on the same document. 
+sets of changes on the same document.
 
 ![Different Versions Can be Saved]({{ page.root }}/fig/versions.svg)
 
-Unless multiple users make changes to the same section of the document - a conflict - you can 
+Unless multiple users make changes to the same section of the document - a conflict - you can
 incorporate two sets of changes into the same base document.
 
 ![Multiple Versions Can be Merged]({{ page.root }}/fig/merge.svg)
@@ -60,26 +60,26 @@ collaboration among different people.
 
 > ## The Long History of Version Control Systems
 >
-> Automated version control systems are nothing new.
-> Tools like RCS, CVS, or Subversion have been around since the early 1980s and are used by 
+> Version control systems are nothing new.
+> Tools like RCS, CVS, or Subversion have been around since the early 1980s and are used by
 > many large companies.
-> However, many of these are now considered legacy systems (i.e., outdated) due to various 
+> However, many of these are now considered legacy systems (i.e., outdated) due to various
 > limitations in their capabilities.
 > More modern systems, such as Git and [Mercurial](https://swcarpentry.github.io/hg-novice/),
 > are *distributed*, meaning that they do not need a centralized server to host the repository.
-> These modern systems also include powerful merging tools that make it possible for 
+> These modern systems also include powerful merging tools that make it possible for
 > multiple authors to work on
 > the same files concurrently.
 {: .callout}
 
 > ## Paper Writing
 >
-> *   Imagine you drafted an excellent paragraph for a paper you are writing, but later ruin 
+> *   Imagine you drafted an excellent paragraph for a paper you are writing, but later ruin
 >     it. How would you retrieve the *excellent* version of your conclusion? Is it even possible?
 >
-> *   Imagine you have 5 co-authors. How would you manage the changes and comments 
->     they make to your paper?  If you use LibreOffice Writer or Microsoft Word, what happens if 
->     you accept changes made using the `Track Changes` option? Do you have a 
+> *   Imagine you have 5 co-authors. How would you manage the changes and comments
+>     they make to your paper?  If you use LibreOffice Writer or Microsoft Word, what happens if
+>     you accept changes made using the `Track Changes` option? Do you have a
 >     history of those changes?
 >
 > > ## Solution
@@ -88,7 +88,7 @@ collaboration among different people.
 > >     of the old version of the paper. The danger of losing good versions
 > >     often leads to the problematic workflow illustrated in the PhD Comics
 > >     cartoon at the top of this page.
-> >     
+> >
 > > *   Collaborative writing with traditional word processors is cumbersome.
 > >     Either every collaborator has to work on a document sequentially
 > >     (slowing down the process of writing), or you have to send out a

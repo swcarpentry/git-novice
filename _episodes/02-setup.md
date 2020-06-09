@@ -17,7 +17,7 @@ of configurations we will set as we get started with Git:
 
 *   our name and email address,
 *   what our preferred text editor is,
-*   and that we want to use these settings globally (i.e. for every project).
+*   and that we want to use these settings globally (i.e., for every project).
 
 On a command line, Git commands are written as `git verb options`,
 where `verb` is what we actually want to do and `options` is additional optional information which may be needed for the `verb`. So here is how
@@ -37,11 +37,11 @@ which means that any changes pushed to
 another Git host server
 in a later lesson will include this information.
 
-For these lessons, we will be interacting with [GitHub](https://github.com/) and so the email address used should be the same as the one used when setting up your GitHub account. If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private][git-privacy]. 
+For these lessons, we will be interacting with [GitHub](https://github.com/) and so the email address used should be the same as the one used when setting up your GitHub account. If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private][git-privacy].
 
 >## Keeping your email private
 >
->If you elect to use a private email address with GitHub, then use that same email address for the `user.email` value, e.g. `username@users.noreply.github.com` replacing `username` with your GitHub one.
+>If you elect to use a private email address with GitHub, then use that same email address for the `user.email` value, e.g., `username@users.noreply.github.com` replacing `username` with your GitHub one.
 {: .callout}
 
 
@@ -52,8 +52,8 @@ For these lessons, we will be interacting with [GitHub](https://github.com/) and
 > Different operating systems use different character(s) to represent the end of a line.
 > (You may also hear these referred to as newlines or line breaks.)
 > Because Git uses these characters to compare files,
-> it may cause unexpected issues when editing a file on different machines. 
-> Though it is beyond the scope of this lesson, you can read more about this issue 
+> it may cause unexpected issues when editing a file on different machines.
+> Though it is beyond the scope of this lesson, you can read more about this issue
 > [on this GitHub page](https://help.github.com/articles/dealing-with-line-endings/).
 {: .callout}
 >
@@ -74,7 +74,7 @@ For these lessons, we will be interacting with [GitHub](https://github.com/) and
 > $ git config --global core.autocrlf true
 > ~~~
 > {: .language-bash}
-> 
+>
 
 
 Dracula also has to set his favorite text editor, following this table:
