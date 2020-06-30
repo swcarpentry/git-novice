@@ -36,9 +36,7 @@ needs to go to [https://github.com/notifications](https://github.com/notificatio
 Once there she can accept access to the Owner's repo.
 
 Next, the Collaborator needs to download a copy of the Owner's repository to her
- machine. This is called "cloning a repo". 
-Important: do not place this copy inside your own planets folder!
-Navigate to the `Desktop` folder first.
+machine. This is called "cloning a repo".
 
 To clone the Owner's repo into
 her `Desktop` folder, the Collaborator enters:
@@ -49,6 +47,11 @@ $ git clone https://github.com/vlad/planets.git ~/Desktop/vlad-planets
 {: .language-bash}
 
 Replace 'vlad' with the Owner's username.
+
+If you choose to clone without the clone path
+(`~/Desktop/vlad-planets`) specified at the end,
+you will clone inside your own planets folder!
+Make sure to navigate to the Desktop folder first.
 
 ![After Creating Clone of Repository](../fig/github-collaboration.svg)
 
