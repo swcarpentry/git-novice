@@ -93,7 +93,7 @@ $ git status
 ~~~
 On branch master
 
-Initial commit
+No commits yet
 
 nothing to commit (create/copy files and use "git add" to track)
 ~~~
