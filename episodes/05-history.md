@@ -177,7 +177,7 @@ index df0654a..93a3e13 100644
 {: .output}
 
 All right! So
-we can save changes to files and see what we've changed—now how
+we can save changes to files and see what we've changed. Now, how
 can we restore older versions of things?
 Let's suppose we change our mind about the last update to
 `mars.txt` (the "ill-considered change").
