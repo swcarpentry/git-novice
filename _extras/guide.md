@@ -278,6 +278,18 @@ particular set of files in `.gitignore`.
 
 ## [Open Science]({{ page.root }}{% link _episodes/10-open.md %})
 
+We teach about Open Science in this episode because Open Science is a relevant 
+framework while using Git and sharing code with others. 
+Pausing to talk about this topic is important for the learner to be able to grasp 
+the benefits of sharing code as a scientist. 
+
+It might be helpful if the instructor has a few personal example to share. It's always 
+interesting to mention if there are services promoting Open Science (ie. The Library, the 
+Research Office) at the institution the Software Carpentry training takes place.
+
+Depending on the audience, the discussion will flow. Be aware that there might be strong 
+and contradicting opinions about the topic of Open Science.
+
 ## [Licensing]({{ page.root }}{% link _episodes/11-licensing.md %})
 
 We teach about licensing because questions about who owns what, or can use
@@ -291,6 +303,14 @@ software itself. Creative Commons [recommends][cc-faq-software] a
 software-specific license instead.
 
 ## [Citation]({{ page.root }}{% link _episodes/12-citation.md %})
+
+We teach about citation because it is important to give learners the tools 
+to respect the licensing chosen for the code.  Adding a citation file that 
+includes a suggested citation makes it easier for people to 
+use content in the repository. Since they know exactly how they can use it and 
+how to cite it, they are more likely to use it.  Without this information, people
+are more likely to either look for a repository that includes this information, or
+use the content in the repository without citing it at all!
 
 ## [Hosting]({{ page.root }}{% link _episodes/13-hosting.md %})
 
