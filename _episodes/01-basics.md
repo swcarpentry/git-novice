@@ -35,7 +35,7 @@ think of it as a recording of your progress: you can rewind to start at the base
 document and play back each change you made, eventually arriving at your
 more recent version.
 
-![Changes Are Saved Sequentially]({{ page.root }}/fig/play-changes_GREENE_CONTRIB_01.svg)
+![Changes Are Saved Sequentially]https://github.com/agreene71/git-novice/blob/a-greene-checkout-edit-01/fig/play-changes_GREENE_CONTRIB_01.svg
 
 Once you think of changes as separate from the document itself, you
 can then think about "playing back" different sets of changes on the base document, ultimately
