@@ -42,12 +42,12 @@ can then think about "playing back" different sets of changes on the base docume
 resulting in different versions of that document. For example, two users can make independent
 sets of changes on the same document. 
 
-![Different Versions Can be Saved]https://github.com/agreene71/git-novice/blob/a-greene-checkout-edit-01/fig/versions_GREENE_CONTRIB_01.svg
+![Different Versions Can be Saved](https://github.com/agreene71/git-novice/blob/a-greene-checkout-edit-01/fig/versions_GREENE_CONTRIB_01.svg)
 
 Unless multiple users make changes to the same section of the document - a conflict - you can 
 incorporate two sets of changes into the same base document.
 
-![Multiple Versions Can be Merged]https://github.com/agreene71/git-novice/blob/a-greene-checkout-edit-01/fig/merge_GREENE_CONTRIB_01.svg
+![Multiple Versions Can be Merged](https://github.com/agreene71/git-novice/blob/a-greene-checkout-edit-01/fig/merge_GREENE_CONTRIB_01.svg)
 
 A version control system is a tool that keeps track of these changes for us,
 effectively creating different versions of our files. It allows us to decide
