@@ -282,8 +282,9 @@ If we break it down into pieces:
 2.  The second line tells exactly which versions of the file
     Git is comparing;
     `df0654a` and `315bf3a` are unique computer-generated labels for those versions.
-3.  The `i` and `w` (your version might say `a` and `b` if using an
-    older version of Git) refer to the `index` and `working` copies
+3.  The `i` and `w` (your version might say `a` and `b`
+    depending on settings; see note below) refer to the `index`
+    and `working` copies
     of the files. The "working" version is the one that we have changed,
     while the "index" is the version that Git already knows about.
 4.  The third and fourth lines once again show the name of the file being changed.
@@ -291,6 +292,16 @@ If we break it down into pieces:
     and the lines on which they occur.
     In particular,
     the `+` marker in the first column shows where we added a line.
+
+> ## A note on `diff` output
+>
+> If your `diff.mnemonicPrefix` Git configuration variable
+> is set to false, in place of the `i/` and `w/` prefixes in the
+> `diff` header, you will likely see `a/` and `b/`, which do not
+> have any intrinsic meaning. See the `git-config`
+> [manual page](https://git-scm.com/docs/git-config#Documentation/git-config.txt-diffmnemonicPrefix)
+> for more details.
+{: .callout}
 
 After reviewing our change, it's time to commit it:
 
