@@ -238,10 +238,11 @@ GitHub, though, this command would download them to our local repository.
 > >
 > > The right-most button lets you view all of the files in the repository at the time of that 
 > > commit. To do this in the shell, we'd need to checkout the repository at that particular time. 
-> > We can do this with ```git checkout ID``` where ID is the identifier of the commit we want to
+> > We can do this with `git switch --detach ID` 
+> > (or `git checkout ID`, using the older command) where ID is the identifier of the commit we want to
 > > look at. If we do this, we need to remember that we are in
-> > a "detached HEAD" state, and we need to put the repository back 
-> > to the right state afterwards!
+> > a "detached HEAD" state, and we need to put the repository back
+> > to the right state afterwards with `git switch master` (or `git checkout master`)!
 > {: .solution}
 {: .challenge}
 
