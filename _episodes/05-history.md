@@ -321,6 +321,9 @@ $ git restore mars.txt   # git checkout HEAD mars.txt
 > This ambiguity with the `checkout` action is part of the reason the
 > `restore` action was introduced (and is the default) in newer
 > versions of Git.
+>
+> If you want to detach the HEAD using the newer syntax, the correct command
+> to use is `git switch --detach <commit ID>`.
 {: .callout}
 
 It's important to remember that if we want to undo a change,
