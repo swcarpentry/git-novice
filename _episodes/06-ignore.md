@@ -33,11 +33,10 @@ $ git status
 On branch master
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-
-	a.dat
-	b.dat
-	c.dat
-	results/
+        a.dat
+        b.dat
+        c.dat
+        results/
 
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
@@ -79,8 +78,7 @@ $ git status
 On branch master
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-
-	.gitignore
+        .gitignore
 
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
@@ -101,7 +99,7 @@ $ git status
 
 ~~~
 On branch master
-nothing to commit, working directory clean
+nothing to commit, working tree clean
 ~~~
 {: .output}
 
@@ -115,7 +113,9 @@ $ git add a.dat
 ~~~
 The following paths are ignored by one of your .gitignore files:
 a.dat
-Use -f if you really want to add them.
+hint: Use -f if you really want to add them.
+hint: Turn this message off by running
+hint: "git config advice.addIgnoredFile false"
 ~~~
 {: .output}
 
@@ -132,14 +132,13 @@ $ git status --ignored
 ~~~
 On branch master
 Ignored files:
- (use "git add -f <file>..." to include in what will be committed)
-
+  (use "git add -f <file>..." to include in what will be committed)
         a.dat
         b.dat
         c.dat
         results/
 
-nothing to commit, working directory clean
+nothing to commit, working tree clean
 ~~~
 {: .output}
 
