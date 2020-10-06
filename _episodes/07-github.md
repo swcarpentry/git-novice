@@ -129,12 +129,12 @@ $ git push origin master
 {: .language-bash}
 
 ~~~
-Enumerating objects: 16, done.
-Counting objects: 100% (16/16), done.
-Delta compression using up to 8 threads.
-Compressing objects: 100% (11/11), done.
-Writing objects: 100% (16/16), 1.45 KiB | 372.00 KiB/s, done.
-Total 16 (delta 2), reused 0 (delta 0)
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (12/12), 1.09 KiB | 371.00 KiB/s, done.
+Total 12 (delta 2), reused 0 (delta 0), pack-reused 0
 remote: Resolving deltas: 100% (2/2), done.
 To https://github.com/vlad/planets.git
  * [new branch]      master -> master
@@ -209,7 +209,7 @@ $ git pull origin master
 ~~~
 From https://github.com/vlad/planets
  * branch            master     -> FETCH_HEAD
-Already up-to-date.
+Already up to date.
 ~~~
 {: .output}
 
@@ -238,9 +238,10 @@ GitHub, though, this command would download them to our local repository.
 > >
 > > The right-most button lets you view all of the files in the repository at the time of that 
 > > commit. To do this in the shell, we'd need to checkout the repository at that particular time. 
-> > We can do this with ```git checkout ID``` where ID is the identifier of the commit we want to 
-> > look at. If we do this, we need to remember to put the repository back to the right state 
-> > afterwards!
+> > We can do this with ```git checkout ID``` where ID is the identifier of the commit we want to
+> > look at. If we do this, we need to remember that we are in
+> > a "detached HEAD" state, and we need to put the repository back 
+> > to the right state afterwards!
 > {: .solution}
 {: .challenge}
 
