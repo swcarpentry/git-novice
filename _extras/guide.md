@@ -182,6 +182,25 @@ particular set of files in `.gitignore`.
     which is `git push -u origin master`. Learners using syntax from GitHub,
     `git push -u origin master`, will have slightly different output, including
     the line `Branch master set up to track remote branch master from origin by rebasing.`
+    
+ *  Users of newer versions of Git will see a warning when running `git pull`: 
+ 
+    ```
+    warning: Pulling without specifying how to reconcile divergent branches is
+    discouraged. You can squelch this message by running one of the following
+    commands sometime before your next pull:
+      git config pull.rebase false  # merge (the default strategy)
+      git config pull.rebase true   # rebase
+      git config pull.ff only       # fast-forward only
+    You can replace "git config" with "git config --global" to set a default
+    preference for all repositories. You can also pass --rebase, --no-rebase,
+    or --ff-only on the command line to override the configured default per
+    invocation.
+    ```
+
+    This is an informational warning only, and there was no change to Git's default 
+    behavior. Folks who are bothered by the warning can run `git config pull.rebase false` 
+    (as noted) to supress it.         
 
 ## [Collaborating]({{ page.root }}{% link _episodes/08-collab.md %})
 
