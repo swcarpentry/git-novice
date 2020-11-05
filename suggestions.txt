@@ -1,0 +1,59 @@
+
+The followings are suggested
+
+
+1) The font size of git bash should be set big enough by
+   right clicking git bash window -> Options -> Text -> Select... -> Size -> 20
+
+
+2) For Microsoft Windows system, C, D, E disks are accessible by commanding
+   cd /c/
+   cd /d/
+   cd /e/
+   respectively, in the git bash.
+
+
+3) To open one or two normal windows to list the files in the working directories normally,
+   so that participants can watch some magic shows.
+   When versions are changed back and forth, some files may appear or disappear.
+   Similar situation when branches are switched.
+   Then participants may have a better and intuitive understanding what happening.
+   It will be better to open certain files, like mars.txt, with one's favourite editor,
+   like Code:Blocks, by clicking them, for editting, as they usually do.
+
+
+4) Since one can easily meet trouble in setting up the favourite editor in git and most
+   participants never used vi or vim before, it would be better to avoid vi and vim during
+   the course. Alternatives are
+
+   4.1) Whenever issue a commit command, always use -m option and supply such a message in
+        the command line. Luckily only short messages are needed for the course. However at
+        a later time, participants should either setup favourite editor or learn to use vi
+        and/or vim.
+
+   4.2) Use echo command and stream redirection to append one line to an existing file, like
+        echo "There an apple and Newton in Mars" >> mars.txt
+        echo '!@#$%^&*()_+ "this is important."' >> mars.txt
+
+   4.3) Big text files can be editted by using method in 3).
+
+
+5) Talk about using stream rediction to collect results from git log, like
+   git log > tmp01.txt
+   then use a favourite editor to explore the file for interested information.
+
+
+6) Branching should be addressed
+
+   6.0) git clone a.new.git.repository
+        then go to the directory
+   6.1) git checkout -b a.new.branch
+   6.2) git checkout master
+   6.3) git checkout a.new.branch
+   6.4) after some changes and commits
+        git push origin a.new.branch
+   6.5) git checkout master
+   6.6) git merge a.new.branch
+   6.7) git brach -d a.new.branch
+   6.8) git push --delete origin a.new.branch
+
