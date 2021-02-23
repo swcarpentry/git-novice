@@ -726,9 +726,9 @@ repository (`git commit`):
 > {: .solution}
 {: .challenge}
 
-> ## `bio` Repository
+> ## Git repository for `bio`
 >
-> * Create a new Git repository on your computer called `bio`.
+> * Create a new directory called `bio` and create a Git repository there.
 > * Write a three-line biography for yourself in a file called `me.txt`,
 > commit your changes
 > * Modify one line, add a fourth line
@@ -744,7 +744,7 @@ repository (`git commit`):
 > > ~~~
 > > {: .language-bash}
 > >
-> > Create a new folder called `bio` and 'move' into it:
+> > Create a new directory called `bio` and 'move' into it:
 > >
 > > ~~~
 > > $ mkdir bio
