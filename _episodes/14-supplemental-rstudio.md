@@ -22,14 +22,14 @@ development of the project over time, to be able to revert to previous
 versions, and to collaborate with others, we version control the Rstudio
 project with Git. To get started using Git in RStudio, we create a new project:
 
-![](../fig/RStudio_screenshot_newproject.png)
+![RStudio window after new project is created with large arrow pointing to vertical Git menu bar.](../fig/RStudio_screenshot_newproject.png)
 
 This will open a dialog asking us how we want to create the project. We have
 some options here. Let's say that we want to use RStudio with the planets
 repository that we already made. Since that repository lives in a directory on
 our computer, we choose the option "Existing Directory":
 
-![](../fig/RStudio_screenshot_existingdirectory.png)
+![RStudio screenshot showing New Project dialog window with "Create project from existing directory" selected](../fig/RStudio_screenshot_existingdirectory.png)
 
 > ## Do You See a "Version Control" Option?
 >
@@ -87,7 +87,7 @@ about Pluto:
 Once we have saved our edited files, we can use RStudio to commit the changes
 by clicking on "Commit..." in the Git menu:
 
-![](../fig/RStudio_screenshot_commit.png)
+![RStudio screenshot showing the Git menu dropdown with "Commit..." selected](../fig/RStudio_screenshot_commit.png)
 
 This will open a dialogue where we can select which files to commit (by
 checking the appropriate boxes in the "Staged" column), and enter a commit
