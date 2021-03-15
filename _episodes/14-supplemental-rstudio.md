@@ -102,7 +102,7 @@ The changes can be pushed by selecting "Push Branch" from the Git menu. There
 are also options to pull from the remote repository, and to view the commit
 history:
 
-![](../fig/RStudio_screenshot_history.png)
+![RStudio screenshot showing the git menu dropdown with "History" selected](../fig/RStudio_screenshot_history.png)
 
 > ## Are the Push/Pull Commands Grayed Out?
 >
