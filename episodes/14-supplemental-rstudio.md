@@ -102,7 +102,7 @@ The changes can be pushed by selecting "Push Branch" from the Git menu. There
 are also options to pull from the remote repository, and to view the commit
 history:
 
-![](../fig/RStudio_screenshot_history.png)
+![RStudio screenshot showing the git menu dropdown with "History" selected](../fig/RStudio_screenshot_history.png)
 
 > ## Are the Push/Pull Commands Grayed Out?
 >
@@ -121,7 +121,7 @@ RStudio creates a number of files that it uses to keep track of a project. We
 often don't want to track these, in which case we add them to our `.gitignore`
 file:
 
-![](../fig/RStudio_screenshot_gitignore.png)
+![RStudio screenshot showing .gitignore open in the editor pane with the files .Rproj.user, .Rhistory, .RData, and \*.Rproj added to the end](../fig/RStudio_screenshot_gitignore.png)
 
 > ## Tip: versioning disposable output
 >
