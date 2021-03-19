@@ -409,6 +409,13 @@ moving backward and forward in time becomes much easier.
 > 4. Type in the new commit message.
 >
 > 5. Save and close
+> 
+>
+> > ## Solution
+> >
+> > You may use `git log` to look up the commit ID with a summary of the commit messages, 
+> > or `git show` to see the commit messages and the changes you made in athe older commits. 
+> {: .solution}
 {: .challenge}
 
 > ## Understanding Workflow and History
