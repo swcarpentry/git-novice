@@ -390,16 +390,19 @@ moving backward and forward in time becomes much easier.
 
 > ## Reverting a Commit
 >
-> Jennifer is collaborating on her Python script with her colleagues and
-> realizes her last commit to the project's repository contained an error and
-> she wants to undo it.  `git revert [erroneous commit ID]` will create a new 
-> commit that reverses Jennifer's erroneous commit. Therefore `git revert` is
-> different to `git checkout [commit ID]` because `git checkout` returns the
-> files within the local repository to a previous state, whereas `git revert`
-> reverses changes committed to the local and project repositories.  
+> Jennifer is collaborating with colleagues on her Python script.  She
+> realizes her last commit to the project's repository contained an error, and 
+> wants to undo it.  Jennifer wants to undo correctly so everyone in the project's
+> repository gets the correct change. The command `git revert [erroneous commit ID]` will create a 
+> new commit that reverses the erroneous commit.  
+> &nbsp;   
+> The command `git revert` is
+> different from `git checkout [commit ID]` because `git checkout` returns the
+> files not yet committed within the local repository to a previous state, whereas `git revert`
+> reverses changes committed to the local and project repositories.   
+> &nbsp;  
 > Below are the right steps and explanations for Jennifer to use `git revert`,
-> what is the missing command?
->
+> what is the missing command?  
 > 1. `________ # Look at the git history of the project to find the commit ID`
 >
 > 2. Copy the ID (the first few characters of the ID, e.g. 0b1d055).
@@ -409,6 +412,16 @@ moving backward and forward in time becomes much easier.
 > 4. Type in the new commit message.
 >
 > 5. Save and close
+> 
+> 
+> > ## Solution
+> > 
+> > The command `git log` lists project history with commit IDs.  
+> > 
+> > The command `git show HEAD~1` shows changes made at the commit one before `HEAD` and lists
+> > the commit ID; however, Jennifer should double-check it is the correct commit, and no one
+> > else has committed changes to the repository.
+> {: .solution}
 {: .challenge}
 
 > ## Understanding Workflow and History
