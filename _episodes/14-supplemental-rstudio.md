@@ -46,17 +46,17 @@ our computer, we choose the option "Existing Directory":
 > - `which git` (Mac, Linux)
 > - `where git` (Windows)
 >
-> If there is no version of Git on your computer, 
-please follow the 
-[Git installation 
+> If there is no version of Git on your computer,
+please follow the
+[Git installation
 instructions](https://swcarpentry.github.io/git-novice/setup.html)
-> in the setup of this lesson to install Git now. Next open your shell or command prompt 
+> in the setup of this lesson to install Git now. Next open your shell or command prompt
 > and type `which git` (Mac, Linux), or `where git` (Windows).
 > Copy the path to the git executable.
 >
 > e.g. On one Windows computer which had GitHub Desktop installed on it, the path was:
 > `C:/Users/UserName/AppData/Local/GitHubDesktop/app-1.1.1/resources/app/git/cmd/git.exe`
-> 
+>
 > NOTE: The path on your computer will be somewhat different.
 > ### Tell RStudio where to find GitHub
 > In RStudio, go to the `Tools` menu > `Global Options` > `Git/SVN` and then
@@ -109,7 +109,7 @@ history:
 > Grayed out Push/Pull commands generally mean that RStudio doesn't know the
 > location of your remote repository (e.g. on GitHub). To fix this, open a
 > terminal to the repository and enter the command: `git push -u origin
-> master`. Then restart RStudio.
+> main`. Then restart RStudio.
 {: .callout}
 
 If we click on "History", we can see a graphical version of what `git log`
@@ -142,7 +142,7 @@ file:
 > > ```
 > > dir.create("./graphs")
 > > ```
-> > Then open up the `.gitignore` file from the righ-hand panel of Rstudio and add 
+> > Then open up the `.gitignore` file from the righ-hand panel of Rstudio and add
 > > `graphs/` to the list of files to ignore.
 > > {: . shell}
 > {: .solution}
