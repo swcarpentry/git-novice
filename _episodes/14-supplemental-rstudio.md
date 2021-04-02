@@ -22,7 +22,7 @@ development of the project over time, to be able to revert to previous
 versions, and to collaborate with others, we version control the Rstudio
 project with Git. To get started using Git in RStudio, we create a new project:
 
-![RStudio window after new project is created with large arrow pointing to vertical Git menu bar.](../fig/RStudio_screenshot_newproject.png)
+![RStudio screenshot showing the file menu dropdown with "New Project..." selected](../fig/RStudio_screenshot_newproject.png)
 
 This will open a dialog asking us how we want to create the project. We have
 some options here. Let's say that we want to use RStudio with the planets
@@ -76,7 +76,7 @@ repository. Notice the vertical "Git" menu in the menu bar. RStudio has
 recognized that the current directory is a Git repository, and gives us a
 number of tools to use Git:
 
-![](../fig/RStudio_screenshot_afterclone.png)
+![RStudio window after new project is created with large arrow pointing to vertical Git menu bar.](../fig/RStudio_screenshot_afterclone.png)
 
 To edit the existing files in the repository, we can click on them in the
 "Files" panel on the lower right. Now let's add some additional information
