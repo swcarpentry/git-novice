@@ -98,6 +98,10 @@ Note that we didn't have to create a remote called `origin`: Git uses this
 name by default when we clone a repository.  (This is why `origin` was a
 sensible choice earlier when we were setting up remotes by hand.)
 
+Take a look at the Owner’s repository on GitHub again, and you should be 
+able to see the new commit made by the Collaborator. You may need to refresh
+your browser to see the new commit.
+
 > ## Some more about remotes
 >
 > In this episode and the previous one, our local repository has had
@@ -129,10 +133,6 @@ sensible choice earlier when we were setting up remotes by hand.)
 > * `git remote rename [oldname] [newname]` changes the local alias by which a remote 
 > is known - its name. For example, one could use this to change `upstream` to `fred`.
 {: .callout}
-
-Take a look to the Owner's repository on its GitHub website now (maybe you need
-to refresh your browser.) You should be able to see the new commit made by the
-Collaborator.
 
 To download the Collaborator's changes from GitHub, the Owner now enters:
 
