@@ -261,6 +261,35 @@ nothing to commit, working directory clean
 > {: .solution}
 {: .challenge}
 
+> ## Ignoring all data Files in the repository
+>
+> Let us assume you have many `.dat` files in different subdirectories of your repository.
+> For example, you might have:
+> 
+> ~~~
+> results/a.dat
+> experiment_1/b.dat
+> experiment_2/c.dat
+> experiment_2/variation_1/d.dat
+> ~~~
+> {: .language-bash}
+> 
+> How do you ignore all the `.dat` files, without explicitly listing the names of the corresponding folders?
+
+> > ## Solution
+> >
+> > In the `.gitignore` file, write:
+> > 
+> > ~~~
+> > **/*.dat               
+> > ~~~
+> > {: .output}
+> >
+> > This will ignore all the `.dat` files, regardless of their position in the directory tree. 
+> > You can still include some specific exception with the exclamation point operator.
+> {: .solution}
+{: .challenge}
+
 > ## The Order of Rules
 >
 > Given a `.gitignore` file with the following contents:
