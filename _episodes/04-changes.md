@@ -83,9 +83,8 @@ On branch master
 No commits yet
 
 Untracked files:
-   (use "git add <file>..." to include in what will be committed)
-
-	mars.txt
+  (use "git add <file>..." to include in what will be committed)
+        mars.txt
 
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
@@ -114,9 +113,7 @@ No commits yet
 
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
-
-	new file:   mars.txt
-
+        new file:   mars.txt
 ~~~
 {: .output}
 
@@ -131,7 +128,7 @@ $ git commit -m "Start notes on Mars as a base"
 {: .language-bash}
 
 ~~~
-[master (root-commit) f22b25e] Start notes on Mars as a base
+[master (root-commit) 097d183] Start notes on Mars as a base
  1 file changed, 1 insertion(+)
  create mode 100644 mars.txt
 ~~~
@@ -141,7 +138,7 @@ When we run `git commit`,
 Git takes everything we have told it to save by using `git add`
 and stores a copy permanently inside the special `.git` directory.
 This permanent copy is called a [commit]({{ page.root }}{% link reference.md %}#commit)
-(or [revision]({{ page.root }}{% link reference.md %}#revision)) and its short identifier is `f22b25e`. Your commit may have another identifier.
+(or [revision]({{ page.root }}{% link reference.md %}#revision)) and its short identifier is `097d183`. Your commit may have another identifier.
 
 We use the `-m` flag (for "message")
 to record a short, descriptive, and specific comment that will help us remember later on what we did and why.
@@ -162,7 +159,7 @@ $ git status
 
 ~~~
 On branch master
-nothing to commit, working directory clean
+nothing to commit, working tree clean
 ~~~
 {: .output}
 
@@ -176,9 +173,9 @@ $ git log
 {: .language-bash}
 
 ~~~
-commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
+commit 097d1832c48997a846ee1a0628dc3d68e2f1094f (HEAD -> master)
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
-Date:   Thu Aug 22 09:51:46 2013 -0400
+Date:   Mon Oct 5 16:55:16 2020 -0600
 
     Start notes on Mars as a base
 ~~~
@@ -230,13 +227,23 @@ $ git status
 On branch master
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	modified:   mars.txt
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   mars.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
 {: .output}
+
+> ## Note, new output in `git` version 2.23
+>
+> If you are using a version of Git older than 2.23 (you can check by
+> running `git --version`) you'll probably see `git checkout --` in the above
+> output instead of `git restore`. If so, worry not! It only means that your
+> Git version is slightly out of date, but that's okay, everything will
+> still work and we'll instruct you if you need to change any commands. If
+> your version *is* out of date, please keep this notice in mind throughout
+> the section when comparing your output.
+{: .callout}
 
 The last line is the key phrase:
 "no changes added to commit".
@@ -255,10 +262,10 @@ $ git diff
 {: .language-bash}
 
 ~~~
-diff --git a/mars.txt b/mars.txt
+diff --git i/mars.txt w/mars.txt
 index df0654a..315bf3a 100644
---- a/mars.txt
-+++ b/mars.txt
+--- i/mars.txt
++++ w/mars.txt
 @@ -1 +1,2 @@
  Cold and dry, but everything is my favorite color
 +The two moons may be a problem for Wolfman
@@ -275,11 +282,26 @@ If we break it down into pieces:
 2.  The second line tells exactly which versions of the file
     Git is comparing;
     `df0654a` and `315bf3a` are unique computer-generated labels for those versions.
-3.  The third and fourth lines once again show the name of the file being changed.
-4.  The remaining lines are the most interesting, they show us the actual differences
+3.  The `i` and `w` (your version might say `a` and `b`
+    depending on settings; see note below) refer to the `index`
+    and `working` copies
+    of the files. The "working" version is the one that we have changed,
+    while the "index" is the version that Git already knows about.
+4.  The third and fourth lines once again show the name of the file being changed.
+5.  The remaining lines are the most interesting, they show us the actual differences
     and the lines on which they occur.
     In particular,
     the `+` marker in the first column shows where we added a line.
+
+> ## A note on `diff` output
+>
+> If your `diff.mnemonicPrefix` Git configuration variable
+> is set to false, in place of the `i/` and `w/` prefixes in the
+> `diff` header, you will likely see `a/` and `b/`, which do not
+> have any intrinsic meaning. See the `git-config`
+> [manual page](https://git-scm.com/docs/git-config#Documentation/git-config.txt-diffmnemonicPrefix)
+> for more details.
+{: .callout}
 
 After reviewing our change, it's time to commit it:
 
@@ -293,9 +315,8 @@ $ git status
 On branch master
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	modified:   mars.txt
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   mars.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
@@ -312,7 +333,7 @@ $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
 {: .language-bash}
 
 ~~~
-[master 34961b1] Add concerns about effects of Mars' moons on Wolfman
+[master 3594896] Add concerns about effects of Mars' moons on Wolfman
  1 file changed, 1 insertion(+)
 ~~~
 {: .output}
@@ -381,10 +402,10 @@ $ git diff
 {: .language-bash}
 
 ~~~
-diff --git a/mars.txt b/mars.txt
+diff --git i/mars.txt w/mars.txt
 index 315bf3a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
+--- i/mars.txt
++++ w/mars.txt
 @@ -1,2 +1,3 @@
  Cold and dry, but everything is my favorite color
  The two moons may be a problem for Wolfman
@@ -417,10 +438,10 @@ $ git diff --staged
 {: .language-bash}
 
 ~~~
-diff --git a/mars.txt b/mars.txt
+diff --git c/mars.txt i/mars.txt
 index 315bf3a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
+--- c/mars.txt
++++ i/mars.txt
 @@ -1,2 +1,3 @@
  Cold and dry, but everything is my favorite color
  The two moons may be a problem for Wolfman
@@ -439,7 +460,7 @@ $ git commit -m "Discuss concerns about Mars' climate for Mummy"
 {: .language-bash}
 
 ~~~
-[master 005937f] Discuss concerns about Mars' climate for Mummy
+[master 378bb77] Discuss concerns about Mars' climate for Mummy
  1 file changed, 1 insertion(+)
 ~~~
 {: .output}
@@ -453,7 +474,7 @@ $ git status
 
 ~~~
 On branch master
-nothing to commit, working directory clean
+nothing to commit, working tree clean
 ~~~
 {: .output}
 
@@ -465,21 +486,21 @@ $ git log
 {: .language-bash}
 
 ~~~
-commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
+commit 378bb7742c4bc88b4920aa273c1f4f39bbc4c946 (HEAD -> master)
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
-Date:   Thu Aug 22 10:14:07 2013 -0400
+Date:   Mon Oct 5 17:15:52 2020 -0600
 
     Discuss concerns about Mars' climate for Mummy
 
-commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
+commit 359489683ef4f2c4d81e687cfac2c96623236ed6
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
-Date:   Thu Aug 22 10:07:21 2013 -0400
+Date:   Mon Oct 5 17:13:22 2020 -0600
 
     Add concerns about effects of Mars' moons on Wolfman
 
-commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
+commit 097d1832c48997a846ee1a0628dc3d68e2f1094f
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
-Date:   Thu Aug 22 09:51:46 2013 -0400
+Date:   Mon Oct 5 16:55:16 2020 -0600
 
     Start notes on Mars as a base
 ~~~
@@ -521,11 +542,11 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > {: .language-bash}
 >
 > ~~~
-> commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
+> commit 378bb7742c4bc88b4920aa273c1f4f39bbc4c946 (HEAD -> master)
 > Author: Vlad Dracula <vlad@tran.sylvan.ia>
-> Date:   Thu Aug 22 10:14:07 2013 -0400
->
->    Discuss concerns about Mars' climate for Mummy
+> Date:   Mon Oct 5 17:15:52 2020 -0600
+> 
+>     Discuss concerns about Mars' climate for Mummy
 > ~~~
 > {: .output}
 >
@@ -537,9 +558,9 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > ~~~
 > {: .language-bash}
 > ~~~
-> 005937f Discuss concerns about Mars' climate for Mummy
-> 34961b1 Add concerns about effects of Mars' moons on Wolfman
-> f22b25e Start notes on Mars as a base
+> 378bb77 (HEAD -> master) Discuss concerns about Mars' climate for Mummy
+> 3594896 Add concerns about effects of Mars' moons on Wolfman
+> 097d183 Start notes on Mars as a base
 > ~~~
 > {: .output}
 >
@@ -554,9 +575,9 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > ~~~
 > {: .language-bash}
 > ~~~
-> * 005937f (HEAD -> master) Discuss concerns about Mars' climate for Mummy
-> * 34961b1 Add concerns about effects of Mars' moons on Wolfman
-> * f22b25e Start notes on Mars as a base
+> * 378bb77 (HEAD -> master) Discuss concerns about Mars' climate for > Mummy
+> * 3594896 Add concerns about effects of Mars' moons on Wolfman
+> * 097d183 Start notes on Mars as a base
 > ~~~
 > {: .output}
 {: .callout}

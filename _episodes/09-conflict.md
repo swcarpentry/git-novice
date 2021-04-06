@@ -440,10 +440,10 @@ Conflicts can also be minimized with project management strategies:
 > > On the key line above, Git has conveniently given us commit identifiers
 > > for the two versions of `mars.jpg`. Our version is `HEAD`, and Wolfman's
 > > version is `439dc8c0...`. If we want to use our version, we can use
-> > `git checkout`:
+> > `git restore`:
 > >
 > > ~~~
-> > $ git checkout HEAD mars.jpg
+> > $ git restore mars.jpg   # git checkout HEAD mars.jpg
 > > $ git add mars.jpg
 > > $ git commit -m "Use image of surface instead of sky"
 > > ~~~
@@ -454,11 +454,11 @@ Conflicts can also be minimized with project management strategies:
 > > ~~~
 > > {: .output}
 > >
-> > If instead we want to use Wolfman's version, we can use `git checkout` with
+> > If instead we want to use Wolfman's version, we can use `git restore` with
 > > Wolfman's commit identifier, `439dc8c0`:
 > >
 > > ~~~
-> > $ git checkout 439dc8c0 mars.jpg
+> > $ git restore -s 439dc8c0 mars.jpg   # git checkout 439dc8c0 mars.jpg
 > > $ git add mars.jpg
 > > $ git commit -m "Use image of sky instead of surface"
 > > ~~~
@@ -475,9 +475,9 @@ Conflicts can also be minimized with project management strategies:
 > > image and rename it:
 > >
 > > ~~~
-> > $ git checkout HEAD mars.jpg
+> > $ git restore mars.jpg   # git checkout HEAD mars.jpg
 > > $ git mv mars.jpg mars-surface.jpg
-> > $ git checkout 439dc8c0 mars.jpg
+> > $ git restore -s 439dc8c0 mars.jpg   # git checkout 439dc8c0 mars.jpg
 > > $ mv mars.jpg mars-sky.jpg
 > > ~~~
 > > {: .language-bash}
