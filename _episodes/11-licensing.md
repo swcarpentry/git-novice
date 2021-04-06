@@ -9,6 +9,7 @@ objectives:
 - "Choose a proper license."
 - "Explain differences in licensing and social expectations."
 keypoints:
+- "Add a LICENSE file to a repository to explain how your work can be used by others."
 - "People who incorporate General Public License (GPL'd) software into their own software must make their software also open under the GPL license; most other open licenses do not require this."
 - "The Creative Commons family of licenses allow people to mix and match requirements and restrictions on attribution, creation of derivative works, further sharing, and commercialization."
 - "People who are not lawyers should not try to write licenses from scratch."
