@@ -167,6 +167,26 @@ particular set of files in `.gitignore`.
     repositories in the web and provides a web interface to interact with repos
     they host.
 
+*   Using personal access tokens to authenticate with GitHub from the command line
+    might be confusing for some learners as GitHub has only recently deprecated
+    password authentication. You can point advanced learners interested in the
+    rationale behind the decision by GitHub to [this blog post explaining it][github-access-tokens].
+
+*   Doing a live demo of how a personal access token is generated has the intrinsic
+    disadvantage that the learners can see the token and can therefore get access
+    to your GitHub account by using it. There is a few good strategies to address this
+    issue though:
+
+    *   Immediately revoke the token that you generated after you showed everybody
+        how generating the token works. For the rest of the course, work with a token
+        that you have generated without learners watching (e.g. before the course)
+
+    *   Be even more prudent about this in online teaching, where learners are able
+        to take screenshots.
+
+    Likewise, you should respect the learners privacy and do not look at their screen
+    while they are generating the token.
+
 *   If your learners are advanced enough to be comfortable with SSH, tell them
     they can use keys to authenticate on GitHub instead of passwords, but don't
     try to set this up during class: it takes too long, and is a distraction
@@ -310,6 +330,7 @@ web-hosted private repositories.
 [git-it-electron]: https://github.com/jlord/git-it-electron
 [git-parable]: http://tom.preston-werner.com/2009/05/19/the-git-parable.html
 [github]: https://github.com/
+[github-access-tokens]: https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations
 [github-gui]: https://git-scm.com/downloads/guis
 [github-line-endings]: https://docs.github.com/en/github/using-git/configuring-git-to-handle-line-endings
 [github-line-endings-refresh]: https://docs.github.com/en/github/using-git/configuring-git-to-handle-line-endings#refreshing-a-repository-after-changing-line-endings
