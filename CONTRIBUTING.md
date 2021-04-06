@@ -143,7 +143,7 @@ You can also [reach us by email][contact].
 [github]: https://github.com
 [github-flow]: https://guides.github.com/introduction/flow/
 [github-join]: https://github.com/join
-[how-contribute]: https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github
+[how-contribute]: https://app.egghead.io/playlists/how-to-contribute-to-an-open-source-project-on-github
 [new-issue]: https://github.com/swcarpentry/git-novice/issues/new
 [issues]: https://github.com/swcarpentry/git-novice/issues/
 [repo]: https://github.com/swcarpentry/git-novice/
