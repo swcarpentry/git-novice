@@ -60,13 +60,13 @@ $ git commit -m "Add a line in our home copy"
 {: .language-bash}
 
 ~~~
-[master 5ae9631] Add a line in our home copy
+[main 5ae9631] Add a line in our home copy
  1 file changed, 1 insertion(+)
 ~~~
 {: .output}
 
 ~~~
-$ git push origin master
+$ git push origin main
 ~~~
 {: .language-bash}
 
@@ -79,7 +79,7 @@ Writing objects: 100% (3/3), 331 bytes | 331.00 KiB/s, done.
 Total 3 (delta 2), reused 0 (delta 0)
 remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 To https://github.com/vlad/planets.git
-   29aba7c..dabb4c8  master -> master
+   29aba7c..dabb4c8  main -> main
 ~~~
 {: .output}
 
@@ -110,7 +110,7 @@ $ git commit -m "Add a line in my copy"
 {: .language-bash}
 
 ~~~
-[master 07ebc69] Add a line in my copy
+[main 07ebc69] Add a line in my copy
  1 file changed, 1 insertion(+)
 ~~~
 {: .output}
@@ -118,13 +118,13 @@ $ git commit -m "Add a line in my copy"
 but Git won't let us push it to GitHub:
 
 ~~~
-$ git push origin master
+$ git push origin main
 ~~~
 {: .language-bash}
 
 ~~~
 To https://github.com/vlad/planets.git
- ! [rejected]        master -> master (fetch first)
+ ! [rejected]        main -> main (fetch first)
 error: failed to push some refs to 'https://github.com/vlad/planets.git'
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
@@ -143,7 +143,7 @@ What we have to do is pull the changes from GitHub,
 Let's start by pulling:
 
 ~~~
-$ git pull origin master
+$ git pull origin main
 ~~~
 {: .language-bash}
 
@@ -154,8 +154,8 @@ remote: Compressing objects: 100% (1/1), done.
 remote: Total 3 (delta 2), reused 3 (delta 2), pack-reused 0
 Unpacking objects: 100% (3/3), done.
 From https://github.com/vlad/planets
- * branch            master     -> FETCH_HEAD
-    29aba7c..dabb4c8  master     -> origin/master
+ * branch            main     -> FETCH_HEAD
+    29aba7c..dabb4c8  main     -> origin/main
 Auto-merging mars.txt
 CONFLICT (content): Merge conflict in mars.txt
 Automatic merge failed; fix conflicts and then commit the result.
@@ -223,7 +223,7 @@ $ git status
 {: .language-bash}
 
 ~~~
-On branch master
+On branch main
 All conflicts fixed but you are still merging.
   (use "git commit" to conclude merge)
 
@@ -240,14 +240,14 @@ $ git commit -m "Merge changes from GitHub"
 {: .language-bash}
 
 ~~~
-[master 2abf2b1] Merge changes from GitHub
+[main 2abf2b1] Merge changes from GitHub
 ~~~
 {: .output}
 
 Now we can push our changes to GitHub:
 
 ~~~
-$ git push origin master
+$ git push origin main
 ~~~
 {: .language-bash}
 
@@ -260,7 +260,7 @@ Writing objects: 100% (6/6), 645 bytes | 645.00 KiB/s, done.
 Total 6 (delta 4), reused 0 (delta 0)
 remote: Resolving deltas: 100% (4/4), completed with 2 local objects.
 To https://github.com/vlad/planets.git
-   dabb4c8..2abf2b1  master -> master
+   dabb4c8..2abf2b1  main -> main
 ~~~
 {: .output}
 
@@ -269,7 +269,7 @@ so we don't have to fix things by hand again
 when the collaborator who made the first change pulls again:
 
 ~~~
-$ git pull origin master
+$ git pull origin main
 ~~~
 {: .language-bash}
 
@@ -280,8 +280,8 @@ remote: Compressing objects: 100% (2/2), done.
 remote: Total 6 (delta 4), reused 6 (delta 4), pack-reused 0
 Unpacking objects: 100% (6/6), done.
 From https://github.com/vlad/planets
- * branch            master     -> FETCH_HEAD
-    dabb4c8..2abf2b1  master     -> origin/master
+ * branch            main     -> FETCH_HEAD
+    dabb4c8..2abf2b1  main     -> origin/main
 Updating dabb4c8..2abf2b1
 Fast-forward
  mars.txt | 2 +-
@@ -312,7 +312,7 @@ correctly. If you find yourself resolving a lot of conflicts in a project,
 consider these technical approaches to reducing them:
 
 - Pull from upstream more frequently, especially before starting new work
-- Use topic branches to segregate work, merging to master when complete
+- Use topic branches to segregate work, merging to main when complete
 - Make smaller more atomic commits
 - Where logically appropriate, break large files into smaller ones so that it is
   less likely that two authors will alter the same file simultaneously
@@ -373,7 +373,7 @@ Conflicts can also be minimized with project management strategies:
 > > {: .language-bash}
 > >
 > > ~~~
-> > [master 8e4115c] Add picture of Martian surface
+> > [main 8e4115c] Add picture of Martian surface
 > >  1 file changed, 0 insertions(+), 0 deletions(-)
 > >  create mode 100644 mars.jpg
 > > ~~~
@@ -384,13 +384,13 @@ Conflicts can also be minimized with project management strategies:
 > > When Dracula tries to push, he gets a familiar message:
 > >
 > > ~~~
-> > $ git push origin master
+> > $ git push origin main
 > > ~~~
 > > {: .language-bash}
 > >
 > > ~~~
 > > To https://github.com/vlad/planets.git
-> >  ! [rejected]        master -> master (fetch first)
+> >  ! [rejected]        main -> main (fetch first)
 > > error: failed to push some refs to 'https://github.com/vlad/planets.git'
 > > hint: Updates were rejected because the remote contains work that you do
 > > hint: not have locally. This is usually caused by another repository pushing
@@ -403,7 +403,7 @@ Conflicts can also be minimized with project management strategies:
 > > We've learned that we must pull first and resolve any conflicts:
 > >
 > > ~~~
-> > $ git pull origin master
+> > $ git pull origin main
 > > ~~~
 > > {: .language-bash}
 > >
@@ -411,14 +411,14 @@ Conflicts can also be minimized with project management strategies:
 > > a message like this:
 > >
 > > ~~~
-> > $ git pull origin master
+> > $ git pull origin main
 > > remote: Counting objects: 3, done.
 > > remote: Compressing objects: 100% (3/3), done.
 > > remote: Total 3 (delta 0), reused 0 (delta 0)
 > > Unpacking objects: 100% (3/3), done.
 > > From https://github.com/vlad/planets.git
-> >  * branch            master     -> FETCH_HEAD
-> >    6a67967..439dc8c  master     -> origin/master
+> >  * branch            main     -> FETCH_HEAD
+> >    6a67967..439dc8c  main     -> origin/main
 > > warning: Cannot merge binary files: mars.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)
 > > Auto-merging mars.jpg
 > > CONFLICT (add/add): Merge conflict in mars.jpg
@@ -450,7 +450,7 @@ Conflicts can also be minimized with project management strategies:
 > > {: .language-bash}
 > >
 > > ~~~
-> > [master 21032c3] Use image of surface instead of sky
+> > [main 21032c3] Use image of surface instead of sky
 > > ~~~
 > > {: .output}
 > >
@@ -465,7 +465,7 @@ Conflicts can also be minimized with project management strategies:
 > > {: .language-bash}
 > >
 > > ~~~
-> > [master da21b34] Use image of sky instead of surface
+> > [main da21b34] Use image of sky instead of surface
 > > ~~~
 > > {: .output}
 > >
@@ -493,7 +493,7 @@ Conflicts can also be minimized with project management strategies:
 > > {: .language-bash}
 > >
 > > ~~~
-> > [master 94ae08c] Use two images: surface and sky
+> > [main 94ae08c] Use two images: surface and sky
 > >  2 files changed, 0 insertions(+), 0 deletions(-)
 > >  create mode 100644 mars-sky.jpg
 > >  rename mars.jpg => mars-surface.jpg (100%)
@@ -537,11 +537,11 @@ Conflicts can also be minimized with project management strategies:
 > >
 > > |order|action . . . . . . |command . . . . . . . . . . . . . . . . . . . |
 > > |-----|-------------------|----------------------------------------------|
-> > |1    | Update local      | `git pull origin master`                     |
+> > |1    | Update local      | `git pull origin main`                     |
 > > |2    | Make changes      | `echo 100 >> numbers.txt`                    |
 > > |3    | Stage changes     | `git add numbers.txt`                        |
 > > |4    | Commit changes    | `git commit -m "Add 100 to numbers.txt"`     |
-> > |5    | Update remote     | `git push origin master`                     |
+> > |5    | Update remote     | `git push origin main`                     |
 > > |6    | Celebrate!        | `AFK`                                        |
 > >
 > {: .solution}
