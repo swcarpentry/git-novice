@@ -118,6 +118,22 @@ $ git config --list
 You can change your configuration as many times as you want: use the
 same commands to choose another editor or update your email address.
 
+> ## Default Branch Name
+> 
+> Source file changes are associated with a "branch." By default, Git will create a branch called `master` 
+> when you create a new repository with `git init` (as explained in the next Episode). This term evokes 
+> the racist practice of human slavery and the software development community has moved to adopt 
+> more inclusive language. Notably, new repositories created through GitHub use `main` as the default
+> branch name.
+>
+> With Git versions 2.28 and higher, you can set a different name for the initial branch. To set main as 
+> the default branch name do:
+>
+> ~~~
+> $ git config --global init.defaultBranch main
+> ~~~
+> {: .language-bash}
+
 > ## Proxy
 >
 > In some networks you need to use a
