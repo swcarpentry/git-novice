@@ -93,7 +93,7 @@ $ git status
 ~~~
 {: .language-bash}
 ~~~
-On branch master
+On branch main
 
 No commits yet
 
