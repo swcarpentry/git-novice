@@ -105,7 +105,28 @@ your changes, press <kbd>Esc</kbd> then type `:q!` and hit <kbd>Return</kbd>.
 > If you want to save your changes and quit, press <kbd>Esc</kbd> then type `:wq` and hit <kbd>Return</kbd>.
 {: .callout}
 
-The four commands we just ran above only need to be run once: the flag `--global` tells Git
+Recent versions of Git (since 2.28) allow to configure the name of the branch created when you
+initialize any new repository. Dracula decides to use that feature to set it to `main`:
+
+~~~
+$ git config --global init.defaultBranch main
+~~~
+{: .language-bash}
+
+> ## Default Git branch naming
+>
+> Until recently, Git and the code hosting services mentioned in this episode have used a
+> a different name for the default branch, but have transitioned to using `main`. As an example,
+> any new repository that is opened in GitHub and GitLab default to `main`.
+>
+> Note that if that value is unset in your local Git configuration, the `init.defaultBranch` value
+> defaults to `master`.
+>
+> Further information about the change can be found in the [GitHub blog entry about Git 2.28](https://lore.kernel.org/git/xmqq5za8hpir.fsf@gitster.c.googlers.com/).
+>
+{: .callout}
+
+The five commands we just ran above only need to be run once: the flag `--global` tells Git
 to use the settings for every project, in your user account, on this computer.
 
 You can check your settings at any time:
