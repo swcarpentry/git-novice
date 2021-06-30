@@ -113,6 +113,11 @@ working in teams or not, because it is
     common for them to edit the instructor's details (e.g. email).  Check at
     the end using `git config --list`.
 
+*   When setting up the default branch name, if learners have a Git version
+    older than 2.28, the default branch name can be changed for the lesson
+    using `git branch -M main` if there are currently commits in the repository,
+    or `git checkout -b main` if there are no commits/the repository is completely empty.
+
 ## [Creating a Repository]({{ page.root }}{% link _episodes/03-create.md %})
 
 *   When you do `git status`, Mac users may see a `.DS_Store` file showing as
@@ -148,9 +153,9 @@ working in teams or not, because it is
     doing `$ git checkout f22b25e mars.txt`, someone does `$ git checkout
     f22b25e`, they wind up in the "detached HEAD" state and confusion abounds.
     It's then possible to keep on committing, but things like `git push origin
-    master` a bit later will not give easily comprehensible results.  It also
+    main` a bit later will not give easily comprehensible results.  It also
     makes it look like commits can be lost.  To "re-attach" HEAD, use
-    `git checkout master`.
+    `git checkout main`.
 
 *   This is a good moment to show a log within a Git GUI. If you skip it
     because you're short on time, show it once in GitHub.
@@ -177,11 +182,11 @@ particular set of files in `.gitignore`.
 
 *   When pushing to a remote, the output from Git can vary slightly depending on
     what leaners execute. The lesson displays the output from git if a learner
-    executes `git push origin master`. However, some learners might use syntax
+    executes `git push origin main`. However, some learners might use syntax
     suggested by GitHub for pushing to a remote with an existing repository,
-    which is `git push -u origin master`. Learners using syntax from GitHub,
-    `git push -u origin master`, will have slightly different output, including
-    the line `Branch master set up to track remote branch master from origin by rebasing.`
+    which is `git push -u origin main`. Learners using syntax from GitHub,
+    `git push -u origin main`, will have slightly different output, including
+    the line `Branch main set up to track remote branch main from origin by rebasing.`
 
 ## [Collaborating]({{ page.root }}{% link _episodes/08-collab.md %})
 
