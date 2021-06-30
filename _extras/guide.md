@@ -115,7 +115,8 @@ working in teams or not, because it is
 
 *   When setting up the default branch name, if learners have a Git version
     older than 2.28, the default branch name can be changed for the lesson
-    using `git branch -m master main`.
+    using `git branch -M main` if there are currently commits in the repository,
+    or `git checkout -b main` if there are no commits/the repository is completely empty.
 
 ## [Creating a Repository]({{ page.root }}{% link _episodes/03-create.md %})
 
