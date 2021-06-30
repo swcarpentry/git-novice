@@ -105,8 +105,9 @@ your changes, press <kbd>Esc</kbd> then type `:q!` and hit <kbd>Return</kbd>.
 > If you want to save your changes and quit, press <kbd>Esc</kbd> then type `:wq` and hit <kbd>Return</kbd>.
 {: .callout}
 
-Recent versions of Git (since 2.28) allow to configure the name of the branch created when you
-initialize any new repository. Dracula decides to use that feature to set it to `main`:
+Git (2.28+) allows configuration of the name of the branch created when you
+initialize any new repository.  Dracula decides to use that feature to set it to `main` so 
+it matches the cloud service he will eventually use. 
 
 ~~~
 $ git config --global init.defaultBranch main
@@ -115,14 +116,14 @@ $ git config --global init.defaultBranch main
 
 > ## Default Git branch naming
 >
-> Until recently, Git and the code hosting services mentioned in this episode have used a
-> a different name for the default branch, but have transitioned to using `main`. As an example,
-> any new repository that is opened in GitHub and GitLab default to `main`.
->
-> Note that if that value is unset in your local Git configuration, the `init.defaultBranch` value
-> defaults to `master`.
->
-> Further information about the change can be found in the [GitHub blog entry about Git 2.28](https://lore.kernel.org/git/xmqq5za8hpir.fsf@gitster.c.googlers.com/).
+> In 2020, most git code hosting services transitioned to using `main` as the default 
+> branch. As an example, any new repository that is opened in GitHub and GitLab default 
+> to `main`.  However, git has not yet made the same change.  As a result, local repositories 
+> must be manually configured have the same main branch name as most cloud services.  
+> 
+> For versions of git prior to 2.28, the change can be made on an individual repository level.  The 
+> command for this is in the next episode.  Note that if this value is unset in your local Git 
+> configuration, the `init.defaultBranch` value defaults to `master`.
 >
 {: .callout}
 
