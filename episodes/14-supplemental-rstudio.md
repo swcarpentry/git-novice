@@ -109,7 +109,7 @@ history:
 > Grayed out Push/Pull commands generally mean that RStudio doesn't know the
 > location of your remote repository (e.g. on GitHub). To fix this, open a
 > terminal to the repository and enter the command: `git push -u origin
-> master`. Then restart RStudio.
+> main`. Then restart RStudio.
 {: .callout}
 
 If we click on "History", we can see a graphical version of what `git log`
