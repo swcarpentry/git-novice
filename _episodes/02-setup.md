@@ -116,12 +116,12 @@ $ git config --global init.defaultBranch main
 
 > ## Default Git branch naming
 >
-> In 2020, most git code hosting services transitioned to using `main` as the default 
+> In 2020, most Git code hosting services transitioned to using `main` as the default 
 > branch. As an example, any new repository that is opened in GitHub and GitLab default 
-> to `main`.  However, git has not yet made the same change.  As a result, local repositories 
+> to `main`.  However, Git has not yet made the same change.  As a result, local repositories 
 > must be manually configured have the same main branch name as most cloud services.  
 > 
-> For versions of git prior to 2.28, the change can be made on an individual repository level.  The 
+> For versions of Git prior to 2.28, the change can be made on an individual repository level.  The 
 > command for this is in the next episode.  Note that if this value is unset in your local Git 
 > configuration, the `init.defaultBranch` value defaults to `master`.
 >
