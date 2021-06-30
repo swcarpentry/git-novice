@@ -146,7 +146,8 @@ same commands to choose another editor or update your email address.
 > when you create a new repository with `git init` (as explained in the next Episode). This term evokes 
 > the racist practice of human slavery and the software development community has moved to adopt 
 > more inclusive language. Notably, new repositories created through GitHub use `main` as the default
-> branch name.
+> branch name.  
+> Read more about how to implement this change in [GitHub's renaming repository](https://github.com/github/renaming).
 >
 > With Git versions 2.28 and higher, you can set a different name for the initial branch. To set main as 
 > the default branch name do:
