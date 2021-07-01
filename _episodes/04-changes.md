@@ -42,6 +42,7 @@ Type the text below into the `mars.txt` file:
 ~~~
 Cold and dry, but everything is my favorite color
 ~~~
+{: .output}
 
 Let's first verify that the file was properly created by running the list command (`ls`):
 

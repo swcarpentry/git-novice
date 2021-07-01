@@ -1,4 +1,5 @@
 ---
+permalink: /aio/index.html
 ---
 
 {% comment %}

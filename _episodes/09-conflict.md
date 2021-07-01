@@ -432,6 +432,7 @@ Conflicts can also be minimized with project management strategies:
 > > ~~~
 > > warning: Cannot merge binary files: mars.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)
 > > ~~~
+> > {: .output}
 > >
 > > Git cannot automatically insert conflict markers into an image as it does
 > > for text files. So, instead of editing the image file, we must check out
