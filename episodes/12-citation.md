@@ -48,8 +48,13 @@ July 2013.
 More detailed advice, and other ways to make your code citable can be found
 [at the Software Sustainability Institute blog](https://www.software.ac.uk/how-cite-and-describe-software) and in:
 
->  Smith AM, Katz DS, Niemeyer KE, FORCE11 Software Citation Working Group. 
->  (2016) Software citation principles. [PeerJ Computer Science 2:e86](https://peerj.com/articles/cs-86/) https://doi.org/10.7717/peerj-cs.86
+~~~
+Smith AM, Katz DS, Niemeyer KE, FORCE11 Software Citation Working Group. (2016) Software citation
+principles. [PeerJ Computer Science 2:e86](https://peerj.com/articles/cs-86/)
+https://doi.org/10.7717/peerj-cs.8
+~~~
+{: .source}
+
 
 There is also an [`@software{...`](https://www.google.com/search?q=git+citation+%22%40software%7B%22)
 [BibTeX](https://www.ctan.org/pkg/bibtex) entry type in case
