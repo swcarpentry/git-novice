@@ -55,7 +55,6 @@ For these lessons, we will be interacting with [GitHub](https://github.com/) and
 > it may cause unexpected issues when editing a file on different machines. 
 > Though it is beyond the scope of this lesson, you can read more about this issue 
 > [in the Pro Git book](https://www.git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_autocrlf).
-{: .callout}
 >
 > You can change the way Git recognizes and encodes line endings
 > using the `core.autocrlf` command to `git config`.
@@ -75,7 +74,7 @@ For these lessons, we will be interacting with [GitHub](https://github.com/) and
 > ~~~
 > {: .language-bash}
 > 
-
+{: .callout}
 
 Dracula also has to set his favorite text editor, following this table:
 
