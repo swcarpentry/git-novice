@@ -466,7 +466,7 @@ directory paths can be confusing.
 
 Sometimes the `**` pattern comes in handy, too, which matches multiple
 directory levels. E.g. `**/results/plots/*` would make git ignore the
-`results/plots` directory in any root directory.
+`results/plots` directory in any root directory.  
 
 > ## Ignoring Nested Files: Challenge Problem
 >
