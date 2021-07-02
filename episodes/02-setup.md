@@ -153,7 +153,7 @@ same commands to choose another editor or update your email address.
 >
 > While viewing the manual, remember the `:` is a prompt waiting for commands and you can press <kbd>Q</kbd> to exit the manual.
 >
-> More generally, you can get the list of available `git` commands and further resources of the `git` manual typing:
+> More generally, you can get the list of available `git` commands and further resources of the Git manual typing:
 >
 > ~~~
 > $ git help
