@@ -162,7 +162,9 @@ same commands to choose another editor or update your email address.
 
 > ## Git Help and Manual
 >
-> Always remember that if you forget a `git` command, you can access the list of commands by using `-h` and access the Git manual by using `--help` :
+> Always remember that if you forget the subcommands or options of a `git` command, you can access the
+> relevant list of options typing `git <command> -h` or access the corresponding Git manual by typing
+> `git <command> --help`, e.g.:
 >
 > ~~~
 > $ git config -h
@@ -171,6 +173,13 @@ same commands to choose another editor or update your email address.
 > {: .language-bash}
 >
 > While viewing the manual, remember the `:` is a prompt waiting for commands and you can press <kbd>Q</kbd> to exit the manual.
+>
+> More generally, you can get the list of available `git` commands and further resources of the Git manual typing:
+>
+> ~~~
+> $ git help
+> ~~~
+> {: .language-bash}
 >
 {: .callout}
 
