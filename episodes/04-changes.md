@@ -286,7 +286,6 @@ After reviewing our change, it's time to commit it:
 
 ~~~
 $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
-$ git status
 ~~~
 {: .language-bash}
 
