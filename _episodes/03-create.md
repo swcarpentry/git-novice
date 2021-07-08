@@ -6,6 +6,7 @@ questions:
 - "Where does Git store information?"
 objectives:
 - "Create a local Git repository."
+- "Describe the purpose of the `.git` directory."
 keypoints:
 - "`git init` initializes a repository."
 - "Git stores all of its repository data in the `.git` directory."
@@ -20,8 +21,10 @@ is possible to send a planetary lander to Mars.
 ![motivatingexample](../fig/motivatingexample.png)
 [Werewolf vs dracula](https://www.deviantart.com/b-maze/art/Werewolf-vs-Dracula-124893530)
 by [b-maze](https://www.deviantart.com/b-maze) / [Deviant Art](https://www.deviantart.com/).
-[Planets](https://commons.wikimedia.org/wiki/File:Planets_are_us.png) /
-[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
+[Mars](https://en.wikipedia.org/wiki/File:OSIRIS_Mars_true_color.jpg) by European Space Agency /
+[CC-BY-SA 3.0 IGO](https://creativecommons.org/licenses/by/3.0/deed.en).
+[Pluto](https://commons.wikimedia.org/wiki/File:PIA19873-Pluto-NewHorizons-FlyingPastImage-20150714-transparent.png) /
+Courtesy NASA/JPL-Caltech.
 [Mummy](https://commons.wikimedia.org/wiki/File:Mummy_icon_-_Noun_Project_4070.svg)
 &copy; Gilad Fried / [The Noun Project](https://thenounproject.com/) /
 [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/deed.en).
@@ -40,7 +43,9 @@ $ cd planets
 ~~~
 {: .language-bash}
 
-Then we tell Git to make `planets` a [repository]({{ page.root }}{% link reference.md %}#repository)—a place where Git can store versions of our files:
+Then we tell Git to make `planets` a [repository]({{ page.root }}{% link reference.md %}#repository)
+-- a place where Git can store versions of our files:
+
 
 ~~~
 $ git init
@@ -75,10 +80,25 @@ $ ls -a
 ~~~
 {: .output}
 
-Git uses this special sub-directory to store all the information about the project, 
+Git uses this special subdirectory to store all the information about the project, 
 including all files and sub-directories located within the project's directory.
-If we ever delete the `.git` sub-directory,
+If we ever delete the `.git` subdirectory,
 we will lose the project's history.
+
+Next, we will change the default branch to be called `main`.
+This might be the default branch depending on your settings and version
+of git.
+See the [setup episode](02-setup.md) for more information on this change.
+
+~~~
+git checkout -b main
+~~~
+{: .language-bash}
+~~~
+Switched to a new branch 'main'
+~~~
+{: .output}
+
 
 We can check that everything is set up correctly
 by asking Git to tell us the status of our project:
@@ -88,10 +108,10 @@ $ git status
 ~~~
 {: .language-bash}
 ~~~
-# On branch master
-#
-# Initial commit
-#
+On branch main
+
+No commits yet
+
 nothing to commit (create/copy files and use "git add" to track)
 ~~~
 {: .output}
@@ -109,23 +129,23 @@ wording of the output might be slightly different.
 > ~~~
 > $ cd ~/Desktop   # return to Desktop directory
 > $ cd planets     # go into planets directory, which is already a Git repository
-> $ ls -a          # ensure the .git sub-directory is still present in the planets directory
-> $ mkdir moons    # make a sub-directory planets/moons
-> $ cd moons       # go into moons sub-directory
-> $ git init       # make the moons sub-directory a Git repository
-> $ ls -a          # ensure the .git sub-directory is present indicating we have created a new Git repository
+> $ ls -a          # ensure the .git subdirectory is still present in the planets directory
+> $ mkdir moons    # make a subdirectory planets/moons
+> $ cd moons       # go into moons subdirectory
+> $ git init       # make the moons subdirectory a Git repository
+> $ ls -a          # ensure the .git subdirectory is present indicating we have created a new Git repository
 > ~~~
 > {: .language-bash}
 >
-> Is the `git init` command, run inside the `moons` sub-directory, required for 
-> tracking files stored in the `moons` sub-directory?
+> Is the `git init` command, run inside the `moons` subdirectory, required for 
+> tracking files stored in the `moons` subdirectory?
 > 
 > > ## Solution
 > >
-> > No. Dracula does not need to make the `moons` sub-directory a Git repository 
+> > No. Dracula does not need to make the `moons` subdirectory a Git repository 
 > > because the `planets` repository will track all files, sub-directories, and 
-> > sub-directory files under the `planets` directory.  Thus, in order to track 
-> > all information about moons, Dracula only needed to add the `moons` sub-directory
+> > subdirectory files under the `planets` directory.  Thus, in order to track 
+> > all information about moons, Dracula only needed to add the `moons` subdirectory
 > > to the `planets` directory.
 > > 
 > > Additionally, Git repositories can interfere with each other if they are "nested":
@@ -149,7 +169,7 @@ wording of the output might be slightly different.
 > ## Correcting `git init` Mistakes
 > Wolfman explains to Dracula how a nested repository is redundant and may cause confusion
 > down the road. Dracula would like to remove the nested repository. How can Dracula undo 
-> his last `git init` in the `moons` sub-directory?
+> his last `git init` in the `moons` subdirectory?
 >
 > > ## Solution -- USE WITH CAUTION!
 > >

@@ -37,6 +37,14 @@ which means that any changes pushed to
 another Git host server
 in a later lesson will include this information.
 
+For these lessons, we will be interacting with [GitHub](https://github.com/) and so the email address used should be the same as the one used when setting up your GitHub account. If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private][git-privacy]. 
+
+>## Keeping your email private
+>
+>If you elect to use a private email address with GitHub, then use that same email address for the `user.email` value, e.g. `username@users.noreply.github.com` replacing `username` with your GitHub one.
+{: .callout}
+
+
 > ## Line Endings
 >
 > As with other keys, when you hit <kbd>Return</kbd> on your keyboard,
@@ -46,8 +54,7 @@ in a later lesson will include this information.
 > Because Git uses these characters to compare files,
 > it may cause unexpected issues when editing a file on different machines. 
 > Though it is beyond the scope of this lesson, you can read more about this issue 
-> [on this GitHub page](https://help.github.com/articles/dealing-with-line-endings/).
-{: .callout}
+> [in the Pro Git book](https://www.git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_autocrlf).
 >
 > You can change the way Git recognizes and encodes line endings
 > using the `core.autocrlf` command to `git config`.
@@ -67,9 +74,7 @@ in a later lesson will include this information.
 > ~~~
 > {: .language-bash}
 > 
-
-For these lessons, we will be interacting with [GitHub](https://github.com/) and so the email address used should be the same as the one used when setting up your GitHub account. If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private][git-privacy]. 
-If you elect to use a private email address with GitHub, then use that same email address for the `user.email` value, e.g. `username@users.noreply.github.com` replacing `username` with your GitHub one. You can change the email address later on by using the `git config` command again.
+{: .callout}
 
 Dracula also has to set his favorite text editor, following this table:
 
@@ -81,6 +86,7 @@ Dracula also has to set his favorite text editor, following this table:
 | Sublime Text (Mac) | `$ git config --global core.editor "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -n -w"` |
 | Sublime Text (Win, 32-bit install) | `$ git config --global core.editor "'c:/program files (x86)/sublime text 3/sublime_text.exe' -w"` |
 | Sublime Text (Win, 64-bit install) | `$ git config --global core.editor "'c:/program files/sublime text 3/sublime_text.exe' -w"` |
+| Notepad (Win)    | `$ git config --global core.editor "c:/Windows/System32/notepad.exe"`|
 | Notepad++ (Win, 32-bit install)    | `$ git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
 | Notepad++ (Win, 64-bit install)    | `$ git config --global core.editor "'c:/program files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
 | Kate (Linux)       | `$ git config --global core.editor "kate"`       |
@@ -99,7 +105,37 @@ your changes, press <kbd>Esc</kbd> then type `:q!` and hit <kbd>Return</kbd>.
 > If you want to save your changes and quit, press <kbd>Esc</kbd> then type `:wq` and hit <kbd>Return</kbd>.
 {: .callout}
 
-The four commands we just ran above only need to be run once: the flag `--global` tells Git
+Git (2.28+) allows configuration of the name of the branch created when you
+initialize any new repository.  Dracula decides to use that feature to set it to `main` so 
+it matches the cloud service he will eventually use. 
+
+~~~
+$ git config --global init.defaultBranch main
+~~~
+{: .language-bash}
+
+> ## Default Git branch naming
+>
+> Source file changes are associated with a "branch." 
+> For new learners in this lesson, it's enough to know that branches exist, and this lesson uses one branch.  
+> By default, Git will create a branch called `master` 
+> when you create a new repository with `git init` (as explained in the next Episode). This term evokes 
+> the racist practice of human slavery and the 
+> [software development community](https://github.com/github/renaming)  has moved to adopt 
+> more inclusive language. 
+> 
+> In 2020, most Git code hosting services transitioned to using `main` as the default 
+> branch. As an example, any new repository that is opened in GitHub and GitLab default 
+> to `main`.  However, Git has not yet made the same change.  As a result, local repositories 
+> must be manually configured have the same main branch name as most cloud services.  
+> 
+> For versions of Git prior to 2.28, the change can be made on an individual repository level.  The 
+> command for this is in the next episode.  Note that if this value is unset in your local Git 
+> configuration, the `init.defaultBranch` value defaults to `master`.
+>
+{: .callout}
+
+The five commands we just ran above only need to be run once: the flag `--global` tells Git
 to use the settings for every project, in your user account, on this computer.
 
 You can check your settings at any time:
@@ -135,13 +171,25 @@ same commands to choose another editor or update your email address.
 
 > ## Git Help and Manual
 >
-> Always remember that if you forget a `git` command, you can access the list of commands by using `-h` and access the Git manual by using `--help` :
+> Always remember that if you forget the subcommands or options of a `git` command, you can access the
+> relevant list of options typing `git <command> -h` or access the corresponding Git manual by typing
+> `git <command> --help`, e.g.:
 >
 > ~~~
 > $ git config -h
 > $ git config --help
 > ~~~
 > {: .language-bash}
+>
+> While viewing the manual, remember the `:` is a prompt waiting for commands and you can press <kbd>Q</kbd> to exit the manual.
+>
+> More generally, you can get the list of available `git` commands and further resources of the Git manual typing:
+>
+> ~~~
+> $ git help
+> ~~~
+> {: .language-bash}
+>
 {: .callout}
 
 [git-privacy]: https://help.github.com/articles/keeping-your-email-address-private/
