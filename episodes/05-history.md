@@ -156,7 +156,7 @@ index df0654a..93a3e13 100644
 
 That's the right answer,
 but typing out random 40-character strings is annoying,
-so Git lets us use just the first few characters:
+so Git lets us use just the first few characters (typically seven for normal size projects):
 
 ~~~
 $ git diff f22b25e mars.txt
@@ -177,7 +177,7 @@ index df0654a..93a3e13 100644
 {: .output}
 
 All right! So
-we can save changes to files and see what we've changed—now how
+we can save changes to files and see what we've changed. Now, how
 can we restore older versions of things?
 Let's suppose we change our mind about the last update to
 `mars.txt` (the "ill-considered change").
@@ -191,7 +191,7 @@ $ git status
 {: .language-bash}
 
 ~~~
-On branch master
+On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
@@ -247,7 +247,7 @@ $ git status
 {: .language-bash}
 
 ~~~
-On branch master
+On branch main
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
@@ -256,7 +256,7 @@ Changes to be committed:
 ~~~
 {: .output}
 
-Notice that the changes are on the staged area.
+Notice that the changes are currently in the staging area.
 Again, we can put things back the way they were
 by using `git checkout`:
 
@@ -301,14 +301,14 @@ $ git checkout HEAD mars.txt
 >
 > The "detached HEAD" is like "look, but don't touch" here,
 > so you shouldn't make any changes in this state.
-> After investigating your repo's past state, reattach your `HEAD` with `git checkout master`.
+> After investigating your repo's past state, reattach your `HEAD` with `git checkout main`.
 {: .callout}
 
 It's important to remember that
 we must use the commit number that identifies the state of the repository
 *before* the change we're trying to undo.
 A common mistake is to use the number of
-the commit in which we made the change we're trying to get rid of.
+the commit in which we made the change we're trying to discard.
 In the example below, we want to retrieve the state from before the most
 recent commit (`HEAD~1`), which is commit `f22b25e`:
 
@@ -501,23 +501,23 @@ moving backward and forward in time becomes much easier.
 
 > ## Explore and Summarize Histories
 >
-> Exploring history is an important part of Git, often it is a challenge to find
+> Exploring history is an important part of Git, and often it is a challenge to find
 > the right commit ID, especially if the commit is from several months ago.
 >
 > Imagine the `planets` project has more than 50 files.
-> You would like to find a commit with specific text in `mars.txt` is modified.
-> When you type `git log`, a very long list appeared,
+> You would like to find a commit that modifies some specific text in `mars.txt`.
+> When you type `git log`, a very long list appeared.
 > How can you narrow down the search?
 >
-> Recall that the `git diff` command allow us to explore one specific file,
-> e.g. `git diff mars.txt`. We can apply a similar idea here.
+> Recall that the `git diff` command allows us to explore one specific file,
+> e.g., `git diff mars.txt`. We can apply a similar idea here.
 >
 > ~~~
 > $ git log mars.txt
 > ~~~
 > {: .language-bash}
 >
-> Unfortunately some of these commit messages are very ambiguous e.g. `update files`.
+> Unfortunately some of these commit messages are very ambiguous, e.g., `update files`.
 > How can you search through these files?
 >
 > Both `git diff` and `git log` are very useful and they summarize a different part of the history 

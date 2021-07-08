@@ -58,6 +58,9 @@ working in teams or not, because it is
     these issues, since learners will almost certainly trip over them
     again.  If learners are running into line ending problems, GitHub
     has a [page][github-line-endings] that helps with troubleshooting.
+    Specifically, the [section on refreshing a repository][github-line-endings-refresh]
+    may be helpful if learners need to change the `core.autocrlf` setting
+    after already having made one or more commits.
 
 *   We don't use a Git GUI in these notes because we haven't found one that
     installs easily and runs reliably on the three major operating systems, and
@@ -110,6 +113,11 @@ working in teams or not, because it is
     common for them to edit the instructor's details (e.g. email).  Check at
     the end using `git config --list`.
 
+*   When setting up the default branch name, if learners have a Git version
+    older than 2.28, the default branch name can be changed for the lesson
+    using `git branch -M main` if there are currently commits in the repository,
+    or `git checkout -b main` if there are no commits/the repository is completely empty.
+
 ## [Creating a Repository]({{ page.root }}{% link _episodes/03-create.md %})
 
 *   When you do `git status`, Mac users may see a `.DS_Store` file showing as
@@ -145,9 +153,9 @@ working in teams or not, because it is
     doing `$ git checkout f22b25e mars.txt`, someone does `$ git checkout
     f22b25e`, they wind up in the "detached HEAD" state and confusion abounds.
     It's then possible to keep on committing, but things like `git push origin
-    master` a bit later will not give easily comprehensible results.  It also
+    main` a bit later will not give easily comprehensible results.  It also
     makes it look like commits can be lost.  To "re-attach" HEAD, use
-    `git checkout master`.
+    `git checkout main`.
 
 *   This is a good moment to show a log within a Git GUI. If you skip it
     because you're short on time, show it once in GitHub.
@@ -174,11 +182,11 @@ particular set of files in `.gitignore`.
 
 *   When pushing to a remote, the output from Git can vary slightly depending on
     what leaners execute. The lesson displays the output from git if a learner
-    executes `git push origin master`. However, some learners might use syntax
+    executes `git push origin main`. However, some learners might use syntax
     suggested by GitHub for pushing to a remote with an existing repository,
-    which is `git push -u origin master`. Learners using syntax from GitHub,
-    `git push -u origin master`, will have slightly different output, including
-    the line `Branch master set up to track remote branch master from origin by rebasing.`
+    which is `git push -u origin main`. Learners using syntax from GitHub,
+    `git push -u origin main`, will have slightly different output, including
+    the line `Branch main set up to track remote branch main from origin by rebasing.`
 
 ## [Collaborating]({{ page.root }}{% link _episodes/08-collab.md %})
 
@@ -285,6 +293,11 @@ what, arise naturally once we start talking about using public services like
 GitHub to store files. Also, the discussion gives learners a chance to catch
 their breath after what is often a frustrating couple of hours.
 
+The Creative Commons family of licenses is recommended for many types of
+works (including software documentation and images used in software) but not
+software itself. Creative Commons [recommends][cc-faq-software] a
+software-specific license instead.
+
 ## [Citation]({{ page.root }}{% link _episodes/12-citation.md %})
 
 ## [Hosting]({{ page.root }}{% link _episodes/13-hosting.md %})
@@ -294,6 +307,7 @@ GitHub.  While we encourage open science, sometimes private repos are the
 only choice. It's always interesting to mention the options to have
 web-hosted private repositories.
 
+[cc-faq-software]: https://creativecommons.org/faq/#can-i-apply-a-creative-commons-license-to-software
 [code-school]: https://www.codeschool.com/
 [diffmerge]: https://sourcegear.com/diffmerge/
 [drawings]: https://marklodato.github.io/visual-git-guide/index-en.html
@@ -302,7 +316,8 @@ web-hosted private repositories.
 [git-parable]: http://tom.preston-werner.com/2009/05/19/the-git-parable.html
 [github]: https://github.com/
 [github-gui]: https://git-scm.com/downloads/guis
-[github-line-endings]: https://help.github.com/articles/dealing-with-line-endings/#platform-all
+[github-line-endings]: https://docs.github.com/en/github/using-git/configuring-git-to-handle-line-endings
+[github-line-endings-refresh]: https://docs.github.com/en/github/using-git/configuring-git-to-handle-line-endings#refreshing-a-repository-after-changing-line-endings
 [github-privacy]: https://help.github.com/articles/keeping-your-email-address-private/
 [repos-in-repos]: https://github.com/swcarpentry/git-novice/issues/272
 [try-git]: https://try.github.io
