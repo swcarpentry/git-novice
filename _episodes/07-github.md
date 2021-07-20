@@ -119,8 +119,8 @@ $ git remote -v
 {: .language-bash}
 
 ~~~
-origin   git@github.com:vlad/planets.git (push)
 origin   git@github.com:vlad/planets.git (fetch)
+origin   git@github.com:vlad/planets.git (push)
 ~~~
 {: .output}
 
