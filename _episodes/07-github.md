@@ -166,14 +166,17 @@ ls: cannot access '/c/Users/Vlad Dracula/.ssh': No such file or directory
 ~~~
 {: .output}
 
-If SSH has been set up on the computer you're using, the public and private key pairs will be listed. GitHub’s key pairs use the file name `id_ed25519`, so running the `ls` command would have listed `id_ed25519` and `id_ed25519.pub` if they already existed.  
+If SSH has been set up on the computer you're using, the public and private key pairs will be listed. The file names are either `id_ed25519`/`id_ed25519.pub` or `id_rsa`/`id_rsa.pub` depending on how the key pairs were set up.  
 
-Since they don’t on Dracula’s computer, he uses this command to create them: 
+Since they don’t exist on Dracula’s computer, he uses this command to create them: 
 
 ~~~
 $ ssh-keygen -t ed25519 -C "vlad@tran.sylvan.ia"
 ~~~
 {: .language-bash}
+
+If you are using a legacy system that doesn't support the Ed25519 algorithm, use:
+`$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
 
 ~~~
 Generating public/private ed25519 key pair.
