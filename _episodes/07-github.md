@@ -192,7 +192,7 @@ Enter passphrase (empty for no passphrase):
 ~~~
 {: .output}
 
-Now, it is prompting Dracula for a passphrase.  Since he is using his lab’s laptop that other people sometimes have access to, he wants to create a passphrase.  
+Now, it is prompting Dracula for a passphrase.  Since he is using his lab’s laptop that other people sometimes have access to, he wants to create a passphrase.  Be sure to use something memorable or save your passphrase somewhere, as there is no "reset my password" option. 
 
 ~~~
 Enter same passphrase again:
