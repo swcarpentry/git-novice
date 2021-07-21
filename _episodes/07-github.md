@@ -184,7 +184,7 @@ Enter file in which to save the key (/c/Users/Vlad Dracula/.ssh/id_ed25519):
 ~~~
 {: .output}
 
-We want to use the default file, so just press enter.
+We want to use the default file, so just press <kbd>Enter</kbd>.
 
 ~~~
 Created directory '/c/Users/Vlad Dracula/.ssh'.
