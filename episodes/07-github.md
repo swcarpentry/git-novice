@@ -9,7 +9,7 @@ objectives:
 - "Push to or pull from a remote repository."
 keypoints:
 - "A local Git repository can be connected to one or more remote repositories."
-- "Use the HTTPS protocol to connect to remote repositories until you have learned how to set up SSH."
+- "Use the SSH protocol to connect to remote repositories."
 - "`git push` copies changes from a local repository to a remote repository."
 - "`git pull` copies changes from a remote repository to a local repository."
 ---
@@ -78,20 +78,10 @@ Click on the 'SSH' link to change the [protocol]({{ page.root }}{% link referenc
 
 > ## HTTPS vs. SSH
 >
-> Github used to allow command line (CLI) authentication using only username and password, which
-> uses HTTPS protocol.  However, this actually creates security risks, so, they removed 
-> the CLI username/password option.  Instead, they kept two options which provide more
-> robust security: SSH, which is a widely used protocol; and Personal Access Tokens (PAT), which uses 
-> the HTTPS protocol, and is 
-> specific to GitHub.  We will use SSH, which is described below at a minimum level for GitHub. 
-> 
-> A supplemental episode to this lesson discusses SSH and key pairs in more depth and detail, 
-> and provides details of advanced setup of SSH for GitHub.
-> Tutorials for common git cloud based services are found at 
-> [GitHub](https://help.github.com/articles/generating-ssh-keys),
-> [Atlassian/Bitbucket](https://confluence.atlassian.com/bitbucket/set-up-ssh-for-git-728138079.html)
-> and [GitLab](https://about.gitlab.com/2014/03/04/add-ssh-key-screencast/)
-> (this one has a screencast).
+> We use SSH here because, while it requires some additional configuration, it is a 
+> security protocol widely used by many applications.  The steps below describe SSH at a 
+> minimum level for GitHub. A supplemental episode to this lesson discusses advanced setup 
+> and concepts of SSH and key pairs, and other material supplemental to git related SSH. 
 {: .callout}
 
 ![Changing the Repository URL on GitHub](../fig/github-change-repo-string.png)
