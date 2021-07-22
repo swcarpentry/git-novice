@@ -120,7 +120,7 @@ talking about how they might be used for collaboration.
 ## SSH Background and Setup
 Before Dracula can connect to a remote repository, he needs to set up a way for his computer to authenticate with GitHub so it knows it’s him trying to connect to his remote repository. 
 
-We are going to set up the method that is commonly used by many different services to authenticate access on the command line.  This method is SSH, or secure shell protocol.  SSH is a cryptographic network protocol that allows secure communication between computers using an otherwise insecure network.  
+We are going to set up the method that is commonly used by many different services to authenticate access on the command line.  This method is called Secure Shell Protocol (SSH).  SSH is a cryptographic network protocol that allows secure communication between computers using an otherwise insecure network.  
 
 SSH uses what is called a key pair. This is two keys that work together to validate access. One key is publicly known and called the public key, and the other key called the private key is kept private. Very descriptive names.
 
