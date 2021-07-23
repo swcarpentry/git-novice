@@ -396,22 +396,24 @@
    d="m 330.859,152.473 v -14.301 l -12.386,7.152 z"
    style="fill:#4da2d9;fill-opacity:1;fill-rule:nonzero;stroke:none"
    id="path220"
-   inkscape:connector-curvature="0" /><text
-   transform="translate(86.456366,71.600484)"
-   style="font-variant:normal;font-weight:normal;font-size:9px;font-family:'DejaVu Sans';-inkscape-font-specification:DejaVuSans;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   inkscape:connector-curvature="0" />
+
+   <text
+   transform="translate(89.456366,71.600484)"
+   font-family="'Helvetica'" font-size="8.6062"
    id="text224"
    y="0"><tspan
-     x="0 5.7059999 9.4049997 14.913 20.610001 25.551001"
+     x="0"
      y="0"
      sodipodi:role="line"
      id="tspan222">branch</tspan></text>
 
 <text
    transform="translate(92.202218,82.850484)"
-   style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Consolas;-inkscape-font-specification:Consolas;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   font-family="'Helvetica'" font-size="8.6062"
    id="text228"
    y="0"><tspan
-     x="0 4.941 9.882 14.823"
+     x="0"
      y="0"
      sodipodi:role="line"
      id="tspan226">main</tspan></text>
@@ -421,17 +423,17 @@
    id="text232"
    x="265.81219"
    y="69.963684"><tspan
-     x="265.81219 270.28522 272.7872 277.71021 282.7142 284.71222 289.71622 294.72021 297.2222 302.2262 305.13321 310.07422"
+     x="265.81219"
      y="69.963684"
      sodipodi:role="line"
      id="tspan230">staging area</tspan></text>
 
 <text
-   transform="translate(338.93641,168.11417)"
+   transform="translate(348.93641,168.11417)"
    style="font-variant:normal;font-weight:normal;font-size:6.45465px;font-family:Consolas;-inkscape-font-specification:Consolas;writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
    id="text236"
    y="0"><tspan
-     x="0 3.5436029 7.0872059 10.630809 14.174412 17.718014 21.261618 24.80522 28.348824 31.892426 35.436028 38.97963 42.523235 46.066837 49.610439 53.154041 56.697647"
+     x="0"
      y="0"
      sodipodi:role="line"
      id="tspan234">git add file2.txt</tspan></text>
@@ -449,7 +451,7 @@
    style="font-variant:normal;font-weight:normal;font-size:6.4544px;font-family:Consolas;-inkscape-font-specification:Consolas;writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
    id="text244"
    y="0"><tspan
-     x="0 3.5434642 7.0869284 10.630392 14.173857 17.717321 21.260784 24.804249 28.347713 31.891178 35.434643 38.978104 42.521568 46.065033 49.608498 53.151962 56.695427"
+     x="0"
      y="0"
      sodipodi:role="line"
      id="tspan242">git add file1.txt</tspan></text>
@@ -484,15 +486,15 @@
    style="font-variant:normal;font-weight:normal;font-size:10.3274px;font-family:Consolas;-inkscape-font-specification:Consolas;writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
    id="text272"
    y="0"><tspan
-     x="0 5.6697564 11.339513 17.00927"
+     x="0"
      y="0"
      sodipodi:role="line"
      id="tspan266">HEAD</tspan><tspan
-     x="-5.6781011 -0.0083445599 5.6614118 11.331168 17.000925 22.670681"
+     x="-5.6781011"
      y="35.169449"
      sodipodi:role="line"
      id="tspan268">HEAD~1</tspan><tspan
-     x="-5.6781011 -0.0083445599 5.6614118 11.331168 17.000925 22.670681"
+     x="-5.6781011"
      y="70.521965"
      sodipodi:role="line"
      id="tspan270">HEAD~2</tspan></text>
@@ -527,7 +529,7 @@
    style="font-variant:normal;font-weight:normal;font-size:6.45465px;font-family:Consolas;-inkscape-font-specification:Consolas;writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
    id="text296"
    y="0"><tspan
-     x="0 3.5436032 7.0872064 10.63081 14.174413 17.718016 21.26162 24.805222 28.348825 31.892429"
+     x="0"
      y="0"
      sodipodi:role="line"
      id="tspan294">git commit</tspan></text>
@@ -541,7 +543,7 @@
    style="font-variant:normal;font-weight:normal;font-size:6.45458px;font-family:Consolas;-inkscape-font-specification:Consolas;writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
    id="text302"
    y="0"><tspan
-     x="0 3.5435629 7.0871258 10.630689 14.174252 17.717815 21.261377 24.804941 28.348503 31.892067 35.435631 38.979195 42.522755 46.066319 49.609882 53.153446 56.697006 60.24057 63.784134 67.327698 70.871262 74.414825 77.958389 81.501945 85.045509 88.589073 92.132637"
+     x="0"
      y="0"
      sodipodi:role="line"
      id="tspan300">git checkout HEAD file1.txt</tspan></text>
