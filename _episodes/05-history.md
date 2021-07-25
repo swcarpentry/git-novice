@@ -16,7 +16,7 @@ keypoints:
 - "`git checkout` recovers old versions of files."
 ---
 
-As we saw in the previous lesson, we can refer to commits by their
+As we saw in the previous episode, we can refer to commits by their
 identifiers.  You can refer to the _most recent commit_ of the working
 directory by using the identifier `HEAD`.
 
