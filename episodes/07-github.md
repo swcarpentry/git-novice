@@ -23,7 +23,7 @@ practice, though, it's easiest to use one copy as a central hub, and to keep it
 on the web rather than on someone's laptop.  Most programmers use hosting
 services like [GitHub](https://github.com), [Bitbucket](https://bitbucket.org) or
 [GitLab](https://gitlab.com/) to hold those main copies; we'll explore the pros
-and cons of this in the final section of this lesson.
+and cons of this in a later episode.
 
 Let's start by sharing the changes we've made to our current project with the
 world.  Log in to GitHub, then click on the icon in the top right corner to
@@ -54,7 +54,7 @@ $ git init
 ~~~
 {: .language-bash}
 
-If you remember back to the earlier [lesson](../04-changes/) where we added and
+If you remember back to the earlier [episode](../04-changes/) where we added and
 committed our earlier work on `mars.txt`, we had a diagram of the local repository
 which looked like this:
 
@@ -433,7 +433,7 @@ GitHub, though, this command would download them to our local repository.
 
 > ## Push vs. Commit
 >
-> In this lesson, we introduced the "git push" command.
+> In this episode, we introduced the "git push" command.
 > How is "git push" different from "git commit"?
 >
 > > ## Solution
@@ -445,7 +445,7 @@ GitHub, though, this command would download them to our local repository.
 
 > ## GitHub License and README files
 >
-> In this section we learned about creating a remote repository on GitHub, but when you initialized 
+> In this episode we learned about creating a remote repository on GitHub, but when you initialized 
 > your GitHub repo, you didn't add a README.md or a license file. If you had, what do you think 
 > would have happened when you tried to link your local and remote repositories?
 >
