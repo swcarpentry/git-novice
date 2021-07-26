@@ -35,9 +35,9 @@ which means that any changes pushed to
 [BitBucket](https://bitbucket.org/),
 [GitLab](https://gitlab.com/) or
 another Git host server
-in a later lesson will include this information.
+after this lesson will include this information.
 
-For these lessons, we will be interacting with [GitHub](https://github.com/) and so the email address used should be the same as the one used when setting up your GitHub account. If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private][git-privacy]. 
+For this lesson, we will be interacting with [GitHub](https://github.com/) and so the email address used should be the same as the one used when setting up your GitHub account. If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private][git-privacy]. 
 
 >## Keeping your email private
 >
