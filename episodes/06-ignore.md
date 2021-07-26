@@ -268,14 +268,14 @@ nothing to commit, working directory clean
 > 
 > ~~~
 > results/a.dat
-> experiment_1/b.dat
-> experiment_2/c.dat
-> experiment_2/variation_1/d.dat
+> data/experiment_1/b.dat
+> data/experiment_2/c.dat
+> data/experiment_2/variation_1/d.dat
 > ~~~
 > {: .language-bash}
 > 
 > How do you ignore all the `.dat` files, without explicitly listing the names of the corresponding folders?
-
+> 
 > > ## Solution
 > >
 > > In the `.gitignore` file, write:
