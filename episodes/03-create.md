@@ -175,7 +175,7 @@ wording of the output might be slightly different.
 > >
 > > ### Background
 > > Removing files from a Git repository needs to be done with caution. But we have not learned 
-> > yet how to tell Git to track a particular file; we will learn this in the next lesson. Files 
+> > yet how to tell Git to track a particular file; we will learn this in the next episode. Files 
 > > that are not tracked by Git can easily be removed like any other "ordinary" files with
 > > ~~~
 > > $ rm filename
@@ -196,8 +196,8 @@ wording of the output might be slightly different.
 > > ~~~
 > > {: .language-bash}
 > >
-> > But be careful! Running this command in the wrong directory, will remove
-> > the entire Git history of a project you might want to keep. Therefore, always check your current directory using the
-> > command `pwd`.
+> > But be careful! Running this command in the wrong directory will remove
+> > the entire Git history of a project you might want to keep.
+> > Therefore, always check your current directory using the command `pwd`.
 > {: .solution}
 {: .challenge}
