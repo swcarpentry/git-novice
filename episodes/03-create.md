@@ -174,13 +174,17 @@ wording of the output might be slightly different.
 > > ## Solution -- USE WITH CAUTION!
 > >
 > > ### Background
-> > Removing files from a git repository needs to be done with caution. To remove files from the working tree and not from your working directory, use
+> > Removing files from a Git repository needs to be done with caution. But we have not learned 
+> > yet how to tell Git to track a particular file; we will learn this in the next lesson. Files 
+> > that are not tracked by Git can easily be removed like any other "ordinary" files with
 > > ~~~
 > > $ rm filename
 > > ~~~
 > > {: .language-bash}
-> > 
-> > The file being removed has to be in sync with the branch head with no updates. If there are updates, the file can be removed by force by using the `-f` option. Similarly a directory can be removed from git using `rm -r dirname` or `rm -rf dirname`.
+> >
+> > Similarly a directory can be removed using `rm -r dirname` or `rm -rf dirname`.
+> > If the files or folder being removed in this fashion are tracked by Git, then their removal 
+> > becomes another change that we will need to track, as we will see in the next episode.
 > >
 > > ### Solution
 > > Git keeps all of its files in the `.git` directory.
