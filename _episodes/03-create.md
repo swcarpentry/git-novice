@@ -43,7 +43,9 @@ $ cd planets
 ~~~
 {: .language-bash}
 
-Then we tell Git to make `planets` a [repository]({{ page.root }}{% link reference.md %}#repository)—a place where Git can store versions of our files:
+Then we tell Git to make `planets` a [repository]({{ page.root }}{% link reference.md %}#repository)
+-- a place where Git can store versions of our files:
+
 
 ~~~
 $ git init
@@ -83,6 +85,21 @@ including all files and sub-directories located within the project's directory.
 If we ever delete the `.git` subdirectory,
 we will lose the project's history.
 
+Next, we will change the default branch to be called `main`.
+This might be the default branch depending on your settings and version
+of git.
+See the [setup episode](02-setup.md) for more information on this change.
+
+~~~
+git checkout -b main
+~~~
+{: .language-bash}
+~~~
+Switched to a new branch 'main'
+~~~
+{: .output}
+
+
 We can check that everything is set up correctly
 by asking Git to tell us the status of our project:
 
@@ -91,9 +108,9 @@ $ git status
 ~~~
 {: .language-bash}
 ~~~
-On branch master
+On branch main
 
-Initial commit
+No commits yet
 
 nothing to commit (create/copy files and use "git add" to track)
 ~~~
@@ -157,13 +174,17 @@ wording of the output might be slightly different.
 > > ## Solution -- USE WITH CAUTION!
 > >
 > > ### Background
-> > Removing files from a git repository needs to be done with caution. To remove files from the working tree and not from your working directory, use
+> > Removing files from a Git repository needs to be done with caution. But we have not learned 
+> > yet how to tell Git to track a particular file; we will learn this in the next episode. Files 
+> > that are not tracked by Git can easily be removed like any other "ordinary" files with
 > > ~~~
 > > $ rm filename
 > > ~~~
 > > {: .language-bash}
-> > 
-> > The file being removed has to be in sync with the branch head with no updates. If there are updates, the file can be removed by force by using the `-f` option. Similarly a directory can be removed from git using `rm -r dirname` or `rm -rf dirname`.
+> >
+> > Similarly a directory can be removed using `rm -r dirname` or `rm -rf dirname`.
+> > If the files or folder being removed in this fashion are tracked by Git, then their removal 
+> > becomes another change that we will need to track, as we will see in the next episode.
 > >
 > > ### Solution
 > > Git keeps all of its files in the `.git` directory.
@@ -175,8 +196,8 @@ wording of the output might be slightly different.
 > > ~~~
 > > {: .language-bash}
 > >
-> > But be careful! Running this command in the wrong directory, will remove
-> > the entire Git history of a project you might want to keep. Therefore, always check your current directory using the
-> > command `pwd`.
+> > But be careful! Running this command in the wrong directory will remove
+> > the entire Git history of a project you might want to keep.
+> > Therefore, always check your current directory using the command `pwd`.
 > {: .solution}
 {: .challenge}
