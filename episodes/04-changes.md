@@ -42,6 +42,7 @@ Type the text below into the `mars.txt` file:
 ~~~
 Cold and dry, but everything is my favorite color
 ~~~
+{: .output}
 
 Let's first verify that the file was properly created by running the list command (`ls`):
 
@@ -78,14 +79,15 @@ $ git status
 {: .language-bash}
 
 ~~~
-On branch master
+On branch main
 
-Initial commit
+No commits yet
 
 Untracked files:
    (use "git add <file>..." to include in what will be committed)
 
 	mars.txt
+
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
 {: .output}
@@ -107,9 +109,9 @@ $ git status
 {: .language-bash}
 
 ~~~
-On branch master
+On branch main
 
-Initial commit
+No commits yet
 
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
@@ -130,7 +132,7 @@ $ git commit -m "Start notes on Mars as a base"
 {: .language-bash}
 
 ~~~
-[master (root-commit) f22b25e] Start notes on Mars as a base
+[main (root-commit) f22b25e] Start notes on Mars as a base
  1 file changed, 1 insertion(+)
  create mode 100644 mars.txt
 ~~~
@@ -160,7 +162,7 @@ $ git status
 {: .language-bash}
 
 ~~~
-On branch master
+On branch main
 nothing to commit, working directory clean
 ~~~
 {: .output}
@@ -226,7 +228,7 @@ $ git status
 {: .language-bash}
 
 ~~~
-On branch master
+On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
@@ -284,12 +286,11 @@ After reviewing our change, it's time to commit it:
 
 ~~~
 $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
-$ git status
 ~~~
 {: .language-bash}
 
 ~~~
-On branch master
+On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
@@ -311,7 +312,7 @@ $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
 {: .language-bash}
 
 ~~~
-[master 34961b1] Add concerns about effects of Mars' moons on Wolfman
+[main 34961b1] Add concerns about effects of Mars' moons on Wolfman
  1 file changed, 1 insertion(+)
 ~~~
 {: .output}
@@ -438,7 +439,7 @@ $ git commit -m "Discuss concerns about Mars' climate for Mummy"
 {: .language-bash}
 
 ~~~
-[master 005937f] Discuss concerns about Mars' climate for Mummy
+[main 005937f] Discuss concerns about Mars' climate for Mummy
  1 file changed, 1 insertion(+)
 ~~~
 {: .output}
@@ -451,7 +452,7 @@ $ git status
 {: .language-bash}
 
 ~~~
-On branch master
+On branch main
 nothing to commit, working directory clean
 ~~~
 {: .output}
@@ -545,7 +546,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > You can also combine the `--oneline` option with others. One useful
 > combination adds `--graph` to display the commit history as a text-based
 > graph and to indicate which commits are associated with the
-> current `HEAD`, the current branch `master`, or
+> current `HEAD`, the current branch `main`, or
 > [other Git references][git-references]:
 >
 > ~~~
@@ -553,7 +554,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > ~~~
 > {: .language-bash}
 > ~~~
-> * 005937f (HEAD -> master) Discuss concerns about Mars' climate for Mummy
+> * 005937f (HEAD -> main) Discuss concerns about Mars' climate for Mummy
 > * 34961b1 Add concerns about effects of Mars' moons on Wolfman
 > * f22b25e Start notes on Mars as a base
 > ~~~
@@ -716,7 +717,7 @@ repository (`git commit`):
 > > ~~~
 > > {: .language-bash}
 > > ~~~
-> > [master cc127c2]
+> > [main cc127c2]
 > >  Write plans to start a base on Venus
 > >  2 files changed, 2 insertions(+)
 > >  create mode 100644 venus.txt
