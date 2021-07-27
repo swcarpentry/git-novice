@@ -312,7 +312,7 @@ To https://github.com/vlad/planets.git
 >
 > ~~~
 > $ git config --global http.proxy http://user:password@proxy.url
-> $ git config --global https.proxy http://user:password@proxy.url
+> $ git config --global https.proxy https://user:password@proxy.url
 > ~~~
 > {: .language-bash}
 >
