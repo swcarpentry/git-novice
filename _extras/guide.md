@@ -188,19 +188,22 @@ particular set of files in `.gitignore`.
     `git push -u origin main`, will have slightly different output, including
     the line `Branch main set up to track remote branch main from origin by rebasing.`
 
-*  Users of newer versions of Git will see a warning when running `git pull`: 
+*  Learners may see a warning when running `git pull` in situations where a fast-forward 
+   merge is not possible (e.g. merge conflicts): 
  
     ```
-    warning: Pulling without specifying how to reconcile divergent branches is
-    discouraged. You can squelch this message by running one of the following
-    commands sometime before your next pull:
-      git config pull.rebase false  # merge (the default strategy)
-      git config pull.rebase true   # rebase
-      git config pull.ff only       # fast-forward only
-    You can replace "git config" with "git config --global" to set a default
-    preference for all repositories. You can also pass --rebase, --no-rebase,
-    or --ff-only on the command line to override the configured default per
-    invocation.
+    hint: Pulling without specifying how to reconcile divergent branches is
+    hint: discouraged. You can squelch this message by running one of the following
+    hint: commands sometime before your next pull:
+    hint: 
+    hint:   git config pull.rebase false  # merge (the default strategy)
+    hint:   git config pull.rebase true   # rebase
+    hint:   git config pull.ff only       # fast-forward only
+    hint: 
+    hint: You can replace "git config" with "git config --global" to set a default
+    hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+    hint: or --ff-only on the command line to override the configured default per
+    hint: invocation.
     ```
 
     This is an informational warning only, and there was no change to Git's default 
