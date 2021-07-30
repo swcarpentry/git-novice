@@ -108,7 +108,8 @@ $ git config --global --edit
 ~~~
 {: .language-bash}
 
-However, it's safer to only view the configuration with:
+Let's close the file without making any additional changes.  Remember, since typos in the config file will cause 
+issues, it's safer to view the configuration with:
 
 ~~~
 $ git config --list
