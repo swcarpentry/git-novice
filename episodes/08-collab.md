@@ -51,7 +51,7 @@ Replace 'vlad' with the Owner's username.
 If you choose to clone without the clone path
 (`~/Desktop/vlad-planets`) specified at the end,
 you will clone inside your own planets folder!
-Make sure to navigate to the Desktop folder first.
+Make sure to navigate to the `Desktop` folder first.
 
 ![After Creating Clone of Repository](../fig/github-collaboration.svg)
 
