@@ -1,6 +1,6 @@
 # Contributing
 
-[Software Carpentry][swc-site] and [Data Carpentry][dc-site] are open source projects,
+[The Carpentries][c-site] ([Software Carpentry][swc-site], [Data Carpentry][dc-site], and [Library Carpentry][lc-site]) are open source projects,
 and we welcome contributions of all kinds:
 new lessons,
 fixes to existing material,
@@ -14,7 +14,7 @@ you agree that we may redistribute your work under [our license](LICENSE.md).
 In exchange,
 we will address your issues and/or assess your change proposal as promptly as we can,
 and help you become a member of our community.
-Everyone involved in [Software Carpentry][swc-site] and [Data Carpentry][dc-site]
+Everyone involved in [The Carpentries][c-site]
 agrees to abide by our [code of conduct](CODE_OF_CONDUCT.md).
 
 ## How to Contribute
@@ -70,16 +70,16 @@ There are many ways to contribute,
 from writing new exercises and improving existing ones
 to updating or filling in the documentation
 and submitting [bug reports][issues]
-about things that don't work, aren't clear, or are missing.
+about things that do not work, are not clear, or are missing.
 If you are looking for ideas, please see the 'Issues' tab for
 a list of issues associated with this repository,
-or you may also look at the issues for [Data Carpentry][dc-issues]
-and [Software Carpentry][swc-issues] projects.
+or you may also look at the issues for [Data Carpentry][dc-issues], 
+[Software Carpentry][swc-issues], and [Library Carpentry][lc-issues] projects.
 
 Comments on issues and reviews of pull requests are just as welcome:
 we are smarter together than we are on our own.
 Reviews from novices and newcomers are particularly valuable:
-it's easy for people who have been using these lessons for a while
+it is easy for people who have been using these lessons for a while
 to forget how impenetrable some of this material can be,
 so fresh eyes are always welcome.
 
@@ -94,8 +94,8 @@ and (b) explain what you would take out to make room for it.
 The first encourages contributors to be honest about requirements;
 the second, to think hard about priorities.
 
-We are also not looking for exercises or other material that only run on one platform.
-Our workshops typically contain a mixture of Windows, Mac OS X, and Linux users;
+We are also not looking for exercises or other material that will only run on one platform.
+Our workshops typically contain a mixture of Windows, macOS, and Linux users;
 in order to be usable,
 our lessons must run equally well on all three.
 
@@ -104,7 +104,7 @@ our lessons must run equally well on all three.
 If you choose to contribute via GitHub, you may want to look at
 [How to Contribute to an Open Source Project on GitHub][how-contribute].
 To manage changes, we follow [GitHub flow][github-flow].
-Each lesson has two maintainers who review issues and pull requests or encourage others to do so.
+Each lesson has at least two maintainers who review issues and pull requests or encourage others to do so.
 The maintainers are community volunteers and have final say over what gets merged into the lesson.
 To use the web interface for contributing to a lesson:
 
@@ -128,16 +128,16 @@ repository for reference while revising.
 
 ## Other Resources
 
-General discussion of [Software Carpentry][swc-site] and [Data Carpentry][dc-site]
+General discussion of [Software Carpentry][swc-site], [Data Carpentry][dc-site], and [Library Carpentry][lc-site]
 happens on the [discussion mailing list][discuss-list],
 which everyone is welcome to join.
 You can also [reach us by email][email].
 
-[email]: mailto:admin@software-carpentry.org
+[email]: mailto:team@carpentries.org
 [dc-issues]: https://github.com/issues?q=user%3Adatacarpentry
 [dc-lessons]: http://datacarpentry.org/lessons/
 [dc-site]: http://datacarpentry.org/
-[discuss-list]: http://lists.software-carpentry.org/listinfo/discuss
+[discuss-list]: https://carpentries.topicbox.com/groups/discuss
 [github]: https://github.com
 [github-flow]: https://guides.github.com/introduction/flow/
 [github-join]: https://github.com/join
@@ -146,3 +146,6 @@ You can also [reach us by email][email].
 [swc-issues]: https://github.com/issues?q=user%3Aswcarpentry
 [swc-lessons]: https://software-carpentry.org/lessons/
 [swc-site]: https://software-carpentry.org/
+[c-site]: https://carpentries.org/
+[lc-site]: https://librarycarpentry.org/
+[lc-issues]: https://github.com/issues?q=user%3Alibrarycarpentry

@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 '''Check that a workshop's index.html metadata is valid.  See the
 docstrings on the checking functions for a summary of the checks.
 '''
@@ -9,7 +7,8 @@ import sys
 import os
 import re
 from datetime import date
-from util import Reporter, split_metadata, load_yaml, check_unwanted_files
+from util import split_metadata, load_yaml, check_unwanted_files
+from reporter import Reporter
 
 # Metadata field patterns.
 EMAIL_PATTERN = r'[^@]+@[^@]+\.[^@]+'
@@ -18,8 +17,8 @@ EVENTBRITE_PATTERN = r'\d{9,10}'
 URL_PATTERN = r'https?://.+'
 
 # Defaults.
-CARPENTRIES = ("dc", "swc")
-DEFAULT_CONTACT_EMAIL = 'admin@software-carpentry.org'
+CARPENTRIES = ("dc", "swc", "lc", "cp")
+DEFAULT_CONTACT_EMAIL = 'team@carpentries.org'
 
 USAGE = 'Usage: "workshop_check.py path/to/root/directory"'
 
@@ -91,7 +90,7 @@ def check_layout(layout):
 
 @look_for_fixme
 def check_carpentry(layout):
-    '''"carpentry" in YAML header must be "dc" or "swc".'''
+    '''"carpentry" in YAML header must be "dc", "swc", "lc", or "cp".'''
 
     return layout in CARPENTRIES
 
@@ -117,7 +116,7 @@ def check_humandate(date):
     and 4-digit year.  Examples include 'Feb 18-20, 2025' and 'Feb 18
     and 20, 2025'.  It may be in languages other than English, but the
     month name should be kept short to aid formatting of the main
-    Software Carpentry web site.
+    Carpentries web site.
     """
 
     if ',' not in date:
@@ -390,7 +389,7 @@ def check_config(reporter, filename):
                    kind)
 
     carpentry = config.get('carpentry', None)
-    reporter.check(carpentry in ('swc', 'dc'),
+    reporter.check(carpentry in ('swc', 'dc', 'lc', 'cp'),
                    filename,
                    'Missing or unknown carpentry: {0}',
                    carpentry)
@@ -410,7 +409,7 @@ def main():
     reporter = Reporter()
     check_config(reporter, config_file)
     check_unwanted_files(root_dir, reporter)
-    with open(index_file) as reader:
+    with open(index_file, encoding='utf-8') as reader:
         data = reader.read()
         check_file(reporter, index_file, data)
     reporter.report()

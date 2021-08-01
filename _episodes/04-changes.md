@@ -22,26 +22,7 @@ First let's make sure we're still in the right directory.
 You should be in the `planets` directory.
 
 ~~~
-$ pwd
-~~~
-{: .language-bash}
-~~~
-/home/vlad/Desktop/planets
-~~~
-{: .output}
-
-If you are still in `moons`, navigate back up to `planets`
-
-~~~
-$ pwd
-~~~
-{: .language-bash}
-~~~
-/home/vlad/Desktop/planets/moons
-~~~
-{: .output}
-~~~
-$ cd ..
+$ cd ~/Desktop/planets
 ~~~
 {: .language-bash}
 
@@ -61,8 +42,10 @@ Type the text below into the `mars.txt` file:
 ~~~
 Cold and dry, but everything is my favorite color
 ~~~
+{: .output}
 
-`mars.txt` now contains a single line, which we can see by running:
+Let's first verify that the file was properly created by running the list command (`ls`):
+
 
 ~~~
 $ ls
@@ -73,6 +56,9 @@ $ ls
 mars.txt
 ~~~
 {: .output}
+
+
+`mars.txt` contains a single line, which we can see by running:
 
 ~~~
 $ cat mars.txt
@@ -93,14 +79,15 @@ $ git status
 {: .language-bash}
 
 ~~~
-On branch master
+On branch main
 
-Initial commit
+No commits yet
 
 Untracked files:
    (use "git add <file>..." to include in what will be committed)
 
 	mars.txt
+
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
 {: .output}
@@ -122,9 +109,9 @@ $ git status
 {: .language-bash}
 
 ~~~
-On branch master
+On branch main
 
-Initial commit
+No commits yet
 
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
@@ -145,7 +132,7 @@ $ git commit -m "Start notes on Mars as a base"
 {: .language-bash}
 
 ~~~
-[master (root-commit) f22b25e] Start notes on Mars as a base
+[main (root-commit) f22b25e] Start notes on Mars as a base
  1 file changed, 1 insertion(+)
  create mode 100644 mars.txt
 ~~~
@@ -154,9 +141,8 @@ $ git commit -m "Start notes on Mars as a base"
 When we run `git commit`,
 Git takes everything we have told it to save by using `git add`
 and stores a copy permanently inside the special `.git` directory.
-This permanent copy is called a [commit]({{ page.root }}/reference#commit)
-(or [revision]({{ page.root }}/reference#revision)) and its short identifier is `f22b25e`.
-Your commit may have another identifier.
+This permanent copy is called a [commit]({{ page.root }}{% link reference.md %}#commit)
+(or [revision]({{ page.root }}{% link reference.md %}#revision)) and its short identifier is `f22b25e`. Your commit may have another identifier.
 
 We use the `-m` flag (for "message")
 to record a short, descriptive, and specific comment that will help us remember later on what we did and why.
@@ -176,7 +162,7 @@ $ git status
 {: .language-bash}
 
 ~~~
-On branch master
+On branch main
 nothing to commit, working directory clean
 ~~~
 {: .output}
@@ -242,7 +228,7 @@ $ git status
 {: .language-bash}
 
 ~~~
-On branch master
+On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
@@ -300,12 +286,11 @@ After reviewing our change, it's time to commit it:
 
 ~~~
 $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
-$ git status
 ~~~
 {: .language-bash}
 
 ~~~
-On branch master
+On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
@@ -327,7 +312,7 @@ $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
 {: .language-bash}
 
 ~~~
-[master 34961b1] Add concerns about effects of Mars' moons on Wolfman
+[main 34961b1] Add concerns about effects of Mars' moons on Wolfman
  1 file changed, 1 insertion(+)
 ~~~
 {: .output}
@@ -346,7 +331,7 @@ but *not* commit some of our work drafting the conclusion
 To allow for this,
 Git has a special *staging area*
 where it keeps track of things that have been added to
-the current [changeset]({{ page.root }}/reference#changeset)
+the current [changeset]({{ page.root }}{% link reference.md %}#changeset)
 but not yet committed.
 
 > ## Staging Area
@@ -358,12 +343,12 @@ but not yet committed.
 > makes a permanent record of it (as a commit).
 > If you don't have anything staged when you type `git commit`,
 > Git will prompt you to use `git commit -a` or `git commit --all`,
-> which is kind of like gathering *everyone* for the picture!
+> which is kind of like gathering *everyone* to take a group photo!
 > However, it's almost always better to
 > explicitly add things to the staging area, because you might
-> commit changes you forgot you made. (Going back to snapshots,
-> you might get the extra with incomplete makeup walking on
-> the stage for the snapshot because you used `-a`!)
+> commit changes you forgot you made. (Going back to the group photo simile,
+> you might get an extra with incomplete makeup walking on
+> the stage for the picture because you used `-a`!)
 > Try to stage things manually,
 > or you might find yourself searching for "git undo commit" more
 > than you would like!
@@ -454,7 +439,7 @@ $ git commit -m "Discuss concerns about Mars' climate for Mummy"
 {: .language-bash}
 
 ~~~
-[master 005937f] Discuss concerns about Mars' climate for Mummy
+[main 005937f] Discuss concerns about Mars' climate for Mummy
  1 file changed, 1 insertion(+)
 ~~~
 {: .output}
@@ -467,7 +452,7 @@ $ git status
 {: .language-bash}
 
 ~~~
-On branch master
+On branch main
 nothing to commit, working directory clean
 ~~~
 {: .output}
@@ -552,21 +537,24 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > ~~~
 > {: .language-bash}
 > ~~~
-> * 005937f Discuss concerns about Mars' climate for Mummy
-> * 34961b1 Add concerns about effects of Mars' moons on Wolfman
-> * f22b25e Start notes on Mars as a base
+> 005937f Discuss concerns about Mars' climate for Mummy
+> 34961b1 Add concerns about effects of Mars' moons on Wolfman
+> f22b25e Start notes on Mars as a base
 > ~~~
 > {: .output}
 >
-> You can also combine the `--oneline` options with others. One useful
-> combination is:
+> You can also combine the `--oneline` option with others. One useful
+> combination adds `--graph` to display the commit history as a text-based
+> graph and to indicate which commits are associated with the
+> current `HEAD`, the current branch `main`, or
+> [other Git references][git-references]:
 >
 > ~~~
-> $ git log --oneline --graph --all --decorate
+> $ git log --oneline --graph
 > ~~~
 > {: .language-bash}
 > ~~~
-> * 005937f Discuss concerns about Mars' climate for Mummy (HEAD, master)
+> * 005937f (HEAD -> main) Discuss concerns about Mars' climate for Mummy
 > * 34961b1 Add concerns about effects of Mars' moons on Wolfman
 > * f22b25e Start notes on Mars as a base
 > ~~~
@@ -581,14 +569,14 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 >    Try it for yourself:
 >
 >    ~~~
->    $ mkdir directory
+>    $ mkdir spaceships
 >    $ git status
->    $ git add directory
+>    $ git add spaceships
 >    $ git status
 >    ~~~
 >    {: .language-bash}
 >
->    Note, our newly created empty directory `directory` does not appear in
+>    Note, our newly created empty directory `spaceships` does not appear in
 >    the list of untracked files even if we explicitly add it (_via_ `git add`) to our
 >    repository. This is the reason why you will sometimes see `.gitkeep` files
 >    in otherwise empty directories. Unlike `.gitignore`, these files are not special
@@ -600,6 +588,23 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 >
 >    ~~~
 >    git add <directory-with-files>
+>    ~~~
+>    {: .language-bash}
+>
+>    Try it for yourself:
+>
+>    ~~~
+>    $ touch spaceships/apollo-11 spaceships/sputnik-1
+>    $ git status
+>    $ git add spaceships
+>    $ git status
+>    ~~~
+>    {: .language-bash}
+>
+>    Before moving on, we will commit these changes.
+>
+>    ~~~
+>    $ git commit -m "Add some initial thoughts on spaceships"
 >    ~~~
 >    {: .language-bash}
 >
@@ -712,7 +717,7 @@ repository (`git commit`):
 > > ~~~
 > > {: .language-bash}
 > > ~~~
-> > [master cc127c2]
+> > [main cc127c2]
 > >  Write plans to start a base on Venus
 > >  2 files changed, 2 insertions(+)
 > >  create mode 100644 venus.txt
@@ -759,7 +764,7 @@ repository (`git commit`):
 > >
 > > ~~~
 > > $ git add me.txt
-> > $ git commit -m'Adding biography file'
+> > $ git commit -m "Add biography file" 
 > > ~~~
 > > {: .language-bash}
 > >
@@ -775,57 +780,7 @@ repository (`git commit`):
 > {: .solution}
 {: .challenge}
 
-> ## Author and Committer
->
-> For each of the commits you have done, Git stored your name twice.
-> You are named as the author and as the committer. You can observe
-> that by telling Git to show you more information about your last
-> commits:
->
-> ~~~
-> $ git log --format=full
-> ~~~
-> {: .language-bash}
->
-> When committing you can name someone else as the author:
->
-> ~~~
-> $ git commit --author="Vlad Dracula <vlad@tran.sylvan.ia>"
-> ~~~
-> {: .language-bash}
->
-> Create a new repository and create two commits: one without the
-> `--author` option and one by naming a colleague of yours as the
-> author. Run `git log` and `git log --format=full`. Think about ways
-> how that can allow you to collaborate with your colleagues.
->
-> > ## Solution
-> >
-> > ~~~
-> > $ git add me.txt
-> > $ git commit -m "Update Vlad's bio." --author="Frank N. Stein <franky@monster.com>"
-> > ~~~
-> > {: .language-bash}
-> > ~~~
-> > [master 4162a51] Update Vlad's bio.
-> > Author: Frank N. Stein <franky@monster.com>
-> > 1 file changed, 2 insertions(+), 2 deletions(-)
-> >
-> > $ git log --format=full
-> > commit 4162a51b273ba799a9d395dd70c45d96dba4e2ff
-> > Author: Frank N. Stein <franky@monster.com>
-> > Commit: Vlad Dracula <vlad@tran.sylvan.ia>
-> >
-> > Update Vlad's bio.
-> >
-> > commit aaa3271e5e26f75f11892718e83a3e2743fab8ea
-> > Author: Vlad Dracula <vlad@tran.sylvan.ia>
-> > Commit: Vlad Dracula <vlad@tran.sylvan.ia>
-> >
-> > Vlad's initial bio.
-> > ~~~
-> > {: .output}
-> {: .solution}
-{: .challenge}
-
 [commit-messages]: https://chris.beams.io/posts/git-commit/
+[git-references]: https://git-scm.com/book/en/v2/Git-Internals-Git-References
+
+{% include links.md %}

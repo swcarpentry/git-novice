@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Instructor Notes"
-permalink: /guide/
 ---
 Using a software tool to handle the versions of your project files
 lets you focus on the more interesting/innovative aspects of your project.
@@ -59,6 +58,9 @@ working in teams or not, because it is
     these issues, since learners will almost certainly trip over them
     again.  If learners are running into line ending problems, GitHub
     has a [page][github-line-endings] that helps with troubleshooting.
+    Specifically, the [section on refreshing a repository][github-line-endings-refresh]
+    may be helpful if learners need to change the `core.autocrlf` setting
+    after already having made one or more commits.
 
 *   We don't use a Git GUI in these notes because we haven't found one that
     installs easily and runs reliably on the three major operating systems, and
@@ -80,7 +82,7 @@ working in teams or not, because it is
     *    [Code School][code-school] has a free interactive course, [Try Git][try-git].
     *    for instructors, [the Git parable][git-parable] is useful background reading
 
-## [Automated Version Control]({{ page.root }}/01-basics/)
+## [Automated Version Control]({{ page.root }}{% link _episodes/01-basics.md %})
 
 *   Ask, "Who uses 'undo' in their editor?" All say "Me". 'Undo' is the simplest
     form of version control.
@@ -95,7 +97,7 @@ working in teams or not, because it is
     and, "come on this really has to be the last version" to motivate version
     control as a better way to collaborate and as a better way to back work up.
 
-## [Setting Up Git]({{ page.root }}/02-setup/)
+## [Setting Up Git]({{ page.root }}{% link _episodes/02-setup.md %})
 
 *   We suggest instructors and students use `nano` as the text editor for this
     lessons because
@@ -111,7 +113,12 @@ working in teams or not, because it is
     common for them to edit the instructor's details (e.g. email).  Check at
     the end using `git config --list`.
 
-## [Creating a Repository]({{ page.root }}/03-create/)
+*   When setting up the default branch name, if learners have a Git version
+    older than 2.28, the default branch name can be changed for the lesson
+    using `git branch -M main` if there are currently commits in the repository,
+    or `git checkout -b main` if there are no commits/the repository is completely empty.
+
+## [Creating a Repository]({{ page.root }}{% link _episodes/03-create.md %})
 
 *   When you do `git status`, Mac users may see a `.DS_Store` file showing as
     untracked. This a file that Mac OS creates in each directory.
@@ -133,7 +140,7 @@ working in teams or not, because it is
     The challenge suggests that it is a bad idea to create a Git repo inside another repo.
     For more discussion on this topic, please see [this issue][repos-in-repos].
 
-## [Tracking Changes]({{ page.root }}/04-changes/)
+## [Tracking Changes]({{ page.root }}{% link _episodes/04-changes.md %})
 
 *   It's important that learners do a full commit cycle by themselves (make
     changes, `git diff`, `git add`, and `git commit`). The "`bio` repository"
@@ -146,19 +153,19 @@ working in teams or not, because it is
     doing `$ git checkout f22b25e mars.txt`, someone does `$ git checkout
     f22b25e`, they wind up in the "detached HEAD" state and confusion abounds.
     It's then possible to keep on committing, but things like `git push origin
-    master` a bit later will not give easily comprehensible results.  It also
+    main` a bit later will not give easily comprehensible results.  It also
     makes it look like commits can be lost.  To "re-attach" HEAD, use
-    `git checkout master`.
+    `git checkout main`.
 
 *   This is a good moment to show a log within a Git GUI. If you skip it
     because you're short on time, show it once in GitHub.
 
-## [Ignoring Things]({{ page.root }}/06-ignore/)
+## [Ignoring Things]({{ page.root }}{% link _episodes/06-ignore.md %})
 
 Just remember that you can use wildcards and regular expressions to ignore a
 particular set of files in `.gitignore`.
 
-## [Remotes in GitHub]({{ page.root }}/07-github/)
+## [Remotes in GitHub]({{ page.root }}{% link _episodes/07-github.md %})
 
 *   Make it clear that Git and GitHub are not the same thing: Git is an open
     source version control tool, GitHub is a company that hosts Git
@@ -173,7 +180,15 @@ particular set of files in `.gitignore`.
 *   It is very useful to draw a diagram showing the different repositories
     involved.
 
-## [Collaborating]({{ page.root }}/08-collab/)
+*   When pushing to a remote, the output from Git can vary slightly depending on
+    what leaners execute. The lesson displays the output from git if a learner
+    executes `git push origin main`. However, some learners might use syntax
+    suggested by GitHub for pushing to a remote with an existing repository,
+    which is `git push -u origin main`. Learners using syntax from GitHub,
+    `git push -u origin main`, will have slightly different output, including
+    the line `Branch main set up to track remote branch main from origin by rebasing.`
+
+## [Collaborating]({{ page.root }}{% link _episodes/08-collab.md %})
 
 *   Decide in advance whether all the learners will work in one shared
     repository, or whether they will work in pairs (or other small groups) in
@@ -238,10 +253,13 @@ particular set of files in `.gitignore`.
 *   Conflicts, sometimes weird, will start to arise. Stay tight: conflicts are
     next.
 
-## [Conflicts]({{ page.root }}/09-conflict/)
+*   Learners may have slightly different output from `git push` and `git pull`
+    depending on the version of git, and if upstream (`-u`) is used.
 
-*   Expect the learners to make mistakes. Expect *yourself* to make mistakes. This
-    happens because it is late in the lesson and everyone is tired.
+## [Conflicts]({{ page.root }}{% link _episodes/09-conflict.md %})
+
+*   Expect the learners to make mistakes. Expect *yourself* to make mistakes.
+    This happens because it is late in the lesson and everyone is tired.
 
 *   If you're the only instructor, the best way to create a conflict is:
 
@@ -263,24 +281,33 @@ particular set of files in `.gitignore`.
     You still have to `git add` and `git commit` after this. This is
     particularly useful when working with binary files.
 
-## [Open Science]({{ page.root }}/10-open/)
+*  Keep in mind that depending on the Git version used, the outputs for
+   `git push` and `git pull` can vary slightly.
 
-## [Licensing]({{ page.root }}/11-licensing/)
+## [Open Science]({{ page.root }}{% link _episodes/10-open.md %})
+
+## [Licensing]({{ page.root }}{% link _episodes/11-licensing.md %})
 
 We teach about licensing because questions about who owns what, or can use
 what, arise naturally once we start talking about using public services like
 GitHub to store files. Also, the discussion gives learners a chance to catch
 their breath after what is often a frustrating couple of hours.
 
-## [Citation]({{ page.root }}/12-citation/)
+The Creative Commons family of licenses is recommended for many types of
+works (including software documentation and images used in software) but not
+software itself. Creative Commons [recommends][cc-faq-software] a
+software-specific license instead.
 
-## [Hosting]({{ page.root }}/13-hosting/)
+## [Citation]({{ page.root }}{% link _episodes/12-citation.md %})
+
+## [Hosting]({{ page.root }}{% link _episodes/13-hosting.md %})
 
 A common concern for learners is having their work publicly available on
 GitHub.  While we encourage open science, sometimes private repos are the
 only choice. It's always interesting to mention the options to have
 web-hosted private repositories.
 
+[cc-faq-software]: https://creativecommons.org/faq/#can-i-apply-a-creative-commons-license-to-software
 [code-school]: https://www.codeschool.com/
 [diffmerge]: https://sourcegear.com/diffmerge/
 [drawings]: https://marklodato.github.io/visual-git-guide/index-en.html
@@ -289,7 +316,8 @@ web-hosted private repositories.
 [git-parable]: http://tom.preston-werner.com/2009/05/19/the-git-parable.html
 [github]: https://github.com/
 [github-gui]: https://git-scm.com/downloads/guis
-[github-line-endings]: https://help.github.com/articles/dealing-with-line-endings/#platform-all
+[github-line-endings]: https://docs.github.com/en/github/using-git/configuring-git-to-handle-line-endings
+[github-line-endings-refresh]: https://docs.github.com/en/github/using-git/configuring-git-to-handle-line-endings#refreshing-a-repository-after-changing-line-endings
 [github-privacy]: https://help.github.com/articles/keeping-your-email-address-private/
 [repos-in-repos]: https://github.com/swcarpentry/git-novice/issues/272
 [try-git]: https://try.github.io
