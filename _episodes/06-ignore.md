@@ -30,7 +30,7 @@ $ git status
 {: .language-bash}
 
 ~~~
-On branch master
+On branch main
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
@@ -76,7 +76,7 @@ $ git status
 {: .language-bash}
 
 ~~~
-On branch master
+On branch main
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
@@ -100,7 +100,7 @@ $ git status
 {: .language-bash}
 
 ~~~
-On branch master
+On branch main
 nothing to commit, working directory clean
 ~~~
 {: .output}
@@ -130,7 +130,7 @@ $ git status --ignored
 {: .language-bash}
 
 ~~~
-On branch master
+On branch main
 Ignored files:
  (use "git add -f <file>..." to include in what will be committed)
 
@@ -258,6 +258,35 @@ nothing to commit, working directory clean
 > > Appending `results/data/position/gps/*.dat` will match every file in `results/data/position/gps`
 > > that ends with `.dat`.
 > > The file `results/data/position/gps/info.txt` will not be ignored.
+> {: .solution}
+{: .challenge}
+
+> ## Ignoring all data Files in the repository
+>
+> Let us assume you have many `.dat` files in different subdirectories of your repository.
+> For example, you might have:
+> 
+> ~~~
+> results/a.dat
+> data/experiment_1/b.dat
+> data/experiment_2/c.dat
+> data/experiment_2/variation_1/d.dat
+> ~~~
+> {: .language-bash}
+> 
+> How do you ignore all the `.dat` files, without explicitly listing the names of the corresponding folders?
+> 
+> > ## Solution
+> >
+> > In the `.gitignore` file, write:
+> > 
+> > ~~~
+> > **/*.dat               
+> > ~~~
+> > {: .output}
+> >
+> > This will ignore all the `.dat` files, regardless of their position in the directory tree. 
+> > You can still include some specific exception with the exclamation point operator.
 > {: .solution}
 {: .challenge}
 
