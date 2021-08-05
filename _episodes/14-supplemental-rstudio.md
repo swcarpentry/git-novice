@@ -143,7 +143,7 @@ file:
 > > dir.create("./graphs")
 > > ```
 > > {: .language-r}
-> > Then open up the `.gitignore` file from the righ-hand panel of Rstudio and add 
+> > Then open up the `.gitignore` file from the right-hand panel of Rstudio and add 
 > > `graphs/` to the list of files to ignore.
 > {: .solution}
 {: .challenge}
