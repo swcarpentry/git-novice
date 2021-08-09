@@ -47,7 +47,8 @@ $ cat mars.txt
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
-This line added to Wolfman's copy
+An underground base with few windows would be best, to minimise Wolfman's exposure to the moons
+A windbreak could protect a base from dust storms
 ~~~
 {: .output}
 
@@ -55,13 +56,13 @@ and then push the change to GitHub:
 
 ~~~
 $ git add mars.txt
-$ git commit -m "Add a line in our home copy"
+$ git commit -m "Add discussion of base type and weather protections"
 ~~~
 {: .language-bash}
 
 ~~~
-[main 5ae9631] Add a line in our home copy
- 1 file changed, 1 insertion(+)
+[main 5ae9631] Add discussion of base type and weather protections
+ 1 file changed, 2 insertions(+)
 ~~~
 {: .output}
 
@@ -97,7 +98,8 @@ $ cat mars.txt
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
-We added a different line in the other copy
+A tall, glass base would be best, to give Vlad the best view of the red surroundings
+A helipad could be useful for supplies arriving
 ~~~
 {: .output}
 
@@ -105,13 +107,13 @@ We can commit the change locally:
 
 ~~~
 $ git add mars.txt
-$ git commit -m "Add a line in my copy"
+$ git commit -m "Add points around base layout"
 ~~~
 {: .language-bash}
 
 ~~~
-[main 07ebc69] Add a line in my copy
- 1 file changed, 1 insertion(+)
+[main 07ebc69] Add points around base layout
+ 1 file changed, 2 insertions(+)
 ~~~
 {: .output}
 
@@ -179,9 +181,11 @@ Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 <<<<<<< HEAD
-We added a different line in the other copy
+An underground base with few windows would be best, to minimise Wolfman's exposure to the moons
+A windbreak could protect a base from dust storms
 =======
-This line added to Wolfman's copy
+A tall, glass base would be best, to give Vlad the best view of the red surroundings
+A helipad could be useful for supplies arriving
 >>>>>>> dabb4c8c450e8475aee9b14b4383acc99f42af1d
 ~~~
 {: .output}
@@ -197,7 +201,10 @@ and reconcile the changes.
 We can do anything we want: keep the change made in the local repository, keep
 the change made in the remote repository, write something new to replace both,
 or get rid of the change entirely.
-Let's replace both so that the file looks like this:
+In this case, some of the changes directly contradict each other,
+but others are unrelated to each other. Let's keep the independent points,
+but replace the contradicting ones with a compromise,
+so that the file looks like this:
 
 ~~~
 $ cat mars.txt
@@ -208,7 +215,9 @@ $ cat mars.txt
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
-We removed the conflict on this line
+A base mixing underground and overground elements will help to keep all team members comfortable
+A windbreak could protect a base from dust storms
+A helipad could be useful for supplies arriving
 ~~~
 {: .output}
 
@@ -285,7 +294,7 @@ From https://github.com/vlad/planets
 Updating dabb4c8..2abf2b1
 Fast-forward
  mars.txt | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 ~~~
 {: .output}
 
@@ -300,7 +309,9 @@ $ cat mars.txt
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
-We removed the conflict on this line
+A base mixing underground and overground elements will help to keep all team members comfortable
+A windbreak could protect a base from dust storms
+A helipad could be useful for supplies arriving
 ~~~
 {: .output}
 
