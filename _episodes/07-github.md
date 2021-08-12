@@ -443,7 +443,7 @@ GitHub, though, this command would download them to our local repository.
 > {: .solution}
 {: .challenge}
 
-> ## GitHub License and README files
+> ## Fixing "refusing to merge unrelated histories" in relation to GitHub License and README files
 >
 > In this episode we learned about creating a remote repository on GitHub, but when you initialized 
 > your GitHub repo, you didn't add a README.md or a license file. If you had, what do you think 
