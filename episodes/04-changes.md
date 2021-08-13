@@ -680,6 +680,8 @@ repository (`git commit`):
 >
 > > ## Solution
 > >
+> > The output below from `cat mars.txt` reflects only content added during 
+> > this exercise. Your output may vary.
 > > First we make our changes to the `mars.txt` and `venus.txt` files:
 > > ~~~
 > > $ nano mars.txt
