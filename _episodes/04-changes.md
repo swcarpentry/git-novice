@@ -465,7 +465,7 @@ $ git log
 {: .language-bash}
 
 ~~~
-commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
+commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -> main)
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 10:14:07 2013 -0400
 
@@ -521,7 +521,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > {: .language-bash}
 >
 > ~~~
-> commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
+> commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -> main)
 > Author: Vlad Dracula <vlad@tran.sylvan.ia>
 > Date:   Thu Aug 22 10:14:07 2013 -0400
 >
@@ -537,7 +537,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > ~~~
 > {: .language-bash}
 > ~~~
-> 005937f Discuss concerns about Mars' climate for Mummy
+> 005937f (HEAD -> main) Discuss concerns about Mars' climate for Mummy
 > 34961b1 Add concerns about effects of Mars' moons on Wolfman
 > f22b25e Start notes on Mars as a base
 > ~~~
