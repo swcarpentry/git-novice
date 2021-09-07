@@ -12,11 +12,13 @@ or run `make` in this directory for a list of helpful commands.
 
 Maintainers:
 
-* [Ivan Gonzalez][gonzalez_ivan]: [@iglpdc](https://github.com/iglpdc)
 * [Nima Hejazi][hejazi_nima]: [@nhejazi](https://github.com/nhejazi)
-* [Daisie Huang][huang_daisie]: [@daisieh](https://github.com/daisieh)
 * [Kat Koziar][koziar_kat]: [@kekoziar](https://github.com/kekoziar)
 * [Madicken Munk][munk_madicken]: [@munkm](https://github.com/munkm)
+
+Alumni maintainers:
+* [Ivan Gonzalez][gonzalez_ivan]: [@iglpdc](https://github.com/iglpdc)
+* [Daisie Huang][huang_daisie]: [@daisieh](https://github.com/daisieh)
 
 [gonzalez_ivan]: https://carpentries.org/instructors/#iglpdc
 [hejazi_nima]: https://carpentries.org/instructors/#nhejazi
