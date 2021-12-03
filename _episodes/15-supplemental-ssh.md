@@ -4,6 +4,8 @@ teaching: 20
 exercises: 0
 questions:
 - "How can I save my SSH passphrase on a secure computer?"
+- "What are SSH-keys, and how do I use them securely?"
+- "What is the SSH-Agent and why do I want to use it?"
 objectives:
 - ""
 keypoints:
@@ -42,8 +44,47 @@ ssh-add ~/.ssh/id_ed25519
 {: .language-bash}
 
 The episode "Remotes in GitHub" covered the first two lines, but omitted the last two.  This section
+will explain the other two lines and what they do.
 
-What is SSH-Agent. What it does. What the command does.  Why use it. Why do we omit it from the regular lesson.
+## A Bit of Background
+
+### SSH Key-Pairs
+
+An SSH key pair consists of a _public key_ (e.g. `id_ed25519.pub` or `id_rsa.pub`) and a 
+_private key_ (`id_ed25519` or `id_rsa`).
+The _public key_ can be thought of as a padlock and the _private key_ as the key that can open that padlock.
+A user can attach their _public key_ to an account (e.g. on GitHub or an SSH server) and the server
+lets anyone who has the matching _private key_ (the key that can open the padlock) access that account.
+
+As the _private key_ can now be used instead of a password, it is **highly recommended** to protect
+it with a strong _passphrase_ (i.e. a strong and long password that can consist of several words).
+This prevents an attacker who somehow managed to steal (or make a copy of) the _private key_ file to
+use it, unless they know the _passphrase_.
+
+When using the _private key_, we now have to use the _passphrase_ of the _private key_ instead of
+the password of the account.
+
+
+### The SSH-Agent
+
+An _SSH-agent_ is a program that can run on your computer and can securely hold your _private key_
+in memory.  You only need to enter your _passphrase_ when adding your _private key_ to the
+_SSH-agent_.  Whenever you try connect via SSH (e.g. during git `push`, `pull` or `fetch`), the
+_SSH-server_ can "talk" to the _SSH-agent_ to verify whether it has a matching key.
+
+This way you don't have to enter the key's _passphrase_ every time you run `git push` or `git pull`
+but only need to enter the _passphrase_ only once in a new terminal window.
+
+On macOS and many Linux desktops, a _keychain_ application can play the role of the _SSH-agent_.
+
+
+## Using the SSH-Agent
+
+As so often, there are many paths one can take to reach to the same goal.  The following commands
+will work on most machines, no matter if you are using macOS, Windows or Linux.
+
+The following command starts the _SSH-agent_ and sets an environment-variable, so that ssh and git
+can use it:
 ~~~
 eval "$(ssh-agent -s)"
 ~~~
@@ -53,7 +94,8 @@ Agent pid 2106
 ~~~
 {: .output}
 
-What ssh-add does.
+
+Next we add our _private ssh-key_ to the _SSH-agent_:
 ~~~
 ssh-add ~/.ssh/id_ed25519
 ~~~
@@ -62,13 +104,17 @@ ssh-add ~/.ssh/id_ed25519
 Identity added: /c/Users/Vlad Dracula/.ssh/id_ed25519 (vlad@tran.sylvan.ia)
 ~~~
 {: .output}
+This will ask you to enter the _passphrase_ of your _private key_.
+
+You will need to run both commands any time you open a new terminal window.
 
 ## Remove or Replace a Passphrase
 ~~~
 ssh-keygen -p
 ~~~
 {: .language-bash}
-This will then prompt you to enter the keyfile location, the old passphrase, and the new passphrase (which can be left blank to have no passphrase).
+This will then prompt you to enter the keyfile location, the old passphrase, and the new passphrase.
+You could leave the new passphrase blank to remove it, however this is **not recommended**!
 
 If you would like to do it all on one line without prompts do:
 
@@ -80,23 +126,41 @@ ssh-keygen -p [-P old_passphrase] [-N new_passphrase] [-f keyfile]
 
 
 ## Removing a Key Pair
-What happens if your private key is compromised. 
+What happens if your private key is compromised?
 
-On GitHub, navigate to the SSH section, and select delete
+On GitHub: 
+- Click on your profile icon in the top right corner to get the drop-down menu. 
+- Click "Settings," then on the settings page,
+- Click "SSH and GPG keys," on the left side "Account settings" menu.
+- Click the [Delete] button next to your SSH-key.
 
-on your computer
+If you have used the key with GitLab, you should remove it there as well, by going to your account's
+"Preferences", via the profile icon in the top right corner, and clicking on "SSH Keys" in the 
+"User Settings" menu on the left side and then the "trash-can" (delete) icon next to the key.
+
+On your computer:
 ~~~
 ssh-add -D <ssh key path> 
 ls -al ~/.ssh
 rm ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub
 rm ~/.ssh/id_ed25519.pub
 ~~~
 {: .language-bash}
 
+> ## Have you used your SSH-key in other places?
+> Also if you have have added your _public ssh-key_ on any other account, e.g. by using the 
+> `ssh-copy-id` command or manually adding it to the file `~/.ssh/authorized_keys`) then make sure
+> to remove is key from the `~/.ssh/authorized_keys`-file on all computers and all accounts.
+>
+> We haven't covered the how to do that in this Git-lesson, but 
+> If you don't, then you are leaving a backdoor for whoever has managed to steal your private key.
+{: .callout}
+
 
 ## Personal Access Tokens
 
-PAT
+FIXME: PAT  
 if PAT is removed, you'll receive the following:
 git push origin main
 remote: Invalid username or password.
@@ -111,8 +175,8 @@ git config --global --unset credential.helper
 ~~~
 {: .language-bash}
 
-Windows 10: Credential Manager
-remove git credential.
+FIXME: Windows 10: Credential Manager  
+FIXME: remove git credential.  
 
 
 
