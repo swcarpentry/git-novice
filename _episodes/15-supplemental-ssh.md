@@ -11,7 +11,7 @@ keypoints:
 ---
 
 ## Why is SSH in a Git Lesson?
-Github used to allow command line (CLI) authentication using only username and password, which
+GitHub used to allow command line (CLI) authentication using only username and password, which
 uses HTTPS protocol.  However, this actually creates security risks, so, they removed 
 the CLI username/password option.  Instead, they kept two options which provide more
 robust security: SSH, which is a widely used protocol; and Personal Access Tokens (PAT), which uses 
@@ -41,7 +41,7 @@ ssh-add ~/.ssh/id_ed25519
 ~~~
 {: .language-bash}
 
-The episode, Remotes in GitHub covered the first two lines, but omitted the last two.  This secion 
+The episode "Remotes in GitHub" covered the first two lines, but omitted the last two.  This section
 
 What is SSH-Agent. What it does. What the command does.  Why use it. Why do we omit it from the regular lesson.
 ~~~
@@ -82,7 +82,7 @@ ssh-keygen -p [-P old_passphrase] [-N new_passphrase] [-f keyfile]
 ## Removing a Key Pair
 What happens if your private key is compromised. 
 
-On github, navigate to the SSH section, and select delete
+On GitHub, navigate to the SSH section, and select delete
 
 on your computer
 ~~~
