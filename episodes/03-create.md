@@ -34,7 +34,7 @@ Courtesy NASA/JPL-Caltech.
 
 
 
-First, let's create a directory in `Desktop` folder for our work and then move into that directory:
+First, let's create a new directory in the `Desktop` folder for our work and then change the current working directory to the newly created one:
 
 ~~~
 $ cd ~/Desktop
@@ -53,7 +53,7 @@ $ git init
 {: .language-bash}
 
 It is important to note that `git init` will create a repository that
-includes subdirectories and their files---there is no need to create
+can include subdirectories and their files---there is no need to create
 separate repositories nested within the `planets` repository, whether
 subdirectories are present from the beginning or added later. Also, note
 that the creation of the `planets` directory and its initialization as a
@@ -81,7 +81,7 @@ $ ls -a
 {: .output}
 
 Git uses this special subdirectory to store all the information about the project, 
-including all files and sub-directories located within the project's directory.
+including the tracked files and sub-directories located within the project's directory.
 If we ever delete the `.git` subdirectory,
 we will lose the project's history.
 
@@ -143,7 +143,7 @@ wording of the output might be slightly different.
 > > ## Solution
 > >
 > > No. Dracula does not need to make the `moons` subdirectory a Git repository 
-> > because the `planets` repository will track all files, sub-directories, and 
+> > because the `planets` repository can track any files, sub-directories, and 
 > > subdirectory files under the `planets` directory.  Thus, in order to track 
 > > all information about moons, Dracula only needed to add the `moons` subdirectory
 > > to the `planets` directory.
