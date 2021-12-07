@@ -77,6 +77,42 @@ but only need to enter the _passphrase_ only once in a new terminal window.
 
 On macOS and many Linux desktops, a _keychain_ application can play the role of the _SSH-agent_.
 
+> ## SSH Agent on Linux Desktops
+> You can most likely skip the steps of starting the SSH-Agent and adding the keys, as most
+> Linux distributions are starting the SSH-Agent in the background and using it for the first
+> time will open a pop-up window in which you can enter your password.
+{: .callout}
+
+> ## SSH Agent on macOS
+> The macOS Keychain can act as an SSH Agent and you don't need to start the SSH-Agent manually.
+> Either add the private SSH key via the menu or use the following command:
+>
+> ~~~
+> ssh-add -K ~/.ssh/id_ed25519
+> ~~~
+> {: .language-bash}
+>
+> This `-K` option is specific for macOS and confirmed to work with macOS up to version FIXME:.
+> Newer versions of OpenSSH use the `ssh-add -K` option to manage SSH keys stored on physical 
+> security-keys and this option may change in a future version of macOS.
+{: .callout}
+
+> ## SSH Agent on Windows
+> You probably want to continue running these commands:
+>
+> ~~~
+> eval "$(ssh-agent -s)"
+> ssh-add ~/.ssh/id_ed25519
+> ~~~
+> {: .language-bash}
+>
+> As this will work in "Git Bash", the Windows "Command Line", Windows Subsystem for Linux 1 &amp; 2
+> (WSL), MobaXterm and others.
+>
+{: .callout}
+FIXME: Add how to convert OpenSSH key to PuTTY format using PuTTYgen, start Pageant and 
+tell git to use plink.exe instead of ssh.exe as the ssh-client.
+
 
 ## Using the SSH-Agent
 
