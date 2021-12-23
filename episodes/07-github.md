@@ -70,7 +70,7 @@ Now that we have two repositories, we need a diagram like this:
 Note that our local repository still contains our earlier work on `mars.txt`, but the
 remote repository on GitHub appears empty as it doesn't contain any files yet.
 
-## 2. Connect locale to remote repository
+## 2. Connect local to remote repository
 Now we connect the two repositories.  We do this by making the
 GitHub repository a [remote]({{ page.root}}{% link reference.md %}#remote) for the local repository.
 The home page of the repository on GitHub includes the URL string we need to
@@ -235,7 +235,7 @@ drwxr-xr-x 1 Vlad Dracula 197121   0 Jul 16 14:48 ../
 ~~~
 {: .output}
 
-## 3.2 Copy the public key to GitHub
+### 3.2 Copy the public key to GitHub
 Now we have a SSH key pair and we can run this command to check if GitHub can read our authentication.  
 
 ~~~
