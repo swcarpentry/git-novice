@@ -105,7 +105,7 @@ nothing to commit, working directory clean
 ~~~
 {: .output}
 
-As a bonus, using `.gitignore` helps us avoid accidentally adding to the repository files that we don't want to track:
+As a bonus, using `.gitignore` helps us avoid accidentally adding files to the repository that we don't want to track:
 
 ~~~
 $ git add a.dat
