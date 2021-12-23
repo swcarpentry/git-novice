@@ -45,7 +45,7 @@ repository with the same name.
 To clone the Owner's repo into her `Desktop` folder, the Collaborator enters:
 
 ~~~
-$ git clone https://github.com/vlad/planets.git ~/Desktop/vlad-planets
+$ git clone git@github.com:vlad/planets.git ~/Desktop/vlad-planets
 ~~~
 {: .language-bash}
 
