@@ -25,7 +25,7 @@ Dracula sets up his new laptop:
 
 ~~~
 $ git config --global user.name "Vlad Dracula"
-$ git config --global user.email "vlad@tran.sylvan.ia"
+$ git config --global user.email vlad@tran.sylvan.ia #please note that you do not need the quotation marks for setting the email (since it does not have spaces)
 ~~~
 {: .language-bash}
 
