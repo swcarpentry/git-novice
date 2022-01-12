@@ -61,7 +61,7 @@ collaboration among different people.
 > ## The Long History of Version Control Systems
 >
 > Automated version control systems are nothing new.
-> Tools like RCS, CVS, or Subversion have been around since the early 1980s and are used by 
+> Tools like [RCS](https://en.wikipedia.org/wiki/Revision_Control_System), [CVS](https://en.wikipedia.org/wiki/Concurrent_Versions_System), or [Subversion](https://en.wikipedia.org/wiki/Apache_Subversion) have been around since the early 1980s and are used by 
 > many large companies.
 > However, many of these are now considered legacy systems (i.e., outdated) due to various 
 > limitations in their capabilities.
