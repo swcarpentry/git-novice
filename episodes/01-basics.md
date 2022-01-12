@@ -21,7 +21,7 @@ automated version control is much better than this situation:
 
 "Piled Higher and Deeper" by Jorge Cham, http://www.phdcomics.com
 
-We've all been in this situation before: it seems ridiculous to have
+We've all been in this situation before: it seems unnecessary to have
 multiple nearly-identical versions of the same document. Some word
 processors let us deal with this a little better, such as Microsoft
 Word's 
