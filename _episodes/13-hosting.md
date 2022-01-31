@@ -29,8 +29,7 @@ but requires more time and effort to set up than either the option above or the
 option below.
 
 The third option is to use a public hosting service like
-[GitHub](https://github.com), [GitLab](https://gitlab.com),or
-[BitBucket](https://bitbucket.org).
+[GitHub](https://github.com), [GitLab](https://gitlab.com),[BitBucket](https://bitbucket.org) or even the non-profit association [Codeberg](https://codeberg.org).
 Each of these services provides a web interface that enables people to create,
 view, and edit their code repositories.  These services also provide
 communication and project management tools including issue tracking, wiki pages,
