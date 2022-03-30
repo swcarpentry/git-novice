@@ -81,7 +81,7 @@ $ ls -a
 {: .output}
 
 Git uses this special subdirectory to store all the information about the project, 
-including all files and sub-directories located within the project's directory.
+including all files located within the project's directory and any sub-directories.
 If we ever delete the `.git` subdirectory,
 we will lose the project's history.
 
