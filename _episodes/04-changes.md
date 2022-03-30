@@ -248,7 +248,7 @@ nor have we saved them (which we do with `git commit`).
 So let's do that now. It is good practice to always review
 our changes before saving them. We do this using `git diff`.
 This shows us the differences between the current state
-of the file and the most recently saved version:
+of the file and the most recently committed (or staged) version:
 
 ~~~
 $ git diff
