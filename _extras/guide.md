@@ -110,7 +110,7 @@ working in teams or not, because it is
     another text editor if they're already familiar with it.
 
 *   When setting up Git, be very clear what learners have to enter: it is
-    common for them to edit the instructor's details (e.g. email).  Check at
+    common for them to enter the instructor's details (e.g., email).  Check at
     the end using `git config --list`.
 
 *   When setting up the default branch name, if learners have a Git version
