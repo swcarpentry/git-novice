@@ -313,6 +313,8 @@ consider these technical approaches to reducing them:
 
 - Pull from upstream more frequently, especially before starting new work
 - Use topic branches to segregate work, merging to main when complete
+  - Branches are beyond the scope of this lesson, but there are many resources
+    available online that explain how to use them.
 - Make smaller more atomic commits
 - Where logically appropriate, break large files into smaller ones so that it is
   less likely that two authors will alter the same file simultaneously
