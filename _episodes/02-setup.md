@@ -78,21 +78,35 @@ For this lesson, we will be interacting with [GitHub](https://github.com/) and s
 
 > ## Default Pull Behavior
 >
-> As of `git` version 2.27 if the current branch and the remote have diverged,
-> the user needs to specify how to reconcile the divergent branches with
-> `--rebase` or `--no-rebase` options to the `git pull` command.  In order to
-> specify the default to be used when no option is given, and to avoid an
-> annoying warning, it is necessary to set the `pull.rebase` configuration
-> variable using `git config`. Though it is beyond the scope of this lesson,
-> you can read more about this issue [in the Pro Git
-> book](https://git-scm.com/docs/git-config#Documentation/git-config.txt-pullrebase)
->
-> The following setting is recommended:
+> As of `git` version 2.27 in order to avoid a distracting hint from being
+> displayed later in this lesson, the following setting is recommended:
 >
 > ~~~
 > $ git config --global pull.rebase false
 > ~~~
 > {: .language-bash}
+>
+> Without this setting you may see this hint text,
+>
+> ~~~
+> hint: Pulling without specifying how to reconcile divergent branches is
+> hint: discouraged. You can squelch this message by running one of the following
+> hint: commands sometime before your next pull:
+> hint:
+> hint:   git config pull.rebase false  # merge (the default strategy)
+> hint:   git config pull.rebase true   # rebase
+> hint:   git config pull.ff only       # fast-forward only
+> hint:
+> hint: You can replace "git config" with "git config --global" to set a default
+> hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+> hint: or --ff-only on the command line to override the configured default per
+> hint: invocation.
+> ~~~
+> {: .language-bash}
+>
+> occur repeatedly in the second half of this lesson.  Though it is beyond the
+> scope of this lesson, you can read more about this issue [in the Pro Git
+> book](https://git-scm.com/docs/git-config#Documentation/git-config.txt-pullrebase)
 >
 {: .callout}
 

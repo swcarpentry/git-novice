@@ -168,6 +168,10 @@ Fast-forward
 ~~~
 {: .output}
 
+Note, if you see a large block of "hint" text from `git` in your output from
+the above command, you might want to update your configuration as suggested
+[here]({{ page.root }}{% link 02-setup.md %}#default-pull-behavior).
+
 Now the three repositories (Owner's local, Collaborator's local, and Owner's on
 GitHub) are back in sync.
 
