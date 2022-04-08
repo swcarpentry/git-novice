@@ -73,7 +73,27 @@ For this lesson, we will be interacting with [GitHub](https://github.com/) and s
 > $ git config --global core.autocrlf true
 > ~~~
 > {: .language-bash}
-> 
+>
+{: .callout}
+
+> ## Default Pull Behavior
+>
+> As of `git` version 2.27 if the current branch and the remote have diverged,
+> the user needs to specify how to reconcile the divergent branches with
+> `--rebase` or `--no-rebase` options to the `git pull` command.  In order to
+> specify the default to be used when no option is given, and to avoid an
+> annoying warning, it is necessary to set the `pull.rebase` configuration
+> variable using `git config`. Though it is beyond the scope of this lesson,
+> you can read more about this issue [in the Pro Git
+> book](https://git-scm.com/docs/git-config#Documentation/git-config.txt-pullrebase)
+>
+> The following setting is recommended:
+>
+> ~~~
+> $ git config --global pull.rebase false
+> ~~~
+> {: .language-bash}
+>
 {: .callout}
 
 Dracula also has to set his favorite text editor, following this table:
