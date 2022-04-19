@@ -91,7 +91,7 @@ of git.
 See the [setup episode](02-setup.md) for more information on this change.
 
 ~~~
-git checkout -b main
+$ git checkout -b main
 ~~~
 {: .language-bash}
 ~~~
