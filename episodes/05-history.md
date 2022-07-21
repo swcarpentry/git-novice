@@ -327,7 +327,7 @@ here's how Git works in cartoon form:
 > ~~~
 > (use "git checkout -- <file>..." to discard changes in working directory)
 > ~~~
-> {: .language-bash}
+> {: .output}
 >
 > As it says,
 > `git checkout` without a version identifier restores files to the state saved in `HEAD`.
