@@ -7,7 +7,7 @@ questions:
 objectives:
 - "Explain different options for hosting scientific work."
 keypoints:
-- "Projects can be hosted on university servers, on personal domains, or on public forges."
+- "Projects can be hosted on university servers, on personal domains, or on a public hosting service."
 - "Rules regarding intellectual property and storage of sensitive information apply no matter where code and data are hosted."
 ---
 
@@ -71,7 +71,7 @@ open source projects, and are also available for private repositories for a fee.
 
 > ## Can My Work Be Public?
 >
-> Find out whether you are allowed to host your work openly on a public forge.
+> Find out whether you are allowed to host your work openly in a public repository.
 > Can you do this unilaterally,
 > or do you need permission from someone in your institution?
 > If so, who?
