@@ -88,7 +88,7 @@ we will lose the project's history.
 Next, we will change the default branch to be called `main`.
 This might be the default branch depending on your settings and version
 of git.
-See the [setup episode](02-setup.md) for more information on this change.
+See the [setup episode]({{ page.root }}{% link _episodes/02-setup.md %}) for more information on this change.
 
 ~~~
 $ git checkout -b main
