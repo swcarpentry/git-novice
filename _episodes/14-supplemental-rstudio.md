@@ -24,7 +24,7 @@ project with Git. To get started using Git in RStudio, we create a new project:
 
 ![RStudio screenshot showing the file menu dropdown with "New Project..." selected](../fig/RStudio_screenshot_newproject.png)
 
-This will open a dialog asking us how we want to create the project. We have
+This opens a dialog asking us how we want to create the project. We have
 some options here. Let's say that we want to use RStudio with the planets
 repository that we already made. Since that repository lives in a directory on
 our computer, we choose the option "Existing Directory":
@@ -39,31 +39,33 @@ our computer, we choose the option "Existing Directory":
 > If that option is not present, it probably means that RStudio doesn't know
 > where your Git executable is, and you won't be able to progress further
 > in this lesson until you tell RStudio where it is.  
-> ### Find your Git Executiable
+>
+> ### Find your Git Executable
+>
 > First let's make sure that Git is installed on your computer.
 > Open your shell on Mac or Linux, or on Windows open the command prompt
 > and then type:
-> - `which git` (Mac, Linux)
+> - `which git` (macOS, Linux)
 > - `where git` (Windows)
 >
-> If there is no version of Git on your computer, 
-please follow the 
-[Git installation 
-instructions](https://swcarpentry.github.io/git-novice/setup.html)
+> If there is no version of Git on your computer, please follow the 
+> [Git installation instructions](https://swcarpentry.github.io/git-novice/setup.html)
 > in the setup of this lesson to install Git now. Next open your shell or command prompt 
-> and type `which git` (Mac, Linux), or `where git` (Windows).
+> and type `which git` (macOS, Linux), or `where git` (Windows).
 > Copy the path to the git executable.
 >
-> e.g. On one Windows computer which had GitHub Desktop installed on it, the path was:
+> On one Windows computer which had GitHub Desktop installed on it, the path was:
 > `C:/Users/UserName/AppData/Local/GitHubDesktop/app-1.1.1/resources/app/git/cmd/git.exe`
-> 
+>
 > NOTE: The path on your computer will be somewhat different.
+>
 > ### Tell RStudio where to find GitHub
+>
 > In RStudio, go to the `Tools` menu > `Global Options` > `Git/SVN` and then
-> browse to the git executable you found in the command prompt or shell. Now restart
+> browse to the Git executable you found in the command prompt or shell. Now restart
 > RStudio.
 > Note: Even if you have Git installed, you may need
-> to accept the XCode license if you are using macOS.
+> to accept the Xcode license if you are using macOS.
 {: .callout}
 
 Next, RStudio will ask which existing directory we want to use. Click
