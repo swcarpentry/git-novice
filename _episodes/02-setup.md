@@ -70,7 +70,7 @@ For this lesson, we will be interacting with [GitHub](https://github.com/) and s
 > And on Windows:
 >
 > ~~~
-> $ git config --global core.autocrlf false
+> $ git config --global core.autocrlf true
 > ~~~
 > {: .language-bash}
 > 
