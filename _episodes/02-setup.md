@@ -37,7 +37,7 @@ which means that any changes pushed to
 another Git host server
 after this lesson will include this information.
 
-For this lesson, we will be interacting with [GitHub](https://github.com/) and so the email address used should be the same as the one used when setting up your GitHub account. If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private][git-privacy]. 
+For this lesson, we will be interacting with [GitHub](https://github.com/) and so the email address used should be the same as the one used when setting up your GitHub account. If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private][git-privacy].
 
 >## Keeping your email private
 >
@@ -52,8 +52,8 @@ For this lesson, we will be interacting with [GitHub](https://github.com/) and s
 > Different operating systems use different character(s) to represent the end of a line.
 > (You may also hear these referred to as newlines or line breaks.)
 > Because Git uses these characters to compare files,
-> it may cause unexpected issues when editing a file on different machines. 
-> Though it is beyond the scope of this lesson, you can read more about this issue 
+> it may cause unexpected issues when editing a file on different machines.
+> Though it is beyond the scope of this lesson, you can read more about this issue
 > [in the Pro Git book](https://www.git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_autocrlf).
 >
 > You can change the way Git recognizes and encodes line endings
@@ -78,35 +78,12 @@ For this lesson, we will be interacting with [GitHub](https://github.com/) and s
 
 > ## Default Pull Behavior
 >
-> As of `git` version 2.27 in order to avoid a distracting hint from being
-> displayed later in this lesson, the following setting is recommended:
+> For this lesson we will use this default pull setting. Please enter:
 >
 > ~~~
 > $ git config --global pull.rebase false
 > ~~~
 > {: .language-bash}
->
-> Without this setting you may see this hint text,
->
-> ~~~
-> hint: Pulling without specifying how to reconcile divergent branches is
-> hint: discouraged. You can squelch this message by running one of the following
-> hint: commands sometime before your next pull:
-> hint:
-> hint:   git config pull.rebase false  # merge (the default strategy)
-> hint:   git config pull.rebase true   # rebase
-> hint:   git config pull.ff only       # fast-forward only
-> hint:
-> hint: You can replace "git config" with "git config --global" to set a default
-> hint: preference for all repositories. You can also pass --rebase, --no-rebase,
-> hint: or --ff-only on the command line to override the configured default per
-> hint: invocation.
-> ~~~
-> {: .language-bash}
->
-> occur repeatedly in the second half of this lesson.  Though it is beyond the
-> scope of this lesson, you can read more about this issue [in the Pro Git
-> book](https://git-scm.com/docs/git-config#Documentation/git-config.txt-pullrebase)
 >
 {: .callout}
 
@@ -140,8 +117,8 @@ your changes, press <kbd>Esc</kbd> then type `:q!` and hit <kbd>Enter</kbd> or <
 {: .callout}
 
 Git (2.28+) allows configuration of the name of the branch created when you
-initialize any new repository.  Dracula decides to use that feature to set it to `main` so 
-it matches the cloud service he will eventually use. 
+initialize any new repository.  Dracula decides to use that feature to set it to `main` so
+it matches the cloud service he will eventually use.
 
 ~~~
 $ git config --global init.defaultBranch main
@@ -150,21 +127,21 @@ $ git config --global init.defaultBranch main
 
 > ## Default Git branch naming
 >
-> Source file changes are associated with a "branch." 
-> For new learners in this lesson, it's enough to know that branches exist, and this lesson uses one branch.  
-> By default, Git will create a branch called `master` 
-> when you create a new repository with `git init` (as explained in the next Episode). This term evokes 
-> the racist practice of human slavery and the 
-> [software development community](https://github.com/github/renaming)  has moved to adopt 
-> more inclusive language. 
-> 
-> In 2020, most Git code hosting services transitioned to using `main` as the default 
-> branch. As an example, any new repository that is opened in GitHub and GitLab default 
-> to `main`.  However, Git has not yet made the same change.  As a result, local repositories 
-> must be manually configured have the same main branch name as most cloud services.  
-> 
-> For versions of Git prior to 2.28, the change can be made on an individual repository level.  The 
-> command for this is in the next episode.  Note that if this value is unset in your local Git 
+> Source file changes are associated with a "branch."
+> For new learners in this lesson, it's enough to know that branches exist, and this lesson uses one branch.
+> By default, Git will create a branch called `master`
+> when you create a new repository with `git init` (as explained in the next Episode). This term evokes
+> the racist practice of human slavery and the
+> [software development community](https://github.com/github/renaming)  has moved to adopt
+> more inclusive language.
+>
+> In 2020, most Git code hosting services transitioned to using `main` as the default
+> branch. As an example, any new repository that is opened in GitHub and GitLab default
+> to `main`.  However, Git has not yet made the same change.  As a result, local repositories
+> must be manually configured have the same main branch name as most cloud services.
+>
+> For versions of Git prior to 2.28, the change can be made on an individual repository level.  The
+> command for this is in the next episode.  Note that if this value is unset in your local Git
 > configuration, the `init.defaultBranch` value defaults to `master`.
 >
 {: .callout}
