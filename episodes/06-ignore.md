@@ -94,7 +94,7 @@ Let's add and commit `.gitignore`:
 
 ~~~
 $ git add .gitignore
-$ git commit -m "Ignore data files and the results folder."
+$ git commit -m "Ignore data files and the results folder"
 $ git status
 ~~~
 {: .language-bash}
