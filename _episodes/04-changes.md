@@ -513,10 +513,10 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > To avoid having `git log` cover your entire terminal screen, you can limit the
 > number of commits that Git lists by using `-N`, where `N` is the number of
 > commits that you want to view. For example, if you only want information from
-> the last commit you can use:
+> the last two commits you can use:
 >
 > ~~~
-> $ git log -1
+> $ git log -2
 > ~~~
 > {: .language-bash}
 >
@@ -526,6 +526,12 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > Date:   Thu Aug 22 10:14:07 2013 -0400
 >
 >    Discuss concerns about Mars' climate for Mummy
+>
+> commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
+> Author: Vlad Dracula <vlad@tran.sylvan.ia>
+> Date:   Thu Aug 22 10:07:21 2013 -0400
+>
+>    Add concerns about effects of Mars' moons on Wolfman
 > ~~~
 > {: .output}
 >
