@@ -495,8 +495,8 @@ moving backward and forward in time becomes much easier.
 >
 > `git checkout` can be used to restore a previous commit when unstaged changes have
 > been made, but will it also work for changes that have been staged but not committed?
-> Make a change to `mars.txt`, add that change, and use `git checkout` to see if
-> you can remove your change.
+> Make a change to `mars.txt`, add that change (but don't commit it yet),
+> and use `git checkout` to see if you can remove your change.
 {: .challenge}
 
 > ## Explore and Summarize Histories
