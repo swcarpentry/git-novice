@@ -242,7 +242,7 @@ $ git status
 
 ~~~
 On branch main
-nothing to commit, working directory clean
+nothing to commit, working tree clean
 ~~~
 {: .output}
 
