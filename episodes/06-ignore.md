@@ -101,7 +101,7 @@ $ git status
 
 ~~~
 On branch main
-nothing to commit, working directory clean
+nothing to commit, working tree clean
 ~~~
 {: .output}
 
@@ -139,7 +139,7 @@ Ignored files:
         c.dat
         results/
 
-nothing to commit, working directory clean
+nothing to commit, working tree clean
 ~~~
 {: .output}
 
