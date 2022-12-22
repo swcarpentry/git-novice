@@ -495,8 +495,72 @@ moving backward and forward in time becomes much easier.
 >
 > `git checkout` can be used to restore a previous commit when unstaged changes have
 > been made, but will it also work for changes that have been staged but not committed?
-> Make a change to `mars.txt`, add that change (but don't commit it yet),
+> Make a change to `mars.txt`, add that change,
 > and use `git checkout` to see if you can remove your change.
+> > ## Solution
+> > After adding a change, `git checkout` can not be used directly.
+> > Let's look at the output of `git status`:
+> > ~~~
+> > # On branch main
+> > # Changes to be committed:
+> > #   (use "git reset HEAD <file>..." to unstage)
+> > #
+> > #	modified:   mars.txt
+> > #
+> > ~~~
+> > {: .output}
+> > 
+> > Note that if you don't have the same output
+> > you may either have forgotten to change the file,
+> > or you have added it *and* committed it.
+> >
+> > Using the command `git checkout -- mars.txt` now does not give an error,
+> > but it does not restore the file either.
+> > Git helpfully tells us that we need to use `git reset` first
+> > to unstage the file:
+> > ~~~
+> > `git reset HEAD mars.txt`
+> > ~~~
+> > {: .language-bash}
+> > 
+> > ~~~
+> > Unstaged changes after reset:
+> > M	mars.txt
+> > ~~~
+> > {: .output}
+> > 
+> > Now, `git status` gives us:
+> > ~~~
+> > git status
+> > ~~~
+> > {: .language-bash}
+> > 
+> > ~~~
+> > # On branch main
+> > # Changes not staged for commit:
+> > #   (use "git add <file>..." to update what will be committed)
+> > #   (use "git checkout -- <file>..." to discard changes in working directory)
+> > #
+> > #	modified:   mars.txt
+> > #
+> > no changes added to commit (use "git add" and/or "git commit -a")
+> > ~~~
+> > {: .output}
+> > 
+> > This means we can now use `git checkout` to restore the file 
+> > to the previous commit:
+> > ~~~
+> > git checkout -- mars.txt
+> > git status
+> > ~~~
+> > {: .language-bash}
+> > 
+> > ~~~
+> > # On branch main
+> > nothing to commit, working directory clean
+> > ~~~
+> > {: .output}
+> {: .solution}
 {: .challenge}
 
 > ## Explore and Summarize Histories
