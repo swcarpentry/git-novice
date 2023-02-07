@@ -120,6 +120,20 @@ by acting as a shareable electronic lab notebook for computational work:
 > approach for your current project and explain why.
 {: .challenge}
 
+> ## How to Archive my Source Code?
+>
+> Source code hosting sites come and go: established hosting sites such as
+> Gitorious and Google Code vanished in the past. To keep your research work
+> accessible and reproducible, you need to archive your code in a persistent way.
+> The [Software Heritage](https://www.softwareheritage.org) archive can be used
+> to address that.
+>
+> Using the [*Save Code Now*](https://archive.softwareheritage.org/save/)
+> interface of Software Heritage, you can request archival of your source code by
+> giving it the URL of the Git repository—your code must be available in a public
+> Git repository.
+{: .challenge}
+
 > ## How to Track Large Data or Image Files using Git?
 >
 > Large data or image files such as `.md5` or `.psd` file types can be tracked within 
