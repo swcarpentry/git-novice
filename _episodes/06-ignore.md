@@ -48,10 +48,17 @@ What's worse,
 having them all listed could distract us from changes that actually matter,
 so let's tell Git to ignore them.
 
-We do this by creating a file in the root directory of our project called `.gitignore`:
+We do this by creating a file in the root directory of our project called `.gitignore` and adding the text patterns we would like Git to ignore to it.
 
 ~~~
 $ nano .gitignore
+~~~
+{: .language-bash}
+
+
+After saving the `.gitignore` file, we should see the following output from `cat` command:
+
+~~~
 $ cat .gitignore
 ~~~
 {: .language-bash}
