@@ -42,6 +42,7 @@ For this lesson, we will be interacting with [GitHub](https://github.com/) and s
 >## Keeping your email private
 >
 >If you elect to use a private email address with GitHub, then use that same email address for the `user.email` value, e.g. `username@users.noreply.github.com` replacing `username` with your GitHub one.
+For users that signed up to [GitHub](https://github.com/) _after_ July 18, 2017, the private email address follows a `ID+username@users.noreply.github.com` format, where `ID` will be a unique digit sequence assigned to your account. To find your private email address click on your user icon on the right-corner of the [GitHub](https://github.com/) menu banner navigate to [Settings](https://github.com/settings/) then to [Emails](https://github.com/settings/emails), you should find your private email address under __Primary email address__ or under the __Keep my email address private__ checkbox.
 {: .callout}
 
 
