@@ -6,9 +6,10 @@ Check lesson files and their contents.
 import os
 import glob
 import re
+import sys
 from argparse import ArgumentParser
 
-# This uses the `__all__` list in `util.py` to determine what objects to import 
+# This uses the `__all__` list in `util.py` to determine what objects to import
 # see https://docs.python.org/3/tutorial/modules.html#importing-from-a-package
 from util import *
 from reporter import Reporter
@@ -118,21 +119,29 @@ BREAK_METADATA_FIELDS = {
 # Please keep this in sync with .editorconfig!
 MAX_LINE_LEN = 100
 
+# Contents of _config.yml
+CONFIG = {}
 
 def main():
     """Main driver."""
 
     args = parse_args()
     args.reporter = Reporter()
-    life_cycle = check_config(args.reporter, args.source_dir)
+
+    global CONFIG
+    config_file = os.path.join(args.source_dir, '_config.yml')
+    CONFIG = load_yaml(config_file)
+    CONFIG["config_file"] = config_file
+
+    life_cycle = CONFIG.get('life_cycle', None)
     # pre-alpha lessons should report without error
     if life_cycle == "pre-alpha":
         args.permissive = True
+
+    check_config(args.reporter)
     check_source_rmd(args.reporter, args.source_dir, args.parser)
 
-    args.references = {}
-    if not using_remote_theme(args.source_dir):
-        args.references = read_references(args.reporter, args.reference_path)
+    args.references = read_references(args.reporter, args.reference_path)
 
     docs = read_all_markdown(args.source_dir, args.parser)
     check_fileset(args.source_dir, args.reporter, list(docs.keys()))
@@ -142,8 +151,16 @@ def main():
         checker.check()
 
     args.reporter.report()
-    if args.reporter.messages and not args.permissive:
-        exit(1)
+    if args.reporter.messages:
+        if args.permissive:
+            print("Problems detected but ignored (permissive mode).")
+        else:
+            print("Problems detected.")
+            sys.exit(1)
+    else:
+        print("No problems found.")
+
+    return
 
 
 def parse_args():
@@ -180,40 +197,35 @@ def parse_args():
 
     args, extras = parser.parse_known_args()
     require(args.parser is not None,
-            'Path to Markdown parser not provided')
+            'Path to Markdown parser not provided',
+            True)
     require(not extras,
             'Unexpected trailing command-line arguments "{0}"'.format(extras))
 
     return args
 
-def using_remote_theme(source_dir):
-    config_file = os.path.join(source_dir, '_config.yml')
-    config = load_yaml(config_file)
-    return 'remote_theme' in config
-
-def check_config(reporter, source_dir):
+def check_config(reporter):
     """Check configuration file."""
 
-    config_file = os.path.join(source_dir, '_config.yml')
-    config = load_yaml(config_file)
-    reporter.check_field(config_file, 'configuration',
-                         config, 'kind', 'lesson')
-    reporter.check_field(config_file, 'configuration',
-                         config, 'carpentry', ('swc', 'dc', 'lc', 'cp', 'incubator'))
-    reporter.check_field(config_file, 'configuration', config, 'title')
-    reporter.check_field(config_file, 'configuration', config, 'email')
+    reporter.check_field(CONFIG["config_file"], 'configuration',
+                         CONFIG, 'kind', 'lesson')
+    reporter.check_field(CONFIG["config_file"], 'configuration',
+                         CONFIG, 'carpentry', ('swc', 'dc', 'lc', 'cp', 'incubator'))
+    reporter.check_field(CONFIG["config_file"], 'configuration', CONFIG, 'title')
+    reporter.check_field(CONFIG["config_file"], 'configuration', CONFIG, 'email')
 
     for defaults in [
             {'values': {'root': '.', 'layout': 'page'}},
             {'values': {'root': '..', 'layout': 'episode'}, 'scope': {'type': 'episodes', 'path': ''}},
             {'values': {'root': '..', 'layout': 'page'}, 'scope': {'type': 'extras', 'path': ''}}
             ]:
-        reporter.check(defaults in config.get('defaults', []),
-                   'configuration',
-                   '"root" not set to "." in configuration')
-    if 'life_cycle' not in config:
-        config['life_cycle'] = None
-    return config['life_cycle']
+        error_text = 'incorrect settings for: root "{0}" layout "{1}"'
+        root = defaults["values"]["root"]
+        layout = defaults["values"]["layout"]
+        error_message = error_text.format(root, layout)
+
+        defaults_test = defaults in CONFIG.get('defaults', [])
+        reporter.check(defaults_test, 'configuration', error_message)
 
 def check_source_rmd(reporter, source_dir, parser):
     """Check that Rmd episode files include `source: Rmd`"""
@@ -233,6 +245,9 @@ def read_references(reporter, ref_path):
     """Read shared file of reference links, returning dictionary of valid references
     {symbolic_name : URL}
     """
+
+    if 'remote_theme' in CONFIG:
+        return {}
 
     if not ref_path:
         raise Warning("No filename has been provided.")
@@ -533,8 +548,7 @@ class CheckEpisode(CheckBase):
         """Run extra tests."""
 
         super().check()
-        if not using_remote_theme(args.source_dir):
-            self.check_reference_inclusion()
+        self.check_reference_inclusion()
 
     def check_metadata(self):
         super().check_metadata()
@@ -563,6 +577,9 @@ class CheckEpisode(CheckBase):
 
     def check_reference_inclusion(self):
         """Check that links file has been included."""
+
+        if 'remote_theme' in CONFIG:
+            return
 
         if not self.args.reference_path:
             return
@@ -601,7 +618,8 @@ CHECKERS = [
     (re.compile(r'README\.md'), CheckNonJekyll),
     (re.compile(r'index\.md'), CheckIndex),
     (re.compile(r'reference\.md'), CheckReference),
-    (re.compile(os.path.join('_episodes', '*\.md')), CheckEpisode),
+    # '.' below is what's passed on the command line via '-s' flag
+    (re.compile(os.path.join('.','_episodes', '[^/]*\.md')), CheckEpisode),
     (re.compile(r'.*\.md'), CheckGeneric)
 ]
 
