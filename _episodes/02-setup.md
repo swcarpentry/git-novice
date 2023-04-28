@@ -138,15 +138,24 @@ $ git config --global init.defaultBranch main
 The five commands we just ran above only need to be run once: the flag `--global` tells Git
 to use the settings for every project, in your user account, on this computer.
 
-You can check your settings at any time:
+Let's review those settings and test our `core.editor` right away:
+
+~~~
+$ git config --global --edit
+~~~
+{: .language-bash}
+
+Let's close the file without making any additional changes.  Remember, since typos in the config file will cause 
+issues, it's safer to view the configuration with:
 
 ~~~
 $ git config --list
 ~~~
 {: .language-bash}
 
-You can change your configuration as many times as you want: use the
+And if necessary, change your configuration using the
 same commands to choose another editor or update your email address.
+This can be done as many times as you want.
 
 > ## Proxy
 >
