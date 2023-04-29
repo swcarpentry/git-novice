@@ -21,22 +21,22 @@ but the reality is often more complicated.
 Normal practice today looks something like this:
 
 *   A scientist collects some data and stores it on a machine
-    that is occasionally backed up by her department.
-*   She then writes or modifies a few small programs
-    (which also reside on her machine)
+    that is occasionally backed up by their department.
+*   They then write or modify a few small programs
+    (which also reside on the machine)
     to analyze that data.
-*   Once she has some results,
-    she writes them up and submits her paper.
-    She might include her data -- a growing number of journals require this -- but
-    she probably doesn't include her code.
+*   Once they have some results,
+    they write them up and submit a paper.
+    The scientist might include their data -- a growing number of journals require this -- but
+    they probably don't include the code.
 *   Time passes.
-*   The journal sends her reviews written anonymously by a handful of other people in her field.
-    She revises her paper to satisfy them,
-    during which time she might also modify the scripts she wrote earlier,
+*   The journal sends the scientist reviews written anonymously by a handful of other people in their field.
+    The scientist revises the paper to satisfy the reviewers,
+    during which time they might also modify the scripts they wrote earlier,
     and resubmits.
 *   More time passes.
 *   The paper is eventually published.
-    It might include a link to an online copy of her data,
+    It might include a link to an online copy of the data,
     but the paper itself will be behind a paywall:
     only people who have personal or institutional access
     will be able to read it.
@@ -52,24 +52,24 @@ the process looks like this:
     [Digital Object Identifier](https://en.wikipedia.org/wiki/Digital_object_identifier) (DOI).
     Or the data was already published and is stored in
     [Dryad](https://datadryad.org/).
-*   The scientist creates a new repository on GitHub to hold her work.
-*   As she does her analysis,
-    she pushes changes to her scripts
+*   The scientist creates a new repository on GitHub to hold their work.
+*   During analysis,
+    they push changes to their scripts
     (and possibly some output files)
     to that repository.
-    She also uses the repository for her paper;
-    that repository is then the hub for collaboration with her colleagues.
-*   When she's happy with the state of her paper,
-    she posts a version to [arXiv](https://arxiv.org/)
+    The scientist also uses the repository for their paper;
+    that repository is then the hub for collaboration with colleagues.
+*   When they are happy with the state of the paper,
+    the scientist posts a version to [arXiv](https://arxiv.org/)
     or some other preprint server
     to invite feedback from peers.
 *   Based on that feedback,
-    she may post several revisions
-    before finally submitting her paper to a journal.
-*   The published paper includes links to her preprint
-    and to her code and data repositories,
+    they may post several revisions
+    before finally submitting the paper to a journal.
+*   The published paper includes links to the preprint
+    and to the code and data repositories,
     which  makes it much easier for other scientists
-    to use her work as starting point for their own research.
+    to use their work as starting point for their own research.
 
 This open model accelerates discovery:
 the more open work is,
