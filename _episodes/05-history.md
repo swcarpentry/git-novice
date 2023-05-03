@@ -495,18 +495,18 @@ moving backward and forward in time becomes much easier.
 >
 > `git checkout` can be used to restore a previous commit when unstaged changes have
 > been made, but will it also work for changes that have been staged but not committed?
-> Make a change to `mars.txt`, add that change,
-> and use `git checkout` to see if you can remove your change.
+> Make a change to `mars.txt`, add that change using `git add`,
+> then use `git checkout` to see if you can remove your change.
 > > ## Solution
 > > After adding a change, `git checkout` can not be used directly.
 > > Let's look at the output of `git status`:
 > > ~~~
-> > # On branch main
-> > # Changes to be committed:
-> > #   (use "git reset HEAD <file>..." to unstage)
-> > #
-> > #	modified:   mars.txt
-> > #
+> > On branch main
+> > Changes to be committed:
+> >   (use "git reset HEAD <file>..." to unstage)
+> > 
+> >         modified:   mars.txt
+> > 
 > > ~~~
 > > {: .output}
 > > 
@@ -519,7 +519,7 @@ moving backward and forward in time becomes much easier.
 > > Git helpfully tells us that we need to use `git reset` first
 > > to unstage the file:
 > > ~~~
-> > `git reset HEAD mars.txt`
+> > $ git reset HEAD mars.txt
 > > ~~~
 > > {: .language-bash}
 > > 
@@ -531,18 +531,18 @@ moving backward and forward in time becomes much easier.
 > > 
 > > Now, `git status` gives us:
 > > ~~~
-> > git status
+> > $ git status
 > > ~~~
 > > {: .language-bash}
 > > 
 > > ~~~
-> > # On branch main
-> > # Changes not staged for commit:
-> > #   (use "git add <file>..." to update what will be committed)
-> > #   (use "git checkout -- <file>..." to discard changes in working directory)
-> > #
-> > #	modified:   mars.txt
-> > #
+> > On branch main
+> > Changes not staged for commit:
+> >   (use "git add <file>..." to update what will be committed)
+> >   (use "git checkout -- <file>..." to discard changes in working directory)
+> > 
+> >         modified:   mars.txt
+> > 
 > > no changes added to commit (use "git add" and/or "git commit -a")
 > > ~~~
 > > {: .output}
@@ -550,14 +550,14 @@ moving backward and forward in time becomes much easier.
 > > This means we can now use `git checkout` to restore the file 
 > > to the previous commit:
 > > ~~~
-> > git checkout -- mars.txt
-> > git status
+> > $ git checkout -- mars.txt
+> > $ git status
 > > ~~~
 > > {: .language-bash}
 > > 
 > > ~~~
-> > # On branch main
-> > nothing to commit, working directory clean
+> > On branch main
+> > nothing to commit, working tree clean
 > > ~~~
 > > {: .output}
 > {: .solution}
