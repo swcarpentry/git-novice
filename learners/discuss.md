@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Discussion
 ---
 
@@ -12,17 +11,16 @@ Note that since this material isn't essential for basic Git usage, it won't be c
 
 ## More Advanced Git Configuration
 
-In [Setting Up Git]({{ page.root }}/02-setup/),
+In [Setting Up Git](../episodes/02-setup.md),
 we used `git config --global` to set some default options for Git.
 It turns out that these configuration options get stored in your home directory
 in a plain text file called `.gitconfig`.
 
-~~~
+```bash
 $ cat ~/.gitconfig
-~~~
-{: .language-bash}
+```
 
-~~~
+```output
 [user]
 	name = Vlad Dracula
 	email = vlad@tran.sylvan.ia
@@ -30,8 +28,7 @@ $ cat ~/.gitconfig
 	ui = true
 [core]
 	editor = nano
-~~~
-{: .output}
+```
 
 This file can be opened in your preferred text editor.
 (Note that it is recommended to continue using the `git config` command,
@@ -41,34 +38,30 @@ Eventually, you will want to start customizing Git's behaviour.
 This can be done by adding more entries to your `.gitconfig`.
 The available options are described in the manual:
 
-~~~
+```bash
 $ git config --help
-~~~
-{: .language-bash}
+```
 
 In particular, you might find it useful to add aliases.
 These are like shortcuts for longer Git commands.
 For example, if you get sick of typing `git checkout` all the time,
 you could run the command:
 
-~~~
+```bash
 $ git config --global alias.co checkout
-~~~
-{: .language-bash}
+```
 
-Now if we return to the example from [Exploring History]({{ page.root }}/05-history/) where we ran:
+Now if we return to the example from [Exploring History](../episodes/05-history.md) where we ran:
 
-~~~
+```bash
 $ git checkout f22b25e mars.txt
-~~~
-{: .language-bash}
+```
 
 we could now instead type:
 
-~~~
+```bash
 $ git co f22b25e mars.txt
-~~~
-{: .language-bash}
+```
 
 ## Styling Git's Log
 
@@ -81,41 +74,43 @@ You can use `git log --help` and `git config --help` to look for different ways 
 the log output.
 Try the following commands and see what effect they have:
 
-~~~
+```bash
 $ git config --global alias.lg "log --graph"
 $ git config --global log.abbrevCommit true
 $ git config --global format.pretty oneline
 $ git lg
-~~~
-{: .language-bash}
+```
 
 If you don't like the effects,
 you can undo them with:
 
-~~~
+```bash
 $ git config --global --unset alias.lg
 $ git config --global --unset log.abbrevCommit
 $ git config --global --unset format.pretty
-~~~
-{: .language-bash}
+```
 
-> ## Undoing Git Configuration Changes
->
-> You can use the `--unset` flag to delete unwanted options from `.gitconfig`.
-> Another way to roll back changes is to store your `.gitconfig` using Git.
->
-> For hints on what you might want to configure,
-> go to GitHub and search for "gitconfig".
-> You will find hundreds of repositories in which people have stored
-> their own Git configuration files.
-> Sort them by the number of stars and have a look at the top few.
-> If you find some you like,
-> please check that they're covered by an open source license before you clone them.
-{: .callout}
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## Undoing Git Configuration Changes
+
+You can use the `--unset` flag to delete unwanted options from `.gitconfig`.
+Another way to roll back changes is to store your `.gitconfig` using Git.
+
+For hints on what you might want to configure,
+go to GitHub and search for "gitconfig".
+You will find hundreds of repositories in which people have stored
+their own Git configuration files.
+Sort them by the number of stars and have a look at the top few.
+If you find some you like,
+please check that they're covered by an open source license before you clone them.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Non-text Files
 
-Recall when we discussed [Conflicts]({{ page.root }}/09-conflict/)
+Recall when we discussed [Conflicts](../episodes/09-conflict.md)
 there was a challenge that asked,
 "What does Git do
 when there is a conflict in an image or some other non-textual file
@@ -141,56 +136,50 @@ using outputs from a word processor instead of plain text.
 
 Create a new directory and go into it:
 
-~~~
+```bash
 $ mkdir planets-nontext
 $ cd planets-nontext
-~~~
-{: .language-bash}
+```
 
 Use a program such as Microsoft Word or LibreOffice Writer to create a new document.
 Enter the same text that we began with before:
 
-~~~
+```output
 Cold and dry, but everything is my favorite color
-~~~
-{: .output}
+```
 
 Save the document into the `planets-nontext` directory with the name of `mars.doc`.
 Back in the terminal, run the usual commands for setting up a new Git repository:
 
-~~~
+```bash
 $ git init
 $ git add mars.doc
 $ git commit -m "Starting to think about Mars"
-~~~
-{: .language-bash}
+```
 
 Then make the same changes to `mars.doc` that we (or Vlad) previously made to `mars.txt`.
 
-~~~
+```output
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
-~~~
-{: .output}
+```
 
 Save and close the word processor.
 Now see what Git thinks of your changes:
 
-~~~
+```bash
 $ git diff
-~~~
-{: .language-bash}
+```
 
-~~~
+```output
 diff --git a/mars.doc b/mars.doc
 index 53a66fd..6e988e9 100644
 Binary files a/mars.doc and b/mars.doc differ
-~~~
-{: .output}
+```
 
 Compare this to the earlier `git diff` obtained when using text files:
 
-~~~
+```output
 diff --git a/mars.txt b/mars.txt
 index df0654a..315bf3a 100644
 --- a/mars.txt
@@ -198,8 +187,7 @@ index df0654a..315bf3a 100644
 @@ -1 +1,2 @@
  Cold and dry, but everything is my favorite color
 +The two moons may be a problem for Wolfman
-~~~
-{: .output}
+```
 
 Notice how plain text files give a much more informative diff.
 You can see exactly which lines changed and what the changes were.
@@ -226,54 +214,48 @@ from the repository.
 
 Create a new file for the planet Nibiru:
 
-~~~
+```bash
 $ echo "This is another name for fake planet X" > nibiru.txt
-~~~
-{: .language-bash}
+```
 
 Now add to the repository like you have learned earlier:
 
-~~~
+```bash
 $ git add nibiru.txt
 $ git commit -m 'adding info on nibiru'
 $ git status
-~~~
-{: .language-bash}
+```
 
-~~~
+```output
 On branch main
 nothing to commit, working tree clean
-~~~
-{: .output}
+```
 
 Nibiru is not a real planet.  That was a silly idea.  Let us remove
 it from the disk and let Git know about it:
 
-~~~
+```bash
 $ git rm nibiru.txt
 $ git status
-~~~
-{: .language-bash}
+```
 
-~~~
+```output
 On branch main
 Changes to be committed:
    (use "git reset HEAD <file>..." to unstage)
 
    deleted:    nibiru.txt
 
-~~~
-{: .output}
+```
 
 The change has been staged.  Now commit the removal, and remove the
 file from the repository itself.  Note that the file will be removed
 in the new commit.  The previous commit will still
 have the file, if you were to retrieve that specific commit.
 
-~~~
+```bash
 $ git commit -m 'Removing info on Nibiru.  It is not a real planet!'
-~~~
-{: .language-bash}
+```
 
 ## Removing a File with Unix
 
@@ -282,22 +264,20 @@ file with Unix `rm` instead of using `git rm`, no worries,
 Git is smart enough to notice the missing file. Let us recreate the file and
 commit it again.
 
-~~~
+```bash
 $ echo "This is another name for fake planet X" > nibiru.txt
 $ git add nibiru.txt
 $ git commit -m 'adding nibiru again'
-~~~
-{: .language-bash}
+```
 
 Now we remove the file with Unix `rm`:
 
-~~~
+```bash
 $ rm nibiru.txt
 $ git status
-~~~
-{: .language-bash}
+```
 
-~~~
+```output
 On branch main
 Changes not staged for commit:
    (use "git add/rm <file>..." to update what will be committed)
@@ -306,37 +286,33 @@ Changes not staged for commit:
     deleted:    nibiru.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
-~~~
-{: .output}
+```
 
 See how Git has noticed that the file `nibiru.txt` has been removed
 from the disk.  The next step is to "stage" the removal of the file
 from the repository.  This is done with the command `git rm` just as
 before.
 
-~~~
+```bash
 $ git rm nibiru.txt
 $ git status
-~~~
-{: .language-bash}
+```
 
-~~~
+```output
 On branch main
 Changes to be committed:
    (use "git reset HEAD <file>..." to unstage)
 
    deleted:    nibiru.txt
 
-~~~
-{: .output}
+```
 
 The change that was made in Unix has now been staged and needs to be
 committed.
 
-~~~
+```bash
 $ git commit -m 'Removing info on Nibiru, again!'
-~~~
-{: .language-bash}
+```
 
 ## Renaming a File
 
@@ -344,44 +320,40 @@ Another common change when working on a project is to rename a file.
 
 Create a file for the planet Krypton:
 
-~~~
+```bash
 $ echo "Superman's home planet" > krypton.txt
-~~~
-{: .language-bash}
+```
 
 Add it to the repository:
 
-~~~
+```bash
 $ git add krypton.txt
 $ git commit -m 'Adding planet Krypton'
-~~~
-{: .language-bash}
+```
 
 We all know that Superman moved to Earth.  Not that he had much
 choice.  Now his home planet is Earth.
 
 Rename the file `krypton.txt` to `earth.txt` with Git:
 
-~~~
+```bash
 $ git mv krypton.txt earth.txt
 $ git status
-~~~
-{: .language-bash}
+```
 
-~~~
+```output
 On branch main
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
 	renamed:    krypton.txt -> earth.txt
-~~~
-{: .output}
+```
+
 The final step is commit our change to the repository:
 
-~~~
+```bash
 $ git commit -m 'Superman's home is now Earth'
-~~~
-{: .language-bash}
+```
 
 ## Renaming a File with Unix
 
@@ -391,22 +363,20 @@ be able to deal with it. Let's try again renaming the file,
 this time with Unix `mv`. First, we need to recreate the
 `krypton.txt` file:
 
-~~~
+```bash
 $ echo "Superman's home planet" > krypton.txt
 $ git add krypton.txt
 $ git commit -m 'Adding planet Krypton again.'
-~~~
-{: .language-bash}
+```
 
 Let us rename the file and see what Git can figured out by itself:
 
-~~~
+```bash
 $ mv krypton.txt earth.txt
 $ git status
-~~~
-{: .language-bash}
+```
 
-~~~
+```output
 On branch main
 Changes not staged for commit:
   (use "git add/rm <file>..." to update what will be committed)
@@ -420,40 +390,36 @@ Untracked files:
     earth.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
-~~~
-{: .output}
+```
 
 Git has noticed that the file `krypton.txt` has disappeared from the
 file system and a new file `earth.txt` has showed up.
 
 Add those changes to the staging area:
 
-~~~
+```bash
 $ git add krypton.txt earth.txt
 $ git status
-~~~
-{: .language-bash}
+```
 
-~~~
+```output
 On branch main
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
     renamed:    krypton.txt -> earth.txt
 
-~~~
-{: .output}
+```
 
 Notice how Git has now figured out that the `krypton.txt` has not
 disappeared - it has simply been renamed.
 
 The final step, as before, is to commit our change to the repository:
 
-~~~
+```bash
 $ git commit -m 'Superman's home is Earth, told you before.'
-~~~
-{: .language-bash}
-	
+```
+
 ## Further .gitignore concepts
 
 For additional documentation on .gitignore, please reference
@@ -462,46 +428,49 @@ For additional documentation on .gitignore, please reference
 In the ignore exercise, learners were presented with two variations of ignoring
 nested files. Depending on the organization of your repository, one may suit
 your needs over another. Keep in mind that the way that Git travels along
-directory paths can be confusing. 
+directory paths can be confusing.
 
 Sometimes the `**` pattern comes in handy, too, which matches multiple
 directory levels. E.g. `**/results/plots/*` would make git ignore the
-`results/plots` directory in any root directory.  
+`results/plots` directory in any root directory.
 
-> ## Ignoring Nested Files: Challenge Problem
->
-> Given a directory structure that looks like:
->
-> ~~~
-> results/data
-> results/plots
-> results/run001.log
-> results/run002.log
-> ~~~
-> {: .language-bash}
-> 
-> And a .gitignore that looks like:
->
-> ~~~
-> *.dat
-> ~~~
-> {: .output}
->
-> How would you track all of the contents of `results/data/`, including `*.dat`
-> files, but ignore the rest of `results/`?
->
-> > ## Solution
-> >
-> > To do this, your .gitignore would look like this:
-> >
-> > ~~~
-> > *.dat                 # ignore the .dat files
-> > results/*             # ignore the files in the results directory
-> > !results/data/        # do not ignore the files in results/data
-> > !results/data/*       # do not ignore the .dat files in reults/data
-> > ~~~
-> > {: .output}
-> > 
-> {: .solution}
-{: .challenge}
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## Ignoring Nested Files: Challenge Problem
+
+Given a directory structure that looks like:
+
+```bash
+results/data
+results/plots
+results/run001.log
+results/run002.log
+```
+
+And a .gitignore that looks like:
+
+```output
+*.dat
+```
+
+How would you track all of the contents of `results/data/`, including `*.dat`
+files, but ignore the rest of `results/`?
+
+:::::::::::::::  solution
+
+## Solution
+
+To do this, your .gitignore would look like this:
+
+```output
+*.dat                 # ignore the .dat files
+results/*             # ignore the files in the results directory
+!results/data/        # do not ignore the files in results/data
+!results/data/*       # do not ignore the .dat files in reults/data
+```
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
 

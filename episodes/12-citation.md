@@ -2,13 +2,19 @@
 title: Citation
 teaching: 2
 exercises: 0
-questions:
-- "How can I make my work easier to cite?"
-objectives:
-- "Make your work easy to cite"
-keypoints:
-- "Add a CITATION file to a repository to explain how you want your work cited."
 ---
+
+::::::::::::::::::::::::::::::::::::::: objectives
+
+- Make your work easy to cite
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: questions
+
+- How can I make my work easier to cite?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 You may want to include a file called `CITATION` or `CITATION.txt`
 that describes how to reference your project;
@@ -16,7 +22,7 @@ the [one for Software
 Carpentry](https://github.com/swcarpentry/website/blob/gh-pages/CITATION)
 states:
 
-~~~
+```source
 To reference Software Carpentry in publications, please cite both of the following:
 
 Greg Wilson: "Software Carpentry: Getting Scientists to Write Better
@@ -42,21 +48,26 @@ July 2013.
   eprinttype  = {arxiv},
   eprint      = {1307.5448}
 }
-~~~
-{: .source}
+```
 
 More detailed advice, and other ways to make your code citable can be found
 [at the Software Sustainability Institute blog](https://www.software.ac.uk/how-cite-and-describe-software) and in:
 
-~~~
+```source
 Smith AM, Katz DS, Niemeyer KE, FORCE11 Software Citation Working Group. (2016) Software citation
 principles. [PeerJ Computer Science 2:e86](https://peerj.com/articles/cs-86/)
 https://doi.org/10.7717/peerj-cs.8
-~~~
-{: .source}
-
+```
 
 There is also an [`@software{...`](https://www.google.com/search?q=git+citation+%22%40software%7B%22)
 [BibTeX](https://www.ctan.org/pkg/bibtex) entry type in case
 no "umbrella" citation like a paper or book exists for the project you want to
 make citable.
+
+:::::::::::::::::::::::::::::::::::::::: keypoints
+
+- Add a CITATION file to a repository to explain how you want your work cited.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
