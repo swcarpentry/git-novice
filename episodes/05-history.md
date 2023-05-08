@@ -300,7 +300,7 @@ recent commit (`HEAD~1`), which is commit `f22b25e`:
 So, to put it all together,
 here's how Git works in cartoon form:
 
-![https://figshare.com/articles/How\_Git\_works\_a\_cartoon/1328266](fig/git_staging.svg)
+![https://figshare.com/articles/How_Git_works_a_cartoon/1328266](fig/git_staging.svg)
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 

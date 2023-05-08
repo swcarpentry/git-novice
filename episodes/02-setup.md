@@ -87,7 +87,7 @@ $ git config --global core.autocrlf false
 Dracula also has to set his favorite text editor, following this table:
 
 | Editor                                | Configuration command | 
-| :------------------------------------ | :-------------------- |
+| :-----------                          | :------------------------------ |
 | Atom                                  | `$ git config --global core.editor "atom --wait"`                      | 
 | nano                                  | `$ git config --global core.editor "nano -w"`                      | 
 | BBEdit (Mac, with command line tools) | `$ git config --global core.editor "bbedit -w"`                      | 
