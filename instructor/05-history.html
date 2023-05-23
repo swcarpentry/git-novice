@@ -583,12 +583,12 @@ can put things back the way they were by using
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git checkout HEAD mars.txt</span></code></pre>
 </div>
-<div id="callout1" class="callout callout">
+<div id="dont-lose-your-head" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="dont-lose-your-head" class="callout-inner">
-<h3 class="callout-title">Don’t Lose Your HEAD<a class="anchor" aria-label="anchor" href="#callout1"></a>
+<h3 class="callout-title">Don’t Lose Your HEAD<a class="anchor" aria-label="anchor" href="#dont-lose-your-head"></a>
 </h3>
 <div class="callout-content">
 <p>Above we used</p>
@@ -637,12 +637,12 @@ which we made the change we’re trying to discard. In the example below,
 we want to retrieve the state from before the most recent commit
 (<code>HEAD~1</code>), which is commit <code>f22b25e</code>:</p>
 <figure><img src="../fig/git-checkout.svg" alt="Git Checkout" class="figure mx-auto d-block"></figure><p>So, to put it all together, here’s how Git works in cartoon form:</p>
-<figure><img src="../fig/git_staging.svg" alt="" class="figure mx-auto d-block"><figcaption><a href="https://figshare.com/articles/How_Git_works_a_cartoon/1328266" class="external-link uri">https://figshare.com/articles/How_Git_works_a_cartoon/1328266</a></figcaption></figure><div id="callout2" class="callout callout">
+<figure><img src="../fig/git_staging.svg" alt="" class="figure mx-auto d-block"><figcaption><a href="https://figshare.com/articles/How_Git_works_a_cartoon/1328266" class="external-link uri">https://figshare.com/articles/How_Git_works_a_cartoon/1328266</a></figcaption></figure><div id="simplifying-the-common-case" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="simplifying-the-common-case" class="callout-inner">
-<h3 class="callout-title">Simplifying the Common Case<a class="anchor" aria-label="anchor" href="#callout2"></a>
+<h3 class="callout-title">Simplifying the Common Case<a class="anchor" aria-label="anchor" href="#simplifying-the-common-case"></a>
 </h3>
 <div class="callout-content">
 <p>If you read the output of <code>git status</code> carefully, you’ll
@@ -666,12 +666,12 @@ it’s hard (but not impossible) to undo changes to the introduction
 without also undoing changes made later to the conclusion. If the
 introduction and conclusion are stored in separate files, on the other
 hand, moving backward and forward in time becomes much easier.</p>
-<div id="challenge1" class="callout challenge">
+<div id="recovering-older-versions-of-a-file" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="recovering-older-versions-of-a-file" class="callout-inner">
-<h3 class="callout-title">Recovering Older Versions of a File<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Recovering Older Versions of a File<a class="anchor" aria-label="anchor" href="#recovering-older-versions-of-a-file"></a>
 </h3>
 <div class="callout-content">
 <p>Jennifer has made changes to the Python script that she has been
@@ -696,7 +696,7 @@ version of her Python script called <code>data_cruncher.py</code>?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The answer is (5)-Both 2 and 4.</p>
 <p>The <code>checkout</code> command restores files from the repository,
@@ -721,12 +721,12 @@ you don’t want to be there.</p>
 </div>
 </div>
 </div>
-<div id="challenge2" class="callout challenge">
+<div id="reverting-a-commit" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="reverting-a-commit" class="callout-inner">
-<h3 class="callout-title">Reverting a Commit<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Reverting a Commit<a class="anchor" aria-label="anchor" href="#reverting-a-commit"></a>
 </h3>
 <div class="callout-content">
 <p>Jennifer is collaborating with colleagues on her Python script. She
@@ -758,7 +758,7 @@ e.g. 0b1d055).</p></li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>The command <code>git log</code> lists project history with commit
 IDs.</p>
@@ -770,12 +770,12 @@ changes to the repository.</p>
 </div>
 </div>
 </div>
-<div id="challenge3" class="callout challenge">
+<div id="understanding-workflow-and-history" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="understanding-workflow-and-history" class="callout-inner">
-<h3 class="callout-title">Understanding Workflow and History<a class="anchor" aria-label="anchor" href="#challenge3"></a>
+<h3 class="callout-title">Understanding Workflow and History<a class="anchor" aria-label="anchor" href="#understanding-workflow-and-history"></a>
 </h3>
 <div class="callout-content">
 <p>What is the output of the last command in</p>
@@ -821,7 +821,7 @@ changes to the repository.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>The answer is 2.</p>
 <p>The command <code>git add venus.txt</code> places the current version
@@ -846,13 +846,13 @@ the most recently committed version of <code>venus.txt</code>.</p>
 </div>
 </div>
 </div>
-<div id="discussion1" class="callout discussion">
+<div id="checking-understanding-of-git-diff" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="checking-understanding-of-git-diff" class="callout-inner">
 <h3 class="callout-title">Checking Understanding of
-<code>git diff</code><a class="anchor" aria-label="anchor" href="#discussion1"></a>
+<code>git diff</code><a class="anchor" aria-label="anchor" href="#checking-understanding-of-git-diff"></a>
 </h3>
 <div class="callout-content">
 <p>Consider this command: <code>git diff HEAD~9 mars.txt</code>. What do
@@ -864,12 +864,12 @@ do you think will happen, and what does happen?</p>
 </div>
 </div>
 </div>
-<div id="challenge4" class="callout challenge">
+<div id="getting-rid-of-staged-changes" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="getting-rid-of-staged-changes" class="callout-inner">
-<h3 class="callout-title">Getting Rid of Staged Changes<a class="anchor" aria-label="anchor" href="#challenge4"></a>
+<h3 class="callout-title">Getting Rid of Staged Changes<a class="anchor" aria-label="anchor" href="#getting-rid-of-staged-changes"></a>
 </h3>
 <div class="callout-content">
 <p><code>git checkout</code> can be used to restore a previous commit
@@ -887,7 +887,7 @@ use <code>git checkout</code> to see if you can remove your change.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>After adding a change, <code>git checkout</code> can not be used
 directly. Let’s look at the output of <code>git status</code>:</p>
@@ -955,12 +955,12 @@ nothing to commit, working tree clean</code></pre>
 </div>
 </div>
 </div>
-<div id="discussion2" class="callout discussion">
+<div id="explore-and-summarize-histories" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="explore-and-summarize-histories" class="callout-inner">
-<h3 class="callout-title">Explore and Summarize Histories<a class="anchor" aria-label="anchor" href="#discussion2"></a>
+<h3 class="callout-title">Explore and Summarize Histories<a class="anchor" aria-label="anchor" href="#explore-and-summarize-histories"></a>
 </h3>
 <div class="callout-content">
 <p>Exploring history is an important part of Git, and often it is a
@@ -1047,7 +1047,7 @@ both commit messages and the difference between each commit.</p>
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.16" class="external-link">sandpaper (0.11.16)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.0" class="external-link">sandpaper (0.12.0)</a>,
         <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
 			</div>
@@ -1071,7 +1071,7 @@ both commit messages and the difference between each commit.</p>
   "identifier": "https://swcarpentry.github.io/git-novice/instructor/05-history.html",
   "dateCreated": "2014-12-04",
   "dateModified": "2023-05-08",
-  "datePublished": "2023-05-16"
+  "datePublished": "2023-05-23"
 }
 
   </script><script>

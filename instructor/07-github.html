@@ -408,12 +408,12 @@ repository a <a href="reference.html#remote">remote</a> for the local
 repository. The home page of the repository on GitHub includes the URL
 string we need to identify it:</p>
 <figure><img src="../fig/github-find-repo-string.png" alt="Where to Find Repository URL on GitHub" class="figure mx-auto d-block"></figure><p>Click on the ‘SSH’ link to change the <a href="reference.html#protocol">protocol</a> from HTTPS to SSH.</p>
-<div id="callout1" class="callout callout">
+<div id="https-vs.-ssh" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="https-vs.-ssh" class="callout-inner">
-<h3 class="callout-title">HTTPS vs. SSH<a class="anchor" aria-label="anchor" href="#callout1"></a>
+<h3 class="callout-title">HTTPS vs. SSH<a class="anchor" aria-label="anchor" href="#https-vs.-ssh"></a>
 </h3>
 <div class="callout-content">
 <p>We use SSH here because, while it requires some additional
@@ -477,12 +477,12 @@ can unlock communications and send git commands as my GitHub
 account.”</p>
 <p>What we will do now is the minimum required to set up the SSH keys
 and add the public key to a GitHub account.</p>
-<div id="callout2" class="callout callout">
+<div id="advanced-ssh" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="advanced-ssh" class="callout-inner">
-<h3 class="callout-title">Advanced SSH<a class="anchor" aria-label="anchor" href="#callout2"></a>
+<h3 class="callout-title">Advanced SSH<a class="anchor" aria-label="anchor" href="#advanced-ssh"></a>
 </h3>
 <div class="callout-content">
 <p>A supplemental episode in this lesson discusses SSH and key pairs in
@@ -493,12 +493,12 @@ more depth and detail.</p>
 <p>The first thing we are going to do is check if this has already been
 done on the computer you’re on. Because generally speaking, this setup
 only needs to happen once and then you can forget about it.</p>
-<div id="callout3" class="callout callout">
+<div id="keeping-your-keys-secure" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="keeping-your-keys-secure" class="callout-inner">
-<h3 class="callout-title">Keeping your keys secure<a class="anchor" aria-label="anchor" href="#callout3"></a>
+<h3 class="callout-title">Keeping your keys secure<a class="anchor" aria-label="anchor" href="#keeping-your-keys-secure"></a>
 </h3>
 <div class="callout-content">
 <p>You shouldn’t really forget about your SSH keys, since they keep your
@@ -688,12 +688,12 @@ remote: Resolving deltas: 100% (2/2), done.
 To https://github.com/vlad/planets.git
  * [new branch]      main -&gt; main</code></pre>
 </div>
-<div id="callout4" class="callout callout">
+<div id="proxy" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="proxy" class="callout-inner">
-<h3 class="callout-title">Proxy<a class="anchor" aria-label="anchor" href="#callout4"></a>
+<h3 class="callout-title">Proxy<a class="anchor" aria-label="anchor" href="#proxy"></a>
 </h3>
 <div class="callout-content">
 <p>If the network you are connected to uses a proxy, there is a chance
@@ -717,12 +717,12 @@ will need to tell Git to disable the proxy using:</p>
 </div>
 </div>
 </div>
-<div id="callout5" class="callout callout">
+<div id="password-managers" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="password-managers" class="callout-inner">
-<h3 class="callout-title">Password Managers<a class="anchor" aria-label="anchor" href="#callout5"></a>
+<h3 class="callout-title">Password Managers<a class="anchor" aria-label="anchor" href="#password-managers"></a>
 </h3>
 <div class="callout-content">
 <p>If your operating system has a password manager configured,
@@ -747,12 +747,12 @@ for usernames and passwords.</p>
 </div>
 </div>
 <p>Our local and remote repositories are now in this state:</p>
-<figure><img src="../fig/github-repo-after-first-push.svg" alt="GitHub Repository After First Push" class="figure mx-auto d-block"></figure><div id="callout6" class="callout callout">
+<figure><img src="../fig/github-repo-after-first-push.svg" alt="GitHub Repository After First Push" class="figure mx-auto d-block"></figure><div id="the--u-flag" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="the--u-flag" class="callout-inner">
-<h3 class="callout-title">The ‘-u’ Flag<a class="anchor" aria-label="anchor" href="#callout6"></a>
+<h3 class="callout-title">The ‘-u’ Flag<a class="anchor" aria-label="anchor" href="#the--u-flag"></a>
 </h3>
 <div class="callout-content">
 <p>You may see a <code>-u</code> option used with <code>git push</code>
@@ -783,12 +783,12 @@ Already up-to-date.</code></pre>
 already synchronized. If someone else had pushed some changes to the
 repository on GitHub, though, this command would download them to our
 local repository.</p>
-<div id="challenge1" class="callout challenge">
+<div id="github-gui" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="github-gui" class="callout-inner">
-<h3 class="callout-title">GitHub GUI<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">GitHub GUI<a class="anchor" aria-label="anchor" href="#github-gui"></a>
 </h3>
 <div class="callout-content">
 <p>Browse to your <code>planets</code> repository on GitHub. Under the
@@ -829,13 +829,13 @@ repository back to the right state afterwards!</p>
 </div>
 </div>
 </div>
-<div id="callout7" class="callout callout">
+<div id="uploading-files-directly-in-github-browser" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="uploading-files-directly-in-github-browser" class="callout-inner">
 <h3 class="callout-title">Uploading files directly in GitHub
-browser<a class="anchor" aria-label="anchor" href="#callout7"></a>
+browser<a class="anchor" aria-label="anchor" href="#uploading-files-directly-in-github-browser"></a>
 </h3>
 <div class="callout-content">
 <p>Github also allows you to skip the command line and upload files
@@ -847,12 +847,12 @@ this GitHub page</a></p>
 </div>
 </div>
 </div>
-<div id="challenge2" class="callout challenge">
+<div id="github-timestamp" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="github-timestamp" class="callout-inner">
-<h3 class="callout-title">GitHub Timestamp<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">GitHub Timestamp<a class="anchor" aria-label="anchor" href="#github-timestamp"></a>
 </h3>
 <div class="callout-content">
 <p>Create a remote repository on GitHub. Push the contents of your local
@@ -880,12 +880,12 @@ the file occurred.</p>
 </div>
 </div>
 </div>
-<div id="challenge3" class="callout challenge">
+<div id="push-vs.-commit" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="push-vs.-commit" class="callout-inner">
-<h3 class="callout-title">Push vs. Commit<a class="anchor" aria-label="anchor" href="#challenge3"></a>
+<h3 class="callout-title">Push vs. Commit<a class="anchor" aria-label="anchor" href="#push-vs.-commit"></a>
 </h3>
 <div class="callout-content">
 <p>In this episode, we introduced the “git push” command. How is “git
@@ -910,12 +910,12 @@ local repository.</p>
 </div>
 </div>
 </div>
-<div id="challenge4" class="callout challenge">
+<div id="github-license-and-readme-files" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="github-license-and-readme-files" class="callout-inner">
-<h3 class="callout-title">GitHub License and README files<a class="anchor" aria-label="anchor" href="#challenge4"></a>
+<h3 class="callout-title">GitHub License and README files<a class="anchor" aria-label="anchor" href="#github-license-and-readme-files"></a>
 </h3>
 <div class="callout-content">
 <p>In this episode we learned about creating a remote repository on
@@ -1030,7 +1030,7 @@ local repository.</li>
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.16" class="external-link">sandpaper (0.11.16)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.0" class="external-link">sandpaper (0.12.0)</a>,
         <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
 			</div>
@@ -1054,7 +1054,7 @@ local repository.</li>
   "identifier": "https://swcarpentry.github.io/git-novice/instructor/07-github.html",
   "dateCreated": "2014-12-04",
   "dateModified": "2023-05-08",
-  "datePublished": "2023-05-16"
+  "datePublished": "2023-05-23"
 }
 
   </script><script>

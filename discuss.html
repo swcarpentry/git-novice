@@ -410,12 +410,12 @@ have:</p>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> <span class="at">--unset</span> log.abbrevCommit</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> <span class="at">--unset</span> format.pretty</span></code></pre>
 </div>
-<div id="callout1" class="callout callout">
+<div id="undoing-git-configuration-changes" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="undoing-git-configuration-changes" class="callout-inner">
-<h3 class="callout-title">Undoing Git Configuration Changes<a class="anchor" aria-label="anchor" href="#callout1"></a>
+<h3 class="callout-title">Undoing Git Configuration Changes<a class="anchor" aria-label="anchor" href="#undoing-git-configuration-changes"></a>
 </h3>
 <div class="callout-content">
 <p>You can use the <code>--unset</code> flag to delete unwanted options
@@ -760,12 +760,12 @@ way that Git travels along directory paths can be confusing.</p>
 matches multiple directory levels. E.g. <code>**/results/plots/*</code>
 would make git ignore the <code>results/plots</code> directory in any
 root directory.</p>
-<div id="challenge1" class="callout challenge">
+<div id="ignoring-nested-files-challenge-problem" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="ignoring-nested-files-challenge-problem" class="callout-inner">
-<h3 class="callout-title">Ignoring Nested Files: Challenge Problem<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Ignoring Nested Files: Challenge Problem<a class="anchor" aria-label="anchor" href="#ignoring-nested-files-challenge-problem"></a>
 </h3>
 <div class="callout-content">
 <p>Given a directory structure that looks like:</p>
@@ -796,7 +796,7 @@ ignore the rest of <code>results/</code>?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>To do this, your .gitignore would look like this:</p>
 <div class="codewrapper">
@@ -841,7 +841,7 @@ results/*             # ignore the files in the results directory
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.16" class="external-link">sandpaper (0.11.16)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.0" class="external-link">sandpaper (0.12.0)</a>,
         <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
 			</div>
@@ -865,7 +865,7 @@ results/*             # ignore the files in the results directory
   "identifier": "https://swcarpentry.github.io/git-novice/discuss.html",
   "dateCreated": "2014-12-04",
   "dateModified": "2023-05-08",
-  "datePublished": "2023-05-16"
+  "datePublished": "2023-05-23"
 }
 
   </script><script>
