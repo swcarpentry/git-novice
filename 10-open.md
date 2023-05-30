@@ -20,7 +20,6 @@ exercises: 5
 > The opposite of "open" is "broken".
 > 
 > \--- John Wilbanks
-> {: .quotation}
 
 Free sharing of information might be the ideal in science,
 but the reality is often more complicated.
