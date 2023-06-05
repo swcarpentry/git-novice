@@ -184,7 +184,7 @@ $ git status
 On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+  (use "git restore <file>..." to discard changes in working directory)
 
     modified:   mars.txt
 
@@ -195,7 +195,7 @@ We can put things back the way they were
 by using `git checkout`:
 
 ```bash
-$ git checkout HEAD mars.txt
+$ git restore mars.txt
 $ cat mars.txt
 ```
 
@@ -206,15 +206,15 @@ But the Mummy will appreciate the lack of humidity
 ```
 
 As you might guess from its name,
-`git checkout` checks out (i.e., restores) an old version of a file.
-In this case,
-we're telling Git that we want to recover the version of the file recorded in `HEAD`,
+`git restore` restores an old version of a file.
+By default,
+it recovers the version of the file recorded in `HEAD`,
 which is the last saved commit.
 If we want to go back even further,
-we can use a commit identifier instead:
+we can use a commit identifier instead, using `-s` option:
 
 ```bash
-$ git checkout f22b25e mars.txt
+$ git restore -s f22b25e mars.txt
 ```
 
 ```bash
@@ -231,61 +231,15 @@ $ git status
 
 ```output
 On branch main
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   mars.txt
 
-    modified:   mars.txt
+no changes added to commit (use "git add" and/or "git commit -a")
 
 ```
 
-Notice that the changes are currently in the staging area.
-Again, we can put things back the way they were
-by using `git checkout`:
-
-```bash
-$ git checkout HEAD mars.txt
-```
-
-:::::::::::::::::::::::::::::::::::::::::  callout
-
-## Don't Lose Your HEAD
-
-Above we used
-
-```bash
-$ git checkout f22b25e mars.txt
-```
-
-to revert `mars.txt` to its state after the commit `f22b25e`. But be careful!
-The command `checkout` has other important functionalities and Git will misunderstand
-your intentions if you are not accurate with the typing. For example,
-if you forget `mars.txt` in the previous command.
-
-```bash
-$ git checkout f22b25e
-```
-
-```error
-Note: checking out 'f22b25e'.
-
-You are in 'detached HEAD' state. You can look around, make experimental
-changes and commit them, and you can discard any commits you make in this
-state without impacting any branches by performing another checkout.
-
-If you want to create a new branch to retain commits you create, you may
-do so (now or later) by using -b with the checkout command again. Example:
-
- git checkout -b <new-branch-name>
-
-HEAD is now at f22b25e Start notes on Mars as a base
-```
-
-The "detached HEAD" is like "look, but don't touch" here,
-so you shouldn't make any changes in this state.
-After investigating your repo's past state, reattach your `HEAD` with `git checkout main`.
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 It's important to remember that
 we must use the commit number that identifies the state of the repository
@@ -293,7 +247,7 @@ we must use the commit number that identifies the state of the repository
 A common mistake is to use the number of
 the commit in which we made the change we're trying to discard.
 In the example below, we want to retrieve the state from before the most
-recent commit (`HEAD~1`), which is commit `f22b25e`:
+recent commit (`HEAD~1`), which is commit `f22b25e`. We use the `.` to mean all files:
 
 ![](fig/git-checkout.svg){alt='Git Checkout'}
 
@@ -302,26 +256,6 @@ here's how Git works in cartoon form:
 
 ![https://figshare.com/articles/How_Git_works_a_cartoon/1328266](fig/git_staging.svg)
 
-:::::::::::::::::::::::::::::::::::::::::  callout
-
-## Simplifying the Common Case
-
-If you read the output of `git status` carefully,
-you'll see that it includes this hint:
-
-```output
-(use "git checkout -- <file>..." to discard changes in working directory)
-```
-
-As it says,
-`git checkout` without a version identifier restores files to the state saved in `HEAD`.
-The double dash `--` is needed to separate the names of the files being recovered
-from the command itself:
-without it,
-Git would try to use the name of the file as the commit identifier.
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 The fact that files can be reverted one by one
 tends to change the way people organize their work.
@@ -344,13 +278,13 @@ Luckily, she has been keeping track of her project's versions using Git! Which c
 let her recover the last committed version of her Python script called
 `data_cruncher.py`?
 
-1. `$ git checkout HEAD`
+1. `$ git restore`
 
-2. `$ git checkout HEAD data_cruncher.py`
+2. `$ git restore data_cruncher.py`
 
-3. `$ git checkout HEAD~1 data_cruncher.py`
+3. `$ git restore -s HEAD~1 data_cruncher.py`
 
-4. `$ git checkout <unique ID of last commit> data_cruncher.py`
+4. `$ git restore -s <unique ID of last commit> data_cruncher.py`
 
 5. Both 2 and 4
 
@@ -360,7 +294,7 @@ let her recover the last committed version of her Python script called
 
 The answer is (5)-Both 2 and 4.
 
-The `checkout` command restores files from the repository, overwriting the files in your working
+The `restore` command restores files from the repository, overwriting the files in your working
 directory. Answers 2 and 4 both restore the *latest* version *in the repository* of the file
 `data_cruncher.py`. Answer 2 uses `HEAD` to indicate the *latest*, whereas answer 4 uses the
 unique ID of the last commit, which is what `HEAD` means.
@@ -368,12 +302,8 @@ unique ID of the last commit, which is what `HEAD` means.
 Answer 3 gets the version of `data_cruncher.py` from the commit *before* `HEAD`, which is NOT
 what we wanted.
 
-Answer 1 can be dangerous! Without a filename, `git checkout` will restore **all files**
-in the current directory (and all directories below it) to their state at the commit specified.
-This command will restore `data_cruncher.py` to the latest commit version, but it will also
-restore *any other files that are changed* to that version, erasing any changes you may
-have made to those files!
-As discussed above, you are left in a *detached* `HEAD` state, and you don't want to be there.
+Answer 1 results in an error. You need to specify a file to restore. If you want to restore all files
+you should use `git restore .`
 
 
 
@@ -392,7 +322,7 @@ repository gets the correct change. The command `git revert [erroneous commit ID
 new commit that reverses the erroneous commit.
 
 The command `git revert` is
-different from `git checkout [commit ID]` because `git checkout` returns the
+different from `git restore -s [commit ID] .` because `git restore` returns the
 files not yet committed within the local repository to a previous state, whereas `git revert`
 reverses changes committed to the local and project repositories.
 
@@ -437,7 +367,7 @@ $ echo "Venus is beautiful and full of love" > venus.txt
 $ git add venus.txt
 $ echo "Venus is too hot to be suitable as a base" >> venus.txt
 $ git commit -m "Comment on Venus as an unsuitable base"
-$ git checkout HEAD venus.txt
+$ git restore venus.txt
 $ cat venus.txt #this will print the contents of venus.txt to the screen
 ```
 
@@ -516,8 +446,7 @@ Let's look at the output of `git status`:
 ```output
 On branch main
 Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
-
+  (use "git restore --staged <file>..." to unstage)
         modified:   mars.txt
 
 ```
@@ -526,19 +455,15 @@ Note that if you don't have the same output
 you may either have forgotten to change the file,
 or you have added it *and* committed it.
 
-Using the command `git checkout -- mars.txt` now does not give an error,
+Using the command `git restore mars.txt` now does not give an error,
 but it does not restore the file either.
-Git helpfully tells us that we need to use `git reset` first
+Git helpfully tells us that we need to use `git restore --staged` first
 to unstage the file:
 
 ```bash
-$ git reset HEAD mars.txt
+$ git restore --staged mars.txt
 ```
 
-```output
-Unstaged changes after reset:
-M	mars.txt
-```
 
 Now, `git status` gives us:
 
@@ -550,18 +475,18 @@ $ git status
 On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+  (use "git git restore <file>..." to discard changes in working directory)
 
         modified:   mars.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-This means we can now use `git checkout` to restore the file
+This means we can now use `git restore` to restore the file
 to the previous commit:
 
 ```bash
-$ git checkout -- mars.txt
+$ git restore mars.txt
 $ git status
 ```
 
