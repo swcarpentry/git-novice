@@ -26,12 +26,14 @@ introduce yourself and to meet some of our community members.
 
 2. If you have a [GitHub][github] account, or are willing to [create
    one][github-join], but do not know how to use Git, you can report problems
-   or suggest improvements by [creating an issue][issues]. This allows us to
-   assign the item to someone and to respond to it in a threaded discussion.
+   or suggest improvements by [creating an issue][repo-issues]. 
+   This allows us to assign the item to someone and to respond to it in a
+   threaded discussion.
 
 3. If you are comfortable with Git, and would like to add or change material,
    you can submit a pull request (PR). Instructions for doing this are
-   [included below](#using-github).
+   [included below](#using-github). For inspiration about changes that need to
+   be made, check out the [list of open issues][issues] across the Carpentries.
 
 Note: if you want to build the website locally, please refer to [The Workbench
 documentation][template-doc].
@@ -102,6 +104,7 @@ media, slack, newsletters, and email lists. You can also [reach us by
 email][contact].
 
 [repo]: https://github.com/swcarpentry/git-novice
+[repo-issues]: https://github.com/swcarpentry/git-novice/issues
 [contact]: mailto:team@carpentries.org
 [cp-site]: https://carpentries.org/
 [dc-issues]: https://github.com/issues?q=user%3Adatacarpentry
@@ -111,7 +114,7 @@ email][contact].
 [github]: https://github.com
 [github-flow]: https://guides.github.com/introduction/flow/
 [github-join]: https://github.com/join
-[how-contribute]: https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github
+[how-contribute]: https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github
 [issues]: https://carpentries.org/help-wanted-issues/
 [lc-issues]: https://github.com/issues?q=user%3ALibraryCarpentry
 [swc-issues]: https://github.com/issues?q=user%3Aswcarpentry
