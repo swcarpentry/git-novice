@@ -82,6 +82,24 @@ including the tracked files and sub-directories located within the project's dir
 If we ever delete the `.git` subdirectory,
 we will lose the project's history.
 
+It is also worth noting that if you ever need to make any configuration changes to your repository, you can do that in your .git directory. If we change our present working direcctory to .git and list the contents, you will see your repository's configuration file.
+
+```bash
+$ cd .git
+$ ls
+```
+
+```output
+HEAD		description	info		refs
+config		hooks		objects
+```
+
+We can now change our directory back to planets.
+
+```bash
+$ cd ../
+```
+
 Next, we will change the default branch to be called `main`.
 This might be the default branch depending on your settings and version
 of git.
