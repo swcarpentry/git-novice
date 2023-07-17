@@ -17,8 +17,7 @@ GitHub used to allow command line (CLI) authentication using only username and p
 uses HTTPS protocol.  However, this actually creates security risks, so, they removed 
 the CLI username/password option.  Instead, they kept two options which provide more
 robust security: SSH, which is a widely used protocol; and Personal Access Tokens (PAT), which uses 
-the HTTPS protocol, and is 
-specific to GitHub.  The minimum level of SSH to connect to GitHub is described in episode 7. 
+the HTTPS protocol.  The minimum level of SSH to connect to GitHub is described in episode 7. 
 
 This supplemental episode discusses SSH and key pairs in more depth and detail, 
 and provides details of advanced setup of SSH for GitHub.  It is included in this Git lesson
@@ -196,8 +195,59 @@ rm ~/.ssh/id_ed25519.pub
 
 ## Personal Access Tokens
 
-FIXME: PAT  
-if PAT is removed, you'll receive the following:
+You may find a need or desire to use HTTPS with a personal access token (PAT) instead of SSH (for example, if outgoing SSH connections are blocked by a firewall on your network). To configure git to use HTTPS with a PAT instead of SSH, clone a repository or add a remote using the default HTTPS protocol. 
+
+**Cloning**
+
+~~~
+git clone https://github.com/vlad/planets.git
+~~~
+{: .language-bash}
+
+**Adding a Remote**
+
+~~~
+git remote add origin https://github.com/vlad/planets.git
+~~~
+{: .language-bash}
+
+### What is a PAT?
+
+A Personal Access Token (PAT) is a randomly generated string that can be used to securely authenticate with some web service over HTTPS. PATs are like passwords, except that you can have multiple unique PATs that all link to the same user, sometimes with different settings and permissions.
+
+### Generating a PAT on GitHub
+
+In order to push to a repo with the HTTPS protocol, you will need to generate a PAT on GitHub.
+
+On github.com, click on your user icon in the upper right and navigate to "settings". In the left sidebar click "Developer settings" at the very bottom and then choose "Personal access tokens".  You have a choice between "Tokens (classic)" and "Fine-grained tokens", with the latter being newer and more secure.  Read more about the difference [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#types-of-personal-access-tokens).  Give the token a name, set permissions as you wish, and click "Generate token".  Don't close this page yet as it'll be you *only* chance to see and copy the generated token! 
+
+### Using the PAT
+
+If you try to push to a repo (or do some other operation that requires authentication with GitHub) with HTTPS protocol you can now use this token as a password when prompted.
+
+### Storing the PAT Securely
+
+It is recommended that you treat your PAT like a password and [keep your PAT secure](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#keeping-your-personal-access-tokens-secure). Rather than entering your PAT every time Git needs it, you can set a credential helper in Git.  If you're on macOS, it can use the built-in KeyChain app with 
+
+~~~
+git config --global credential.helper osxkeychain
+~~~
+{: .language-bash}
+
+On Windows and Linux (and macOS), you can install and use the [Git Credential Manager](https://github.com/git-ecosystem/git-credential-manager/releases/latest)
+
+For all systems, there is the option to store your PAT in memory for a limited amount of time, so that you don't have to enter it for every operation, but it's still never saved to disk.  This is useful if you want to store your PAT in your own secure password manager.
+
+~~
+git config --global credential.helper cache
+~~
+{: .language-bash}
+
+**Never** save your PAT in a plain text file, especially not one commited to a git repository! If for some reason the security of your PAT is breached or you suspect it has been breached, you can always delete it on GitHub and generate a new one. 
+
+
+
+If your PAT is removed or it expires, you'll receive the following:
 git push origin main
 remote: Invalid username or password.
 fatal: Authentication failed for 'https://github.com/vlad/planets.git/'
@@ -214,7 +264,9 @@ git config --global --unset credential.helper
 FIXME: Windows 10: Credential Manager  
 FIXME: remove git credential.  
 
+### Other Hosts
 
+Besides GitHub, Bitbucket also allows [authentication using HTTPS and PATs](https://confluence.atlassian.com/bitbucketserver072/personal-access-tokens-1005335924.html).  You'll also find PATs used for authentication in other services not related to git.
 
 [github]: https://help.github.com/articles/generating-ssh-keys
 [bitbucket]: https://confluence.atlassian.com/bitbucket/set-up-ssh-for-git-728138079.html
