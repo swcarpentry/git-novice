@@ -213,7 +213,7 @@ git remote add origin https://github.com/vlad/planets.git
 
 ### What is a PAT?
 
-A Personal Access Token (PAT) is a randomly generated string that can be used to securely authenticate with some web service over HTTPS. PATs are like passwords, except that you can have multiple unique PATs that all link to the same user, sometimes with different settings and permissions.
+A Personal Access Token (PAT) is a type of access token implemented by GitHub. Access tokens are randomly generated string of characters commonly used to securely authenticate with some web service over HTTPS. GitHub PATs are like passwords, except that you can have multiple unique PATs that all link to the same user with potentially different permissions (e.g. for different computers).
 
 ### Generating a PAT on GitHub
 
