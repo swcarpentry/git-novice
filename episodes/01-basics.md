@@ -22,9 +22,7 @@ to keep track of what one person did and when.
 Even if you aren't collaborating with other people,
 automated version control is much better than this situation:
 
-!["Piled Higher and Deeper" by Jorge Cham, http://www.phdcomics.com](fig/phd101212s.png)
-
-"Piled Higher and Deeper" by Jorge Cham, [http://www.phdcomics.com](https://www.phdcomics.com)
+!["notFinal.doc" by Jorge Cham, <https://www.phdcomics.com>](fig/phd101212s.png){alt='Comic: a PhD student sends "FINAL.doc" to their supervisor, but after several increasingly intense and frustrating rounds of comments and revisions they end up with a file named "FINAL_rev.22.comments49.corrections.10.#@$%WHYDIDCOMETOGRADSCHOOL????.doc"'}
 
 We've all been in this situation before: it seems unnecessary to have
 multiple nearly-identical versions of the same document. Some word
