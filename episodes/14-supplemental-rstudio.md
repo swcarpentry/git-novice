@@ -58,7 +58,7 @@ and then type:
 - `where git` (Windows)
 
 If there is no version of Git on your computer, please follow the
-[Git installation instructions](https://swcarpentry.github.io/git-novice/setup.html)
+[Git installation instructions](https://swcarpentry.github.io/git-novice/#installing-git)
 in the setup of this lesson to install Git now. Next open your shell or command prompt
 and type `which git` (macOS, Linux), or `where git` (Windows).
 Copy the path to the git executable.
