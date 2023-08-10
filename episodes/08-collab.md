@@ -35,7 +35,7 @@ won't need to give anyone access on GitHub, because both 'partners' are you.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-The Owner needs to give the Collaborator access. On GitHub, click the "Settings"
+The Owner needs to give the Collaborator access. On GitHub, in your repo, click the "Settings"
 button on the right, select "Collaborators", click "Add people", and
 then enter your partner's username.
 
