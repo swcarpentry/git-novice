@@ -35,11 +35,11 @@ won't need to give anyone access on GitHub, because both 'partners' are you.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-The Owner needs to give the Collaborator access. On GitHub, click the "Settings"
+The Owner needs to give the Collaborator access. In your repository page on GitHub, click the "Settings"
 button on the right, select "Collaborators", click "Add people", and
 then enter your partner's username.
 
-![](fig/github-add-collaborators.png){alt='Adding Collaborators on GitHub'}
+![](fig/github-add-collaborators.png){alt='screenshot of repository page with Settings then Collaborators selected, showing how to add Collaborators in a GitHub repository'}
 
 To accept access to the Owner's repo, the Collaborator
 needs to go to [https://github.com/notifications](https://github.com/notifications)
