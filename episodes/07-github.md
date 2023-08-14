@@ -400,7 +400,7 @@ GitHub, though, this command would download them to our local repository.
 ## GitHub GUI
 
 Browse to your `planets` repository on GitHub.
-Under the Code tab, find and click on the text that says "XX commits" (where "XX" is some number).
+Underneath the Code button, find and click on the text that says "XX commits" (where "XX" is some number).
 Hover over, and click on, the three buttons to the right of each commit.
 What information can you gather/explore from these buttons?
 How would you get that same information in the shell?
