@@ -46,11 +46,11 @@ collaborate.  Using a popular service can help connect your project with
 communities already using the same service.
 
 As an example, Software Carpentry [is on GitHub](https://github.com/swcarpentry/) where you can find the [source for this
-page](https://github.com/swcarpentry/git-novice/edit/gh-pages/_episodes/13-hosting.md). Anyone with a GitHub account can suggest changes to this text.
+page](https://github.com/swcarpentry/git-novice/blob/main/episodes/13-hosting.md). Anyone with a GitHub account can suggest changes to this text.
 
 GitHub repositories can also be assigned DOIs, [by connecting its releases to
 Zenodo](https://guides.github.com/activities/citable-code/). For example,
-[`10.5281/zenodo.57467`](https://zenodo.org/record/57467) is the DOI that has
+[`10.5281/zenodo.7908089`](https://zenodo.org/record/7908089) is the DOI that has
 been "minted" for this introduction to Git.
 
 Using large, well-established services can also help you quickly take advantage
