@@ -79,7 +79,7 @@ $ git config --global core.autocrlf input
 And on Windows:
 
 ```bash
-$ git config --global core.autocrlf false
+$ git config --global core.autocrlf true
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
