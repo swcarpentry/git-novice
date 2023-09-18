@@ -24,7 +24,7 @@ Let's create a few dummy files:
 
 ```bash
 $ mkdir results
-$ touch a.dat b.dat c.dat results/a.out results/b.out
+$ touch a.csv b.csv c.csv results/a.out results/b.out
 ```
 
 and see what Git says:
@@ -38,9 +38,9 @@ On branch main
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
-	a.dat
-	b.dat
-	c.dat
+	a.csv
+	b.csv
+	c.csv
 	results/
 
 nothing added to commit but untracked files present (use "git add" to track)
@@ -59,11 +59,11 @@ $ cat .gitignore
 ```
 
 ```output
-*.dat
+*.csv
 results/
 ```
 
-These patterns tell Git to ignore any file whose name ends in `.dat`
+These patterns tell Git to ignore any file whose name ends in `.csv`
 and everything in the `results` directory.
 (If any of these files were already being tracked,
 Git would continue to track them.)
@@ -105,18 +105,18 @@ nothing to commit, working tree clean
 As a bonus, using `.gitignore` helps us avoid accidentally adding files to the repository that we don't want to track:
 
 ```bash
-$ git add a.dat
+$ git add a.csv
 ```
 
 ```output
 The following paths are ignored by one of your .gitignore files:
-a.dat
+a.csv
 Use -f if you really want to add them.
 ```
 
 If we really want to override our ignore settings,
 we can use `git add -f` to force Git to add something. For example,
-`git add -f a.dat`.
+`git add -f a.csv`.
 We can also always see the status of ignored files if we want:
 
 ```bash
@@ -128,9 +128,9 @@ On branch main
 Ignored files:
  (use "git add -f <file>..." to include in what will be committed)
 
-        a.dat
-        b.dat
-        c.dat
+        a.csv
+        b.csv
+        c.csv
         results/
 
 nothing to commit, working tree clean
@@ -182,8 +182,8 @@ Further, the discussion page has more detail on ignore rules.
 
 ## Including Specific Files
 
-How would you ignore all `.dat` files in your root directory except for
-`final.dat`?
+How would you ignore all `.csv` files in your root directory except for
+`final.csv`?
 Hint: Find out what `!` (the exclamation point operator) does
 
 :::::::::::::::  solution
@@ -193,15 +193,15 @@ Hint: Find out what `!` (the exclamation point operator) does
 You would add the following two lines to your .gitignore:
 
 ```output
-*.dat           # ignore all data files
-!final.dat      # except final.data
+*.csv           # ignore all data files
+!final.csv      # except final.csv
 ```
 
 The exclamation point operator will include a previously excluded entry.
 
-Note also that because you've previously committed `.dat` files in this
+Note also that because you've previously committed `.csv` files in this
 lesson they will not be ignored with this new rule. Only future additions
-of `.dat` files added to the root directory will be ignored.
+of `.csv` files added to the root directory will be ignored.
 
 
 
@@ -253,22 +253,22 @@ results/*               # ignore everything in results folder
 Assuming you have an empty .gitignore file, and given a directory structure that looks like:
 
 ```bash
-results/data/position/gps/a.dat
-results/data/position/gps/b.dat
-results/data/position/gps/c.dat
+results/data/position/gps/a.csv
+results/data/position/gps/b.csv
+results/data/position/gps/c.csv
 results/data/position/gps/info.txt
 results/plots
 ```
 
-What's the shortest `.gitignore` rule you could write to ignore all `.dat`
+What's the shortest `.gitignore` rule you could write to ignore all `.csv`
 files in `result/data/position/gps`? Do not ignore the `info.txt`.
 
 :::::::::::::::  solution
 
 ## Solution
 
-Appending `results/data/position/gps/*.dat` will match every file in `results/data/position/gps`
-that ends with `.dat`.
+Appending `results/data/position/gps/*.csv` will match every file in `results/data/position/gps`
+that ends with `.csv`.
 The file `results/data/position/gps/info.txt` will not be ignored.
 
 
@@ -281,17 +281,17 @@ The file `results/data/position/gps/info.txt` will not be ignored.
 
 ## Ignoring all data Files in the repository
 
-Let us assume you have many `.dat` files in different subdirectories of your repository.
+Let us assume you have many `.csv` files in different subdirectories of your repository.
 For example, you might have:
 
 ```bash
-results/a.dat
-data/experiment_1/b.dat
-data/experiment_2/c.dat
-data/experiment_2/variation_1/d.dat
+results/a.csv
+data/experiment_1/b.csv
+data/experiment_2/c.csv
+data/experiment_2/variation_1/d.csv
 ```
 
-How do you ignore all the `.dat` files, without explicitly listing the names of the corresponding folders?
+How do you ignore all the `.csv` files, without explicitly listing the names of the corresponding folders?
 
 :::::::::::::::  solution
 
@@ -300,10 +300,10 @@ How do you ignore all the `.dat` files, without explicitly listing the names of 
 In the `.gitignore` file, write:
 
 ```output
-**/*.dat               
+**/*.csv
 ```
 
-This will ignore all the `.dat` files, regardless of their position in the directory tree.
+This will ignore all the `.csv` files, regardless of their position in the directory tree.
 You can still include some specific exception with the exclamation point operator.
 
 
@@ -319,8 +319,8 @@ You can still include some specific exception with the exclamation point operato
 Given a `.gitignore` file with the following contents:
 
 ```bash
-*.dat
-!*.dat
+*.csv
+!*.csv
 ```
 
 What will be the result?
@@ -330,8 +330,8 @@ What will be the result?
 ## Solution
 
 The `!` modifier will negate an entry from a previously defined ignore pattern.
-Because the `!*.dat` entry negates all of the previous `.dat` files in the `.gitignore`,
-none of them will be ignored, and all `.dat` files will be tracked.
+Because the `!*.csv` entry negates all of the previous `.csv` files in the `.gitignore`,
+none of them will be ignored, and all `.csv` files will be tracked.
 
 :::::::::::::::::::::::::
 
