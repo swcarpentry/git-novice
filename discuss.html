@@ -320,7 +320,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Discussion</h1>
-        <p> Last updated on 2023-05-08 | 
+        <p> Last updated on 2023-09-18 | 
         
         <a href="https://github.com/swcarpentry/git-novice/edit/main/learners/discuss.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -790,10 +790,10 @@ root directory.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>*.dat</code></pre>
+<pre class="output" tabindex="0"><code>*.csv</code></pre>
 </div>
 <p>How would you track all of the contents of
-<code>results/data/</code>, including <code>*.dat</code> files, but
+<code>results/data/</code>, including <code>*.csv</code> files, but
 ignore the rest of <code>results/</code>?</p>
 </div>
 </div>
@@ -805,16 +805,16 @@ ignore the rest of <code>results/</code>?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>To do this, your .gitignore would look like this:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>*.dat                 # ignore the .dat files
+<pre class="output" tabindex="0"><code>*.csv                 # ignore the .csv files
 results/*             # ignore the files in the results directory
 !results/data/        # do not ignore the files in results/data
-!results/data/*       # do not ignore the .dat files in reults/data</code></pre>
+!results/data/*       # do not ignore the .csv files in reults/data</code></pre>
 </div>
 </div>
 </div>
@@ -879,8 +879,8 @@ results/*             # ignore the files in the results directory
   "url": "https://swcarpentry.github.io/git-novice/discuss.html",
   "identifier": "https://swcarpentry.github.io/git-novice/discuss.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2023-05-08",
-  "datePublished": "2023-09-12"
+  "dateModified": "2023-09-18",
+  "datePublished": "2023-09-18"
 }
 
   </script><script>

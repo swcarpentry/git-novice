@@ -513,7 +513,7 @@ changes?</p></li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ul>
 <li><p>Recovering the excellent version is only possible if you created
@@ -1054,7 +1054,7 @@ the <code>moons</code> subdirectory?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>No. Dracula does not need to make the <code>moons</code> subdirectory
 a Git repository because the <code>planets</code> repository can track
@@ -1105,7 +1105,7 @@ in the <code>moons</code> subdirectory?</p>
   Solution – USE WITH CAUTION!
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="section level3">
 <h3 id="background">Background<a class="anchor" aria-label="anchor" href="#background"></a>
@@ -2787,7 +2787,7 @@ both commit messages and the difference between each commit.</p>
 </div>
 </div></section><section id="aio-06-ignore"><p>Content from <a href="06-ignore.html">Ignoring Things</a></p>
 <hr>
-<p> Last updated on 2023-05-08 | 
+<p> Last updated on 2023-09-18 | 
         
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/06-ignore.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2826,7 +2826,7 @@ data analysis? Let’s create a few dummy files:</p>
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mkdir results</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> touch a.dat b.dat c.dat results/a.out results/b.out</span></code></pre>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> touch a.csv b.csv c.csv results/a.out results/b.out</span></code></pre>
 </div>
 <p>and see what Git says:</p>
 <div class="codewrapper sourceCode" id="cb2">
@@ -2841,9 +2841,9 @@ data analysis? Let’s create a few dummy files:</p>
 Untracked files:
   (use "git add &lt;file&gt;..." to include in what will be committed)
 
-	a.dat
-	b.dat
-	c.dat
+	a.csv
+	b.csv
+	c.csv
 	results/
 
 nothing added to commit but untracked files present (use "git add" to track)</code></pre>
@@ -2862,11 +2862,11 @@ called <code>.gitignore</code>:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>*.dat
+<pre class="output" tabindex="0"><code>*.csv
 results/</code></pre>
 </div>
 <p>These patterns tell Git to ignore any file whose name ends in
-<code>.dat</code> and everything in the <code>results</code> directory.
+<code>.csv</code> and everything in the <code>results</code> directory.
 (If any of these files were already being tracked, Git would continue to
 track them.)</p>
 <p>Once we have created this file, the output of <code>git status</code>
@@ -2910,18 +2910,18 @@ adding files to the repository that we don’t want to track:</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git add a.dat</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git add a.csv</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>The following paths are ignored by one of your .gitignore files:
-a.dat
+a.csv
 Use -f if you really want to add them.</code></pre>
 </div>
 <p>If we really want to override our ignore settings, we can use
 <code>git add -f</code> to force Git to add something. For example,
-<code>git add -f a.dat</code>. We can also always see the status of
+<code>git add -f a.csv</code>. We can also always see the status of
 ignored files if we want:</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2935,9 +2935,9 @@ ignored files if we want:</p>
 Ignored files:
  (use "git add -f &lt;file&gt;..." to include in what will be committed)
 
-        a.dat
-        b.dat
-        c.dat
+        a.csv
+        b.csv
+        c.csv
         results/
 
 nothing to commit, working tree clean</code></pre>
@@ -2969,7 +2969,7 @@ nothing to commit, working tree clean</code></pre>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>If you only want to ignore the contents of
 <code>results/plots</code>, you can change your <code>.gitignore</code>
@@ -2999,8 +2999,8 @@ more detail on ignore rules.</p>
 <h3 class="callout-title">Including Specific Files<a class="anchor" aria-label="anchor" href="#including-specific-files"></a>
 </h3>
 <div class="callout-content">
-<p>How would you ignore all <code>.dat</code> files in your root
-directory except for <code>final.dat</code>? Hint: Find out what
+<p>How would you ignore all <code>.csv</code> files in your root
+directory except for <code>final.csv</code>? Hint: Find out what
 <code>!</code> (the exclamation point operator) does</p>
 </div>
 </div>
@@ -3012,20 +3012,20 @@ directory except for <code>final.dat</code>? Hint: Find out what
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>You would add the following two lines to your .gitignore:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>*.dat           # ignore all data files
-!final.dat      # except final.data</code></pre>
+<pre class="output" tabindex="0"><code>*.csv           # ignore all data files
+!final.csv      # except final.csv</code></pre>
 </div>
 <p>The exclamation point operator will include a previously excluded
 entry.</p>
-<p>Note also that because you’ve previously committed <code>.dat</code>
+<p>Note also that because you’ve previously committed <code>.csv</code>
 files in this lesson they will not be ignored with this new rule. Only
-future additions of <code>.dat</code> files added to the root directory
+future additions of <code>.csv</code> files added to the root directory
 will be ignored.</p>
 </div>
 </div>
@@ -3063,7 +3063,7 @@ not <code>results/data</code>?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>If you want to ignore the contents of <code>results/</code> but not
 those of <code>results/data/</code>, you can change your
@@ -3093,14 +3093,14 @@ structure that looks like:</p>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">results/data/position/gps/a.dat</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ex">results/data/position/gps/b.dat</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="ex">results/data/position/gps/c.dat</span></span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">results/data/position/gps/a.csv</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ex">results/data/position/gps/b.csv</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="ex">results/data/position/gps/c.csv</span></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="ex">results/data/position/gps/info.txt</span></span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="ex">results/plots</span></span></code></pre>
 </div>
 <p>What’s the shortest <code>.gitignore</code> rule you could write to
-ignore all <code>.dat</code> files in
+ignore all <code>.csv</code> files in
 <code>result/data/position/gps</code>? Do not ignore the
 <code>info.txt</code>.</p>
 </div>
@@ -3113,11 +3113,11 @@ ignore all <code>.dat</code> files in
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
-<p>Appending <code>results/data/position/gps/*.dat</code> will match
+<p>Appending <code>results/data/position/gps/*.csv</code> will match
 every file in <code>results/data/position/gps</code> that ends with
-<code>.dat</code>. The file
+<code>.csv</code>. The file
 <code>results/data/position/gps/info.txt</code> will not be ignored.</p>
 </div>
 </div>
@@ -3131,17 +3131,17 @@ every file in <code>results/data/position/gps</code> that ends with
 <h3 class="callout-title">Ignoring all data Files in the repository<a class="anchor" aria-label="anchor" href="#ignoring-all-data-files-in-the-repository"></a>
 </h3>
 <div class="callout-content">
-<p>Let us assume you have many <code>.dat</code> files in different
+<p>Let us assume you have many <code>.csv</code> files in different
 subdirectories of your repository. For example, you might have:</p>
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">results/a.dat</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="ex">data/experiment_1/b.dat</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="ex">data/experiment_2/c.dat</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="ex">data/experiment_2/variation_1/d.dat</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">results/a.csv</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="ex">data/experiment_1/b.csv</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="ex">data/experiment_2/c.csv</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="ex">data/experiment_2/variation_1/d.csv</span></span></code></pre>
 </div>
-<p>How do you ignore all the <code>.dat</code> files, without explicitly
+<p>How do you ignore all the <code>.csv</code> files, without explicitly
 listing the names of the corresponding folders?</p>
 </div>
 </div>
@@ -3153,15 +3153,15 @@ listing the names of the corresponding folders?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>In the <code>.gitignore</code> file, write:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>**/*.dat               </code></pre>
+<pre class="output" tabindex="0"><code>**/*.csv</code></pre>
 </div>
-<p>This will ignore all the <code>.dat</code> files, regardless of their
+<p>This will ignore all the <code>.csv</code> files, regardless of their
 position in the directory tree. You can still include some specific
 exception with the exclamation point operator.</p>
 </div>
@@ -3180,8 +3180,8 @@ exception with the exclamation point operator.</p>
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">*.dat</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="ex">!*.dat</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">*.csv</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="ex">!*.csv</span></span></code></pre>
 </div>
 <p>What will be the result?</p>
 </div>
@@ -3194,13 +3194,13 @@ exception with the exclamation point operator.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>The <code>!</code> modifier will negate an entry from a previously
-defined ignore pattern. Because the <code>!*.dat</code> entry negates
-all of the previous <code>.dat</code> files in the
+defined ignore pattern. Because the <code>!*.csv</code> entry negates
+all of the previous <code>.csv</code> files in the
 <code>.gitignore</code>, none of them will be ignored, and all
-<code>.dat</code> files will be tracked.</p>
+<code>.csv</code> files will be tracked.</p>
 </div>
 </div>
 </div>
@@ -3240,7 +3240,7 @@ via <code>.gitignore</code>.</p></li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>append either <code>log_*</code> or <code>log*</code> as a new entry
@@ -3752,7 +3752,7 @@ shell?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The left-most button (with the picture of a clipboard) copies the
 full identifier of the commit to the clipboard. In the shell,
@@ -3816,7 +3816,7 @@ GitHub record times, and why?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>GitHub displays timestamps in a human readable relative format
 (i.e. “22 hours ago” or “three weeks ago”). However, if you hover over
@@ -3846,7 +3846,7 @@ push” different from “git commit”?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>When we push changes, we’re interacting with a remote repository to
 update it with the changes we’ve made locally (often this corresponds to
@@ -3878,7 +3878,7 @@ happened when you tried to link your local and remote repositories?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>In this case, we’d see a merge conflict due to unrelated histories.
 When GitHub creates a README.md file, it performs a commit in the remote
@@ -5774,8 +5774,8 @@ project over time.</li>
   "url": "https://swcarpentry.github.io/git-novice/aio.html",
   "identifier": "https://swcarpentry.github.io/git-novice/aio.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2023-09-12",
-  "datePublished": "2023-09-12"
+  "dateModified": "2023-09-18",
+  "datePublished": "2023-09-18"
 }
 
   </script><script>
