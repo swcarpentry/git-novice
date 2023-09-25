@@ -192,7 +192,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 We can put things back the way they were
-by using `git checkout`:
+by using `git restore`:
 
 ```bash
 $ git restore mars.txt
@@ -249,7 +249,7 @@ the commit in which we made the change we're trying to discard.
 In the example below, we want to retrieve the state from before the most
 recent commit (`HEAD~1`), which is commit `f22b25e`. We use the `.` to mean all files:
 
-![](fig/git-checkout.svg){alt='Git Checkout'}
+![](fig/git-restore.svg){alt='Git Restore'}
 
 So, to put it all together,
 here's how Git works in cartoon form:
@@ -400,7 +400,7 @@ the version of `venus.txt` committed to the repository is the one from the stagi
 has only one line.
 
 At this time, the working copy still has the second line (and
-`git status` will show that the file is modified). However, `git checkout HEAD venus.txt`
+`git status` will show that the file is modified). However, `git restore venus.txt`
 replaces the working copy with the most recently committed version of `venus.txt`.
 
 So, `cat venus.txt` will output
@@ -431,16 +431,16 @@ and what does happen?
 
 ## Getting Rid of Staged Changes
 
-`git checkout` can be used to restore a previous commit when unstaged changes have
+`git restore` can be used to restore a previous commit when unstaged changes have
 been made, but will it also work for changes that have been staged but not committed?
 Make a change to `mars.txt`, add that change using `git add`,
-then use `git checkout` to see if you can remove your change.
+then use `git restore` to see if you can remove your change.
 
 :::::::::::::::  solution
 
 ## Solution
 
-After adding a change, `git checkout` can not be used directly.
+After adding a change, `git restore` can not be used directly.
 Let's look at the output of `git status`:
 
 ```output
@@ -543,7 +543,7 @@ $ git log --patch HEAD~9 *.txt
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - `git diff` displays differences between commits.
-- `git checkout` recovers old versions of files.
+- `git restore` recovers old versions of files.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
