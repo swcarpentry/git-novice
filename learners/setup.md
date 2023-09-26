@@ -14,7 +14,7 @@ instructions on installing Git for various operating systems.
 
 ## Creating a GitHub Account
 
-You will need an account for [GitHub](https://github.com) to follow this lesson.
+You will need an account for [GitHub](https://github.com) to follow episodes 7 & 8 in this lesson.
 
 1. Go to <https://github.com> and follow the "Sign up" link at the top-right of the window.
 2. Follow the instructions to create an account.
