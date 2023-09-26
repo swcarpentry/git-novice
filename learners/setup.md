@@ -39,7 +39,7 @@ Several options exist for setting up 2FA, which are summarised here:
     1. [set up 2FA via text message](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-text-messages) 
        ([list of countries where authentication by SMS is supported](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/countries-where-sms-authentication-is-supported)), or
     2. [use a hardware security key](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-a-security-key) 
-       like [Youbikey](https://www.yubico.com/products/yubikey-5-overview/) 
+       like [YubiKey](https://www.yubico.com/products/yubikey-5-overview/) 
        or the [Google Titan key](https://store.google.com/us/product/titan_security_key?hl=en-US&pli=1).
 
 The GitHub documentation provides [more details about configuring 2FA](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication).
