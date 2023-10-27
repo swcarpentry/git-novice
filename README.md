@@ -39,7 +39,7 @@ Please adhere to this project’s [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Support
 
-Please see our [Getting help guide](/.github/SUPPORT.md) for support.
+Please see our [Getting help guide](SUPPORT.md) for support.
 
 ## License
 
