@@ -175,7 +175,7 @@ community listed at <https://github.com/epiverse-trace/> including via social
 media, slack, newsletters, and email lists. You can also [reach us by
 email][contact].
 
-[repo]: https://example.com/FIXME
+[repo]: https://github.com/epiverse-trace/git-rstudio-basics
 [repo-issues]: https://github.com/epiverse-trace/git-rstudio-basics/issues
 [contact]: mailto:andree.valle-campos@lshtm.ac.uk
 [cp-site]: https://epiverse-trace.github.io/
