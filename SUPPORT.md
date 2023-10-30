@@ -13,13 +13,13 @@ You can also check out the [How to make a reproducible R code example](https://c
 
 ## Where to ask?
 
-Armed with your reprex, the next step is to figure out [where to ask](https://www.tidyverse.org/help/#where-to-ask). 
+Armed with your reprex, the next step is to figure out where to ask. 
 
 *   If it's a question: start with [the GitHub Discussions](https://github.com/epiverse-trace/git-rstudio-basics/discussions), and/or StackOverflow. There are more people there to answer questions.  
 
 *   If it's a bug: you're in the right place, [file an issue](https://github.com/epiverse-trace/git-rstudio-basics/issues/new).  
   
-*   If you're not sure: let the community help you figure it out! 
+*   If you're not sure: let the community help you figure it out! [Ask your question to any of these forums](https://www.tidyverse.org/help/#where-to-ask). 
     If your problem _is_ a bug or a feature request, you can easily return here and report it. 
 
 Before opening a new issue, be sure to [search issues and pull requests](https://github.com/epiverse-trace/git-rstudio-basics/issues) to make sure the bug hasn't been reported and/or already fixed in the development version. 
