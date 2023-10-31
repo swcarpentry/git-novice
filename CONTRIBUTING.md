@@ -122,7 +122,7 @@ Consider that:
 
 #### Maintainer:
 
-You can follow this references:
+You can follow this reference:
 
 - Update steps above from any discussion on issues.
 - Keep branches up to date with `main`.
