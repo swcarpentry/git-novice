@@ -110,7 +110,7 @@ Restart now?
 
 Agree to restart your session to activate the Git pane in Rstudio:
 
-![The Git tab in the Environments pane shows the `status` of your repository.](fig/git-rstudio-09.png)
+![The Git tab in the Environments pane shows the `status` of your repository.](fig/pane-git-01.png)
 
 <!--
 ```bash
