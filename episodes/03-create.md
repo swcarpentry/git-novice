@@ -124,6 +124,8 @@ including the tracked files and sub-directories located within the project's dir
 If we ever delete the `.git` subdirectory,
 we will lose the project's history.
 
+<!--
+
 Next, we will change the default branch to be called `main`.
 This might be the default branch depending on your settings and version
 of git.
@@ -136,6 +138,10 @@ $ git checkout -b main
 ```output
 Switched to a new branch 'main'
 ```
+
+-->
+
+## Using the Terminal
 
 To interact with Git, we can also use the [Rstudio Terminal](https://docs.posit.co/ide/user/ide/guide/tools/terminal.html). The Terminal tab is next to the Console tab. Click on the Terminal tab and a new terminal session will be created (if there isn’t one already).
 
