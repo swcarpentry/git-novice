@@ -2,15 +2,36 @@
 title: Setup
 ---
 
+## Install R and Rstudio
+
+Follow these instructions <https://posit.co/download/rstudio-desktop/>
+
+### Install R packages
+
+These installation steps could ask you `? Do you want to continue (Y/n)` write `y` and press ENTER.
+
+Install all these packages:
+
+```r
+if(!require("pak")) install.packages("pak")
+
+new <- c("gh",
+         "usethis",
+         "tidyverse",
+         "here")
+
+pak::pak(new)
+```
+
 ## Installing Git
 
-Since several Carpentries lessons rely on Git, please see
-[this section of the workshop template][workshop-setup] for
-instructions on installing Git for various operating systems.
+Follow this instructions on installing Git for various operating systems.
 
 - [Git installation on Windows][workshop-setup]
 - [Git installation on MacOS][workshop-setup]
 - [Git installation on Linux][workshop-setup]
+
+You can also follow [happygitwithr recommendations](https://happygitwithr.com/install-git.html) for each Operating system.
 
 ## Creating a GitHub Account
 
@@ -44,6 +65,7 @@ Several options exist for setting up 2FA, which are summarised here:
 
 The GitHub documentation provides [more details about configuring 2FA](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication).
 
+<!--
 ----------------
 
 ## Preparing Your Working Directory
@@ -54,6 +76,7 @@ We'll do our work in the `Desktop` folder so make sure you change your working d
 $ cd
 $ cd Desktop
 ```
+-->
 
 [workshop-setup]: https://carpentries.github.io/workshop-template/install_instructions/#git
 
