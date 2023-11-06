@@ -33,7 +33,7 @@ In this episode, we are going to learn how to initialize Git to create a Local R
 
 Let's start a new R project in Rstudio.
 
-## lets
+## Create a local repository
 
 Once Git is configured,
 we can start using it.
