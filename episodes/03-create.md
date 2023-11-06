@@ -108,9 +108,11 @@ Agree to restart your session to activate the Git pane in Rstudio:
 
 <!--paste figure-->
 
+<!--
 ```bash
 $ git init
 ```
+-->
 
 It is important to note that `usethis::use_git()` will create a repository that
 can include subdirectories and their files---there is no need to create
