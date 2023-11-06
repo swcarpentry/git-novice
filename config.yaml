@@ -8,10 +8,10 @@
 # lc: Library Carpentry
 # cp: Carpentries (to use for instructor training for instance)
 # incubator: The Carpentries Incubator
-carpentry: 'swc'
+carpentry: 'incubator'
 
 # Overall title for pages.
-title: 'Version Control with Git'
+title: 'Version Control with Git and GitHub in Rstudio'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
 created: '2014-12-04'
@@ -21,19 +21,19 @@ keywords: 'software, data, lesson, The Carpentries'
 
 # Life cycle stage of the lesson
 # possible values: pre-alpha, alpha, beta, stable
-life_cycle: 'stable'
+life_cycle: 'alpha'
 
 # License of the lesson materials (recommended CC-BY 4.0)
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/swcarpentry/git-novice'
+source: 'https://github.com/epiverse-trace/git-rstudio-basics'
 
 # Default branch of your lesson
 branch: 'main'
 
 # Who to contact if there are any issues
-contact: 'team@carpentries.org'
+contact: 'andree.valle-campos@lshtm.ac.uk'
 
 # Navigation ------------------------------------------------
 #
@@ -58,30 +58,37 @@ contact: 'team@carpentries.org'
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes: 
+episodes:
 - 01-basics.md
 - 02-setup.md
-- 03-create.md
-- 04-changes.md
-- 05-history.md
-- 06-ignore.md
-- 07-github.md
-- 08-collab.md
-- 09-conflict.md
-- 10-open.md
-- 11-licensing.md
-- 12-citation.md
-- 13-hosting.md
-- 14-supplemental-rstudio.md
+# - 03-create.md
+# - 04-changes.md
+
+# batch #1
+# - 06-ignore.md
+# - 05-history.md
+# - 08-collab.md
+# - 07-github.md
+
+# batch #2
+# - 15-branch.md
+# - 09-conflict.md
+# - 14-supplemental-rstudio.md
+
+# to research-compendium
+# - 13-hosting.md
+# - 10-open.md
+# - 11-licensing.md
+# - 12-citation.md
 
 # Information for Learners
-learners: 
+learners:
 
 # Information for Instructors
-instructors: 
+instructors:
 
 # Learner Profiles
-profiles: 
+profiles:
 
 # Customisation ---------------------------------------------
 #
@@ -89,6 +96,6 @@ profiles:
 # sandpaper and varnish versions) should live
 varnish: epiverse-trace/varnish@epiversetheme
 
-url: 'https://swcarpentry.github.io/git-novice'
-analytics: carpentries
-lang: en
+# url: 'https://swcarpentry.github.io/git-novice'
+# analytics: carpentries
+# lang: en
