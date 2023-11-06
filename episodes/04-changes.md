@@ -20,6 +20,8 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+## `git` combo: status + add + commit
+
 First let's make sure we're still in the right directory.
 You should be in the `cases` directory.
 
@@ -109,6 +111,8 @@ Changes to be committed:
 
 ```
 
+## commit message
+
 Git now knows that it's supposed to keep track of `mars.txt`,
 but it hasn't recorded these changes as a commit yet.
 To get it to do that,
@@ -152,6 +156,9 @@ nothing to commit, working tree clean
 ```
 
 it tells us everything is up to date.
+
+## git log
+
 If we want to know what we've done recently,
 we can ask Git to show us the project's history using `git log`:
 
@@ -188,6 +195,8 @@ so that our filesystem doesn't become cluttered
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## git diff
 
 Now suppose Dracula adds more information to the file.
 (Again, we'll edit with `nano` and then `cat` the file to show its contents;
