@@ -40,6 +40,8 @@ we can start using it.
 
 We will continue with the story of Wolfman and Dracula who are investigating a disease outbreak and build a situational report.
 
+![Image by Bing, 2023, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), created with [Bing Image Creator powered by DALL·E 3](https://www.bing.com/create)](fig/wolfman_dracula-02.jpg){alt='wolfman and dracula using computers for data analysis'}
+
 <!--
 ![](fig/motivatingexample.png){alt='motivatingexample'}
 [Werewolf vs dracula](https://www.deviantart.com/b-maze/art/Werewolf-vs-Dracula-124893530)
@@ -72,11 +74,13 @@ usethis::create_project(path = "cases")
 ✔ Setting active project to '<no active project>'
 ```
 
+<!--
 ```bash
 $ cd ~/Desktop
 $ mkdir cases
 $ cd cases
 ```
+-->
 
 Then we tell Git to make `cases` a [repository](../learners/reference.md#repository)
 \-- a place where Git can store versions of our files:
@@ -106,7 +110,7 @@ Restart now?
 
 Agree to restart your session to activate the Git pane in Rstudio:
 
-<!--paste figure-->
+![The Git tab in the Environments pane shows the `status` of your repository.](fig/git-rstudio-09.png)
 
 <!--
 ```bash
@@ -125,23 +129,25 @@ subdirectories are present from the beginning or added later. Also, note
 that the creation of the `cases` directory and its initialization as a
 repository are completely separate processes.
 
-If we use `ls` to show the directory's contents,
-it appears that nothing has changed:
+::::::::::::::::: checklist
 
-```bash
-$ ls
-```
+### Checklist
 
-But if we add the `-a` flag to show everything,
-we can see that Git has created a hidden directory within `cases` called `.git`:
+![Set up `Git` once per computer. Initialize `Git` once per project.](fig/git-rstudio-06.png)
 
-```bash
-$ ls -a
-```
+:::::::::::::::::::::::::::
 
-```output
-.	..	.git
-```
+## New files of a local repository
+
+If we look at the [Files tab in the Output pane](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html) to show the directory's contents, it appears that nothing has changed.
+
+But under the "cogwheel" button we get access to the "More file commands". Click to the `Show hidden files` to show everything. We can see that Git has created a hidden directory within `cases` called `.git`:
+
+![Show hidden files in an Local repository.](fig/git-rstudio-07.png)
+
+The `.git` file gives the identity to the `.git` repository also known as the Local Repository “Local Repo”.
+
+![The `.git` folder is a hidden folder in a Local repository.](fig/git-rstudio-08.png)
 
 Git uses this special subdirectory to store all the information about the project,
 including the tracked files and sub-directories located within the project's directory.
@@ -150,6 +156,20 @@ we will lose the project's history.
 
 <!--
 
+```bash
+$ ls
+```
+
+```bash
+$ ls -a
+```
+
+```output
+.	..	.git
+```
+-->
+
+<!--
 Next, we will change the default branch to be called `main`.
 This might be the default branch depending on your settings and version
 of git.
@@ -162,10 +182,11 @@ $ git checkout -b main
 ```output
 Switched to a new branch 'main'
 ```
-
 -->
 
 ## Using the Terminal
+
+![Visual appearance of the terminal.](terminal-basic.png)
 
 To interact with Git, we can also use the [Rstudio Terminal](https://docs.posit.co/ide/user/ide/guide/tools/terminal.html). The Terminal tab is next to the Console tab. Click on the Terminal tab and a new terminal session will be created (if there isn’t one already).
 
@@ -195,7 +216,7 @@ The steps done with `{usethis}` can also be done with commands in the Terminal. 
 Along with tracking information about cases (the project we have already created),
 Dracula would also like to track information about interventions.
 Despite Wolfman's concerns, Dracula creates a `interventions` project inside his `cases`
-project. Additionally, Dracula uses a sequence of [Bash commands](https://swcarpentry.github.io/shell-novice/) in the Rstudio Terminal:
+project. Additionally, Dracula uses a sequence of [Bash commands](https://swcarpentry.github.io/shell-novice/) and Git in the Rstudio Terminal:
 
 ```bash
 $ mkdir interventions    # make a subdirectory cases/interventions
@@ -233,7 +254,7 @@ $ git status
 fatal: Not a git repository (or any of the parent directories): .git
 ```
 
-Actually, if you do this using `{usethis}` within the `cases` repository, you will get this message:
+Actually, if you try to create a new project using `{usethis}` within the `cases` repository, you will get this message:
 
 ```r
 usethis::create_project(path = "interventions")
@@ -295,8 +316,11 @@ Therefore, always check your current directory using the command `pwd`.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `git init` initializes a repository.
+<!--- `git init` initializes a repository.-->
+- Use `usethis::create_project()` to create and R project.
+- Use `usethis::use_git()` to initialize a repository.
 - Git stores all of its repository data in the `.git` directory.
+- Use `git status` in the Terminal to check the status of a repository.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
