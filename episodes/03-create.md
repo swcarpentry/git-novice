@@ -20,9 +20,9 @@ exercises: 0
 Once Git is configured,
 we can start using it.
 
-We will continue with the story of Wolfman and Dracula who are investigating if it
-is possible to send a planetary lander to Mars.
+We will continue with the story of Wolfman and Dracula who are investigating a disease outbreak and build a situational report.
 
+<!--
 ![](fig/motivatingexample.png){alt='motivatingexample'}
 [Werewolf vs dracula](https://www.deviantart.com/b-maze/art/Werewolf-vs-Dracula-124893530)
 by [b-maze](https://www.deviantart.com/b-maze) / [Deviant Art](https://www.deviantart.com/).
@@ -36,27 +36,69 @@ Courtesy NASA/JPL-Caltech.
 [Moon](https://commons.wikimedia.org/wiki/File:Lune_ico.png)
 © Luc Viatour / [https://lucnix.be](https://lucnix.be/) /
 [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en).
+-->
 
-First, let's create a new directory in the `Desktop` folder for our work and then change the current working directory to the newly created one:
+First, let's create a new project folder for our work. If using RStudio desktop, the project is opened in a new session. Otherwise, the working directory and active project is changed:
+
+```r
+usethis::create_project(path = "cases")
+```
+
+```
+✔ Creating 'cases/'
+✔ Setting active project to 'C:/~/cases'
+✔ Creating 'R/'
+✔ Writing 'cases.Rproj'
+✔ Adding '.Rproj.user' to '.gitignore'
+✔ Opening 'C:/~/cases/' in new RStudio session
+✔ Setting active project to '<no active project>'
+```
 
 ```bash
 $ cd ~/Desktop
-$ mkdir planets
-$ cd planets
+$ mkdir cases
+$ cd cases
 ```
 
-Then we tell Git to make `planets` a [repository](../learners/reference.md#repository)
+Then we tell Git to make `cases` a [repository](../learners/reference.md#repository)
 \-- a place where Git can store versions of our files:
+
+```r
+usethis::use_git()
+```
+
+```
+✔ Setting active project to 'C:/~/cases'
+✔ Initialising Git repo
+✔ Adding '.Rhistory', '.Rdata', '.httr-oauth', '.DS_Store', '.quarto' to '.gitignore'
+There are 2 uncommitted files:
+* '.gitignore'
+* 'cases.Rproj'
+Is it ok to commit them?
+```
+
+Remember that each record of change can be [commit](../learners/reference.md#commit). So, you can make these two files, `.gitignore` and `cases.Rproj`, part of it. Select that Yes, you agree!
+
+```
+✔ Adding files
+✔ Making a commit with message 'Initial commit'
+• A restart of RStudio is required to activate the Git pane
+Restart now?
+```
+
+Agree to restart your session to activate the Git pane in Rstudio:
+
+<!--paste figure-->
 
 ```bash
 $ git init
 ```
 
-It is important to note that `git init` will create a repository that
+It is important to note that `usethis::use_git()` will create a repository that
 can include subdirectories and their files---there is no need to create
-separate repositories nested within the `planets` repository, whether
+separate repositories nested within the `cases` repository, whether
 subdirectories are present from the beginning or added later. Also, note
-that the creation of the `planets` directory and its initialization as a
+that the creation of the `cases` directory and its initialization as a
 repository are completely separate processes.
 
 If we use `ls` to show the directory's contents,
@@ -67,7 +109,7 @@ $ ls
 ```
 
 But if we add the `-a` flag to show everything,
-we can see that Git has created a hidden directory within `planets` called `.git`:
+we can see that Git has created a hidden directory within `cases` called `.git`:
 
 ```bash
 $ ls -a
@@ -95,6 +137,9 @@ $ git checkout -b main
 Switched to a new branch 'main'
 ```
 
+To interact with Git, we can also use the [Rstudio Terminal](https://docs.posit.co/ide/user/ide/guide/tools/terminal.html). The Terminal tab is next to the Console tab. Click on the Terminal tab and a new terminal session will be created (if there isn’t one already).
+
+In the Rstudio Terminal, 
 We can check that everything is set up correctly
 by asking Git to tell us the status of our project:
 
@@ -105,45 +150,42 @@ $ git status
 ```output
 On branch main
 
-No commits yet
-
-nothing to commit (create/copy files and use "git add" to track)
+nothing to commit, working tree clean
 ```
 
 If you are using a different version of `git`, the exact
 wording of the output might be slightly different.
 
+The steps done with `{usethis}` can also be done with commands in the Terminal. For example, instead of `usethis::use_git()` in the Console you can use `git init` in the Terminal. However, we prefer using the first one given their explicit messages, interactivity, and warnings to prevent errors!
+
 :::::::::::::::::::::::::::::::::::::::  challenge
 
 ## Places to Create Git Repositories
 
-Along with tracking information about planets (the project we have already created),
-Dracula would also like to track information about moons.
-Despite Wolfman's concerns, Dracula creates a `moons` project inside his `planets`
-project with the following sequence of commands:
+Along with tracking information about cases (the project we have already created),
+Dracula would also like to track information about interventions.
+Despite Wolfman's concerns, Dracula creates a `interventions` project inside his `cases`
+project. Additionally, Dracula uses a sequence of [Bash commands](https://swcarpentry.github.io/shell-novice/) in the Rstudio Terminal:
 
 ```bash
-$ cd ~/Desktop   # return to Desktop directory
-$ cd planets     # go into planets directory, which is already a Git repository
-$ ls -a          # ensure the .git subdirectory is still present in the planets directory
-$ mkdir moons    # make a subdirectory planets/moons
-$ cd moons       # go into moons subdirectory
-$ git init       # make the moons subdirectory a Git repository
+$ mkdir interventions    # make a subdirectory cases/interventions
+$ cd interventions       # go into interventions subdirectory
+$ git init       # make the interventions subdirectory a Git repository
 $ ls -a          # ensure the .git subdirectory is present indicating we have created a new Git repository
 ```
 
-Is the `git init` command, run inside the `moons` subdirectory, required for
-tracking files stored in the `moons` subdirectory?
+Is the `git init` command, run inside the `interventions` subdirectory, required for
+tracking files stored in the `interventions` subdirectory?
 
 :::::::::::::::  solution
 
 ## Solution
 
-No. Dracula does not need to make the `moons` subdirectory a Git repository
-because the `planets` repository can track any files, sub-directories, and
-subdirectory files under the `planets` directory.  Thus, in order to track
-all information about moons, Dracula only needed to add the `moons` subdirectory
-to the `planets` directory.
+No. Dracula does not need to make the `interventions` subdirectory a Git repository
+because the `cases` repository can track any files, sub-directories, and
+subdirectory files under the `cases` directory.  Thus, in order to track
+all information about interventions, Dracula only needed to add the `interventions` subdirectory
+to the `cases` directory.
 
 Additionally, Git repositories can interfere with each other if they are "nested":
 the outer repository will try to version-control
@@ -161,13 +203,27 @@ $ git status
 fatal: Not a git repository (or any of the parent directories): .git
 ```
 
+Actually, if you do this using `{usethis}` within the `cases` repository, you will get this message:
+
+```r
+usethis::create_project(path = "interventions")
+```
+
+```
+New project 'interventions' is nested inside an existing project './', which is rarely a good idea.
+If this is unexpected, the here package has a function, `here::dr_here()` that reveals why './' is regarded as a project.
+Do you want to create anyway?
+```
+
+Using the R functions from the `{usethis}` can be less error-prone!
+
 :::::::::::::::::::::::::
 
 ## Correcting `git init` Mistakes
 
 Wolfman explains to Dracula how a nested repository is redundant and may cause confusion
 down the road. Dracula would like to remove the nested repository. How can Dracula undo
-his last `git init` in the `moons` subdirectory?
+his last `git init` in the `interventions` subdirectory?
 
 :::::::::::::::  solution
 
@@ -191,10 +247,10 @@ becomes another change that we will need to track, as we will see in the next ep
 
 Git keeps all of its files in the `.git` directory.
 To recover from this little mistake, Dracula can just remove the `.git`
-folder in the moons subdirectory by running the following command from inside the `planets` directory:
+folder in the interventions subdirectory by running the following command from inside the `cases` directory:
 
 ```bash
-$ rm -rf moons/.git
+$ rm -rf interventions/.git
 ```
 
 But be careful! Running this command in the wrong directory will remove
