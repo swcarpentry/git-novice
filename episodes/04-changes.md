@@ -21,10 +21,10 @@ exercises: 0
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 First let's make sure we're still in the right directory.
-You should be in the `planets` directory.
+You should be in the `cases` directory.
 
 ```bash
-$ cd ~/Desktop/planets
+$ cd ~/Desktop/cases
 ```
 
 Let's create a file called `mars.txt` that contains some notes
@@ -737,7 +737,7 @@ $ git commit -m "Write plans to start a base on Venus"
 
 ## Solution
 
-If needed, move out of the `planets` folder:
+If needed, move out of the `cases` folder:
 
 ```bash
 $ cd ..
