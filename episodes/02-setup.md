@@ -1,38 +1,78 @@
 ---
 title: Setting Up Git
-teaching: 5
+teaching: 10
 exercises: 0
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - Configure `git` the first time it is used on a computer.
-- Understand the meaning of the `--global` configuration flag.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
 - How do I get set up to use Git?
+- What is a `commit`?
+- What is a `repository`?
+- What is a `branch`?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+## The `Git` workflow
+
+A version control system is a tool that keeps track of these changes for us, effectively creating different versions of our files. Each record of these changes is called a [commit](../learners/reference.md#commit). Each keeps useful metadata about them. Instead of _saving copies_ with different file names, we are _making commits_ in the same file. Consecutive commits generate a linear history of changes.
+
+![Each record of changes is
+called a `commit`.](fig/git-commit.png){alt='Changes Are Saved Sequentially'}
+
+The complete history of commits for a particular project and their
+metadata make up a [repository](../learners/reference.md#repository).
+Repositories can be kept in sync across different computers, facilitating
+collaboration among different people.
+
+Before creating our first repository, we need to setup Git. So, let's open Rstudio and introduce yourself to Git!
+
+<!--
+![Each record of changes is
+called a `commit`.](fig/play-changes.svg){alt='Changes Are Saved Sequentially'}
+-->
+
+## Set up `Git`
+
 When we use Git on a new computer for the first time,
-we need to configure a few things. Below are a few examples
-of configurations we will set as we get started with Git:
+we need to configure a few things. Below are a few examples of configurations we will set as we get started with Git:
 
 - our name and email address,
-- what our preferred text editor is,
+<!--- what our preferred text editor is,-->
 - and that we want to use these settings globally (i.e. for every project).
 
+You can set your Git user name and email from within R using the `{usethis}` package.
+
+So here is how Dracula sets up his new laptop:
+
+```r
+# install if needed (do this exactly once):
+# install.packages("usethis")
+
+usethis::use_git_config(
+  user.name = "Vlad Dracula",
+  user.email = "vlad@tran.sylvan.ia")
+```
+
+Substitute this chunk with your name and __the email associated with your GitHub account__.
+
+::::::::::::::::::: instructor
+
 On a command line, Git commands are written as `git verb options`,
-where `verb` is what we actually want to do and `options` is additional optional information which may be needed for the `verb`. So here is how
-Dracula sets up his new laptop:
+where `verb` is what we actually want to do and `options` is additional optional information which may be needed for the `verb`. 
 
 ```bash
 $ git config --global user.name "Vlad Dracula"
 $ git config --global user.email "vlad@tran.sylvan.ia"
 ```
+
+::::::::::::::::::::::::::::::
 
 Please use your own name and email address instead of Dracula's. This user name and email will be associated with your subsequent Git activity,
 which means that any changes pushed to
@@ -52,6 +92,8 @@ If you elect to use a private email address with GitHub, then use that same emai
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+<!--
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -83,6 +125,10 @@ $ git config --global core.autocrlf true
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+-->
+
+<!--
 
 Dracula also has to set his favorite text editor, following this table:
 
@@ -117,15 +163,36 @@ If you want to save your changes and quit, press <kbd>Esc</kbd> then type `:wq` 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+-->
+
+## Set up a default `branch` name
+
+As we mentioned before, the complete history of `commits` for a particular project and their metadata make up a `repository`. A [`branch`](https://glosario.carpentries.org/en/#git_branch) is a snapshot of a version of a repository. In that sense, a repository can have more that one branch. WHAT?!! How is that possible? We are going to see that in coming episodes!
+
+![Version history within a single branch.](fig/main-branch.png)
+
 Git (2.28+) allows configuration of the name of the branch created when you
 initialize any new repository.  Dracula decides to use that feature to set it to `main` so
 it matches the cloud service he will eventually use.
+
+Run the code chunk below:
+
+```r
+usethis::git_default_branch_configure(name = "main")
+```
+
+::::::::::::::::::: instructor
+
+On a command line
 
 ```bash
 $ git config --global init.defaultBranch main
 ```
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+::::::::::::::::::::::::::::::
+
+
+:::::::::::::::::::::::::::::::::::::::::  instructor
 
 ## Default Git branch naming
 
@@ -148,10 +215,31 @@ configuration, the `init.defaultBranch` value defaults to `master`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-The five commands we just ran above only need to be run once: the flag `--global` tells Git
-to use the settings for every project, in your user account, on this computer.
+::::::::::::::::: checklist
 
-Let's review those settings and test our `core.editor` right away:
+### Checklist
+
+We need to run these commands __only once__! Git will use this settings for every project, in your user account, on this computer. 
+
+:::::::::::::::::::::::::::
+
+Let's review those settings with `usethis::git_sitrep()`
+
+```r
+usethis::git_sitrep()
+```
+
+The two first lines of the output should look like this:
+
+```
+── Git global (user) 
+• Name: 'Vlad Dracula'
+• Email: 'vlad@tran.sylvan.ia'
+```
+
+::::::::::::::::::: instructor
+
+With git commands:
 
 ```bash
 $ git config --global --edit
@@ -164,9 +252,13 @@ issues, it's safer to view the configuration with:
 $ git config --list
 ```
 
+::::::::::::::::::::::::::::::
+
 And if necessary, change your configuration using the
-same commands to choose another editor or update your email address.
+same commands to update your email address.
 This can be done as many times as you want.
+
+<!--
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -189,6 +281,10 @@ $ git config --global --unset https.proxy
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+-->
+
+<!--
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -213,12 +309,41 @@ $ git help
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-[git-privacy]: https://help.github.com/articles/keeping-your-email-address-private/
+-->
 
+::::::::::::::::: callout
+
+When using `usethis::git_sitrep()`, check if there is no `✖ ...` line in the output with an error message. 
+
+An example with two errors is below:
+
+```r
+usethis::git_sitrep()
+```
+
+```error
+✖ Token lacks recommended scopes:
+  - 'user:email': needed to read user's email addresses
+  Consider re-creating your PAT with the missing scopes.
+  `create_github_token()` defaults to the recommended scopes.
+✖ Can't retrieve registered email addresses from GitHub.
+  Consider re-creating your PAT with the 'user' or at least 'user:email' scope.
+```
+
+These is a really common error to get. [Follow the steps in this other tutorial to solve it](https://epiverse-trace.github.io/research-compendium/#configure-git-and-github).
+
+:::::::::::::::::::::::::
+
+When using the [terminal](https://glosario.carpentries.org/en/#console), this steps is known as `git config` with the `--global` option. If you are interested on this, [take a look to this chapter of the happygitwithr ebook](https://happygitwithr.com/hello-git).
+
+[git-privacy]: https://help.github.com/articles/keeping-your-email-address-private/
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Use `git config` with the `--global` option to configure a user name, email address, editor, and other preferences once per machine.
+- Use the `{usethis}` package to configure a user name, email address, and other preferences once per machine.
+- Use `usethis::use_git_config()` to configure git in Rstudio.
+- Use `usethis::git_default_branch_configure()` to define default branch name.
+- Use `usethis::git_sitrep()` to verify your configuration.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
