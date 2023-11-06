@@ -20,31 +20,85 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+<!--
+
+## previous 
+
+### git status add commit log
+
+git status
+
+staging area
+
+--
+on staging area
+https://coderefinery.github.io/git-intro/staging-area/#staging-area-commands
+the staging area is the middle ground between what you have done to your files (also known as the working directory) and what you had last committed (the HEAD commit). As the name implies, the staging area gives you space to prepare (stage) the changes that will be reflected on the next commit
+
+testimony
+https://stackoverflow.com/questions/49228209/whats-the-use-of-the-staging-area-in-git
+--
+
+git add
+
+![`git add` your changes to the Staging area.](fig/cut-git-verb_map-02.png).
+
+git status
+
+git commit
+
+read git commit message
+
+git status
+
+![`git commit` your changes to the Local repository.](fig/cut-git-verb_map-03.png).
+
+git log
+
+![`git commit` your changes to the Local repository.](fig/cut-git-verb_map-04.png).
+
+read components of a commit message
+
+--
+from https://www.atlassian.com/git/tutorials/inspecting-a-repository
+The git status command displays the state of the working directory and the staging area. It lets you see which changes have been staged, which haven’t, and which files aren’t being tracked by Git. Status output does not show you any information regarding the committed project history. For this, you need to use git log.
+--
+
+## episode starts here
+
+-->
+
+Let’s start to tell the story of your project while you are working on it!
+
 ## `git` combo: status + add + commit
 
-First let's make sure we're still in the right directory.
+First let's make sure we're still in the right R project.
 You should be in the `cases` directory.
 
-```bash
-$ cd ~/Desktop/cases
+```r
+usethis::proj_path()
 ```
 
-Let's create a file called `mars.txt` that contains some notes
-about the Red Planet's suitability as a base.
-We'll use `nano` to edit the file;
+Let's create a file called `sitrep.Rmd` that contains the situation report (Sitrep)
+describing the data in terms of [person, time, and place](https://r4epis.netlify.app/outbreaks/#analyses).
+We'll use the [Source pane](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html) to edit the file;
 you can use whatever editor you like.
-In particular, this does not have to be the `core.editor` you set globally earlier. But remember, the bash command to create or edit a new file will depend on the editor you choose (it might not be `nano`). For a refresher on text editors, check out ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor) in [The Unix Shell](https://swcarpentry.github.io/shell-novice/) lesson.
 
-```bash
-$ nano mars.txt
+<!--
+In particular, this does not have to be the `core.editor` you set globally earlier. 
+But remember, the bash command to create or edit a new file will depend on the editor you choose (it might not be `nano`). For a refresher on text editors, check out ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor) in [The Unix Shell](https://swcarpentry.github.io/shell-novice/) lesson.
+-->
+
+```r
+usethis::edit_file("sitrep.Rmd")
 ```
 
-Type the text below into the `mars.txt` file:
+Type the text below into the `sitrep.Rmd` file:
 
 ```output
-Cold and dry, but everything is my favorite color
+Comparison of attack rates in different age groups
 ```
-
+<!--
 Let's first verify that the file was properly created by running the list command (`ls`):
 
 ```bash
@@ -52,19 +106,19 @@ $ ls
 ```
 
 ```output
-mars.txt
+sitrep.Rmd
 ```
 
-`mars.txt` contains a single line, which we can see by running:
+`sitrep.Rmd` contains a single line, which we can see by running:
 
 ```bash
-$ cat mars.txt
+$ cat sitrep.Rmd
 ```
 
 ```output
 Cold and dry, but everything is my favorite color
 ```
-
+-->
 If we check the status of our project again,
 Git tells us that it's noticed the new file:
 
@@ -80,7 +134,7 @@ No commits yet
 Untracked files:
    (use "git add <file>..." to include in what will be committed)
 
-	mars.txt
+	sitrep.Rmd
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
@@ -90,7 +144,7 @@ that Git isn't keeping track of.
 We can tell Git to track a file using `git add`:
 
 ```bash
-$ git add mars.txt
+$ git add sitrep.Rmd
 ```
 
 and then check that the right thing happened:
@@ -107,25 +161,25 @@ No commits yet
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
 
-	new file:   mars.txt
+	new file:   sitrep.Rmd
 
 ```
 
 ## commit message
 
-Git now knows that it's supposed to keep track of `mars.txt`,
+Git now knows that it's supposed to keep track of `sitrep.Rmd`,
 but it hasn't recorded these changes as a commit yet.
 To get it to do that,
 we need to run one more command:
 
 ```bash
-$ git commit -m "Start notes on Mars as a base"
+$ git commit -m "Start notes on Sitrep as a base"
 ```
 
 ```output
-[main (root-commit) f22b25e] Start notes on Mars as a base
+[main (root-commit) f22b25e] Start notes on Sitrep as a base
  1 file changed, 1 insertion(+)
- create mode 100644 mars.txt
+ create mode 100644 sitrep.Rmd
 ```
 
 When we run `git commit`,
@@ -171,7 +225,7 @@ commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Start notes on Mars as a base
+    Start notes on Sitrep as a base
 ```
 
 `git log` lists all commits  made to a repository in reverse chronological order.
@@ -187,7 +241,7 @@ and the log message Git was given when the commit was created.
 
 ## Where Are My Changes?
 
-If we run `ls` at this point, we will still see just one file called `mars.txt`.
+If we run `ls` at this point, we will still see just one file called `sitrep.Rmd`.
 That's because Git saves information about files' history
 in the special `.git` directory mentioned earlier
 so that our filesystem doesn't become cluttered
@@ -203,8 +257,8 @@ Now suppose Dracula adds more information to the file.
 you may use a different editor, and don't need to `cat`.)
 
 ```bash
-$ nano mars.txt
-$ cat mars.txt
+$ nano sitrep.Rmd
+$ cat sitrep.Rmd
 ```
 
 ```output
@@ -225,7 +279,7 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-	modified:   mars.txt
+	modified:   sitrep.Rmd
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
@@ -246,10 +300,10 @@ $ git diff
 ```
 
 ```output
-diff --git a/mars.txt b/mars.txt
+diff --git a/sitrep.Rmd b/sitrep.Rmd
 index df0654a..315bf3a 100644
---- a/mars.txt
-+++ b/mars.txt
+--- a/sitrep.Rmd
++++ b/sitrep.Rmd
 @@ -1 +1,2 @@
  Cold and dry, but everything is my favorite color
 +The two moons may be a problem for Wolfman
@@ -274,7 +328,7 @@ If we break it down into pieces:
 After reviewing our change, it's time to commit it:
 
 ```bash
-$ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
+$ git commit -m "Add concerns about effects of Sitrep' moons on Wolfman"
 ```
 
 ```output
@@ -283,7 +337,7 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-	modified:   mars.txt
+	modified:   sitrep.Rmd
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
@@ -293,12 +347,12 @@ Git won't commit because we didn't use `git add` first.
 Let's fix that:
 
 ```bash
-$ git add mars.txt
-$ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
+$ git add sitrep.Rmd
+$ git commit -m "Add concerns about effects of Sitrep' moons on Wolfman"
 ```
 
 ```output
-[main 34961b1] Add concerns about effects of Mars' moons on Wolfman
+[main 34961b1] Add concerns about effects of Sitrep' moons on Wolfman
  1 file changed, 1 insertion(+)
 ```
 
@@ -352,8 +406,8 @@ First,
 we'll add another line to the file:
 
 ```bash
-$ nano mars.txt
-$ cat mars.txt
+$ nano sitrep.Rmd
+$ cat sitrep.Rmd
 ```
 
 ```output
@@ -367,10 +421,10 @@ $ git diff
 ```
 
 ```output
-diff --git a/mars.txt b/mars.txt
+diff --git a/sitrep.Rmd b/sitrep.Rmd
 index 315bf3a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
+--- a/sitrep.Rmd
++++ b/sitrep.Rmd
 @@ -1,2 +1,3 @@
  Cold and dry, but everything is my favorite color
  The two moons may be a problem for Wolfman
@@ -384,7 +438,7 @@ Now let's put that change in the staging area
 and see what `git diff` reports:
 
 ```bash
-$ git add mars.txt
+$ git add sitrep.Rmd
 $ git diff
 ```
 
@@ -400,10 +454,10 @@ $ git diff --staged
 ```
 
 ```output
-diff --git a/mars.txt b/mars.txt
+diff --git a/sitrep.Rmd b/sitrep.Rmd
 index 315bf3a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
+--- a/sitrep.Rmd
++++ b/sitrep.Rmd
 @@ -1,2 +1,3 @@
  Cold and dry, but everything is my favorite color
  The two moons may be a problem for Wolfman
@@ -416,11 +470,11 @@ and what's in the staging area.
 Let's save our changes:
 
 ```bash
-$ git commit -m "Discuss concerns about Mars' climate for Mummy"
+$ git commit -m "Discuss concerns about Sitrep' climate for Mummy"
 ```
 
 ```output
-[main 005937f] Discuss concerns about Mars' climate for Mummy
+[main 005937f] Discuss concerns about Sitrep' climate for Mummy
  1 file changed, 1 insertion(+)
 ```
 
@@ -446,19 +500,19 @@ commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -> main)
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 10:14:07 2013 -0400
 
-    Discuss concerns about Mars' climate for Mummy
+    Discuss concerns about Sitrep' climate for Mummy
 
 commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 10:07:21 2013 -0400
 
-    Add concerns about effects of Mars' moons on Wolfman
+    Add concerns about effects of Sitrep' moons on Wolfman
 
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Start notes on Mars as a base
+    Start notes on Sitrep as a base
 ```
 
 :::::::::::::::::::::::::::::::::::::::::  callout
@@ -510,7 +564,7 @@ commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -> main)
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 10:14:07 2013 -0400
 
-   Discuss concerns about Mars' climate for Mummy
+   Discuss concerns about Sitrep' climate for Mummy
 ```
 
 You can also reduce the quantity of information using the
@@ -521,9 +575,9 @@ $ git log --oneline
 ```
 
 ```output
-005937f (HEAD -> main) Discuss concerns about Mars' climate for Mummy
-34961b1 Add concerns about effects of Mars' moons on Wolfman
-f22b25e Start notes on Mars as a base
+005937f (HEAD -> main) Discuss concerns about Sitrep' climate for Mummy
+34961b1 Add concerns about effects of Sitrep' moons on Wolfman
+f22b25e Start notes on Sitrep as a base
 ```
 
 You can also combine the `--oneline` option with others. One useful
@@ -537,9 +591,9 @@ $ git log --oneline --graph
 ```
 
 ```output
-* 005937f (HEAD -> main) Discuss concerns about Mars' climate for Mummy
-* 34961b1 Add concerns about effects of Mars' moons on Wolfman
-* f22b25e Start notes on Mars as a base
+* 005937f (HEAD -> main) Discuss concerns about Sitrep' climate for Mummy
+* 34961b1 Add concerns about effects of Sitrep' moons on Wolfman
+* f22b25e Start notes on Sitrep as a base
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -603,11 +657,11 @@ repository (`git commit`):
 ## Choosing a Commit Message
 
 Which of the following commit messages would be most appropriate for the
-last commit made to `mars.txt`?
+last commit made to `sitrep.Rmd`?
 
 1. "Changes"
-2. "Added line 'But the Mummy will appreciate the lack of humidity' to mars.txt"
-3. "Discuss effects of Mars' climate on the Mummy"
+2. "Added line 'But the Mummy will appreciate the lack of humidity' to sitrep.Rmd"
+3. "Discuss effects of Sitrep' climate on the Mummy"
 
 :::::::::::::::  solution
 
@@ -667,7 +721,7 @@ to my local Git repository?
 The staging area can hold changes from any number of files
 that you want to commit as a single snapshot.
 
-1. Add some text to `mars.txt` noting your decision
+1. Add some text to `sitrep.Rmd` noting your decision
   to consider Venus as a base
 2. Create a new file `venus.txt` with your initial thoughts
   about Venus as a base for you and your friends
@@ -678,14 +732,14 @@ that you want to commit as a single snapshot.
 
 ## Solution
 
-The output below from `cat mars.txt` reflects only content added during
+The output below from `cat sitrep.Rmd` reflects only content added during
 this exercise. Your output may vary.
 
-First we make our changes to the `mars.txt` and `venus.txt` files:
+First we make our changes to the `sitrep.Rmd` and `venus.txt` files:
 
 ```bash
-$ nano mars.txt
-$ cat mars.txt
+$ nano sitrep.Rmd
+$ cat sitrep.Rmd
 ```
 
 ```output
@@ -704,13 +758,13 @@ Venus is a nice planet and I definitely should consider it as a base.
 Now you can add both files to the staging area. We can do that in one line:
 
 ```bash
-$ git add mars.txt venus.txt
+$ git add sitrep.Rmd venus.txt
 ```
 
 Or with multiple commands:
 
 ```bash
-$ git add mars.txt
+$ git add sitrep.Rmd
 $ git add venus.txt
 ```
 
