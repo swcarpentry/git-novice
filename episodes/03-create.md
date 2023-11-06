@@ -114,6 +114,10 @@ $ git init
 ```
 -->
 
+This step is known as `git init` because it initialise your Git repository.
+
+![Initialize a Local Repository in your Workspace with the `git init` command verb](fig/cut-git-verb_map-01.png).
+
 It is important to note that `usethis::use_git()` will create a repository that
 can include subdirectories and their files---there is no need to create
 separate repositories nested within the `cases` repository, whether
