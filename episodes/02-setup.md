@@ -49,7 +49,7 @@ we need to configure a few things. Below are a few examples of configurations we
 
 You can set your Git user name and email from within R using the `{usethis}` package.
 
-So here is how Dracula sets up his new laptop:
+Using the [Rstudio Console](https://docs.posit.co/ide/user/ide/guide/code/console.html), here is how Dracula sets up his new laptop:
 
 ```r
 # install if needed (do this exactly once):
