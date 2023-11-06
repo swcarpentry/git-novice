@@ -64,7 +64,7 @@ First, let's create a new project folder for our work. If using RStudio desktop,
 usethis::create_project(path = "cases")
 ```
 
-```
+```output
 ✔ Creating 'cases/'
 ✔ Setting active project to 'C:/~/cases'
 ✔ Creating 'R/'
@@ -89,7 +89,7 @@ Then we tell Git to make `cases` a [repository](../learners/reference.md#reposit
 usethis::use_git()
 ```
 
-```
+```output
 ✔ Setting active project to 'C:/~/cases'
 ✔ Initialising Git repo
 ✔ Adding '.Rhistory', '.Rdata', '.httr-oauth', '.DS_Store', '.quarto' to '.gitignore'
@@ -124,6 +124,8 @@ separate repositories nested within the `cases` repository, whether
 subdirectories are present from the beginning or added later. Also, note
 that the creation of the `cases` directory and its initialization as a
 repository are completely separate processes.
+
+This step is known as `git init` because it initialise your Git repository.
 
 ::::::::::::::::: checklist
 
@@ -187,8 +189,20 @@ Switched to a new branch 'main'
 To interact with Git, we can also use the [Rstudio Terminal](https://docs.posit.co/ide/user/ide/guide/tools/terminal.html). The Terminal tab is next to the Console tab. Click on the Terminal tab and a new terminal session will be created (if there isn’t one already).
 
 In the Rstudio Terminal, 
+with the `ls -a` command we can see the hidden directory called `.git/`:
+
+```bash
+$ ls -a
+```
+
+```output
+./   .git/       .Rhistory     cases.Rproj
+../  .gitignore  .Rproj.user/  R/
+```
+
+In the Rstudio Terminal, 
 We can check that everything is set up correctly
-by asking Git to tell us the status of our project:
+by asking Git to tell us the `git status` of our project:
 
 ```bash
 $ git status
@@ -203,13 +217,11 @@ nothing to commit, working tree clean
 If you are using a different version of `git`, the exact
 wording of the output might be slightly different.
 
-This step is known as `git init` because it initialise your Git repository.
-
 ::::::::::::::::: checklist
 
 ### Checklist
 
-![Use the `git init` command to initialize a Local Repository in your Workspace. Use `git status` to check the the repository.](fig/cut-git-verb_map-02.png).
+![Use the `git init` command to initialize a Local Repository in your Workspace. Use `git status` to check the the repository.](fig/cut-git-verb_map-02.png)
 
 :::::::::::::::::::::::::::
 
@@ -266,7 +278,7 @@ Actually, if you try to create a new project using `{usethis}` within the `cases
 usethis::create_project(path = "interventions")
 ```
 
-```
+```output
 New project 'interventions' is nested inside an existing project './', which is rarely a good idea.
 If this is unexpected, the here package has a function, `here::dr_here()` that reveals why './' is regarded as a project.
 Do you want to create anyway?

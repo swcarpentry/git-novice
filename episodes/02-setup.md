@@ -233,7 +233,7 @@ usethis::git_sitrep()
 
 The two first lines of the output should look like this:
 
-```
+```output
 ── Git global (user) 
 • Name: 'Vlad Dracula'
 • Email: 'vlad@tran.sylvan.ia'
