@@ -2,10 +2,13 @@
 title: Discussion
 ---
 
+## Your questions
+
+[Write your question as a Q&A](https://github.com/epiverse-trace/git-rstudio-basics/discussions/new/choose). Your question will appear in the `Discussions` tab of the GitHub repository of this material. 
+
 ## Frequently Asked Questions
 
-People often have questions about Git beyond the scope of the core material.
-Students who have completed the rest of the lessons might find value in looking through the following topics.
+People often have questions about Git beyond the scope of the core material. Students who have completed the rest of the lessons might find value in looking through the following topics.
 
 Note that since this material isn't essential for basic Git usage, it won't be covered by the instructor.
 
