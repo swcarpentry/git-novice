@@ -14,6 +14,8 @@ Reproducible science not only reduce errors, but speeds up the process of re-run
 
 ## The scenario
 
+![Image by Bing, 2023, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), created with [Bing Image Creator powered by DALL·E 3](https://www.bing.com/create)](episodes/fig/wolfman_dracula-03.jpg){alt='wolfman and dracula using computers for data analysis'}
+
 Wolfman and Dracula have been hired as data analysts by Outbreak Missions (a Rapid Support Team for outbreak response services) to investigate a disease outbreak. 
 They want to be able to work on the development of a reproducible [Situation report](https://choleraoutbreak.org/book-page/appendix-7-outline-outbreak-situation-report) 
 at the same time, but they have run into
