@@ -118,10 +118,6 @@ $ git init
 ```
 -->
 
-This step is known as `git init` because it initialise your Git repository.
-
-![Initialize a Local Repository in your Workspace with the `git init` command verb](fig/cut-git-verb_map-01.png).
-
 It is important to note that `usethis::use_git()` will create a repository that
 can include subdirectories and their files---there is no need to create
 separate repositories nested within the `cases` repository, whether
@@ -186,7 +182,7 @@ Switched to a new branch 'main'
 
 ## Using the Terminal
 
-![Visual appearance of the terminal.](terminal-basic.png)
+![Visual appearance of the terminal.](fig/terminal-basic.png)
 
 To interact with Git, we can also use the [Rstudio Terminal](https://docs.posit.co/ide/user/ide/guide/tools/terminal.html). The Terminal tab is next to the Console tab. Click on the Terminal tab and a new terminal session will be created (if there isn’t one already).
 
@@ -206,6 +202,16 @@ nothing to commit, working tree clean
 
 If you are using a different version of `git`, the exact
 wording of the output might be slightly different.
+
+This step is known as `git init` because it initialise your Git repository.
+
+::::::::::::::::: checklist
+
+### Checklist
+
+![Use the `git init` command to initialize a Local Repository in your Workspace. Use `git status` to check the the repository.](fig/cut-git-verb_map-02.png).
+
+:::::::::::::::::::::::::::
 
 The steps done with `{usethis}` can also be done with commands in the Terminal. For example, instead of `usethis::use_git()` in the Console you can use `git init` in the Terminal. However, we prefer using the first one given their explicit messages, interactivity, and warnings to prevent errors!
 
