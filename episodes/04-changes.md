@@ -20,63 +20,19 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-<!--
-
-## previous 
-
-### git status add commit log
-
-git status
-
-staging area
-
---
-on staging area
-https://coderefinery.github.io/git-intro/staging-area/#staging-area-commands
-the staging area is the middle ground between what you have done to your files (also known as the working directory) and what you had last committed (the HEAD commit). As the name implies, the staging area gives you space to prepare (stage) the changes that will be reflected on the next commit
-
-testimony
-https://stackoverflow.com/questions/49228209/whats-the-use-of-the-staging-area-in-git
---
-
-git add
-
-![`git add` your changes to the Staging area.](fig/cut-git-verb_map-02.png).
-
-git status
-
-git commit
-
-read git commit message
-
-git status
-
-![`git commit` your changes to the Local repository.](fig/cut-git-verb_map-03.png).
-
-git log
-
-![`git commit` your changes to the Local repository.](fig/cut-git-verb_map-04.png).
-
-read components of a commit message
-
---
-from https://www.atlassian.com/git/tutorials/inspecting-a-repository
-The git status command displays the state of the working directory and the staging area. It lets you see which changes have been staged, which haven’t, and which files aren’t being tracked by Git. Status output does not show you any information regarding the committed project history. For this, you need to use git log.
---
-
-## episode starts here
-
--->
-
 Let’s start to tell the story of your project while you are working on it!
 
-## `git` combo: status + add + commit
+## Add changes
 
 First let's make sure we're still in the right R project.
 You should be in the `cases` directory.
 
 ```r
 usethis::proj_path()
+```
+
+```output
+C:/~/cases
 ```
 
 Let's create a file called `sitrep.Rmd` that contains the situation report (Sitrep)
@@ -91,6 +47,10 @@ But remember, the bash command to create or edit a new file will depend on the e
 
 ```r
 usethis::edit_file("sitrep.Rmd")
+```
+
+```outputs
+• Modify 'sitrep.Rmd'
 ```
 
 Type the text below into the `sitrep.Rmd` file:
@@ -116,10 +76,11 @@ $ cat sitrep.Rmd
 ```
 
 ```output
-Cold and dry, but everything is my favorite color
+Comparison of attack rates in different age groups
 ```
 -->
-If we check the status of our project again,
+In the Terminal,
+if we check the status of our project again,
 Git tells us that it's noticed the new file:
 
 ```bash
@@ -138,6 +99,27 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
+
+::::::::::::::::: spoiler
+
+### Status in the Console
+
+`{gert}` is a simple git client for R. It uses basic R data types (such as vectors and data-frames) for their arguments and return values.
+
+To get the status of your project run:
+
+```r
+gert::git_status()
+```
+
+```output
+# A tibble: 1 × 3
+  file       status staged
+  <chr>      <chr>  <lgl> 
+1 sitrep.Rmd new    FALSE 
+```
+
+:::::::::::::::::::::::::
 
 The "untracked files" message means that there's a file in the directory
 that Git isn't keeping track of.
@@ -165,7 +147,24 @@ Changes to be committed:
 
 ```
 
-## commit message
+::::::::::::::::: spoiler
+
+### Status in the Console
+
+```r
+gert::git_status()
+```
+
+```output
+# A tibble: 1 × 3
+  file       status staged
+  <chr>      <chr>  <lgl> 
+1 sitrep.Rmd new    TRUE 
+```
+
+:::::::::::::::::::::::::
+
+## Commit changes
 
 Git now knows that it's supposed to keep track of `sitrep.Rmd`,
 but it hasn't recorded these changes as a commit yet.
@@ -173,11 +172,11 @@ To get it to do that,
 we need to run one more command:
 
 ```bash
-$ git commit -m "Start notes on Sitrep as a base"
+$ git commit -m "Start Sitrep with attack rate analysis"
 ```
 
 ```output
-[main (root-commit) f22b25e] Start notes on Sitrep as a base
+[main (root-commit) f22b25e] Start Sitrep with attack rate analysis
  1 file changed, 1 insertion(+)
  create mode 100644 sitrep.Rmd
 ```
@@ -191,12 +190,58 @@ This permanent copy is called a [commit](../learners/reference.md#commit)
 We use the `-m` flag (for "message")
 to record a short, descriptive, and specific comment that will help us remember later on what we did and why.
 If we just run `git commit` without the `-m` option,
-Git will launch `nano` (or whatever other editor we configured as `core.editor`)
+Git will launch `VIM` (or whatever other editor we configured as `core.editor`)
 so that we can write a longer message.
+
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## Exiting Vim
+
+Note that Vim is the default editor for many programs. If you haven't used Vim before and wish to exit a session without saving
+your changes, press <kbd>Esc</kbd> then type `:q!` and hit <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd>.
+If you want to save your changes and quit, press <kbd>Esc</kbd> then type `:wq` and hit <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd>.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::: spoiler
+
+### Change git core editor
+
+Dracula also has to set his favorite text editor, following this table:
+
+| Editor                                | Configuration command | 
+| :-----------                          | :------------------------------ |
+| Atom                                  | `$ git config --global core.editor "atom --wait"`                      | 
+| nano                                  | `$ git config --global core.editor "nano -w"`                      | 
+| BBEdit (Mac, with command line tools) | `$ git config --global core.editor "bbedit -w"`                      | 
+| Sublime Text (Mac)                    | `$ git config --global core.editor "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -n -w"`                      | 
+| Sublime Text (Win, 32-bit install)    | `$ git config --global core.editor "'c:/program files (x86)/sublime text 3/sublime_text.exe' -w"`                      | 
+| Sublime Text (Win, 64-bit install)    | `$ git config --global core.editor "'c:/program files/sublime text 3/sublime_text.exe' -w"`                      | 
+| Notepad (Win)                         | `$ git config --global core.editor "c:/Windows/System32/notepad.exe"`                      | 
+| Notepad++ (Win, 32-bit install)       | `$ git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`                      | 
+| Notepad++ (Win, 64-bit install)       | `$ git config --global core.editor "'c:/program files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`                      | 
+| Kate (Linux)                          | `$ git config --global core.editor "kate"`                      | 
+| Gedit (Linux)                         | `$ git config --global core.editor "gedit --wait --new-window"`                      | 
+| Scratch (Linux)                       | `$ git config --global core.editor "scratch-text-editor"`                      | 
+| Emacs                                 | `$ git config --global core.editor "emacs"`                      | 
+| Vim                                   | `$ git config --global core.editor "vim"`                      | 
+| VS Code                               | `$ git config --global core.editor "code --wait"`                      | 
+
+It is possible to reconfigure the text editor for Git whenever you want to change it.
+
+:::::::::::::::::::::::::
 
 [Good commit messages][commit-messages] start with a brief (\<50 characters) statement about the
 changes made in the commit. Generally, the message should complete the sentence "If applied, this commit will" <commit message here>.
 If you want to go into more detail, add a blank line between the summary line and your additional notes. Use this additional space to explain why you made changes and/or what their impact will be.
+
+::::::::::::::::: callout
+
+### Commit with Rstudio
+
+You can also refer to the episode on [how to commit using the Rstudio Git tab](14-supplemental-rstudio.md#git-commit).
+
+:::::::::::::::::::::::::
 
 If we run `git status` now:
 
@@ -210,6 +255,21 @@ nothing to commit, working tree clean
 ```
 
 it tells us everything is up to date.
+
+::::::::::::::::: spoiler
+
+### Status in the Console
+
+```r
+gert::git_status()
+```
+
+```output
+# A tibble: 0 × 3
+# ℹ 3 variables: file <chr>, status <chr>, staged <lgl>
+```
+
+:::::::::::::::::::::::::
 
 ## git log
 
@@ -225,7 +285,7 @@ commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Start notes on Sitrep as a base
+    Start Sitrep with attack rate analysis
 ```
 
 `git log` lists all commits  made to a repository in reverse chronological order.
@@ -236,6 +296,14 @@ the short identifier printed by the `git commit` command earlier),
 the commit's author,
 when it was created,
 and the log message Git was given when the commit was created.
+
+::::::::::::::::::: instructor
+
+### Definition: git status, git log
+
+The git status command displays the state of the working directory and the staging area. It lets you see which changes have been staged, which haven’t, and which files aren’t being tracked by Git. Status output does not show you any information regarding the committed project history. For this, you need to use git log. [(Atlassian, 2023)](https://www.atlassian.com/git/tutorials/inspecting-a-repository)
+
+::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -250,20 +318,38 @@ so that our filesystem doesn't become cluttered
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## git diff
+::::::::::::::::: spoiler
 
-Now suppose Dracula adds more information to the file.
-(Again, we'll edit with `nano` and then `cat` the file to show its contents;
-you may use a different editor, and don't need to `cat`.)
+### Log in the console
 
-```bash
-$ nano sitrep.Rmd
-$ cat sitrep.Rmd
+```r
+gert::git_log()
 ```
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
+# A tibble: 3 × 6
+  commit author time                files merge message
+* <chr>  <chr>  <dttm>              <int> <lgl> <chr>  
+1 f22b2… Vlad … 2013-08-22 09:51:46     1 FALSE "Start…
+```
+
+:::::::::::::::::::::::::
+
+## git diff
+
+Now suppose Dracula adds more information to the file.
+<!--
+(Again, we'll edit with `nano` and then `cat` the file to show its contents;
+you may use a different editor, and don't need to `cat`.)
+-->
+
+```r
+usethis::edit_file("sitrep.Rmd")
+```
+
+```output
+Comparison of attack rates in different age groups
+This can identify priority groups for interventions
 ```
 
 When we run `git status` now,
@@ -305,8 +391,8 @@ index df0654a..315bf3a 100644
 --- a/sitrep.Rmd
 +++ b/sitrep.Rmd
 @@ -1 +1,2 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
+ Comparison of attack rates in different age groups
++This can identify priority groups for interventions
 ```
 
 The output is cryptic because
@@ -325,10 +411,29 @@ If we break it down into pieces:
   In particular,
   the `+` marker in the first column shows where we added a line.
 
+::::::::::::::::: spoiler
+
+### Diff in Consolse
+
+```r
+gert::git_diff()
+```
+
+```output
+# A tibble: 1 × 4
+  status old        new        patch                   
+* <chr>  <chr>      <chr>      <chr>                   
+1 M      sitrep.Rmd sitrep.Rmd "diff --git a/sitrep.Rm…
+```
+
+:::::::::::::::::::::::::
+
+## Staging area
+
 After reviewing our change, it's time to commit it:
 
 ```bash
-$ git commit -m "Add concerns about effects of Sitrep' moons on Wolfman"
+$ git commit -m "Add purpose of attack rate analysis"
 ```
 
 ```output
@@ -348,11 +453,11 @@ Let's fix that:
 
 ```bash
 $ git add sitrep.Rmd
-$ git commit -m "Add concerns about effects of Sitrep' moons on Wolfman"
+$ git commit -m "Add purpose of attack rate analysis"
 ```
 
 ```output
-[main 34961b1] Add concerns about effects of Sitrep' moons on Wolfman
+[main 34961b1] Add purpose of attack rate analysis
  1 file changed, 1 insertion(+)
 ```
 
@@ -372,6 +477,20 @@ Git has a special *staging area*
 where it keeps track of things that have been added to
 the current [changeset](../learners/reference.md#changeset)
 but not yet committed.
+
+::::::::::::::::::: instructor
+
+### Definition: Staging area
+
+The staging area is the middle ground between what you have done to your files (also known as the working directory) and what you had last committed (the HEAD commit). As the name implies, the staging area gives you space to prepare (stage) the changes that will be reflected on the next commit. [(Coderefinery, 2023)](https://coderefinery.github.io/git-intro/staging-area/#staging-area-commands)
+
+### What is the use of the Staging area?
+
+[Read a testimony from StackOver Flow](https://stackoverflow.com/questions/49228209/whats-the-use-of-the-staging-area-in-git).
+
+
+::::::::::::::::::::::::::::::
+
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -394,10 +513,19 @@ Try to stage things manually,
 or you might find yourself searching for "git undo commit" more
 than you would like!
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ![](fig/git-staging-area.svg){alt='The Git Staging Area'}
+
+::::::::::::::::: checklist
+
+### Checklist
+
+![Use `git status` frequently. `git add` your changes to `git commit` them to the Local repository. Use the `git log` to get the history of changes. Use `git diff` to compare these changes.](fig/cut-git-verb_map-07.png)
+
+:::::::::::::::::::::::::::
+
+## Practice the workflow
 
 Let's watch as our changes to a file move from our editor
 to the staging area
@@ -405,15 +533,14 @@ and into long-term storage.
 First,
 we'll add another line to the file:
 
-```bash
-$ nano sitrep.Rmd
-$ cat sitrep.Rmd
+```r
+usethis::edit_file("sitrep.Rmd")
 ```
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
+Comparison of attack rates in different age groups
+This can identify priority groups for interventions
+Maps illustrate the spread and impact of outbreak
 ```
 
 ```bash
@@ -426,9 +553,9 @@ index 315bf3a..b36abfd 100644
 --- a/sitrep.Rmd
 +++ b/sitrep.Rmd
 @@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
+ Comparison of attack rates in different age groups
+ This can identify priority groups for interventions
++Maps illustrate the spread and impact of outbreak
 ```
 
 So far, so good:
@@ -459,9 +586,9 @@ index 315bf3a..b36abfd 100644
 --- a/sitrep.Rmd
 +++ b/sitrep.Rmd
 @@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
+ Comparison of attack rates in different age groups
+ This can identify priority groups for interventions
++Maps illustrate the spread and impact of outbreak
 ```
 
 it shows us the difference between
@@ -470,11 +597,11 @@ and what's in the staging area.
 Let's save our changes:
 
 ```bash
-$ git commit -m "Discuss concerns about Sitrep' climate for Mummy"
+$ git commit -m "Add geospatial visualization objective"
 ```
 
 ```output
-[main 005937f] Discuss concerns about Sitrep' climate for Mummy
+[main 005937f] Add geospatial visualization objective
  1 file changed, 1 insertion(+)
 ```
 
@@ -500,20 +627,22 @@ commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -> main)
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 10:14:07 2013 -0400
 
-    Discuss concerns about Sitrep' climate for Mummy
+    Add geospatial visualization objective
 
 commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 10:07:21 2013 -0400
 
-    Add concerns about effects of Sitrep' moons on Wolfman
+    Add purpose of attack rate analysis
 
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Start notes on Sitrep as a base
+    Start Sitrep with attack rate analysis
 ```
+
+## Relevant callouts
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -564,7 +693,7 @@ commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -> main)
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 10:14:07 2013 -0400
 
-   Discuss concerns about Sitrep' climate for Mummy
+   Add geospatial visualization objective
 ```
 
 You can also reduce the quantity of information using the
@@ -575,9 +704,9 @@ $ git log --oneline
 ```
 
 ```output
-005937f (HEAD -> main) Discuss concerns about Sitrep' climate for Mummy
-34961b1 Add concerns about effects of Sitrep' moons on Wolfman
-f22b25e Start notes on Sitrep as a base
+005937f (HEAD -> main) Add geospatial visualization objective
+34961b1 Add purpose of attack rate analysis
+f22b25e Start Sitrep with attack rate analysis
 ```
 
 You can also combine the `--oneline` option with others. One useful
@@ -591,9 +720,9 @@ $ git log --oneline --graph
 ```
 
 ```output
-* 005937f (HEAD -> main) Discuss concerns about Sitrep' climate for Mummy
-* 34961b1 Add concerns about effects of Sitrep' moons on Wolfman
-* f22b25e Start notes on Sitrep as a base
+* 005937f (HEAD -> main) Add geospatial visualization objective
+* 34961b1 Add purpose of attack rate analysis
+* f22b25e Start Sitrep with attack rate analysis
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -604,17 +733,19 @@ $ git log --oneline --graph
 
 Two important facts you should know about directories in Git.
 
+### Git track files, not empty directories
+
 1. Git does not track directories on their own, only files within them.
   Try it for yourself:
   
   ```bash
-  $ mkdir spaceships
+  $ mkdir data
   $ git status
-  $ git add spaceships
+  $ git add data
   $ git status
   ```
   
-  Note, our newly created empty directory `spaceships` does not appear in
+  Note, our newly created empty directory `data` does not appear in
   the list of untracked files even if we explicitly add it (*via* `git add`) to our
   repository. This is the reason why you will sometimes see `.gitkeep` files
   in otherwise empty directories. Unlike `.gitignore`, these files are not special
@@ -631,16 +762,16 @@ Two important facts you should know about directories in Git.
   Try it for yourself:
   
   ```bash
-  $ touch spaceships/apollo-11 spaceships/sputnik-1
+  $ touch data/derived-data.md data/raw-data.md
   $ git status
-  $ git add spaceships
+  $ git add data
   $ git status
   ```
   
   Before moving on, we will commit these changes.
   
   ```bash
-  $ git commit -m "Add some initial thoughts on spaceships"
+  $ git commit -m "Add thoughts on derived and raw data"
   ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -652,6 +783,8 @@ repository (`git commit`):
 
 ![](fig/git-committing.svg){alt='The Git Commit Workflow'}
 
+## Challenges
+
 :::::::::::::::::::::::::::::::::::::::  challenge
 
 ## Choosing a Commit Message
@@ -660,7 +793,7 @@ Which of the following commit messages would be most appropriate for the
 last commit made to `sitrep.Rmd`?
 
 1. "Changes"
-2. "Added line 'But the Mummy will appreciate the lack of humidity' to sitrep.Rmd"
+2. "Added line 'Maps illustrate the spread and impact of outbreak' to sitrep.Rmd"
 3. "Discuss effects of Sitrep' climate on the Mummy"
 
 :::::::::::::::  solution
@@ -722,9 +855,9 @@ The staging area can hold changes from any number of files
 that you want to commit as a single snapshot.
 
 1. Add some text to `sitrep.Rmd` noting your decision
-  to consider Venus as a base
-2. Create a new file `venus.txt` with your initial thoughts
-  about Venus as a base for you and your friends
+  to consider a data cleaning preliminary step.
+2. Create a new file `clean.R` with your initial thoughts
+  about Data as an step for you and your friends.
 3. Add changes from both files to the staging area,
   and commit those changes.
 
@@ -735,50 +868,48 @@ that you want to commit as a single snapshot.
 The output below from `cat sitrep.Rmd` reflects only content added during
 this exercise. Your output may vary.
 
-First we make our changes to the `sitrep.Rmd` and `venus.txt` files:
+First we make our changes to the `sitrep.Rmd` and `clean.R` files:
 
-```bash
-$ nano sitrep.Rmd
-$ cat sitrep.Rmd
+```r
+usethis::edit_file("sitrep.Rmd")
 ```
 
 ```output
-Maybe I should start with a base on Venus.
+Maybe I should start with a data cleaning step.
 ```
 
-```bash
-$ nano venus.txt
-$ cat venus.txt
+```r
+usethis::edit_file("clean.R")
 ```
 
 ```output
-Venus is a nice planet and I definitely should consider it as a base.
+Data is a messy file and I definitely should consider a data cleaning step.
 ```
 
 Now you can add both files to the staging area. We can do that in one line:
 
 ```bash
-$ git add sitrep.Rmd venus.txt
+$ git add sitrep.Rmd clean.R
 ```
 
 Or with multiple commands:
 
 ```bash
 $ git add sitrep.Rmd
-$ git add venus.txt
+$ git add clean.R
 ```
 
 Now the files are ready to commit. You can check that using `git status`. If you are ready to commit use:
 
 ```bash
-$ git commit -m "Write plans to start a base on Venus"
+$ git commit -m "Write plans to start a data cleaning step"
 ```
 
 ```output
 [main cc127c2]
- Write plans to start a base on Venus
+ Write plans to start a data cleaning step
  2 files changed, 2 insertions(+)
- create mode 100644 venus.txt
+ create mode 100644 clean.R
 ```
 
 :::::::::::::::::::::::::
@@ -790,7 +921,7 @@ $ git commit -m "Write plans to start a base on Venus"
 ## `bio` Repository
 
 - Create a new Git repository on your computer called `bio`.
-- Write a three-line biography for yourself in a file called `me.txt`,
+- Write a three-line biography for yourself in a file called `me.md`,
   commit your changes
 - Modify one line, add a fourth line
 - Display the differences
@@ -800,30 +931,28 @@ $ git commit -m "Write plans to start a base on Venus"
 
 ## Solution
 
-If needed, move out of the `cases` folder:
+If needed, create a project out of the `cases` folder:
 
-```bash
-$ cd ..
-```
-
-Create a new folder called `bio` and 'move' into it:
-
-```bash
-$ mkdir bio
-$ cd bio
+```r
+usethis::create_project(path = "bio")
 ```
 
 Initialise git:
 
-```bash
-$ git init
+```r
+usethis::use_git()
 ```
 
-Create your biography file `me.txt` using `nano` or another text editor.
-Once in place, add and commit it to the repository:
+Create your biography file `me.md` using the Rstudio editor.
+
+```r
+usethis::edit_file("clean.R")
+```
+
+Once in place, in the Terminal add and commit it to the repository:
 
 ```bash
-$ git add me.txt
+$ git add me.md
 $ git commit -m "Add biography file" 
 ```
 
@@ -832,7 +961,7 @@ To display the differences
 between its updated state and its original state, use `git diff`:
 
 ```bash
-$ git diff me.txt
+$ git diff me.md
 ```
 
 :::::::::::::::::::::::::
