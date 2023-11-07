@@ -22,6 +22,8 @@ that reason, the popular development environment
 integration with Git. While some advanced Git features still require the
 command-line, RStudio has a nice interface for many common Git operations.
 
+## Create project
+
 RStudio allows us to create a [project][rstudio-projects] associated with a
 given directory to keep track of various related files. To be able to track the
 development of the project over time, to be able to revert to previous
@@ -36,6 +38,8 @@ repository that we already made. Since that repository lives in a directory on
 our computer, we choose the option "Existing Directory":
 
 ![](fig/RStudio_screenshot_existingdirectory.png){alt='RStudio screenshot showing New Project dialog window with "Create project from existing directory" selected'}
+
+For a new directory, [follow the steps in this section about "Versioning new work"](https://nceas.github.io/oss-lessons/version-control/4-getting-started-with-git-in-RStudio.html#versioning_new_work).
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -97,6 +101,8 @@ about Pluto:
 
 ![](fig/RStudio_screenshot_editfiles.png)
 
+## git commit
+
 Once we have saved our edited files, we can use RStudio to commit the changes
 by clicking on "Commit..." in the Git menu:
 
@@ -128,10 +134,14 @@ terminal to the repository and enter the command: `git push -u origin main`. The
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+## git log
+
 If we click on "History", we can see a graphical version of what `git log`
 would tell us:
 
 ![](fig/RStudio_screenshot_viewhistory.png)
+
+## .gitignore
 
 RStudio creates a number of files that it uses to keep track of a project. We
 often don't want to track these, in which case we add them to our `.gitignore`
