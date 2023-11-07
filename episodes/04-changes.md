@@ -1,7 +1,7 @@
 ---
 title: Tracking Changes
-teaching: 20
-exercises: 0
+teaching: 30
+exercises: 15
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
