@@ -162,6 +162,8 @@ gert::git_status()
 1 sitrep.Rmd new    TRUE 
 ```
 
+But, what does `staged` mean? We'll see it in this lesson :)
+
 :::::::::::::::::::::::::
 
 ## Commit changes
@@ -169,6 +171,7 @@ gert::git_status()
 Git now knows that it's supposed to keep track of `sitrep.Rmd`,
 but it hasn't recorded these changes as a commit yet.
 To get it to do that,
+in the Terminal,
 we need to run one more command:
 
 ```bash
@@ -271,9 +274,10 @@ gert::git_status()
 
 :::::::::::::::::::::::::
 
-## git log
+## Show the history
 
 If we want to know what we've done recently,
+in the Terminal,
 we can ask Git to show us the project's history using `git log`:
 
 ```bash
@@ -309,7 +313,7 @@ The git status command displays the state of the working directory and the stagi
 
 ## Where Are My Changes?
 
-If we run `ls` at this point, we will still see just one file called `sitrep.Rmd`.
+If, in the Terminal, we run `ls` at this point, we will still see just one file called `sitrep.Rmd`.
 That's because Git saves information about files' history
 in the special `.git` directory mentioned earlier
 so that our filesystem doesn't become cluttered
@@ -335,7 +339,7 @@ gert::git_log()
 
 :::::::::::::::::::::::::
 
-## git diff
+## Compare changes
 
 Now suppose Dracula adds more information to the file.
 <!--
@@ -352,7 +356,8 @@ Comparison of attack rates in different age groups
 This can identify priority groups for interventions
 ```
 
-When we run `git status` now,
+In the Terminal,
+when we run `git status` now,
 it tells us that a file it already knows about has been modified:
 
 ```bash
@@ -377,7 +382,9 @@ but we haven't told Git we will want to save those changes
 (which we do with `git add`)
 nor have we saved them (which we do with `git commit`).
 So let's do that now. It is good practice to always review
-our changes before saving them. We do this using `git diff`.
+our changes before saving them. 
+In the Terminal,
+we do this using `git diff`.
 This shows us the differences between the current state
 of the file and the most recently saved version:
 
@@ -521,7 +528,7 @@ than you would like!
 
 ### Checklist
 
-![Use `git status` frequently. `git add` your changes to `git commit` them to the Local repository. Use the `git log` to get the history of changes. Use `git diff` to compare these changes.](fig/cut-git-verb_map-07.png)
+![Use `git status` frequently. `git add` your changes before you `git commit` them to the Local repository. Use the `git log` to get the history of changes in it. Use `git diff` to compare these changes.](fig/cut-git-verb_map-07.png)
 
 :::::::::::::::::::::::::::
 
