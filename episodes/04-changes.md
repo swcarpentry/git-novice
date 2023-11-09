@@ -22,6 +22,19 @@ exercises: 15
 
 Let’s start to tell the story of your project while you are working on it!
 
+::::::::::::::::::: prereq
+
+### The Console and the Terminal
+
+In this episode, we are going to use both, the [ Console](https://docs.posit.co/ide/user/ide/guide/code/console.html) and the [Terminal](https://docs.posit.co/ide/user/ide/guide/tools/terminal.html).
+
+So look at the upper right corner of the code chunks:
+
+- `R < >` belongs to the Console.
+- `BASH < >` belongs to the Terminal.
+
+::::::::::::::::::::::::::
+
 ## Add changes
 
 First let's make sure we're still in the right R project.
