@@ -112,7 +112,9 @@ Agree to restart your session to activate the Git pane in Rstudio:
 
 ![The Git tab in the Environments pane shows the `status` of your repository.](fig/pane-git-01.png)
 
-The Git tab is in the [Environments pane](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html), usually in the upper right corner of the Rstudio IDE.
+The Git tab is in the [Environments pane](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html), usually in the upper right corner of the Rstudio IDE. 
+
+In this and next episodes you'll learn the function of all those buttons on the top of the Git tab!
 
 <!--
 ```bash
