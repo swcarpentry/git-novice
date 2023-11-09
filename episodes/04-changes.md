@@ -100,6 +100,7 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
+<!--
 ::::::::::::::::: spoiler
 
 ### Status in the Console
@@ -120,6 +121,7 @@ gert::git_status()
 ```
 
 :::::::::::::::::::::::::
+-->
 
 The "untracked files" message means that there's a file in the directory
 that Git isn't keeping track of.
@@ -147,6 +149,7 @@ Changes to be committed:
 
 ```
 
+<!--
 ::::::::::::::::: spoiler
 
 ### Status in the Console
@@ -165,6 +168,7 @@ gert::git_status()
 But, what does `staged` mean? We'll see it in this lesson :)
 
 :::::::::::::::::::::::::
+-->
 
 ## Commit changes
 
@@ -259,6 +263,7 @@ nothing to commit, working tree clean
 
 it tells us everything is up to date.
 
+<!--
 ::::::::::::::::: spoiler
 
 ### Status in the Console
@@ -273,6 +278,7 @@ gert::git_status()
 ```
 
 :::::::::::::::::::::::::
+-->
 
 ## Show the history
 
@@ -322,6 +328,7 @@ so that our filesystem doesn't become cluttered
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+<!--
 ::::::::::::::::: spoiler
 
 ### Log in the console
@@ -338,6 +345,7 @@ gert::git_log()
 ```
 
 :::::::::::::::::::::::::
+-->
 
 ## Compare changes
 
@@ -418,6 +426,7 @@ If we break it down into pieces:
   In particular,
   the `+` marker in the first column shows where we added a line.
 
+<!--
 ::::::::::::::::: spoiler
 
 ### Diff in Consolse
@@ -434,6 +443,7 @@ gert::git_diff()
 ```
 
 :::::::::::::::::::::::::
+-->
 
 ## Staging area
 
