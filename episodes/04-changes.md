@@ -28,7 +28,7 @@ Let’s start to tell the story of your project while you are working on it!
 
 In this episode, we are going to use both, the [ Console](https://docs.posit.co/ide/user/ide/guide/code/console.html) and the [Terminal](https://docs.posit.co/ide/user/ide/guide/tools/terminal.html).
 
-So look at the upper right corner of the code chunks:
+So look at the upper right corner of the code chunks in this episode:
 
 - `R < >` belongs to the Console.
 - `BASH < >` belongs to the Terminal.
@@ -37,7 +37,7 @@ So look at the upper right corner of the code chunks:
 
 ## Add changes
 
-First let's make sure we're still in the right R project.
+First, in the __Rstudio Console__, let's make sure we're still in the right R project.
 You should be in the `cases` directory.
 
 ```r
@@ -92,7 +92,7 @@ $ cat sitrep.Rmd
 Comparison of attack rates in different age groups
 ```
 -->
-In the Terminal,
+Now, __in the Terminal__,
 if we check the status of our project again,
 Git tells us that it's noticed the new file:
 
@@ -362,7 +362,7 @@ gert::git_log()
 
 ## Compare changes
 
-Now suppose Dracula adds more information to the file.
+Now suppose Dracula adds more information to the file. For this, let's return to the `sitrep.Rmd` file:
 <!--
 (Again, we'll edit with `nano` and then `cat` the file to show its contents;
 you may use a different editor, and don't need to `cat`.)
@@ -377,7 +377,7 @@ Comparison of attack rates in different age groups
 This can identify priority groups for interventions
 ```
 
-In the Terminal,
+__In the Terminal__,
 when we run `git status` now,
 it tells us that a file it already knows about has been modified:
 
@@ -557,11 +557,7 @@ than you would like!
 
 ## Practice the workflow
 
-Let's watch as our changes to a file move from our editor
-to the staging area
-and into long-term storage.
-First,
-we'll add another line to the file:
+Let's watch as our changes to a file move from our editor to the staging area and into long-term storage. First, __in the Console__, we'll add another line to the file:
 
 ```r
 usethis::edit_file("sitrep.Rmd")
@@ -572,6 +568,8 @@ Comparison of attack rates in different age groups
 This can identify priority groups for interventions
 Maps illustrate the spread and impact of outbreak
 ```
+
+__In the Terminal__, check the difference:
 
 ```bash
 $ git diff
