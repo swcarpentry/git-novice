@@ -29,9 +29,9 @@ We will locate them using this workflow bellow as template. We will relate Versi
 
 In this episode, we are going to learn how to initialize Git to create a Local Repository in our folder, also known as Working directory or Workspace.
 
-![Initialize a Local Repository in your Workspace with the `git init` command verb](fig/cut-git-verb_map-01.png).
+![Initialize a Local Repository in your Workspace with the `git init` command verb](fig/cut-git-verb_map-01.png)
 
-Let's start a new R project in Rstudio.
+Let's start with a new R project in Rstudio.
 
 ## Create a local repository
 
@@ -112,6 +112,8 @@ Agree to restart your session to activate the Git pane in Rstudio:
 
 ![The Git tab in the Environments pane shows the `status` of your repository.](fig/pane-git-01.png)
 
+The Git tab is in the [Environments pane](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html), usually in the upper right corner of the Rstudio IDE.
+
 <!--
 ```bash
 $ git init
@@ -135,7 +137,7 @@ This step is known as `git init` because it initialise your Git repository.
 
 :::::::::::::::::::::::::::
 
-## New files of a local repository
+## Find the new files of a local repository
 
 If we look at the [Files tab in the Output pane](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html) to show the directory's contents, it appears that nothing has changed.
 
@@ -151,6 +153,29 @@ Git uses this special subdirectory to store all the information about the projec
 including the tracked files and sub-directories located within the project's directory.
 If we ever delete the `.git` subdirectory,
 we will lose the project's history.
+
+::::::::::::::::: prereq
+
+### The Rstudio Terminal
+
+Now, we are going to use the [Rstudio Terminal](https://docs.posit.co/ide/user/ide/guide/tools/terminal.html). The Terminal tab is next to the Console tab. Click on the Terminal tab and a new terminal session will be created (if there isn’t one already).
+
+![Visual appearance of the Terminal.](fig/rstudio-tab-terminal.png)
+
+::::::::::::::::::::::::
+
+Alternatively, in the Rstudio Terminal, 
+with the `ls -a` command we can see the _hidden directory_ called `.git/`:
+
+```bash
+$ ls -a
+```
+
+```output
+./   .git/       .Rhistory     cases.Rproj
+../  .gitignore  .Rproj.user/  R/
+```
+
 
 <!--
 
@@ -182,11 +207,9 @@ Switched to a new branch 'main'
 ```
 -->
 
-## Using the Terminal
+## Check the status
 
-![Visual appearance of the terminal.](fig/terminal-basic.png)
-
-To interact with Git, we can also use the [Rstudio Terminal](https://docs.posit.co/ide/user/ide/guide/tools/terminal.html). The Terminal tab is next to the Console tab. Click on the Terminal tab and a new terminal session will be created (if there isn’t one already).
+To interact with Git, we can also use the [Rstudio Terminal](https://docs.posit.co/ide/user/ide/guide/tools/terminal.html). 
 
 In the Rstudio Terminal, 
 We can check that everything is set up correctly
@@ -217,26 +240,11 @@ The steps done with `{usethis}` can also be done with commands in the Terminal. 
 
 ::::::::::::::::: spoiler
 
-### More using the terminal
+### How to ask help to Git?
 
-#### Hidden files in the project
+`Git` has a verb command similar to the `help()` function in `R`.
 
-In the Rstudio Terminal, 
-with the `ls -a` command we can see the hidden directory called `.git/`:
-
-```bash
-$ ls -a
-```
-
-```output
-./   .git/       .Rhistory     cases.Rproj
-../  .gitignore  .Rproj.user/  R/
-```
-
-#### Git Help and Manual
-
-Always remember that if you forget the subcommands or options of a `git` command, you can access the
-relevant list of options typing `git <command> -h` or access the corresponding Git manual by typing
+Always remember that if you forget the subcommands or options of a `git` command, you can access the relevant list of options typing `git <command> -h` or access the corresponding Git manual by typing
 `git <command> --help`, e.g.:
 
 ```bash
