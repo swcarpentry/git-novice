@@ -10,7 +10,7 @@ site: sandpaper::sandpaper_site
 
 Reproducible science not only reduce errors, but speeds up the process of re-runing your analysis and auto-generate updated documents with the results. **Git is an essential part of this process!**
 
-!["A reproducible workflow". Video by Ignasi Bartomeus (@ibartomeus) & Francisco Rodríguez-Sánchez (@frod_san).  CC-by, <https://youtu.be/s3JldKoA0zw?si=xRzgVJvOTX5LubxN>](episodes/fig/non-reproducible-workflow.png){alt='Video: A Non Reproducible Workflow'}
+!["A reproducible workflow". 1:44 minutes. Video by Ignasi Bartomeus (@ibartomeus) & Francisco Rodríguez-Sánchez (@frod_san).  CC-by, <https://youtu.be/s3JldKoA0zw?si=xRzgVJvOTX5LubxN>](episodes/fig/non-reproducible-workflow.png){alt='Video: A Non Reproducible Workflow'}
 
 ## The scenario
 
