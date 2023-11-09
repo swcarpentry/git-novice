@@ -425,7 +425,11 @@ These is a really common error to get. [Follow the steps in this other tutorial 
 :::::::::::::::::::::::::
 -->
 
-When using the [terminal](https://glosario.carpentries.org/en/#console), this steps is known as `git config` with the `--global` option. If you are interested on this, [take a look to this chapter of the happygitwithr ebook](https://happygitwithr.com/hello-git).
+When using the [Terminal](https://glosario.carpentries.org/en/#console), this steps is known as `git config` with the `--global` option. In the next chapter we are going to interact with the Terminal!
+
+<!--
+If you are interested on this, [take a look to this chapter of the happygitwithr ebook](https://happygitwithr.com/hello-git).
+-->
 
 [git-privacy]: https://help.github.com/articles/keeping-your-email-address-private/
 
