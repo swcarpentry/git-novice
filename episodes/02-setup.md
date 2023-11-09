@@ -38,6 +38,16 @@ Before creating our first repository, we need to setup Git. So, let's open Rstud
 called a `commit`.](fig/play-changes.svg){alt='Changes Are Saved Sequentially'}
 -->
 
+::::::::::::::::::: prereq
+
+### The Rstudio Console
+
+In this episode, we are going to use the [Rstudio Console](https://docs.posit.co/ide/user/ide/guide/code/console.html).
+
+![Visual appearance of the Console.](fig/rstudio-tab-console.png)
+
+::::::::::::::::::::::::::
+
 ## Set up `Git`
 
 When we use Git on a new computer for the first time,
@@ -57,7 +67,8 @@ Using the [Rstudio Console](https://docs.posit.co/ide/user/ide/guide/code/consol
 
 usethis::use_git_config(
   user.name = "Vlad Dracula",
-  user.email = "vlad@tran.sylvan.ia")
+  user.email = "vlad@tran.sylvan.ia",
+  github.user = "vlad")
 ```
 
 Substitute this chunk with your name and __the email associated with your GitHub account__.
@@ -165,6 +176,70 @@ If you want to save your changes and quit, press <kbd>Esc</kbd> then type `:wq` 
 
 -->
 
+## Set up your GitHub token
+
+__First, let's create your token.__
+
+Do this with `usethis::create_github_token()`. This function should redirect you to GitHub on your browser. Once there, check all the options in the figure below.
+
+```r
+usethis::create_github_token()
+```
+
+Describe the token use case.
+
+Check all of the following options:
+
+![](fig/git-token.png)
+
+Copy your token. Save it for the next step.
+
+__Second, let's configure your token.__
+
+To complete the configuration of your token use `gitcreds::gitcreds_set()` ([Bryan, 2023](https://happygitwithr.com/https-pat.html)), then accept that you want to `Replace these credentials`. Write the corresponding number and press ENTER.
+
+```r
+gitcreds::gitcreds_set()
+```
+
+```output
+-> What would you like to do? 
+
+1: Abort update with error, and keep the existing credentials
+2: Replace these credentials
+3: See the password / token
+
+Selection: 2
+
+```
+
+Paste your `token` to save it and complete this step.
+
+__Lastly, let's confirm your setting.__
+
+Run:
+
+```r
+gh::gh_whoami()
+```
+
+```output
+{
+  "name": "Vlad Dracula",
+  "login": "vlad",
+  "html_url": "https://github.com/vlad",
+  "scopes": "gist, repo, workflow",
+  "token": "gho_...AlAn"
+} 
+```
+
+You should recognize your:
+
+- Name,
+- GitHub login, and
+- Token.
+
+
 ## Set up a default `branch` name
 
 As we mentioned before, the complete history of `commits` for a particular project and their metadata make up a `repository`. (We are going to create one in the next episode!)
@@ -181,6 +256,16 @@ Run the code chunk below:
 
 ```r
 usethis::git_default_branch_configure(name = "main")
+```
+
+To confirm this setting, run:
+
+```r
+gert::git_branch()
+```
+
+```output
+[1] "main"
 ```
 
 ::::::::::::::::::: instructor
@@ -225,20 +310,7 @@ We need to run these commands __only once__! Git will use this settings for ever
 
 :::::::::::::::::::::::::::
 
-Let's review those settings with `usethis::git_sitrep()`
-
-```r
-usethis::git_sitrep()
-```
-
-The two first lines of the output should look like this:
-
-```output
-── Git global (user) 
-• Name: 'Vlad Dracula'
-• Email: 'vlad@tran.sylvan.ia'
-```
-
+<!--
 ::::::::::::::::::: instructor
 
 With git commands:
@@ -255,6 +327,7 @@ $ git config --list
 ```
 
 ::::::::::::::::::::::::::::::
+-->
 
 And if necessary, change your configuration using the
 same commands to update your email address.
@@ -313,6 +386,21 @@ $ git help
 
 -->
 
+<!--
+```r
+usethis::git_sitrep()
+```
+
+The two first lines of the output should look like this:
+
+```output
+── Git global (user) 
+• Name: 'Vlad Dracula'
+• Email: 'vlad@tran.sylvan.ia'
+```
+-->
+
+<!--
 ::::::::::::::::: callout
 
 When using `usethis::git_sitrep()`, check if there is no `✖ ...` line in the output with an error message. 
@@ -335,6 +423,7 @@ usethis::git_sitrep()
 These is a really common error to get. [Follow the steps in this other tutorial to solve it](https://epiverse-trace.github.io/research-compendium/#configure-git-and-github).
 
 :::::::::::::::::::::::::
+-->
 
 When using the [terminal](https://glosario.carpentries.org/en/#console), this steps is known as `git config` with the `--global` option. If you are interested on this, [take a look to this chapter of the happygitwithr ebook](https://happygitwithr.com/hello-git).
 
