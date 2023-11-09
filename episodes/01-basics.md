@@ -151,7 +151,7 @@ the same files concurrently.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Version control with R
+## Version control and R files
 
 For code-like files like `.R` and `.Rmd` files, we can not use Google docs. The software and strategy to track changes in a project depends on the **file type**.
 
