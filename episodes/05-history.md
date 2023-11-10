@@ -21,8 +21,8 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-As we saw in the previous episode, we can refer to commits by their
-identifiers.  You can refer to the *most recent commit* of the working
+As we saw in the previous episode, we can [refer to commits by their
+identifiers](#commit-changes).  You can refer to the *most recent commit* of the working
 directory by using the identifier `HEAD`.
 
 We've been adding one line at a time to `mars.txt`, so it's easy to track our
