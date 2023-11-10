@@ -13,6 +13,7 @@ exercises: 0
 :::::::::::::::::::::::::::::::::::::::: questions
 
 - How do I get set up to use Git?
+- What is a token?
 - What is a `commit`?
 - What is a `repository`?
 - What is a `branch`?
@@ -179,6 +180,8 @@ If you want to save your changes and quit, press <kbd>Esc</kbd> then type `:wq` 
 -->
 
 ## Set up your GitHub token
+
+To interact with GitHub we need to include credentials in the request. We need this to prove that we are a specific GitHub user, allowed to do whatever we’re asking to do.
 
 __First, let's create your token.__
 
