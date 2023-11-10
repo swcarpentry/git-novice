@@ -813,7 +813,7 @@ Two important facts you should know about directories in Git.
   Try it for yourself:
   
   ```bash
-  $ touch analyses/01-clean.R analyses/02-plot.R
+  $ touch analyses/attack-rate.R analyses/geospatial.R
   $ git status
   $ git add analyses
   $ git status
@@ -822,7 +822,7 @@ Two important facts you should know about directories in Git.
   Before moving on, we will commit these changes.
   
   ```bash
-  $ git commit -m "Add analysis scripts on clean and plot data"
+  $ git commit -m "Add analysis scripts on attack rate and geospatial"
   ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
