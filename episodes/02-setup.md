@@ -181,7 +181,7 @@ If you want to save your changes and quit, press <kbd>Esc</kbd> then type `:wq` 
 
 ## Set up your GitHub token
 
-To interact with GitHub we need to include credentials in the request. We need this to prove that we are a specific GitHub user, allowed to do whatever we’re asking to do.
+To interact with GitHub we need to include credentials in the request. We are going to configure one type of credential called _Personal Access Token (PAT)_. We need this to prove that we are a specific GitHub user, allowed to do whatever we’re asking to do. ([Jennifer Bryan, 2021](https://happygitwithr.com/https-pat.html))
 
 __First, let's create your token.__
 
