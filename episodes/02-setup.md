@@ -73,6 +73,7 @@ usethis::use_git_config(
 
 Substitute this chunk with your name and __the email associated with your GitHub account__.
 
+<!--
 ::::::::::::::::::: instructor
 
 On a command line, Git commands are written as `git verb options`,
@@ -84,6 +85,7 @@ $ git config --global user.email "vlad@tran.sylvan.ia"
 ```
 
 ::::::::::::::::::::::::::::::
+-->
 
 Please use your own name and email address instead of Dracula's. This user name and email will be associated with your subsequent Git activity,
 which means that any changes pushed to
@@ -220,6 +222,28 @@ __Lastly, let's confirm your setting.__
 Run:
 
 ```r
+usethis::git_sitrep()
+```
+
+In the `── Git global (user)` section, the two first lines of the output should look like this:
+
+```output
+── Git global (user) 
+• Name: 'Vlad Dracula'
+• Email: 'vlad@tran.sylvan.ia'
+```
+
+In the `── GitHub user` section, the three first lines of the output should look like this:
+
+```output
+── GitHub user 
+• Default GitHub host: 'https://github.com'
+• Personal access token for 'https://github.com': '<discovered>'
+• GitHub user: 'vlad'
+```
+
+<!--
+```r
 gh::gh_whoami()
 ```
 
@@ -232,6 +256,7 @@ gh::gh_whoami()
   "token": "gho_...AlAn"
 } 
 ```
+-->
 
 You should recognize your:
 
@@ -261,13 +286,29 @@ usethis::git_default_branch_configure(name = "main")
 To confirm this setting, run:
 
 ```r
+usethis::git_sitrep()
+```
+
+In the `── Git local (project)` section, almost at the end of the message, the third line of the output should say `Default branch: 'main'`:
+
+```ouput
+── Git local (project) 
+• Name: 'Vlad Dracula'
+• Email: 'vlad@tran.sylvan.ia'
+• Default branch: 'main'
+```
+
+<!--
+```r
 gert::git_branch()
 ```
 
 ```output
 [1] "main"
 ```
+-->
 
+<!--
 ::::::::::::::::::: instructor
 
 On a command line
@@ -277,7 +318,7 @@ $ git config --global init.defaultBranch main
 ```
 
 ::::::::::::::::::::::::::::::
-
+-->
 
 :::::::::::::::::::::::::::::::::::::::::  instructor
 
@@ -386,52 +427,22 @@ $ git help
 
 -->
 
-::::::::::::::::::: instructor
-
-We can also use `usethis::git_sitrep()` to verify the configuration. We will use it in the episode on GitHub. For this episode we prefer functions with simpler and specific outputs for each action. 
-
-::::::::::::::::::::::::::::::
-
-<!--
-```r
-usethis::git_sitrep()
-```
-
-The two first lines of the output should look like this:
-
-```output
-── Git global (user) 
-• Name: 'Vlad Dracula'
-• Email: 'vlad@tran.sylvan.ia'
-```
--->
-
-<!--
-::::::::::::::::: callout
+::::::::::::::::: instructor
 
 When using `usethis::git_sitrep()`, check if there is no `✖ ...` line in the output with an error message. 
 
-An example with two errors is below:
+Some common errors are solved here:
 
-```r
-usethis::git_sitrep()
-```
-
-```error
-✖ Token lacks recommended scopes:
-  - 'user:email': needed to read user's email addresses
-  Consider re-creating your PAT with the missing scopes.
-  `create_github_token()` defaults to the recommended scopes.
-✖ Can't retrieve registered email addresses from GitHub.
-  Consider re-creating your PAT with the 'user' or at least 'user:email' scope.
-```
-
-These is a really common error to get. [Follow the steps in this other tutorial to solve it](https://epiverse-trace.github.io/research-compendium/#configure-git-and-github).
+- [Happy Git with R ebook](https://happygitwithr.com/https-pat.html#pat-troubleshooting)
+- [Workbench documentation](https://carpentries.github.io/sandpaper-docs/github-pat.html#common-token-errors)
 
 :::::::::::::::::::::::::
--->
 
-When using the [Terminal](https://glosario.carpentries.org/en/#console), this steps is known as `git config` with the `--global` option. In the next chapter we are going to interact with the Terminal!
+::::::::::::::::: callout
+
+When using the [Terminal](https://glosario.carpentries.org/en/#console), this steps is known as `git config` for `--global` option. In the next chapter we are going to interact with the Terminal!
+
+:::::::::::::::::::::::::
 
 <!--
 If you are interested on this, [take a look to this chapter of the happygitwithr ebook](https://happygitwithr.com/hello-git).
