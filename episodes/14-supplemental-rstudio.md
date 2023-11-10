@@ -88,6 +88,8 @@ Next, RStudio will ask which existing directory we want to use. Click
 
 ![](fig/RStudio_screenshot_navigateexisting.png)
 
+## git init
+
 Ta-da! We have created a new project in RStudio within the existing planets
 repository. Notice the vertical "Git" menu in the menu bar. RStudio has
 recognized that the current directory is a Git repository, and gives us a
@@ -107,6 +109,8 @@ Once we have saved our edited files, we can use RStudio to commit the changes
 by clicking on "Commit..." in the Git menu:
 
 ![](fig/RStudio_screenshot_commit.png){alt='RStudio screenshot showing the Git menu dropdown with "Commit..." selected'}
+
+## git diff
 
 This will open a dialogue where we can select which files to commit (by
 checking the appropriate boxes in the "Staged" column), and enter a commit
