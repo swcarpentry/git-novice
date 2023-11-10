@@ -71,6 +71,9 @@ Type the text below into the `sitrep.Rmd` file:
 ```output
 Comparison of attack rates in different age groups
 ```
+
+Save the file.
+
 <!--
 Let's first verify that the file was properly created by running the list command (`ls`):
 
@@ -385,6 +388,8 @@ Comparison of attack rates in different age groups
 This can identify priority groups for interventions
 ```
 
+Save the file.
+
 __In the Terminal__,
 when we run `git status` now,
 it tells us that a file it already knows about has been modified:
@@ -584,6 +589,8 @@ Comparison of attack rates in different age groups
 This can identify priority groups for interventions
 Maps illustrate the spread and impact of outbreak
 ```
+
+Save the file.
 
 __In the Terminal__, check the difference:
 
@@ -900,7 +907,7 @@ that you want to commit as a single snapshot.
 
 1. Add some text to `sitrep.Rmd` noting your decision
   to consider a data cleaning preliminary step.
-2. Create a new file `clean.R` with your initial thoughts
+2. Create a new file `clean.Rmd` with your initial thoughts
   about Data as an step for you and your friends.
 3. Add changes from both files to the staging area,
   and commit those changes.
@@ -909,10 +916,10 @@ that you want to commit as a single snapshot.
 
 ## Solution
 
-The output below from `cat sitrep.Rmd` reflects only content added during
+The output below from `sitrep.Rmd` reflects only content added during
 this exercise. Your output may vary.
 
-First we make our changes to the `sitrep.Rmd` and `clean.R` files:
+First we make our changes to the `sitrep.Rmd` and `clean.Rmd` files:
 
 ```r
 usethis::edit_file("sitrep.Rmd")
@@ -923,24 +930,26 @@ Maybe I should start with a data cleaning step.
 ```
 
 ```r
-usethis::edit_file("clean.R")
+usethis::edit_file("clean.Rmd")
 ```
 
 ```output
 Data is a messy file and I definitely should consider a data cleaning step.
 ```
 
+Save both files.
+
 Now you can add both files to the staging area. We can do that in one line:
 
 ```bash
-$ git add sitrep.Rmd clean.R
+$ git add sitrep.Rmd clean.Rmd
 ```
 
 Or with multiple commands:
 
 ```bash
 $ git add sitrep.Rmd
-$ git add clean.R
+$ git add clean.Rmd
 ```
 
 Now the files are ready to commit. You can check that using `git status`. If you are ready to commit use:
@@ -953,7 +962,7 @@ $ git commit -m "Write plans to start a data cleaning step"
 [main cc127c2]
  Write plans to start a data cleaning step
  2 files changed, 2 insertions(+)
- create mode 100644 clean.R
+ create mode 100644 clean.Rmd
 ```
 
 :::::::::::::::::::::::::
@@ -990,8 +999,10 @@ usethis::use_git()
 Create your biography file `me.md` using the Rstudio editor.
 
 ```r
-usethis::edit_file("clean.R")
+usethis::edit_file("me.md")
 ```
+
+Save the file.
 
 Once in place, in the Terminal add and commit it to the repository:
 
