@@ -50,8 +50,8 @@ C:/~/cases
 
 Let's create a file called `sitrep.Rmd` that contains the situation report (Sitrep)
 describing the data in terms of [person, time, and place](https://r4epis.netlify.app/outbreaks/#analyses).
-We'll use the [Source pane](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html) to edit the file;
-you can use whatever editor you like.
+We'll use the [Source pane](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html) to edit the file.
+<!--you can use whatever editor you like.-->
 
 <!--
 In particular, this does not have to be the `core.editor` you set globally earlier. 
@@ -227,7 +227,7 @@ If you want to save your changes and quit, press <kbd>Esc</kbd> then type `:wq` 
 
 ### Change git core editor
 
-Dracula also has to set his favorite text editor, following this table:
+While using Rstudio, Dracula does not need to set a core text editor. However, if needed, Dracula can set his favorite text editor following this table:
 
 | Editor                                | Configuration command | 
 | :-----------                          | :------------------------------ |
@@ -259,7 +259,7 @@ If you want to go into more detail, add a blank line between the summary line an
 
 ### Commit with Rstudio
 
-You can also refer to the episode on [how to commit using the Rstudio Git tab](14-supplemental-rstudio.md#git-commit).
+You can also refer to the episode on [how to `git commit` using the Rstudio Git tab](14-supplemental-rstudio.md#git-commit).
 
 :::::::::::::::::::::::::
 
@@ -360,6 +360,14 @@ gert::git_log()
 :::::::::::::::::::::::::
 -->
 
+::::::::::::::::: callout
+
+### Log with Rstudio
+
+You can also refer to the episode on [how to `git log` using the Rstudio Git tab](14-supplemental-rstudio.md#git-log).
+
+:::::::::::::::::::::::::
+
 ## Compare changes
 
 Now suppose Dracula adds more information to the file. For this, let's return to the `sitrep.Rmd` file:
@@ -457,6 +465,14 @@ gert::git_diff()
 
 :::::::::::::::::::::::::
 -->
+
+::::::::::::::::: callout
+
+### Diff with Rstudio
+
+You can also refer to the episode on [how to `git diff` using the Rstudio Git tab](14-supplemental-rstudio.md#git-diff).
+
+:::::::::::::::::::::::::
 
 ## Staging area
 
