@@ -783,13 +783,13 @@ Two important facts you should know about directories in Git.
   Try it for yourself:
   
   ```bash
-  $ mkdir data
+  $ mkdir analyses
   $ git status
-  $ git add data
+  $ git add analyses
   $ git status
   ```
   
-  Note, our newly created empty directory `data` does not appear in
+  Note, our newly created empty directory `analyses` does not appear in
   the list of untracked files even if we explicitly add it (*via* `git add`) to our
   repository. This is the reason why you will sometimes see `.gitkeep` files
   in otherwise empty directories. Unlike `.gitignore`, these files are not special
@@ -806,16 +806,16 @@ Two important facts you should know about directories in Git.
   Try it for yourself:
   
   ```bash
-  $ touch data/derived-data.md data/raw-data.md
+  $ touch analyses/01-clean.R analyses/02-plot.R
   $ git status
-  $ git add data
+  $ git add analyses
   $ git status
   ```
   
   Before moving on, we will commit these changes.
   
   ```bash
-  $ git commit -m "Add thoughts on derived and raw data"
+  $ git commit -m "Add analysis scripts on clean and plot data"
   ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
