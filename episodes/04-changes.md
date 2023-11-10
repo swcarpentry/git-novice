@@ -26,7 +26,7 @@ Let’s start to tell the story of your project while you are working on it!
 
 ### The Console and the Terminal
 
-In this episode, we are going to use both, the [ Console](https://docs.posit.co/ide/user/ide/guide/code/console.html) and the [Terminal](https://docs.posit.co/ide/user/ide/guide/tools/terminal.html).
+In this episode, we are going to use both, the [Console](https://docs.posit.co/ide/user/ide/guide/code/console.html) and the [Terminal](https://docs.posit.co/ide/user/ide/guide/tools/terminal.html).
 
 So look at the upper right corner of the code chunks in this episode:
 
@@ -183,7 +183,7 @@ But, what does `staged` mean? We'll see it in this lesson :)
 :::::::::::::::::::::::::
 -->
 
-## Commit changes
+## [Commit changes]{#commit-changes}
 
 Git now knows that it's supposed to keep track of `sitrep.Rmd`,
 but it hasn't recorded these changes as a commit yet.
@@ -225,7 +225,7 @@ If you want to save your changes and quit, press <kbd>Esc</kbd> then type `:wq` 
 
 ::::::::::::::::: spoiler
 
-### Change git core editor
+### Do we need to change git core editor?
 
 While using Rstudio, Dracula does not need to set a core text editor. However, if needed, Dracula can set his favorite text editor following this table:
 
