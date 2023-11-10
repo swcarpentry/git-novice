@@ -386,6 +386,12 @@ $ git help
 
 -->
 
+::::::::::::::::::: instructor
+
+We can also use `usethis::git_sitrep()` to verify the configuration. We will use it in the episode on GitHub. For this episode we prefer functions with simpler and specific outputs for each action. 
+
+::::::::::::::::::::::::::::::
+
 <!--
 ```r
 usethis::git_sitrep()
