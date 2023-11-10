@@ -139,6 +139,14 @@ This step is known as `git init` because it initialise your Git repository.
 
 :::::::::::::::::::::::::::
 
+::::::::::::::::: callout
+
+### Commit with Rstudio
+
+You can also refer to the episode on [how to `git init` using the Rstudio Git tab](14-supplemental-rstudio.md#git-init).
+
+:::::::::::::::::::::::::
+
 ## Find the new files of a local repository
 
 If we look at the [Files tab in the Output pane](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html) to show the directory's contents, it appears that nothing has changed.
