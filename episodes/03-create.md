@@ -271,7 +271,7 @@ $ git help
 Along with tracking information about cases (the project we have already created),
 Dracula would also like to track information about interventions.
 Despite Wolfman's concerns, Dracula creates a `interventions` project inside his `cases`
-project. Additionally, Dracula uses a sequence of [Bash commands](https://swcarpentry.github.io/shell-novice/) and Git in the Rstudio Terminal:
+project. Additionally, Dracula uses a sequence of commands __in the Rstudio Terminal__:
 
 ```bash
 $ mkdir interventions    # make a subdirectory cases/interventions
@@ -321,7 +321,9 @@ If this is unexpected, the here package has a function, `here::dr_here()` that r
 Do you want to create anyway?
 ```
 
-Using the R functions from the `{usethis}` can be less error-prone!
+Using the R functions from the `{usethis}` package can be less error-prone!
+
+Lastly, Dracula used some _Bash commands_ in the Terminal. If you are interested to learn more about them, we invite you to read this tutorial on [Bash commands](https://swcarpentry.github.io/shell-novice/)!
 
 :::::::::::::::::::::::::
 
@@ -374,7 +376,7 @@ Therefore, always check your current directory using the command `pwd`.
 
 ### Use the Rstudio Git tab
 
-We invite you to read the last episode on how to [`git init`](14-supplemental-rstudio.md#git-init) using Rstudio IDE.
+We invite you to [read the supplemental episode](14-supplemental-rstudio.md) on how to `git init` using Rstudio IDE.
 
 :::::::::::::::::::::::::
 -->
