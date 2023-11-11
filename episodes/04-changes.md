@@ -189,12 +189,12 @@ But, what does `staged` mean? We'll see it in this lesson :)
 :::::::::::::::::::::::::
 -->
 
-## [Commit changes]{#commit-changes}
+## Commit changes
 
 Git now knows that it's supposed to keep track of `sitrep.Rmd`,
 but it hasn't recorded these changes as a commit yet.
 To get it to do that,
-in the Terminal,
+__in the Terminal__,
 we need to run one more command:
 
 ```bash
@@ -298,7 +298,7 @@ gert::git_status()
 ## Show the history
 
 If we want to know what we've done recently,
-in the Terminal,
+__in the Terminal__,
 we can ask Git to show us the project's history using `git log`:
 
 ```bash
