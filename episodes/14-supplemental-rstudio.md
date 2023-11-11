@@ -182,8 +182,8 @@ files and directories.
 
 ## Challenge
 
-1. Create a new directory within your project called `graphs`.
-2. Modify the `.gitignore` so that the `graphs` directory is not version controlled.
+1. Create a new directory within your project called `outputs`.
+2. Modify the `.gitignore` so that the `outputs` directory is not version controlled.
 
 :::::::::::::::  solution
 
@@ -192,11 +192,11 @@ files and directories.
 This can be done in Rstudio:
 
 ```r
-dir.create("./graphs")
+usethis::use_directory("outputs")
 ```
 
 Then open up the `.gitignore` file from the right-hand panel of Rstudio and add
-`graphs/` to the list of files to ignore.
+`outputs/` to the list of files to ignore.
 
 
 
