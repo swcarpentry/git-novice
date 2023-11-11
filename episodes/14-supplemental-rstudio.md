@@ -22,6 +22,12 @@ that reason, the popular development environment
 integration with Git. While some advanced Git features still require the
 command-line, RStudio has a nice interface for many common Git operations.
 
+::::::::::::::::: testimonial
+
+We also invite you to read this blog post about [10 Commands to Get Started with Git](https://rviews.rstudio.com/2020/04/23/10-commands-to-get-started-with-git/) with screenshots of the Rstudio web-based interface.
+
+:::::::::::::::::::::::::::::
+
 ## Create project
 
 RStudio allows us to create a [project][rstudio-projects] associated with a
@@ -121,6 +127,14 @@ way we want it, we click "Commit":
 
 ![](fig/RStudio_screenshot_review.png)
 
+<!--
+## git checkout
+
+add figure of the simpler revert button
+-->
+
+## git push
+
 The changes can be pushed by selecting "Push Branch" from the Git menu. There
 are also options to pull from the remote repository, and to view the commit
 history:
@@ -195,7 +209,6 @@ enough to get you started!
 
 [rstudio]: https://www.rstudio.com/
 [rstudio-projects]: https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects
-
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
