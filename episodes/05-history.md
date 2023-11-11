@@ -24,7 +24,7 @@ exercises: 0
 ## the HEAD
 
 As we saw in the previous episode, we can [refer to commits by their
-identifiers](#commit-changes).  You can refer to the *most recent commit* of the working
+identifiers](04-changes.md#commit-changes).  You can refer to the *most recent commit* of the working
 directory by using the identifier `HEAD`.
 
 We've been adding one line at a time to `sitrep.Rmd`, so it's easy to track our
