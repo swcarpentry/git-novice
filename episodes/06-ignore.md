@@ -184,7 +184,12 @@ Further, the discussion page has more detail on ignore rules.
 
 How would you ignore all `.csv` files in your root directory except for
 `final.csv`?
-Hint: Find out what `!` (the exclamation point operator) does
+
+::::::::::::::: hint
+
+Find out what `!` (the exclamation point operator) does in the [Git Reference documentation](../learners/reference.md) for `gitignore`.
+
+:::::::::::::::
 
 :::::::::::::::  solution
 

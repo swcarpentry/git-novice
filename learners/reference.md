@@ -4,6 +4,7 @@ title: 'Git Cheatsheets for Quick Reference'
 
 ## Git Cheatsheets for Quick Reference
 
+- [Git Reference documentation](https://git-scm.com/docs) with technical descriptions of the machinery and how to operate it.
 - Printable Git cheatsheets in several languages are [available here](https://github.github.com/training-kit/) ([English version](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)). More material is available from the [GitHub training website](https://try.github.io/).
 - An [interactive one-page visualisation](https://ndpsoftware.com/git-cheatsheet.html)
   about the relationships between workspace, staging area, local repository, upstream repository, and the commands associated with each (with explanations).
