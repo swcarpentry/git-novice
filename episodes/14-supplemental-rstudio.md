@@ -131,6 +131,10 @@ way we want it, we click "Commit":
 ## git checkout
 
 add figure of the simpler revert button
+
+## create new branch
+
+add figure of button to create and checkout/shift between branches
 -->
 
 ## git push
