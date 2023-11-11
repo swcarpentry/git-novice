@@ -262,6 +262,8 @@ More generally, you can get the list of available `git` commands and further res
 $ git help
 ```
 
+For complementary resources, refer to the [Git Cheatsheets for Quick Reference](../learners/reference.md) inside this tutorial website.
+
 :::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
