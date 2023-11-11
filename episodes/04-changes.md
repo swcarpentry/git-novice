@@ -50,13 +50,8 @@ C:/~/cases
 
 Let's create a file called `sitrep.Rmd` that contains the situation report (Sitrep)
 describing the data in terms of [person, time, and place](https://r4epis.netlify.app/outbreaks/#analyses).
-We'll use the [Source pane](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html) to edit the file.
-<!--you can use whatever editor you like.-->
 
-<!--
-In particular, this does not have to be the `core.editor` you set globally earlier. 
-But remember, the bash command to create or edit a new file will depend on the editor you choose (it might not be `nano`). For a refresher on text editors, check out ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor) in [The Unix Shell](https://swcarpentry.github.io/shell-novice/) lesson.
--->
+We can do this __from the Console__. Run:
 
 ```r
 usethis::edit_file("sitrep.Rmd")
@@ -65,6 +60,14 @@ usethis::edit_file("sitrep.Rmd")
 ```outputs
 • Modify 'sitrep.Rmd'
 ```
+
+This opens the file in the [Source pane](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html) to edit it.
+<!--you can use whatever editor you like.-->
+
+<!--
+In particular, this does not have to be the `core.editor` you set globally earlier. 
+But remember, the bash command to create or edit a new file will depend on the editor you choose (it might not be `nano`). For a refresher on text editors, check out ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor) in [The Unix Shell](https://swcarpentry.github.io/shell-novice/) lesson.
+-->
 
 Type the text below into the `sitrep.Rmd` file:
 
@@ -315,11 +318,11 @@ the commit's author,
 when it was created,
 and the log message Git was given when the commit was created.
 
-::::::::::::::::::: instructor
+::::::::::::::::::: testimonial
 
-### Definition: git status, git log
+### These commands are so similar!
 
-The git status command displays the state of the working directory and the staging area. It lets you see which changes have been staged, which haven’t, and which files aren’t being tracked by Git. Status output does not show you any information regarding the committed project history. For this, you need to use git log. [(Atlassian, 2023)](https://www.atlassian.com/git/tutorials/inspecting-a-repository)
+The `git status` command displays the state of the _working directory_ and the _staging area_. It lets you see which changes have been staged, which haven’t, and which files aren’t being tracked by Git. __Status output does not show you__ any information regarding the committed project history (the _local repository_). For this, you need to use `git log`. [(Atlassian, 2023)](https://www.atlassian.com/git/tutorials/inspecting-a-repository)
 
 ::::::::::::::::::::::::::::::
 
@@ -548,7 +551,7 @@ than you would like!
 
 ### Checklist
 
-![Use `git status` frequently. `git add` your changes before you `git commit` them to the Local repository. Use the `git log` to get the history of changes in it. Use `git diff` to compare these changes.](fig/cut-git-verb_map-07.png)
+![Use `git status` to display the state of the working directory and the staging area. `git add` your changes before you `git commit` them to the Local repository. Use the `git log` to get the history of changes in it. Use `git diff` to compare these changes.](fig/cut-git-verb_map-07.png)
 
 :::::::::::::::::::::::::::
 
@@ -1003,7 +1006,7 @@ $ git diff me.md
 
 ### Use the Rstudio Git tab
 
-We invite you to read the last episode on how to [`git commit`, `git log`, and `git diff`](14-supplemental-rstudio.md) using the Rstudio Git tab.
+We invite you to [read the supplemental episode](14-supplemental-rstudio.md) on how to `git commit`, `git log`, and `git diff` using the Rstudio Git tab.
 
 :::::::::::::::::::::::::
 
