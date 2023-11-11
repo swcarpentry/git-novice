@@ -181,7 +181,7 @@ If you want to save your changes and quit, press <kbd>Esc</kbd> then type `:wq` 
 
 ## Set up your GitHub token
 
-To interact with GitHub we need to include credentials in the request. We are going to configure one type of credential called _Personal Access Token (PAT)_. We need this to prove that we are a specific GitHub user, allowed to do whatever we’re asking to do. ([Jennifer Bryan, 2021](https://happygitwithr.com/https-pat.html))
+To interact with GitHub we need to include credentials in the request. We are going to configure one type of credential called _Personal Access Token (PAT)_. We need this to prove that we are a specific GitHub user, allowed to do whatever we’re asking to do. ([Bryan, 2021](https://happygitwithr.com/https-pat.html))
 
 __First, let's create your token.__
 
@@ -201,7 +201,7 @@ Copy your token. Save it for the next step.
 
 __Second, let's configure your token.__
 
-To complete the configuration of your token use `gitcreds::gitcreds_set()` ([Bryan, 2023](https://happygitwithr.com/https-pat.html)), then accept that you want to `Replace these credentials`. Write the corresponding number and press ENTER.
+To complete the configuration of your token use `gitcreds::gitcreds_set()` ([Bryan, 2021](https://happygitwithr.com/https-pat.html)), then accept that you want to `Replace these credentials`. Write the corresponding number and press ENTER.
 
 ```r
 gitcreds::gitcreds_set()
