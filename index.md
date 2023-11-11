@@ -66,7 +66,7 @@ to be shared can and should be stored in a version control system.
 
 ## Prerequisites
 
-In this lesson we use Git from Rstudio console and terminal.
+In this lesson we use Git from Rstudio.
 Some previous experience with R and Bash is expected,
 *but isn't mandatory*.
 
