@@ -17,6 +17,16 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+::::::::::::::::: prereq
+
+### PREREQUISITES 
+
+When using `usethis::git_sitrep()`, check if there is no `✖ ...` line in the output with an error message. 
+
+If you an error message like `✖ Token lacks ...` or `✖ Can't retrieve registered email`, [follow the steps in episode 2 to solve it](02-setup#set-up-your-github-token).
+
+::::::::::::::::::::::::
+
 Version control really comes into its own when we begin to collaborate with
 other people.  We already have most of the machinery we need to do this; the
 only thing missing is to copy changes from one repository to another.
@@ -34,11 +44,11 @@ world. To this end we are going to create a *remote* repository that will be lin
 ## 1\. Create a remote repository
 
 Log in to [GitHub](https://github.com), then click on the icon in the top right corner to
-create a new repository called `planets`:
+create a new repository called `cases`:
 
 ![](fig/github-create-repo-01.png){alt='Creating a Repository on GitHub (Step 1)'}
 
-Name your repository "planets" and then click "Create Repository".
+Name your repository "cases" and then click "Create Repository".
 
 Note: Since this repository will be connected to a local repository, it needs to be empty. Leave
 "Initialize this repository with a README" unchecked, and keep "None" as options for both "Add
@@ -55,13 +65,13 @@ information on how to configure your local repository:
 This effectively does the following on GitHub's servers:
 
 ```bash
-$ mkdir planets
-$ cd planets
-$ git init
+$ mkdir cases # creates a working directory 
+$ cd cases    # go into cases directory
+$ git init    # make the cases directory a Git repository
 ```
 
 If you remember back to the earlier [episode](04-changes.md) where we added and
-committed our earlier work on `mars.txt`, we had a diagram of the local repository
+committed our earlier work on `sitrep.Rmd`, we had a diagram of the local repository
 which looked like this:
 
 ![](fig/git-staging-area.svg){alt='The Local Repository with Git Staging Area'}
@@ -70,7 +80,7 @@ Now that we have two repositories, we need a diagram like this:
 
 ![](fig/git-freshly-made-github-repo.svg){alt='Freshly-Made GitHub Repository'}
 
-Note that our local repository still contains our earlier work on `mars.txt`, but the
+Note that our local repository still contains our earlier work on `sitrep.Rmd`, but the
 remote repository on GitHub appears empty as it doesn't contain any files yet.
 
 ## 2\. Connect local to remote repository
@@ -97,11 +107,17 @@ minimum level for GitHub.
 
 ![](fig/github-change-repo-string.png){alt='Changing the Repository URL on GitHub'}
 
-Copy that URL from the browser, go into the local `planets` repository, and run
+Copy that URL from the browser, go into the local `cases` repository, and run
 this command:
 
+<!--
 ```bash
-$ git remote add origin git@github.com:vlad/planets.git
+$ git remote add origin https://github.com/avallecam/interventions.git
+```
+-->
+
+```bash
+$ git remote add origin git@github.com:vlad/cases.git
 ```
 
 Make sure to use the URL for your repository rather than Vlad's: the only
@@ -118,13 +134,54 @@ $ git remote -v
 ```
 
 ```output
-origin   git@github.com:vlad/planets.git (fetch)
-origin   git@github.com:vlad/planets.git (push)
+origin   git@github.com:vlad/cases.git (fetch)
+origin   git@github.com:vlad/cases.git (push)
+```
+
+You can also check this steps with `{usethis}`:
+
+```r
+usethis::git_sitrep()
+```
+
+The output in the last `── GitHub project` section should look like this:
+
+```output
+── GitHub project 
+• Type = 'ours'
+• Host = 'https://github.com'
+• Config supports a pull request = TRUE
+• origin = 'vlad/cases' (can push)
+• upstream = <not configured>
+• Desc = 'origin' is both the source and primary repo.
 ```
 
 We'll discuss remotes in more detail in the next episode, while
 talking about how they might be used for collaboration.
 
+## In one step
+
+You can use `{usethis}` to create a remote repository and connect the local and the remote with one function. 
+
+Let's try this with a new repository for `interventions`.
+
+__In the Console__, run:
+
+```r
+usethis::use_github()
+```
+
+```output
+ℹ Defaulting to 'https' Git protocol
+✔ Creating GitHub repository 'vlad/cases'
+✔ Setting remote 'origin' to 'https://github.com/vlad/cases.git'
+✔ Pushing 'main' branch to GitHub and setting 'origin/main' as upstream branch
+✔ Opening URL 'https://github.com/vlad/cases'
+```
+
+This will open a new tab in your web browser.
+
+<!--
 ## 3\. SSH Background and Setup
 
 Before Dracula can connect to a remote repository, he needs to set up a way for his computer to authenticate with GitHub so it knows it's him trying to connect to his remote repository.
@@ -288,6 +345,7 @@ Hi Vlad! You've successfully authenticated, but GitHub does not provide shell ac
 ```
 
 Good! This output confirms that the SSH key works as intended. We are now ready to push our work to the remote repository.
+-->
 
 ## 4\. Push local changes to a remote
 
@@ -309,7 +367,7 @@ Compressing objects: 100% (11/11), done.
 Writing objects: 100% (16/16), 1.45 KiB | 372.00 KiB/s, done.
 Total 16 (delta 2), reused 0 (delta 0)
 remote: Resolving deltas: 100% (2/2), done.
-To https://github.com/vlad/planets.git
+To https://github.com/vlad/cases.git
  * [new branch]      main -> main
 ```
 
@@ -379,6 +437,8 @@ simply use `git push -u origin main` once the remote has been set up.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+## Pull changes
+
 We can pull changes from the remote repository to the local one as well:
 
 ```bash
@@ -386,7 +446,7 @@ $ git pull origin main
 ```
 
 ```output
-From https://github.com/vlad/planets
+From https://github.com/vlad/cases
  * branch            main     -> FETCH_HEAD
 Already up-to-date.
 ```
@@ -399,7 +459,7 @@ GitHub, though, this command would download them to our local repository.
 
 ## GitHub GUI
 
-Browse to your `planets` repository on GitHub.
+Browse to your `cases` repository on GitHub.
 Underneath the Code button, find and click on the text that says "XX commits" (where "XX" is some number).
 Hover over, and click on, the three buttons to the right of each commit.
 What information can you gather/explore from these buttons?
@@ -516,7 +576,7 @@ remote: Enumerating objects: 3, done.
 remote: Counting objects: 100% (3/3), done.
 remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
 Unpacking objects: 100% (3/3), done.
-From https://github.com/vlad/planets
+From https://github.com/vlad/cases
  * branch            main     -> FETCH_HEAD
  * [new branch]      main     -> origin/main
 fatal: refusing to merge unrelated histories
@@ -531,7 +591,7 @@ $ git pull --allow-unrelated-histories origin main
 ```
 
 ```output
-From https://github.com/vlad/planets
+From https://github.com/vlad/cases
  * branch            main     -> FETCH_HEAD
 Merge made by the 'recursive' strategy.
 README.md | 1 +
