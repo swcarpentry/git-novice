@@ -33,6 +33,14 @@ In this episode, we are going to learn how to initialize Git to create a Local R
 
 Let's start with a new R project in Rstudio.
 
+::::::::::::::::: prereq
+
+### PREREQUISITES
+
+To start, you need to be out of any R project. In Rstudio, close you Project from `File` > `Close Project`. You can confirm this in the upper right corner `Project: (None)`.
+
+::::::::::::::::::::::::
+
 ## Create a local repository
 
 Once Git is configured,
@@ -58,7 +66,9 @@ Courtesy NASA/JPL-Caltech.
 [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en).
 -->
 
-First, let's create a new project folder for our work. If using RStudio desktop, the project is opened in a new session. Otherwise, the working directory and active project is changed:
+First, let's create a new project folder for our work. Create a new project as you like. Here we are going to use functions from the `{usethis}` package.
+
+If using RStudio desktop, the project is opened in a new session. Otherwise, the working directory and active project is changed:
 
 ```r
 usethis::create_project(path = "cases")
