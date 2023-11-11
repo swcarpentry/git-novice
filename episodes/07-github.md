@@ -23,7 +23,7 @@ exercises: 0
 
 When using `usethis::git_sitrep()`, check if there is no `✖ ...` line in the output with an error message. 
 
-If you an error message like `✖ Token lacks ...` or `✖ Can't retrieve registered email`, [follow the steps in episode 2 to solve it](02-setup#set-up-your-github-token).
+If you an error message like `✖ Token lacks ...` or `✖ Can't retrieve registered email`, [follow the steps in episode 2 to solve it](02-setup.md#set-up-your-github-token).
 
 ::::::::::::::::::::::::
 
@@ -110,7 +110,9 @@ minimum level for GitHub.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+<!--
 ![](fig/github-change-repo-string.png){alt='Changing the Repository URL on GitHub'}
+-->
 
 Copy that URL from the browser, go into the local `cases` repository, and run
 this command:
@@ -149,7 +151,7 @@ You can also check this steps with `{usethis}`:
 usethis::git_sitrep()
 ```
 
-The output in the last `── GitHub project` section should look like this:
+The output in the last section called `── GitHub project` should look like this:
 
 ```output
 ── GitHub project 
@@ -330,7 +332,7 @@ Hi Vlad! You've successfully authenticated, but GitHub does not provide shell ac
 Good! This output confirms that the SSH key works as intended. We are now ready to push our work to the remote repository.
 -->
 
-## 4\. Push local changes to a remote
+## 3\. Push local changes to a remote
 
 Now that authentication is setup, we can return to the remote.  This command will push the changes from
 our local repository to the repository on GitHub:
@@ -423,28 +425,30 @@ simply use `git push -u origin main` once the remote has been set up.
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-## In one step
+## All in one step
 
-You can use `{usethis}` to (i) create a remote repository, (ii) connect the local and the remote with one function, and (iii) push your local changes to a remote.
+You can use `usethis::use_github()` to _create_ a remote repository, _connect_ the local and the remote, and _push_ your local changes to a remote.
 
 ::::::::::::::::::::::::::::::::: challenge
 
-Along with tracking information about cases (the project we have already created),
+For the Outbreak response, along with tracking information about cases (the project we have already created),
 Dracula would also like to track information about interventions.
 
 Create new local repository for `interventions` and connect it with a remote repository:
 
-- First, if you are in Rstudio, close you Project from `File` > `Close Project`.
+- First, if you are in Rstudio, close your R Project from `File` > `Close Project`.
 - __In the Console__, run:
 
 ```r
 # create a new R project in a new directory
 usethis::create_project(path = "interventions")
 
-# make the interventions directory a Git repository
+# make the interventions directory a Git local repository
 usethis::use_git()
 
-# connect local repository with remote repository
+# 1. create a GitHub remote repository
+# 2. connect local with remote
+# 3. push content to remote
 usethis::use_github()
 ```
 
@@ -632,7 +636,8 @@ create mode 100644 README.md
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - A local Git repository can be connected to one or more remote repositories.
-- Use the SSH protocol to connect to remote repositories.
+<!--- Use the SSH protocol to connect to remote repositories.-->
+- Use the HTTPS protocol to connect to remote repositories.
 - `git push` copies changes from a local repository to a remote repository.
 - `git pull` copies changes from a remote repository to a local repository.
 
