@@ -233,7 +233,11 @@ If you want to save your changes and quit, press <kbd>Esc</kbd> then type `:wq` 
 
 ### Do we need to change git core editor?
 
-While using Rstudio, Dracula does not need to set a core text editor. However, if needed, Dracula can set his favorite text editor following this table:
+With Rstudio you don't need to do change any editor. You can open all your files in the Source pane.
+
+Also, to write commit messages you can use the Rstudio IDE. We invite you to [read the supplemental episode](14-supplemental-rstudio.md).
+
+However, if needed, Dracula can set his favorite text editor following this table:
 
 | Editor                                | Configuration command | 
 | :-----------                          | :------------------------------ |
