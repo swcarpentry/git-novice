@@ -377,7 +377,6 @@ And if necessary, change your configuration using the
 same commands to update your email address.
 This can be done as many times as you want.
 
-<!--
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -401,7 +400,6 @@ $ git config --global --unset https.proxy
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
--->
 
 <!--
 
