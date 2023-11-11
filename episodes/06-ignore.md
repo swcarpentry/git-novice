@@ -23,8 +23,8 @@ or intermediate files created during data analysis?
 Let's create a few dummy files:
 
 ```bash
-$ mkdir results
-$ touch a.csv b.csv c.csv results/a.out results/b.out
+$ mkdir figures
+$ touch a.csv b.csv c.csv figures/a.png figures/b.png
 ```
 
 and see what Git says:
@@ -41,7 +41,7 @@ Untracked files:
 	a.csv
 	b.csv
 	c.csv
-	results/
+	figures/
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
@@ -53,18 +53,24 @@ so let's tell Git to ignore them.
 
 We do this by creating a file in the root directory of our project called `.gitignore`:
 
+```r
+usethis::edit_file(".gitignore")
+```
+
+<!--
 ```bash
 $ nano .gitignore
 $ cat .gitignore
 ```
+-->
 
 ```output
 *.csv
-results/
+figures/
 ```
 
 These patterns tell Git to ignore any file whose name ends in `.csv`
-and everything in the `results` directory.
+and everything in the `figures` directory.
 (If any of these files were already being tracked,
 Git would continue to track them.)
 
@@ -93,7 +99,7 @@ Let's add and commit `.gitignore`:
 
 ```bash
 $ git add .gitignore
-$ git commit -m "Ignore data files and the results folder"
+$ git commit -m "Ignore data files and the figures folder"
 $ git status
 ```
 
@@ -131,7 +137,7 @@ Ignored files:
         a.csv
         b.csv
         c.csv
-        results/
+        figures/
 
 nothing to commit, working tree clean
 ```
@@ -143,27 +149,34 @@ nothing to commit, working tree clean
 Given a directory structure that looks like:
 
 ```bash
+outputs/paper
+outputs/templates
+```
+
+<!--
+```bash
 results/data
 results/plots
 ```
+-->
 
-How would you ignore only `results/plots` and not `results/data`?
+How would you ignore only `outputs/templates` and not `outputs/paper`?
 
 :::::::::::::::  solution
 
 ## Solution
 
 If you only want to ignore the contents of
-`results/plots`, you can change your `.gitignore` to ignore
-only the `/plots/` subfolder by adding the following line to
+`outputs/templates`, you can change your `.gitignore` to ignore
+only the `/templates/` subfolder by adding the following line to
 your .gitignore:
 
 ```output
-results/plots/
+outputs/templates/
 ```
 
-This line will ensure only the contents of `results/plots` is ignored, and
-not the contents of `results/data`.
+This line will ensure only the contents of `outputs/templates` is ignored, and
+not the contents of `outputs/paper`.
 
 As with most programming issues, there
 are a few alternative ways that one may ensure this ignore rule is followed.
@@ -222,13 +235,22 @@ Given a directory structure that looks similar to the earlier Nested Files
 exercise, but with a slightly different directory structure:
 
 ```bash
+outputs/paper
+outputs/templates
+outputs/slides
+outputs/tables
+```
+
+<!--
+```bash
 results/data
 results/images
 results/plots
 results/analysis
 ```
+-->
 
-How would you ignore all of the contents in the results folder, but not `results/data`?
+How would you ignore all of the contents in the outputs folder, but not `outputs/paper`?
 
 Hint: think a bit about how you created an exception with the `!` operator
 before.
@@ -238,13 +260,13 @@ before.
 ## Solution
 
 If you want to ignore the contents of
-`results/` but not those of `results/data/`, you can change your `.gitignore` to ignore
-the contents of results folder, but create an exception for the contents of the
-`results/data` subfolder. Your .gitignore would look like this:
+`outputs/` but not those of `outputs/paper/`, you can change your `.gitignore` to ignore
+the contents of outputs folder, but create an exception for the contents of the
+`outputs/paper` subfolder. Your .gitignore would look like this:
 
 ```output
-results/*               # ignore everything in results folder
-!results/data/          # do not ignore results/data/ contents
+outputs/*               # ignore everything in outputs folder
+!outputs/paper/          # do not ignore outputs/paper/ contents
 ```
 
 :::::::::::::::::::::::::
@@ -253,28 +275,28 @@ results/*               # ignore everything in results folder
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Ignoring all data Files in a Directory
+## Ignoring all raw-data Files in a Directory
 
 Assuming you have an empty .gitignore file, and given a directory structure that looks like:
 
 ```bash
-results/data/position/gps/a.csv
-results/data/position/gps/b.csv
-results/data/position/gps/c.csv
-results/data/position/gps/info.txt
-results/plots
+data/raw-data/position/gps/a.csv
+data/raw-data/position/gps/b.csv
+data/raw-data/position/gps/c.csv
+data/raw-data/position/gps/info.txt
+data/derived-data
 ```
 
 What's the shortest `.gitignore` rule you could write to ignore all `.csv`
-files in `result/data/position/gps`? Do not ignore the `info.txt`.
+files in `data/raw-data/position/gps`? Do not ignore the `info.txt`.
 
 :::::::::::::::  solution
 
 ## Solution
 
-Appending `results/data/position/gps/*.csv` will match every file in `results/data/position/gps`
+Appending `data/raw-data/position/gps/*.csv` will match every file in `data/raw-data/position/gps`
 that ends with `.csv`.
-The file `results/data/position/gps/info.txt` will not be ignored.
+The file `data/raw-data/position/gps/info.txt` will not be ignored.
 
 
 
@@ -284,17 +306,26 @@ The file `results/data/position/gps/info.txt` will not be ignored.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Ignoring all data Files in the repository
+## Ignoring all CSV data Files in the repository
 
 Let us assume you have many `.csv` files in different subdirectories of your repository.
 For example, you might have:
 
+```bash
+outputs/a.csv
+data/raw-data/b.csv
+data/derived-data/c.csv
+data/derived-data/variation_1/d.csv
+```
+
+<!--
 ```bash
 results/a.csv
 data/experiment_1/b.csv
 data/experiment_2/c.csv
 data/experiment_2/variation_1/d.csv
 ```
+-->
 
 How do you ignore all the `.csv` files, without explicitly listing the names of the corresponding folders?
 
