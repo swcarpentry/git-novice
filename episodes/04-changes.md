@@ -770,7 +770,7 @@ Two important facts you should know about directories in Git.
 ### Git track files, not empty directories
 
 1. Git does not track directories on their own, only files within them.
-  Try it for yourself:
+  Try it for yourself using the Terminal:
   
   ```bash
   $ mkdir analyses
