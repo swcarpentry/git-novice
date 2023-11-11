@@ -128,6 +128,8 @@ way we want it, we click "Commit":
 ![](fig/RStudio_screenshot_review.png)
 
 <!--
+FIXME
+
 ## git checkout
 
 add figure of the simpler revert button
