@@ -17,10 +17,12 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+## Ignore files
+
 What if we have files that we do not want Git to track for us,
 like backup files created by our editor
 or intermediate files created during data analysis?
-Let's create a few dummy files:
+Let's create a few dummy files __in the Terminal__:
 
 ```bash
 $ mkdir figures
@@ -51,7 +53,7 @@ What's worse,
 having them all listed could distract us from changes that actually matter,
 so let's tell Git to ignore them.
 
-We do this by creating a file in the root directory of our project called `.gitignore`:
+We do this by creating a file in the root directory of our project called `.gitignore`. __In the console__, let's use:
 
 ```r
 usethis::edit_file(".gitignore")
@@ -64,6 +66,8 @@ $ cat .gitignore
 ```
 -->
 
+Write these patterns and save the file:
+
 ```output
 *.csv
 figures/
@@ -75,7 +79,7 @@ and everything in the `figures` directory.
 Git would continue to track them.)
 
 Once we have created this file,
-the output of `git status` is much cleaner:
+the output of `git status` is much cleaner. __In the terminal__:
 
 ```bash
 $ git status
@@ -141,6 +145,8 @@ Ignored files:
 
 nothing to commit, working tree clean
 ```
+
+## Challenges
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
