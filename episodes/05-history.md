@@ -21,7 +21,7 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## the HEAD
+## The HEAD
 
 As we saw in the previous episode, we can [refer to commits by their
 identifiers](04-changes.md#commit-changes).  You can refer to the *most recent commit* of the working
@@ -98,7 +98,7 @@ index df0654a..b36abfd 100644
 +Maps can aid in the identification of hotspots
 ```
 
-## Show changes in older commits
+## Show changes in old commits
 
 We could also use `git show` which shows us what changes we made at an older commit as
 well as the commit message, rather than the *differences* between a commit and our
@@ -132,7 +132,7 @@ so `HEAD~1`
 means "the previous commit",
 while `HEAD~123` goes back 123 commits from where we are now.
 
-## Unique IDs
+## Use commit unique ID
 
 We can also refer to commits using
 those long strings of digits and letters
