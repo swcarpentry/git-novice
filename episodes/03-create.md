@@ -374,9 +374,7 @@ Therefore, always check your current directory using the command `pwd`.
 
 ### Use the Rstudio Git tab
 
-You can also refer to the last episode on how to:
-
-- [`git init`](14-supplemental-rstudio.md#git-init).
+We invite you to read the last episode on how to [`git init`](14-supplemental-rstudio.md#git-init) using Rstudio IDE.
 
 :::::::::::::::::::::::::
 -->
