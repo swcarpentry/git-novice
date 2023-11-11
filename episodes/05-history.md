@@ -271,16 +271,6 @@ by using `git checkout`:
 $ git checkout HEAD sitrep.Rmd
 ```
 
-<!--
-::::::::::::::::: callout
-
-### Checkout with Rstudio
-
-You can also refer to the episode on [how to `git checkout` using the Rstudio Git tab](14-supplemental-rstudio.md#git-checkout).
-
-:::::::::::::::::::::::::
--->
-
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Don't Lose Your HEAD
@@ -461,6 +451,16 @@ else has committed changes to the repository.
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::: testimonial
+
+### These commands are so similar!
+
+Commands like `git checkout` and `git revert` are useful but so similar that it's very easy to mix them up!
+
+With the concepts learned in this episode, we invite you to read this chapter on [resetting, checking out and reverting](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting).
+
+:::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
