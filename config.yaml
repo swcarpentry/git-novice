@@ -66,6 +66,7 @@ episodes:
 - 05-history.md
 - 06-ignore.md
 - 07-github.md
+- 13-hosting.md
 
 # batch #2
 
@@ -79,7 +80,6 @@ episodes:
 - 14-supplemental-rstudio.md
 
 # to research-compendium
-# - 13-hosting.md
 # - 10-open.md
 # - 11-licensing.md
 # - 12-citation.md
