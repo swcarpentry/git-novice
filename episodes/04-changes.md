@@ -258,14 +258,6 @@ It is possible to reconfigure the text editor for Git whenever you want to chang
 changes made in the commit. Generally, the message should complete the sentence "If applied, this commit will" <commit message here>.
 If you want to go into more detail, add a blank line between the summary line and your additional notes. Use this additional space to explain why you made changes and/or what their impact will be.
 
-::::::::::::::::: callout
-
-### Commit with Rstudio
-
-You can also refer to the episode on [how to `git commit` using the Rstudio Git tab](14-supplemental-rstudio.md#git-commit).
-
-:::::::::::::::::::::::::
-
 If we run `git status` now:
 
 ```bash
@@ -362,14 +354,6 @@ gert::git_log()
 
 :::::::::::::::::::::::::
 -->
-
-::::::::::::::::: callout
-
-### Log with Rstudio
-
-You can also refer to the episode on [how to `git log` using the Rstudio Git tab](14-supplemental-rstudio.md#git-log).
-
-:::::::::::::::::::::::::
 
 ## Compare changes
 
@@ -470,14 +454,6 @@ gert::git_diff()
 
 :::::::::::::::::::::::::
 -->
-
-::::::::::::::::: callout
-
-### Diff with Rstudio
-
-You can also refer to the episode on [how to `git diff` using the Rstudio Git tab](14-supplemental-rstudio.md#git-diff).
-
-:::::::::::::::::::::::::
 
 ## Staging area
 
@@ -1023,7 +999,13 @@ $ git diff me.md
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+::::::::::::::::: testimonial
 
+### Use the Rstudio Git tab
+
+We invite you to read the last episode on how to [`git commit`, `git log`, and `git diff`](14-supplemental-rstudio.md) using the Rstudio Git tab.
+
+:::::::::::::::::::::::::
 
 [commit-messages]: https://chris.beams.io/posts/git-commit/
 [git-references]: https://git-scm.com/book/en/v2/Git-Internals-Git-References
