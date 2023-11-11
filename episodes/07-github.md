@@ -92,16 +92,21 @@ identify it:
 
 ![](fig/github-find-repo-string.png){alt='Where to Find Repository URL on GitHub'}
 
+<!--
 Click on the 'SSH' link to change the [protocol](../learners/reference.md#protocol) from HTTPS to SSH.
+-->
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ## HTTPS vs. SSH
 
+The current recommendation is HTTPS because it is the easiest to set up on the widest range of networks and platforms, and by users who are new to all this. HTTPS is less likely to be blocked by a firewall. ([StakOverflow, 2012](https://stackoverflow.com/a/11041782/6702544))
+
+<!--
 We use SSH here because, while it requires some additional configuration, it is a
 security protocol widely used by many applications.  The steps below describe SSH at a
 minimum level for GitHub. 
-
+-->
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -110,15 +115,15 @@ minimum level for GitHub.
 Copy that URL from the browser, go into the local `cases` repository, and run
 this command:
 
-<!--
 ```bash
-$ git remote add origin https://github.com/avallecam/interventions.git
+$ git remote add origin https://github.com/vlad/cases.git
 ```
--->
 
+<!--
 ```bash
 $ git remote add origin git@github.com:vlad/cases.git
 ```
+-->
 
 Make sure to use the URL for your repository rather than Vlad's: the only
 difference should be your username instead of `vlad`.
@@ -158,28 +163,6 @@ The output in the last `── GitHub project` section should look like this:
 
 We'll discuss remotes in more detail in the next episode, while
 talking about how they might be used for collaboration.
-
-## In one step
-
-You can use `{usethis}` to create a remote repository and connect the local and the remote with one function. 
-
-Let's try this with a new repository for `interventions`.
-
-__In the Console__, run:
-
-```r
-usethis::use_github()
-```
-
-```output
-ℹ Defaulting to 'https' Git protocol
-✔ Creating GitHub repository 'vlad/cases'
-✔ Setting remote 'origin' to 'https://github.com/vlad/cases.git'
-✔ Pushing 'main' branch to GitHub and setting 'origin/main' as upstream branch
-✔ Opening URL 'https://github.com/vlad/cases'
-```
-
-This will open a new tab in your web browser.
 
 <!--
 ## 3\. SSH Background and Setup
@@ -394,6 +377,7 @@ $ git config --global --unset https.proxy
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+<!--
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Password Managers
@@ -419,6 +403,7 @@ to make Git default to using the terminal for usernames and passwords.
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+-->
 
 Our local and remote repositories are now in this state:
 
@@ -436,6 +421,47 @@ simply use `git push -u origin main` once the remote has been set up.
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+## In one step
+
+You can use `{usethis}` to (i) create a remote repository, (ii) connect the local and the remote with one function, and (iii) push your local changes to a remote.
+
+::::::::::::::::::::::::::::::::: challenge
+
+Along with tracking information about cases (the project we have already created),
+Dracula would also like to track information about interventions.
+
+Create new local repository for `interventions` and connect it with a remote repository:
+
+- First, if you are in Rstudio, close you Project from `File` > `Close Project`.
+- __In the Console__, run:
+
+```r
+# create a new R project in a new directory
+usethis::create_project(path = "interventions")
+
+# make the interventions directory a Git repository
+usethis::use_git()
+
+# connect local repository with remote repository
+usethis::use_github()
+```
+
+```output
+ℹ Defaulting to 'https' Git protocol
+✔ Creating GitHub repository 'vlad/cases'
+✔ Setting remote 'origin' to 'https://github.com/vlad/cases.git'
+✔ Pushing 'main' branch to GitHub and setting 'origin/main' as upstream branch
+✔ Opening URL 'https://github.com/vlad/cases'
+```
+
+This will open a new tab in your web browser with the URL path of your remote repository in GitHub.
+
+
+:::::::::::::::::
+
+
 
 ## Pull changes
 
