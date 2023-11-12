@@ -17,45 +17,71 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-As soon as people can work in parallel, they'll likely step on each other's
+## A story of two collaborators
+
+Two users can make independent
+sets of changes on the same document.
+
+![](fig/versions.svg){alt='Different Versions Can be Saved'}
+
+Unless multiple users make changes to the same section of the document - a conflict - you can
+incorporate two sets of changes into the same base document.
+
+![](fig/merge.svg){alt='Multiple Versions Can be Merged'}
+
+However, as soon as people can work in parallel, they'll likely step on each other's
 toes.  This will even happen with a single person: if we are working on
 a piece of software on both our laptop and a server in the lab, we could make
 different changes to each copy.  Version control helps us manage these
 [conflicts](../learners/reference.md#conflict) by giving us tools to
 [resolve](../learners/reference.md#resolve) overlapping changes.
 
+## Create a conflict
+
 To see how we can resolve conflicts, we must first create one.  The file
-`mars.txt` currently looks like this in both partners' copies of our `planets`
+`sitrep.Rmd` currently looks like this in both partners' copies of our `cases`
 repository:
 
-```bash
-$ cat mars.txt
+```r
+usethis::edit_file("sitrep.Rmd")
 ```
+
+<!--
+```bash
+$ cat sitrep.Rmd
+```
+-->
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
+Comparison of attack rates in different age groups
+This can identify priority groups for interventions
+Maps illustrate the spread and impact of outbreak
 ```
 
-Let's add a line to the collaborator's copy only:
+Let's add a line to the __collaborator's__ copy only:
 
+```r
+usethis::edit_file("sitrep.Rmd")
+```
+
+<!--
 ```bash
-$ nano mars.txt
-$ cat mars.txt
+$ nano sitrep.Rmd
+$ cat sitrep.Rmd
 ```
+-->
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
+Comparison of attack rates in different age groups
+This can identify priority groups for interventions
+Maps illustrate the spread and impact of outbreak
 This line added to Wolfman's copy
 ```
 
 and then push the change to GitHub:
 
 ```bash
-$ git add mars.txt
+$ git add sitrep.Rmd
 $ git commit -m "Add a line in our home copy"
 ```
 
@@ -76,30 +102,36 @@ Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 331 bytes | 331.00 KiB/s, done.
 Total 3 (delta 2), reused 0 (delta 0)
 remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
-To https://github.com/vlad/planets.git
+To https://github.com/vlad/cases.git
    29aba7c..dabb4c8  main -> main
 ```
 
-Now let's have the owner
+Now let's have the __owner__
 make a different change to their copy
 *without* updating from GitHub:
 
-```bash
-$ nano mars.txt
-$ cat mars.txt
+```r
+usethis::edit_file("sitrep.Rmd")
 ```
 
+<!--
+```bash
+$ nano sitrep.Rmd
+$ cat sitrep.Rmd
+```
+-->
+
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
+Comparison of attack rates in different age groups
+This can identify priority groups for interventions
+Maps illustrate the spread and impact of outbreak
 We added a different line in the other copy
 ```
 
 We can commit the change locally:
 
 ```bash
-$ git add mars.txt
+$ git add sitrep.Rmd
 $ git commit -m "Add a line in my copy"
 ```
 
@@ -115,9 +147,9 @@ $ git push origin main
 ```
 
 ```output
-To https://github.com/vlad/planets.git
+To https://github.com/vlad/cases.git
  ! [rejected]        main -> main (fetch first)
-error: failed to push some refs to 'https://github.com/vlad/planets.git'
+error: failed to push some refs to 'https://github.com/vlad/cases.git'
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
@@ -129,8 +161,13 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 Git rejects the push because it detects that the remote repository has new updates that have not been
 incorporated into the local branch.
-What we have to do is pull the changes from GitHub,
-[merge](../learners/reference.md#merge) them into the copy we're currently working in, and then push that.
+What we have to do is `pull` the changes from GitHub,
+[`merge`](../learners/reference.md#merge) them into the copy we're currently working in, and then push that.
+
+## Resolve conflict
+
+The __owner__ need to solve this conflict to be able to push to the remote repository. 
+
 Let's start by pulling:
 
 ```bash
@@ -143,11 +180,11 @@ remote: Counting objects: 100% (5/5), done.
 remote: Compressing objects: 100% (1/1), done.
 remote: Total 3 (delta 2), reused 3 (delta 2), pack-reused 0
 Unpacking objects: 100% (3/3), done.
-From https://github.com/vlad/planets
+From https://github.com/vlad/cases
  * branch            main     -> FETCH_HEAD
     29aba7c..dabb4c8  main     -> origin/main
-Auto-merging mars.txt
-CONFLICT (content): Merge conflict in mars.txt
+Auto-merging sitrep.Rmd
+CONFLICT (content): Merge conflict in sitrep.Rmd
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
@@ -158,14 +195,20 @@ overlap with those made to the remote repository, and therefore refuses to merge
 stop us from trampling on our previous work. The conflict is marked in
 in the affected file:
 
-```bash
-$ cat mars.txt
+```r
+usethis::edit_file("sitrep.Rmd")
 ```
 
+<!--
+```bash
+$ cat sitrep.Rmd
+```
+-->
+
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
+Comparison of attack rates in different age groups
+This can identify priority groups for interventions
+Maps illustrate the spread and impact of outbreak
 <<<<<<< HEAD
 We added a different line in the other copy
 =======
@@ -186,23 +229,29 @@ the change made in the remote repository, write something new to replace both,
 or get rid of the change entirely.
 Let's replace both so that the file looks like this:
 
-```bash
-$ cat mars.txt
+```r
+usethis::edit_file("sitrep.Rmd")
 ```
 
+<!--
+```bash
+$ cat sitrep.Rmd
+```
+-->
+
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
+Comparison of attack rates in different age groups
+This can identify priority groups for interventions
+Maps illustrate the spread and impact of outbreak
 We removed the conflict on this line
 ```
 
 To finish merging,
-we add `mars.txt` to the changes being made by the merge
+we add `sitrep.Rmd` to the changes being made by the merge
 and then commit:
 
 ```bash
-$ git add mars.txt
+$ git add sitrep.Rmd
 $ git status
 ```
 
@@ -213,7 +262,7 @@ All conflicts fixed but you are still merging.
 
 Changes to be committed:
 
-	modified:   mars.txt
+	modified:   sitrep.Rmd
 
 ```
 
@@ -239,13 +288,15 @@ Compressing objects: 100% (6/6), done.
 Writing objects: 100% (6/6), 645 bytes | 645.00 KiB/s, done.
 Total 6 (delta 4), reused 0 (delta 0)
 remote: Resolving deltas: 100% (4/4), completed with 2 local objects.
-To https://github.com/vlad/planets.git
+To https://github.com/vlad/cases.git
    dabb4c8..2abf2b1  main -> main
 ```
 
+## Pull before editing
+
 Git keeps track of what we've merged with what,
 so we don't have to fix things by hand again
-when the collaborator who made the first change pulls again:
+when the __collaborator__ who made the first change pulls again:
 
 ```bash
 $ git pull origin main
@@ -257,25 +308,31 @@ remote: Counting objects: 100% (10/10), done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 6 (delta 4), reused 6 (delta 4), pack-reused 0
 Unpacking objects: 100% (6/6), done.
-From https://github.com/vlad/planets
+From https://github.com/vlad/cases
  * branch            main     -> FETCH_HEAD
     dabb4c8..2abf2b1  main     -> origin/main
 Updating dabb4c8..2abf2b1
 Fast-forward
- mars.txt | 2 +-
+ sitrep.Rmd | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 ```
 
 We get the merged file:
 
-```bash
-$ cat mars.txt
+```r
+usethis::edit_file("sitrep.Rmd")
 ```
 
+<!--
+```bash
+$ cat sitrep.Rmd
+```
+-->
+
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
+Comparison of attack rates in different age groups
+This can identify priority groups for interventions
+Maps illustrate the spread and impact of outbreak
 We removed the conflict on this line
 ```
 
@@ -328,39 +385,39 @@ that is stored in version control?
 
 ## Solution
 
-Let's try it. Suppose Dracula takes a picture of Martian surface and
-calls it `mars.jpg`.
+Let's try it. Suppose Dracula takes a picture of the laboratory test and
+calls it `lab.jpg`.
 
-If you do not have an image file of Mars available, you can create
+If you do not have an image file of the lab available, you can create
 a dummy binary file like this:
 
 ```bash
-$ head -c 1024 /dev/urandom > mars.jpg
-$ ls -lh mars.jpg
+$ head -c 1024 /dev/urandom > lab.jpg
+$ ls -lh lab.jpg
 ```
 
 ```output
--rw-r--r-- 1 vlad 57095 1.0K Mar  8 20:24 mars.jpg
+-rw-r--r-- 1 vlad 57095 1.0K Mar  8 20:24 lab.jpg
 ```
 
 `ls` shows us that this created a 1-kilobyte file. It is full of
 random bytes read from the special file, `/dev/urandom`.
 
-Now, suppose Dracula adds `mars.jpg` to his repository:
+Now, suppose Dracula adds `lab.jpg` to his repository:
 
 ```bash
-$ git add mars.jpg
-$ git commit -m "Add picture of Martian surface"
+$ git add lab.jpg
+$ git commit -m "Add picture of laboratory test"
 ```
 
 ```output
-[main 8e4115c] Add picture of Martian surface
+[main 8e4115c] Add picture of laboratory test
  1 file changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 mars.jpg
+ create mode 100644 lab.jpg
 ```
 
 Suppose that Wolfman has added a similar picture in the meantime.
-His is a picture of the Martian sky, but it is *also* called `mars.jpg`.
+His is a picture of the laboratory site, but it is *also* called `lab.jpg`.
 When Dracula tries to push, he gets a familiar message:
 
 ```bash
@@ -368,9 +425,9 @@ $ git push origin main
 ```
 
 ```output
-To https://github.com/vlad/planets.git
+To https://github.com/vlad/cases.git
  ! [rejected]        main -> main (fetch first)
-error: failed to push some refs to 'https://github.com/vlad/planets.git'
+error: failed to push some refs to 'https://github.com/vlad/cases.git'
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
@@ -393,20 +450,20 @@ remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (3/3), done.
 remote: Total 3 (delta 0), reused 0 (delta 0)
 Unpacking objects: 100% (3/3), done.
-From https://github.com/vlad/planets.git
+From https://github.com/vlad/cases.git
  * branch            main     -> FETCH_HEAD
    6a67967..439dc8c  main     -> origin/main
-warning: Cannot merge binary files: mars.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)
-Auto-merging mars.jpg
-CONFLICT (add/add): Merge conflict in mars.jpg
+warning: Cannot merge binary files: lab.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)
+Auto-merging lab.jpg
+CONFLICT (add/add): Merge conflict in lab.jpg
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-The conflict message here is mostly the same as it was for `mars.txt`, but
+The conflict message here is mostly the same as it was for `sitrep.Rmd`, but
 there is one key additional line:
 
 ```output
-warning: Cannot merge binary files: mars.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)
+warning: Cannot merge binary files: lab.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)
 ```
 
 Git cannot automatically insert conflict markers into an image as it does
@@ -414,31 +471,31 @@ for text files. So, instead of editing the image file, we must check out
 the version we want to keep. Then we can add and commit this version.
 
 On the key line above, Git has conveniently given us commit identifiers
-for the two versions of `mars.jpg`. Our version is `HEAD`, and Wolfman's
+for the two versions of `lab.jpg`. Our version is `HEAD`, and Wolfman's
 version is `439dc8c0...`. If we want to use our version, we can use
 `git checkout`:
 
 ```bash
-$ git checkout HEAD mars.jpg
-$ git add mars.jpg
-$ git commit -m "Use image of surface instead of sky"
+$ git checkout HEAD lab.jpg
+$ git add lab.jpg
+$ git commit -m "Use image of test instead of site"
 ```
 
 ```output
-[main 21032c3] Use image of surface instead of sky
+[main 21032c3] Use image of test instead of site
 ```
 
 If instead we want to use Wolfman's version, we can use `git checkout` with
 Wolfman's commit identifier, `439dc8c0`:
 
 ```bash
-$ git checkout 439dc8c0 mars.jpg
-$ git add mars.jpg
-$ git commit -m "Use image of sky instead of surface"
+$ git checkout 439dc8c0 lab.jpg
+$ git add lab.jpg
+$ git commit -m "Use image of site instead of test"
 ```
 
 ```output
-[main da21b34] Use image of sky instead of surface
+[main da21b34] Use image of site instead of test
 ```
 
 We can also keep *both* images. The catch is that we cannot keep them
@@ -447,29 +504,29 @@ and *rename* it, then add the renamed versions. First, check out each
 image and rename it:
 
 ```bash
-$ git checkout HEAD mars.jpg
-$ git mv mars.jpg mars-surface.jpg
-$ git checkout 439dc8c0 mars.jpg
-$ mv mars.jpg mars-sky.jpg
+$ git checkout HEAD lab.jpg
+$ git mv lab.jpg lab-test.jpg
+$ git checkout 439dc8c0 lab.jpg
+$ mv lab.jpg lab-site.jpg
 ```
 
-Then, remove the old `mars.jpg` and add the two new files:
+Then, remove the old `lab.jpg` and add the two new files:
 
 ```bash
-$ git rm mars.jpg
-$ git add mars-surface.jpg
-$ git add mars-sky.jpg
-$ git commit -m "Use two images: surface and sky"
+$ git rm lab.jpg
+$ git add lab-test.jpg
+$ git add lab-site.jpg
+$ git commit -m "Use two images: test and site"
 ```
 
 ```output
-[main 94ae08c] Use two images: surface and sky
+[main 94ae08c] Use two images: test and site
  2 files changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 mars-sky.jpg
- rename mars.jpg => mars-surface.jpg (100%)
+ create mode 100644 lab-site.jpg
+ rename lab.jpg => lab-test.jpg (100%)
 ```
 
-Now both images of Mars are checked into the repository, and `mars.jpg`
+Now both images of the lab are checked into the repository, and `lab.jpg`
 no longer exists.
 
 
@@ -486,7 +543,7 @@ You sit down at your computer to work on a shared project that is tracked in a
 remote Git repository. During your work session, you take the following
 actions, but not in this order:
 
-- *Make changes* by appending the number `100` to a text file `numbers.txt`
+- *Make changes* by appending the number `100` to a text file `numbers.md`
 - *Update remote* repository to match the local repository
 - *Celebrate* your success with some fancy beverage(s)
 - *Update local* repository to match the remote repository
@@ -502,7 +559,7 @@ started.
 | order | action . . . . . . . . . . | command . . . . . . . . . .                   | 
 | ----- | -------------------------- | --------------------------------------------- |
 | 1     |                            |                                               | 
-| 2     |                            | `echo 100 >> numbers.txt`                                              | 
+| 2     |                            | `echo 100 >> numbers.md`                                              | 
 | 3     |                            |                                               | 
 | 4     |                            |                                               | 
 | 5     |                            |                                               | 
@@ -515,9 +572,9 @@ started.
 | order | action . . . . . .         | command . . . . . . . . . . . . . . . . . . . | 
 | ----- | -------------------------- | --------------------------------------------- |
 | 1     | Update local               | `git pull origin main`                                              | 
-| 2     | Make changes               | `echo 100 >> numbers.txt`                                              | 
-| 3     | Stage changes              | `git add numbers.txt`                                              | 
-| 4     | Commit changes             | `git commit -m "Add 100 to numbers.txt"`                                              | 
+| 2     | Make changes               | `echo 100 >> numbers.md`                                              | 
+| 3     | Stage changes              | `git add numbers.md`                                              | 
+| 4     | Commit changes             | `git commit -m "Add 100 to numbers.md"`                                              | 
 | 5     | Update remote              | `git push origin main`                                              | 
 | 6     | Celebrate!                 | `AFK`                                              | 
 
@@ -527,6 +584,7 @@ started.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
+- Version control also allows many people to work in parallel.
 - Conflicts occur when two or more people change the same lines of the same file.
 - The version control system does not allow people to overwrite each other's changes blindly, but highlights conflicts so that they can be resolved.
 
