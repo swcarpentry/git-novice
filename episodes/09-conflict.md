@@ -24,12 +24,16 @@ sets of changes on the same document.
 
 ![](fig/versions.svg){alt='Different Versions Can be Saved'}
 
-Unless multiple users make changes to the same section of the document - a conflict - you can
+If multiple users make changes to different sections of the document you can
 incorporate two sets of changes into the same base document.
 
 ![](fig/merge.svg){alt='Multiple Versions Can be Merged'}
 
-However, as soon as people can work in parallel, they'll likely step on each other's
+However, if multiple users make changes to the same sections of the document, this will generate a conflict.
+
+![](fig/conflict.svg){alt='The Conflicting Changes'}
+
+As soon as people can work in parallel, they'll likely step on each other's
 toes.  This will even happen with a single person: if we are working on
 a piece of software on both our laptop and a server in the lab, we could make
 different changes to each copy.  Version control helps us manage these
