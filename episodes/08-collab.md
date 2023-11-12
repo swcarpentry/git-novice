@@ -28,7 +28,7 @@ If you use Google Docs, you can have access to the history of changes, and also 
 
 ![](fig/googledocs-collab.png)
 
-For __plan-text__ files, you can use GitHub see the changes made per commit. In the left side or in color red are the deletions and in the right side or in color green the additions.
+For __plain-text__ files, you can use GitHub to see the changes made per commit. In the left side or in color red are the deletions and in the right side or in color green the additions.
 
 ![](fig/github-collab-10.png)
 
@@ -50,7 +50,7 @@ Key characteristics of Version control systems are:
 
 <!--3. Experiment with code and feature without breaking the main project-->
 
-4. Facilitates collaborations and makes contributions transparent.
+3. Facilitates collaborations and makes contributions transparent.
 
 :::::::::::::::::::::::::::
 
@@ -117,16 +117,17 @@ If you choose to clone without the clone path
 you will clone inside your own cases folder!
 <!--Make sure to navigate to the `Desktop` folder first.-->
 
-__ALSO:__ You only need to add the "clone path" when you have a local folder with the same name as the remote repository.
+__ALSO:__ You only need to add the "clone path" when you have a local folder with the same name as the remote repository. This is not a common addition.
 
 :::::::::::::::::::::::::
 
-![](fig/github-collaboration.png){alt='After Creating Clone of Repository'}
+![In the Outbreak response scenario, now Wolfman has a local copy of the remote repository. They are already set up to collaborate for one project!](fig/github-collaboration.png){alt='After Creating Clone of Repository'}
 
 ## Edit the clone
 
+
 The __Collaborator__ can now make a change in her clone of the Owner's repository,
-exactly the same way as we've been doing before:
+exactly the same way as we've been doing before.
 
 <!--
 ```bash
@@ -135,6 +136,10 @@ $ nano dashboard.Rmd
 $ cat dashboard.Rmd
 ```
 -->
+
+First, open the `vlad-cases` R project. If you are in Rstudio: `File` > `New Project...` and navigate to the directory location.
+
+Now, let's create a new file called `dashboard.Rmd` to complement our Situation report!
 
 ```r
 usethis::edit_file("dashboard.Rmd")
@@ -217,7 +222,7 @@ associated with a repository. Here are some of the most useful ones:
 
 ## Download contributor edits
 
-To download the Collaborator's changes from GitHub, the __Owner__ now enters:
+To download the Collaborator's changes from GitHub, in the Console, the __Owner__ now enters:
 
 ```bash
 $ git pull origin main
@@ -239,7 +244,7 @@ Fast-forward
  create mode 100644 dashboard.Rmd
 ```
 
-Now the three repositories (Owner's local, Collaborator's local, and Owner's on
+Now the __three repositories__ (Owner's local, Collaborator's local, and Owner's on
 GitHub) are back in sync.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
@@ -329,7 +334,9 @@ What are some of the benefits of using version control, Git and GitHub?
 
 Your profile page introduce you to other contributors on GitHub:
 
-![](fig/github-create-01.png)
+![](fig/github-create-00.png)
+
+::::::::::::::::: solution
 
 To create this, go to the [GitHub Home page](https://github.com/), identify the section called __Introduce yourself with a profile README__. Click on `Create`:
 
@@ -342,6 +349,8 @@ Edit the lines in the template file. Then click on `Commit changes...`
 To edit this in a local repository, clone it following the steps you learned!
 
 ![](fig/github-create-03.png)
+
+::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::::
 
