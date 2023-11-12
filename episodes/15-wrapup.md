@@ -41,7 +41,9 @@ praise::praise()
 
 ## Your next step!
 
-Good job! You've now fulfill the core prerequisites for the tutorial on [Improve your code for Epidemic analysis with R](https://epiverse-trace.github.io/research-compendium/introduction.html#why-improve-our-code-for-epidemic-analysis)!
+Good job! We recommend you to [read the supplemental episode](14-supplemental-rstudio.md) on how to use Git with the Rstudio IDE. It can make some steps easier to interact with!
+
+Also! You've now fulfill the core prerequisites for the tutorial on [Improve your code for Epidemic analysis with R](https://epiverse-trace.github.io/research-compendium/introduction.html#why-improve-our-code-for-epidemic-analysis)!
 
 With `R`, `Git` and `GitHub` you will now extend your skills with a Research compendium, a Reproducible environment, and informative READMEs!
 
