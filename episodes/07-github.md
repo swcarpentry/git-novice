@@ -48,7 +48,7 @@ create a new repository called `cases`:
 
 ![](fig/github-create-repo-01.png){alt='Creating a Repository on GitHub (Step 1)'}
 
-Name your repository "cases" and then click "Create Repository".
+Name your repository `cases` and then click "Create Repository".
 
 Note: Since this repository will be connected to a local repository, it needs to be empty. Leave
 "Initialize this repository with a README" unchecked, and keep "None" as options for both "Add
@@ -100,7 +100,7 @@ Click on the 'SSH' link to change the [protocol](../learners/reference.md#protoc
 
 ## HTTPS vs. SSH
 
-The current recommendation is HTTPS because it is the easiest to set up on the widest range of networks and platforms, and by users who are new to all this. HTTPS is less likely to be blocked by a firewall. ([StakOverflow, 2012](https://stackoverflow.com/a/11041782/6702544))
+The current recommendation is HTTPS because it is the easiest to set up on the widest range of networks and platforms, and by users who are new to all this. HTTPS is less likely to be blocked by a firewall. ([StackOverflow, 2012](https://stackoverflow.com/a/11041782/6702544))
 
 <!--
 We use SSH here because, while it requires some additional configuration, it is a
@@ -437,7 +437,7 @@ Dracula would also like to track information about interventions.
 Create new local repository for `interventions` and connect it with a remote repository:
 
 - First, if you are in Rstudio, close your R Project from `File` > `Close Project`.
-- __In the Console__, run:
+- In the Console, run:
 
 ```r
 # create a new R project in a new directory
@@ -635,7 +635,7 @@ create mode 100644 README.md
 
 ::::::::::::::::: checklist
 
-[Use `git pull` to download content from a remote repository to the workspace and update the local repository to match that content. Use `git push` to upload local repository content to a remote repository.](cut-git-verb_map-09.png)
+[Use `git pull` to download content from a remote repository to the workspace and update the local repository to match that content. Use `git push` to upload local repository content to a remote repository.](fig/cut-git-verb_map-09.png)
 
 :::::::::::::::::::::::::::
 
