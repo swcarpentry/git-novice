@@ -94,7 +94,7 @@ Next, RStudio will ask which existing directory we want to use. Click
 
 ![](fig/RStudio_screenshot_navigateexisting.png)
 
-## git init
+<!--## git init-->
 
 Ta-da! We have created a new project in RStudio within the existing planets
 repository. Notice the vertical "Git" menu in the menu bar. RStudio has
@@ -109,14 +109,14 @@ about Pluto:
 
 ![](fig/RStudio_screenshot_editfiles.png)
 
-## git commit
+<!--## git commit-->
 
 Once we have saved our edited files, we can use RStudio to commit the changes
 by clicking on "Commit..." in the Git menu:
 
 ![](fig/RStudio_screenshot_commit.png){alt='RStudio screenshot showing the Git menu dropdown with "Commit..." selected'}
 
-## git diff
+<!--## git diff-->
 
 This will open a dialogue where we can select which files to commit (by
 checking the appropriate boxes in the "Staged" column), and enter a commit
@@ -139,7 +139,7 @@ add figure of the simpler revert button
 add figure of button to create and checkout/shift between branches
 -->
 
-## git push
+<!--## git push-->
 
 The changes can be pushed by selecting "Push Branch" from the Git menu. There
 are also options to pull from the remote repository, and to view the commit
@@ -158,14 +158,14 @@ terminal to the repository and enter the command: `git push -u origin main`. The
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## git log
+<!--## git log-->
 
 If we click on "History", we can see a graphical version of what `git log`
 would tell us:
 
 ![](fig/RStudio_screenshot_viewhistory.png)
 
-## .gitignore
+<!--## .gitignore-->
 
 RStudio creates a number of files that it uses to keep track of a project. We
 often don't want to track these, in which case we add them to our `.gitignore`
@@ -188,8 +188,8 @@ files and directories.
 
 ## Challenge
 
-1. Create a new directory within your project called `outputs`.
-2. Modify the `.gitignore` so that the `outputs` directory is not version controlled.
+1. Create a new directory within your project called `tests`.
+2. Modify the `.gitignore` so that the `tests` directory is not version controlled.
 
 :::::::::::::::  solution
 
@@ -198,11 +198,11 @@ files and directories.
 This can be done in Rstudio:
 
 ```r
-usethis::use_directory("outputs")
+usethis::use_directory("tests")
 ```
 
 Then open up the `.gitignore` file from the right-hand panel of Rstudio and add
-`outputs/` to the list of files to ignore.
+`tests/` to the list of files to ignore.
 
 
 
