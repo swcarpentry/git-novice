@@ -78,7 +78,7 @@ which looked like this:
 
 Now that we have two repositories, we need a diagram like this:
 
-![](fig/git-freshly-made-github-repo.svg){alt='Freshly-Made GitHub Repository'}
+![](fig/git-freshly-made-github-repo.png){alt='Freshly-Made GitHub Repository'}
 
 Note that our local repository still contains our earlier work on `sitrep.Rmd`, but the
 remote repository on GitHub appears empty as it doesn't contain any files yet.
@@ -409,7 +409,7 @@ to make Git default to using the terminal for usernames and passwords.
 
 Our local and remote repositories are now in this state:
 
-![](fig/github-repo-after-first-push.svg){alt='GitHub Repository After First Push'}
+![](fig/github-repo-after-first-push.png){alt='GitHub Repository After First Push'}
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -632,6 +632,12 @@ create mode 100644 README.md
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::: checklist
+
+[Use `git pull` to download content from a remote repository to the workspace and update the local repository to match that content. Use `git push` to upload local repository content to a remote repository.](cut-git-verb_map-09.png)
+
+:::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
