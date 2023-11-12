@@ -17,11 +17,20 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+## What not to put under Version Control?
+
+In the section called “What Not to Put Under Version Control” from [G. Wilson et al. 2017](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510#sec014) on Good Enough Practices in Scientific Computing, authors emphazise, among other notes, in three points: 
+
+- Version control systems are __optimized for plain-text files__; 
+- __Avoid raw data__, since it should not change;
+- __Avoid intermediate files or results__ that can be *re-generated* from raw data and software.
+
 ## Ignore files
 
 What if we have files that we do not want Git to track for us,
 like backup files created by our editor
 or intermediate files created during data analysis?
+For example, `.csv` files exported from the `reader::write_csv()` function or `.png` files from `ggplot2::ggsave()`.
 Let's create a few dummy files __in the Terminal__:
 
 ```bash
@@ -406,6 +415,16 @@ You want to keep them but you do not want to track them through `git`.
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::: checklist
+
+### Good practice
+
+- Version control systems are __optimized for plain-text files__; 
+- __Avoid raw data__, since it should not change;
+- __Avoid intermediate files or results__ that can be *re-generated* from raw data and software.
+
+:::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
