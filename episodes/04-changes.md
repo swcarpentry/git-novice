@@ -1006,6 +1006,7 @@ $ git diff me.md
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+<!--
 ::::::::::::::::: testimonial
 
 ### Use the Rstudio Git tab
@@ -1013,6 +1014,7 @@ $ git diff me.md
 We invite you to [read the supplemental episode](14-supplemental-rstudio.md) on how to `git commit`, `git log`, and `git diff` using the Rstudio Git tab.
 
 :::::::::::::::::::::::::
+-->
 
 [commit-messages]: https://chris.beams.io/posts/git-commit/
 [git-references]: https://git-scm.com/book/en/v2/Git-Internals-Git-References
