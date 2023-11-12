@@ -458,7 +458,7 @@ else has committed changes to the repository.
 
 Commands like `git checkout` and `git revert` are useful but so similar that it's very easy to mix them up!
 
-With the concepts learned in this episode, we invite you to read this chapter on [resetting, checking out and reverting](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting).
+With the concepts learned in this episode, we invite you to read this chapter on [undoing commits and changes](https://www.atlassian.com/git/tutorials/undoing-changes).
 
 :::::::::::::::::::::::::
 
@@ -651,6 +651,12 @@ $ git log --patch HEAD~9 *.Rmd
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::: checklist
+
+[Use `git diff` to compare changes since last commit or between commits. Use `git checkout` to undo changes by restoring the staging area (committed changes) or the local repository (last commit)](cut-git-verb_map-08.png)
+
+:::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
