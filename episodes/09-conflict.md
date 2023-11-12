@@ -539,6 +539,40 @@ no longer exists.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+## Atomic commits
+
+A good commit is also an __atomic commit__, like in the commit of the last challenge:
+
+```bash
+$ git add lab-test.jpg
+$ git add lab-site.jpg
+$ git commit -m "Use two images: test and site"
+```
+
+Commits should be ‘atomic’, meaning that they should do one simple thing and they should do it completely. ([The Turing Way Community](https://the-turing-way.netlify.app/reproducible-research/vcs/vcs-git-compare#good-practice)). Atomic commits prioritize one unit of change instead of the quantity of changes. 
+
+![Two related modified lines must be part of the same commit.](fig/git-rstudio-27.png)
+
+In Rstudio, the Review changes window has a button called “Stage chunk”. This helps to make atomic commits, even if you change a lot of lines in a single edit. You can either select them to make isolated commits or to unite them to be part of the same commit.
+
+![Two unrelated edits must be part of two isolated commits.](fig/git-rstudio-35.png)
+
+::::::::::::::::: checklist
+
+### Good practice
+
+A good atomic commit:
+
+- Includes more than one file that involves one unit of change. 
+
+- Isolate or includes multiple edited lines using the "Stage chunk" button in Rstudio.
+
+- Does not include all the files in one commit.
+
+:::::::::::::::::::::::::::
+
+## Challenge
+
 :::::::::::::::::::::::::::::::::::::::  challenge
 
 ## A Typical Work Session
