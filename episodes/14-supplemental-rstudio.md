@@ -167,11 +167,21 @@ file:
 
 ![](fig/RStudio_screenshot_gitignore.png){alt='RStudio screenshot showing .gitignore open in the editor pane with the files .Rproj.user, .Rhistory, .RData, and \*.Rproj added to the end'}
 
-In the `Rstudio: Review changes` window, you can also open the `.gitignore` files from the `Ignore` button.
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## Tip: versioning disposable output
+
+Generally you do not want to version control disposable output (or read-only
+data). You should modify the `.gitignore` file to tell Git to ignore these
+files and directories.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+In the `Rstudio: Review changes` window, you can also open the `.gitignore` files from the `Ignore` button. You can use the `Revert` button to do a `git checkout HEAD`, i.e., to undo changes not yet on staging area by restoring the local repository (last commit).
 
 ![](fig/git-rstudio-review-window.png)
-
-You can use the `Revert` button to do a `git checkout HEAD`, i.e., to undo changes not yet on staging area by restoring the local repository (last commit).
 
 ## Create a branch
 
@@ -215,17 +225,6 @@ Key characteristics of Version control systems are:
 
 
 The best way to merge branches is on GitHub. We recommend you to read about how to [create a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request), and how to [merge a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request)
-
-:::::::::::::::::::::::::::::::::::::::::  callout
-
-## Tip: versioning disposable output
-
-Generally you do not want to version control disposable output (or read-only
-data). You should modify the `.gitignore` file to tell Git to ignore these
-files and directories.
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
