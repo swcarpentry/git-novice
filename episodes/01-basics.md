@@ -157,7 +157,7 @@ For code-like files like `.R` and `.Rmd` files, we can not use Google docs. The 
 
 - Google Docs’ version history tool is a Version control software optimized for single [non-plain text files](https://github.com/epiverse-trace/git-rstudio-basics/discussions/11) like Word/Doc files that works online.
 
-- `Git` is the Version control software optimized for [plain text files](https://en.wikipedia.org/wiki/Plain_text) that works offline.
+- `Git` is the Version control software optimized for [plain text files](https://en.wikipedia.org/wiki/Plain_text) that works offline. (Read: “What Not to Put Under Version Control” at [G. Wilson et al. 2017](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510#sec014))
 
 Plain text files can be text, code, and data. Example for each of these are Markdown files (`.md`), R files (`.R`), and `.csv` or `.tsv` files, respectively.
 
