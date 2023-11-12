@@ -654,7 +654,7 @@ $ git log --patch HEAD~9 *.Rmd
 
 ::::::::::::::::: checklist
 
-[Use `git diff` to compare changes since last commit or between commits. Use `git checkout` to undo changes by restoring the staging area (committed changes) or the local repository (last commit)](fig/cut-git-verb_map-08.png)
+![Use `git diff` to compare changes since last commit or between commits. Use `git checkout` to undo changes by restoring the staging area (committed changes) or the local repository (last commit)](fig/cut-git-verb_map-08.png)
 
 :::::::::::::::::::::::::::
 
