@@ -121,9 +121,11 @@ __ALSO:__ You only need to add the "clone path" when you have a local folder wit
 
 :::::::::::::::::::::::::
 
-![](fig/github-collaboration.svg){alt='After Creating Clone of Repository'}
+![](fig/github-collaboration.png){alt='After Creating Clone of Repository'}
 
-The Collaborator can now make a change in her clone of the Owner's repository,
+## Edit the clone
+
+The __Collaborator__ can now make a change in her clone of the Owner's repository,
 exactly the same way as we've been doing before:
 
 <!--
@@ -212,6 +214,8 @@ associated with a repository. Here are some of the most useful ones:
   
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Download contributor edits
 
 To download the Collaborator's changes from GitHub, the __Owner__ now enters:
 
