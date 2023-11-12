@@ -319,6 +319,28 @@ What are some of the benefits of using version control, Git and GitHub?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+::::::::::::::::::::::::::::::::: challenge
+
+### Create your GitHub profile!
+
+Your profile page introduce you to other contributors on GitHub:
+
+![](fig/github-create-01.png)
+
+To create this, go to the [GitHub Home page](https://github.com/), identify the section called __Introduce yourself with a profile README__. Click on `Create`:
+
+![](fig/github-create-01.png)
+
+Edit the lines in the template file. Then click on `Commit changes...`
+
+![](fig/github-create-02.png)
+
+To edit this in a local repository, clone it following the steps you learned!
+
+![](fig/github-create-03.png)
+
+:::::::::::::::::::::::::::::::::::::::::::
+
 ::::::::::::::::: checklist
 
 ![Use `git clone` to obtain a development copy of a remote repository. Like `git init`, cloning is generally a one-time operation. Use `git pull` to update the local repository to match the content in the remote repository.](fig/cut-git-verb_map-10.png)
