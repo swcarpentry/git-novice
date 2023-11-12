@@ -259,7 +259,7 @@ What are some of the benefits of using version control, Git and GitHub?
 
 ::::::::::::::::: checklist
 
-[Use `git clone` to obtain a development copy of a remote repository. Like `git init`, cloning is generally a one-time operation. Use `git pull` to update the local repository to match the content in the remote repository.](fig/cut-git-verb_map-10.png)
+![Use `git clone` to obtain a development copy of a remote repository. Like `git init`, cloning is generally a one-time operation. Use `git pull` to update the local repository to match the content in the remote repository.](fig/cut-git-verb_map-10.png)
 
 :::::::::::::::::::::::::::
 

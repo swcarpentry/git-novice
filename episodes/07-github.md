@@ -635,7 +635,7 @@ create mode 100644 README.md
 
 ::::::::::::::::: checklist
 
-[Use `git pull` to download content from a remote repository to the workspace and update the local repository to match that content. Use `git push` to upload local repository content to a remote repository.](fig/cut-git-verb_map-09.png)
+![Use `git pull` to download content from a remote repository to the workspace and update the local repository to match that content. Use `git push` to upload local repository content to a remote repository.](fig/cut-git-verb_map-09.png)
 
 :::::::::::::::::::::::::::
 
