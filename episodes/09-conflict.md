@@ -363,6 +363,21 @@ Conflicts can also be minimized with project management strategies:
   project convention that is governing and use code style tools (e.g.
   `htmltidy`, `perltidy`, `rubocop`, etc.) to enforce, if necessary
 
+::::::::::::::::: checklist
+
+### Good practices
+
+A good collaborator:
+
+- Pull from upstream frequently before new edits.
+- Use topic or feature branches to segregate work.
+- Make atomic commits.
+- Push your work when it is done to reduce work in progress.
+- Break large files when appropriate.
+- Read contributing guidelines from the project owner.
+
+:::::::::::::::::::::::::::
+
 :::::::::::::::::::::::::::::::::::::::  challenge
 
 ## Solving Conflicts that You Create
