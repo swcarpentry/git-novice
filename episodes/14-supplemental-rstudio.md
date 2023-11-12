@@ -47,6 +47,12 @@ our computer, we choose the option "Existing Directory":
 
 For a new directory, [follow the steps in this section about "Versioning new work"](https://nceas.github.io/oss-lessons/version-control/4-getting-started-with-git-in-RStudio.html#versioning_new_work).
 
+![](fig/git-rstudio-init-02.png)
+
+To clone a remote repository from Rstudio, follow these steps:
+
+![](fig/git-rstudio-init-03.png)
+
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Do You See a "Version Control" Option?
@@ -133,10 +139,6 @@ FIXME
 ## git checkout
 
 add figure of the simpler revert button
-
-## create new branch
-
-add figure of button to create and checkout/shift between branches
 -->
 
 <!--## git push-->
@@ -172,6 +174,55 @@ often don't want to track these, in which case we add them to our `.gitignore`
 file:
 
 ![](fig/RStudio_screenshot_gitignore.png){alt='RStudio screenshot showing .gitignore open in the editor pane with the files .Rproj.user, .Rhistory, .RData, and \*.Rproj added to the end'}
+
+In the `Rstudio: Review changes` window, you can also open the `.gitignore` files from the `Ignore` button.
+
+![](fig/git-rstudio-review-window.png)
+
+You can use the `Revert` button to do a `git checkout HEAD`, i.e., to undo changes not yet on staging area by restoring the local repository (last commit).
+
+## Create a branch
+
+Sometimes you want to experiment with your project without affecting the main version. You can do this by using branches. A branch is a local copy of the main project (also called the `main` branch) where you can make changes and test new ideas. The `main` branch stays safe and unchanged while you work on your branch (a.k.a., `feature branch`). When you are satisfied with the changes, you can merge them into the main branch. This means that the separate lines of development in your branch are combined with the main branch.
+
+![One feature branch and one main branch in Git.](fig/one-branch.png)
+
+You can have more than one branch off of your main copy. If one of your branches ends up not working, you can either abandon it or delete it without impacting the main branch of your project.
+
+![Two feature branches and one main branch in Git.](fig/two-branches.png)
+
+In the Git tab, in the right hand side you will find the name of your current branch (e.g., `main`). Use the button in its left hand side to create a branch.
+
+![](fig/pane-git-02.png)
+
+You can call it `feature-branch`:
+
+![](fig/github-12.png)
+
+You are able to switch between different branches using the menu displayed when you click in the branch name:
+
+![](fig/github-13.png)
+
+Git is a Version control software optimized for plain-text files. This can register non-linear changes.
+
+::::::::::::::::: checklist
+
+### Checklist
+
+Key characteristics of Version control systems are:
+
+1. Keep the entire history of a file and inspect a file throughout its lifetime.
+
+2. Tag a particular version so you can return to them easily.
+
+3. Facilitates collaborations and makes contributions transparent.
+
+4. Experiment with code and feature without breaking the main project
+
+:::::::::::::::::::::::::::
+
+
+The best way to merge branches is on GitHub. We recommend you to read about how to [create a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request), and how to [merge a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request)
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
