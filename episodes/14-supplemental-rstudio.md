@@ -1,5 +1,5 @@
 ---
-title: 'Using Git from RStudio'
+title: 'Using RStudio for Git'
 teaching: 10
 exercises: 0
 ---
