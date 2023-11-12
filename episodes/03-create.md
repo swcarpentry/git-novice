@@ -168,9 +168,11 @@ we will lose the project's history.
 
 ::::::::::::::::: prereq
 
-### The Rstudio Terminal
+### From the Console to the Terminal
 
-Now, we are going to use the [Rstudio Terminal](https://docs.posit.co/ide/user/ide/guide/tools/terminal.html). The Terminal tab is next to the Console tab. Click on the Terminal tab and a new terminal session will be created (if there isn’t one already).
+Now, we are going to use the [Rstudio Terminal](https://docs.posit.co/ide/user/ide/guide/tools/terminal.html). The Terminal tab is next to the Console tab. 
+
+Click on the Terminal tab and a new terminal session will be created (if there isn’t one already).
 
 ![Visual appearance of the Terminal.](fig/rstudio-tab-terminal.png)
 
