@@ -19,11 +19,25 @@ exercises: 0
 
 ## What not to put under Version Control?
 
-In the section called “What Not to Put Under Version Control” from [G. Wilson et al. 2017](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510#sec014) on Good Enough Practices in Scientific Computing, authors emphazise, among other notes, in three points: 
+In the section called “What Not to Put Under Version Control” from [G. Wilson et al. 2017](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510#sec014) on Good Enough Practices in Scientific Computing, authors emphasize, among other notes, in three points: 
 
 - Version control systems are __optimized for plain-text files__; 
 - __Avoid raw data__, since it should not change;
 - __Avoid intermediate files or results__ that can be *re-generated* from raw data and software.
+
+::::::::::::::::: checklist
+
+### Good Practice
+
+A good version control project:
+
+- Use it mostly for plain-text files
+
+- Avoid raw data.
+
+- Avoid intermediate files or results.
+
+:::::::::::::::::::::::::::
 
 ## Ignore files
 
@@ -416,18 +430,9 @@ You want to keep them but you do not want to track them through `git`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::: checklist
-
-### Good practice
-
-- Version control systems are __optimized for plain-text files__; 
-- __Avoid raw data__, since it should not change;
-- __Avoid intermediate files or results__ that can be *re-generated* from raw data and software.
-
-:::::::::::::::::::::::::::
-
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
+- Avoid the version control of raw data, intermediate files and results that can be re-generated from raw data and software.
 - The `.gitignore` file tells Git what files to ignore.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
