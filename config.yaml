@@ -66,18 +66,11 @@ episodes:
 - 05-history.md
 - 06-ignore.md
 - 07-github.md
-- 13-hosting.md
-
-# batch #2
-
-
-# - 08-collab.md
-
-
-# batch #3
-# - 15-branch.md
+- 08-collab.md
 # - 09-conflict.md
+- 13-hosting.md
 - 14-supplemental-rstudio.md
+- 15-wrapup.md
 
 # to research-compendium
 # - 10-open.md
