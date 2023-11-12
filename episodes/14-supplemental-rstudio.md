@@ -261,6 +261,7 @@ enough to get you started!
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Using RStudio's Git integration allows you to version control a project over time.
+- Feature branches help you experiment with code without breaking the main project.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
