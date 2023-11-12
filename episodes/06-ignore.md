@@ -281,28 +281,28 @@ outputs/*               # ignore everything in outputs folder
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Ignoring all raw-data Files in a Directory
+## Ignoring all data Files in a Directory
 
 Assuming you have an empty .gitignore file, and given a directory structure that looks like:
 
 ```bash
-data/raw-data/position/gps/a.csv
-data/raw-data/position/gps/b.csv
-data/raw-data/position/gps/c.csv
-data/raw-data/position/gps/info.txt
-data/derived-data
+data/household/position/gps/a.csv
+data/household/position/gps/b.csv
+data/household/position/gps/c.csv
+data/household/position/gps/info.txt
+data/survey
 ```
 
 What's the shortest `.gitignore` rule you could write to ignore all `.csv`
-files in `data/raw-data/position/gps`? Do not ignore the `info.txt`.
+files in `data/household/position/gps`? Do not ignore the `info.txt`.
 
 :::::::::::::::  solution
 
 ## Solution
 
-Appending `data/raw-data/position/gps/*.csv` will match every file in `data/raw-data/position/gps`
+Appending `data/household/position/gps/*.csv` will match every file in `data/household/position/gps`
 that ends with `.csv`.
-The file `data/raw-data/position/gps/info.txt` will not be ignored.
+The file `data/household/position/gps/info.txt` will not be ignored.
 
 
 
@@ -319,9 +319,9 @@ For example, you might have:
 
 ```bash
 outputs/a.csv
-data/raw-data/b.csv
-data/derived-data/c.csv
-data/derived-data/variation_1/d.csv
+data/household/b.csv
+data/survey/c.csv
+data/survey/area_1/d.csv
 ```
 
 <!--
