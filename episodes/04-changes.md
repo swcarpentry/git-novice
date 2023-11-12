@@ -265,6 +265,20 @@ It is possible to reconfigure the text editor for Git whenever you want to chang
 changes made in the commit. Generally, the message should complete the sentence "If applied, this commit will" <commit message here>.
 If you want to go into more detail, add a blank line between the summary line and your additional notes. Use this additional space to explain why you made changes and/or what their impact will be.
 
+::::::::::::::::: checklist
+
+### Good practice
+
+A good commit:
+
+- Contains less than 50 characters in first line.
+
+- Start with an infinitive verb. 
+
+- Recalls an specific action.
+
+:::::::::::::::::::::::::::
+
 If we run `git status` now:
 
 ```bash
