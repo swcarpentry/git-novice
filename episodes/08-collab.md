@@ -18,6 +18,44 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+## Paper Writing
+
+From the [first episode](01-basics.md#paper-writing)!
+
+Imagine you have 3 co-authors. How would you manage the changes and comments they make to your paper?  
+
+If you use Google Docs, you can have access to the history of changes, and also identify how made those changes.
+
+![](fig/googledocs-collab.png)
+
+For __plan-text__ files, you can use GitHub see the changes made per commit. In the left side or in color red are the deletions and in the right side or in color green the additions.
+
+![](fig/github-collab-10.png)
+
+Additionally, in GitHub you can use the option `Blame` to read the authors of changes per line. In this way, you can also read any related comment regarding why an specific line was edited.
+
+![](fig/github-collab-11.png)
+
+All of these is possible with a _collaboration workflow_ between contributors using Git and GitHub!
+
+::::::::::::::::: checklist
+
+### Checklist
+
+Key characteristics of Version control systems are:
+
+1. Keep the entire history of a file and inspect a file throughout its lifetime.
+
+2. Tag a particular version so you can return to them easily.
+
+<!--3. Experiment with code and feature without breaking the main project-->
+
+4. Facilitates collaborations and makes contributions transparent.
+
+:::::::::::::::::::::::::::
+
+## Get a copy of remote
+
 For the next step, get into pairs.  One person will be the "Owner" and the other
 will be the "Collaborator". The goal is that the Collaborator add changes into
 the Owner's repository. We will switch roles at the end, so both persons will
