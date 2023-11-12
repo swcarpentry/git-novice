@@ -82,6 +82,7 @@ If you did not fill out this form, please take 5 minutes to fill it. This form w
 
 ## Complementary readings
 
+- A checklist [Make Use of Git from The Turing Way](https://the-turing-way.netlify.app/reproducible-research/vcs/vcs-checklist.html)
 - A blog [An introduction to Git and how to use it with RStudio · The R class (r-bio.github.io)](https://r-bio.github.io/intro-git-rstudio/) 
 - A book [Let’s Git started | Happy Git and GitHub for the useR (happygitwithr.com)](https://happygitwithr.com/index.html)
 - A webinar [Managing - Part 2 (Github and RStudio) - RStudio](https://www.rstudio.com/resources/webinars/managing-part-2-github-and-rstudio/) 
