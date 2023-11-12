@@ -48,46 +48,70 @@ or check for email notification. Once there she can accept access to the Owner's
 Next, the Collaborator needs to download a copy of the Owner's repository to her
 machine. This is called "cloning a repo".
 
-The Collaborator doesn't want to overwrite her own version of `planets.git`, so
+The Collaborator doesn't want to overwrite her own version of `cases.git`, so
 needs to clone the Owner's repository to a different location than her own
 repository with the same name.
 
-To clone the Owner's repo into her `Desktop` folder, the Collaborator enters:
+::::::::::::::::: callout
+
+First, if you are in Rstudio, close your R Project from `File` > `Close Project`.
+
+:::::::::::::::::::::::::
+
+To clone the Owner's repo into Collaborator's folder, in the Console, the __Collaborator__ enters:
 
 ```bash
-$ git clone git@github.com:vlad/planets.git ~/Desktop/vlad-planets
+$ git clone https://github.com/vlad/cases.git vlad-cases
 ```
+
+<!--
+```bash
+$ git clone https://github.com/vlad/cases.git ~/Desktop/vlad-cases
+```
+-->
 
 Replace 'vlad' with the Owner's username.
 
+::::::::::::::::: callout
+
 If you choose to clone without the clone path
-(`~/Desktop/vlad-planets`) specified at the end,
-you will clone inside your own planets folder!
-Make sure to navigate to the `Desktop` folder first.
+(`vlad-cases`) specified at the end,
+you will clone inside your own cases folder!
+<!--Make sure to navigate to the `Desktop` folder first.-->
+
+__ALSO:__ You only need to add the "clone path" when you have a local folder with the same name as the remote repository.
+
+:::::::::::::::::::::::::
 
 ![](fig/github-collaboration.svg){alt='After Creating Clone of Repository'}
 
 The Collaborator can now make a change in her clone of the Owner's repository,
 exactly the same way as we've been doing before:
 
+<!--
 ```bash
-$ cd ~/Desktop/vlad-planets
-$ nano pluto.txt
-$ cat pluto.txt
+$ cd ~/Desktop/vlad-cases
+$ nano dashboard.Rmd
+$ cat dashboard.Rmd
+```
+-->
+
+```r
+usethis::edit_file("dashboard.Rmd")
 ```
 
 ```output
-It is so a planet!
+Let's create a dashboard!
 ```
 
 ```bash
-$ git add pluto.txt
-$ git commit -m "Add notes about Pluto"
+$ git add dashboard.Rmd
+$ git commit -m "Add notes about Dashboard"
 ```
 
 ```output
  1 file changed, 1 insertion(+)
- create mode 100644 pluto.txt
+ create mode 100644 dashboard.Rmd
 ```
 
 Then push the change to the *Owner's repository* on GitHub:
@@ -103,7 +127,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (2/2), done.
 Writing objects: 100% (3/3), 306 bytes, done.
 Total 3 (delta 0), reused 0 (delta 0)
-To https://github.com/vlad/planets.git
+To https://github.com/vlad/cases.git
    9272da5..29aba7c  main -> main
 ```
 
@@ -151,7 +175,7 @@ associated with a repository. Here are some of the most useful ones:
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-To download the Collaborator's changes from GitHub, the Owner now enters:
+To download the Collaborator's changes from GitHub, the __Owner__ now enters:
 
 ```bash
 $ git pull origin main
@@ -163,14 +187,14 @@ remote: Counting objects: 100% (4/4), done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
 Unpacking objects: 100% (3/3), done.
-From https://github.com/vlad/planets
+From https://github.com/vlad/cases
  * branch            main     -> FETCH_HEAD
    9272da5..29aba7c  main     -> origin/main
 Updating 9272da5..29aba7c
 Fast-forward
- pluto.txt | 1 +
+ dashboard.Rmd | 1 +
  1 file changed, 1 insertion(+)
- create mode 100644 pluto.txt
+ create mode 100644 dashboard.Rmd
 ```
 
 Now the three repositories (Owner's local, Collaborator's local, and Owner's on
@@ -225,7 +249,7 @@ will see the changes output in the terminal.
 On GitHub, the Collaborator can go to the repository and click on
 "commits" to view the most recent commits pushed to the repository.
 
-
+![Use `git fetch` to download the remote content but not update your local repo's working state, leaving your current work intact. Use `git pull` to download the remote content for the active local branch and immediately merge it. this can potentially cause conflicts.](fig/cut-git-verb_map-12.png)
 
 :::::::::::::::::::::::::
 
