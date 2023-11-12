@@ -122,6 +122,10 @@ by clicking on "Commit..." in the Git menu:
 
 ![](fig/RStudio_screenshot_commit.png){alt='RStudio screenshot showing the Git menu dropdown with "Commit..." selected'}
 
+You can also use the buttons from the Git tab, usually in the upper right pane:
+
+![](fig/git-rstudio-git-tab-01.png)
+
 <!--## git diff-->
 
 This will open a dialogue where we can select which files to commit (by
