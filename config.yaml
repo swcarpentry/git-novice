@@ -68,12 +68,12 @@ episodes:
 - 07-github.md
 - 08-collab.md
 # - 09-conflict.md
+- 15-wrapup.md
 - 10-open.md
 - 11-licensing.md
 - 12-citation.md
 - 13-hosting.md
 - 14-supplemental-rstudio.md
-- 15-wrapup.md
 
 # Information for Learners
 learners:
