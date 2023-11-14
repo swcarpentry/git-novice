@@ -17,8 +17,14 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## Install Git first
+
 If you got this far but haven't installed Git yet,
-[follow these installation steps first](../learners/setup.md#installing-git).
+[follow these installation steps](../learners/setup.md#installing-git).
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 When we use Git on a new computer for the first time,
 we need to configure a few things. Below are a few examples
