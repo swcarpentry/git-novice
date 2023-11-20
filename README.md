@@ -11,14 +11,16 @@ or run `make` in this directory for a list of helpful commands.
 
 Maintainers:
 
-- [Nima Hejazi][hejazi_nima]: [@nhejazi](https://github.com/nhejazi)
 - [Kat Koziar][koziar_kat]: [@kekoziar](https://github.com/kekoziar)
-- [Madicken Munk][munk_madicken]: [@munkm](https://github.com/munkm)
+- [Martino Sorbaro][sorbaro_mart]: [@martinosorb](https://github.com/martinosorb)
 
 Alumni maintainers:
 
 - [Ivan Gonzalez][gonzalez_ivan]: [@iglpdc](https://github.com/iglpdc)
 - [Daisie Huang][huang_daisie]: [@daisieh](https://github.com/daisieh)
+- [Nima Hejazi][hejazi_nima]: [@nhejazi](https://github.com/nhejazi)
+- [Madicken Munk][munk_madicken]: [@munkm](https://github.com/munkm)
+
 
 [lesson-example]: https://swcarpentry.github.io/lesson-example
 [hejazi_nima]: https://carpentries.org/instructors/#nhejazi
@@ -26,6 +28,4 @@ Alumni maintainers:
 [munk_madicken]: https://carpentries.org/instructors/#munkm
 [gonzalez_ivan]: https://carpentries.org/instructors/#iglpdc
 [huang_daisie]: https://software-carpentry.org/team/#huang_daisie
-
-
-
+[sorbaro_mart]: https://carpentries.org/instructors/#martinosorb
