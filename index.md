@@ -16,7 +16,7 @@ A colleague suggests using [version control](learners/reference.md#version-contr
 manage their work. Version control is better than mailing files back and forth:
 
 - Nothing that is committed to version control is ever lost, unless
-  you work really, really hard at it. Since all old versions of
+  you work really, really hard at losing it. Since all old versions of
   files are saved, it's always possible to go back in time to see
   exactly who wrote what on a particular day, or what version of a
   program was used to generate a particular set of results.
