@@ -47,7 +47,8 @@ sets of changes on the same document.
 
 ![](fig/versions.svg){alt='Different Versions Can be Saved'}
 
-Unless multiple users make changes to the same section of the document - a conflict - you can
+Unless multiple users make changes to the same section of the document - a 
+[conflict](../learners/reference.md#conflict) - you can
 incorporate two sets of changes into the same base document.
 
 ![](fig/merge.svg){alt='Multiple Versions Can be Merged'}
