@@ -95,8 +95,8 @@ $ git checkout -b main
 Switched to a new branch 'main'
 ```
 
-We can check that everything is set up correctly
-by asking Git to tell us the status of our project:
+And now we will use what I think is the most important Git command: `git status` reports on the status of our project.
+It's the Git equivalent of listing a directory in a shell.
 
 ```bash
 $ git status
