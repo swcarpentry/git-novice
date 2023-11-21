@@ -96,7 +96,7 @@ Switched to a new branch 'main'
 ```
 
 And now we will use what I think is the most important Git command: `git status` reports on the status of our project.
-It's the Git equivalent of listing a directory in a shell.
+It tells us the status of our project, and better, a list of changes in the project and options on what to do with those changes.
 
 ```bash
 $ git status
