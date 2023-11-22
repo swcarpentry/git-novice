@@ -225,8 +225,7 @@ Switched to a new branch 'main'
 
 To interact with Git, we can also use the [Rstudio Terminal](https://docs.posit.co/ide/user/ide/guide/tools/terminal.html). 
 
-In the Rstudio Terminal, 
-We can check that everything is set up correctly
+In the RStudio Terminal, we can check that everything is set up correctly
 by asking Git to tell us the `git status` of our project:
 
 ```bash
