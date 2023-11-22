@@ -12,7 +12,7 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How do I get set up to use Git?
+- How do I set up Git?
 - What is a token?
 - What is a `commit`?
 - What is a `repository`?
