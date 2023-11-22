@@ -201,6 +201,17 @@ Look over the scopes; the recommended scopes to select are “repo”, “workfl
 
 Copy your token. Save it for the next step.
 
+::::::::::::::::: callout
+
+Briefly:
+- `"repo"` will give you control of your _private_ repositories online (YES! you can have private repos!).
+- `"workflow"` will allow you to run _automated_ processes for your repository online (This is advanced! so let's get back to this after the episode on GitHub).
+- `"user"` will allow you to update your user data (as in the first step here).
+
+:::::::::::::::::::::::::
+
+
+
 __Second, let's configure your token.__
 
 To complete the configuration of your token use `gitcreds::gitcreds_set()` ([Bryan, 2021](https://happygitwithr.com/https-pat.html)), then accept that you want to `Replace these credentials`. Write the corresponding number and press ENTER.
