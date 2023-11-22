@@ -193,9 +193,11 @@ usethis::create_github_token()
 
 Describe the token use case.
 
-Check all of the following options:
+Look over the scopes; the recommended scopes to select are “repo”, “workflow”, and “user”. When using `usethis::create_github_token()` will pre-select all the recommended scopes for you!
 
-![](fig/git-token.png)
+ Click “Generate token”.
+
+![Visual display with the recommended scopes selected. Optional scopes are "gist" and "delete_repo" to create a [gist](https://docs.github.com/en/get-started/writing-on-github/editing-and-sharing-content-with-gists/creating-gists) and delete repositories.](fig/git-token.png)
 
 Copy your token. Save it for the next step.
 
