@@ -272,7 +272,7 @@ You should recognize your:
 
 As we mentioned before, the complete history of `commits` for a particular project and their metadata make up a `repository`. (We are going to create one in the next episode!)
 
-A [`branch`](https://glosario.carpentries.org/en/#git_branch) is a snapshot of a version of a repository. In that sense, a repository can have more that one branch. WHAT?!! How is that possible? We are going to see that in coming episodes!
+A [`branch`](https://glosario.carpentries.org/en/#git_branch) is a snapshot of a version of a repository. In that sense, a repository can have more than one branch. WHAT?!! How is that possible? We are going to see that in coming episodes!
 
 ![Version history within a single branch.](fig/main-branch.png)
 
@@ -441,7 +441,7 @@ Some common errors are solved here:
 
 ::::::::::::::::: callout
 
-When using the [Terminal](https://glosario.carpentries.org/en/#console), this steps is known as `git config` for `--global` option. In the next chapter we are going to interact with the Terminal!
+When using the [Terminal](https://glosario.carpentries.org/en/#console), this step is known as `git config` with the `--global` option. In the next chapter we are going to interact with the Terminal!
 
 :::::::::::::::::::::::::
 
@@ -455,7 +455,7 @@ If you are interested on this, [take a look to this chapter of the happygitwithr
 
 - Use the `{usethis}` package to configure a user name, email address, and other preferences once per machine.
 - Use `usethis::use_git_config()` to configure git in Rstudio.
-- Use `usethis::git_default_branch_configure()` to define default branch name.
+- Use `usethis::git_default_branch_configure()` to define the default branch name.
 - Use `usethis::git_sitrep()` to verify your configuration.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
