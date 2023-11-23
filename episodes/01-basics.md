@@ -202,7 +202,7 @@ This exercise can be solved in the shared document of the training.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Version control is like an unlimited 'undo'.
+- Version control record changes you make "step-by-step".
 - `Git` is a Version control software optimized for plain text files, like `.R` and `.Rmd` files.
 
 <!--
