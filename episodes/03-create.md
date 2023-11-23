@@ -397,7 +397,7 @@ We invite you to [read the supplemental episode](14-supplemental-rstudio.md) on 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 <!--- `git init` initializes a repository.-->
-- Use `usethis::create_project()` to create and R project.
+- Use `usethis::create_project()` to create an R project.
 - Use `usethis::use_git()` to initialize a repository.
 - Git stores all of its repository data in the `.git` directory.
 - Use `git status` in the Terminal to check the status of a repository.
