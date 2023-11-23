@@ -190,6 +190,17 @@ $ ls -a
 ../  .gitignore  .Rproj.user/  R/
 ```
 
+::::::::::::::::: callout
+
+### Important!
+
+The __`.git` directory__ is the _Local Repository_. This is the one of the `Git` _spaces_ we talk about in the introduction of this episode!
+
+Git stores all of its repository data (and your coming changes!) in the `.git` directory.
+
+![Initialize a Local Repository in your Workspace with the `git init` command verb](fig/cut-git-verb_map-01.png)
+
+:::::::::::::::::::::::::
 
 <!--
 
