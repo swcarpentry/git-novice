@@ -253,7 +253,7 @@ The steps done with `{usethis}` can also be done with commands in the Terminal. 
 
 ::::::::::::::::: spoiler
 
-### How to ask help to Git?
+### How to ask Git for help?
 
 `Git` has a verb command similar to the `help()` function in `R`.
 
