@@ -204,6 +204,7 @@ Copy your token. Save it for the next step.
 ::::::::::::::::: callout
 
 Briefly:
+
 - `"repo"` will give you control of your _private_ repositories online (YES! you can have private repos!).
 - `"workflow"` will allow you to run _automated_ processes for your repository online (This is advanced! so let's get back to this after the episode on GitHub).
 - `"user"` will allow you to update your user data (as in the first step here).
