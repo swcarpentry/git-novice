@@ -25,20 +25,6 @@ In the section called “What Not to Put Under Version Control” from [G. Wilso
 - __Avoid raw data__, since it should not change;
 - __Avoid intermediate files or results__ that can be *re-generated* from raw data and software.
 
-::::::::::::::::: checklist
-
-### Good Practice
-
-A good version control project:
-
-- Use it mostly for plain-text files
-
-- Avoid raw data.
-
-- Avoid intermediate files or results.
-
-:::::::::::::::::::::::::::
-
 ## Ignore files
 
 What if we have files that we do not want Git to track for us,
@@ -168,6 +154,20 @@ Ignored files:
 
 nothing to commit, working tree clean
 ```
+
+::::::::::::::::: checklist
+
+### Good Practice
+
+A good version control project:
+
+- Use it mostly for plain-text files
+
+- Avoid raw data.
+
+- Avoid intermediate files or results.
+
+:::::::::::::::::::::::::::
 
 ## Challenges
 
