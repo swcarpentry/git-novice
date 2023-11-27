@@ -25,7 +25,7 @@ exercises: 0
 A version control system is a tool that keeps track of these changes for us, effectively creating different versions of our files. Each record of these changes is called a [commit](../learners/reference.md#commit). Each keeps useful metadata about them. Instead of _saving copies_ with different file names, we are _making commits_ in the same file. Consecutive commits generate a linear history of changes.
 
 ![Each record of changes is
-called a `commit`.](fig/git-commit.png){alt='Changes Are Saved Sequentially'}
+called a `commit`. From: https://speakerdeck.com/alicebartlett/git-for-humans](fig/git-commit.png){alt='Changes Are Saved Sequentially'}
 
 The complete history of commits for a particular project and their
 metadata make up a [repository](../learners/reference.md#repository).
