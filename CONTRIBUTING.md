@@ -146,7 +146,7 @@ install.packages(c("sandpaper", "varnish", "pegboard", "tinkr"),
 If you have issues at the Render step, follow these two steps:
 
 - Verify or wait until the branch is under Pull Request (PR) with all checks passed.
-- Access to the [`md-outputs-PR-##` branch](https://github.com/epiverse-trace/tutorials/branches) on GitHub to read the `.md` files for each episode. 
+- Access to the [`md-outputs-PR-##` branch][repo-branches] on GitHub to read the `.md` files for each episode. 
 
 Consider that:
 
@@ -230,3 +230,4 @@ email][contact].
 [swc-site]: https://software-carpentry.org/
 [lc-site]: https://librarycarpentry.org/
 [template-doc]: https://carpentries.github.io/workbench/
+[repo-branches]: https://github.com/epiverse-trace/git-rstudio-basics/branches
