@@ -82,6 +82,20 @@ For a tutorial your role could be of a __Developer__, __Reviewer__, or __Maintai
 
 #### Developer:
 
+You can follow these steps:
+
+- [Update](https://carpentries.github.io/workbench/#updating) the set of workbench packages:
+
+```r
+install.packages(c("sandpaper", "varnish", "pegboard", "tinkr"),
+  repos = c("https://carpentries.r-universe.dev/", getOption("repos")))
+```
+
+To contribute with a new episode:
+
+- [Create](https://happygitwithr.com/git-branches#create-a-new-branch) a new feature branch.
+- [Create](https://carpentries.github.io/sandpaper-docs/aio.html#episodes) a new episode with `sandpaper::create_episode_md("Episode Name")`
+
 If you need to work with the most recent versions of packages:
 
 - Use [`sandpaper::update_cache()`](https://carpentries.github.io/sandpaper/reference/dependency_management.html). This will: 
@@ -96,6 +110,12 @@ If you need to work with a specific stable version of a package:
   + Update the `renv.lock` file with the specific version,
   + Update the cache.
 - Push the updated `renv.lock` file.
+
+If you need the version of a package that is not programmatically loaded, i.e., is loaded as part of the dependency tree of an specific package:
+
+- [Create](https://carpentries.github.io/sandpaper/articles/building-with-renv.html#adding-new-packages-to-the-cache) an `episodes/install.R` file that lists the installation scripts for the packages in your lesson.
+- Run the `episodes/install.R` file to install the list of packages.
+- Run `sandpaper::update_cache()`. Before you accept the update, verify that the expected version number is listed as an update. After this, review the `renv.lock` file if this modified the file as expected. 
 
 #### Reviewer:
 
