@@ -101,6 +101,13 @@ If you need to work with a specific stable version of a package:
 
 You can follow these steps:
 
+- [Install](https://carpentries.github.io/workbench/#installation) the set of workbench packages:
+
+```r
+install.packages(c("sandpaper", "varnish", "pegboard", "tinkr"),
+  repos = c("https://carpentries.r-universe.dev/", getOption("repos")))
+```
+
 - [Clone](https://happygitwithr.com/new-github-first.html#new-rstudio-project-via-git) the repository or [Pull](https://www.epirhandbook.com/en/version-control-and-collaboration-with-git-and-github.html?q=github#in-rstudio-1) to update the branch to review on Rstudio.
 - [Checkout](https://happygitwithr.com/git-branches#switching-branches) or [Switch](https://rstudio.github.io/cheatsheets/html/rstudio-ide.html#version-control) to the branch to review.
 - Use [`sandpaper::manage_deps()`](https://carpentries.github.io/sandpaper/reference/dependency_management.html) to align the packages in your cache with the ones in the `renv.lock` file (defined by the Developer).
