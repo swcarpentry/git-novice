@@ -73,7 +73,7 @@ three.
 
 ### Contribution roles
 
-For a tutorial your role could be of a __Developer__, __Reviewer__, or __Maintainer__. Our goal is to keep an homogeneous package environment among Developers and Reviewers of a “development branch” different to main. This implies that:
+For a tutorial your role could be of a __Developer__, __Reviewer__, or __Maintainer__. Our goal is to keep an homogeneous package environment among Developers and Reviewers of a “feature branch” different to main. This implies that:
 
 - We will use [`sandpaper::use_package_cache()`](https://carpentries.github.io/sandpaper/reference/package_cache.html#background) in the R project.
 - The Developer will need to register the package version to use in a `renv.lock` file.
@@ -93,7 +93,7 @@ install.packages(c("sandpaper", "varnish", "pegboard", "tinkr"),
 
 To contribute with a new episode:
 
-- [Create](https://happygitwithr.com/git-branches#create-a-new-branch) a new feature branch.
+- [Create](https://happygitwithr.com/git-branches#create-a-new-branch) a new feature branch. Write in there your contribution.
 - [Create](https://carpentries.github.io/sandpaper-docs/aio.html#episodes) a new episode with `sandpaper::create_episode_md("Episode Name")`
 
 If you need to work with the most recent versions of packages:
@@ -116,6 +116,15 @@ If you need the version of a package that is not programmatically loaded, i.e., 
 - [Create](https://carpentries.github.io/sandpaper/articles/building-with-renv.html#adding-new-packages-to-the-cache) an `episodes/install.R` file that lists the installation scripts for the packages in your lesson.
 - Run the `episodes/install.R` file to install the list of packages.
 - Run `sandpaper::update_cache()`. Before you accept the update, verify that the expected version number is listed as an update. After this, review the `renv.lock` file if this modified the file as expected. 
+To merge your new episodes:
+
+- Make a Pull request (PR). You can follow the stesp on [using GitHub](#using-github).
+- Keep branches up to date with `main`. 
+    - This encourage to keep the history as linear as possible, prioritizing actions like ["rebase and merge"](https://epiverse-trace.github.io/blueprints/git-branching-merging.html#merging-pull-requests-merge-commits-vs-squash-and-merge-vs-rebase-and-merge) to accept the PR.
+    - Do this in your local repository only. In your feature branch:
+      - Go to the terminal. [Run `git pull origin main`](https://docs.gitlab.com/ee/topics/git/git_rebase.html) to rebase the feature branch.
+    - Go to Git tab in the environments pane. Click on `Pull options` > `Pull with rebase`.
+
 
 #### Reviewer:
 
@@ -144,7 +153,7 @@ Consider that:
 - The number `##` is equal to the PR number. 
 - `.md` files contain [generated lesson content](https://carpentries.github.io/sandpaper-docs/deployment.html) for review with knitted text, code, and figures. 
 - These `.md` files generate the `.html` of the website and look similar to how it's going to look like online.
-- Locally, after switching to the review branch in Rstudio, you can use the [Visual editor](https://posit.co/blog/exploring-rstudio-visual-markdown-editor/), or Preview it as an HTML file (which later you will need to delete).
+<!-- - Locally, after switching to the review branch in Rstudio, you can use the [Visual editor](https://posit.co/blog/exploring-rstudio-visual-markdown-editor/), or Preview it as an HTML file (which later you will need to delete).-->
 - Make any edit suggestions in the [PR online on GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request).
 
 #### Maintainer:
@@ -152,7 +161,6 @@ Consider that:
 You can follow this reference:
 
 - Update steps above from any discussion on issues.
-- Keep branches up to date with `main`.
 - Review how to [maintain a Healthy Infrastructure](https://carpentries.github.io/sandpaper-docs/update.html).
 - Review how to [Automate a Pull Request](https://carpentries.github.io/sandpaper-docs/pull-request.html#automated-pull-requests). Lessons outside of the carpentries need to [set up a Pull Request bot](https://carpentries.github.io/sandpaper-docs/pull-request.html#automated-pull-requests) with the [Carpentries Apprentice bot](https://github.com/carpentries-bot).
 
