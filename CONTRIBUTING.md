@@ -160,9 +160,10 @@ Consider that:
 
 You can follow this reference:
 
-- Update steps above from any discussion on issues.
+- Update steps above from any discussion on [issues][repo-issues].
 - Review how to [maintain a Healthy Infrastructure](https://carpentries.github.io/sandpaper-docs/update.html).
-- Review how to [Automate a Pull Request](https://carpentries.github.io/sandpaper-docs/pull-request.html#automated-pull-requests). Lessons outside of the carpentries need to [set up a Pull Request bot](https://carpentries.github.io/sandpaper-docs/pull-request.html#automated-pull-requests) with the [Carpentries Apprentice bot](https://github.com/carpentries-bot).
+- Review how to [Automate a Pull Request](https://carpentries.github.io/sandpaper-docs/pull-request.html#automated-pull-requests).
+- Review topics on [Collaborative Lesson Development](https://carpentries.github.io/lesson-development-training/)
 
 ### Writing guidelines
 
