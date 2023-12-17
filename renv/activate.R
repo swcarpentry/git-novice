@@ -8,6 +8,21 @@ local({
   # the project directory
   project <- getwd()
 
+  # use start-up diagnostics if enabled
+  diagnostics <- Sys.getenv("RENV_STARTUP_DIAGNOSTICS", unset = "FALSE")
+  if (diagnostics) {
+    start <- Sys.time()
+    profile <- tempfile("renv-startup-", fileext = ".Rprof")
+    utils::Rprof(profile)
+    on.exit({
+      utils::Rprof(NULL)
+      elapsed <- signif(difftime(Sys.time(), start, units = "auto"), digits = 2L)
+      writeLines(sprintf("- renv took %s to run the autoloader.", format(elapsed)))
+      writeLines(sprintf("- Profile: %s", profile))
+      print(utils::summaryRprof(profile))
+    }, add = TRUE)
+  }
+
   # figure out whether the autoloader is enabled
   enabled <- local({
 
@@ -504,7 +519,7 @@ local({
   
     # open the bundle for reading
     # We use gzcon for everything because (from ?gzcon)
-    # > Reading from a connection which does not supply a ‘gzip’ magic
+    # > Reading from a connection which does not supply a 'gzip' magic
     # > header is equivalent to reading from the original connection
     conn <- gzcon(file(bundle, open = "rb", raw = TRUE))
     on.exit(close(conn))
@@ -767,10 +782,12 @@ local({
   renv_bootstrap_validate_version <- function(version, description = NULL) {
   
     # resolve description file
-    description <- description %||% {
-      path <- getNamespaceInfo("renv", "path")
-      packageDescription("renv", lib.loc = dirname(path))
-    }
+    #
+    # avoid passing lib.loc to `packageDescription()` below, since R will
+    # use the loaded version of the package by default anyhow. note that
+    # this function should only be called after 'renv' is loaded
+    # https://github.com/rstudio/renv/issues/1625
+    description <- description %||% packageDescription("renv")
   
     # check whether requested version 'version' matches loaded version of renv
     sha <- attr(version, "sha", exact = TRUE)
@@ -841,7 +858,7 @@ local({
     hooks <- getHook("renv::autoload")
     for (hook in hooks)
       if (is.function(hook))
-        tryCatch(hook(), error = warning)
+        tryCatch(hook(), error = warnify)
   
     # load the project
     renv::load(project)
@@ -982,10 +999,15 @@ local({
   
   }
   
-  renv_bootstrap_version_friendly <- function(version, sha = NULL) {
+  renv_bootstrap_version_friendly <- function(version, shafmt = NULL, sha = NULL) {
     sha <- sha %||% attr(version, "sha", exact = TRUE)
-    parts <- c(version, sprintf("[sha: %s]", substring(sha, 1L, 7L)))
-    paste(parts, collapse = " ")
+    parts <- c(version, sprintf(shafmt %||% " [sha: %s]", substring(sha, 1L, 7L)))
+    paste(parts, collapse = "")
+  }
+  
+  renv_bootstrap_exec <- function(project, libpath, version) {
+    if (!renv_bootstrap_load(project, libpath, version))
+      renv_bootstrap_run(version, libpath)
   }
   
   renv_bootstrap_run <- function(version, libpath) {
@@ -1010,11 +1032,6 @@ local({
   
     warning(paste(msg, collapse = "\n"), call. = FALSE)
   
-  }
-  
-  
-  renv_bootstrap_in_rstudio <- function() {
-    commandArgs()[[1]] == "RStudio"
   }
   
   renv_json_read <- function(file = NULL, text = NULL) {
@@ -1155,26 +1172,8 @@ local({
   # construct full libpath
   libpath <- file.path(root, prefix)
 
-  # attempt to load
-  if (renv_bootstrap_load(project, libpath, version))
-    return(TRUE)
-
-  if (renv_bootstrap_in_rstudio()) {
-    setHook("rstudio.sessionInit", function(...) {
-      renv_bootstrap_run(version, libpath)
-
-      # Work around buglet in RStudio if hook uses readline
-      tryCatch(
-        {
-          tools <- as.environment("tools:rstudio")
-          tools$.rs.api.sendToConsole("", echo = FALSE, focus = FALSE)
-        },
-        error = function(cnd) {}
-      )
-    })
-  } else {
-    renv_bootstrap_run(version, libpath)
-  }
+  # run bootstrap code
+  renv_bootstrap_exec(project, libpath, version)
 
   invisible()
 
