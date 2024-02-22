@@ -1,0 +1,29 @@
+preserve_hierarchy: true
+
+files:
+  - source: /episodes/*.Rmd
+    dest: /episodes/%file_name%.md
+    type: md
+    translation: /locale/%two_letters_code%/episodes/%original_file_name%
+  - source: /episodes/*.md
+    translation: /locale/%two_letters_code%/episodes/%original_file_name%
+  - source: /instructors/*.md
+    translation: /locale/%two_letters_code%/instructors/%original_file_name%
+  - source: /learners/*.md
+    translation: /locale/%two_letters_code%/learners/%original_file_name%
+  - source: /profiles/*.md
+    translation: /locale/%two_letters_code%/profiles/%original_file_name%
+  - source: /CODE_OF_CONDUCT.md
+    translation: /locale/%two_letters_code%/%original_file_name%
+  - source: /config.yaml
+    translation: /locale/%two_letters_code%/%original_file_name%
+  - source: /CONTRIBUTING.md
+    translation: /locale/%two_letters_code%/%original_file_name%
+  - source: /LICENSE.md
+    translation: /locale/%two_letters_code%/%original_file_name%
+  - source: /README.md
+    translation: /locale/%two_letters_code%/%original_file_name%
+  - source: /index.md
+    translation: /locale/%two_letters_code%/%original_file_name%
+  - source: /links.md
+    translation: /locale/%two_letters_code%/%original_file_name%
