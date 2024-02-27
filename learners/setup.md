@@ -58,7 +58,7 @@ when memory has faded).
 professionals use to keep track of what they've done and to
 collaborate with other people.  Every large software development
 project relies on it, and most programmers use it for their small jobs
-as well.  And it isn't just for software: books,
+as well.  And **it isn't just for software**: books,
 papers, small data sets, and _anything that changes over time or needs
 to be shared_ can and should be stored in a version control system.
 
