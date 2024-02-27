@@ -66,20 +66,21 @@ to be shared_ can and should be stored in a version control system.
 
 ## Prerequisites
 
-In this lesson we use Git from Rstudio.
+In this lesson we use Git from within Rstudio.
 Some previous experience with R and Bash is expected,
 *but isn't mandatory*.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+## Software Setup
 
-## Install R and Rstudio
+### Install R and Rstudio
 
 Follow these instructions <https://posit.co/download/rstudio-desktop/>
 
-### Install R packages
+#### Install R packages
 
-These installation steps could ask you `? Do you want to continue (Y/n)` write `y` and press ENTER.
+These installation steps could ask you `? Do you want to continue (Y/n)` write `Y` and press ENTER.
 
 Install all these packages:
 
@@ -94,28 +95,28 @@ new <- c("gh",
 pak::pak(new)
 ```
 
-## Installing Git
+### Installing Git
+  
+Follow the ["Happy Git with R" instructions](https://happygitwithr.com/install-git.html) on installing Git for each Operating system.
 
-Follow this instructions on installing Git for various operating systems.
-
-- [Git installation on Windows][workshop-setup]
-- [Git installation on MacOS][workshop-setup]
-- [Git installation on Linux][workshop-setup]
-
-You can also follow [happygitwithr recommendations](https://happygitwithr.com/install-git.html) for each Operating system.
-
-## Creating a GitHub Account
+### Creating a GitHub Account
 
 You will need an account for [GitHub](https://github.com) to follow episodes 7 & 8 in this lesson.
+
+::::::::::::::::::::::::::::::::: checklist
+
+### Follow all these steps
 
 1. Go to <https://github.com> and follow the "Sign up" link at the top-right of the window.
 2. Follow the instructions to create an account.
 3. Verify your email address with GitHub.
-4. Configure multifactor authentication (see below).
+4. Configure the Multi-factor Authentication (see below).
 
-### Multi-factor Authentication
+:::::::::::::::::::::::::::::::::
 
-In 2023, GitHub introduced a requirement for 
+#### Multi-factor Authentication
+
+GitHub requires 
 all accounts to have 
 [multi-factor authentication (2FA)](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/about-two-factor-authentication) 
 configured for extra security.
@@ -149,5 +150,4 @@ $ cd Desktop
 ```
 -->
 
-[workshop-setup]: https://carpentries.github.io/workshop-template/install_instructions/#git
 
