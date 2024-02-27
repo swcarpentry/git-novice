@@ -66,7 +66,7 @@ to be shared_ can and should be stored in a version control system.
 
 ## Prerequisites
 
-In this lesson we use Git from within Rstudio.
+In this tutorial we use Git from within RStudio.
 Some previous experience with R and Bash is expected,
 *but isn't mandatory*.
 
@@ -74,38 +74,76 @@ Some previous experience with R and Bash is expected,
 
 ## Software Setup
 
-### Install R and Rstudio
+Follow these four steps:
 
-Follow these instructions <https://posit.co/download/rstudio-desktop/>
+### 1. Install or upgrade R and RStudio
 
-#### Install R packages
+To install R and RStudio, follow these instructions <https://posit.co/download/rstudio-desktop/>.
 
-These installation steps could ask you `? Do you want to continue (Y/n)` write `Y` and press ENTER.
+Already installed? **Hold on: This is a great time to make sure your R installation is current.**
 
-Install all these packages:
+This tutorial requires R version 4.0.0 or later. 
+
+To check if your R version is up to date:
+
+- In RStudio your R version will be printed in [the console window](https://docs.posit.co/ide/user/ide/guide/code/console.html). Or run `sessionInfo()` there.
+
+- **To update R**, download and install the latest version from the [R project website](https://cran.rstudio.com/) for your operating system.
+
+  - After installing a new version, you will have to reinstall all your packages with the new version. 
+  - For Windows, the `{installr}` package can upgrade your R version and migrate your package library.
+
+- **To update RStudio**, open RStudio and click on 
+`Help > Check for Updates`. If a new version is available follow the 
+instructions on the screen.
+
+::::::::::::::::::::::::::::: callout
+
+While this may sound scary, it is **far more common** to run into issues due to using out-of-date versions of R or R packages. Keeping up with the latest versions of R, RStudio, and any packages you regularly use is a good practice.
+
+:::::::::::::::::::::::::::::
+
+### 2. Install R packages
+
+Open RStudio and **copy and paste** the following code chunk into the [console window](https://docs.posit.co/ide/user/ide/guide/code/console.html), then press the <kbd>Enter</kbd> (Windows and Linux) or <kbd>Return</kbd> (MacOS) to execute the command:
 
 ```r
 if(!require("pak")) install.packages("pak")
 
 new <- c("gh",
-         "usethis",
-         "tidyverse",
-         "here")
+         "usethis")
 
 pak::pak(new)
 ```
 
-### Installing Git
+These installation steps could ask you `? Do you want to continue (Y/n)` write `Y` and press <kbd>Enter</kbd>.
+
+You should update **all of the packages** required for the tutorial, even if you installed them relatively recently. New versions bring improvements and important bug fixes.
+
+When the installation has finished, you can try to load the packages by pasting the following code into the console:
+
+```r
+library(gh)
+library(usethis)
+```
+
+If you do NOT see an Error like `there is no package called ‘...’` you are good to go! If you do, [contact us](#your-questions)!
+
+### 3. Installing Git
   
-Follow the ["Happy Git with R" instructions](https://happygitwithr.com/install-git.html) on installing Git for each Operating system.
+Follow the ["Happy Git with R" instructions](https://happygitwithr.com/install-git.html) on installing Git for each Operating system:
 
-### Creating a GitHub Account
+- [Git for Windows](https://happygitwithr.com/install-git.html#install-git-windows)
+- [MacOS](https://happygitwithr.com/install-git.html#macos)
+- [Linux](https://happygitwithr.com/install-git.html#linux)
 
-You will need an account for [GitHub](https://github.com) to follow episodes 7 & 8 in this lesson.
+### 4. Creating a GitHub Account
+
+You will need an account for [GitHub](https://github.com) to follow the last episodes in this tutorial.
 
 ::::::::::::::::::::::::::::::::: checklist
 
-### Follow all these steps
+#### Follow all these steps
 
 1. Go to <https://github.com> and follow the "Sign up" link at the top-right of the window.
 2. Follow the instructions to create an account.
@@ -150,4 +188,7 @@ $ cd Desktop
 ```
 -->
 
+## Your Questions
+
+If you need any assistance installing the software or have any other questions about this tutorial, please send an email to <andree.valle-campos@lshtm.ac.uk>
 
