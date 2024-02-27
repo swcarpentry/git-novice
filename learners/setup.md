@@ -133,7 +133,7 @@ If you do NOT see an Error like `there is no package called ‘...’` you are g
   
 Follow the ["Happy Git with R" instructions](https://happygitwithr.com/install-git.html) on installing Git for each Operating system:
 
-- [Git for Windows](https://happygitwithr.com/install-git.html#install-git-windows)
+- [Git for Windows](https://gitforwindows.org/)
 - [MacOS](https://happygitwithr.com/install-git.html#macos)
 - [Linux](https://happygitwithr.com/install-git.html#linux)
 
