@@ -63,13 +63,13 @@ episodes:
 - 02-setup.md
 - 03-create.md
 - 04-changes.md
-- 05-history.md
 - 06-ignore.md
 - 07-github.md
 - 08-collab.md
 - 09-conflict.md
 - 15-wrapup.md
 - 14-supplemental-rstudio.md
+- 05-history.md
 - 10-open.md
 - 11-licensing.md
 - 12-citation.md
