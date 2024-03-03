@@ -23,9 +23,13 @@ We'll start by exploring how we are usually introduced to version control to kee
 Even if you aren't collaborating with other people,
 version control may have look like this situation:
 
+![Tracking changes for the `Press release.doc` file. [Never use the word "final" in a filename](https://properdiscord.com/2012/09/13/never-use-the-word-final-in-a-filename/).](fig/git-never-use-the-word-final.png){alt='One same files called Press release.doc with modifications in different files using the words FINAL, VERSION, REVISED, APPROVED. Source: Proper Discord.'}
+
+<!--
 ![Tracking changes for the `manuscript.docx` file.](fig/git-manual-version-system.png){alt='One same files called manuscript with modification dates as prefix and what a person did as sufix.'}
 
 We all started by replicating the Version control system of our initial community. We all need to differentiate files from previous versions or different colleagues (supervisors or reviewers). For those reasons, we tag each version to track what one person did (e.g., with a suffix) or when (e.g., with a prefix).
+-->
 
 Does it seem unnecessary to you to have multiple nearly identical versions of the same document? Possibly yes. But this Version control system opens the possibility of returning to a specific version in case you erased something that you think now is essential.
 
