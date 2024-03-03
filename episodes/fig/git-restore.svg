@@ -103,7 +103,7 @@
 			<polygon fill="#45BEEE" points="398.062,158.571 398.062,218.695 438.614,188.163 			"/>
 		</g>
 		<rect x="265.661" y="175.882" fill="none" width="168.076" height="39.375"/>
-		<text transform="matrix(1 0 0 1 287.0215 184.1621)"><tspan x="0" y="0" font-family="'Consolas'" font-size="12">git checkout HEAD~1</tspan><tspan x="56.08" y="9" font-family="'Consolas'" font-size="12">or </tspan><tspan x="-3.299" y="18" font-family="'Consolas'" font-size="12">git checkout f22b25e</tspan></text>
+		<text transform="matrix(1 0 0 1 287.0215 184.1621)"><tspan x="0" y="0" font-family="'Consolas'" font-size="12">git restore -s HEAD~1 .</tspan><tspan x="56.08" y="9" font-family="'Consolas'" font-size="12">or </tspan><tspan x="-3.299" y="18" font-family="'Consolas'" font-size="12">git restore -s f22b25e .</tspan></text>
 	</g>
 	<rect x="92" y="286" fill="none" width="147" height="17"/>
 	<text transform="matrix(1 0 0 1 139.1562 294.6279)" font-family="'Helvetica'" font-size="12">repository</text>
