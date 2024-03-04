@@ -99,6 +99,8 @@ instructions on the screen.
 
 ::::::::::::::::::::::::::::: callout
 
+### On updates
+
 While this may sound scary, it is **far more common** to run into issues due to using out-of-date versions of R or R packages. Keeping up with the latest versions of R, RStudio, and any packages you regularly use is a good practice.
 
 :::::::::::::::::::::::::::::
@@ -111,6 +113,7 @@ Open RStudio and **copy and paste** the following code chunk into the [console w
 if(!require("pak")) install.packages("pak")
 
 new <- c("gh",
+         "gitcreds",
          "usethis")
 
 pak::pak(new)
@@ -124,6 +127,7 @@ When the installation has finished, you can try to load the packages by pasting 
 
 ```r
 library(gh)
+library(gitcreds)
 library(usethis)
 ```
 
