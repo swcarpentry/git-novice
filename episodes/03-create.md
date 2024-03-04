@@ -293,18 +293,15 @@ For complementary resources, refer to the [Git Cheatsheets for Quick Reference](
 ## Places to Create Git Repositories
 
 Along with tracking information about cases (the project we have already created),
-Dracula would also like to track information about interventions.
-Despite Wolfman's concerns, Dracula creates a `interventions` project inside his `cases`
-project. Additionally, Dracula uses a sequence of commands __in the Rstudio Terminal__:
+Dracula would also like to track information about **interventions**.
+Despite Wolfman's concerns, Dracula plans to create a `interventions` project inside his `cases` project and initialize Git. Dracula uses a sequence of commands __in the Rstudio Console__:
 
-```bash
-$ mkdir interventions    # make a subdirectory cases/interventions
-$ cd interventions       # go into interventions subdirectory
-$ git init       # make the interventions subdirectory a Git repository
-$ ls -a          # ensure the .git subdirectory is present indicating we have created a new Git repository
+```r
+usethis::create_project(path = "interventions")
+usethis::use_git()
 ```
 
-Is the `git init` command, run inside the `interventions` subdirectory, required for
+Is the `usethis::use_git()` command, run inside the `interventions` subdirectory, required for
 tracking files stored in the `interventions` subdirectory?
 
 :::::::::::::::  solution
@@ -319,9 +316,10 @@ to the `cases` directory.
 
 Additionally, Git repositories can interfere with each other if they are "nested":
 the outer repository will try to version-control
-the inner repository. Therefore, it's best to create each new Git
-repository in a separate directory. To be sure that there is no conflicting
-repository in the directory, check the output of `git status`. If it looks
+the inner repository. Therefore, **it's best to create each new Git
+repository in a separate directory**. To be sure that there is no conflicting
+repository in the directory, check the output of `git status` from the Terminal. 
+If it looks
 like the following, you are good to go to create a new repository as shown
 above:
 
@@ -347,10 +345,23 @@ Do you want to create anyway?
 
 Using the R functions from the `{usethis}` package can be less error-prone!
 
-Lastly, Dracula used some _Bash commands_ in the Terminal. If you are interested to learn more about them, we invite you to read this tutorial on [Bash commands](https://swcarpentry.github.io/shell-novice/)!
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::: solution
+
+### Using `Bash` commands
+
+Lastly, Dracula used a _Bash commands_ in the Terminal to create a subdirectory. 
+
+```
+$ mkdir interventions    # make a subdirectory cases/interventions
+```
+
+If you are interested to learn more about _Bash commands_, we invite you to read this tutorial on [Bash commands](https://swcarpentry.github.io/shell-novice/)!
 
 :::::::::::::::::::::::::
 
+<!--
 ## Correcting `git init` Mistakes
 
 Wolfman explains to Dracula how a nested repository is redundant and may cause confusion
@@ -392,6 +403,7 @@ Therefore, always check your current directory using the command `pwd`.
 
 
 :::::::::::::::::::::::::
+-->
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
