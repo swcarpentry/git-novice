@@ -469,7 +469,6 @@ If you are interested on this, [take a look to this chapter of the happygitwithr
 
 - Use the `{usethis}` package to configure a user name, email address, and other preferences once per machine.
 - Use `usethis::use_git_config()` to configure Git in Rstudio.
-- Use `usethis::git_default_branch_configure()` to define the default branch name.
 - Use `usethis::git_sitrep()` to verify your configuration.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
