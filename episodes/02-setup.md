@@ -100,7 +100,7 @@ For this lesson, we will be interacting with [GitHub](https://github.com/) and s
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Keeping your email private
+### Keeping your email private
 
 If you elect to use a private email address with GitHub, then use that same email address for the `user.email` value, e.g. `username@users.noreply.github.com` replacing `username` with your GitHub one.
 
@@ -202,6 +202,8 @@ Look over the scopes; the recommended scopes to select are “repo”, “workfl
 Copy your token. Save it for the next step.
 
 ::::::::::::::::: callout
+
+### token options
 
 Briefly:
 
