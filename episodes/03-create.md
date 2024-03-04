@@ -294,7 +294,7 @@ For complementary resources, refer to the [Git Cheatsheets for Quick Reference](
 
 Along with tracking information about cases (the project we have already created),
 Dracula would also like to track information about **interventions**.
-Despite Wolfman's concerns, Dracula plans to create a `interventions` project inside his `cases` project and initialize Git. Dracula uses a sequence of commands __in the Rstudio Console__:
+Despite Wolfman's concerns, Dracula creates a `interventions` project inside his `cases` project and initialize Git. Dracula uses a sequence of commands __in the Rstudio Console__:
 
 ```r
 usethis::create_project(path = "interventions")
