@@ -169,7 +169,17 @@ Plain text files can be text, code, and data. Example for each of these are Mark
 
 ::::::::::::::::: callout
 
-We can use `Git` to track changes of these plain text files. However, for [plain text data files](https://www.r4epi.com/importing-plain-text-files.html) (like `.csv` and `.tsv`) we prefer different version control systems.
+### data files
+
+We can use `Git` to track changes of **data files** (like `.csv` and `.tsv`). However, if we consider data files as **raw files**, which should not change in time, then we may not be needed to use Git with them. We'll take a look into this in the chapter on [Ignoring things](06-ignore.md).
+
+Also, if you consider your data file **large** with respect to your computer, you can opt to use: 
+
+- a file hosting service like Google Drive and the [`{googlesheets4}` R package](https://r4ds.hadley.nz/spreadsheets#google-sheets) to import data, 
+- a different version control system like [Git Large File Storage (LFS)](https://git-lfs.github.com/), or 
+- a different data format like the `parquet` format using [the `{arrow}` R package](https://r4ds.hadley.nz/arrow.html).
+ 
+<!-- [plain text data files](https://www.r4epi.com/importing-plain-text-files.html) -->
 
 :::::::::::::::::::::::::
 
