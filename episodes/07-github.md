@@ -281,7 +281,7 @@ This command will push the changes from
 our local repository to the repository on GitHub:
 
 ```bash
-$ git push
+$ git push origin main
 ```
 
 Since Dracula set up a passphrase, it will prompt him for it.  If you completed advanced settings for your authentication, it
@@ -397,7 +397,7 @@ $ git push
 We can pull changes from the remote repository to the local one as well:
 
 ```bash
-$ git pull
+$ git pull origin main
 ```
 
 ```output
