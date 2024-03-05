@@ -341,7 +341,7 @@ What are some of the benefits of using version control, Git and GitHub?
 
 ### Create your GitHub profile!
 
-Your profile page introduce you to other contributors on GitHub:
+Now your work will be visible online on GitHub. Your profile page introduce you to other contributors on GitHub:
 
 ![](fig/github-create-00.png)
 
