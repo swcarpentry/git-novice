@@ -41,7 +41,65 @@ and cons of this in a [later episode](13-hosting.md).
 Let's start by sharing the changes we've made to our current project with the
 world. To this end we are going to create a *remote* repository that will be linked to our *local* repository.
 
-## 1\. Create a remote repository
+## How to connect from Local to GitHub?
+
+From your local R project, after using `usethis::use_git()` to initialise your **Local repository**, then you can also use `{usethis}` to connect it with the **Remote repository** (a.k.a, "the remote"):
+
+```r
+usethis::use_github()
+```
+
+```output
+ℹ Defaulting to 'https' Git protocol
+✔ Creating GitHub repository 'vlad/cases'
+✔ Setting remote 'origin' to 'https://github.com/vlad/cases.git'
+✔ Pushing 'main' branch to GitHub and setting 'origin/main' as upstream branch
+✔ Opening URL 'https://github.com/vlad/cases'
+```
+
+This will open a new tab in your web browser with the URL path of your remote repository in GitHub.
+
+You can use `usethis::use_github()` to _create_ a remote repository, _connect_ the local and the remote, and _push_ your local changes to a remote.
+
+```r
+usethis::git_sitrep()
+```
+
+The output in the last section called `── GitHub project` should look like this:
+
+```output
+── GitHub project 
+• Type = 'ours'
+• Host = 'https://github.com'
+• Config supports a pull request = TRUE
+• origin = 'vlad/cases' (can push)
+• upstream = <not configured>
+• Desc = 'origin' is both the source and primary repo.
+```
+
+The `(can push)` line of the output above is critical!
+
+If you remember back to the earlier [episode](04-changes.md) where we added and
+committed our earlier work on `sitrep.Rmd`, we had a diagram of the local repository
+which looked like this:
+
+![](fig/git-staging-area.svg){alt='The Local Repository with Git Staging Area'}
+
+Now that we have two repositories, we need a diagram like this:
+
+![](fig/git-freshly-made-github-repo.png){alt='Freshly-Made GitHub Repository'}
+
+Note that our local repository still contains our earlier work on `sitrep.Rmd`, but the
+remote repository on GitHub appears empty as it doesn't contain any files yet.
+
+We'll discuss remotes in more detail in the next episode, while
+talking about how they might be used for collaboration.
+
+::::::::::::::::::::::::::::::::::: spoiler
+
+## How to connect from GitHub to Local?
+
+### 1\. Create a remote repository
 
 Log in to [GitHub](https://github.com), then click on the icon in the top right corner to
 create a new repository called `cases`:
@@ -83,7 +141,7 @@ Now that we have two repositories, we need a diagram like this:
 Note that our local repository still contains our earlier work on `sitrep.Rmd`, but the
 remote repository on GitHub appears empty as it doesn't contain any files yet.
 
-## 2\. Connect local to remote repository
+### 2\. Connect local to remote repository
 
 Now we connect the two repositories.  We do this by making the
 GitHub repository a [remote](../learners/reference.md#remote) for the local repository.
@@ -145,193 +203,6 @@ origin   git@github.com:vlad/cases.git (fetch)
 origin   git@github.com:vlad/cases.git (push)
 ```
 
-You can also check this steps with `{usethis}`:
-
-```r
-usethis::git_sitrep()
-```
-
-The output in the last section called `── GitHub project` should look like this:
-
-```output
-── GitHub project 
-• Type = 'ours'
-• Host = 'https://github.com'
-• Config supports a pull request = TRUE
-• origin = 'vlad/cases' (can push)
-• upstream = <not configured>
-• Desc = 'origin' is both the source and primary repo.
-```
-
-We'll discuss remotes in more detail in the next episode, while
-talking about how they might be used for collaboration.
-
-<!--
-## 3\. SSH Background and Setup
-
-Before Dracula can connect to a remote repository, he needs to set up a way for his computer to authenticate with GitHub so it knows it's him trying to connect to his remote repository.
-
-We are going to set up the method that is commonly used by many different services to authenticate access on the command line.  This method is called Secure Shell Protocol (SSH).  SSH is a cryptographic network protocol that allows secure communication between computers using an otherwise insecure network.
-
-SSH uses what is called a key pair. This is two keys that work together to validate access. One key is publicly known and called the public key, and the other key called the private key is kept private. Very descriptive names.
-
-You can think of the public key as a padlock, and only you have the key (the private key) to open it. You use the public key where you want a secure method of communication, such as your GitHub account.  You give this padlock, or public key, to GitHub and say "lock the communications to my account with this so that only computers that have my private key can unlock communications and send git commands as my GitHub account."
-
-What we will do now is the minimum required to set up the SSH keys and add the public key to a GitHub account.
-
-:::::::::::::::::::::::::::::::::::::::::  callout
-
-## Advanced SSH
-
-A supplemental episode in this lesson discusses SSH and key pairs in more depth and detail.
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-The first thing we are going to do is check if this has already been done on the computer you're on.  Because generally speaking, this setup only needs to happen once and then you can forget about it.
-
-:::::::::::::::::::::::::::::::::::::::::  callout
-
-## Keeping your keys secure
-
-You shouldn't really forget about your SSH keys, since they keep your account secure. It's good
-practice to audit your secure shell keys every so often. Especially if you are using multiple
-computers to access your account.
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-We will run the list command to check what key pairs already exist on your computer.
-
-```bash
-ls -al ~/.ssh
-```
-
-Your output is going to look a little different depending on whether or not SSH has ever been set up on the computer you are using.
-
-Dracula has not set up SSH on his computer, so his output is
-
-```output
-ls: cannot access '/c/Users/Vlad Dracula/.ssh': No such file or directory
-```
-
-If SSH has been set up on the computer you're using, the public and private key pairs will be listed. The file names are either `id_ed25519`/`id_ed25519.pub` or `id_rsa`/`id_rsa.pub` depending on how the key pairs were set up.  
-Since they don't exist on Dracula's computer, he uses this command to create them.
-
-### 3\.1 Create an SSH key pair
-
-To create an SSH key pair Vlad uses this command, where the `-t` option specifies which type of algorithm to use and `-C` attaches a comment to the key (here, Vlad's email):
-
-```bash
-$ ssh-keygen -t ed25519 -C "vlad@tran.sylvan.ia"
-```
-
-If you are using a legacy system that doesn't support the Ed25519 algorithm, use:
-`$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
-
-```output
-Generating public/private ed25519 key pair.
-Enter file in which to save the key (/c/Users/Vlad Dracula/.ssh/id_ed25519):
-```
-
-We want to use the default file, so just press <kbd>Enter</kbd>.
-
-```output
-Created directory '/c/Users/Vlad Dracula/.ssh'.
-Enter passphrase (empty for no passphrase):
-```
-
-Now, it is prompting Dracula for a passphrase.  Since he is using his lab's laptop that other people sometimes have access to, he wants to create a passphrase.  Be sure to use something memorable or save your passphrase somewhere, as there is no "reset my password" option.
-
-```output
-Enter same passphrase again:
-```
-
-After entering the same passphrase a second time, we receive the confirmation
-
-```output
-Your identification has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519
-Your public key has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519.pub
-The key fingerprint is:
-SHA256:SMSPIStNyA00KPxuYu94KpZgRAYjgt9g4BA4kFy3g1o vlad@tran.sylvan.ia
-The key's randomart image is:
-+--[ED25519 256]--+
-|^B== o.          |
-|%*=.*.+          |
-|+=.E =.+         |
-| .=.+.o..        |
-|....  . S        |
-|.+ o             |
-|+ =              |
-|.o.o             |
-|oo+.             |
-+----[SHA256]-----+
-```
-
-The "identification" is actually the private key. You should never share it.  The public key is appropriately named.  The "key fingerprint"
-is a shorter version of a public key.
-
-Now that we have generated the SSH keys, we will find the SSH files when we check.
-
-```bash
-ls -al ~/.ssh
-```
-
-```output
-drwxr-xr-x 1 Vlad Dracula 197121   0 Jul 16 14:48 ./
-drwxr-xr-x 1 Vlad Dracula 197121   0 Jul 16 14:48 ../
--rw-r--r-- 1 Vlad Dracula 197121 419 Jul 16 14:48 id_ed25519
--rw-r--r-- 1 Vlad Dracula 197121 106 Jul 16 14:48 id_ed25519.pub
-```
-
-### 3\.2 Copy the public key to GitHub
-
-Now we have a SSH key pair and we can run this command to check if GitHub can read our authentication.
-
-```bash
-ssh -T git@github.com
-```
-
-```output
-The authenticity of host 'github.com (192.30.255.112)' can't be established.
-RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
-This key is not known by any other names
-Are you sure you want to continue connecting (yes/no/[fingerprint])? y
-Please type 'yes', 'no' or the fingerprint: yes
-Warning: Permanently added 'github.com' (RSA) to the list of known hosts.
-git@github.com: Permission denied (publickey).
-```
-
-Right, we forgot that we need to give GitHub our public key!
-
-First, we need to copy the public key.  Be sure to include the `.pub` at the end, otherwise you're looking at the private key.
-
-```bash
-cat ~/.ssh/id_ed25519.pub
-```
-
-```output
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDmRA3d51X0uu9wXek559gfn6UFNF69yZjChyBIU2qKI vlad@tran.sylvan.ia
-```
-
-Now, going to GitHub.com, click on your profile icon in the top right corner to get the drop-down menu.  Click "Settings," then on the
-settings page, click "SSH and GPG keys," on the left side "Account settings" menu.  Click the "New SSH key" button on the right side. Now,
-you can add the title (Dracula uses the title "Vlad's Lab Laptop" so he can remember where the original key pair
-files are located), paste your SSH key into the field, and click the "Add SSH key" to complete the setup.
-
-Now that we've set that up, let's check our authentication again from the command line.
-
-```bash
-$ ssh -T git@github.com
-```
-
-```output
-Hi Vlad! You've successfully authenticated, but GitHub does not provide shell access.
-```
-
-Good! This output confirms that the SSH key works as intended. We are now ready to push our work to the remote repository.
--->
-
 ## 3\. Push local changes to a remote
 
 Now that authentication is setup, we can return to the remote.  This command will push the changes from
@@ -356,6 +227,7 @@ To https://github.com/vlad/cases.git
  * [new branch]      main -> main
 ```
 
+<!--
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Proxy
@@ -378,9 +250,56 @@ $ git config --global --unset https.proxy
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+-->
 
-<!--
-:::::::::::::::::::::::::::::::::::::::::  callout
+:::::::::::::::::::::::::::::::::::
+
+## Push local changes to a remote
+
+We can add new changes to the remote repository.
+Let's make a change to `sitrep.Rmd`, adding yet another line.
+
+```r
+usethis::edit_file("sitrep.Rmd")
+```
+
+```output
+Comparison of attack rates in different age groups
+This can identify priority groups for interventions
+Maps illustrate the spread and impact of outbreak
+Read shapefiles with the {sf} R package
+```
+
+Add and commit this change to the local repository:
+
+```bash
+git add sitrep.Rmd
+git commit -m "Add package to read spatial data"
+```
+
+This command will push the changes from
+our local repository to the repository on GitHub:
+
+```bash
+$ git push
+```
+
+Since Dracula set up a passphrase, it will prompt him for it.  If you completed advanced settings for your authentication, it
+will not prompt for a passphrase.
+
+```output
+Enumerating objects: 16, done.
+Counting objects: 100% (16/16), done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (16/16), 1.45 KiB | 372.00 KiB/s, done.
+Total 16 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/vlad/cases.git
+ * [new branch]      main -> main
+```
+
+:::::::::::::::::::::::::::::::::::::::::  spoiler
 
 ## Password Managers
 
@@ -405,13 +324,13 @@ to make Git default to using the terminal for usernames and passwords.
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
--->
+
 
 Our local and remote repositories are now in this state:
 
 ![](fig/github-repo-after-first-push.png){alt='GitHub Repository After First Push'}
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+:::::::::::::::::::::::::::::::::::::::::  spoiler
 
 ## The '-u' Flag
 
@@ -421,23 +340,26 @@ command, and is used to associate the current branch with a remote branch so
 that the `git pull` command can be used without any arguments. To do this,
 simply use `git push -u origin main` once the remote has been set up.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-## All in one step
-
-You can use `usethis::use_github()` to _create_ a remote repository, _connect_ the local and the remote, and _push_ your local changes to a remote.
 
 ::::::::::::::::::::::::::::::::: challenge
 
 For the Outbreak response, along with tracking information about cases (the project we have already created),
 Dracula would also like to track information about interventions.
 
-Create new local repository for `interventions` and connect it with a remote repository:
+1. Create new local repository for `interventions` and connect it with a remote repository.
 
-- First, if you are in Rstudio, close your R Project from `File` > `Close Project`.
-- In the Console, run:
+2. Create a `read-data.R` file.
+
+3. Add and commit that change to the local repository.
+
+4. Push that change to the remote repository.
+
+::::::::::::::::: solutions
+
+First, if you are in Rstudio, close your R Project from `File` > `Close Project`.
+
+In the Console, run:
 
 ```r
 # create a new R project in a new directory
@@ -452,27 +374,30 @@ usethis::use_git()
 usethis::use_github()
 ```
 
-```output
-ℹ Defaulting to 'https' Git protocol
-✔ Creating GitHub repository 'vlad/cases'
-✔ Setting remote 'origin' to 'https://github.com/vlad/cases.git'
-✔ Pushing 'main' branch to GitHub and setting 'origin/main' as upstream branch
-✔ Opening URL 'https://github.com/vlad/cases'
+Create the file
+
+```r
+usethis::edit_file("read-data.R")
 ```
 
-This will open a new tab in your web browser with the URL path of your remote repository in GitHub.
+In the Terminal, run:
 
+```bash
+$ git add read-data.R
+$ git commit -m "Add read data file"
+$ git push
+```
 
 :::::::::::::::::
 
-
+::::::::::::::::::::::::::::::::::
 
 ## Pull changes
 
 We can pull changes from the remote repository to the local one as well:
 
 ```bash
-$ git pull origin main
+$ git pull
 ```
 
 ```output
@@ -484,6 +409,69 @@ Already up-to-date.
 Pulling has no effect in this case because the two repositories are already
 synchronized.  If someone else had pushed some changes to the repository on
 GitHub, though, this command would download them to our local repository.
+
+## Group Challenges
+
+Take 5 minutes to solve this challenge!
+
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## GitHub License and README files
+
+In this episode we learned about creating a remote repository on GitHub, but when you initialized your GitHub repo, you didn't add a README.md or a license file.
+
+1. Create a README file in the remote repository.
+
+2. Pull your changes from the remote to the local repository.
+
+::::::::::::::: hint
+
+Click in the **Add README** option.
+
+![](fig/readme-github-01.png)
+
+Copy and paste this minimal template of a `README.md` file:
+
+```
+# Situational Report
+
+This is a report for a disease outbreak investigation by Outbreak Missions.
+
+## Files
+
+- sitrep.Rmd
+
+## Authors
+
+- Wolfman
+- Dracula
+```
+
+:::::::::::::::
+
+:::::::::::::::  solution
+
+## Solution
+
+To pull changes from remote to local, use this command:
+
+```bash
+$ git pull
+```
+
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::: checklist
+
+![Use `git pull` to download content from a remote repository to the workspace and update the local repository to match that content. Use `git push` to upload local repository content to a remote repository.](fig/cut-git-verb_map-09.png)
+
+:::::::::::::::::::::::::::
+
+
+## Individual Challenges
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -579,65 +567,6 @@ Commit only updates your local repository.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
-
-## GitHub License and README files
-
-In this episode we learned about creating a remote repository on GitHub, but when you initialized
-your GitHub repo, you didn't add a README.md or a license file. If you had, what do you think
-would have happened when you tried to link your local and remote repositories?
-
-:::::::::::::::  solution
-
-## Solution
-
-In this case, we'd see a merge conflict due to unrelated histories. When GitHub creates a
-README.md file, it performs a commit in the remote repository. When you try to pull the remote
-repository to your local repository, Git detects that they have histories that do not share a
-common origin and refuses to merge.
-
-```bash
-$ git pull origin main
-```
-
-```output
-warning: no common commits
-remote: Enumerating objects: 3, done.
-remote: Counting objects: 100% (3/3), done.
-remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
-Unpacking objects: 100% (3/3), done.
-From https://github.com/vlad/cases
- * branch            main     -> FETCH_HEAD
- * [new branch]      main     -> origin/main
-fatal: refusing to merge unrelated histories
-```
-
-You can force git to merge the two repositories with the option `--allow-unrelated-histories`.
-Be careful when you use this option and carefully examine the contents of local and remote
-repositories before merging.
-
-```bash
-$ git pull --allow-unrelated-histories origin main
-```
-
-```output
-From https://github.com/vlad/cases
- * branch            main     -> FETCH_HEAD
-Merge made by the 'recursive' strategy.
-README.md | 1 +
-1 file changed, 1 insertion(+)
-create mode 100644 README.md
-```
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-::::::::::::::::: checklist
-
-![Use `git pull` to download content from a remote repository to the workspace and update the local repository to match that content. Use `git push` to upload local repository content to a remote repository.](fig/cut-git-verb_map-09.png)
-
-:::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
