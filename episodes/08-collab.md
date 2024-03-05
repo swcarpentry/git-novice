@@ -184,7 +184,7 @@ Take a look at the Owner's repository on GitHub again, and you should be
 able to see the new commit made by the Collaborator. You may need to refresh
 your browser to see the new commit.
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+:::::::::::::::::::::::::::::::::::::::::  spoiler
 
 ## Some more about remotes
 
@@ -267,14 +267,6 @@ read and review.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
-
-## Switch Roles and Repeat
-
-Switch roles and repeat the whole process.
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -288,19 +280,36 @@ command line? And on GitHub?
 
 ## Solution
 
-On the command line, the Collaborator can use `git fetch origin main`
+**On GitHub**, the Collaborator can go to the repository and click on
+"commits" to view the most recent commits pushed to the repository.
+
+![Click on "commit". Select one commit.](fig/github-commits-button.png)
+
+![Replace age with sex commit. The removed content within lines is in red. The added content within lines is in green.](fig/github-commit-diff.png)
+
+On the **command line**, the Collaborator can use `git fetch origin main`
 to get the remote changes into the local repository, but without merging
 them. Then by running `git diff main origin/main` the Collaborator
 will see the changes output in the terminal.
-
-On GitHub, the Collaborator can go to the repository and click on
-"commits" to view the most recent commits pushed to the repository.
 
 ![Use `git fetch` to download the remote content but not update your local repo's working state, leaving your current work intact. Use `git pull` to download the remote content for the active local branch and immediately merge it. this can potentially cause conflicts.](fig/cut-git-verb_map-12.png)
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Group challenge
+
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## Switch Roles and Repeat
+
+Switch roles and repeat the whole process.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Individual challenges
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
