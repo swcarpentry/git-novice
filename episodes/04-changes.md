@@ -573,6 +573,86 @@ than you would like!
 
 :::::::::::::::::::::::::::
 
+## Group Challenges
+
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## Choosing a Commit Message
+
+Which of the following commit messages would be most appropriate for the
+last commit made to `sitrep.Rmd`?
+
+1. "Changes"
+2. "Added line 'Maps illustrate the spread and impact of outbreak' to sitrep.Rmd"
+3. "Discuss effects of Sitrep' climate on the Mummy"
+
+:::::::::::::::  solution
+
+## Solution
+
+Answer 1 is not descriptive enough, and the purpose of the commit is unclear;
+and answer 2 is redundant to using "git diff" to see what changed in this commit;
+but answer 3 is good: short, descriptive, and imperative.
+
+
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## Committing Changes to Git
+
+Which command(s) below would save the changes of `myfile.txt`
+to my local Git repository?
+
+1. ```bash
+  $ git commit -m "my recent changes"
+  ```
+2. ```bash
+  $ git init myfile.txt
+  $ git commit -m "my recent changes"
+  ```
+3. ```bash
+  $ git add myfile.txt
+  $ git commit -m "my recent changes"
+  ```
+4. ```bash
+  $ git commit -m myfile.txt "my recent changes"
+  ```
+
+:::::::::::::::  solution
+
+## Solution
+
+1. Would only create a commit if files have already been staged.
+2. Would try to create a new repository.
+3. Is correct: first add the file to the staging area, then commit.
+4. Would try to commit a file "my recent changes" with the message myfile.txt.
+  
+  
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+:::::::::::::::::::::::::::
+
+### Your turn!
+
+Take 10 minutes to the following two sections:
+
+- Practice the workflow
+- Relevant callouts
+
+If you want to keep practicing, move to the last one:
+
+- Individual Challenges
+
+:::::::::::::::::::::::::::
+
 ## Practice the workflow
 
 Let's watch as our changes to a file move from our editor to the staging area and into long-term storage. First, __in the Console__, we'll add another line to the file:
@@ -831,69 +911,7 @@ repository (`git commit`):
 
 ![](fig/git-committing.svg){alt='The Git Commit Workflow'}
 
-## Challenges
-
-:::::::::::::::::::::::::::::::::::::::  challenge
-
-## Choosing a Commit Message
-
-Which of the following commit messages would be most appropriate for the
-last commit made to `sitrep.Rmd`?
-
-1. "Changes"
-2. "Added line 'Maps illustrate the spread and impact of outbreak' to sitrep.Rmd"
-3. "Discuss effects of Sitrep' climate on the Mummy"
-
-:::::::::::::::  solution
-
-## Solution
-
-Answer 1 is not descriptive enough, and the purpose of the commit is unclear;
-and answer 2 is redundant to using "git diff" to see what changed in this commit;
-but answer 3 is good: short, descriptive, and imperative.
-
-
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::  challenge
-
-## Committing Changes to Git
-
-Which command(s) below would save the changes of `myfile.txt`
-to my local Git repository?
-
-1. ```bash
-  $ git commit -m "my recent changes"
-  ```
-2. ```bash
-  $ git init myfile.txt
-  $ git commit -m "my recent changes"
-  ```
-3. ```bash
-  $ git add myfile.txt
-  $ git commit -m "my recent changes"
-  ```
-4. ```bash
-  $ git commit -m myfile.txt "my recent changes"
-  ```
-
-:::::::::::::::  solution
-
-## Solution
-
-1. Would only create a commit if files have already been staged.
-2. Would try to create a new repository.
-3. Is correct: first add the file to the staging area, then commit.
-4. Would try to commit a file "my recent changes" with the message myfile.txt.
-  
-  
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
+## Individual Challenges
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
