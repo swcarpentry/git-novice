@@ -459,10 +459,23 @@ To pull changes from remote to local, use this command:
 $ git pull
 ```
 
+If you are interested on how to write good READMEs, we invite you to review a dedicated episode in the [Improve your code for Epidemic Analysis with R](https://epiverse-trace.github.io/research-compendium/) tutorial website!
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::: testimonial
+
+### Share your online repository!
+
+This tutorial have a **Discussions** board also hosted in GitHub. 
+
+1. Access to this [Welcome entry](https://github.com/epiverse-trace/git-rstudio-basics/discussions/10)
+
+2. Share with us a link to the `case` repository you just uploaded! (For example, this is the link to the repository of one of our participants <https://github.com/avallecam/cases>)
+
+:::::::::::::::::::::::::
 
 ::::::::::::::::: checklist
 
