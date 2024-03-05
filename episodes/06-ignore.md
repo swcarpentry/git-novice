@@ -133,6 +133,10 @@ a.csv
 Use -f if you really want to add them.
 ```
 
+::::::::::::::::::::::: spoiler
+
+### How to override our ignore settings?
+
 If we really want to override our ignore settings,
 we can use `git add -f` to force Git to add something. For example,
 `git add -f a.csv`.
@@ -155,6 +159,8 @@ Ignored files:
 nothing to commit, working tree clean
 ```
 
+:::::::::::::::::::::::
+
 ::::::::::::::::: checklist
 
 ### Good Practice
@@ -169,7 +175,22 @@ A good version control project:
 
 :::::::::::::::::::::::::::
 
-## Challenges
+::::::::::::::::::::::::::: testimonial
+
+### Your turn!
+
+Take 5 minutes to the following two challenges:
+
+- Ignoring Nested Files
+- Including Specific Files
+
+If you want to keep practicing, move to the last one:
+
+- Home challenges
+
+:::::::::::::::::::::::::::
+
+## Live challenges
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -229,7 +250,7 @@ How would you ignore all `.csv` files in your root directory except for
 
 ::::::::::::::: hint
 
-Find out what `!` (the exclamation point operator) does in the [Git Reference documentation](../learners/reference.md) for `gitignore`.
+Find out what `!` (the exclamation point operator) does for `gitignore` in the [Git Reference documentation](../learners/reference.md).
 
 :::::::::::::::
 
@@ -255,6 +276,8 @@ of `.csv` files added to the root directory will be ignored.
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Home challenges
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
