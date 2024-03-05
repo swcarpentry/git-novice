@@ -99,7 +99,7 @@ instructions on the screen.
 
 ::::::::::::::::::::::::::::: callout
 
-### On updates
+#### On updates
 
 While this may sound scary, it is **far more common** to run into issues due to using out-of-date versions of R or R packages. Keeping up with the latest versions of R, RStudio, and any packages you regularly use is a good practice.
 
@@ -179,7 +179,7 @@ Several options exist for setting up 2FA, which are summarised here:
 
 The GitHub documentation provides [more details about configuring 2FA](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication).
 
-## 5. Preparing Your Working Directory
+### 5. Preparing Your Working Directory
 
 We need to be out of any R project. In Rstudio, close your Project from `File` > `Close Project`. You can confirm this in the upper right corner, displaying `Project: (None)`.
 
