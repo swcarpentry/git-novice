@@ -548,21 +548,6 @@ Conflicts can also be minimized with project management strategies:
   project convention that is governing and use code style tools (e.g.
   `htmltidy`, `perltidy`, `rubocop`, etc.) to enforce, if necessary
 
-::::::::::::::::: checklist
-
-### Good practices
-
-A good collaborator:
-
-- Pull from upstream frequently before new edits.
-- Use topic or feature branches to segregate work.
-- Make atomic commits.
-- Push your work when it is done to reduce work in progress.
-- Break large files when appropriate.
-- Read contributing guidelines from the project owner.
-
-:::::::::::::::::::::::::::
-
 :::::::::::::::::::::::::::::::::::::::  challenge
 
 ## Solving Conflicts that You Create
@@ -739,86 +724,21 @@ no longer exists.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Atomic commits
-
-A good commit is also an __atomic commit__, like in the commit of the last challenge:
-
-```bash
-$ git add lab-test.jpg
-$ git add lab-site.jpg
-$ git commit -m "Use two images: test and site"
-```
-
-Commits should be ‘atomic’, meaning that they should do one simple thing and they should do it completely. ([The Turing Way Community](https://the-turing-way.netlify.app/reproducible-research/vcs/vcs-git-compare#good-practice)). Atomic commits prioritize one unit of change instead of the quantity of changes. 
-
-![Two related modified lines must be part of the same commit.](fig/git-rstudio-27.png)
-
-In Rstudio, the Review changes window has a button called “Stage chunk”. This helps to make atomic commits, even if you change a lot of lines in a single edit. You can either select them to make isolated commits or to unite them to be part of the same commit.
-
-![Two unrelated edits must be part of two isolated commits.](fig/git-rstudio-35.png)
-
 ::::::::::::::::: checklist
 
-### Good practice
+### Good practices
 
-A good atomic commit:
+A good collaborator:
 
-- Includes more than one file that involves one unit of change. 
-
-- Isolate or includes multiple edited lines using the "Stage chunk" button in Rstudio.
-
-- Does not include all the files in one commit.
+- Pull from upstream frequently before new edits.
+- Use topic or feature branches to segregate work.
+- Make atomic commits.
+- Push your work when it is done to reduce work in progress.
+- Break large files when appropriate.
+- Read contributing guidelines from the project owner.
 
 :::::::::::::::::::::::::::
 
-## Challenge
-
-:::::::::::::::::::::::::::::::::::::::  challenge
-
-## A Typical Work Session
-
-You sit down at your computer to work on a shared project that is tracked in a
-remote Git repository. During your work session, you take the following
-actions, but not in this order:
-
-- *Make changes* by appending the number `100` to a text file `numbers.md`
-- *Update remote* repository to match the local repository
-- *Celebrate* your success with some fancy beverage(s)
-- *Update local* repository to match the remote repository
-- *Stage changes* to be committed
-- *Commit changes* to the local repository
-
-In what order should you perform these actions to minimize the chances of
-conflicts? Put the commands above in order in the *action* column of the table
-below. When you have the order right, see if you can write the corresponding
-commands in the *command* column. A few steps are populated to get you
-started.
-
-| order | action . . . . . . . . . . | command . . . . . . . . . .                   | 
-| ----- | -------------------------- | --------------------------------------------- |
-| 1     |                            |                                               | 
-| 2     |                            | `echo 100 >> numbers.md`                                              | 
-| 3     |                            |                                               | 
-| 4     |                            |                                               | 
-| 5     |                            |                                               | 
-| 6     | Celebrate!                 | `AFK`                                              | 
-
-:::::::::::::::  solution
-
-## Solution
-
-| order | action . . . . . .         | command . . . . . . . . . . . . . . . . . . . | 
-| ----- | -------------------------- | --------------------------------------------- |
-| 1     | Update local               | `git pull origin main`                                              | 
-| 2     | Make changes               | `echo 100 >> numbers.md`                                              | 
-| 3     | Stage changes              | `git add numbers.md`                                              | 
-| 4     | Commit changes             | `git commit -m "Add 100 to numbers.md"`                                              | 
-| 5     | Update remote              | `git push origin main`                                              | 
-| 6     | Celebrate!                 | `AFK`                                              | 
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
