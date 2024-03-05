@@ -44,7 +44,16 @@ Before resolving conflicts, we'll review two features that a **good collaborator
 
 ## Create branches
 
-First, verify that you are working on the main branch:
+Sometimes you want to experiment with your project without affecting the main version. You can do this by using branches. A branch is a local copy of the main project (also called the `main` branch) where you can make changes and test new ideas. The `main` branch stays safe and unchanged while you work on your branch (a.k.a., `feature branch`). When you are satisfied with the changes, you can merge them into the main branch. This means that the separate lines of development in your branch are combined with the main branch.
+
+![One feature branch and one main branch in Git.](fig/one-branch.png)
+
+You can have more than one branch off of your main copy. If one of your branches ends up not working, you can either abandon it or delete it without impacting the main branch of your project.
+
+![Two feature branches and one main branch in Git.](fig/two-branches.png)
+
+
+To create a branch, first, verify that you are working on the main branch:
 
 ```bash
 $ git status
