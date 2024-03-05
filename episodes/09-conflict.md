@@ -198,7 +198,7 @@ below. When you have the order right, see if you can write the corresponding
 commands in the *command* column. A few steps are populated to get you
 started.
 
-| order | action . . . . . . . . . . | command . . . . . . . . . .                   | 
+| order | action . . . . . . | command . . . . . . . . . .                   | 
 | ----- | -------------------------- | --------------------------------------------- |
 | 1     |                            |                                               | 
 | 2     |                            | `echo 100 >> numbers.md`                                              | 
