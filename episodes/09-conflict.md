@@ -40,149 +40,7 @@ different changes to each copy.  Version control helps us manage these
 [conflicts](../learners/reference.md#conflict) by giving us tools to
 [resolve](../learners/reference.md#resolve) overlapping changes.
 
-Before resolving conflicts, we'll review two features that a **good collaborator** puts in practice: Create branches and Atomic commits.
-
-## Create branches
-
-Sometimes you want to experiment with your project without affecting the main version. You can do this by using branches. A branch is a local copy of the main project (also called the `main` branch) where you can make changes and test new ideas. The `main` branch stays safe and unchanged while you work on your branch (a.k.a., `feature branch`). When you are satisfied with the changes, you can merge them into the main branch. This means that the separate lines of development in your branch are combined with the main branch.
-
-![One feature branch and one main branch in Git.](fig/one-branch.png)
-
-You can have more than one branch off of your main copy. If one of your branches ends up not working, you can either abandon it or delete it without impacting the main branch of your project.
-
-![Two feature branches and one main branch in Git.](fig/two-branches.png)
-
-
-To create a branch, first, verify that you are working on the main branch:
-
-```bash
-$ git status
-```
-
-```output
-On branch main
-```
-
-The `git branch` command **creates** a branch of the name `newbranch`:
-
-```bash
-$ git branch newbranch
-```
-
-The `git checkout` command **switch** from the current branch (in this case, `main`) to the `newbranch`:
-
-```bash
-$ git checkout newbranch
-```
-
-```output
-Switched to branch 'newbranch'
-```
-
-Now, you can confirm that we are in `newbranch` using `git status`:
-
-```bash
-$ git status
-```
-
-```output
-On branch newbranch
-nothing to commit, working tree clean
-```
-
-Now, let's make an edit to the `sitrep.Rmd` file:
-
-```r
-usethis::edit_file("sitrep.Rmd")
-```
-
-```output
-Comparison of attack rates in different age groups
-This can identify priority groups for interventions
-Maps illustrate the spread and impact of outbreak
-Use packages listed in the CRAN Task View: Epidemiology
-```
-
-Add and commit this change to the local repository:
-
-```bash
-$ git add sitrep.Rmd
-$ git commit -m "Add edit in new branch"
-```
-
-```output
-[newbranch 60d5ff9] Add edit in new branch
- 1 file changed, 1 insertion(+)
-```
-
-Push commit to the remote repository. NOTE: instead of `git push origin main`, we replace `main` with the name of the new branch:
-
-```bash
-$ git push origin newbranch
-```
-
-```output
-Enumerating objects: 5, done.
-Counting objects: 100% (5/5), done.
-Delta compression using up to 12 threads
-Compressing objects: 100% (3/3), done.
-Writing objects: 100% (3/3), 339 bytes | 169.00 KiB/s, done.
-Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
-remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
-remote:
-remote: Create a pull request for 'newbranch' on GitHub by visiting:
-remote:      https://github.com/vlad/cases/pull/new/newbranch
-remote:
-To https://github.com/vlad/cases.git
- * [new branch]      newbranch -> newbranch
-```
-
-On GitHub, we get a notification to Create a **Pull Request**:
-
-![](fig/github-branch-pullrequest.png)
-
-In your local repository, you can leave your work parked for a while on that branch. To return to `main` (or to any other branch), you can use the same command to **switch** between branches:
-
-```bash
-$ git checkout main
-```
-
-```output
-Switched to branch 'main'
-Your branch is up to date with 'origin/main'.
-```
-
-## Atomic commits
-
-A good commit is also an __atomic commit__, like in the commit of the last challenge:
-
-```bash
-$ git add lab-test.jpg
-$ git add lab-site.jpg
-$ git commit -m "Use two images: test and site"
-```
-
-Commits should be ‘atomic’, meaning that they should do one simple thing and they should do it completely. ([The Turing Way Community](https://the-turing-way.netlify.app/reproducible-research/vcs/vcs-git-compare#good-practice)). Atomic commits prioritize one unit of change instead of the quantity of changes. 
-
-![Two related modified lines must be part of the same commit.](fig/git-rstudio-27.png)
-
-In Rstudio, the Review changes window has a button called “Stage chunk”. This helps to make atomic commits, even if you change a lot of lines in a single edit. You can either select them to make isolated commits or to unite them to be part of the same commit.
-
-![Two unrelated edits must be part of two isolated commits.](fig/git-rstudio-35.png)
-
-::::::::::::::::: checklist
-
-### Good practice
-
-A good atomic commit:
-
-- Includes more than one file that involves one unit of change. 
-
-- Isolate or includes multiple edited lines using the "Stage chunk" button in Rstudio.
-
-- Does not include all the files in one commit.
-
-:::::::::::::::::::::::::::
+Before resolving conflicts, we'll review two features that a **good collaborator** puts in practice: [Create branches](09-conflict.md#create-branches) and make [Atomic commits](09-conflict.md#atomic-commits).
 
 ## Group Challenge
 
@@ -232,7 +90,6 @@ started.
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
 
 ## Create a conflict
 
@@ -733,6 +590,7 @@ no longer exists.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+
 ::::::::::::::::: checklist
 
 ### Good practices
@@ -748,12 +606,155 @@ A good collaborator:
 
 :::::::::::::::::::::::::::
 
+## Create branches
+
+Sometimes you want to experiment with your project without affecting the main version. You can do this by using branches. A branch is a local copy of the main project (also called the `main` branch) where you can make changes and test new ideas. The `main` branch stays safe and unchanged while you work on your branch (a.k.a., `feature branch`). When you are satisfied with the changes, you can merge them into the main branch. This means that the separate lines of development in your branch are combined with the main branch.
+
+![One feature branch and one main branch in Git.](fig/one-branch.png)
+
+You can have more than one branch off of your main copy. If one of your branches ends up not working, you can either abandon it or delete it without impacting the main branch of your project.
+
+![Two feature branches and one main branch in Git.](fig/two-branches.png)
+
+
+To create a branch, first, verify that you are working on the main branch:
+
+```bash
+$ git status
+```
+
+```output
+On branch main
+```
+
+The `git branch` command **creates** a branch of the name `newbranch`:
+
+```bash
+$ git branch newbranch
+```
+
+The `git checkout` command **switch** from the current branch (in this case, `main`) to the `newbranch`:
+
+```bash
+$ git checkout newbranch
+```
+
+```output
+Switched to branch 'newbranch'
+```
+
+Now, you can confirm that we are in `newbranch` using `git status`:
+
+```bash
+$ git status
+```
+
+```output
+On branch newbranch
+nothing to commit, working tree clean
+```
+
+Now, let's make an edit to the `sitrep.Rmd` file:
+
+```r
+usethis::edit_file("sitrep.Rmd")
+```
+
+```output
+Comparison of attack rates in different age groups
+This can identify priority groups for interventions
+Maps illustrate the spread and impact of outbreak
+Use packages listed in the CRAN Task View: Epidemiology
+```
+
+Add and commit this change to the local repository:
+
+```bash
+$ git add sitrep.Rmd
+$ git commit -m "Add edit in new branch"
+```
+
+```output
+[newbranch 60d5ff9] Add edit in new branch
+ 1 file changed, 1 insertion(+)
+```
+
+Push commit to the remote repository. NOTE: instead of `git push origin main`, we replace `main` with the name of the new branch:
+
+```bash
+$ git push origin newbranch
+```
+
+```output
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 339 bytes | 169.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'newbranch' on GitHub by visiting:
+remote:      https://github.com/vlad/cases/pull/new/newbranch
+remote:
+To https://github.com/vlad/cases.git
+ * [new branch]      newbranch -> newbranch
+```
+
+On GitHub, we get a notification to Create a **Pull Request**:
+
+![](fig/github-branch-pullrequest.png)
+
+In your local repository, you can leave your work parked for a while on that branch. To return to `main` (or to any other branch), you can use the same command to **switch** between branches:
+
+```bash
+$ git checkout main
+```
+
+```output
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+```
+
+## Atomic commits
+
+A good commit is also an __atomic commit__, like in the commit of the last challenge:
+
+```bash
+$ git add lab-test.jpg
+$ git add lab-site.jpg
+$ git commit -m "Use two images: test and site"
+```
+
+Commits should be ‘atomic’, meaning that they should do one simple thing and they should do it completely. ([The Turing Way Community](https://the-turing-way.netlify.app/reproducible-research/vcs/vcs-git-compare#good-practice)). Atomic commits prioritize one unit of change instead of the quantity of changes. 
+
+![Two related modified lines must be part of the same commit.](fig/git-rstudio-27.png)
+
+In Rstudio, the Review changes window has a button called “Stage chunk”. This helps to make atomic commits, even if you change a lot of lines in a single edit. You can either select them to make isolated commits or to unite them to be part of the same commit.
+
+![Two unrelated edits must be part of two isolated commits.](fig/git-rstudio-35.png)
+
+::::::::::::::::: checklist
+
+### Good practice
+
+A good atomic commit:
+
+- Includes more than one file that involves one unit of change. 
+
+- Isolate or includes multiple edited lines using the "Stage chunk" button in Rstudio.
+
+- Does not include all the files in one commit.
+
+:::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Version control also allows many people to work in parallel.
 - Conflicts occur when two or more people change the same lines of the same file.
 - The version control system does not allow people to overwrite each other's changes blindly, but highlights conflicts so that they can be resolved.
+- Feature branches help to segregate work and minimize conflicts.
+- Atomic commits prioritize one unit of change instead of the quantity of changes.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 

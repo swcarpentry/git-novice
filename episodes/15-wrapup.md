@@ -41,7 +41,9 @@ praise::praise()
 
 ## Your next step!
 
-Good job! We recommend you to __read the supplemental episode__ on how to [use Git with the Rstudio IDE](14-supplemental-rstudio.md). It can make some steps easier to interact with! This also includes a section on how to [create new branches](14-supplemental-rstudio.md#create-a-branch) to experiment new features without affecting the main branch!
+Good job! We recommend you to __read the supplemental episode__ on how to [use Git with the Rstudio IDE](14-supplemental-rstudio.md). It can make some steps easier to interact with!
+
+If you are looking for more practice, go for the individual challenges on each episode. We also recommend you to keep practicing how to [Create branches](09-conflict.md#create-branches) and make [Atomic commits](09-conflict.md#atomic-commits).
 
 Also! You've now fulfill the core prerequisites for the tutorial on [Improve your code for Epidemic analysis with R](https://epiverse-trace.github.io/research-compendium/introduction.html#why-improve-our-code-for-epidemic-analysis)!
 
