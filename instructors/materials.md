@@ -20,7 +20,7 @@ This contains "copy-to-reuse" materials for a synchronous event. Any long-term i
 
 ## Timetable
 
-- [Structured by: phase,	lecturer will do,	student will do,	resources, and	assessment.](https://docs.google.com/spreadsheets/d/1A5I32N_c1NAzkQ54kXoPl36KDF0fl9y8eEaV0WjEPpM/copy)
+- [Structured by: phase, lecturer will do, student will do, resources, and assessment.](https://docs.google.com/spreadsheets/d/1A5I32N_c1NAzkQ54kXoPl36KDF0fl9y8eEaV0WjEPpM/copy)
 
 ## Etherpad
 
