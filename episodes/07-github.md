@@ -471,7 +471,7 @@ If you are interested on how to write good READMEs, we invite you to review a de
 
 This tutorial have a **Discussions** board also hosted in GitHub. 
 
-1. Access to this [Welcome entry](https://github.com/epiverse-trace/git-rstudio-basics/discussions/10)
+1. Access to this [Welcome entry](https://github.com/epiverse-trace/git-rstudio-basics/discussions/)
 
 2. Share with us a link to the `case` repository you just uploaded! (For example, this is the link to the repository of one of our participants <https://github.com/avallecam/cases>)
 
