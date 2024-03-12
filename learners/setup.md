@@ -22,7 +22,7 @@ spend a lot of time waiting for the other to finish, but
 - if they work on their own copies and email changes back and forth things will be
 lost, overwritten, or duplicated.
 
-A colleague suggests using [version control](learners/reference.md#version-control) to
+A colleague suggests using [version control](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004668) to
 manage their work! 
 
 **Version control is better than mailing files back and forth:**
