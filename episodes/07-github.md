@@ -584,8 +584,9 @@ Commit only updates your local repository.
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - A local Git repository can be connected to one or more remote repositories.
+- Use `usethis::use_github()` to connect to a remote repository.
 <!--- Use the SSH protocol to connect to remote repositories.-->
-- Use the HTTPS protocol to connect to remote repositories.
+<!--- - Use the HTTPS protocol to connect to remote repositories.-->
 - `git push` copies changes from a local repository to a remote repository.
 - `git pull` copies changes from a remote repository to a local repository.
 
