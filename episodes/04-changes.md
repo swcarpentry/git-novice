@@ -77,6 +77,12 @@ Comparison of attack rates in different age groups
 
 Save the file.
 
+::::::::::::::::::::::::::: checklist
+
+Remember always to **Save the file**. Only saved files are recognized by Git.
+
+:::::::::::::::::::::::::::
+
 <!--
 Let's first verify that the file was properly created by running the list command (`ls`):
 
