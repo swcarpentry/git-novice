@@ -375,12 +375,13 @@ have some options here. Let’s say that we want to use RStudio with the
 planets repository that we already made. Since that repository lives in
 a directory on our computer, we choose the option “Existing
 Directory”:</p>
-<figure><img src="../fig/RStudio_screenshot_existingdirectory.png" alt='RStudio screenshot showing New Project dialog window with "Create project from existing directory" selected' class="figure mx-auto d-block"></figure><div id="callout1" class="callout">
+<figure><img src="../fig/RStudio_screenshot_existingdirectory.png" alt='RStudio screenshot showing New Project dialog window with "Create project from existing directory" selected' class="figure mx-auto d-block"></figure><div id="do-you-see-a-version-control-option" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="section level3 callout-title callout-inner">
-<h3 class="callout-title" id="do-you-see-a-version-control-option">Do You See a “Version Control” Option?<a class="anchor" aria-label="anchor" href="#do-you-see-a-version-control-option"></a></h3>
+<div id="do-you-see-a-version-control-option" class="callout-inner">
+<h3 class="callout-title">Do You See a “Version Control” Option?<a class="anchor" aria-label="anchor" href="#do-you-see-a-version-control-option"></a>
+</h3>
 <div class="callout-content">
 <p>Although we’re not going to use it here, there should be a “version
 control” option on this menu. That is what you would click on if you
@@ -440,12 +441,13 @@ shows information about changes in the lower panel (using output of
 <figure><img src="../fig/RStudio_screenshot_review.png" class="figure mx-auto d-block"></figure><p>The changes can be pushed by selecting “Push Branch” from the Git
 menu. There are also options to pull from the remote repository, and to
 view the commit history:</p>
-<figure><img src="../fig/RStudio_screenshot_history.png" alt='RStudio screenshot showing the git menu dropdown with "History" selected' class="figure mx-auto d-block"></figure><div id="callout2" class="callout">
+<figure><img src="../fig/RStudio_screenshot_history.png" alt='RStudio screenshot showing the git menu dropdown with "History" selected' class="figure mx-auto d-block"></figure><div id="are-the-pushpull-commands-grayed-out" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="section level3 callout-title callout-inner">
-<h3 class="callout-title" id="are-the-pushpull-commands-grayed-out">Are the Push/Pull Commands Grayed Out?<a class="anchor" aria-label="anchor" href="#are-the-pushpull-commands-grayed-out"></a></h3>
+<div id="are-the-pushpull-commands-grayed-out" class="callout-inner">
+<h3 class="callout-title">Are the Push/Pull Commands Grayed Out?<a class="anchor" aria-label="anchor" href="#are-the-pushpull-commands-grayed-out"></a>
+</h3>
 <div class="callout-content">
 <p>Grayed out Push/Pull commands generally mean that RStudio doesn’t
 know the location of your remote repository (e.g. on GitHub). To fix
@@ -459,12 +461,13 @@ this, open a terminal to the repository and enter the command:
 <figure><img src="../fig/RStudio_screenshot_viewhistory.png" class="figure mx-auto d-block"></figure><p>RStudio creates a number of files that it uses to keep track of a
 project. We often don’t want to track these, in which case we add them
 to our <code>.gitignore</code> file:</p>
-<figure><img src="../fig/RStudio_screenshot_gitignore.png" alt="RStudio screenshot showing .gitignore open in the editor pane with the files .Rproj.user, .Rhistory, .RData, and *.Rproj added to the end" class="figure mx-auto d-block"></figure><div id="callout3" class="callout">
+<figure><img src="../fig/RStudio_screenshot_gitignore.png" alt="RStudio screenshot showing .gitignore open in the editor pane with the files .Rproj.user, .Rhistory, .RData, and *.Rproj added to the end" class="figure mx-auto d-block"></figure><div id="tip-versioning-disposable-output" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="section level3 callout-title callout-inner">
-<h3 class="callout-title" id="tip-versioning-disposable-output">Tip: versioning disposable output<a class="anchor" aria-label="anchor" href="#tip-versioning-disposable-output"></a></h3>
+<div id="tip-versioning-disposable-output" class="callout-inner">
+<h3 class="callout-title">Tip: versioning disposable output<a class="anchor" aria-label="anchor" href="#tip-versioning-disposable-output"></a>
+</h3>
 <div class="callout-content">
 <p>Generally you do not want to version control disposable output (or
 read-only data). You should modify the <code>.gitignore</code> file to
@@ -562,7 +565,7 @@ project over time.</li>
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.2" class="external-link">sandpaper (0.16.2)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.4" class="external-link">pegboard (0.7.4)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.1" class="external-link">varnish (1.0.1)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.3" class="external-link">sandpaper (0.16.3)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.4" class="external-link">pegboard (0.7.4)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.1" class="external-link">varnish (1.0.1)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -585,7 +588,7 @@ project over time.</li>
   "identifier": "https://swcarpentry.github.io/git-novice/instructor/14-supplemental-rstudio.html",
   "dateCreated": "2014-12-04",
   "dateModified": "2023-07-28",
-  "datePublished": "2024-03-12"
+  "datePublished": "2024-03-19"
 }
 
   </script><script>
