@@ -622,19 +622,19 @@ Which command(s) below would save the changes of `myfile.txt`
 to my local Git repository?
 
 1. ```bash
-  $ git commit -m "my recent changes"
-  ```
+   $ git commit -m "my recent changes"
+   ```
 2. ```bash
-  $ git init myfile.txt
-  $ git commit -m "my recent changes"
-  ```
+   $ git init myfile.txt
+   $ git commit -m "my recent changes"
+   ```
 3. ```bash
-  $ git add myfile.txt
-  $ git commit -m "my recent changes"
-  ```
+   $ git add myfile.txt
+   $ git commit -m "my recent changes"
+   ```
 4. ```bash
-  $ git commit -m myfile.txt "my recent changes"
-  ```
+   $ git commit -m myfile.txt "my recent changes"
+   ```
 
 :::::::::::::::  solution
 
@@ -659,11 +659,11 @@ The staging area can hold changes from any number of files
 that you want to commit as a single snapshot.
 
 1. Add some text to `mars.txt` noting your decision
-  to consider Venus as a base
+   to consider Venus as a base
 2. Create a new file `venus.txt` with your initial thoughts
-  about Venus as a base for you and your friends
+   about Venus as a base for you and your friends
 3. Add changes from both files to the staging area,
-  and commit those changes.
+   and commit those changes.
 
 :::::::::::::::  solution
 
