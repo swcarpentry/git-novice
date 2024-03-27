@@ -51,7 +51,7 @@ July 2013.
 ```
 
 More detailed advice, and other ways to make your code citable can be found
-[at the Software Sustainability Institute blog](https://www.software.ac.uk/how-cite-and-describe-software) and in:
+[at the Software Sustainability Institute blog](https://www.software.ac.uk/publication/how-cite-and-describe-software) and in:
 
 ```source
 Smith AM, Katz DS, Niemeyer KE, FORCE11 Software Citation Working Group. (2016) Software citation
