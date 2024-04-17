@@ -23,7 +23,7 @@ we can start using it.
 We will continue with the story of Wolfman and Dracula who are investigating if it
 is possible to send a planetary lander to Mars.
 
-![](fig/motivatingexample.png){alt='motivatingexample'}
+![](fig/motivatingexample.png){alt='The main elements of the story: Dracula, Wolfman, the Mummy, Mars, Pluto and The Moon'}
 [Werewolf vs dracula](https://www.deviantart.com/b-maze/art/Werewolf-vs-Dracula-124893530)
 by [b-maze](https://www.deviantart.com/b-maze) / [Deviant Art](https://www.deviantart.com/).
 [Mars](https://en.wikipedia.org/wiki/File:OSIRIS_Mars_true_color.jpg) by European Space Agency /
@@ -213,5 +213,3 @@ Therefore, always check your current directory using the command `pwd`.
 - Git stores all of its repository data in the `.git` directory.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

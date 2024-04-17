@@ -334,7 +334,7 @@ than you would like!
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-![](fig/git-staging-area.svg){alt='The Git Staging Area'}
+![](fig/git-staging-area.svg){alt='A diagram showing how git add registers changes in the staging area, while git commit moves changes from the staging area to the repository'}
 
 Let's watch as our changes to a file move from our editor
 to the staging area
@@ -587,7 +587,7 @@ we first need to add the changed files to the staging area
 (`git add`) and then commit the staged changes to the
 repository (`git commit`):
 
-![](fig/git-committing.svg){alt='The Git Commit Workflow'}
+![](fig/git-committing.svg){alt='A diagram showing two documents being separately staged using git add, before being combined into one commit using git commit'}
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -791,5 +791,3 @@ $ git diff me.txt
 - Write a commit message that accurately describes your changes.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
