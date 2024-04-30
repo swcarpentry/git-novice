@@ -93,7 +93,7 @@ well as the commit message, rather than the *differences* between a commit and o
 working directory that we see by using `git diff`.
 
 ```bash
-$ git show HEAD~3 mars.txt
+$ git show HEAD~2 mars.txt
 ```
 
 ```output
