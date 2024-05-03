@@ -64,11 +64,11 @@ If you remember back to the earlier [episode](04-changes.md) where we added and
 committed our earlier work on `mars.txt`, we had a diagram of the local repository
 which looked like this:
 
-![](fig/git-staging-area.svg){alt='The same diagram from section 4, showing how git add and git commit modify the local repository'}
+![](fig/git-staging-area.svg){alt='A diagram showing how "git add" registers changes in the staging area, while "git commit" moves changes from the staging area to the repository'}
 
 Now that we have two repositories, we need a diagram like this:
 
-![](fig/git-freshly-made-github-repo.svg){alt='A variant of the previous diagram, now also including a second repository that exists in GitHub instead of locally'}
+![](fig/git-freshly-made-github-repo.svg) {alt='A diagram illustrating how the GitHub "planets" repository is also a git repository like our local repository, but that it is currently empty'}
 
 Note that our local repository still contains our earlier work on `mars.txt`, but the
 remote repository on GitHub appears empty as it doesn't contain any files yet.
@@ -364,7 +364,7 @@ to make Git default to using the terminal for usernames and passwords.
 
 Our local and remote repositories are now in this state:
 
-![](fig/github-repo-after-first-push.svg){alt='A variant of the earlier diagram, showing how "git push origin" will push changes from the local repository to the remote'}
+![](fig/github-repo-after-first-push.svg){alt='A diagram showing how "git push origin" will push changes from the local repository to the remote, making the remote repository an exact copy of the local repository.'}
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 

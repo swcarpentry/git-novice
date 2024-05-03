@@ -334,7 +334,7 @@ than you would like!
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-![](fig/git-staging-area.svg){alt='A diagram showing how git add registers changes in the staging area, while git commit moves changes from the staging area to the repository'}
+![](fig/git-staging-area.svg){alt='A diagram showing how "git add" registers changes in the staging area, while "git commit" moves changes from the staging area to the repository'}
 
 Let's watch as our changes to a file move from our editor
 to the staging area
