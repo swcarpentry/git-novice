@@ -36,7 +36,7 @@ world. To this end we are going to create a *remote* repository that will be lin
 Log in to [GitHub](https://github.com), then click on the icon in the top right corner to
 create a new repository called `planets`:
 
-![](fig/github-create-repo-01.png){alt='Creating a Repository on GitHub (Step 1)'}
+![](fig/github-create-repo-01.png){alt='The first step in creating a repository on GitHub: clicking the "create new" button'}
 
 Name your repository "planets" and then click "Create Repository".
 
@@ -45,12 +45,12 @@ Note: Since this repository will be connected to a local repository, it needs to
 .gitignore" and "Add a license." See the "GitHub License and README files" exercise below for a full
 explanation of why the repository needs to be empty.
 
-![](fig/github-create-repo-02.png){alt='Creating a Repository on GitHub (Step 2)'}
+![](fig/github-create-repo-02.png){alt='The second step in creating a repository on GitHub: filling out the new repository form to provide the repository name, and specify that neither a readme nor a license should be created'}
 
 As soon as the repository is created, GitHub displays a page with a URL and some
 information on how to configure your local repository:
 
-![](fig/github-create-repo-03.png){alt='Creating a Repository on GitHub (Step 3)'}
+![](fig/github-create-repo-03.png){alt='The summary page displayed by GitHub after a new repository has been created. It contains instructions for configuring the new GitHub repository as a git remote'}
 
 This effectively does the following on GitHub's servers:
 
@@ -64,11 +64,11 @@ If you remember back to the earlier [episode](04-changes.md) where we added and
 committed our earlier work on `mars.txt`, we had a diagram of the local repository
 which looked like this:
 
-![](fig/git-staging-area.svg){alt='The Local Repository with Git Staging Area'}
+![](fig/git-staging-area.svg){alt='A diagram showing how "git add" registers changes in the staging area, while "git commit" moves changes from the staging area to the repository'}
 
 Now that we have two repositories, we need a diagram like this:
 
-![](fig/git-freshly-made-github-repo.svg){alt='Freshly-Made GitHub Repository'}
+![](fig/git-freshly-made-github-repo.svg) {alt='A diagram illustrating how the GitHub "planets" repository is also a git repository like our local repository, but that it is currently empty'}
 
 Note that our local repository still contains our earlier work on `mars.txt`, but the
 remote repository on GitHub appears empty as it doesn't contain any files yet.
@@ -80,7 +80,7 @@ GitHub repository a [remote](../learners/reference.md#remote) for the local repo
 The home page of the repository on GitHub includes the URL string we need to
 identify it:
 
-![](fig/github-find-repo-string.png){alt='Where to Find Repository URL on GitHub'}
+![](fig/github-find-repo-string.png){alt='Clicking the "Copy to Clipboard" button on GitHub to obtain the repository's URL'}
 
 Click on the 'SSH' link to change the [protocol](../learners/reference.md#protocol) from HTTPS to SSH.
 
@@ -95,7 +95,7 @@ minimum level for GitHub.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-![](fig/github-change-repo-string.png){alt='Changing the Repository URL on GitHub'}
+![](fig/github-change-repo-string.png){alt='A screenshot showing that clicking on "SSH" will make GitHub provide the SSH URL for a repository instead of the HTTPS URL'}
 
 Copy that URL from the browser, go into the local `planets` repository, and run
 this command:
@@ -364,7 +364,7 @@ to make Git default to using the terminal for usernames and passwords.
 
 Our local and remote repositories are now in this state:
 
-![](fig/github-repo-after-first-push.svg){alt='GitHub Repository After First Push'}
+![](fig/github-repo-after-first-push.svg){alt='A diagram showing how "git push origin" will push changes from the local repository to the remote, making the remote repository an exact copy of the local repository.'}
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -551,5 +551,3 @@ create mode 100644 README.md
 - `git pull` copies changes from a remote repository to a local repository.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

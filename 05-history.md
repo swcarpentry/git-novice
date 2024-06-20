@@ -295,12 +295,12 @@ the commit in which we made the change we're trying to discard.
 In the example below, we want to retrieve the state from before the most
 recent commit (`HEAD~1`), which is commit `f22b25e`:
 
-![](fig/git-checkout.svg){alt='Git Checkout'}
+![](fig/git-checkout.svg){alt='A diagram showing how git checkout HEAD~1 can be used to restore the previous version of two files'}
 
 So, to put it all together,
 here's how Git works in cartoon form:
 
-![https://figshare.com/articles/How_Git_works_a_cartoon/1328266](fig/git_staging.svg)
+![https://figshare.com/articles/How_Git_works_a_cartoon/1328266](fig/git_staging.svg){alt='A diagram showing the entire git workflow: local changes are staged using git add, applied to the local repository using git commit, and can be restored from the repository using git checkout'}
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -621,5 +621,3 @@ $ git log --patch HEAD~9 *.txt
 - `git checkout` recovers old versions of files.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
