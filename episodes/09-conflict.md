@@ -502,11 +502,11 @@ started.
 | order | action . . . . . . . . . . | command . . . . . . . . . .                   | 
 | ----- | -------------------------- | --------------------------------------------- |
 | 1     |                            |                                               | 
-| 2     |                            | `echo 100 >> numbers.txt`                                              | 
+| 2     |                            | `echo 100 >> numbers.txt`                     | 
 | 3     |                            |                                               | 
 | 4     |                            |                                               | 
 | 5     |                            |                                               | 
-| 6     | Celebrate!                 | `AFK`                                              | 
+| 6     | Celebrate!                 |                                               | 
 
 :::::::::::::::  solution
 
@@ -514,12 +514,12 @@ started.
 
 | order | action . . . . . .         | command . . . . . . . . . . . . . . . . . . . | 
 | ----- | -------------------------- | --------------------------------------------- |
-| 1     | Update local               | `git pull origin main`                                              | 
-| 2     | Make changes               | `echo 100 >> numbers.txt`                                              | 
-| 3     | Stage changes              | `git add numbers.txt`                                              | 
-| 4     | Commit changes             | `git commit -m "Add 100 to numbers.txt"`                                              | 
-| 5     | Update remote              | `git push origin main`                                              | 
-| 6     | Celebrate!                 | `AFK`                                              | 
+| 1     | Update local               | `git pull origin main`                        | 
+| 2     | Make changes               | `echo 100 >> numbers.txt`                     | 
+| 3     | Stage changes              | `git add numbers.txt`                         | 
+| 4     | Commit changes             | `git commit -m "Add 100 to numbers.txt"`      | 
+| 5     | Update remote              | `git push origin main`                        | 
+| 6     | Celebrate!                 |                                               | 
 
 :::::::::::::::::::::::::
 
