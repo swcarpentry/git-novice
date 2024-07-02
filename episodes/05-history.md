@@ -73,7 +73,7 @@ If we want to see the differences between older commits we can use `git diff`
 again, but with the notation `HEAD~1`, `HEAD~2`, and so on, to refer to them:
 
 ```bash
-$ git diff HEAD~3 mars.txt
+$ git diff HEAD~2 mars.txt
 ```
 
 ```output
@@ -93,7 +93,7 @@ well as the commit message, rather than the *differences* between a commit and o
 working directory that we see by using `git diff`.
 
 ```bash
-$ git show HEAD~3 mars.txt
+$ git show HEAD~2 mars.txt
 ```
 
 ```output
