@@ -82,7 +82,7 @@ to accept the Xcode license if you are using macOS.
 Next, RStudio will ask which existing directory we want to use. Click
 "Browse..." and navigate to the correct directory, then click "Create Project":
 
-![](fig/RStudio_screenshot_navigateexisting.png){alt='RStudio window showing the "Create Project From Existing Directory" dialog. In the dialog, the project working directory has been set to "~/Desktop/planets"'}
+![](fig/RStudio_screenshot_navigateexisting.png){alt='RStudio window showing the "Create Project From Existing Directory" dialog. In the dialog, the project working directory has been set to "~/Desktop/recipes"'}
 
 Ta-da! We have created a new project in RStudio within the existing recipes
 repository. Notice the vertical "Git" menu in the menu bar. RStudio has
