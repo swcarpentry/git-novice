@@ -122,7 +122,7 @@ while `HEAD~123` goes back 123 commits from where we are now.
 
 We can also refer to commits using
 those long strings of digits and letters
-that `git log` displays.
+that both `git log` and `git show` display.
 These are unique IDs for the changes,
 and "unique" really does mean unique:
 every change to any set of files on any computer
