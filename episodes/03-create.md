@@ -166,7 +166,7 @@ fatal: Not a git repository (or any of the parent directories): .git
 ## Correcting `git init` Mistakes
 
 Wolfman explains to Dracula how a nested repository is redundant and may cause confusion
-down the road. Dracula would like to remove the nested repository. How can Dracula undo
+down the road. Dracula would like to go back to a single git repository. How can Dracula undo
 his last `git init` in the `moons` subdirectory?
 
 :::::::::::::::  solution
@@ -183,14 +183,14 @@ that are not tracked by Git can easily be removed like any other "ordinary" file
 $ rm filename
 ```
 
-Similarly a directory can be removed using `rm -r dirname` or `rm -rf dirname`.
+Similarly a directory can be removed using `rm -r dirname`.
 If the files or folder being removed in this fashion are tracked by Git, then their removal
 becomes another change that we will need to track, as we will see in the next episode.
 
 ### Solution
 
 Git keeps all of its files in the `.git` directory.
-To recover from this little mistake, Dracula can just remove the `.git`
+To recover from this little mistake, Dracula can remove the `.git`
 folder in the moons subdirectory by running the following command from inside the `planets` directory:
 
 ```bash
@@ -199,6 +199,7 @@ $ rm -rf moons/.git
 
 But be careful! Running this command in the wrong directory will remove
 the entire Git history of a project you might want to keep.
+In general, deleting files and directories using `rm` from the command line cannot be reversed.
 Therefore, always check your current directory using the command `pwd`.
 
 
