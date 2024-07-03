@@ -5,9 +5,7 @@
 
 An introduction to version control for novices using Git.
 Please see [https://swcarpentry.github.io/git-novice/](https://swcarpentry.github.io/git-novice/) for a rendered version of this material,
-[the lesson template documentation][lesson-example]
-for instructions on formatting, building, and submitting material,
-or run `make` in this directory for a list of helpful commands.
+or [the lesson template documentation][lesson-example] for instructions on formatting, building, and submitting material.
 
 Maintainers:
 
@@ -22,7 +20,7 @@ Alumni maintainers:
 - [Madicken Munk][munk_madicken]: [@munkm](https://github.com/munkm)
 
 
-[lesson-example]: https://swcarpentry.github.io/lesson-example
+[lesson-example]: https://carpentries.github.io/sandpaper-docs/
 [hejazi_nima]: https://carpentries.org/instructors/#nhejazi
 [koziar_kat]: https://carpentries.org/instructors/#kekoziar
 [munk_madicken]: https://carpentries.org/instructors/#munkm
