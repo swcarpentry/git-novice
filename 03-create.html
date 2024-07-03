@@ -381,7 +381,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Creating a Repository</h1>
-        <p>Last updated on 2024-06-20 |
+        <p>Last updated on 2024-07-03 |
         
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/03-create.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -544,7 +544,7 @@ the <code>moons</code> subdirectory?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>No. Dracula does not need to make the <code>moons</code> subdirectory
 a Git repository because the <code>planets</code> repository can track
@@ -582,9 +582,9 @@ as shown above:</p>
 </h3>
 <div class="callout-content">
 <p>Wolfman explains to Dracula how a nested repository is redundant and
-may cause confusion down the road. Dracula would like to remove the
-nested repository. How can Dracula undo his last <code>git init</code>
-in the <code>moons</code> subdirectory?</p>
+may cause confusion down the road. Dracula would like to go back to a
+single git repository. How can Dracula undo his last
+<code>git init</code> in the <code>moons</code> subdirectory?</p>
 </div>
 </div>
 </div>
@@ -593,7 +593,7 @@ in the <code>moons</code> subdirectory?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Solution – USE WITH CAUTION! </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="section level3">
 <h3 id="background">Background<a class="anchor" aria-label="anchor" href="#background"></a></h3>
@@ -606,16 +606,15 @@ Git can easily be removed like any other “ordinary” files with</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">$</span> rm filename</span></code></pre>
 </div>
-<p>Similarly a directory can be removed using <code>rm -r dirname</code>
-or <code>rm -rf dirname</code>. If the files or folder being removed in
-this fashion are tracked by Git, then their removal becomes another
-change that we will need to track, as we will see in the next
-episode.</p>
+<p>Similarly a directory can be removed using
+<code>rm -r dirname</code>. If the files or folder being removed in this
+fashion are tracked by Git, then their removal becomes another change
+that we will need to track, as we will see in the next episode.</p>
 </div>
 <div class="section level3">
 <h3 id="solution-1">Solution<a class="anchor" aria-label="anchor" href="#solution-1"></a></h3>
 <p>Git keeps all of its files in the <code>.git</code> directory. To
-recover from this little mistake, Dracula can just remove the
+recover from this little mistake, Dracula can remove the
 <code>.git</code> folder in the moons subdirectory by running the
 following command from inside the <code>planets</code> directory:</p>
 <div class="codewrapper sourceCode" id="cb14">
@@ -624,9 +623,10 @@ following command from inside the <code>planets</code> directory:</p>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="ex">$</span> rm <span class="at">-rf</span> moons/.git</span></code></pre>
 </div>
 <p>But be careful! Running this command in the wrong directory will
-remove the entire Git history of a project you might want to keep.
-Therefore, always check your current directory using the command
-<code>pwd</code>.</p>
+remove the entire Git history of a project you might want to keep. In
+general, deleting files and directories using <code>rm</code> from the
+command line cannot be reversed. Therefore, always check your current
+directory using the command <code>pwd</code>.</p>
 </div>
 </div>
 </div>
@@ -708,8 +708,8 @@ directory.</li>
   "url": "https://swcarpentry.github.io/git-novice/03-create.html",
   "identifier": "https://swcarpentry.github.io/git-novice/03-create.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2024-06-20",
-  "datePublished": "2024-07-02"
+  "dateModified": "2024-07-03",
+  "datePublished": "2024-07-03"
 }
 
   </script><script>
