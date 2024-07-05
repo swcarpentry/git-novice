@@ -102,31 +102,31 @@ wording of the output might be slightly different.
 ## Places to Create Git Repositories
 
 Along with tracking information about recipes (the project we have already created),
-Alfredo would also like to track information about cocktails.
-Despite Jimmy's concerns, Alfredo creates a `cocktails` project inside his `recipes`
+Alfredo would also like to track information about desserts specifically.
+Despite Jimmy's concerns, Alfredo creates a `desserts` project inside his `recipes`
 project with the following sequence of commands:
 
 ```bash
 $ cd ~/Desktop    # return to Desktop directory
 $ cd recipes      # go into recipes directory, which is already a Git repository
 $ ls -a           # ensure the .git subdirectory is still present in the recipes directory
-$ mkdir cocktails # make a sub-directory recipes/cocktails
-$ cd cocktails    # go into cocktails subdirectory
-$ git init        # make the cocktails subdirectory a Git repository
+$ mkdir desserts # make a sub-directory recipes/desserts
+$ cd desserts    # go into desserts subdirectory
+$ git init        # make the desserts subdirectory a Git repository
 $ ls -a           # ensure the .git subdirectory is present indicating we have created a new Git repository
 ```
 
-Is the `git init` command, run inside the `cocktails` subdirectory, required for
-tracking files stored in the `cocktails` subdirectory?
+Is the `git init` command, run inside the `desserts` subdirectory, required for
+tracking files stored in the `desserts` subdirectory?
 
 :::::::::::::::  solution
 
 ## Solution
 
-No. Alfredo does not need to make the `cocktails` subdirectory a Git repository
+No. Alfredo does not need to make the `desserts` subdirectory a Git repository
 because the `recipes` repository will track all files, sub-directories, and
 subdirectory files under the `recipes` directory.  Thus, in order to track
-all information about cocktails, Alfredo only needed to add the `cocktails` subdirectory
+all information about desserts, Alfredo only needed to add the `desserts` subdirectory
 to the `recipes` directory.
 
 Additionally, Git repositories can interfere with each other if they are "nested":
@@ -151,7 +151,7 @@ fatal: Not a git repository (or any of the parent directories): .git
 
 Jimmy explains to Alfredo how a nested repository is redundant and may cause confusion
 down the road. Alfredo would like to go back to a single git repository. How can Alfredo undo
-his last `git init` in the `cocktails` subdirectory?
+his last `git init` in the `desserts` subdirectory?
 
 :::::::::::::::  solution
 
@@ -175,10 +175,10 @@ becomes another change that we will need to track, as we will see in the next ep
 
 Git keeps all of its files in the `.git` directory.
 To recover from this little mistake, Alfredo can remove the `.git`
-folder in the cocktails subdirectory by running the following command from inside the `recipes` directory:
+folder in the desserts subdirectory by running the following command from inside the `recipes` directory:
 
 ```bash
-$ rm -rf cocktails/.git
+$ rm -rf desserts/.git
 ```
 
 But be careful! Running this command in the wrong directory will remove
