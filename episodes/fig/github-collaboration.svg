@@ -151,7 +151,7 @@
                y="21.6"
                font-size="10.8"
                id="tspan4664"
-               style="font-size:10.80000019px;font-family:Consolas">origin https://github.com/vlad/planets.git</tspan></text>
+               style="font-size:10.80000019px;font-family:Consolas">origin https://github.com/alflin/recipes.git</tspan></text>
 </g><rect
            x="16"
            y="19"
@@ -162,7 +162,7 @@
            transform="translate(16,28.707)"
            font-size="13.5"
            id="text4668"
-           style="font-size:13.5px;font-family:Helvetica">~/vlad/planets</text>
+           style="font-size:13.5px;font-family:Helvetica">~/alflin/recipes</text>
 </g><g
          id="Layer_1"
          transform="translate(146.02023,-9)"><g
@@ -418,7 +418,7 @@
          font-size="13.5"
          id="text4829"
          x="16"
-         y="278.707">https://github.com/vlad/planets.git</text>
+         y="278.707">https://github.com/alflin/recipes.git</text>
 <g
          id="g5055"
          transform="translate(0,250)"><g
@@ -542,7 +542,7 @@
                id="tspan10478"
                font-size="10.8"
                y="21.6"
-               x="0">origin https://github.com/vlad/planets.git</tspan></text>
+               x="0">origin https://github.com/alflin/recipes.git</tspan></text>
 </g><rect
            style="fill:none"
            id="rect10480"
@@ -553,7 +553,7 @@
            style="font-size:13.5px;font-family:Helvetica"
            id="text10482"
            font-size="13.5"
-           transform="translate(16,28.707)">~/wolfman/planets</text>
+           transform="translate(16,28.707)">~/jimmy/recipes</text>
 </g><g
          transform="translate(146.02023,493)"
          id="g10484"><g
