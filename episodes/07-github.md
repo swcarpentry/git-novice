@@ -199,7 +199,10 @@ Created directory '/c/Users/Vlad Dracula/.ssh'.
 Enter passphrase (empty for no passphrase):
 ```
 
-Now, it is prompting Dracula for a passphrase.  Since he is using his lab's laptop that other people sometimes have access to, he wants to create a passphrase.  Be sure to use something memorable or save your passphrase somewhere, as there is no "reset my password" option.
+Now, it is prompting Dracula for a passphrase.  Since he is using his lab's laptop that other people sometimes have access to, he wants to create a passphrase.
+Be sure to use something memorable or save your passphrase somewhere, as there is no "reset my password" option.
+Note that, when typing a passphrase on a terminal, there won't be any visual feedback of your typing.
+This is normal: your passphrase will be recorded even if you see nothing changing on your screen.
 
 ```output
 Enter same passphrase again:
