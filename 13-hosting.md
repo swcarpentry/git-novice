@@ -16,7 +16,8 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-The second big question for groups that want to open up their work is where to
+After [choosing a license](11-licensing.md),
+another big question for groups that want to open up their work is where to
 host their code and data.  One option is for the lab, the department, or the
 university to provide a server, manage accounts and backups, and so on.  The
 main benefit of this is that it clarifies who owns what, which is particularly
