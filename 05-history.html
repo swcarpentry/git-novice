@@ -381,7 +381,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Exploring History</h1>
-        <p>Last updated on 2024-07-14 |
+        <p>Last updated on 2024-07-18 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/05-history.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -584,18 +584,18 @@ but those changes haven’t been staged:</p>
 <pre class="output" tabindex="0"><code>On branch main
 Changes not staged for commit:
   (use "git add &lt;file&gt;..." to update what will be committed)
-  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
 
     modified:   mars.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 </div>
 <p>We can put things back the way they were by using
-<code>git checkout</code>:</p>
+<code>git restore</code>:</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">$</span> git checkout HEAD mars.txt</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">$</span> git restore mars.txt</span>
 <span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="ex">$</span> cat mars.txt</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -605,15 +605,15 @@ no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity</code></pre>
 </div>
-<p>As you might guess from its name, <code>git checkout</code> checks
-out (i.e., restores) an old version of a file. In this case, we’re
-telling Git that we want to recover the version of the file recorded in
-<code>HEAD</code>, which is the last saved commit. If we want to go back
-even further, we can use a commit identifier instead:</p>
+<p>As you might guess from its name, <code>git restore</code> restores
+an old version of a file. By default, it recovers the version of the
+file recorded in <code>HEAD</code>, which is the last saved commit. If
+we want to go back even further, we can use a commit identifier instead,
+using <code>-s</code> option:</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">$</span> git checkout f22b25e mars.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">$</span> git restore <span class="at">-s</span> f22b25e mars.txt</span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -634,99 +634,40 @@ even further, we can use a commit identifier instead:</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>On branch main
-Changes to be committed:
-  (use "git reset HEAD &lt;file&gt;..." to unstage)
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
+        modified:   mars.txt
 
-    modified:   mars.txt
+no changes added to commit (use "git add" and/or "git commit -a")
 </code></pre>
 </div>
 <p>Notice that the changes are currently in the staging area. Again, we
 can put things back the way they were by using
-<code>git checkout</code>:</p>
+<code>git restore</code>:</p>
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="ex">$</span> git checkout HEAD mars.txt</span></code></pre>
-</div>
-<div id="dont-lose-your-head" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div id="dont-lose-your-head" class="callout-inner">
-<h3 class="callout-title">Don’t Lose Your HEAD<a class="anchor" aria-label="anchor" href="#dont-lose-your-head"></a>
-</h3>
-<div class="callout-content">
-<p>Above we used</p>
-<div class="codewrapper sourceCode" id="cb24">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="ex">$</span> git checkout f22b25e mars.txt</span></code></pre>
-</div>
-<p>to revert <code>mars.txt</code> to its state after the commit
-<code>f22b25e</code>. But be careful! The command <code>checkout</code>
-has other important functionalities and Git will misunderstand your
-intentions if you are not accurate with the typing. For example, if you
-forget <code>mars.txt</code> in the previous command.</p>
-<div class="codewrapper sourceCode" id="cb25">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">$</span> git checkout f22b25e</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="ex">$</span> git restore mars.txt</span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="ex">$</span> cat mars.txt</span></code></pre>
 </div>
 <div class="codewrapper">
-<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>Note: checking out 'f22b25e'.
-
-You are in 'detached HEAD' state. You can look around, make experimental
-changes and commit them, and you can discard any commits you make in this
-state without impacting any branches by performing another checkout.
-
-If you want to create a new branch to retain commits you create, you may
-do so (now or later) by using -b with the checkout command again. Example:
-
- git checkout -b &lt;new-branch-name&gt;
-
-HEAD is now at f22b25e Start notes on Mars as a base</code></pre>
-</div>
-<p>The “detached HEAD” is like “look, but don’t touch” here, so you
-shouldn’t make any changes in this state. After investigating your
-repo’s past state, reattach your <code>HEAD</code> with
-<code>git checkout main</code>.</p>
-</div>
-</div>
+<pre class="output" tabindex="0"><code>Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+But the Mummy will appreciate the lack of humidity</code></pre>
 </div>
 <p>It’s important to remember that we must use the commit number that
 identifies the state of the repository <em>before</em> the change we’re
 trying to undo. A common mistake is to use the number of the commit in
 which we made the change we’re trying to discard. In the example below,
 we want to retrieve the state from before the most recent commit
-(<code>HEAD~1</code>), which is commit <code>f22b25e</code>:</p>
-<figure><img src="fig/git-checkout.svg" alt="A diagram showing how git checkout HEAD~1 can be used to restore the previous version of two files" class="figure mx-auto d-block"></figure><p>So, to put it all together, here’s how Git works in cartoon form:</p>
+(<code>HEAD~1</code>), which is commit <code>f22b25e</code>. We use the
+<code>.</code> to mean all files:</p>
+<figure><img src="fig/git-restore.svg" alt="A diagram showing how git restore can be used to restore the previous version of two files" class="figure mx-auto d-block"></figure><p>So, to put it all together, here’s how Git works in cartoon form:</p>
 <figure><img src="fig/git_staging.svg" alt="A diagram showing the entire git workflow: local changes are staged using git add, applied to the local repository using git commit, and can be restored from the repository using git checkout" class="figure mx-auto d-block"><div class="figcaption"><a href="https://figshare.com/articles/How_Git_works_a_cartoon/1328266" class="external-link uri">https://figshare.com/articles/How_Git_works_a_cartoon/1328266</a></div>
-</figure><div id="simplifying-the-common-case" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div id="simplifying-the-common-case" class="callout-inner">
-<h3 class="callout-title">Simplifying the Common Case<a class="anchor" aria-label="anchor" href="#simplifying-the-common-case"></a>
-</h3>
-<div class="callout-content">
-<p>If you read the output of <code>git status</code> carefully, you’ll
-see that it includes this hint:</p>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>(use "git checkout -- &lt;file&gt;..." to discard changes in working directory)</code></pre>
-</div>
-<p>As it says, <code>git checkout</code> without a version identifier
-restores files to the state saved in <code>HEAD</code>. The double dash
-<code>--</code> is needed to separate the names of the files being
-recovered from the command itself: without it, Git would try to use the
-name of the file as the commit identifier.</p>
-</div>
-</div>
-</div>
-<p>The fact that files can be reverted one by one tends to change the
+</figure><p>The fact that files can be reverted one by one tends to change the
 way people organize their work. If everything is in one large document,
 it’s hard (but not impossible) to undo changes to the introduction
 without also undoing changes made later to the conclusion. If the
@@ -747,10 +688,10 @@ fix it, with no luck…</p>
 <p>Luckily, she has been keeping track of her project’s versions using
 Git! Which commands below will let her recover the last committed
 version of her Python script called <code>data_cruncher.py</code>?</p>
-<ol style="list-style-type: decimal"><li><p><code>$ git checkout HEAD</code></p></li>
-<li><p><code>$ git checkout HEAD data_cruncher.py</code></p></li>
-<li><p><code>$ git checkout HEAD~1 data_cruncher.py</code></p></li>
-<li><p><code>$ git checkout &lt;unique ID of last commit&gt; data_cruncher.py</code></p></li>
+<ol style="list-style-type: decimal"><li><p><code>$ git restore</code></p></li>
+<li><p><code>$ git restore data_cruncher.py</code></p></li>
+<li><p><code>$ git restore -s HEAD~1 data_cruncher.py</code></p></li>
+<li><p><code>$ git restore -s &lt;unique ID of last commit&gt; data_cruncher.py</code></p></li>
 <li><p>Both 2 and 4</p></li>
 </ol></div>
 </div>
@@ -760,10 +701,10 @@ version of her Python script called <code>data_cruncher.py</code>?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The answer is (5)-Both 2 and 4.</p>
-<p>The <code>checkout</code> command restores files from the repository,
+<p>The <code>restore</code> command restores files from the repository,
 overwriting the files in your working directory. Answers 2 and 4 both
 restore the <em>latest</em> version <em>in the repository</em> of the
 file <code>data_cruncher.py</code>. Answer 2 uses <code>HEAD</code> to
@@ -772,15 +713,9 @@ last commit, which is what <code>HEAD</code> means.</p>
 <p>Answer 3 gets the version of <code>data_cruncher.py</code> from the
 commit <em>before</em> <code>HEAD</code>, which is NOT what we
 wanted.</p>
-<p>Answer 1 can be dangerous! Without a filename,
-<code>git checkout</code> will restore <strong>all files</strong> in the
-current directory (and all directories below it) to their state at the
-commit specified. This command will restore
-<code>data_cruncher.py</code> to the latest commit version, but it will
-also restore <em>any other files that are changed</em> to that version,
-erasing any changes you may have made to those files! As discussed
-above, you are left in a <em>detached</em> <code>HEAD</code> state, and
-you don’t want to be there.</p>
+<p>Answer 1 results in an error. You need to specify a file to restore.
+If you want to restore all files you should use
+<code>git restore .</code></p>
 </div>
 </div>
 </div>
@@ -800,10 +735,10 @@ the project’s repository gets the correct change. The command
 <code>git revert [erroneous commit ID]</code> will create a new commit
 that reverses the erroneous commit.</p>
 <p>The command <code>git revert</code> is different from
-<code>git checkout [commit ID]</code> because <code>git checkout</code>
-returns the files not yet committed within the local repository to a
-previous state, whereas <code>git revert</code> reverses changes
-committed to the local and project repositories.</p>
+<code>git restore -s [commit ID] .</code> because
+<code>git restore</code> returns the files not yet committed within the
+local repository to a previous state, whereas <code>git revert</code>
+reverses changes committed to the local and project repositories.</p>
 <p>Below are the right steps and explanations for Jennifer to use
 <code>git revert</code>, what is the missing command?</p>
 <ol style="list-style-type: decimal"><li><p><code>________ # Look at the git history of the project to find the commit ID</code></p></li>
@@ -820,7 +755,7 @@ e.g. 0b1d055).</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>The command <code>git log</code> lists project history with commit
 IDs.</p>
@@ -841,16 +776,16 @@ changes to the repository.</p>
 </h3>
 <div class="callout-content">
 <p>What is the output of the last command in</p>
-<div class="codewrapper sourceCode" id="cb28">
+<div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="ex">$</span> cd planets</span>
-<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"Venus is beautiful and full of love"</span> <span class="op">&gt;</span> venus.txt</span>
-<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a><span class="ex">$</span> git add venus.txt</span>
-<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"Venus is too hot to be suitable as a base"</span> <span class="op">&gt;&gt;</span> venus.txt</span>
-<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Comment on Venus as an unsuitable base"</span></span>
-<span id="cb28-6"><a href="#cb28-6" tabindex="-1"></a><span class="ex">$</span> git checkout HEAD venus.txt</span>
-<span id="cb28-7"><a href="#cb28-7" tabindex="-1"></a><span class="ex">$</span> cat venus.txt <span class="co">#this will print the contents of venus.txt to the screen</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">$</span> cd planets</span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"Venus is beautiful and full of love"</span> <span class="op">&gt;</span> venus.txt</span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a><span class="ex">$</span> git add venus.txt</span>
+<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"Venus is too hot to be suitable as a base"</span> <span class="op">&gt;&gt;</span> venus.txt</span>
+<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Comment on Venus as an unsuitable base"</span></span>
+<span id="cb25-6"><a href="#cb25-6" tabindex="-1"></a><span class="ex">$</span> git restore venus.txt</span>
+<span id="cb25-7"><a href="#cb25-7" tabindex="-1"></a><span class="ex">$</span> cat venus.txt <span class="co">#this will print the contents of venus.txt to the screen</span></span></code></pre>
 </div>
 <ol style="list-style-type: decimal"><li><div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -881,7 +816,7 @@ changes to the repository.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>The answer is 2.</p>
 <p>The command <code>git add venus.txt</code> places the current version
@@ -894,8 +829,8 @@ executed, the version of <code>venus.txt</code> committed to the
 repository is the one from the staging area and has only one line.</p>
 <p>At this time, the working copy still has the second line (and
 <code>git status</code> will show that the file is modified). However,
-<code>git checkout HEAD venus.txt</code> replaces the working copy with
-the most recently committed version of <code>venus.txt</code>.</p>
+<code>git restore venus.txt</code> replaces the working copy with the
+most recently committed version of <code>venus.txt</code>.</p>
 <p>So, <code>cat venus.txt</code> will output</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -932,11 +867,11 @@ do you think will happen, and what does happen?</p>
 <h3 class="callout-title">Getting Rid of Staged Changes<a class="anchor" aria-label="anchor" href="#getting-rid-of-staged-changes"></a>
 </h3>
 <div class="callout-content">
-<p><code>git checkout</code> can be used to restore a previous commit
+<p><code>git restore</code> can be used to restore a previous commit
 when unstaged changes have been made, but will it also work for changes
 that have been staged but not committed? Make a change to
 <code>mars.txt</code>, add that change using <code>git add</code>, then
-use <code>git checkout</code> to see if you can remove your change.</p>
+use <code>git restore</code> to see if you can remove your change.</p>
 </div>
 </div>
 </div>
@@ -945,43 +880,36 @@ use <code>git checkout</code> to see if you can remove your change.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
-<p>After adding a change, <code>git checkout</code> can not be used
+<p>After adding a change, <code>git restore</code> can not be used
 directly. Let’s look at the output of <code>git status</code>:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>On branch main
 Changes to be committed:
-  (use "git reset HEAD &lt;file&gt;..." to unstage)
-
+  (use "git restore --staged &lt;file&gt;..." to unstage)
         modified:   mars.txt
 </code></pre>
 </div>
 <p>Note that if you don’t have the same output you may either have
 forgotten to change the file, or you have added it <em>and</em>
 committed it.</p>
-<p>Using the command <code>git checkout -- mars.txt</code> now does not
-give an error, but it does not restore the file either. Git helpfully
-tells us that we need to use <code>git reset</code> first to unstage the
-file:</p>
-<div class="codewrapper sourceCode" id="cb35">
+<p>Using the command <code>git restore mars.txt</code> now does not give
+an error, but it does not restore the file either. Git helpfully tells
+us that we need to use <code>git restore --staged</code> first to
+unstage the file:</p>
+<div class="codewrapper sourceCode" id="cb32">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="ex">$</span> git reset HEAD mars.txt</span></code></pre>
-</div>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>Unstaged changes after reset:
-M	mars.txt</code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="ex">$</span> git restore <span class="at">--staged</span> mars.txt</span></code></pre>
 </div>
 <p>Now, <code>git status</code> gives us:</p>
-<div class="codewrapper sourceCode" id="cb37">
+<div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -989,19 +917,19 @@ M	mars.txt</code></pre>
 <pre class="output" tabindex="0"><code>On branch main
 Changes not staged for commit:
   (use "git add &lt;file&gt;..." to update what will be committed)
-  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+  (use "git git restore &lt;file&gt;..." to discard changes in working directory)
 
         modified:   mars.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 </div>
-<p>This means we can now use <code>git checkout</code> to restore the
+<p>This means we can now use <code>git restore</code> to restore the
 file to the previous commit:</p>
-<div class="codewrapper sourceCode" id="cb39">
+<div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a><span class="ex">$</span> git checkout <span class="at">--</span> mars.txt</span>
-<span id="cb39-2"><a href="#cb39-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="ex">$</span> git restore mars.txt</span>
+<span id="cb35-2"><a href="#cb35-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1031,28 +959,28 @@ list appeared. How can you narrow down the search?</p>
 <p>Recall that the <code>git diff</code> command allows us to explore
 one specific file, e.g., <code>git diff mars.txt</code>. We can apply a
 similar idea here.</p>
-<div class="codewrapper sourceCode" id="cb41">
+<div class="codewrapper sourceCode" id="cb37">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a><span class="ex">$</span> git log mars.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="ex">$</span> git log mars.txt</span></code></pre>
 </div>
 <p>Unfortunately some of these commit messages are very ambiguous, e.g.,
 <code>update files</code>. How can you search through these files?</p>
 <p>Both <code>git diff</code> and <code>git log</code> are very useful
 and they summarize a different part of the history for you. Is it
 possible to combine both? Let’s try the following:</p>
-<div class="codewrapper sourceCode" id="cb42">
+<div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--patch</span> mars.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--patch</span> mars.txt</span></code></pre>
 </div>
 <p>You should get a long list of output, and you should be able to see
 both commit messages and the difference between each commit.</p>
 <p>Question: What does the following command do?</p>
-<div class="codewrapper sourceCode" id="cb43">
+<div class="codewrapper sourceCode" id="cb39">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--patch</span> HEAD~9 <span class="pp">*</span>.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--patch</span> HEAD~9 <span class="pp">*</span>.txt</span></code></pre>
 </div>
 </div>
 </div>
@@ -1068,7 +996,7 @@ both commit messages and the difference between each commit.</p>
 <ul><li>
 <code>git diff</code> displays differences between commits.</li>
 <li>
-<code>git checkout</code> recovers old versions of files.</li>
+<code>git restore</code> recovers old versions of files.</li>
 </ul></div>
 </div>
 </div>
@@ -1133,8 +1061,8 @@ both commit messages and the difference between each commit.</p>
   "url": "https://swcarpentry.github.io/git-novice/05-history.html",
   "identifier": "https://swcarpentry.github.io/git-novice/05-history.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2024-07-14",
-  "datePublished": "2024-07-16"
+  "dateModified": "2024-07-18",
+  "datePublished": "2024-07-18"
 }
 
   </script><script>
