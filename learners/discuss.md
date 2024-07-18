@@ -450,10 +450,10 @@ results/run002.log
 And a .gitignore that looks like:
 
 ```output
-*.dat
+*.csv
 ```
 
-How would you track all of the contents of `results/data/`, including `*.dat`
+How would you track all of the contents of `results/data/`, including `*.csv`
 files, but ignore the rest of `results/`?
 
 :::::::::::::::  solution
@@ -463,10 +463,10 @@ files, but ignore the rest of `results/`?
 To do this, your .gitignore would look like this:
 
 ```output
-*.dat                 # ignore the .dat files
+*.csv                 # ignore the .csv files
 results/*             # ignore the files in the results directory
 !results/data/        # do not ignore the files in results/data
-!results/data/*       # do not ignore the .dat files in reults/data
+!results/data/*       # do not ignore the .csv files in reults/data
 ```
 
 :::::::::::::::::::::::::

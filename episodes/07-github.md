@@ -26,7 +26,7 @@ practice, though, it's easiest to use one copy as a central hub, and to keep it
 on the web rather than on someone's laptop.  Most programmers use hosting
 services like [GitHub](https://github.com), [Bitbucket](https://bitbucket.org) or
 [GitLab](https://gitlab.com/) to hold those main copies; we'll explore the pros
-and cons of this in a later episode.
+and cons of this in a [later episode](13-hosting.md).
 
 Let's start by sharing the changes we've made to our current project with the
 world. To this end we are going to create a *remote* repository that will be linked to our *local* repository.
@@ -36,7 +36,7 @@ world. To this end we are going to create a *remote* repository that will be lin
 Log in to [GitHub](https://github.com), then click on the icon in the top right corner to
 create a new repository called `planets`:
 
-![](fig/github-create-repo-01.png){alt='Creating a Repository on GitHub (Step 1)'}
+![](fig/github-create-repo-01.png){alt='The first step in creating a repository on GitHub: clicking the "create new" button'}
 
 Name your repository "planets" and then click "Create Repository".
 
@@ -45,12 +45,12 @@ Note: Since this repository will be connected to a local repository, it needs to
 .gitignore" and "Add a license." See the "GitHub License and README files" exercise below for a full
 explanation of why the repository needs to be empty.
 
-![](fig/github-create-repo-02.png){alt='Creating a Repository on GitHub (Step 2)'}
+![](fig/github-create-repo-02.png){alt='The second step in creating a repository on GitHub: filling out the new repository form to provide the repository name, and specify that neither a readme nor a license should be created'}
 
 As soon as the repository is created, GitHub displays a page with a URL and some
 information on how to configure your local repository:
 
-![](fig/github-create-repo-03.png){alt='Creating a Repository on GitHub (Step 3)'}
+![](fig/github-create-repo-03.png){alt='The summary page displayed by GitHub after a new repository has been created. It contains instructions for configuring the new GitHub repository as a git remote'}
 
 This effectively does the following on GitHub's servers:
 
@@ -64,11 +64,11 @@ If you remember back to the earlier [episode](04-changes.md) where we added and
 committed our earlier work on `mars.txt`, we had a diagram of the local repository
 which looked like this:
 
-![](fig/git-staging-area.svg){alt='The Local Repository with Git Staging Area'}
+![](fig/git-staging-area.svg){alt='A diagram showing how "git add" registers changes in the staging area, while "git commit" moves changes from the staging area to the repository'}
 
 Now that we have two repositories, we need a diagram like this:
 
-![](fig/git-freshly-made-github-repo.svg){alt='Freshly-Made GitHub Repository'}
+![](fig/git-freshly-made-github-repo.svg){alt='A diagram illustrating how the GitHub "planets" repository is also a git repository like our local repository, but that it is currently empty'}
 
 Note that our local repository still contains our earlier work on `mars.txt`, but the
 remote repository on GitHub appears empty as it doesn't contain any files yet.
@@ -80,7 +80,7 @@ GitHub repository a [remote](../learners/reference.md#remote) for the local repo
 The home page of the repository on GitHub includes the URL string we need to
 identify it:
 
-![](fig/github-find-repo-string.png){alt='Where to Find Repository URL on GitHub'}
+![](fig/github-find-repo-string.png){alt='Clicking the "Copy to Clipboard" button on GitHub to obtain the repository\'s URL'}
 
 Click on the 'SSH' link to change the [protocol](../learners/reference.md#protocol) from HTTPS to SSH.
 
@@ -90,13 +90,12 @@ Click on the 'SSH' link to change the [protocol](../learners/reference.md#protoc
 
 We use SSH here because, while it requires some additional configuration, it is a
 security protocol widely used by many applications.  The steps below describe SSH at a
-minimum level for GitHub. A supplemental episode to this lesson discusses advanced setup
-and concepts of SSH and key pairs, and other material supplemental to git related SSH.
+minimum level for GitHub. 
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-![](fig/github-change-repo-string.png){alt='Changing the Repository URL on GitHub'}
+![](fig/github-change-repo-string.png){alt='A screenshot showing that clicking on "SSH" will make GitHub provide the SSH URL for a repository instead of the HTTPS URL'}
 
 Copy that URL from the browser, go into the local `planets` repository, and run
 this command:
@@ -200,7 +199,10 @@ Created directory '/c/Users/Vlad Dracula/.ssh'.
 Enter passphrase (empty for no passphrase):
 ```
 
-Now, it is prompting Dracula for a passphrase.  Since he is using his lab's laptop that other people sometimes have access to, he wants to create a passphrase.  Be sure to use something memorable or save your passphrase somewhere, as there is no "reset my password" option.
+Now, it is prompting Dracula for a passphrase.  Since he is using his lab's laptop that other people sometimes have access to, he wants to create a passphrase.
+Be sure to use something memorable or save your passphrase somewhere, as there is no "reset my password" option.
+Note that, when typing a passphrase on a terminal, there won't be any visual feedback of your typing.
+This is normal: your passphrase will be recorded even if you see nothing changing on your screen.
 
 ```output
 Enter same passphrase again:
@@ -365,7 +367,7 @@ to make Git default to using the terminal for usernames and passwords.
 
 Our local and remote repositories are now in this state:
 
-![](fig/github-repo-after-first-push.svg){alt='GitHub Repository After First Push'}
+![](fig/github-repo-after-first-push.svg){alt='A diagram showing how "git push origin" will push changes from the local repository to the remote, making the remote repository an exact copy of the local repository.'}
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -401,7 +403,7 @@ GitHub, though, this command would download them to our local repository.
 ## GitHub GUI
 
 Browse to your `planets` repository on GitHub.
-Under the Code tab, find and click on the text that says "XX commits" (where "XX" is some number).
+Underneath the Code button, find and click on the text that says "XX commits" (where "XX" is some number).
 Hover over, and click on, the three buttons to the right of each commit.
 What information can you gather/explore from these buttons?
 How would you get that same information in the shell?
@@ -440,7 +442,7 @@ Github also allows you to skip the command line and upload files directly to
 your repository without having to leave the browser. There are two options.
 First you can click the "Upload files" button in the toolbar at the top of the
 file tree. Or, you can drag and drop files from your desktop onto the file
-tree. You can read more about this [on this GitHub page](https://help.github.com/articles/adding-a-file-to-a-repository/)
+tree. You can read more about this [on this GitHub page](https://help.github.com/articles/adding-a-file-to-a-repository/).
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -552,5 +554,3 @@ create mode 100644 README.md
 - `git pull` copies changes from a remote repository to a local repository.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

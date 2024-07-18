@@ -31,7 +31,7 @@ Let's create a file called `mars.txt` that contains some notes
 about the Red Planet's suitability as a base.
 We'll use `nano` to edit the file;
 you can use whatever editor you like.
-In particular, this does not have to be the `core.editor` you set globally earlier. But remember, the bash command to create or edit a new file will depend on the editor you choose (it might not be `nano`). For a refresher on text editors, check out ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create/) in [The Unix Shell](https://swcarpentry.github.io/shell-novice/) lesson.
+In particular, this does not have to be the `core.editor` you set globally earlier. But remember, the bash command to create or edit a new file will depend on the editor you choose (it might not be `nano`). For a refresher on text editors, check out ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor) in [The Unix Shell](https://swcarpentry.github.io/shell-novice/) lesson.
 
 ```bash
 $ nano mars.txt
@@ -334,7 +334,7 @@ than you would like!
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-![](fig/git-staging-area.svg){alt='The Git Staging Area'}
+![](fig/git-staging-area.svg){alt='A diagram showing how "git add" registers changes in the staging area, while "git commit" moves changes from the staging area to the repository'}
 
 Let's watch as our changes to a file move from our editor
 to the staging area
@@ -587,7 +587,7 @@ we first need to add the changed files to the staging area
 (`git add`) and then commit the staged changes to the
 repository (`git commit`):
 
-![](fig/git-committing.svg){alt='The Git Commit Workflow'}
+![](fig/git-committing.svg){alt='A diagram showing two documents being separately staged using git add, before being combined into one commit using git commit'}
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -622,19 +622,19 @@ Which command(s) below would save the changes of `myfile.txt`
 to my local Git repository?
 
 1. ```bash
-  $ git commit -m "my recent changes"
-  ```
+   $ git commit -m "my recent changes"
+   ```
 2. ```bash
-  $ git init myfile.txt
-  $ git commit -m "my recent changes"
-  ```
+   $ git init myfile.txt
+   $ git commit -m "my recent changes"
+   ```
 3. ```bash
-  $ git add myfile.txt
-  $ git commit -m "my recent changes"
-  ```
+   $ git add myfile.txt
+   $ git commit -m "my recent changes"
+   ```
 4. ```bash
-  $ git commit -m myfile.txt "my recent changes"
-  ```
+   $ git commit -m myfile.txt "my recent changes"
+   ```
 
 :::::::::::::::  solution
 
@@ -659,11 +659,11 @@ The staging area can hold changes from any number of files
 that you want to commit as a single snapshot.
 
 1. Add some text to `mars.txt` noting your decision
-  to consider Venus as a base
+   to consider Venus as a base
 2. Create a new file `venus.txt` with your initial thoughts
-  about Venus as a base for you and your friends
+   about Venus as a base for you and your friends
 3. Add changes from both files to the staging area,
-  and commit those changes.
+   and commit those changes.
 
 :::::::::::::::  solution
 
@@ -791,5 +791,3 @@ $ git diff me.txt
 - Write a commit message that accurately describes your changes.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

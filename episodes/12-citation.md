@@ -23,35 +23,23 @@ Carpentry](https://github.com/swcarpentry/website/blob/gh-pages/CITATION)
 states:
 
 ```source
-To reference Software Carpentry in publications, please cite both of the following:
+To reference Software Carpentry in publications, please cite:
 
-Greg Wilson: "Software Carpentry: Getting Scientists to Write Better
-Code by Making Them More Productive".  Computing in Science &
-Engineering, Nov-Dec 2006.
+Greg Wilson: "Software Carpentry: Lessons Learned". F1000Research,
+2016, 3:62 (doi: 10.12688/f1000research.3-62.v2).
 
-Greg Wilson: "Software Carpentry: Lessons Learned". arXiv:1307.5448,
-July 2013.
-
-@article{wilson-software-carpentry-2006,
-    author =  {Greg Wilson},
-    title =   {Software Carpentry: Getting Scientists to Write Better Code by Making Them More Productive},
-    journal = {Computing in Science \& Engineering},
-    month =   {November--December},
-    year =    {2006},
-}
-
-@online{wilson-software-carpentry-2013,
+@online{wilson-software-carpentry-2016,
   author      = {Greg Wilson},
   title       = {Software Carpentry: Lessons Learned},
-  version     = {1},
-  date        = {2013-07-20},
-  eprinttype  = {arxiv},
-  eprint      = {1307.5448}
+  version     = {2},
+  date        = {2016-01-28},
+  url         = {http://f1000research.com/articles/3-62/v2},
+  doi         = {10.12688/f1000research.3-62.v2}
 }
 ```
 
 More detailed advice, and other ways to make your code citable can be found
-[at the Software Sustainability Institute blog](https://www.software.ac.uk/how-cite-and-describe-software) and in:
+[at the Software Sustainability Institute blog](https://www.software.ac.uk/publication/how-cite-and-describe-software) and in:
 
 ```source
 Smith AM, Katz DS, Niemeyer KE, FORCE11 Software Citation Working Group. (2016) Software citation

@@ -23,7 +23,7 @@ we can start using it.
 We will continue with the story of Wolfman and Dracula who are investigating if it
 is possible to send a planetary lander to Mars.
 
-![](fig/motivatingexample.png){alt='motivatingexample'}
+![](fig/motivatingexample.png){alt='The main elements of the story: Dracula, Wolfman, the Mummy, Mars, Pluto and The Moon'}
 [Werewolf vs dracula](https://www.deviantart.com/b-maze/art/Werewolf-vs-Dracula-124893530)
 by [b-maze](https://www.deviantart.com/b-maze) / [Deviant Art](https://www.deviantart.com/).
 [Mars](https://en.wikipedia.org/wiki/File:OSIRIS_Mars_true_color.jpg) by European Space Agency /
@@ -85,7 +85,7 @@ we will lose the project's history.
 Next, we will change the default branch to be called `main`.
 This might be the default branch depending on your settings and version
 of git.
-See the [setup episode](02-setup.md) for more information on this change.
+See the [setup episode](02-setup.md#default-git-branch-naming) for more information on this change.
 
 ```bash
 $ git checkout -b main
@@ -95,8 +95,7 @@ $ git checkout -b main
 Switched to a new branch 'main'
 ```
 
-We can check that everything is set up correctly
-by asking Git to tell us the status of our project:
+We can now start using one of the most important git commands, which is particularly helpful to beginners. `git status` tells us the status of our project, and better, a list of changes in the project and options on what to do with those changes. We can use it as often as we want, whenever we want to understand what is going on.
 
 ```bash
 $ git status
@@ -166,7 +165,7 @@ fatal: Not a git repository (or any of the parent directories): .git
 ## Correcting `git init` Mistakes
 
 Wolfman explains to Dracula how a nested repository is redundant and may cause confusion
-down the road. Dracula would like to remove the nested repository. How can Dracula undo
+down the road. Dracula would like to go back to a single git repository. How can Dracula undo
 his last `git init` in the `moons` subdirectory?
 
 :::::::::::::::  solution
@@ -183,14 +182,14 @@ that are not tracked by Git can easily be removed like any other "ordinary" file
 $ rm filename
 ```
 
-Similarly a directory can be removed using `rm -r dirname` or `rm -rf dirname`.
+Similarly a directory can be removed using `rm -r dirname`.
 If the files or folder being removed in this fashion are tracked by Git, then their removal
 becomes another change that we will need to track, as we will see in the next episode.
 
 ### Solution
 
 Git keeps all of its files in the `.git` directory.
-To recover from this little mistake, Dracula can just remove the `.git`
+To recover from this little mistake, Dracula can remove the `.git`
 folder in the moons subdirectory by running the following command from inside the `planets` directory:
 
 ```bash
@@ -199,6 +198,7 @@ $ rm -rf moons/.git
 
 But be careful! Running this command in the wrong directory will remove
 the entire Git history of a project you might want to keep.
+In general, deleting files and directories using `rm` from the command line cannot be reversed.
 Therefore, always check your current directory using the command `pwd`.
 
 
@@ -213,5 +213,3 @@ Therefore, always check your current directory using the command `pwd`.
 - Git stores all of its repository data in the `.git` directory.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

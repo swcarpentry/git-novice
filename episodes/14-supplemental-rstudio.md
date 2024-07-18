@@ -58,7 +58,7 @@ and then type:
 - `where git` (Windows)
 
 If there is no version of Git on your computer, please follow the
-[Git installation instructions](https://swcarpentry.github.io/git-novice/setup.html)
+[Git installation instructions](https://swcarpentry.github.io/git-novice/#installing-git)
 in the setup of this lesson to install Git now. Next open your shell or command prompt
 and type `which git` (macOS, Linux), or `where git` (Windows).
 Copy the path to the git executable.
@@ -82,7 +82,7 @@ to accept the Xcode license if you are using macOS.
 Next, RStudio will ask which existing directory we want to use. Click
 "Browse..." and navigate to the correct directory, then click "Create Project":
 
-![](fig/RStudio_screenshot_navigateexisting.png)
+![](fig/RStudio_screenshot_navigateexisting.png){alt='RStudio window showing the "Create Project From Existing Directory" dialog. In the dialog, the project working directory has been set to "~/Desktop/planets"'}
 
 Ta-da! We have created a new project in RStudio within the existing planets
 repository. Notice the vertical "Git" menu in the menu bar. RStudio has
@@ -95,12 +95,12 @@ To edit the existing files in the repository, we can click on them in the
 "Files" panel on the lower right. Now let's add some additional information
 about Pluto:
 
-![](fig/RStudio_screenshot_editfiles.png)
+![](fig/RStudio_screenshot_editfiles.png){alt='RStudio window demonstrating the use of the editor panel to modify the "pluto.txt" file'}
 
 Once we have saved our edited files, we can use RStudio to commit the changes
 by clicking on "Commit..." in the Git menu:
 
-![](fig/RStudio_screenshot_commit.png){alt='RStudio screenshot showing the Git menu dropdown with "Commit..." selected'}
+![](fig/RStudio_screenshot_commit.png){alt='RStudio screenshot showing the Git menu dropdown with the "Commit..." option selected'}
 
 This will open a dialogue where we can select which files to commit (by
 checking the appropriate boxes in the "Staged" column), and enter a commit
@@ -109,13 +109,13 @@ the current status of each file. Clicking on a file shows information about
 changes in the lower panel (using output of `git diff`). Once everything is the
 way we want it, we click "Commit":
 
-![](fig/RStudio_screenshot_review.png)
+![](fig/RStudio_screenshot_review.png){alt='RStudio screenshow showing the "Review Changes" dialog. The top left panel shows the list of files that can be included or excluded from the commit. The top right panel is for writing a commit message. The bottom panel shows information about the currently selected file in the top left panel.'}
 
 The changes can be pushed by selecting "Push Branch" from the Git menu. There
 are also options to pull from the remote repository, and to view the commit
 history:
 
-![](fig/RStudio_screenshot_history.png){alt='RStudio screenshot showing the git menu dropdown with "History" selected'}
+![](fig/RStudio_screenshot_history.png){alt='RStudio screenshot showing the git menu dropdown with the "History" option selected'}
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -131,7 +131,7 @@ terminal to the repository and enter the command: `git push -u origin main`. The
 If we click on "History", we can see a graphical version of what `git log`
 would tell us:
 
-![](fig/RStudio_screenshot_viewhistory.png)
+![](fig/RStudio_screenshot_viewhistory.png){alt='RStudio screenshot showing the "Review Changes" dialog after pressing the "History" button. The top panel lists the commits in the repository, similar to git log. The bottom panel shows the changes included in the commit that has been selected in the top panel.'}
 
 RStudio creates a number of files that it uses to keep track of a project. We
 often don't want to track these, in which case we add them to our `.gitignore`
@@ -188,5 +188,3 @@ enough to get you started!
 - Using RStudio's Git integration allows you to version control a project over time.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

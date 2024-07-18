@@ -170,11 +170,6 @@ particular set of files in `.gitignore`.
   repositories in the web and provides a web interface to interact with repos
   they host.
 
-- If your learners are advanced enough to be comfortable with SSH, tell them
-  they can use keys to authenticate on GitHub instead of passwords, but don't
-  try to set this up during class: it takes too long, and is a distraction
-  from the core ideas of the lesson.
-
 - It is very useful to draw a diagram showing the different repositories
   involved.
 

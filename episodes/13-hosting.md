@@ -16,7 +16,8 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-The second big question for groups that want to open up their work is where to
+After [choosing a license](11-licensing.md),
+another big question for groups that want to open up their work is where to
 host their code and data.  One option is for the lab, the department, or the
 university to provide a server, manage accounts and backups, and so on.  The
 main benefit of this is that it clarifies who owns what, which is particularly
@@ -34,7 +35,7 @@ but requires more time and effort to set up than either the option above or the
 option below.
 
 The third option is to use a public hosting service like
-[GitHub](https://github.com), [GitLab](https://gitlab.com),or
+[GitHub](https://github.com), [GitLab](https://gitlab.com), or
 [BitBucket](https://bitbucket.org).
 Each of these services provides a web interface that enables people to create,
 view, and edit their code repositories.  These services also provide
@@ -46,11 +47,11 @@ collaborate.  Using a popular service can help connect your project with
 communities already using the same service.
 
 As an example, Software Carpentry [is on GitHub](https://github.com/swcarpentry/) where you can find the [source for this
-page](https://github.com/swcarpentry/git-novice/edit/gh-pages/_episodes/13-hosting.md). Anyone with a GitHub account can suggest changes to this text.
+page](https://github.com/swcarpentry/git-novice/blob/main/episodes/13-hosting.md). Anyone with a GitHub account can suggest changes to this text.
 
 GitHub repositories can also be assigned DOIs, [by connecting its releases to
 Zenodo](https://guides.github.com/activities/citable-code/). For example,
-[`10.5281/zenodo.57467`](https://zenodo.org/record/57467) is the DOI that has
+[`10.5281/zenodo.7908089`](https://zenodo.org/record/7908089) is the DOI that has
 been "minted" for this introduction to Git.
 
 Using large, well-established services can also help you quickly take advantage

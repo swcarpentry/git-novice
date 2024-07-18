@@ -73,7 +73,7 @@ If we want to see the differences between older commits we can use `git diff`
 again, but with the notation `HEAD~1`, `HEAD~2`, and so on, to refer to them:
 
 ```bash
-$ git diff HEAD~3 mars.txt
+$ git diff HEAD~2 mars.txt
 ```
 
 ```output
@@ -93,7 +93,7 @@ well as the commit message, rather than the *differences* between a commit and o
 working directory that we see by using `git diff`.
 
 ```bash
-$ git show HEAD~3 mars.txt
+$ git show HEAD~2 mars.txt
 ```
 
 ```output
@@ -122,7 +122,7 @@ while `HEAD~123` goes back 123 commits from where we are now.
 
 We can also refer to commits using
 those long strings of digits and letters
-that `git log` displays.
+that both `git log` and `git show` display.
 These are unique IDs for the changes,
 and "unique" really does mean unique:
 every change to any set of files on any computer
@@ -262,12 +262,12 @@ the commit in which we made the change we're trying to discard.
 In the example below, we want to retrieve the state from before the most
 recent commit (`HEAD~1`), which is commit `f22b25e`. We use the `.` to mean all files:
 
-![](fig/git-restore.svg){alt='Git Restore'}
+![](fig/git-restore.svg){alt='A diagram showing how git restore can be used to restore the previous version of two files'}
 
 So, to put it all together,
 here's how Git works in cartoon form:
 
-![https://figshare.com/articles/How_Git_works_a_cartoon/1328266](fig/git_staging.svg)
+![https://figshare.com/articles/How_Git_works_a_cartoon/1328266](fig/git_staging.svg){alt='A diagram showing the entire git workflow: local changes are staged using git add, applied to the local repository using git commit, and can be restored from the repository using git checkout'}
 
 
 The fact that files can be reverted one by one
@@ -559,5 +559,3 @@ $ git log --patch HEAD~9 *.txt
 - `git restore` recovers old versions of files.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
