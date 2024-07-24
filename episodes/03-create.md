@@ -88,7 +88,7 @@ of git.
 See the [setup episode](02-setup.md#default-git-branch-naming) for more information on this change.
 
 ```bash
-$ git checkout -b main
+$ git switch -c main
 ```
 
 ```output
