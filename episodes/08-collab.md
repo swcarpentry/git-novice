@@ -39,7 +39,7 @@ The Owner needs to give the Collaborator access. In your repository page on GitH
 button on the right, select "Collaborators", click "Add people", and
 then enter your partner's username.
 
-![](fig/github-add-collaborators.png){alt='screenshot of repository page with Settings then Collaborators selected, showing how to add Collaborators in a GitHub repository'}
+![](fig/github-add-collaborators.png){alt='A screenshot of the GitHub Collaborators settings page, which is accessed by clicking "Settings" then "Collaborators"'}
 
 To accept access to the Owner's repo, the Collaborator
 needs to go to [https://github.com/notifications](https://github.com/notifications)
@@ -65,7 +65,7 @@ If you choose to clone without the clone path
 you will clone inside your own planets folder!
 Make sure to navigate to the `Desktop` folder first.
 
-![](fig/github-collaboration.svg){alt='After Creating Clone of Repository'}
+![](fig/github-collaboration.svg){alt='A diagram showing that "git clone" can create a copy of a remote GitHub repository, allowing a second person to create their own local repository that they can make changes to.'}
 
 The Collaborator can now make a change in her clone of the Owner's repository,
 exactly the same way as we've been doing before:
@@ -262,5 +262,3 @@ What are some of the benefits of using version control, Git and GitHub?
 - `git clone` copies a remote repository to create a local repository with a remote called `origin` automatically set up.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
