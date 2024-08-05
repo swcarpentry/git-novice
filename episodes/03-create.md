@@ -103,7 +103,7 @@ wording of the output might be slightly different.
 
 Along with tracking information about recipes (the project we have already created),
 Alfredo would also like to track information about desserts specifically.
-Despite Jimmy's concerns, Alfredo creates a `desserts` project inside his `recipes`
+Alfredo creates a `desserts` project inside his `recipes`
 project with the following sequence of commands:
 
 ```bash
