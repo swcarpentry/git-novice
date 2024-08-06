@@ -57,7 +57,7 @@ If you elect to use a private email address with GitHub, then use GitHub's no-re
 
 ## Line Endings
 
-As with other keys, when you hit <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd> on your keyboard,
+As with other keys, when you press <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd> on your keyboard,
 your computer encodes this input as a character.
 Different operating systems use different character(s) to represent the end of a line.
 (You may also hear these referred to as newlines or line breaks.)
@@ -111,8 +111,8 @@ It is possible to reconfigure the text editor for Git whenever you want to chang
 ## Exiting Vim
 
 Note that Vim is the default editor for many programs. If you haven't used Vim before and wish to exit a session without saving
-your changes, press <kbd>Esc</kbd> then type `:q!` and hit <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd>.
-If you want to save your changes and quit, press <kbd>Esc</kbd> then type `:wq` and hit <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd>.
+your changes, press <kbd>Esc</kbd> then type `:q!` and press <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd>.
+If you want to save your changes and quit, press <kbd>Esc</kbd> then type `:wq` and press <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd>.
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
