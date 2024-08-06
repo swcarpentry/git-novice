@@ -84,6 +84,18 @@ $ git config --global core.autocrlf true
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## Default Pull Behavior
+
+For this lesson we will use the following default pull setting, which we recommend you set globally:
+
+```bash
+$ git config --global pull.rebase false
+```
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
 Dracula also has to set his favorite text editor, following this table:
 
 | Editor                                | Configuration command | 

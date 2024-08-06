@@ -173,6 +173,10 @@ Fast-forward
  create mode 100644 pluto.txt
 ```
 
+Note, if you see a large block of "hint" text from `git` in your output from
+the above command, you might want to update your configuration as suggested in the 
+[default pull behavior callout](02-setup.md#default-pull-behavior).
+
 Now the three repositories (Owner's local, Collaborator's local, and Owner's on
 GitHub) are back in sync.
 
