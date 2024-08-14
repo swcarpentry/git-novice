@@ -159,9 +159,9 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## You may need to tell git what to do
+## You may need to tell Git what to do
 
-If you see the below in your output, git is asking what it should do.
+If you see the below in your output, Git is asking what it should do.
 
 ```output
 hint: You have divergent branches and need to specify how to reconcile them.
@@ -178,7 +178,7 @@ hint: or --ff-only on the command line to override the configured default per
 hint: invocation.
 ```
 
-In newer versions of git it gives you the option of specifying different
+In newer versions of Git it gives you the option of specifying different
 behaviours when a pull would merge divergent branches. In our case we want
 'the default strategy'. To use this strategy run the following command to
 select it as the default thing git should do.
