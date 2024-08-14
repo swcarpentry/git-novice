@@ -77,11 +77,12 @@ $ cat hummus.md
 ```
 
 ```output
-# Ingredients
-- chickpeas
-- lemon
-- olive oil
-- salt
+# Hummus
+## Ingredients
+* chickpeas
+* lemon
+* olive oil
+* salt
 ```
 
 ```bash
@@ -90,7 +91,7 @@ $ git commit -m "Add ingredients for hummus"
 ```
 
 ```output
- 1 file changed, 5 insertion(+)
+ 1 file changed, 6 insertion(+)
  create mode 100644 hummus.md
 ```
 
