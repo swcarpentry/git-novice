@@ -444,7 +444,7 @@ What is the output of the last command in
 
 ```bash
 $ cd recipes
-$ echo "I like tomatos, therefore I like ketchup" > ketchup.md
+$ echo "I like tomatoes, therefore I like ketchup" > ketchup.md
 $ git add ketchup.md
 $ echo "ketchup enchances pasta dishes" > ketchup.md
 $ git commit -m "My opinions about the red sauce"
@@ -456,10 +456,10 @@ $ cat ketchup.md # this will print the content of ketchup.md on screen
   ketchup enchances pasta dishes
   ```
 2. ```output
-  I like tomatos, therefore I like ketchup
+  I like tomatoes, therefore I like ketchup
   ```
 3. ```output
-  I like tomatos, therefore I like ketchup
+  I like tomatoes, therefore I like ketchup
   ketchup enchances pasta dishes
   ```
 4. ```output
@@ -487,7 +487,7 @@ replaces the working copy with the most recently committed version of `ketchup.m
 So, `cat ketchup.md` will output
 
 ```output
-I like tomatos, therefore I like ketchup
+I like tomatoes, therefore I like ketchup
 ```
 
 :::::::::::::::::::::::::
