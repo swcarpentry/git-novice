@@ -229,7 +229,7 @@ Now add to the repository like you have learned earlier:
 
 ```bash
 $ git add invisible.md
-$ git commit -m 'adding secret sauce'
+$ git commit -m 'Add secret sauce'
 $ git status
 ```
 
@@ -261,7 +261,7 @@ in the new commit.  The previous commit will still
 have the file, if you were to retrieve that specific commit.
 
 ```bash
-$ git commit -m 'Removing info on Invisible ink.  It is not an edible sauce!'
+$ git commit -m 'Remove info on Invisible ink.  It is not an edible sauce!'
 ```
 
 ## Removing a File with Unix
@@ -274,7 +274,7 @@ commit it again.
 ```bash
 $ echo "This is anoher way to make invisible ink" > secret.md
 $ git add secret.md
-$ git commit -m 'adding invisible ink again'
+$ git commit -m 'Add invisible ink again'
 ```
 
 Now we remove the file with Unix `rm`:
@@ -318,7 +318,7 @@ The change that was made in Unix has now been staged and needs to be
 committed.
 
 ```bash
-$ git commit -m 'Removing info on invisible ink, again!'
+$ git commit -m 'Remove info on invisible ink, again!'
 ```
 
 ## Renaming a File
@@ -335,7 +335,7 @@ Add it to the repository:
 
 ```bash
 $ git add whitesauce.md
-$ git commit -m 'Adding white sauce recipe'
+$ git commit -m 'Add white sauce recipe'
 ```
 
 We all know that white sauce has a more sophisticated name.
@@ -358,7 +358,7 @@ Changes to be committed:
 The final step is commit our change to the repository:
 
 ```bash
-$ git commit -m 'Using the French name for the whitesauce'
+$ git commit -m 'Use the French name for the whitesauce'
 ```
 
 ## Renaming a File with Unix
@@ -372,7 +372,7 @@ this time with Unix `mv`. First, we need to recreate the
 ```bash
 $ echo "Very fun recipe to do" > whitesauce.md
 $ git add whitesauce.md
-$ git commit -m 'Adding white sauce recipe'
+$ git commit -m 'Add white sauce recipe'
 ```
 
 Let us rename the file and see what Git can figured out by itself:
@@ -423,7 +423,7 @@ disappeared - it has simply been renamed.
 The final step, as before, is to commit our change to the repository:
 
 ```bash
-$ git commit -m 'Using the French name for the whitesauce'
+$ git commit -m 'Use the French name for the whitesauce'
 ```
 
 ## Further .gitignore concepts
