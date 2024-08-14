@@ -546,7 +546,7 @@
      x="0"
      y="0"
      sodipodi:role="line"
-     id="tspan300">git restore file1.txt</tspan></text>
+     id="tspan300">git checkout HEAD file1.txt</tspan></text>
 
 <g
    id="g304"
