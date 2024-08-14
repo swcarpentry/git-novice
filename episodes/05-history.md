@@ -37,9 +37,9 @@ $ cat guacamole.md
 ```output
 # Guacamole
 ## Ingredients
-- avocado
-- lime
-- salt
+* avocado
+* lime
+* salt
 ## Instructions
 An ill-considered change
 ```
@@ -56,8 +56,8 @@ index b36abfd..0848c8d 100644
 --- a/guacamole.md
 +++ b/guacamole.md
 @@ -4,3 +4,4 @@
- - lime
- - salt
+ * lime
+ * salt
  ## Instructions
 +An ill-considered change
 ```
@@ -87,9 +87,9 @@ index df0654a..b36abfd 100644
 @@ -1,3 +1,6 @@
  # Guacamole
  ## Ingredients
-+- avocado
-+- lime
-+- salt
++* avocado
++* lime
++* salt
  ## Instructions
 ```
 
@@ -150,9 +150,9 @@ index df0654a..93a3e13 100644
 @@ -1,3 +1,7 @@
  # Guacamole
  ## Ingredients
-+- avocado
-+- lime
-+- salt
++* avocado
++* lime
++* salt
  ## Instructions
 +An ill-considered change
 ```
@@ -173,9 +173,9 @@ index df0654a..93a3e13 100644
 @@ -1,3 +1,7 @@
  # Gucamole
  ## Ingredients
-+- avocado
-+- lime
-+- salt
++* avocado
++* lime
++* salt
  ## Instructions
 +An ill-considered change
 ```
@@ -215,9 +215,9 @@ $ cat guacamole.md
 ```output
 # Guacamole
 ## Ingredients
-- avocado
-- lime
-- salt
+* avocado
+* lime
+* salt
 ## Instructions
 ```
 
