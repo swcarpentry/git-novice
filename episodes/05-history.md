@@ -320,7 +320,7 @@ here's how Git works in cartoon form:
 If you read the output of `git status` carefully,
 you'll see that it includes this hint:
 
-```bash
+```output
 (use "git checkout -- <file>..." to discard changes in working directory)
 ```
 
