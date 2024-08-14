@@ -35,11 +35,12 @@ $ cat guacamole.md
 ```
 
 ```output
-# Ingredients
+# Guacamole
+## Ingredients
 - avocado
 - lime
 - salt
-# Instructions
+## Instructions
 An ill-considered change
 ```
 
@@ -54,10 +55,10 @@ diff --git a/guacamole.md b/guacamole.md
 index b36abfd..0848c8d 100644
 --- a/guacamole.md
 +++ b/guacamole.md
-@@ -3,3 +3,4 @@
+@@ -4,3 +4,4 @@
  - lime
  - salt
- # Instructions
+ ## Instructions
 +An ill-considered change
 ```
 
@@ -83,12 +84,13 @@ diff --git a/guacamole.md b/guacamole.md
 index df0654a..b36abfd 100644
 --- a/guacamole.md
 +++ b/guacamole.md
-@@ -1,2 +1,5 @@
- # Ingredients
+@@ -1,3 +1,6 @@
+ # Guacamole
+ ## Ingredients
 +- avocado
 +- lime
 +- salt
- # Instructions
+ ## Instructions
 ```
 
 We could also use `git show` which shows us what changes we made at an older commit as
@@ -111,9 +113,10 @@ new file mode 100644
 index 0000000..df0654a
 --- /dev/null
 +++ b/guacamole.md
-@@ -0,0 +1,2 @@
-+# Ingredients
-+# Instructions
+@@ -0,0 +1,3 @@
++# Guacamole
++## Ingredients
++## Instructions
 ```
 
 In this way,
@@ -144,12 +147,13 @@ diff --git a/guacamole.md b/guacamole.md
 index df0654a..93a3e13 100644
 --- a/guacamole.md
 +++ b/guacamole.md
-@@ -1,2 +1,5 @@
- # Ingredients
+@@ -1,3 +1,7 @@
+ # Guacamole
+ ## Ingredients
 +- avocado
 +- lime
 +- salt
- # Instructions
+ ## Instructions
 +An ill-considered change
 ```
 
@@ -166,12 +170,13 @@ diff --git a/guacamole.md b/guacamole.md
 index df0654a..93a3e13 100644
 --- a/guacamole.md
 +++ b/guacamole.md
-@@ -1,2 +1,5 @@
- # Ingredients
+@@ -1,3 +1,7 @@
+ # Gucamole
+ ## Ingredients
 +- avocado
 +- lime
 +- salt
- # Instructions
+ ## Instructions
 +An ill-considered change
 ```
 
@@ -208,11 +213,12 @@ $ cat guacamole.md
 ```
 
 ```output
-# Ingredients
+# Guacamole
+## Ingredients
 - avocado
 - lime
 - salt
-# Instructions
+## Instructions
 ```
 
 As you might guess from its name,
@@ -232,8 +238,9 @@ $ cat guacamole.md
 ```
 
 ```output
-# Ingredients
-# Instructions
+# Guacamole
+## Ingredients
+## Instructions
 ```
 
 ```bash

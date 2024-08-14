@@ -40,8 +40,9 @@ $ nano guacamole.md
 Type the text below into the `guacamole.md` file:
 
 ```output
-# Ingredients
-# Instructions
+# Guacamole
+## Ingredients
+## Instructions
 ```
 
 Let's first verify that the file was properly created by running the list command (`ls`):
@@ -61,8 +62,9 @@ $ cat guacamole.md
 ```
 
 ```output
-# Ingredients
-# Instructions
+# Guacamole
+## Ingredients
+## Instructions
 ```
 
 If we check the status of our project again,
@@ -201,11 +203,12 @@ $ cat guacamole.md
 ```
 
 ```output
-# Ingredients
+# Guacamole
+## Ingredients
 - avocado
 - lemon
 - salt
-# Instructions
+## Instructions
 ```
 
 When we run `git status` now,
@@ -246,12 +249,13 @@ diff --git a/guacamole.md b/guacamole.md
 index df0654a..315bf3a 100644
 --- a/guacamole.md
 +++ b/guacamole.md
-@@ -1,2 +1,5 @@
- # Ingredients
+@@ -1,3 +1,6 @@
+ # Guacamole
+ ## Ingredients
 +- avocado
 +- lemon
 +- salt
- # Instructions
+ ## Instructions
 ```
 
 The output is cryptic because
@@ -357,11 +361,12 @@ $ cat guacamole.md
 ```
 
 ```output
-# Ingredients
+# Guacamole
+## Ingredients
 - avocado
 - lime
 - salt
-# Instructions
+## Instructions
 ```
 
 ```bash
@@ -373,13 +378,14 @@ diff --git a/guacamole.md b/guacamole.md
 index 315bf3a..b36abfd 100644
 --- a/guacamole.md
 +++ b/guacamole.md
-@@ -1,5 +1,5 @@
- # Ingredients
+@@ -1,6 +1,6 @@
+ # Guacamole
+ ## Ingredients
  - avocado
 -- lemon
 +- lime
  - salt
- # Instructions
+ ## Instructions
 ```
 
 So far, so good:
@@ -409,13 +415,14 @@ diff --git a/guacamole.md b/guacamole.md
 index 315bf3a..b36abfd 100644
 --- a/guacamole.md
 +++ b/guacamole.md
-@@ -1,5 +1,5 @@
- # Ingredients
+@@ -1,6 +1,6 @@
+ # Guacamole
+ ## Ingredients
  - avocado
 -- lemon
 +- lime
  - salt
- # Instructions
+ ## Instructions
 ```
 
 it shows us the difference between
@@ -694,7 +701,8 @@ $ cat guacamole.md
 ```
 
 ```output
-# Ingredients
+# Guacamole
+## Ingredients
 - avocado (1.35)
 - lime (0.64)
 - salt (2)

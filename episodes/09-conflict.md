@@ -33,11 +33,12 @@ $ cat guacamole.md
 ```
 
 ```output
-# Ingredients
+# Guacamole
+## Ingredients
 - avocado
 - lime
 - salt
-# Instructions
+## Instructions
 ```
 
 Let's add a line to the collaborator's copy only:
@@ -48,11 +49,12 @@ $ cat guacamole.md
 ```
 
 ```output
-# Ingredients
+# Guacamole
+## Ingredients
 - avocado
 - lime
 - salt
-# Instructions
+## Instructions
 - put one avocado into a bowl.
 ```
 
@@ -94,11 +96,12 @@ $ cat guacamole.md
 ```
 
 ```output
-# Ingredients
+# Guacamole
+## Ingredients
 - avocado
 - lime
 - salt
-# Instructions
+## Instructions
 - peel the avocados
 ```
 
@@ -207,11 +210,12 @@ $ cat guacamole.md
 ```
 
 ```output
-# Ingredients
+# Guacamole
+## Ingredients
 - avocado
 - lime
 - salt
-# Instructions
+## Instructions
 <<<<<<< HEAD
 - peel the avocados
 =======
@@ -237,11 +241,12 @@ $ cat guacamole.md
 ```
 
 ```output
-# Ingredients
+# Guacamole
+## Ingredients
 - avocado
 - lime
 - salt
-# Instructions
+## Instructions
 - peel the avocados and put them into a bowl.
 ```
 
@@ -321,11 +326,12 @@ $ cat guacamole.md
 ```
 
 ```output
-# Ingredients
+# Guacamole
+## Ingredients
 - avocado
 - lime
 - salt
-# Instructions
+## Instructions
 - peel the avocados and put them into a bowl.
 ```
 
