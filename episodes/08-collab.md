@@ -78,10 +78,10 @@ $ cat hummus.md
 
 ```output
 # Ingredients
-- chickpeas
-- lemon
-- olive oil
-- salt
+* chickpeas
+* lemon
+* olive oil
+* salt
 ```
 
 ```bash

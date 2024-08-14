@@ -202,9 +202,9 @@ $ cat guacamole.md
 
 ```output
 # Ingredients
-- avocado
-- lemon
-- salt
+* avocado
+* lemon
+* salt
 # Instructions
 ```
 
@@ -248,9 +248,9 @@ index df0654a..315bf3a 100644
 +++ b/guacamole.md
 @@ -1,2 +1,5 @@
  # Ingredients
-+- avocado
-+- lemon
-+- salt
++* avocado
++* lemon
++* salt
  # Instructions
 ```
 
@@ -358,9 +358,9 @@ $ cat guacamole.md
 
 ```output
 # Ingredients
-- avocado
-- lime
-- salt
+* avocado
+* lime
+* salt
 # Instructions
 ```
 
@@ -375,10 +375,10 @@ index 315bf3a..b36abfd 100644
 +++ b/guacamole.md
 @@ -1,5 +1,5 @@
  # Ingredients
- - avocado
--- lemon
-+- lime
- - salt
+ * avocado
+-* lemon
++* lime
+ * salt
  # Instructions
 ```
 
@@ -411,10 +411,10 @@ index 315bf3a..b36abfd 100644
 +++ b/guacamole.md
 @@ -1,5 +1,5 @@
  # Ingredients
- - avocado
--- lemon
-+- lime
- - salt
+ * avocado
+-* lemon
++* lime
+ * salt
  # Instructions
 ```
 
@@ -695,9 +695,9 @@ $ cat guacamole.md
 
 ```output
 # Ingredients
-- avocado (1.35)
-- lime (0.64)
-- salt (2)
+* avocado (1.35)
+* lime (0.64)
+* salt (2)
 ```
 
 ```bash
@@ -707,9 +707,9 @@ $ cat groceries.md
 
 ```output
 # Market A
-- avocado: 1.35 per unit.
-- lime: 0.64 per unit
-- salt: 2 per kg
+* avocado: 1.35 per unit.
+* lime: 0.64 per unit
+* salt: 2 per kg
 ```
 
 Now you can add both files to the staging area. We can do that in one line:
