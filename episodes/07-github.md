@@ -90,8 +90,7 @@ Click on the 'SSH' link to change the [protocol](../learners/reference.md#protoc
 
 We use SSH here because, while it requires some additional configuration, it is a
 security protocol widely used by many applications.  The steps below describe SSH at a
-minimum level for GitHub. A supplemental episode to this lesson discusses advanced setup
-and concepts of SSH and key pairs, and other material supplemental to git related SSH.
+minimum level for GitHub.
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
