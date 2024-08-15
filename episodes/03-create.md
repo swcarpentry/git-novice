@@ -67,19 +67,6 @@ including the tracked files and sub-directories located within the project's dir
 If we ever delete the `.git` subdirectory,
 we will lose the project's history.
 
-Next, we will change the default branch to be called `main`.
-This might be the default branch depending on your settings and version
-of git.
-See the [setup episode](02-setup.md#default-git-branch-naming) for more information on this change.
-
-```bash
-$ git checkout -b main
-```
-
-```output
-Switched to a new branch 'main'
-```
-
 We can now start using one of the most important git commands, which is particularly helpful to beginners. `git status` tells us the status of our project, and better, a list of changes in the project and options on what to do with those changes. We can use it as often as we want, whenever we want to understand what is going on.
 
 ```bash
