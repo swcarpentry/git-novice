@@ -316,7 +316,7 @@ Answer 3 gets the version of `data_cruncher.py` from the commit *before* `HEAD`,
 what we wanted.
 
 Answer 1 results in an error. You need to specify a file to restore. If you want to restore all files
-you should use `git restore .`
+you should use `git restore .`.
 
 
 
@@ -350,7 +350,7 @@ what is the missing command?
 
 4. Type in the new commit message.
 
-5. Save and close
+5. Save and close.
 
 :::::::::::::::  solution
 
