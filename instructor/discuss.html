@@ -323,10 +323,10 @@
               </div>
             </div>
 
-            <hr class="half-width"><div class="accordion accordion-flush resources" id="accordionFlush12">
+            <hr class="half-width"><div class="accordion accordion-flush lesson-resources" id="accordionFlush12">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingTwelve">
-                  <button class="accordion-button collapsed" id="resources" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
+                  <button class="accordion-button collapsed" id="lesson-resources" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
                     RESOURCES
                   </button>
                 </h2>
@@ -346,7 +346,7 @@
                 </div>
               </div>
             </div>
-            <hr class="half-width resources"><a href="../instructor/aio.html">See all in one page</a>
+            <hr class="half-width lesson-resources"><a href="../instructor/aio.html">See all in one page</a>
 
 
             <hr class="d-none d-sm-block d-md-none"><div class="d-grid gap-1">
@@ -391,15 +391,13 @@
 
         
 
-<section><h2 class="section-heading" id="frequently-asked-questions">Frequently Asked Questions<a class="anchor" aria-label="anchor" href="#frequently-asked-questions"></a>
-<a class="anchor" aria-label="anchor" href="#frequently-asked-questions"></a></h2>
+<section><h2 class="section-heading" id="frequently-asked-questions">Frequently Asked Questions<a class="anchor" aria-label="anchor" href="#frequently-asked-questions"></a></h2>
 <hr class="half-width"><p>People often have questions about Git beyond the scope of the core
 material. Students who have completed the rest of the lessons might find
 value in looking through the following topics.</p>
 <p>Note that since this material isn’t essential for basic Git usage, it
 won’t be covered by the instructor.</p>
-</section><section><h2 class="section-heading" id="more-advanced-git-configuration">More Advanced Git Configuration<a class="anchor" aria-label="anchor" href="#more-advanced-git-configuration"></a>
-<a class="anchor" aria-label="anchor" href="#more-advanced-git-configuration"></a></h2>
+</section><section><h2 class="section-heading" id="more-advanced-git-configuration">More Advanced Git Configuration<a class="anchor" aria-label="anchor" href="#more-advanced-git-configuration"></a></h2>
 <hr class="half-width"><p>In <a href="02-setup.html">Setting Up Git</a>, we used
 <code>git config --global</code> to set some default options for Git. It
 turns out that these configuration options get stored in your home
@@ -452,8 +450,7 @@ command:</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> git co f22b25e mars.txt</span></code></pre>
 </div>
-</section><section><h2 class="section-heading" id="styling-gits-log">Styling Git’s Log<a class="anchor" aria-label="anchor" href="#styling-gits-log"></a>
-<a class="anchor" aria-label="anchor" href="#styling-gits-log"></a></h2>
+</section><section><h2 class="section-heading" id="styling-gits-log">Styling Git’s Log<a class="anchor" aria-label="anchor" href="#styling-gits-log"></a></h2>
 <hr class="half-width"><p>A good target for customization is output from the log. The default
 log is quite verbose but gives no graphical hints such as information
 about which commits were done locally and which were pulled from
@@ -483,8 +480,7 @@ have:</p>
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="undoing-git-configuration-changes" class="callout-inner">
-<h3 class="callout-title">Undoing Git Configuration Changes<a class="anchor" aria-label="anchor" href="#undoing-git-configuration-changes"></a>
-</h3>
+<h3 class="callout-title">Undoing Git Configuration Changes</h3>
 <div class="callout-content">
 <p>You can use the <code>--unset</code> flag to delete unwanted options
 from <code>.gitconfig</code>. Another way to roll back changes is to
@@ -498,8 +494,7 @@ you clone them.</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="non-text-files">Non-text Files<a class="anchor" aria-label="anchor" href="#non-text-files"></a>
-<a class="anchor" aria-label="anchor" href="#non-text-files"></a></h2>
+</section><section><h2 class="section-heading" id="non-text-files">Non-text Files<a class="anchor" aria-label="anchor" href="#non-text-files"></a></h2>
 <hr class="half-width"><p>Recall when we discussed <a href="09-conflict.html">Conflicts</a>
 there was a challenge that asked, “What does Git do when there is a
 conflict in an image or some other non-textual file that is stored in
@@ -595,8 +590,7 @@ project. Even though a logo will be stored in a binary format such as
 fairly static through the lifetime of your repository. On the rare
 occasion that branding does change, you will probably just want to
 replace the logo completely rather than merge little differences in.</p>
-</section><section><h2 class="section-heading" id="removing-a-file">Removing a File<a class="anchor" aria-label="anchor" href="#removing-a-file"></a>
-<a class="anchor" aria-label="anchor" href="#removing-a-file"></a></h2>
+</section><section><h2 class="section-heading" id="removing-a-file">Removing a File<a class="anchor" aria-label="anchor" href="#removing-a-file"></a></h2>
 <hr class="half-width"><p>Adding and modifying files are not the only actions one might take
 when working on a project. It might be required to remove a file from
 the repository.</p>
@@ -647,8 +641,7 @@ were to retrieve that specific commit.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Removing info on Nibiru.  It is not a real planet!'</span></span></code></pre>
 </div>
-</section><section><h2 class="section-heading" id="removing-a-file-with-unix">Removing a File with Unix<a class="anchor" aria-label="anchor" href="#removing-a-file-with-unix"></a>
-<a class="anchor" aria-label="anchor" href="#removing-a-file-with-unix"></a></h2>
+</section><section><h2 class="section-heading" id="removing-a-file-with-unix">Removing a File with Unix<a class="anchor" aria-label="anchor" href="#removing-a-file-with-unix"></a></h2>
 <hr class="half-width"><p>Sometimes we might forget to remove the file through Git. If you
 removed the file with Unix <code>rm</code> instead of using
 <code>git rm</code>, no worries, Git is smart enough to notice the
@@ -706,8 +699,7 @@ committed.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Removing info on Nibiru, again!'</span></span></code></pre>
 </div>
-</section><section><h2 class="section-heading" id="renaming-a-file">Renaming a File<a class="anchor" aria-label="anchor" href="#renaming-a-file"></a>
-<a class="anchor" aria-label="anchor" href="#renaming-a-file"></a></h2>
+</section><section><h2 class="section-heading" id="renaming-a-file">Renaming a File<a class="anchor" aria-label="anchor" href="#renaming-a-file"></a></h2>
 <hr class="half-width"><p>Another common change when working on a project is to rename a
 file.</p>
 <p>Create a file for the planet Krypton:</p>
@@ -748,8 +740,7 @@ Changes to be committed:
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Superman'</span>s home is now Earth<span class="st">'</span></span></code></pre>
 </div>
-</section><section><h2 class="section-heading" id="renaming-a-file-with-unix">Renaming a File with Unix<a class="anchor" aria-label="anchor" href="#renaming-a-file-with-unix"></a>
-<a class="anchor" aria-label="anchor" href="#renaming-a-file-with-unix"></a></h2>
+</section><section><h2 class="section-heading" id="renaming-a-file-with-unix">Renaming a File with Unix<a class="anchor" aria-label="anchor" href="#renaming-a-file-with-unix"></a></h2>
 <hr class="half-width"><p>If you forgot to use Git and you used Unix <code>mv</code> instead of
 <code>git mv</code>, you will have a touch more work to do but Git will
 be able to deal with it. Let’s try again renaming the file, this time
@@ -816,8 +807,7 @@ repository:</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Superman'</span>s home is Earth, told you before.<span class="st">'</span></span></code></pre>
 </div>
-</section><section><h2 class="section-heading" id="further--gitignore-concepts">Further .gitignore concepts<a class="anchor" aria-label="anchor" href="#further-.gitignore-concepts"></a>
-<a class="anchor" aria-label="anchor" href="#further--gitignore-concepts"></a></h2>
+</section><section><h2 class="section-heading" id="further--gitignore-concepts">Further .gitignore concepts<a class="anchor" aria-label="anchor" href="#further--gitignore-concepts"></a></h2>
 <hr class="half-width"><p>For additional documentation on .gitignore, please reference <a href="https://git-scm.com/docs/gitignore" class="external-link">the official git
 documentation</a>.</p>
 <p>In the ignore exercise, learners were presented with two variations
@@ -833,8 +823,7 @@ root directory.</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="ignoring-nested-files-challenge-problem" class="callout-inner">
-<h3 class="callout-title">Ignoring Nested Files: Challenge Problem<a class="anchor" aria-label="anchor" href="#ignoring-nested-files-challenge-problem"></a>
-</h3>
+<h3 class="callout-title">Ignoring Nested Files: Challenge Problem</h3>
 <div class="callout-content">
 <p>Given a directory structure that looks like:</p>
 <div class="codewrapper sourceCode" id="cb39">
@@ -913,7 +902,7 @@ results/*             # ignore the files in the results directory
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.5" class="external-link">sandpaper (0.16.5)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.3" class="external-link">varnish (1.0.3)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.6" class="external-link">sandpaper (0.16.6)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.4" class="external-link">varnish (1.0.4)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -936,7 +925,7 @@ results/*             # ignore the files in the results directory
   "identifier": "https://swcarpentry.github.io/git-novice/instructor/discuss.html",
   "dateCreated": "2014-12-04",
   "dateModified": "2023-09-18",
-  "datePublished": "2024-08-20"
+  "datePublished": "2024-08-27"
 }
 
   </script><script>
