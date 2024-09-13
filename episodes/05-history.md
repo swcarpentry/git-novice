@@ -239,8 +239,8 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 
 ```
-Notice that the changes are currently in the staging area. 
-Again, we can put things back the way they were by using `git restore`:
+Notice that the changes are not currently in the staging area, and have not been committed. 
+So if we wished we can put things back the way they were at the last committ by using `git restore` to overwirte the working copy with the last commited version (from HEAD):
 
 ```bash
 $ git restore mars.txt
