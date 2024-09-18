@@ -272,7 +272,7 @@ Git is smart enough to notice the missing file. Let us recreate the file and
 commit it again.
 
 ```bash
-$ echo "This is anoher way to make invisible ink" > secret.md
+$ echo "This is another way to make invisible ink" > secret.md
 $ git add secret.md
 $ git commit -m 'Add invisible ink again'
 ```
