@@ -381,7 +381,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Ignoring Things</h1>
-        <p>Last updated on 2023-09-18 |
+        <p>Last updated on 2024-09-29 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/06-ignore.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -423,8 +423,8 @@ data analysis? Let’s create a few dummy files:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> mkdir results</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ex">$</span> touch a.csv b.csv c.csv results/a.out results/b.out</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> mkdir receipts</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ex">$</span> touch a.png b.png c.png receipts/a.jpg receipts/b.jpg</span></code></pre>
 </div>
 <p>and see what Git says:</p>
 <div class="codewrapper sourceCode" id="cb2">
@@ -439,10 +439,10 @@ data analysis? Let’s create a few dummy files:</p>
 Untracked files:
   (use "git add &lt;file&gt;..." to include in what will be committed)
 
-	a.csv
-	b.csv
-	c.csv
-	results/
+	a.png
+	b.png
+	c.png
+	receipts/
 
 nothing added to commit but untracked files present (use "git add" to track)</code></pre>
 </div>
@@ -460,11 +460,11 @@ called <code>.gitignore</code>:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>*.csv
-results/</code></pre>
+<pre class="output" tabindex="0"><code>*.png
+receipts/</code></pre>
 </div>
 <p>These patterns tell Git to ignore any file whose name ends in
-<code>.csv</code> and everything in the <code>results</code> directory.
+<code>.png</code> and everything in the <code>receipts</code> directory.
 (If any of these files were already being tracked, Git would continue to
 track them.)</p>
 <p>Once we have created this file, the output of <code>git status</code>
@@ -494,7 +494,7 @@ ignore the same things that we’re ignoring. Let’s add and commit
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> git add .gitignore</span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Ignore data files and the results folder"</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Ignore png files and the receipts folder."</span></span>
 <span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -508,13 +508,13 @@ adding files to the repository that we don’t want to track:</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">$</span> git add a.csv</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">$</span> git add a.png</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>The following paths are ignored by one of your .gitignore files:
-a.csv
+a.png
 Use -f if you really want to add them.</code></pre>
 </div>
 <p>If we really want to override our ignore settings, we can use
@@ -533,10 +533,10 @@ ignored files if we want:</p>
 Ignored files:
  (use "git add -f &lt;file&gt;..." to include in what will be committed)
 
-        a.csv
-        b.csv
-        c.csv
-        results/
+        a.png
+        b.png
+        c.png
+        receipts/
 
 nothing to commit, working tree clean</code></pre>
 </div>
@@ -551,11 +551,11 @@ nothing to commit, working tree clean</code></pre>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="ex">results/data</span></span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="ex">results/plots</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="ex">receipts/data</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="ex">receipts/plots</span></span></code></pre>
 </div>
-<p>How would you ignore only <code>results/plots</code> and not
-<code>results/data</code>?</p>
+<p>How would you ignore only <code>receipts/plots</code> and not
+<code>receipts/data</code>?</p>
 </div>
 </div>
 </div>
@@ -567,16 +567,17 @@ nothing to commit, working tree clean</code></pre>
 <div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>If you only want to ignore the contents of
-<code>results/plots</code>, you can change your <code>.gitignore</code>
+<code>receipts/plots</code>, you can change your <code>.gitignore</code>
 to ignore only the <code>/plots/</code> subfolder by adding the
 following line to your .gitignore:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>results/plots/</code></pre>
+<pre class="output" tabindex="0"><code>receipts/plots/</code></pre>
 </div>
-<p>This line will ensure only the contents of <code>results/plots</code>
-is ignored, and not the contents of <code>results/data</code>.</p>
+<p>This line will ensure only the contents of
+<code>receipts/plots</code> is ignored, and not the contents of
+<code>receipts/data</code>.</p>
 <p>As with most programming issues, there are a few alternative ways
 that one may ensure this ignore rule is followed. The “Ignoring Nested
 Files: Variation” exercise has a slightly different directory structure
@@ -593,8 +594,8 @@ more detail on ignore rules.</p>
 <div id="including-specific-files" class="callout-inner">
 <h3 class="callout-title">Including Specific Files</h3>
 <div class="callout-content">
-<p>How would you ignore all <code>.csv</code> files in your root
-directory except for <code>final.csv</code>? Hint: Find out what
+<p>How would you ignore all <code>.png</code> files in your root
+directory except for <code>final.png</code>? Hint: Find out what
 <code>!</code> (the exclamation point operator) does</p>
 </div>
 </div>
@@ -610,14 +611,14 @@ directory except for <code>final.csv</code>? Hint: Find out what
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>*.csv           # ignore all data files
-!final.csv      # except final.csv</code></pre>
+<pre class="output" tabindex="0"><code>*.png           # ignore all png files
+!final.png      # except final.png</code></pre>
 </div>
 <p>The exclamation point operator will include a previously excluded
 entry.</p>
-<p>Note also that because you’ve previously committed <code>.csv</code>
+<p>Note also that because you’ve previously committed <code>.png</code>
 files in this lesson they will not be ignored with this new rule. Only
-future additions of <code>.csv</code> files added to the root directory
+future additions of <code>.png</code> files added to the root directory
 will be ignored.</p>
 </div>
 </div>
@@ -635,13 +636,13 @@ Files exercise, but with a slightly different directory structure:</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">results/data</span></span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="ex">results/images</span></span>
-<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a><span class="ex">results/plots</span></span>
-<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a><span class="ex">results/analysis</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">receipts/data</span></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="ex">receipts/images</span></span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a><span class="ex">receipts/plots</span></span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a><span class="ex">receipts/analysis</span></span></code></pre>
 </div>
-<p>How would you ignore all of the contents in the results folder, but
-not <code>results/data</code>?</p>
+<p>How would you ignore all of the contents in the receipts folder, but
+not <code>receipts/data</code>?</p>
 <p>Hint: think a bit about how you created an exception with the
 <code>!</code> operator before.</p>
 </div>
@@ -654,16 +655,16 @@ not <code>results/data</code>?</p>
 </button>
 <div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
-<p>If you want to ignore the contents of <code>results/</code> but not
-those of <code>results/data/</code>, you can change your
-<code>.gitignore</code> to ignore the contents of results folder, but
-create an exception for the contents of the <code>results/data</code>
+<p>If you want to ignore the contents of <code>receipts/</code> but not
+those of <code>receipts/data/</code>, you can change your
+<code>.gitignore</code> to ignore the contents of receipts folder, but
+create an exception for the contents of the <code>receipts/data</code>
 subfolder. Your .gitignore would look like this:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>results/*               # ignore everything in results folder
-!results/data/          # do not ignore results/data/ contents</code></pre>
+<pre class="output" tabindex="0"><code>receipts/*               # ignore everything in receipts folder
+!receipts/data/          # do not ignore receipts/data/ contents</code></pre>
 </div>
 </div>
 </div>
@@ -681,15 +682,15 @@ structure that looks like:</p>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">results/data/position/gps/a.csv</span></span>
-<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="ex">results/data/position/gps/b.csv</span></span>
-<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a><span class="ex">results/data/position/gps/c.csv</span></span>
-<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a><span class="ex">results/data/position/gps/info.txt</span></span>
-<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a><span class="ex">results/plots</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">receipts/data/market_position/gps/a.dat</span></span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="ex">receipts/data/market_position/gps/b.dat</span></span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a><span class="ex">receipts/data/market_position/gps/c.dat</span></span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a><span class="ex">receipts/data/market_position/gps/info.txt</span></span>
+<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a><span class="ex">receipts/plots</span></span></code></pre>
 </div>
 <p>What’s the shortest <code>.gitignore</code> rule you could write to
-ignore all <code>.csv</code> files in
-<code>result/data/position/gps</code>? Do not ignore the
+ignore all <code>.dat</code> files in
+<code>result/data/market_position/gps</code>? Do not ignore the
 <code>info.txt</code>.</p>
 </div>
 </div>
@@ -701,10 +702,11 @@ ignore all <code>.csv</code> files in
 </button>
 <div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
-<p>Appending <code>results/data/position/gps/*.csv</code> will match
-every file in <code>results/data/position/gps</code> that ends with
-<code>.csv</code>. The file
-<code>results/data/position/gps/info.txt</code> will not be ignored.</p>
+<p>Appending <code>receipts/data/market_position/gps/*.dat</code> will
+match every file in <code>receipts/data/market_position/gps</code> that
+ends with <code>.dat</code>. The file
+<code>receipts/data/market_position/gps/info.txt</code> will not be
+ignored.</p>
 </div>
 </div>
 </div>
@@ -898,8 +900,8 @@ ignore.</li>
   "url": "https://swcarpentry.github.io/git-novice/instructor/06-ignore.html",
   "identifier": "https://swcarpentry.github.io/git-novice/instructor/06-ignore.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2023-09-18",
-  "datePublished": "2024-09-24"
+  "dateModified": "2024-09-29",
+  "datePublished": "2024-09-29"
 }
 
   </script><script>

@@ -391,7 +391,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Remotes in GitHub</h1>
-        <p>Last updated on 2024-08-10 |
+        <p>Last updated on 2024-09-29 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/07-github.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -443,8 +443,8 @@ repository that will be linked to our <em>local</em> repository.</p>
 <section><h2 class="section-heading" id="create-a-remote-repository">1. Create a remote repository<a class="anchor" aria-label="anchor" href="#create-a-remote-repository"></a></h2>
 <hr class="half-width"><p>Log in to <a href="https://github.com" class="external-link">GitHub</a>, then click on the
 icon in the top right corner to create a new repository called
-<code>planets</code>:</p>
-<figure><img src="../fig/github-create-repo-01.png" alt='The first step in creating a repository on GitHub: clicking the "create new" button' class="figure mx-auto d-block"></figure><p>Name your repository “planets” and then click “Create
+<code>recipes</code>:</p>
+<figure><img src="../fig/github-create-repo-01.png" alt='The first step in creating a repository on GitHub: clicking the "create new" button' class="figure mx-auto d-block"></figure><p>Name your repository “recipes” and then click “Create
 Repository”.</p>
 <p>Note: Since this repository will be connected to a local repository,
 it needs to be empty. Leave “Initialize this repository with a README”
@@ -457,17 +457,17 @@ URL and some information on how to configure your local repository:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> mkdir planets</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ex">$</span> cd planets</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> mkdir recipes</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ex">$</span> cd recipes</span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="ex">$</span> git init</span></code></pre>
 </div>
 <p>If you remember back to the earlier <a href="04-changes.html">episode</a> where we added and committed our
-earlier work on <code>mars.txt</code>, we had a diagram of the local
+earlier work on <code>guacamole.md</code>, we had a diagram of the local
 repository which looked like this:</p>
 <figure><img src="../fig/git-staging-area.svg" alt='A diagram showing how "git add" registers changes in the staging area, while "git commit" moves changes from the staging area to the repository' class="figure mx-auto d-block"></figure><p>Now that we have two repositories, we need a diagram like this:</p>
-<figure><img src="../fig/git-freshly-made-github-repo.svg" alt='A diagram illustrating how the GitHub "planets" repository is also a git repository like our local repository, but that it is currently empty' class="figure mx-auto d-block"></figure><p>Note that our local repository still contains our earlier work on
-<code>mars.txt</code>, but the remote repository on GitHub appears empty
-as it doesn’t contain any files yet.</p>
+<figure><img src="../fig/git-freshly-made-github-repo.svg" alt='A diagram illustrating how the GitHub "recipes" repository is also a git repository like our local repository, but that it is currently empty' class="figure mx-auto d-block"></figure><p>Note that our local repository still contains our earlier work on
+<code>guacamole.md</code>, but the remote repository on GitHub appears
+empty as it doesn’t contain any files yet.</p>
 </section><section><h2 class="section-heading" id="connect-local-to-remote-repository">2. Connect local to remote repository<a class="anchor" aria-label="anchor" href="#connect-local-to-remote-repository"></a></h2>
 <hr class="half-width"><p>Now we connect the two repositories. We do this by making the GitHub
 repository a <a href="reference.html#remote">remote</a> for the local
@@ -489,15 +489,15 @@ GitHub.</p>
 </div>
 </div>
 <figure><img src="../fig/github-change-repo-string.png" alt='A screenshot showing that clicking on "SSH" will make GitHub provide the SSH URL for a repository instead of the HTTPS URL' class="figure mx-auto d-block"></figure><p>Copy that URL from the browser, go into the local
-<code>planets</code> repository, and run this command:</p>
+<code>recipes</code> repository, and run this command:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> git remote add origin git@github.com:vlad/planets.git</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> git remote add origin git@github.com:alflin/recipes.git</span></code></pre>
 </div>
-<p>Make sure to use the URL for your repository rather than Vlad’s: the
-only difference should be your username instead of
-<code>vlad</code>.</p>
+<p>Make sure to use the URL for your repository rather than Alfredo’s:
+the only difference should be your username instead of
+<code>alflin</code>.</p>
 <p><code>origin</code> is a local name used to refer to the remote
 repository. It could be called anything, but <code>origin</code> is a
 convention that is often used by default in git and GitHub, so it’s
@@ -512,13 +512,13 @@ helpful to stick with this unless there’s a reason not to.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>origin   git@github.com:vlad/planets.git (fetch)
-origin   git@github.com:vlad/planets.git (push)</code></pre>
+<pre class="output" tabindex="0"><code>origin   git@github.com:alflin/recipes.git (fetch)
+origin   git@github.com:alflin/recipes.git (push)</code></pre>
 </div>
 <p>We’ll discuss remotes in more detail in the next episode, while
 talking about how they might be used for collaboration.</p>
 </section><section><h2 class="section-heading" id="ssh-background-and-setup">3. SSH Background and Setup<a class="anchor" aria-label="anchor" href="#ssh-background-and-setup"></a></h2>
-<hr class="half-width"><p>Before Dracula can connect to a remote repository, he needs to set up
+<hr class="half-width"><p>Before Alfredo can connect to a remote repository, he needs to set up
 a way for his computer to authenticate with GitHub so it knows it’s him
 trying to connect to his remote repository.</p>
 <p>We are going to set up the method that is commonly used by many
@@ -577,19 +577,18 @@ your computer.</p>
 </div>
 <p>Your output is going to look a little different depending on whether
 or not SSH has ever been set up on the computer you are using.</p>
-<p>Dracula has not set up SSH on his computer, so his output is</p>
+<p>Alfredo has not set up SSH on his computer, so his output is</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>ls: cannot access '/c/Users/Vlad Dracula/.ssh': No such file or directory</code></pre>
+<pre class="output" tabindex="0"><code>ls: cannot access '/c/Users/Alfredo/.ssh': No such file or directory</code></pre>
 </div>
 <p>If SSH has been set up on the computer you’re using, the public and
 private key pairs will be listed. The file names are either
 <code>id_ed25519</code>/<code>id_ed25519.pub</code> or
 <code>id_rsa</code>/<code>id_rsa.pub</code> depending on how the key
-pairs were set up.<br>
-Since they don’t exist on Dracula’s computer, he uses this command to
-create them.</p>
+pairs were set up. Since they don’t exist on Alfredo’s computer, he uses
+this command to create them.</p>
 <div class="section level3">
 <h3 id="create-an-ssh-key-pair">3.1 Create an SSH key pair<a class="anchor" aria-label="anchor" href="#create-an-ssh-key-pair"></a></h3>
 <p>To create an SSH key pair Vlad uses this command, where the
@@ -598,7 +597,7 @@ create them.</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">$</span> ssh-keygen <span class="at">-t</span> ed25519 <span class="at">-C</span> <span class="st">"vlad@tran.sylvan.ia"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">$</span> ssh-keygen <span class="at">-t</span> ed25519 <span class="at">-C</span> <span class="st">"a.linguini@ratatouille.fr"</span></span></code></pre>
 </div>
 <p>If you are using a legacy system that doesn’t support the Ed25519
 algorithm, use:
@@ -607,17 +606,17 @@ algorithm, use:
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>Generating public/private ed25519 key pair.
-Enter file in which to save the key (/c/Users/Vlad Dracula/.ssh/id_ed25519):</code></pre>
+Enter file in which to save the key (/c/Users/Alfredo/.ssh/id_ed25519):</code></pre>
 </div>
 <p>We want to use the default file, so just press <kbd>Enter</kbd>.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Created directory '/c/Users/Vlad Dracula/.ssh'.
+<pre class="output" tabindex="0"><code>Created directory '/c/Users/Alfredo/.ssh'.
 Enter passphrase (empty for no passphrase):</code></pre>
 </div>
-<p>Now, it is prompting Dracula for a passphrase. Since he is using his
-lab’s laptop that other people sometimes have access to, he wants to
+<p>Now, it is prompting Alfredo for a passphrase. Since he is using his
+kitchen’s laptop that other people sometimes have access to, he wants to
 create a passphrase. Be sure to use something memorable or save your
 passphrase somewhere, as there is no “reset my password” option. Note
 that, when typing a passphrase on a terminal, there won’t be any visual
@@ -633,10 +632,10 @@ confirmation</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Your identification has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519
-Your public key has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519.pub
+<pre class="output" tabindex="0"><code>Your identification has been saved in /c/Users/Alfredo/.ssh/id_ed25519
+Your public key has been saved in /c/Users/Alfredo/.ssh/id_ed25519.pub
 The key fingerprint is:
-SHA256:SMSPIStNyA00KPxuYu94KpZgRAYjgt9g4BA4kFy3g1o vlad@tran.sylvan.ia
+SHA256:SMSPIStNyA00KPxuYu94KpZgRAYjgt9g4BA4kFy3g1o a.linguini@ratatouille.fr
 The key's randomart image is:
 +--[ED25519 256]--+
 |^B== o.          |
@@ -663,10 +662,10 @@ when we check.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>drwxr-xr-x 1 Vlad Dracula 197121   0 Jul 16 14:48 ./
-drwxr-xr-x 1 Vlad Dracula 197121   0 Jul 16 14:48 ../
--rw-r--r-- 1 Vlad Dracula 197121 419 Jul 16 14:48 id_ed25519
--rw-r--r-- 1 Vlad Dracula 197121 106 Jul 16 14:48 id_ed25519.pub</code></pre>
+<pre class="output" tabindex="0"><code>drwxr-xr-x 1 Alfredo   197121   0 Jul 16 14:48 ./
+drwxr-xr-x 1 Alfredo   197121   0 Jul 16 14:48 ../
+-rw-r--r-- 1 Alfredo   197121 419 Jul 16 14:48 id_ed25519
+-rw-r--r-- 1 Alfredo   197121 106 Jul 16 14:48 id_ed25519.pub</code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -701,15 +700,15 @@ key.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDmRA3d51X0uu9wXek559gfn6UFNF69yZjChyBIU2qKI vlad@tran.sylvan.ia</code></pre>
+<pre class="output" tabindex="0"><code>ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDmRA3d51X0uu9wXek559gfn6UFNF69yZjChyBIU2qKI a.linguini@ratatouille.fr</code></pre>
 </div>
 <p>Now, going to GitHub.com, click on your profile icon in the top right
-corner to get the drop-down menu. Click “Settings,” then on the settings
-page, click “SSH and GPG keys,” on the left side “Access” menu. Click
+corner to get the drop-down menu. Click “Settings”, then on the settings
+page, click “SSH and GPG keys”, on the left side “Access” menu. Click
 the “New SSH key” button on the right side. Now, you can add the title
-(Dracula uses the title “Vlad’s Lab Laptop” so he can remember where the
-original key pair files are located), paste your SSH key into the field,
-and click the “Add SSH key” to complete the setup.</p>
+(Alfredo uses the title “Alfredo’s Kitchen Laptop” so he can remember
+where the original key pair files are located), paste your SSH key into
+the field, and click the “Add SSH key” to complete the setup.</p>
 <p>Now that we’ve set that up, let’s check our authentication again from
 the command line.</p>
 <div class="codewrapper sourceCode" id="cb18">
@@ -720,7 +719,7 @@ the command line.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Hi Vlad! You've successfully authenticated, but GitHub does not provide shell access.</code></pre>
+<pre class="output" tabindex="0"><code>Hi Alfredo! You've successfully authenticated, but GitHub does not provide shell access.</code></pre>
 </div>
 <p>Good! This output confirms that the SSH key works as intended. We are
 now ready to push our work to the remote repository.</p>
@@ -734,7 +733,7 @@ repository on GitHub:</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="ex">$</span> git push origin main</span></code></pre>
 </div>
-<p>Since Dracula set up a passphrase, it will prompt him for it. If you
+<p>Since Alfredo set up a passphrase, it will prompt him for it. If you
 completed advanced settings for your authentication, it will not prompt
 for a passphrase.</p>
 <div class="codewrapper">
@@ -747,7 +746,7 @@ Compressing objects: 100% (11/11), done.
 Writing objects: 100% (16/16), 1.45 KiB | 372.00 KiB/s, done.
 Total 16 (delta 2), reused 0 (delta 0)
 remote: Resolving deltas: 100% (2/2), done.
-To https://github.com/vlad/planets.git
+To https://github.com/alflin/recipes.git
  * [new branch]      main -&gt; main</code></pre>
 </div>
 <div id="proxy" class="callout">
@@ -834,7 +833,7 @@ well:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>From https://github.com/vlad/planets
+<pre class="output" tabindex="0"><code>From https://github.com/alflin/recipes
  * branch            main     -&gt; FETCH_HEAD
 Already up-to-date.</code></pre>
 </div>
@@ -849,12 +848,11 @@ local repository.</p>
 <div id="github-gui" class="callout-inner">
 <h3 class="callout-title">GitHub GUI</h3>
 <div class="callout-content">
-<p>Browse to your <code>planets</code> repository on GitHub. Underneath
-the Code button, find and click on the text that says “XX commits”
-(where “XX” is some number). Hover over, and click on, the three buttons
-to the right of each commit. What information can you gather/explore
-from these buttons? How would you get that same information in the
-shell?</p>
+<p>Browse to your <code>recipes</code> repository on GitHub. Under the
+Code tab, find and click on the text that says “XX commits” (where “XX”
+is some number). Hover over, and click on, the three buttons to the
+right of each commit. What information can you gather/explore from these
+buttons? How would you get that same information in the shell?</p>
 </div>
 </div>
 </div>
@@ -863,7 +861,7 @@ shell?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The left-most button (with the picture of a clipboard) copies the
 full identifier of the commit to the clipboard. In the shell,
@@ -922,7 +920,7 @@ GitHub record times, and why?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>GitHub displays timestamps in a human readable relative format
 (i.e. “22 hours ago” or “three weeks ago”). However, if you hover over
@@ -949,7 +947,7 @@ push” different from “git commit”?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>When we push changes, we’re interacting with a remote repository to
 update it with the changes we’ve made locally (often this corresponds to
@@ -978,7 +976,7 @@ happened when you tried to link your local and remote repositories?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>In this case, we’d see a merge conflict due to unrelated histories.
 When GitHub creates a README.md file, it performs a commit in the remote
@@ -998,7 +996,7 @@ remote: Enumerating objects: 3, done.
 remote: Counting objects: 100% (3/3), done.
 remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
 Unpacking objects: 100% (3/3), done.
-From https://github.com/vlad/planets
+From https://github.com/alflin/recipes
  * branch            main     -&gt; FETCH_HEAD
  * [new branch]      main     -&gt; origin/main
 fatal: refusing to merge unrelated histories</code></pre>
@@ -1015,7 +1013,7 @@ repositories before merging.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>From https://github.com/vlad/planets
+<pre class="output" tabindex="0"><code>From https://github.com/alflin/recipes
  * branch            main     -&gt; FETCH_HEAD
 Merge made by the 'recursive' strategy.
 README.md | 1 +
@@ -1103,8 +1101,8 @@ local repository.</li>
   "url": "https://swcarpentry.github.io/git-novice/instructor/07-github.html",
   "identifier": "https://swcarpentry.github.io/git-novice/instructor/07-github.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2024-08-10",
-  "datePublished": "2024-09-24"
+  "dateModified": "2024-09-29",
+  "datePublished": "2024-09-29"
 }
 
   </script><script>

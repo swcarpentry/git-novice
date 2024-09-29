@@ -381,7 +381,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Collaborating</h1>
-        <p>Last updated on 2024-06-20 |
+        <p>Last updated on 2024-09-29 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/08-collab.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -445,45 +445,50 @@ Owner’s repo.</p>
 <p>Next, the Collaborator needs to download a copy of the Owner’s
 repository to her machine. This is called “cloning a repo”.</p>
 <p>The Collaborator doesn’t want to overwrite her own version of
-<code>planets.git</code>, so needs to clone the Owner’s repository to a
+<code>recipes.git</code>, so needs to clone the Owner’s repository to a
 different location than her own repository with the same name.</p>
 <p>To clone the Owner’s repo into her <code>Desktop</code> folder, the
 Collaborator enters:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> git clone git@github.com:vlad/planets.git ~/Desktop/vlad-planets</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> git clone git@github.com:alflin/recipes.git ~/Desktop/alflin-recipes</span></code></pre>
 </div>
-<p>Replace ‘vlad’ with the Owner’s username.</p>
+<p>Replace ‘alflin’ with the Owner’s username.</p>
 <p>If you choose to clone without the clone path
-(<code>~/Desktop/vlad-planets</code>) specified at the end, you will
-clone inside your own planets folder! Make sure to navigate to the
+(<code>~/Desktop/alflin-recipes</code>) specified at the end, you will
+clone inside your own recipes folder! Make sure to navigate to the
 <code>Desktop</code> folder first.</p>
 <figure><img src="fig/github-collaboration.svg" alt='A diagram showing that "git clone" can create a copy of a remote GitHub repository, allowing a second person to create their own local repository that they can make changes to.' class="figure mx-auto d-block"></figure><p>The Collaborator can now make a change in her clone of the Owner’s
 repository, exactly the same way as we’ve been doing before:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> cd ~/Desktop/vlad-planets</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="ex">$</span> nano pluto.txt</span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="ex">$</span> cat pluto.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> cd ~/Desktop/alflin-recipes</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="ex">$</span> nano hummus.md</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="ex">$</span> cat hummus.md</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>It is so a planet!</code></pre>
+<pre class="output" tabindex="0"><code># Hummus
+## Ingredients
+* chickpeas
+* lemon
+* olive oil
+* salt</code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">$</span> git add pluto.txt</span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add notes about Pluto"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">$</span> git add hummus.md</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add ingredients for hummus"</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code> 1 file changed, 1 insertion(+)
- create mode 100644 pluto.txt</code></pre>
+<pre class="output" tabindex="0"><code> 1 file changed, 6 insertion(+)
+ create mode 100644 hummus.md</code></pre>
 </div>
 <p>Then push the change to the <em>Owner’s repository</em> on
 GitHub:</p>
@@ -501,7 +506,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (2/2), done.
 Writing objects: 100% (3/3), 306 bytes, done.
 Total 3 (delta 0), reused 0 (delta 0)
-To https://github.com/vlad/planets.git
+To https://github.com/alflin/recipes.git
    9272da5..29aba7c  main -&gt; main</code></pre>
 </div>
 <p>Note that we didn’t have to create a remote called
@@ -530,7 +535,7 @@ the main “upstream” project repository (let’s call this
 other people have committed.</p>
 <p>Remember that the name you give to a remote only exists locally. It’s
 an alias that you choose - whether <code>origin</code>, or
-<code>upstream</code>, or <code>fred</code> - and not something
+<code>upstream</code>, or <code>alfred</code> - and not something
 intrinstic to the remote repository.</p>
 <p>The <code>git remote</code> family of commands is used to set up and
 alter the remotes associated with a repository. Here are some of the
@@ -553,7 +558,7 @@ Or, if we made a typo when adding it!</li>
 <li>
 <code>git remote rename [oldname] [newname]</code> changes the local
 alias by which a remote is known - its name. For example, one could use
-this to change <code>upstream</code> to <code>fred</code>.</li>
+this to change <code>upstream</code> to <code>alfred</code>.</li>
 </ul></div>
 </div>
 </div>
@@ -572,14 +577,14 @@ remote: Counting objects: 100% (4/4), done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
 Unpacking objects: 100% (3/3), done.
-From https://github.com/vlad/planets
+From https://github.com/alflin/recipes
  * branch            main     -&gt; FETCH_HEAD
    9272da5..29aba7c  main     -&gt; origin/main
 Updating 9272da5..29aba7c
 Fast-forward
- pluto.txt | 1 +
- 1 file changed, 1 insertion(+)
- create mode 100644 pluto.txt</code></pre>
+ hummus.md | 5 +
+ 1 file changed, 5 insertion(+)
+ create mode 100644 hummus.md</code></pre>
 </div>
 <p>Now the three repositories (Owner’s local, Collaborator’s local, and
 Owner’s on GitHub) are back in sync.</p>
@@ -754,8 +759,8 @@ up.</li>
   "url": "https://swcarpentry.github.io/git-novice/08-collab.html",
   "identifier": "https://swcarpentry.github.io/git-novice/08-collab.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2024-06-20",
-  "datePublished": "2024-09-24"
+  "dateModified": "2024-09-29",
+  "datePublished": "2024-09-29"
 }
 
   </script><script>

@@ -381,7 +381,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Creating a Repository</h1>
-        <p>Last updated on 2024-08-10 |
+        <p>Last updated on 2024-09-29 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/03-create.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -418,19 +418,8 @@
 </div>
 </div>
 <p>Once Git is configured, we can start using it.</p>
-<p>We will continue with the story of Wolfman and Dracula who are
-investigating if it is possible to send a planetary lander to Mars.</p>
-<p><img src="../fig/motivatingexample.png" alt="The main elements of the story: Dracula, Wolfman, the Mummy, Mars, Pluto and The Moon" class="figure"><a href="https://www.deviantart.com/b-maze/art/Werewolf-vs-Dracula-124893530" class="external-link">Werewolf
-vs dracula</a> by <a href="https://www.deviantart.com/b-maze" class="external-link">b-maze</a>
-/ <a href="https://www.deviantart.com/" class="external-link">Deviant Art</a>. <a href="https://en.wikipedia.org/wiki/File:OSIRIS_Mars_true_color.jpg" class="external-link">Mars</a>
-by European Space Agency / <a href="https://creativecommons.org/licenses/by/3.0/deed.en" class="external-link">CC-BY-SA 3.0
-IGO</a>. <a href="https://commons.wikimedia.org/wiki/File:PIA19873-Pluto-NewHorizons-FlyingPastImage-20150714-transparent.png" class="external-link">Pluto</a>
-/ Courtesy NASA/JPL-Caltech. <a href="https://commons.wikimedia.org/wiki/File:Mummy_icon_-_Noun_Project_4070.svg" class="external-link">Mummy</a>
-© Gilad Fried / <a href="https://thenounproject.com/" class="external-link">The Noun
-Project</a> / <a href="https://creativecommons.org/licenses/by/3.0/deed.en" class="external-link">CC BY
-3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Lune_ico.png" class="external-link">Moon</a> ©
-Luc Viatour / <a href="https://lucnix.be/" class="external-link">https://lucnix.be</a> / <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en" class="external-link">CC BY-SA
-3.0</a>.</p>
+<p>We will help Alfredo with his new project, create a repository with
+all his recipes.</p>
 <p>First, let’s create a new directory in the <code>Desktop</code>
 folder for our work and then change the current working directory to the
 newly created one:</p>
@@ -438,10 +427,10 @@ newly created one:</p>
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> cd ~/Desktop</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ex">$</span> mkdir planets</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="ex">$</span> cd planets</span></code></pre>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ex">$</span> mkdir recipes</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="ex">$</span> cd recipes</span></code></pre>
 </div>
-<p>Then we tell Git to make <code>planets</code> a <a href="reference.html#repository">repository</a> -- a place where Git can
+<p>Then we tell Git to make <code>recipes</code> a <a href="reference.html#repository">repository</a> -- a place where Git can
 store versions of our files:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -451,9 +440,9 @@ store versions of our files:</p>
 <p>It is important to note that <code>git init</code> will create a
 repository that can include subdirectories and their files—there is no
 need to create separate repositories nested within the
-<code>planets</code> repository, whether subdirectories are present from
+<code>recipes</code> repository, whether subdirectories are present from
 the beginning or added later. Also, note that the creation of the
-<code>planets</code> directory and its initialization as a repository
+<code>recipes</code> directory and its initialization as a repository
 are completely separate processes.</p>
 <p>If we use <code>ls</code> to show the directory’s contents, it
 appears that nothing has changed:</p>
@@ -463,7 +452,7 @@ appears that nothing has changed:</p>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">$</span> ls</span></code></pre>
 </div>
 <p>But if we add the <code>-a</code> flag to show everything, we can see
-that Git has created a hidden directory within <code>planets</code>
+that Git has created a hidden directory within <code>recipes</code>
 called <code>.git</code>:</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -507,25 +496,25 @@ wording of the output might be slightly different.</p>
 <div id="places-to-create-git-repositories" class="callout-inner">
 <h3 class="callout-title">Places to Create Git Repositories</h3>
 <div class="callout-content">
-<p>Along with tracking information about planets (the project we have
-already created), Dracula would also like to track information about
-moons. Despite Wolfman’s concerns, Dracula creates a <code>moons</code>
-project inside his <code>planets</code> project with the following
-sequence of commands:</p>
+<p>Along with tracking information about recipes (the project we have
+already created), Alfredo would also like to track information about
+desserts specifically. Alfredo creates a <code>desserts</code> project
+inside his <code>recipes</code> project with the following sequence of
+commands:</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> cd ~/Desktop   <span class="co"># return to Desktop directory</span></span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="ex">$</span> cd planets     <span class="co"># go into planets directory, which is already a Git repository</span></span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-a</span>          <span class="co"># ensure the .git subdirectory is still present in the planets directory</span></span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="ex">$</span> mkdir moons    <span class="co"># make a subdirectory planets/moons</span></span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="ex">$</span> cd moons       <span class="co"># go into moons subdirectory</span></span>
-<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="ex">$</span> git init       <span class="co"># make the moons subdirectory a Git repository</span></span>
-<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-a</span>          <span class="co"># ensure the .git subdirectory is present indicating we have created a new Git repository</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> cd ~/Desktop    <span class="co"># return to Desktop directory</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="ex">$</span> cd recipes      <span class="co"># go into recipes directory, which is already a Git repository</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-a</span>           <span class="co"># ensure the .git subdirectory is still present in the recipes directory</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="ex">$</span> mkdir desserts <span class="co"># make a sub-directory recipes/desserts</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="ex">$</span> cd desserts    <span class="co"># go into desserts subdirectory</span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="ex">$</span> git init        <span class="co"># make the desserts subdirectory a Git repository</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-a</span>           <span class="co"># ensure the .git subdirectory is present indicating we have created a new Git repository</span></span></code></pre>
 </div>
 <p>Is the <code>git init</code> command, run inside the
-<code>moons</code> subdirectory, required for tracking files stored in
-the <code>moons</code> subdirectory?</p>
+<code>desserts</code> subdirectory, required for tracking files stored
+in the <code>desserts</code> subdirectory?</p>
 </div>
 </div>
 </div>
@@ -534,14 +523,15 @@ the <code>moons</code> subdirectory?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<p>No. Dracula does not need to make the <code>moons</code> subdirectory
-a Git repository because the <code>planets</code> repository can track
-any files, sub-directories, and subdirectory files under the
-<code>planets</code> directory. Thus, in order to track all information
-about moons, Dracula only needed to add the <code>moons</code>
-subdirectory to the <code>planets</code> directory.</p>
+<p>No. Alfredo does not need to make the <code>desserts</code>
+subdirectory a Git repository because the <code>recipes</code>
+repository will track all files, sub-directories, and subdirectory files
+under the <code>recipes</code> directory. Thus, in order to track all
+information about desserts, Alfredo only needed to add the
+<code>desserts</code> subdirectory to the <code>recipes</code>
+directory.</p>
 <p>Additionally, Git repositories can interfere with each other if they
 are “nested”: the outer repository will try to version-control the inner
 repository. Therefore, it’s best to create each new Git repository in a
@@ -570,10 +560,10 @@ as shown above:</p>
 <div id="correcting-git-init-mistakes" class="callout-inner">
 <h3 class="callout-title">Correcting <code>git init</code> Mistakes</h3>
 <div class="callout-content">
-<p>Wolfman explains to Dracula how a nested repository is redundant and
-may cause confusion down the road. Dracula would like to go back to a
-single git repository. How can Dracula undo his last
-<code>git init</code> in the <code>moons</code> subdirectory?</p>
+<p>Jimmy explains to Alfredo how a nested repository is redundant and
+may cause confusion down the road. Alfredo would like to go back to a
+single git repository. How can Alfredo undo his last
+<code>git init</code> in the <code>desserts</code> subdirectory?</p>
 </div>
 </div>
 </div>
@@ -582,7 +572,7 @@ single git repository. How can Dracula undo his last
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Solution – USE WITH CAUTION! </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="section level3">
 <h3 id="background">Background<a class="anchor" aria-label="anchor" href="#background"></a></h3>
@@ -603,13 +593,13 @@ that we will need to track, as we will see in the next episode.</p>
 <div class="section level3">
 <h3 id="solution-1">Solution<a class="anchor" aria-label="anchor" href="#solution-1"></a></h3>
 <p>Git keeps all of its files in the <code>.git</code> directory. To
-recover from this little mistake, Dracula can remove the
-<code>.git</code> folder in the moons subdirectory by running the
-following command from inside the <code>planets</code> directory:</p>
+recover from this little mistake, Alfredo can remove the
+<code>.git</code> folder in the desserts subdirectory by running the
+following command from inside the <code>recipes</code> directory:</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="ex">$</span> rm <span class="at">-rf</span> moons/.git</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="ex">$</span> rm <span class="at">-rf</span> desserts/.git</span></code></pre>
 </div>
 <p>But be careful! Running this command in the wrong directory will
 remove the entire Git history of a project you might want to keep. In
@@ -696,8 +686,8 @@ directory.</li>
   "url": "https://swcarpentry.github.io/git-novice/instructor/03-create.html",
   "identifier": "https://swcarpentry.github.io/git-novice/instructor/03-create.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2024-08-10",
-  "datePublished": "2024-09-24"
+  "dateModified": "2024-09-29",
+  "datePublished": "2024-09-29"
 }
 
   </script><script>

@@ -377,7 +377,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Discussion</h1>
-        <p>Last updated on 2023-09-18 |
+        <p>Last updated on 2024-09-29 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/learners/discuss.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -411,8 +411,8 @@ directory in a plain text file called <code>.gitconfig</code>.</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>[user]
-	name = Vlad Dracula
-	email = vlad@tran.sylvan.ia
+	name = Alfredo Linguini
+	email = a.linguini@ratatouille.fr
 [color]
 	ui = true
 [core]
@@ -442,13 +442,13 @@ command:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">$</span> git checkout f22b25e mars.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">$</span> git checkout f22b25e guacamole.md</span></code></pre>
 </div>
 <p>we could now instead type:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> git co f22b25e mars.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> git co f22b25e guacamole.md</span></code></pre>
 </div>
 </section><section><h2 class="section-heading" id="styling-gits-log">Styling Git’s Log<a class="anchor" aria-label="anchor" href="#styling-gits-log"></a></h2>
 <hr class="half-width"><p>A good target for customization is output from the log. The default
@@ -513,39 +513,43 @@ where.</p>
 <p>This has various impacts on Git’s performance and will make it
 difficult to compare different versions of your project.</p>
 <p>For a basic example to show the difference it makes, we’re going to
-go see what would have happened if Dracula had tried using outputs from
+go see what would have happened if Alfredo had tried using outputs from
 a word processor instead of plain text.</p>
 <p>Create a new directory and go into it:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">$</span> mkdir planets-nontext</span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="ex">$</span> cd planets-nontext</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">$</span> mkdir recipes-nontext</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="ex">$</span> cd recipes-nontext</span></code></pre>
 </div>
 <p>Use a program such as Microsoft Word or LibreOffice Writer to create
 a new document. Enter the same text that we began with before:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Cold and dry, but everything is my favorite color</code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co"># Ingredients</span></span>
+<span><span class="co"># Instructions</span></span></code></pre>
 </div>
-<p>Save the document into the <code>planets-nontext</code> directory
-with the name of <code>mars.doc</code>. Back in the terminal, run the
-usual commands for setting up a new Git repository:</p>
+<p>Save the document into the <code>recipes-nontext</code> directory
+with the name of <code>guacamole.doc</code>. Back in the terminal, run
+the usual commands for setting up a new Git repository:</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">$</span> git init</span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="ex">$</span> git add mars.doc</span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Starting to think about Mars"</span></span></code></pre>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="ex">$</span> git add guacamole.doc</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Create a template for recipe"</span></span></code></pre>
 </div>
-<p>Then make the same changes to <code>mars.doc</code> that we (or Vlad)
-previously made to <code>mars.txt</code>.</p>
+<p>Then make the same changes to <code>guacamole.doc</code> that we (or
+Alfredo) previously made to <code>guacamole.md</code>.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman</code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co"># Ingredients</span></span>
+<span><span class="op">-</span> <span class="va">avocado</span></span>
+<span><span class="op">-</span> <span class="va">lemon</span></span>
+<span><span class="op">-</span> <span class="va">salt</span></span>
+<span><span class="co"># Instructions</span></span></code></pre>
 </div>
 <p>Save and close the word processor. Now see what Git thinks of your
 changes:</p>
@@ -557,22 +561,25 @@ changes:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>diff --git a/mars.doc b/mars.doc
+<pre class="output" tabindex="0"><code>diff --git a/guacamole.doc b/guacamole.doc
 index 53a66fd..6e988e9 100644
-Binary files a/mars.doc and b/mars.doc differ</code></pre>
+Binary files a/guacamole.doc and b/guacamole.doc differ</code></pre>
 </div>
 <p>Compare this to the earlier <code>git diff</code> obtained when using
 text files:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>diff --git a/mars.txt b/mars.txt
+<pre class="output" tabindex="0"><code>diff --git a/guacamole.md b/guacamole.md
 index df0654a..315bf3a 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1 +1,2 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman</code></pre>
+--- a/guacamole.md
++++ b/guacamole.md
+@@ -1,2 +1,5 @@
+ # Ingredients
++- avocado
++- lemon
++- salt
+ # Instructions</code></pre>
 </div>
 <p>Notice how plain text files give a much more informative diff. You
 can see exactly which lines changed and what the changes were.</p>
@@ -594,32 +601,32 @@ replace the logo completely rather than merge little differences in.</p>
 <hr class="half-width"><p>Adding and modifying files are not the only actions one might take
 when working on a project. It might be required to remove a file from
 the repository.</p>
-<p>Create a new file for the planet Nibiru:</p>
+<p>Create a new file for the invisible ink:</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"This is another name for fake planet X"</span> <span class="op">&gt;</span> nibiru.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"This is where we keep the secret sauce"</span> <span class="op">&gt;</span> invisible.md</span></code></pre>
 </div>
 <p>Now add to the repository like you have learned earlier:</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">$</span> git add nibiru.txt</span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'adding info on nibiru'</span></span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">$</span> git add invisible.md</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Add secret sauce'</span></span>
 <span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>On branch main
-nothing to commit, working tree clean</code></pre>
+nothing to commit, working directory clean</code></pre>
 </div>
-<p>Nibiru is not a real planet. That was a silly idea. Let us remove it
-from the disk and let Git know about it:</p>
+<p>Invisible ink is not a real food. That was a silly idea. Let us
+remove it from the disk and let Git know about it:</p>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">$</span> git rm nibiru.txt</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">$</span> git rm invisible.md</span>
 <span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -629,7 +636,7 @@ from the disk and let Git know about it:</p>
 Changes to be committed:
    (use "git reset HEAD &lt;file&gt;..." to unstage)
 
-   deleted:    nibiru.txt
+   deleted:    invisible.md
 </code></pre>
 </div>
 <p>The change has been staged. Now commit the removal, and remove the
@@ -639,7 +646,7 @@ were to retrieve that specific commit.</p>
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Removing info on Nibiru.  It is not a real planet!'</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Remove info on Invisible ink.  It is not an edible sauce!'</span></span></code></pre>
 </div>
 </section><section><h2 class="section-heading" id="removing-a-file-with-unix">Removing a File with Unix<a class="anchor" aria-label="anchor" href="#removing-a-file-with-unix"></a></h2>
 <hr class="half-width"><p>Sometimes we might forget to remove the file through Git. If you
@@ -649,15 +656,15 @@ missing file. Let us recreate the file and commit it again.</p>
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"This is another name for fake planet X"</span> <span class="op">&gt;</span> nibiru.txt</span>
-<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a><span class="ex">$</span> git add nibiru.txt</span>
-<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'adding nibiru again'</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"This is another way to make invisible ink"</span> <span class="op">&gt;</span> secret.md</span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a><span class="ex">$</span> git add secret.md</span>
+<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Add invisible ink again'</span></span></code></pre>
 </div>
 <p>Now we remove the file with Unix <code>rm</code>:</p>
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="ex">$</span> rm nibiru.txt</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="ex">$</span> rm secret.md</span>
 <span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -668,18 +675,18 @@ Changes not staged for commit:
    (use "git add/rm &lt;file&gt;..." to update what will be committed)
    (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
 
-    deleted:    nibiru.txt
+    deleted:    secret.md
 
 no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 </div>
-<p>See how Git has noticed that the file <code>nibiru.txt</code> has
-been removed from the disk. The next step is to “stage” the removal of
-the file from the repository. This is done with the command
+<p>See how Git has noticed that the file <code>secret.md</code> has been
+removed from the disk. The next step is to “stage” the removal of the
+file from the repository. This is done with the command
 <code>git rm</code> just as before.</p>
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">$</span> git rm nibiru.txt</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">$</span> git rm secret.md</span>
 <span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -689,7 +696,7 @@ the file from the repository. This is done with the command
 Changes to be committed:
    (use "git reset HEAD &lt;file&gt;..." to unstage)
 
-   deleted:    nibiru.txt
+   deleted:    secret.md
 </code></pre>
 </div>
 <p>The change that was made in Unix has now been staged and needs to be
@@ -697,32 +704,31 @@ committed.</p>
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Removing info on Nibiru, again!'</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Remove info on invisible ink, again!'</span></span></code></pre>
 </div>
 </section><section><h2 class="section-heading" id="renaming-a-file">Renaming a File<a class="anchor" aria-label="anchor" href="#renaming-a-file"></a></h2>
 <hr class="half-width"><p>Another common change when working on a project is to rename a
 file.</p>
-<p>Create a file for the planet Krypton:</p>
+<p>Create a file for the whitesauce recipe:</p>
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"Superman's home planet"</span> <span class="op">&gt;</span> krypton.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"Very fun recipe to do"</span> <span class="op">&gt;</span> whitesauce.md</span></code></pre>
 </div>
 <p>Add it to the repository:</p>
 <div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="ex">$</span> git add krypton.txt</span>
-<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Adding planet Krypton'</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="ex">$</span> git add whitesauce.md</span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Add white sauce recipe'</span></span></code></pre>
 </div>
-<p>We all know that Superman moved to Earth. Not that he had much
-choice. Now his home planet is Earth.</p>
-<p>Rename the file <code>krypton.txt</code> to <code>earth.txt</code>
-with Git:</p>
+<p>We all know that white sauce has a more sophisticated name.</p>
+<p>Rename the file <code>whitesauce.md</code> to
+<code>bechamel.md</code> with Git:</p>
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="ex">$</span> git mv krypton.txt earth.txt</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="ex">$</span> git mv whitesauce.md bechamel.md</span>
 <span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -732,13 +738,13 @@ with Git:</p>
 Changes to be committed:
   (use "git reset HEAD &lt;file&gt;..." to unstage)
 
-	renamed:    krypton.txt -&gt; earth.txt</code></pre>
+	renamed:    whitesauce.md -&gt;  bechamel.md</code></pre>
 </div>
 <p>The final step is commit our change to the repository:</p>
 <div class="codewrapper sourceCode" id="cb32">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Superman'</span>s home is now Earth<span class="st">'</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Use the French name for the whitesauce'</span></span></code></pre>
 </div>
 </section><section><h2 class="section-heading" id="renaming-a-file-with-unix">Renaming a File with Unix<a class="anchor" aria-label="anchor" href="#renaming-a-file-with-unix"></a></h2>
 <hr class="half-width"><p>If you forgot to use Git and you used Unix <code>mv</code> instead of
@@ -749,16 +755,16 @@ with Unix <code>mv</code>. First, we need to recreate the
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"Superman's home planet"</span> <span class="op">&gt;</span> krypton.txt</span>
-<span id="cb33-2"><a href="#cb33-2" tabindex="-1"></a><span class="ex">$</span> git add krypton.txt</span>
-<span id="cb33-3"><a href="#cb33-3" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Adding planet Krypton again.'</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"Very fun recipe to do"</span> <span class="op">&gt;</span> whitesauce.md</span>
+<span id="cb33-2"><a href="#cb33-2" tabindex="-1"></a><span class="ex">$</span> git add whitesauce.md</span>
+<span id="cb33-3"><a href="#cb33-3" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Add white sauce recipe'</span></span></code></pre>
 </div>
 <p>Let us rename the file and see what Git can figured out by
 itself:</p>
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a><span class="ex">$</span> mv krypton.txt earth.txt</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a><span class="ex">$</span> mv whitesauce.md bechamel.md</span>
 <span id="cb34-2"><a href="#cb34-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -769,23 +775,23 @@ Changes not staged for commit:
   (use "git add/rm &lt;file&gt;..." to update what will be committed)
   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
 
-        deleted:    krypton.txt
+        deleted:    whitesauce.md
 
 Untracked files:
   (use "git add &lt;file&gt;..." to include in what will be committed)
 
-    earth.txt
+    bechamel.md
 
 no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 </div>
-<p>Git has noticed that the file <code>krypton.txt</code> has
-disappeared from the file system and a new file <code>earth.txt</code>
+<p>Git has noticed that the file <code>whitesauce.md</code> has
+disappeared from the file system and a new file <code>bechamel.md</code>
 has showed up.</p>
 <p>Add those changes to the staging area:</p>
 <div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a><span class="ex">$</span> git add krypton.txt earth.txt</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a><span class="ex">$</span> git add whitesauce.md bechamel.md</span>
 <span id="cb36-2"><a href="#cb36-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -795,17 +801,18 @@ has showed up.</p>
 Changes to be committed:
   (use "git reset HEAD &lt;file&gt;..." to unstage)
 
-    renamed:    krypton.txt -&gt; earth.txt
+    renamed:    whitesauce.md -&gt; bechamel.md
 </code></pre>
 </div>
-<p>Notice how Git has now figured out that the <code>krypton.txt</code>
-has not disappeared - it has simply been renamed.</p>
+<p>Notice how Git has now figured out that the
+<code>whitesauce.md</code> has not disappeared - it has simply been
+renamed.</p>
 <p>The final step, as before, is to commit our change to the
 repository:</p>
 <div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Superman'</span>s home is Earth, told you before.<span class="st">'</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Use the French name for the whitesauce'</span></span></code></pre>
 </div>
 </section><section><h2 class="section-heading" id="further--gitignore-concepts">Further .gitignore concepts<a class="anchor" aria-label="anchor" href="#further--gitignore-concepts"></a></h2>
 <hr class="half-width"><p>For additional documentation on .gitignore, please reference <a href="https://git-scm.com/docs/gitignore" class="external-link">the official git
@@ -924,8 +931,8 @@ results/*             # ignore the files in the results directory
   "url": "https://swcarpentry.github.io/git-novice/instructor/discuss.html",
   "identifier": "https://swcarpentry.github.io/git-novice/instructor/discuss.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2023-09-18",
-  "datePublished": "2024-09-24"
+  "dateModified": "2024-09-29",
+  "datePublished": "2024-09-29"
 }
 
   </script><script>

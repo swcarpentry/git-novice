@@ -381,7 +381,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Tracking Changes</h1>
-        <p>Last updated on 2024-06-20 |
+        <p>Last updated on 2024-09-29 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/04-changes.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -421,32 +421,33 @@ messages.</li>
 </div>
 </div>
 <p>First let’s make sure we’re still in the right directory. You should
-be in the <code>planets</code> directory.</p>
+be in the <code>recipes</code> directory.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> cd ~/Desktop/planets</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> cd ~/Desktop/recipes</span></code></pre>
 </div>
-<p>Let’s create a file called <code>mars.txt</code> that contains some
-notes about the Red Planet’s suitability as a base. We’ll use
-<code>nano</code> to edit the file; you can use whatever editor you
-like. In particular, this does not have to be the
-<code>core.editor</code> you set globally earlier. But remember, the
-bash command to create or edit a new file will depend on the editor you
-choose (it might not be <code>nano</code>). For a refresher on text
-editors, check out <a href="https://swcarpentry.github.io/shell-novice/03-create.html#which-editor" class="external-link">“Which
+<p>Let’s create a file called <code>guacamole.md</code> that contains
+the basic structure to have a recipe. We’ll use <code>nano</code> to
+edit the file; you can use whatever editor you like. In particular, this
+does not have to be the <code>core.editor</code> you set globally
+earlier. But remember, the bash command to create or edit a new file
+will depend on the editor you choose (it might not be
+<code>nano</code>). For a refresher on text editors, check out <a href="https://swcarpentry.github.io/shell-novice/03-create.html#which-editor" class="external-link">“Which
 Editor?”</a> in <a href="https://swcarpentry.github.io/shell-novice/" class="external-link">The Unix Shell</a>
 lesson.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> nano mars.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> nano guacamole.md</span></code></pre>
 </div>
-<p>Type the text below into the <code>mars.txt</code> file:</p>
+<p>Type the text below into the <code>guacamole.md</code> file:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Cold and dry, but everything is my favorite color</code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co"># Guacamole</span></span>
+<span><span class="co">## Ingredients</span></span>
+<span><span class="co">## Instructions</span></span></code></pre>
 </div>
 <p>Let’s first verify that the file was properly created by running the
 list command (<code>ls</code>):</p>
@@ -458,19 +459,21 @@ list command (<code>ls</code>):</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span><span class="va">mars.txt</span></span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="va">guacamole.md</span></span></code></pre>
 </div>
-<p><code>mars.txt</code> contains a single line, which we can see by
+<p><code>guacamole.md</code> contains a single line, which we can see by
 running:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> cat mars.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> cat guacamole.md</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Cold and dry, but everything is my favorite color</code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co"># Guacamole</span></span>
+<span><span class="co">## Ingredients</span></span>
+<span><span class="co">## Instructions</span></span></code></pre>
 </div>
 <p>If we check the status of our project again, Git tells us that it’s
 noticed the new file:</p>
@@ -489,7 +492,7 @@ No commits yet
 Untracked files:
    (use "git add &lt;file&gt;..." to include in what will be committed)
 
-	mars.txt
+	guacamole.md
 
 nothing added to commit but untracked files present (use "git add" to track)</code></pre>
 </div>
@@ -499,7 +502,7 @@ file using <code>git add</code>:</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">$</span> git add mars.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">$</span> git add guacamole.md</span></code></pre>
 </div>
 <p>and then check that the right thing happened:</p>
 <div class="codewrapper sourceCode" id="cb11">
@@ -517,23 +520,23 @@ No commits yet
 Changes to be committed:
   (use "git rm --cached &lt;file&gt;..." to unstage)
 
-	new file:   mars.txt
+	new file:   guacamole.md
 </code></pre>
 </div>
 <p>Git now knows that it’s supposed to keep track of
-<code>mars.txt</code>, but it hasn’t recorded these changes as a commit
-yet. To get it to do that, we need to run one more command:</p>
+<code>guacamole.md</code>, but it hasn’t recorded these changes as a
+commit yet. To get it to do that, we need to run one more command:</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Start notes on Mars as a base"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Create a template for recipe"</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>[main (root-commit) f22b25e] Start notes on Mars as a base
+<pre class="output" tabindex="0"><code>[main (root-commit) f22b25e] Create a template for recipe
  1 file changed, 1 insertion(+)
- create mode 100644 mars.txt</code></pre>
+ create mode 100644 guacamole.md</code></pre>
 </div>
 <p>When we run <code>git commit</code>, Git takes everything we have
 told it to save by using <code>git add</code> and stores a copy
@@ -579,10 +582,10 @@ done recently, we can ask Git to show us the project’s history using
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
-Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;
+Author: Alfredo Linguini &lt;a.linguini@ratatouille.fr&gt;
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Start notes on Mars as a base</code></pre>
+    Create a template for recipe</code></pre>
 </div>
 <p><code>git log</code> lists all commits made to a repository in
 reverse chronological order. The listing for each commit includes the
@@ -598,28 +601,33 @@ Git was given when the commit was created.</p>
 <h3 class="callout-title">Where Are My Changes?</h3>
 <div class="callout-content">
 <p>If we run <code>ls</code> at this point, we will still see just one
-file called <code>mars.txt</code>. That’s because Git saves information
-about files’ history in the special <code>.git</code> directory
-mentioned earlier so that our filesystem doesn’t become cluttered (and
-so that we can’t accidentally edit or delete an old version).</p>
+file called <code>guacamole.md</code>. That’s because Git saves
+information about files’ history in the special <code>.git</code>
+directory mentioned earlier so that our filesystem doesn’t become
+cluttered (and so that we can’t accidentally edit or delete an old
+version).</p>
 </div>
 </div>
 </div>
-<p>Now suppose Dracula adds more information to the file. (Again, we’ll
+<p>Now suppose Alfredo adds more information to the file. (Again, we’ll
 edit with <code>nano</code> and then <code>cat</code> the file to show
 its contents; you may use a different editor, and don’t need to
 <code>cat</code>.)</p>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">$</span> nano mars.txt</span>
-<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="ex">$</span> cat mars.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">$</span> nano guacamole.md</span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="ex">$</span> cat guacamole.md</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman</code></pre>
+<pre class="output" tabindex="0"><code># Guacamole
+## Ingredients
+* avocado
+* lemon
+* salt
+## Instructions</code></pre>
 </div>
 <p>When we run <code>git status</code> now, it tells us that a file it
 already knows about has been modified:</p>
@@ -636,7 +644,7 @@ Changes not staged for commit:
   (use "git add &lt;file&gt;..." to update what will be committed)
   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
 
-	modified:   mars.txt
+	modified:   guacamole.md
 
 no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 </div>
@@ -656,13 +664,17 @@ version:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>diff --git a/mars.txt b/mars.txt
+<pre class="output" tabindex="0"><code>diff --git a/guacamole.md b/guacamole.md
 index df0654a..315bf3a 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1 +1,2 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman</code></pre>
+--- a/guacamole.md
++++ b/guacamole.md
+@@ -1,3 +1,6 @@
+ # Guacamole
+ ## Ingredients
++* avocado
++* lemon
++* salt
+ ## Instructions</code></pre>
 </div>
 <p>The output is cryptic because it is actually a series of commands for
 tools like editors and <code>patch</code> telling them how to
@@ -684,7 +696,8 @@ line.</li>
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add concerns about effects of Mars' moons on Wolfman"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add basic guacamole's ingredients"</span></span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -694,7 +707,7 @@ Changes not staged for commit:
   (use "git add &lt;file&gt;..." to update what will be committed)
   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
 
-	modified:   mars.txt
+	modified:   guacamole.md
 
 no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 </div>
@@ -703,14 +716,14 @@ first. Let’s fix that:</p>
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="ex">$</span> git add mars.txt</span>
-<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add concerns about effects of Mars' moons on Wolfman"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="ex">$</span> git add guacamole.md</span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add basic guacamole's ingredients"</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>[main 34961b1] Add concerns about effects of Mars' moons on Wolfman
- 1 file changed, 1 insertion(+)</code></pre>
+<pre class="output" tabindex="0"><code>[main 34961b1] Add basic guacamole's ingredient
+ 1 file changed, 3 insertions(+)</code></pre>
 </div>
 <p>Git insists that we add files to the set we want to commit before
 actually committing anything. This allows us to commit our changes in
@@ -746,20 +759,23 @@ Try to stage things manually, or you might find yourself searching for
 </div>
 </div>
 <figure><img src="fig/git-staging-area.svg" alt='A diagram showing how "git add" registers changes in the staging area, while "git commit" moves changes from the staging area to the repository' class="figure mx-auto d-block"></figure><p>Let’s watch as our changes to a file move from our editor to the
-staging area and into long-term storage. First, we’ll add another line
-to the file:</p>
+staging area and into long-term storage. First, we’ll improve our recipe
+by changing ‘lemon’ to ‘lime’:</p>
 <div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="ex">$</span> nano mars.txt</span>
-<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a><span class="ex">$</span> cat mars.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="ex">$</span> nano guacamole.md</span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a><span class="ex">$</span> cat guacamole.md</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity</code></pre>
+<pre class="output" tabindex="0"><code># Guacamole
+## Ingredients
+* avocado
+* lime
+* salt
+## Instructions</code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -769,22 +785,27 @@ But the Mummy will appreciate the lack of humidity</code></pre>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>diff --git a/mars.txt b/mars.txt
+<pre class="output" tabindex="0"><code>diff --git a/guacamole.md b/guacamole.md
 index 315bf3a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity</code></pre>
+--- a/guacamole.md
++++ b/guacamole.md
+@@ -1,6 +1,6 @@
+ # Guacamole
+ ## Ingredients
+ * avocado
+-* lemon
++* lime
+ * salt
+ ## Instructions</code></pre>
 </div>
-<p>So far, so good: we’ve added one line to the end of the file (shown
-with a <code>+</code> in the first column). Now let’s put that change in
-the staging area and see what <code>git diff</code> reports:</p>
+<p>So far, so good: we’ve replaced one line (shown with a <code>-</code>
+in the first column) with a new line (shown with a <code>+</code> in the
+first column). Now let’s put that change in the staging area and see
+what <code>git diff</code> reports:</p>
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="ex">$</span> git add mars.txt</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="ex">$</span> git add guacamole.md</span>
 <span id="cb33-2"><a href="#cb33-2" tabindex="-1"></a><span class="ex">$</span> git diff</span></code></pre>
 </div>
 <p>There is no output: as far as Git can tell, there’s no difference
@@ -798,26 +819,30 @@ the directory. However, if we do this:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>diff --git a/mars.txt b/mars.txt
+<pre class="output" tabindex="0"><code>diff --git a/guacamole.md b/guacamole.md
 index 315bf3a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity</code></pre>
+--- a/guacamole.md
++++ b/guacamole.md
+@@ -1,6 +1,6 @@
+ # Guacamole
+ ## Ingredients
+ * avocado
+-* lemon
++* lime
+ * salt
+ ## Instructions</code></pre>
 </div>
 <p>it shows us the difference between the last committed change and
 what’s in the staging area. Let’s save our changes:</p>
 <div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Discuss concerns about Mars' climate for Mummy"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Modify guacamole to the traditional recipe"</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>[main 005937f] Discuss concerns about Mars' climate for Mummy
+<pre class="output" tabindex="0"><code>[main 005937f] Modify guacamole to the traditional recipe
  1 file changed, 1 insertion(+)</code></pre>
 </div>
 <p>check our status:</p>
@@ -842,22 +867,22 @@ nothing to commit, working tree clean</code></pre>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -&gt; main)
-Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;
+Author: Alfredo Linguini &lt;a.linguini@ratatouille.fr&gt;
 Date:   Thu Aug 22 10:14:07 2013 -0400
 
-    Discuss concerns about Mars' climate for Mummy
+    Modify guacamole to the traditional recipe
 
 commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
-Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;
+Author: Alfredo Linguini &lt;a.linguini@ratatouille.fr&gt;
 Date:   Thu Aug 22 10:07:21 2013 -0400
 
-    Add concerns about effects of Mars' moons on Wolfman
+    Add basic guacamole's ingredients
 
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
-Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;
+Author: Alfredo Linguini &lt;a.linguini@ratatouille.fr&gt;
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Start notes on Mars as a base</code></pre>
+    Create a template for recipe</code></pre>
 </div>
 <div id="word-based-diffing" class="callout">
 <div class="callout-square">
@@ -914,10 +939,10 @@ commit you can use:</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -&gt; main)
-Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;
+Author: Alfredo Linguini &lt;a.linguini@ratatouille.fr&gt;
 Date:   Thu Aug 22 10:14:07 2013 -0400
 
-   Discuss concerns about Mars' climate for Mummy</code></pre>
+   Modify guacamole to the traditional recipe</code></pre>
 </div>
 <p>You can also reduce the quantity of information using the
 <code>--oneline</code> option:</p>
@@ -929,9 +954,9 @@ Date:   Thu Aug 22 10:14:07 2013 -0400
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>005937f (HEAD -&gt; main) Discuss concerns about Mars' climate for Mummy
-34961b1 Add concerns about effects of Mars' moons on Wolfman
-f22b25e Start notes on Mars as a base</code></pre>
+<pre class="output" tabindex="0"><code>005937f (HEAD -&gt; main) Modify guacamole to the traditional recipe
+34961b1 Add basic guacamole's ingredients
+f22b25e Create a template for recipe</code></pre>
 </div>
 <p>You can also combine the <code>--oneline</code> option with others.
 One useful combination adds <code>--graph</code> to display the commit
@@ -947,9 +972,9 @@ Git references</a>:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>* 005937f (HEAD -&gt; main) Discuss concerns about Mars' climate for Mummy
-* 34961b1 Add concerns about effects of Mars' moons on Wolfman
-* f22b25e Start notes on Mars as a base</code></pre>
+<pre class="output" tabindex="0"><code>* 005937f (HEAD -&gt; main) Modify guacamole to the traditional recipe
+* 34961b1 Add basic guacamole's ingredients
+* f22b25e Create a template for recipe</code></pre>
 </div>
 </div>
 </div>
@@ -967,13 +992,13 @@ Try it for yourself:</li>
 </ol><div class="codewrapper sourceCode" id="cb48">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" tabindex="-1"></a><span class="ex">$</span> mkdir spaceships</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" tabindex="-1"></a><span class="ex">$</span> mkdir cakes</span>
 <span id="cb48-2"><a href="#cb48-2" tabindex="-1"></a><span class="ex">$</span> git status</span>
-<span id="cb48-3"><a href="#cb48-3" tabindex="-1"></a><span class="ex">$</span> git add spaceships</span>
+<span id="cb48-3"><a href="#cb48-3" tabindex="-1"></a><span class="ex">$</span> git add cakes</span>
 <span id="cb48-4"><a href="#cb48-4" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
 </div>
-<p>Note, our newly created empty directory <code>spaceships</code> does
-not appear in the list of untracked files even if we explicitly add it
+<p>Note, our newly created empty directory <code>cakes</code> does not
+appear in the list of untracked files even if we explicitly add it
 (<em>via</em> <code>git add</code>) to our repository. This is the
 reason why you will sometimes see <code>.gitkeep</code> files in
 otherwise empty directories. Unlike <code>.gitignore</code>, these files
@@ -991,16 +1016,16 @@ with files, you can add all files in the directory at once by:</li>
 <div class="codewrapper sourceCode" id="cb50">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb50-1"><a href="#cb50-1" tabindex="-1"></a><span class="ex">$</span> touch spaceships/apollo-11 spaceships/sputnik-1</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb50-1"><a href="#cb50-1" tabindex="-1"></a><span class="ex">$</span> touch cakes/brownie cakes/lemon_drizzle</span>
 <span id="cb50-2"><a href="#cb50-2" tabindex="-1"></a><span class="ex">$</span> git status</span>
-<span id="cb50-3"><a href="#cb50-3" tabindex="-1"></a><span class="ex">$</span> git add spaceships</span>
+<span id="cb50-3"><a href="#cb50-3" tabindex="-1"></a><span class="ex">$</span> git add cakes</span>
 <span id="cb50-4"><a href="#cb50-4" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
 </div>
 <p>Before moving on, we will commit these changes.</p>
 <div class="codewrapper sourceCode" id="cb51">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb51-1"><a href="#cb51-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add some initial thoughts on spaceships"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb51-1"><a href="#cb51-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add some initial cakes"</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -1017,11 +1042,10 @@ and then commit the staged changes to the repository
 <h3 class="callout-title">Choosing a Commit Message</h3>
 <div class="callout-content">
 <p>Which of the following commit messages would be most appropriate for
-the last commit made to <code>mars.txt</code>?</p>
+the last commit made to <code>guacamole.md</code>?</p>
 <ol style="list-style-type: decimal"><li>“Changes”</li>
-<li>“Added line ‘But the Mummy will appreciate the lack of humidity’ to
-mars.txt”</li>
-<li>“Discuss effects of Mars’ climate on the Mummy”</li>
+<li>“Changed lemon for lime”</li>
+<li>“Guacamole modified to the traditional recipe”</li>
 </ol></div>
 </div>
 </div>
@@ -1100,10 +1124,10 @@ myfile.txt.</li>
 <div class="callout-content">
 <p>The staging area can hold changes from any number of files that you
 want to commit as a single snapshot.</p>
-<ol style="list-style-type: decimal"><li>Add some text to <code>mars.txt</code> noting your decision to
-consider Venus as a base</li>
-<li>Create a new file <code>venus.txt</code> with your initial thoughts
-about Venus as a base for you and your friends</li>
+<ol style="list-style-type: decimal"><li>Add some text to <code>guacamole.md</code> noting the rough price of
+the ingredients.</li>
+<li>Create a new file <code>groceries.md</code> with a list of products
+and their prices for different markets.</li>
 <li>Add changes from both files to the staging area, and commit those
 changes.</li>
 </ol></div>
@@ -1116,60 +1140,65 @@ changes.</li>
 </button>
 <div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
-<p>The output below from <code>cat mars.txt</code> reflects only content
-added during this exercise. Your output may vary.</p>
-<p>First we make our changes to the <code>mars.txt</code> and
-<code>venus.txt</code> files:</p>
+<p>First we make our changes to the <code>guacamole.md</code> and
+<code>groceries.md</code> files:</p>
 <div class="codewrapper sourceCode" id="cb56">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb56-1"><a href="#cb56-1" tabindex="-1"></a><span class="ex">$</span> nano mars.txt</span>
-<span id="cb56-2"><a href="#cb56-2" tabindex="-1"></a><span class="ex">$</span> cat mars.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb56-1"><a href="#cb56-1" tabindex="-1"></a><span class="ex">$</span> nano guacamole.md</span>
+<span id="cb56-2"><a href="#cb56-2" tabindex="-1"></a><span class="ex">$</span> cat guacamole.md</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Maybe I should start with a base on Venus.</code></pre>
+<pre class="output" tabindex="0"><code># Guacamole
+## Ingredients
+* avocado (1.35)
+* lime (0.64)
+* salt (2)</code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb58">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb58-1"><a href="#cb58-1" tabindex="-1"></a><span class="ex">$</span> nano venus.txt</span>
-<span id="cb58-2"><a href="#cb58-2" tabindex="-1"></a><span class="ex">$</span> cat venus.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb58-1"><a href="#cb58-1" tabindex="-1"></a><span class="ex">$</span> nano groceries.md</span>
+<span id="cb58-2"><a href="#cb58-2" tabindex="-1"></a><span class="ex">$</span> cat groceries.md</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Venus is a nice planet and I definitely should consider it as a base.</code></pre>
+<pre class="output" tabindex="0"><code># Market A
+* avocado: 1.35 per unit.
+* lime: 0.64 per unit
+* salt: 2 per kg</code></pre>
 </div>
 <p>Now you can add both files to the staging area. We can do that in one
 line:</p>
 <div class="codewrapper sourceCode" id="cb60">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb60-1"><a href="#cb60-1" tabindex="-1"></a><span class="ex">$</span> git add mars.txt venus.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb60-1"><a href="#cb60-1" tabindex="-1"></a><span class="ex">$</span> git add guacamole.md groceries.md</span></code></pre>
 </div>
 <p>Or with multiple commands:</p>
 <div class="codewrapper sourceCode" id="cb61">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb61-1"><a href="#cb61-1" tabindex="-1"></a><span class="ex">$</span> git add mars.txt</span>
-<span id="cb61-2"><a href="#cb61-2" tabindex="-1"></a><span class="ex">$</span> git add venus.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb61-1"><a href="#cb61-1" tabindex="-1"></a><span class="ex">$</span> git add guacamole.md</span>
+<span id="cb61-2"><a href="#cb61-2" tabindex="-1"></a><span class="ex">$</span> git add groceries.md</span></code></pre>
 </div>
 <p>Now the files are ready to commit. You can check that using
 <code>git status</code>. If you are ready to commit use:</p>
 <div class="codewrapper sourceCode" id="cb62">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb62-1"><a href="#cb62-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Write plans to start a base on Venus"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb62-1"><a href="#cb62-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Write prices for ingredients and their source"</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>[main cc127c2]
- Write plans to start a base on Venus
- 2 files changed, 2 insertions(+)
- create mode 100644 venus.txt</code></pre>
+ Write prices for ingredients and their source
+ 2 files changed, 7 insertions(+)
+ create mode 100644 groceries.md</code></pre>
 </div>
 </div>
 </div>
@@ -1200,7 +1229,7 @@ state.</li>
 </button>
 <div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
-<p>If needed, move out of the <code>planets</code> folder:</p>
+<p>If needed, move out of the <code>recipes</code> folder:</p>
 <div class="codewrapper sourceCode" id="cb64">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1226,7 +1255,7 @@ it to the repository:</p>
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb67-1"><a href="#cb67-1" tabindex="-1"></a><span class="ex">$</span> git add me.txt</span>
-<span id="cb67-2"><a href="#cb67-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add biography file"</span> </span></code></pre>
+<span id="cb67-2"><a href="#cb67-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add biography file"</span></span></code></pre>
 </div>
 <p>Modify the file as described (modify one line, add a fourth line). To
 display the differences between its updated state and its original
@@ -1322,8 +1351,8 @@ the local repository.</li>
   "url": "https://swcarpentry.github.io/git-novice/04-changes.html",
   "identifier": "https://swcarpentry.github.io/git-novice/04-changes.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2024-06-20",
-  "datePublished": "2024-09-24"
+  "dateModified": "2024-09-29",
+  "datePublished": "2024-09-29"
 }
 
   </script><script>
