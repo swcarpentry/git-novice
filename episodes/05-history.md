@@ -369,7 +369,7 @@ what is the missing command?
 
 4. Type in the new commit message.
 
-5. Save and close
+5. Save and close.
 
 :::::::::::::::  solution
 
