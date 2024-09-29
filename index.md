@@ -3,10 +3,10 @@ permalink: index.html
 site: sandpaper::sandpaper_site
 ---
 
-Wolfman and Dracula have been hired by Universal Missions (a space
-services spinoff from Euphoric State University) to investigate if it
-is possible to send their next planetary lander to Mars.  They want to
-be able to work on the plans at the same time, but they have run into
+Jimmy and Alfredo have been hired by Ratatouille restaurant (a special
+restaurant from Euphoric State University) to investigate if it
+is possible to make the best recipes archive ever.  They want to
+be able to work on indexing the prices at the same time, but they have run into
 problems doing this in the past.  If they take turns, each one will
 spend a lot of time waiting for the other to finish, but if they work
 on their own copies and email changes back and forth things will be
