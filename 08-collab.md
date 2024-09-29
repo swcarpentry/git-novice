@@ -48,21 +48,21 @@ or check for email notification. Once there she can accept access to the Owner's
 Next, the Collaborator needs to download a copy of the Owner's repository to her
 machine. This is called "cloning a repo".
 
-The Collaborator doesn't want to overwrite her own version of `planets.git`, so
+The Collaborator doesn't want to overwrite her own version of `recipes.git`, so
 needs to clone the Owner's repository to a different location than her own
 repository with the same name.
 
 To clone the Owner's repo into her `Desktop` folder, the Collaborator enters:
 
 ```bash
-$ git clone git@github.com:vlad/planets.git ~/Desktop/vlad-planets
+$ git clone git@github.com:alflin/recipes.git ~/Desktop/alflin-recipes
 ```
 
-Replace 'vlad' with the Owner's username.
+Replace 'alflin' with the Owner's username.
 
 If you choose to clone without the clone path
-(`~/Desktop/vlad-planets`) specified at the end,
-you will clone inside your own planets folder!
+(`~/Desktop/alflin-recipes`) specified at the end,
+you will clone inside your own recipes folder!
 Make sure to navigate to the `Desktop` folder first.
 
 ![](fig/github-collaboration.svg){alt='A diagram showing that "git clone" can create a copy of a remote GitHub repository, allowing a second person to create their own local repository that they can make changes to.'}
@@ -71,23 +71,28 @@ The Collaborator can now make a change in her clone of the Owner's repository,
 exactly the same way as we've been doing before:
 
 ```bash
-$ cd ~/Desktop/vlad-planets
-$ nano pluto.txt
-$ cat pluto.txt
+$ cd ~/Desktop/alflin-recipes
+$ nano hummus.md
+$ cat hummus.md
 ```
 
 ```output
-It is so a planet!
+# Hummus
+## Ingredients
+* chickpeas
+* lemon
+* olive oil
+* salt
 ```
 
 ```bash
-$ git add pluto.txt
-$ git commit -m "Add notes about Pluto"
+$ git add hummus.md
+$ git commit -m "Add ingredients for hummus"
 ```
 
 ```output
- 1 file changed, 1 insertion(+)
- create mode 100644 pluto.txt
+ 1 file changed, 6 insertion(+)
+ create mode 100644 hummus.md
 ```
 
 Then push the change to the *Owner's repository* on GitHub:
@@ -103,7 +108,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (2/2), done.
 Writing objects: 100% (3/3), 306 bytes, done.
 Total 3 (delta 0), reused 0 (delta 0)
-To https://github.com/vlad/planets.git
+To https://github.com/alflin/recipes.git
    9272da5..29aba7c  main -> main
 ```
 
@@ -130,7 +135,7 @@ You would pull from `upstream` from time to
 time to get the latest updates that other people have committed.
 
 Remember that the name you give to a remote only exists locally. It's
-an alias that you choose - whether `origin`, or `upstream`, or `fred` -
+an alias that you choose - whether `origin`, or `upstream`, or `alfred` -
 and not something intrinstic to the remote repository.
 
 The `git remote` family of commands is used to set up and alter the remotes
@@ -146,7 +151,7 @@ associated with a repository. Here are some of the most useful ones:
   account, or from GitHub to a different hosting service. Or, if we made a typo when
   adding it!
 - `git remote rename [oldname] [newname]` changes the local alias by which a remote
-  is known - its name. For example, one could use this to change `upstream` to `fred`.
+  is known - its name. For example, one could use this to change `upstream` to `alfred`.
   
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -163,14 +168,14 @@ remote: Counting objects: 100% (4/4), done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
 Unpacking objects: 100% (3/3), done.
-From https://github.com/vlad/planets
+From https://github.com/alflin/recipes
  * branch            main     -> FETCH_HEAD
    9272da5..29aba7c  main     -> origin/main
 Updating 9272da5..29aba7c
 Fast-forward
- pluto.txt | 1 +
- 1 file changed, 1 insertion(+)
- create mode 100644 pluto.txt
+ hummus.md | 5 +
+ 1 file changed, 5 insertion(+)
+ create mode 100644 hummus.md
 ```
 
 Now the three repositories (Owner's local, Collaborator's local, and Owner's on

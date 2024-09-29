@@ -22,8 +22,8 @@ $ cat ~/.gitconfig
 
 ```output
 [user]
-	name = Vlad Dracula
-	email = vlad@tran.sylvan.ia
+	name = Alfredo Linguini
+	email = a.linguini@ratatouille.fr
 [color]
 	ui = true
 [core]
@@ -54,13 +54,13 @@ $ git config --global alias.co checkout
 Now if we return to the example from [Exploring History](../episodes/05-history.md) where we ran:
 
 ```bash
-$ git checkout f22b25e mars.txt
+$ git checkout f22b25e guacamole.md
 ```
 
 we could now instead type:
 
 ```bash
-$ git co f22b25e mars.txt
+$ git co f22b25e guacamole.md
 ```
 
 ## Styling Git's Log
@@ -131,37 +131,41 @@ This has various impacts on Git's performance and will make it difficult to
 compare different versions of your project.
 
 For a basic example to show the difference it makes,
-we're going to go see what would have happened if Dracula had tried
+we're going to go see what would have happened if Alfredo had tried
 using outputs from a word processor instead of plain text.
 
 Create a new directory and go into it:
 
 ```bash
-$ mkdir planets-nontext
-$ cd planets-nontext
+$ mkdir recipes-nontext
+$ cd recipes-nontext
 ```
 
 Use a program such as Microsoft Word or LibreOffice Writer to create a new document.
 Enter the same text that we began with before:
 
 ```output
-Cold and dry, but everything is my favorite color
+# Ingredients
+# Instructions
 ```
 
-Save the document into the `planets-nontext` directory with the name of `mars.doc`.
+Save the document into the `recipes-nontext` directory with the name of `guacamole.doc`.
 Back in the terminal, run the usual commands for setting up a new Git repository:
 
 ```bash
 $ git init
-$ git add mars.doc
-$ git commit -m "Starting to think about Mars"
+$ git add guacamole.doc
+$ git commit -m "Create a template for recipe"
 ```
 
-Then make the same changes to `mars.doc` that we (or Vlad) previously made to `mars.txt`.
+Then make the same changes to `guacamole.doc` that we (or Alfredo) previously made to `guacamole.md`.
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
+# Ingredients
+- avocado
+- lemon
+- salt
+# Instructions
 ```
 
 Save and close the word processor.
@@ -172,21 +176,24 @@ $ git diff
 ```
 
 ```output
-diff --git a/mars.doc b/mars.doc
+diff --git a/guacamole.doc b/guacamole.doc
 index 53a66fd..6e988e9 100644
-Binary files a/mars.doc and b/mars.doc differ
+Binary files a/guacamole.doc and b/guacamole.doc differ
 ```
 
 Compare this to the earlier `git diff` obtained when using text files:
 
 ```output
-diff --git a/mars.txt b/mars.txt
+diff --git a/guacamole.md b/guacamole.md
 index df0654a..315bf3a 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1 +1,2 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
+--- a/guacamole.md
++++ b/guacamole.md
+@@ -1,2 +1,5 @@
+ # Ingredients
++- avocado
++- lemon
++- salt
+ # Instructions
 ```
 
 Notice how plain text files give a much more informative diff.
@@ -212,30 +219,30 @@ Adding and modifying files are not the only actions one might take
 when working on a project.  It might be required to remove a file
 from the repository.
 
-Create a new file for the planet Nibiru:
+Create a new file for the invisible ink:
 
 ```bash
-$ echo "This is another name for fake planet X" > nibiru.txt
+$ echo "This is where we keep the secret sauce" > invisible.md
 ```
 
 Now add to the repository like you have learned earlier:
 
 ```bash
-$ git add nibiru.txt
-$ git commit -m 'adding info on nibiru'
+$ git add invisible.md
+$ git commit -m 'Add secret sauce'
 $ git status
 ```
 
 ```output
 On branch main
-nothing to commit, working tree clean
+nothing to commit, working directory clean
 ```
 
-Nibiru is not a real planet.  That was a silly idea.  Let us remove
+Invisible ink is not a real food.  That was a silly idea.  Let us remove
 it from the disk and let Git know about it:
 
 ```bash
-$ git rm nibiru.txt
+$ git rm invisible.md
 $ git status
 ```
 
@@ -244,7 +251,7 @@ On branch main
 Changes to be committed:
    (use "git reset HEAD <file>..." to unstage)
 
-   deleted:    nibiru.txt
+   deleted:    invisible.md
 
 ```
 
@@ -254,7 +261,7 @@ in the new commit.  The previous commit will still
 have the file, if you were to retrieve that specific commit.
 
 ```bash
-$ git commit -m 'Removing info on Nibiru.  It is not a real planet!'
+$ git commit -m 'Remove info on Invisible ink.  It is not an edible sauce!'
 ```
 
 ## Removing a File with Unix
@@ -265,15 +272,15 @@ Git is smart enough to notice the missing file. Let us recreate the file and
 commit it again.
 
 ```bash
-$ echo "This is another name for fake planet X" > nibiru.txt
-$ git add nibiru.txt
-$ git commit -m 'adding nibiru again'
+$ echo "This is another way to make invisible ink" > secret.md
+$ git add secret.md
+$ git commit -m 'Add invisible ink again'
 ```
 
 Now we remove the file with Unix `rm`:
 
 ```bash
-$ rm nibiru.txt
+$ rm secret.md
 $ git status
 ```
 
@@ -283,18 +290,18 @@ Changes not staged for commit:
    (use "git add/rm <file>..." to update what will be committed)
    (use "git checkout -- <file>..." to discard changes in working directory)
 
-    deleted:    nibiru.txt
+    deleted:    secret.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-See how Git has noticed that the file `nibiru.txt` has been removed
+See how Git has noticed that the file `secret.md` has been removed
 from the disk.  The next step is to "stage" the removal of the file
 from the repository.  This is done with the command `git rm` just as
 before.
 
 ```bash
-$ git rm nibiru.txt
+$ git rm secret.md
 $ git status
 ```
 
@@ -303,7 +310,7 @@ On branch main
 Changes to be committed:
    (use "git reset HEAD <file>..." to unstage)
 
-   deleted:    nibiru.txt
+   deleted:    secret.md
 
 ```
 
@@ -311,33 +318,32 @@ The change that was made in Unix has now been staged and needs to be
 committed.
 
 ```bash
-$ git commit -m 'Removing info on Nibiru, again!'
+$ git commit -m 'Remove info on invisible ink, again!'
 ```
 
 ## Renaming a File
 
 Another common change when working on a project is to rename a file.
 
-Create a file for the planet Krypton:
+Create a file for the whitesauce recipe:
 
 ```bash
-$ echo "Superman's home planet" > krypton.txt
+$ echo "Very fun recipe to do" > whitesauce.md
 ```
 
 Add it to the repository:
 
 ```bash
-$ git add krypton.txt
-$ git commit -m 'Adding planet Krypton'
+$ git add whitesauce.md
+$ git commit -m 'Add white sauce recipe'
 ```
 
-We all know that Superman moved to Earth.  Not that he had much
-choice.  Now his home planet is Earth.
+We all know that white sauce has a more sophisticated name.
 
-Rename the file `krypton.txt` to `earth.txt` with Git:
+Rename the file `whitesauce.md` to `bechamel.md` with Git:
 
 ```bash
-$ git mv krypton.txt earth.txt
+$ git mv whitesauce.md bechamel.md
 $ git status
 ```
 
@@ -346,13 +352,13 @@ On branch main
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
-	renamed:    krypton.txt -> earth.txt
+	renamed:    whitesauce.md ->  bechamel.md
 ```
 
 The final step is commit our change to the repository:
 
 ```bash
-$ git commit -m 'Superman's home is now Earth'
+$ git commit -m 'Use the French name for the whitesauce'
 ```
 
 ## Renaming a File with Unix
@@ -364,15 +370,15 @@ this time with Unix `mv`. First, we need to recreate the
 `krypton.txt` file:
 
 ```bash
-$ echo "Superman's home planet" > krypton.txt
-$ git add krypton.txt
-$ git commit -m 'Adding planet Krypton again.'
+$ echo "Very fun recipe to do" > whitesauce.md
+$ git add whitesauce.md
+$ git commit -m 'Add white sauce recipe'
 ```
 
 Let us rename the file and see what Git can figured out by itself:
 
 ```bash
-$ mv krypton.txt earth.txt
+$ mv whitesauce.md bechamel.md
 $ git status
 ```
 
@@ -382,23 +388,23 @@ Changes not staged for commit:
   (use "git add/rm <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-        deleted:    krypton.txt
+        deleted:    whitesauce.md
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
-    earth.txt
+    bechamel.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-Git has noticed that the file `krypton.txt` has disappeared from the
-file system and a new file `earth.txt` has showed up.
+Git has noticed that the file `whitesauce.md` has disappeared from the
+file system and a new file `bechamel.md` has showed up.
 
 Add those changes to the staging area:
 
 ```bash
-$ git add krypton.txt earth.txt
+$ git add whitesauce.md bechamel.md
 $ git status
 ```
 
@@ -407,17 +413,17 @@ On branch main
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
-    renamed:    krypton.txt -> earth.txt
+    renamed:    whitesauce.md -> bechamel.md
 
 ```
 
-Notice how Git has now figured out that the `krypton.txt` has not
+Notice how Git has now figured out that the `whitesauce.md` has not
 disappeared - it has simply been renamed.
 
 The final step, as before, is to commit our change to the repository:
 
 ```bash
-$ git commit -m 'Superman's home is Earth, told you before.'
+$ git commit -m 'Use the French name for the whitesauce'
 ```
 
 ## Further .gitignore concepts
