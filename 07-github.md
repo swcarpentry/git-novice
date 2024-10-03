@@ -178,7 +178,7 @@ Since they don't exist on Alfredo's computer, he uses this command to create the
 
 ### 3\.1 Create an SSH key pair
 
-To create an SSH key pair Vlad uses this command, where the `-t` option specifies which type of algorithm to use and `-C` attaches a comment to the key (here, Vlad's email):
+To create an SSH key pair Alfredo uses this command, where the `-t` option specifies which type of algorithm to use and `-C` attaches a comment to the key (here, Alfredo's email):
 
 ```bash
 $ ssh-keygen -t ed25519 -C "a.linguini@ratatouille.fr"
