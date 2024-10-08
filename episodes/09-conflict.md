@@ -25,42 +25,48 @@ different changes to each copy.  Version control helps us manage these
 [resolve](../learners/reference.md#resolve) overlapping changes.
 
 To see how we can resolve conflicts, we must first create one.  The file
-`mars.txt` currently looks like this in both partners' copies of our `planets`
+`guacamole.md` currently looks like this in both partners' copies of our `recipes`
 repository:
 
 ```bash
-$ cat mars.txt
+$ cat guacamole.md
 ```
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
+# Guacamole
+## Ingredients
+* avocado
+* lime
+* salt
+## Instructions
 ```
 
 Let's add a line to the collaborator's copy only:
 
 ```bash
-$ nano mars.txt
-$ cat mars.txt
+$ nano guacamole.md
+$ cat guacamole.md
 ```
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
-This line added to Wolfman's copy
+# Guacamole
+## Ingredients
+* avocado
+* lime
+* salt
+## Instructions
+* put one avocado into a bowl.
 ```
 
 and then push the change to GitHub:
 
 ```bash
-$ git add mars.txt
-$ git commit -m "Add a line in our home copy"
+$ git add guacamole.md
+$ git commit -m "First step on the instructions"
 ```
 
 ```output
-[main 5ae9631] Add a line in our home copy
+[main 5ae9631] First step on the instructions
  1 file changed, 1 insertion(+)
 ```
 
@@ -76,7 +82,7 @@ Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 331 bytes | 331.00 KiB/s, done.
 Total 3 (delta 2), reused 0 (delta 0)
 remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
-To https://github.com/vlad/planets.git
+To https://github.com/alflin/recipes.git
    29aba7c..dabb4c8  main -> main
 ```
 
@@ -85,26 +91,29 @@ make a different change to their copy
 *without* updating from GitHub:
 
 ```bash
-$ nano mars.txt
-$ cat mars.txt
+$ nano guacamole.md
+$ cat guacamole.md
 ```
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
-We added a different line in the other copy
+# Guacamole
+## Ingredients
+* avocado
+* lime
+* salt
+## Instructions
+* peel the avocados
 ```
 
 We can commit the change locally:
 
 ```bash
-$ git add mars.txt
-$ git commit -m "Add a line in my copy"
+$ git add guacamole.md
+$ git commit -m "Add first step"
 ```
 
 ```output
-[main 07ebc69] Add a line in my copy
+[main 07ebc69] Add first step
  1 file changed, 1 insertion(+)
 ```
 
@@ -115,9 +124,9 @@ $ git push origin main
 ```
 
 ```output
-To https://github.com/vlad/planets.git
+To https://github.com/alflin/recipes.git
  ! [rejected]        main -> main (fetch first)
-error: failed to push some refs to 'https://github.com/vlad/planets.git'
+error: failed to push some refs to 'https://github.com/alflin/recipes.git'
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
@@ -143,13 +152,51 @@ remote: Counting objects: 100% (5/5), done.
 remote: Compressing objects: 100% (1/1), done.
 remote: Total 3 (delta 2), reused 3 (delta 2), pack-reused 0
 Unpacking objects: 100% (3/3), done.
-From https://github.com/vlad/planets
+From https://github.com/alflin/recipes
  * branch            main     -> FETCH_HEAD
     29aba7c..dabb4c8  main     -> origin/main
-Auto-merging mars.txt
-CONFLICT (content): Merge conflict in mars.txt
+Auto-merging guacamole.md
+CONFLICT (content): Merge conflict in guacamole.md
 Automatic merge failed; fix conflicts and then commit the result.
 ```
+
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## You may need to tell Git what to do
+
+If you see the below in your output, Git is asking what it should do.
+
+```output
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint:
+hint:   git config pull.rebase false  # merge (the default strategy)
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint:
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+```
+
+In newer versions of Git it gives you the option of specifying different
+behaviours when a pull would merge divergent branches. In our case we want
+'the default strategy'. To use this strategy run the following command to
+select it as the default thing git should do.
+
+```bash
+$ git config pull.rebase false
+```
+
+Then attempt the pull again.
+
+```bash
+$ git pull origin main
+```
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 The `git pull` command updates the local repository to include those
 changes already included in the remote repository.
@@ -159,17 +206,20 @@ stop us from trampling on our previous work. The conflict is marked in
 in the affected file:
 
 ```bash
-$ cat mars.txt
+$ cat guacamole.md
 ```
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
+# Guacamole
+## Ingredients
+* avocado
+* lime
+* salt
+## Instructions
 <<<<<<< HEAD
-We added a different line in the other copy
+* peel the avocados
 =======
-This line added to Wolfman's copy
+* put one avocado into a bowl.
 >>>>>>> dabb4c8c450e8475aee9b14b4383acc99f42af1d
 ```
 
@@ -187,22 +237,25 @@ or get rid of the change entirely.
 Let's replace both so that the file looks like this:
 
 ```bash
-$ cat mars.txt
+$ cat guacamole.md
 ```
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
-We removed the conflict on this line
+# Guacamole
+## Ingredients
+* avocado
+* lime
+* salt
+## Instructions
+* peel the avocados and put them into a bowl.
 ```
 
 To finish merging,
-we add `mars.txt` to the changes being made by the merge
+we add `guacamole.md` to the changes being made by the merge
 and then commit:
 
 ```bash
-$ git add mars.txt
+$ git add guacamole.md
 $ git status
 ```
 
@@ -213,7 +266,7 @@ All conflicts fixed but you are still merging.
 
 Changes to be committed:
 
-	modified:   mars.txt
+	modified:   guacamole.md
 
 ```
 
@@ -239,7 +292,7 @@ Compressing objects: 100% (6/6), done.
 Writing objects: 100% (6/6), 645 bytes | 645.00 KiB/s, done.
 Total 6 (delta 4), reused 0 (delta 0)
 remote: Resolving deltas: 100% (4/4), completed with 2 local objects.
-To https://github.com/vlad/planets.git
+To https://github.com/alflin/recipes.git
    dabb4c8..2abf2b1  main -> main
 ```
 
@@ -257,26 +310,29 @@ remote: Counting objects: 100% (10/10), done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 6 (delta 4), reused 6 (delta 4), pack-reused 0
 Unpacking objects: 100% (6/6), done.
-From https://github.com/vlad/planets
+From https://github.com/alflin/recipes
  * branch            main     -> FETCH_HEAD
     dabb4c8..2abf2b1  main     -> origin/main
 Updating dabb4c8..2abf2b1
 Fast-forward
- mars.txt | 2 +-
+ guacamole.md | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 ```
 
 We get the merged file:
 
 ```bash
-$ cat mars.txt
+$ cat guacamole.md
 ```
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
-We removed the conflict on this line
+# Guacamole
+## Ingredients
+* avocado
+* lime
+* salt
+## Instructions
+* peel the avocados and put them into a bowl.
 ```
 
 We don't need to merge again because Git knows someone has already done that.
@@ -328,49 +384,49 @@ that is stored in version control?
 
 ## Solution
 
-Let's try it. Suppose Dracula takes a picture of Martian surface and
-calls it `mars.jpg`.
+Let's try it. Suppose Alfredo takes a picture of its guacamole and
+calls it `guacamole.jpg`.
 
-If you do not have an image file of Mars available, you can create
+If you do not have an image file of guacamole available, you can create
 a dummy binary file like this:
 
 ```bash
-$ head -c 1024 /dev/urandom > mars.jpg
-$ ls -lh mars.jpg
+$ head --bytes 1024 /dev/urandom > guacamole.jpg
+$ ls -lh guacamole.jpg
 ```
 
 ```output
--rw-r--r-- 1 vlad 57095 1.0K Mar  8 20:24 mars.jpg
+-rw-r--r-- 1 alflin 57095 1.0K Mar  8 20:24 guacamole.jpg
 ```
 
 `ls` shows us that this created a 1-kilobyte file. It is full of
 random bytes read from the special file, `/dev/urandom`.
 
-Now, suppose Dracula adds `mars.jpg` to his repository:
+Now, suppose Alfredo adds `guacamole.jpg` to his repository:
 
 ```bash
-$ git add mars.jpg
-$ git commit -m "Add picture of Martian surface"
+$ git add guacamole.jpg
+$ git commit -m "Add picture of guacamole"
 ```
 
 ```output
-[main 8e4115c] Add picture of Martian surface
+[main 8e4115c] Add picture of guacamole
  1 file changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 mars.jpg
+ create mode 100644 guacamole.jpg
 ```
 
-Suppose that Wolfman has added a similar picture in the meantime.
-His is a picture of the Martian sky, but it is *also* called `mars.jpg`.
-When Dracula tries to push, he gets a familiar message:
+Suppose that Jimmy has added a similar picture in the meantime.
+His is a picture of a guacamole with nachos, but it is *also* called `guacamole.jpg`.
+When Alfredo tries to push, he gets a familiar message:
 
 ```bash
 $ git push origin main
 ```
 
 ```output
-To https://github.com/vlad/planets.git
+To https://github.com/alflin/recipes.git
  ! [rejected]        main -> main (fetch first)
-error: failed to push some refs to 'https://github.com/vlad/planets.git'
+error: failed to push some refs to 'https://github.com/alflin/recipes.git'
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
@@ -393,20 +449,20 @@ remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (3/3), done.
 remote: Total 3 (delta 0), reused 0 (delta 0)
 Unpacking objects: 100% (3/3), done.
-From https://github.com/vlad/planets.git
+From https://github.com/alflin/recipes.git
  * branch            main     -> FETCH_HEAD
    6a67967..439dc8c  main     -> origin/main
-warning: Cannot merge binary files: mars.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)
-Auto-merging mars.jpg
-CONFLICT (add/add): Merge conflict in mars.jpg
+warning: Cannot merge binary files: guacamole.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)
+Auto-merging guacamole.jpg
+CONFLICT (add/add): Merge conflict in guacamole.jpg
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-The conflict message here is mostly the same as it was for `mars.txt`, but
+The conflict message here is mostly the same as it was for `guacamole.md`, but
 there is one key additional line:
 
 ```output
-warning: Cannot merge binary files: mars.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)
+warning: Cannot merge binary files: guacamole.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)
 ```
 
 Git cannot automatically insert conflict markers into an image as it does
@@ -414,31 +470,31 @@ for text files. So, instead of editing the image file, we must check out
 the version we want to keep. Then we can add and commit this version.
 
 On the key line above, Git has conveniently given us commit identifiers
-for the two versions of `mars.jpg`. Our version is `HEAD`, and Wolfman's
+for the two versions of `guacamole.jpg`. Our version is `HEAD`, and Jimmy's
 version is `439dc8c0...`. If we want to use our version, we can use
 `git checkout`:
 
 ```bash
-$ git checkout HEAD mars.jpg
-$ git add mars.jpg
-$ git commit -m "Use image of surface instead of sky"
+$ git checkout HEAD guacamole.jpg
+$ git add guacamole.jpg
+$ git commit -m "Use image of just guacamole instead of with nachos"
 ```
 
 ```output
-[main 21032c3] Use image of surface instead of sky
+[main 21032c3] Use image of just guacamole instead of with nachos
 ```
 
-If instead we want to use Wolfman's version, we can use `git checkout` with
-Wolfman's commit identifier, `439dc8c0`:
+If instead we want to use Jimmy's version, we can use `git checkout` with
+Jimmy's commit identifier, `439dc8c0`:
 
 ```bash
-$ git checkout 439dc8c0 mars.jpg
-$ git add mars.jpg
-$ git commit -m "Use image of sky instead of surface"
+$ git checkout 439dc8c0 guacamole.jpg
+$ git add guacamole.jpg
+$ git commit -m "Use image of guacamole with nachos instead of just guacamole"
 ```
 
 ```output
-[main da21b34] Use image of sky instead of surface
+[main da21b34] Use image of guacamole with nachos instead of just guacamole
 ```
 
 We can also keep *both* images. The catch is that we cannot keep them
@@ -447,29 +503,29 @@ and *rename* it, then add the renamed versions. First, check out each
 image and rename it:
 
 ```bash
-$ git checkout HEAD mars.jpg
-$ git mv mars.jpg mars-surface.jpg
-$ git checkout 439dc8c0 mars.jpg
-$ mv mars.jpg mars-sky.jpg
+$ git checkout HEAD guacamole.jpg
+$ git mv guacamole.jpg guacamole-only.jpg
+$ git checkout 439dc8c0 guacamole.jpg
+$ mv guacamole.jpg guacamole-nachos.jpg
 ```
 
-Then, remove the old `mars.jpg` and add the two new files:
+Then, remove the old `guacamole.jpg` and add the two new files:
 
 ```bash
-$ git rm mars.jpg
-$ git add mars-surface.jpg
-$ git add mars-sky.jpg
-$ git commit -m "Use two images: surface and sky"
+$ git rm guacamole.jpg
+$ git add guacamole-only.jpg
+$ git add guacamole-nachos.jpg
+$ git commit -m "Use two images: just guacamole and with nachos"
 ```
 
 ```output
-[main 94ae08c] Use two images: surface and sky
+[main 94ae08c] Use two images: just guacamole and with nachos
  2 files changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 mars-sky.jpg
- rename mars.jpg => mars-surface.jpg (100%)
+ create mode 100644 guacamole-nachos.jpg
+ rename guacamole.jpg => guacamole-only.jpg (100%)
 ```
 
-Now both images of Mars are checked into the repository, and `mars.jpg`
+Now both images of guacamole are checked into the repository, and `guacamole.jpg`
 no longer exists.
 
 
