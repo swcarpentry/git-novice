@@ -240,11 +240,12 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 ```
 Notice that the changes are not currently in the staging area, and have not been committed. 
-So if we wished we can put things back the way they were at the last committ by using `git restore` to overwirte the working copy with the last commited version (from HEAD):
+If we wished, we can put things back the way they were at the last commit by using `git restore` to overwrite
+the working copy with the last committed version:
 
 ```bash
-$ git restore mars.txt
-$ cat mars.txt
+$ git restore guacamole.md
+$ cat guacamole.md
 ```
 
 ```output
