@@ -52,10 +52,17 @@ There is also an [`@software{...`](https://www.google.com/search?q=git+citation+
 no "umbrella" citation like a paper or book exists for the project you want to
 make citable.
 
+Finally you may wish to include citation information in a [Citation File Format
+(`CITATION.cff`)](https://citation-file-format.github.io/) which are standardized human and machine readable citation
+information for software and datasets. If you host your repository on GitHub this information is automatically linked
+and rendered on the repository page and a BibTeX snippet is provided which users can copy and paste making it easy for
+your project to be cited. Further there is integration with both Zenodo and Zotero.
+
+You can use the [cff-init](https://citation-file-format.github.io/cff-initializer-javascript/#/) website to easily
+create and update a `CITATION.cff` file.
+
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Add a CITATION file to a repository to explain how you want your work cited.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
