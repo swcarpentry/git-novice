@@ -55,7 +55,7 @@ $ ls
 guacamole.md
 ```
 
-`guacamole.md` contains a single line, which we can see by running:
+`guacamole.md` contains three lines, which we can see by running:
 
 ```bash
 $ cat guacamole.md
