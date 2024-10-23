@@ -8,7 +8,7 @@
 # lc: Library Carpentry
 # cp: Carpentries (to use for instructor training for instance)
 # incubator: The Carpentries Incubator
-carpentry: 'incubator'
+carpentry: 'epiverse-trace'
 
 # Overall title for pages.
 title: 'Version Control with Git in Rstudio'
