@@ -45,6 +45,56 @@ Type the text below into the `guacamole.md` file:
 ## Instructions
 ```
 
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## Markdown
+
+Jimmy and Alfredo are using [Markdown](https://en.wikipedia.org/wiki/Markdown)
+to write their recipes. It is a simple plain-text format for writing lists,
+links and other things that might go into a web page.
+
+Table: Showing some markdown syntax and its rendered output.
+
++---------------------------------------+------------------------------------------------+
+| Markdown code                         | Rendered output                                |
++=======================================+================================================+
++---------------------------------------+------------------------------------------------+
+| ```                                   | <p></p>                                        |
+| *   Use asterisks                     | -   Use asterisks                              |
+| *   to create                         | -   to create                                  |
+| *   bullet lists.                     | -   bullet lists.                              |
+| ```                                   |                                                |
++---------------------------------------+------------------------------------------------+
++---------------------------------------+------------------------------------------------+
+| ```                                   | <p></p>                                        |
+| 1.   Use numbers                      | 1.   Use numbers                               |
+| 1.   to create                        | 2.   to create                                 |
+| 1.   bullet lists.                    | 3.   numbered lists.                           |
+| ```                                   |                                                |
++---------------------------------------+------------------------------------------------+
++---------------------------------------+------------------------------------------------+
+| ```                                   | <p></p>                                        |
+| *  You can use indents                | - You can use indents                          |
+|   *  To create sublists               |   - To create sublists                         |
+|   *  of the same type                 |   - of the same type                           |
+| *  Or sublists                        | - Or sublists                                  |
+|   1. Of different                     |   1. Of different                              |
+|   1. types                            |   2. types                                     |
+| ```                                   |                                                |
++---------------------------------------+------------------------------------------------+
++---------------------------------------+------------------------------------------------+
+| ```                                   | <p></p>                                        |
+| # A Level-1 Heading                   | ## A Level-1 Heading                           |
+| ```                                   |                                                |
++---------------------------------------+------------------------------------------------+
++---------------------------------------+------------------------------------------------+
+| ```                                   | <p></p>                                        |
+| ## A Level-2 Heading (etc.)           | ### A Level-2 Heading (etc.)                   |
+| ```                                   |                                                |
++---------------------------------------+------------------------------------------------+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
 Let's first verify that the file was properly created by running the list command (`ls`):
 
 ```bash
