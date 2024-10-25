@@ -45,7 +45,7 @@ Type the text below into the `guacamole.md` file:
 ## Instructions
 ```
 
-Save the file and exit your editor. Next, let’s verify that the file was properly created by running the list command (ls):
+Save the file and exit your editor. Next, let’s verify that the file was properly created by running the list command (`ls`):
 
 ```bash
 $ ls
