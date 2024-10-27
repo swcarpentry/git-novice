@@ -58,6 +58,8 @@ information for software and datasets. If you host your repository on GitHub thi
 and rendered on the repository page and a BibTeX snippet is provided which users can copy and paste making it easy for
 your project to be cited. Further there is integration with both Zenodo and Zotero.
 
+A [chapter of The Turing Way](https://the-turing-way.netlify.app/communication/citable/citable-cite#citing-software) provides more detail on how you can use CFF files to make your software citable.
+
 You can use the [cff-init](https://citation-file-format.github.io/cff-initializer-javascript/#/) website to easily
 create and update a `CITATION.cff` file.
 
