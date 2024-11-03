@@ -62,11 +62,7 @@ index b36abfd..0848c8d 100644
 +An ill-considered change
 ```
 
-which is the same as what you would get if you leave out `HEAD` (try it).  The
-real goodness in all this is when you can refer to previous commits.  We do
-that by adding `~1`
-(where "~" is "tilde", pronounced [**til**\-d*uh*])
-to refer to the commit one before `HEAD`.
+Note that `HEAD` is the default option for `git diff`, so omitting it will not change the command's output at all (give it a try). However, the real power of `git diff` lies in its ability to compare with previous commits. For example, by adding `~1` (where "~" is "tilde", pronounced [**til**\-d*uh*]), we can look at the commit before `HEAD`. 
 
 ```bash
 $ git diff HEAD~1 guacamole.md
