@@ -127,7 +127,7 @@ talking about how they might be used for collaboration.
 
 ## 3\. SSH Background and Setup
 
-Before Alfredo can connect to a remote repository, he needs to set up a way for his computer to authenticate with GitHub so it knows it's him trying to connect to his remote repository.
+Before Alfredo can connect to a remote repository, they need to set up a way for their computer to authenticate with GitHub so it knows it's them trying to connect to their remote repository.
 
 We are going to set up the method that is commonly used by many different services to authenticate access on the command line.  This method is called Secure Shell Protocol (SSH).  SSH is a cryptographic network protocol that allows secure communication between computers using an otherwise insecure network.
 
@@ -167,14 +167,14 @@ ls -al ~/.ssh
 
 Your output is going to look a little different depending on whether or not SSH has ever been set up on the computer you are using.
 
-Alfredo has not set up SSH on his computer, so his output is
+Alfredo has not set up SSH on their computer, so their output is
 
 ```output
 ls: cannot access '/c/Users/Alfredo/.ssh': No such file or directory
 ```
 
 If SSH has been set up on the computer you're using, the public and private key pairs will be listed. The file names are either `id_ed25519`/`id_ed25519.pub` or `id_rsa`/`id_rsa.pub` depending on how the key pairs were set up.
-Since they don't exist on Alfredo's computer, he uses this command to create them.
+Since they don't exist on Alfredo's computer, they use this command to create them.
 
 ### 3\.1 Create an SSH key pair
 
@@ -199,7 +199,7 @@ Created directory '/c/Users/Alfredo/.ssh'.
 Enter passphrase (empty for no passphrase):
 ```
 
-Now, it is prompting Alfredo for a passphrase. Since he is using his kitchen's laptop that other people sometimes have access to, he wants to create a passphrase. Be sure to use something memorable or save your passphrase somewhere, as there is no "reset my password" option.
+Now, it is prompting Alfredo for a passphrase. Since they are using their kitchen's laptop that other people sometimes have access to, they want to create a passphrase. Be sure to use something memorable or save your passphrase somewhere, as there is no "reset my password" option.
 Note that, when typing a passphrase on a terminal, there won't be any visual feedback of your typing.
 This is normal: your passphrase will be recorded even if you see nothing changing on your screen.
 
@@ -276,7 +276,7 @@ ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDmRA3d51X0uu9wXek559gfn6UFNF69yZjChyBIU2qKI
 
 Now, going to GitHub.com, click on your profile icon in the top right corner to get the drop-down menu.  Click "Settings", then on the
 settings page, click "SSH and GPG keys", on the left side "Access" menu. Click the "New SSH key" button on the right side. Now,
-you can add the title (Alfredo uses the title "Alfredo's Kitchen Laptop" so he can remember where the original key pair
+you can add the title (Alfredo uses the title "Alfredo's Kitchen Laptop" so they can remember where the original key pair
 files are located), paste your SSH key into the field, and click the "Add SSH key" to complete the setup.
 
 Now that we've set that up, let's check our authentication again from the command line.
@@ -300,7 +300,7 @@ our local repository to the repository on GitHub:
 $ git push origin main
 ```
 
-Since Alfredo set up a passphrase, it will prompt him for it.  If you completed advanced settings for your authentication, it
+Since Alfredo set up a passphrase, it will prompt them for it.  If you completed advanced settings for your authentication, it
 will not prompt for a passphrase.
 
 ```output

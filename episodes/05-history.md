@@ -304,12 +304,12 @@ moving backward and forward in time becomes much easier.
 
 ## Recovering Older Versions of a File
 
-Jennifer has made changes to the Python script that she has been working on for weeks, and the
-modifications she made this morning "broke" the script and it no longer runs. She has spent
+Jennifer has made changes to the Python script that they have been working on for weeks, and the
+modifications they made this morning "broke" the script and it no longer runs. They have spent
 \~ 1hr trying to fix it, with no luck...
 
-Luckily, she has been keeping track of her project's versions using Git! Which commands below will
-let her recover the last committed version of her Python script called
+Luckily, they has been keeping track of their project's versions using Git! Which commands below will
+let them recover the last committed version of their Python script called
 `data_cruncher.py`?
 
 1. `$ git restore`
@@ -349,9 +349,9 @@ you should use `git restore .`
 
 ## Reverting a Commit
 
-Jennifer is collaborating with colleagues on her Python script.  She
-realizes her last commit to the project's repository contained an error, and
-wants to undo it.  Jennifer wants to undo correctly so everyone in the project's
+Jennifer is collaborating with colleagues on their Python script.  They
+realize their last commit to the project's repository contained an error, and
+want to undo it.  Jennifer wants to undo correctly so everyone in the project's
 repository gets the correct change. The command `git revert [erroneous commit ID]` will create a
 new commit that reverses the erroneous commit.
 

@@ -43,16 +43,16 @@ then enter your partner's username.
 
 To accept access to the Owner's repo, the Collaborator
 needs to go to [https://github.com/notifications](https://github.com/notifications)
-or check for email notification. Once there she can accept access to the Owner's repo.
+or check for email notification. Once there, they can accept access to the Owner's repo.
 
-Next, the Collaborator needs to download a copy of the Owner's repository to her
+Next, the Collaborator needs to download a copy of the Owner's repository to their 
 machine. This is called "cloning a repo".
 
-The Collaborator doesn't want to overwrite her own version of `recipes.git`, so
-needs to clone the Owner's repository to a different location than her own
+The Collaborator doesn't want to overwrite their own version of `recipes.git`, so
+needs to clone the Owner's repository to a different location than their own
 repository with the same name.
 
-To clone the Owner's repo into her `Desktop` folder, the Collaborator enters:
+To clone the Owner's repo into their `Desktop` folder, the Collaborator enters:
 
 ```bash
 $ git clone git@github.com:alflin/recipes.git ~/Desktop/alflin-recipes
@@ -67,7 +67,7 @@ Make sure to navigate to the `Desktop` folder first.
 
 ![](fig/github-collaboration.svg){alt='A diagram showing that "git clone" can create a copy of a remote GitHub repository, allowing a second person to create their own local repository that they can make changes to.'}
 
-The Collaborator can now make a change in her clone of the Owner's repository,
+The Collaborator can now make a change in their clone of the Owner's repository,
 exactly the same way as we've been doing before:
 
 ```bash
@@ -136,7 +136,7 @@ time to get the latest updates that other people have committed.
 
 Remember that the name you give to a remote only exists locally. It's
 an alias that you choose - whether `origin`, or `upstream`, or `alfred` -
-and not something intrinstic to the remote repository.
+and not something intrinsic to the remote repository.
 
 The `git remote` family of commands is used to set up and alter the remotes
 associated with a repository. Here are some of the most useful ones:
@@ -246,7 +246,7 @@ has some suggestions to propose.
 With GitHub, it is possible to comment on the diff of a commit. Over the line of
 code to comment, a blue comment icon appears to open a comment window.
 
-The Collaborator posts her comments and suggestions using the GitHub interface.
+The Collaborator posts their comments and suggestions using the GitHub interface.
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::

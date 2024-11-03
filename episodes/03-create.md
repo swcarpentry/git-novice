@@ -20,7 +20,7 @@ exercises: 0
 Once Git is configured,
 we can start using it.
 
-We will help Alfredo with his new project, create a repository with all his recipes.
+We will help Alfredo with their new project, create a repository with all their recipes.
 
 First, let's create a new directory in the `Desktop` folder for our work and then change the current working directory to the newly created one:
 
@@ -90,7 +90,7 @@ wording of the output might be slightly different.
 
 Along with tracking information about recipes (the project we have already created),
 Alfredo would also like to track information about desserts specifically.
-Alfredo creates a `desserts` project inside his `recipes`
+Alfredo creates a `desserts` project inside their `recipes`
 project with the following sequence of commands:
 
 ```bash
@@ -138,7 +138,7 @@ fatal: Not a git repository (or any of the parent directories): .git
 
 Jimmy explains to Alfredo how a nested repository is redundant and may cause confusion
 down the road. Alfredo would like to go back to a single git repository. How can Alfredo undo
-his last `git init` in the `desserts` subdirectory?
+their last `git init` in the `desserts` subdirectory?
 
 :::::::::::::::  solution
 

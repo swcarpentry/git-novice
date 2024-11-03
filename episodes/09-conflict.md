@@ -366,7 +366,7 @@ Clone the repository created by your instructor.
 Add a new file to it,
 and modify an existing file (your instructor will tell you which one).
 When asked by your instructor,
-pull her changes from the repository to create a conflict,
+pull their changes from the repository to create a conflict,
 then resolve it.
 
 
@@ -402,7 +402,7 @@ $ ls -lh guacamole.jpg
 `ls` shows us that this created a 1-kilobyte file. It is full of
 random bytes read from the special file, `/dev/urandom`.
 
-Now, suppose Alfredo adds `guacamole.jpg` to his repository:
+Now, suppose Alfredo adds `guacamole.jpg` to their repository:
 
 ```bash
 $ git add guacamole.jpg
@@ -416,8 +416,8 @@ $ git commit -m "Add picture of guacamole"
 ```
 
 Suppose that Jimmy has added a similar picture in the meantime.
-His is a picture of a guacamole with nachos, but it is *also* called `guacamole.jpg`.
-When Alfredo tries to push, he gets a familiar message:
+Theirs is a picture of a guacamole with nachos, but it is *also* called `guacamole.jpg`.
+When Alfredo tries to push, they get a familiar message:
 
 ```bash
 $ git push origin main
