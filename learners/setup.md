@@ -4,10 +4,23 @@ title: Setup
 
 ## Installing Git
 
-Since several Carpentries lessons rely on Git, please see
-[this section of the workshop template][workshop-setup] for
-instructions on installing Git for various operating systems.
+### Installing Git on UKCEH Laptops
+Git can be installed on UKCEH laptops through the Software Centre. 
 
+1. Open the software center and type `git` in the search bar in the top-right. 
+2. Locate Git on the list, click on it, and then click "Install".
+
+![UKCEH Software Center](fig/ceh_software_center.png)
+
+> This will install Git and other utilities on your system, including GitBash. GitBash is a [BASH](https://www.gnu.org/software/bash/manual/bash.html) emulator that we will use to provide a UNIX like command line to work with during the course of this carpentry course.
+
+3. Check the installation has been successful by opening the start menu, typing `gitbash` in the search bar and hitting enter. 
+4. You should be greeted by a small, black, command line window. Type `git --version` and hit enter, you should receive similar information as below:
+
+![Git Bash](fig/gitbash.png)
+
+### Other Systems
+If you are using your own machine or a virtual machine, please refer to the carpentries instructions for installing Git on your chosen platform:
 - [Git installation on Windows][workshop-setup]
 - [Git installation on MacOS][workshop-setup]
 - [Git installation on Linux][workshop-setup]
@@ -43,6 +56,14 @@ Several options exist for setting up 2FA, which are summarised here:
        or the [Google Titan key](https://store.google.com/us/product/titan_security_key?hl=en-US&pli=1).
 
 The GitHub documentation provides [more details about configuring 2FA](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication).
+
+## GitHub Organisations
+
+There are several UKCEH organisations you may want to join once you have created a GitHub account. To join any of these GitHub organisations please reach out to the relevant contact: 
+- [NERC-CEH](https://github.com/NERC-CEH) (contact [Rod Scott](https://github.com/rodscott))
+- [ukceh-rse](https://github.com/ukceh-rse) (contact [Joe Marsh Rossney](https://github.com/jmarshrossney))
+
+This is entirely optional and this course can be completed without joinging these organisation, but we do recommend this so you can get visibility on what others are doing at UKCEH. 
 
 ----------------
 
