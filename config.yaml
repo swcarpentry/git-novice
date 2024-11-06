@@ -27,7 +27,7 @@ life_cycle: 'stable'
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/swcarpentry/git-novice'
+source: 'https://github.com/ukceh-rse/git-novice'
 
 # Default branch of your lesson
 branch: 'main'
@@ -89,6 +89,6 @@ profiles:
 # sandpaper and varnish versions) should live
 
 
-url: 'https://swcarpentry.github.io/git-novice'
+url: 'https://ukceh-rse.github.io/git-novice'
 analytics: carpentries
 lang: en
