@@ -586,7 +586,7 @@ Two important facts you should know about directories in Git.
   you can add all files in the directory at once by:
   
   ```bash
-  git add <directory-with-files>
+  $ git add <directory-with-files>
   ```
   
   Try it for yourself:
