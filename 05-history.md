@@ -406,18 +406,18 @@ $ cat ketchup.md # this will print the content of ketchup.md on screen
 ```
 
 1. ```output
-  ketchup enhances pasta dishes
-  ```
+   ketchup enhances pasta dishes
+   ```
 2. ```output
-  I like tomatoes, therefore I like ketchup
-  ```
+   I like tomatoes, therefore I like ketchup
+   ```
 3. ```output
-  I like tomatoes, therefore I like ketchup
-  ketchup enhances pasta dishes
-  ```
+   I like tomatoes, therefore I like ketchup
+   ketchup enhances pasta dishes
+   ```
 4. ```output
-  Error because you have changed ketchup.md without committing the changes
-  ```
+   Error because you have changed ketchup.md without committing the changes
+   ```
 
 :::::::::::::::  solution
 
