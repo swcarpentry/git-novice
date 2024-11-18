@@ -367,7 +367,8 @@ You want to keep them but you do not want to track them through `git`.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- The `.gitignore` file tells Git what files to ignore.
+- The .gitignore file is a text file that tells Git which files to track and which to ignore in the repository.
+- You can list specific files or folders to be ignored by Git, or you can include files that would normally be ignored.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
