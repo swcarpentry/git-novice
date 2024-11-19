@@ -1084,7 +1084,7 @@ in the <code>desserts</code> subdirectory?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>No. Alfredo does not need to make the <code>desserts</code>
 subdirectory a Git repository because the <code>recipes</code>
@@ -1133,7 +1133,7 @@ single git repository. How can Alfredo undo his last
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Solution – USE WITH CAUTION! </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="section level3">
 <h3 id="background">Background<a class="anchor" aria-label="anchor" href="#background"></a>
@@ -2120,7 +2120,7 @@ the local repository.</li>
 </div>
 </div></section><section id="aio-05-history"><p>Content from <a href="05-history.html">Exploring History</a></p>
 <hr>
-<p>Last updated on 2024-11-16 |
+<p>Last updated on 2024-11-19 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/05-history.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 25 minutes</p>
@@ -2583,10 +2583,9 @@ changes to the repository.</p>
 <div class="accordion-body">
 <p>The answer is 2.</p>
 <p>The changes to the file from the second <code>echo</code> command are
-only applied to the working copy, The command
-<code>git add ketchup.md</code> places the current version of
-<code>ketchup.md</code> into the staging area. not the version in the
-staging area.</p>
+only applied to the working copy, not the version in the staging area.
+The command <code>git add ketchup.md</code> places the current version
+of <code>ketchup.md</code> into the staging area.</p>
 <p>So, when <code>git commit -m "My opinions about the red sauce"</code>
 is executed, the version of <code>ketchup.md</code> committed to the
 repository is the one from the staging area and has only one line.</p>
@@ -4153,7 +4152,7 @@ has changed with command line? And on GitHub?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>On the command line, the Collaborator can use
 <code>git fetch origin main</code> to get the remote changes into the
@@ -4647,7 +4646,7 @@ non-textual file that is stored in version control?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Let’s try it. Suppose Alfredo takes a picture of its guacamole and
 calls it <code>guacamole.jpg</code>.</p>
@@ -4890,7 +4889,7 @@ started.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <table class="table">
 <colgroup>
@@ -5660,7 +5659,7 @@ directory is not version controlled.</li>
   Solution to Challenge
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>This can be done in Rstudio:</p>
 <div class="codewrapper sourceCode" id="cb1">
