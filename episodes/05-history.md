@@ -426,8 +426,8 @@ $ cat ketchup.md # this will print the content of ketchup.md on screen
 The answer is 2.
 
 The changes to the file from the second `echo` command are only applied to the working copy,
-The command `git add ketchup.md` places the current version of `ketchup.md` into the staging area.
 not the version in the staging area.
+The command `git add ketchup.md` places the current version of `ketchup.md` into the staging area.
 
 So, when `git commit -m "My opinions about the red sauce"` is executed,
 the version of `ketchup.md` committed to the repository is the one from the staging area and
