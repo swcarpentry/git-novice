@@ -367,7 +367,7 @@ If you forgot to use Git and you used Unix `mv` instead
 of `git mv`, you will have a touch more work to do but Git will
 be able to deal with it. Let's try again renaming the file,
 this time with Unix `mv`. First, we need to recreate the
-`krypton.txt` file:
+`whitesauce.md` file:
 
 ```bash
 $ echo "Very fun recipe to do" > whitesauce.md
@@ -375,7 +375,7 @@ $ git add whitesauce.md
 $ git commit -m 'Add white sauce recipe'
 ```
 
-Let us rename the file and see what Git can figured out by itself:
+Let us rename the file and see what Git can figure out by itself:
 
 ```bash
 $ mv whitesauce.md bechamel.md
