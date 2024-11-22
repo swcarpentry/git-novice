@@ -434,7 +434,6 @@ the version of `ketchup.md` committed to the repository is the one from the stag
 has only one line.
 
 At this time, the working copy still has the second line (and
-
 `git status` will show that the file is modified). However, `git restore ketchup.md`
 replaces the working copy with the most recently committed version of `ketchup.md`.
 So, `cat ketchup.md` will output
