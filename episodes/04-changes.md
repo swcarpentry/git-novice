@@ -277,8 +277,7 @@ If we break it down into pieces:
 After reviewing our change, it's time to commit it:
 
 ```bash
-$ git commit -m "Add basic guacamole's ingredients"
-$ git status
+$ git commit -m "Add ingredients for basic guacamole"
 ```
 
 ```output
@@ -298,11 +297,11 @@ Let's fix that:
 
 ```bash
 $ git add guacamole.md
-$ git commit -m "Add basic guacamole's ingredients"
+$ git commit -m "Add ingredients for basic guacamole"
 ```
 
 ```output
-[main 34961b1] Add basic guacamole's ingredient
+[main 34961b1] Add ingredients for basic guacamole
  1 file changed, 3 insertions(+)
 ```
 
@@ -467,7 +466,7 @@ commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
 Author: Alfredo Linguini <a.linguini@ratatouille.fr>
 Date:   Thu Aug 22 10:07:21 2013 -0400
 
-    Add basic guacamole's ingredients
+    Add ingredients for basic guacamole
 
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Alfredo Linguini <a.linguini@ratatouille.fr>
@@ -537,7 +536,7 @@ $ git log --oneline
 
 ```output
 005937f (HEAD -> main) Modify guacamole to the traditional recipe
-34961b1 Add basic guacamole's ingredients
+34961b1 Add ingredients for basic guacamole
 f22b25e Create a template for recipe
 ```
 
@@ -553,7 +552,7 @@ $ git log --oneline --graph
 
 ```output
 * 005937f (HEAD -> main) Modify guacamole to the traditional recipe
-* 34961b1 Add basic guacamole's ingredients
+* 34961b1 Add ingredients for basic guacamole
 * f22b25e Create a template for recipe
 ```
 
