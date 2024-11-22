@@ -261,7 +261,7 @@ receipts/plots
 ```
 
 What's the shortest `.gitignore` rule you could write to ignore all `.dat`
-files in `result/data/market_position/gps`? Do not ignore the `info.txt`.
+files in `receipts/data/market_position/gps`? Do not ignore the `info.txt`.
 
 :::::::::::::::  solution
 
