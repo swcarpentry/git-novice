@@ -278,7 +278,6 @@ After reviewing our change, it's time to commit it:
 
 ```bash
 $ git commit -m "Add ingredients for basic guacamole"
-$ git status
 ```
 
 ```output
