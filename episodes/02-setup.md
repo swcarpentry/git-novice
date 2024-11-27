@@ -27,7 +27,7 @@ of configurations we will set as we get started with Git:
 
 On a command line, Git commands are written as `git verb options`,
 where `verb` is what we actually want to do and `options` is additional optional information which may be needed for the `verb`. So here is how
-Alfredo sets up his new laptop:
+Alfredo sets up their new laptop:
 
 ```bash
 $ git config --global user.name "Alfredo Linguini"
@@ -84,7 +84,7 @@ $ git config --global core.autocrlf true
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Alfredo also has to set his favorite text editor, following this table:
+Alfredo also has to set their favorite text editor, following this table:
 
 | Editor                                | Configuration command | 
 | :-----------                          | :------------------------------ |
@@ -119,7 +119,7 @@ If you want to save your changes and quit, press <kbd>Esc</kbd> then type `:wq` 
 
 Git (2.28+) allows configuration of the name of the branch created when you
 initialize any new repository.  Alfredo decides to use that feature to set it to `main` so
-it matches the cloud service he will eventually use.
+it matches the cloud service they will eventually use.
 
 ```bash
 $ git config --global init.defaultBranch main
