@@ -27,11 +27,10 @@ You should be in the `recipes` directory.
 $ cd ~/Desktop/recipes
 ```
 
-Let's create a file called `guacamole.md` that contains the basic structure to
-have a recipe.
+Let's create a file called `guacamole.md` that contains the basic structure of a recipe.
 We'll use `nano` to edit the file;
 you can use whatever editor you like.
-In particular, this does not have to be the `core.editor` you set globally earlier. But remember, the steps to create create or edit a new file will depend on the editor you choose (it might not be nano). For a refresher on text editors, check out ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor) in [The Unix Shell](https://swcarpentry.github.io/shell-novice/) lesson.
+In particular, this does not have to be the `core.editor` you set globally earlier. But remember, the steps to create or edit a new file will depend on the editor you choose (it might not be nano). For a refresher on text editors, check out ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor) in [The Unix Shell](https://swcarpentry.github.io/shell-novice/) lesson.
 
 ```bash
 $ nano guacamole.md
@@ -68,7 +67,7 @@ $ cat guacamole.md
 ```
 
 If we check the status of our project again,
-Git tells us that it's noticed the new file:
+Git tells us that it has noticed the new file:
 
 ```bash
 $ git status
@@ -87,8 +86,8 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-The "untracked files" message means that there's a file in the directory
-that Git isn't keeping track of.
+The "untracked files" message means that there is a file in the directory
+that Git is not keeping track of.
 We can tell Git to track a file using `git add`:
 
 ```bash
@@ -113,8 +112,8 @@ Changes to be committed:
 
 ```
 
-Git now knows that it's supposed to keep track of `guacamole.md`,
-but it hasn't recorded these changes as a commit yet.
+Git now knows that it is supposed to keep track of `guacamole.md`,
+but it has not recorded these changes as a commit yet.
 To get it to do that,
 we need to run one more command:
 
@@ -156,7 +155,7 @@ nothing to commit, working tree clean
 ```
 
 it tells us everything is up to date.
-If we want to know what we've done recently,
+If we want to know what we have done recently,
 we can ask Git to show us the project's history using `git log`:
 
 ```bash
@@ -185,17 +184,17 @@ and the log message Git was given when the commit was created.
 ## Where Are My Changes?
 
 If we run `ls` at this point, we will still see just one file called `guacamole.md`.
-That's because Git saves information about files' history
+That is because Git saves information about files' history
 in the special `.git` directory mentioned earlier
-so that our filesystem doesn't become cluttered
-(and so that we can't accidentally edit or delete an old version).
+so that our filesystem does not become cluttered
+(and so that we can not accidentally edit or delete an old version).
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Now suppose Alfredo adds more information to the file.
-(Again, we'll edit with `nano` and then `cat` the file to show its contents;
-you may use a different editor, and don't need to `cat`.)
+(Again, we will edit with `nano` and then `cat` the file to show its contents;
+you may use a different editor, and do not need to `cat`.)
 
 ```bash
 $ nano guacamole.md
@@ -232,10 +231,10 @@ no changes added to commit (use "git add" and/or "git commit -a")
 The last line is the key phrase:
 "no changes added to commit".
 We have changed this file,
-but we haven't told Git we will want to save those changes
+but we have not told Git we will want to save those changes
 (which we do with `git add`)
 nor have we saved them (which we do with `git commit`).
-So let's do that now. It is good practice to always review
+So let us do that now. It is good practice to always review
 our changes before saving them. We do this using `git diff`.
 This shows us the differences between the current state
 of the file and the most recently saved version:
@@ -274,7 +273,7 @@ If we break it down into pieces:
   In particular,
   the `+` marker in the first column shows where we added a line.
 
-After reviewing our change, it's time to commit it:
+After reviewing our change, it is time to commit it:
 
 ```bash
 $ git commit -m "Add basic guacamole's ingredients"
@@ -293,8 +292,8 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 Whoops:
-Git won't commit because we didn't use `git add` first.
-Let's fix that:
+Git will not commit because we did not use `git add` first.
+Let us fix that:
 
 ```bash
 $ git add guacamole.md
@@ -311,11 +310,11 @@ before actually committing anything. This allows us to commit our
 changes in stages and capture changes in logical portions rather than
 only large batches.
 For example,
-suppose we're adding a few citations to relevant research to our thesis.
+suppose we are adding a few citations to relevant research to our thesis.
 We might want to commit those additions,
 and the corresponding bibliography entries,
 but *not* commit some of our work drafting the conclusion
-(which we haven't finished yet).
+(which we have not finished yet).
 
 To allow for this,
 Git has a special *staging area*
@@ -332,10 +331,10 @@ If you think of Git as taking snapshots of changes over the life of a project,
 (putting things in the staging area),
 and `git commit` then *actually takes* the snapshot, and
 makes a permanent record of it (as a commit).
-If you don't have anything staged when you type `git commit`,
+If you do not have anything staged when you type `git commit`,
 Git will prompt you to use `git commit -a` or `git commit --all`,
 which is kind of like gathering *everyone* to take a group photo!
-However, it's almost always better to
+However, it is almost always better to
 explicitly add things to the staging area, because you might
 commit changes you forgot you made. (Going back to the group photo simile,
 you might get an extra with incomplete makeup walking on
@@ -349,11 +348,11 @@ than you would like!
 
 ![](fig/git-staging-area.svg){alt='A diagram showing how "git add" registers changes in the staging area, while "git commit" moves changes from the staging area to the repository'}
 
-Let's watch as our changes to a file move from our editor
+Let us watch as our changes to a file move from our editor
 to the staging area
 and into long-term storage.
 First,
-we'll improve our recipe by changing 'lemon' to 'lime':
+we will improve our recipe by changing 'lemon' to 'lime':
 
 ```bash
 $ nano guacamole.md
@@ -389,9 +388,9 @@ index 315bf3a..b36abfd 100644
 ```
 
 So far, so good:
-we've replaced one line (shown with a `-` in the first column) with a new line
+we have replaced one line (shown with a `-` in the first column) with a new line
 (shown with a `+` in the first column).
-Now let's put that change in the staging area
+Now let us put that change in the staging area
 and see what `git diff` reports:
 
 ```bash
@@ -401,8 +400,8 @@ $ git diff
 
 There is no output:
 as far as Git can tell,
-there's no difference between what it's been asked to save permanently
-and what's currently in the directory.
+there is no difference between what it is been asked to save permanently
+and what is currently in the directory.
 However,
 if we do this:
 
@@ -427,8 +426,8 @@ index 315bf3a..b36abfd 100644
 
 it shows us the difference between
 the last committed change
-and what's in the staging area.
-Let's save our changes:
+and what is in the staging area.
+Let us save our changes:
 
 ```bash
 $ git commit -m "Modify guacamole to the traditional recipe"
@@ -450,7 +449,7 @@ On branch main
 nothing to commit, working tree clean
 ```
 
-and look at the history of what we've done so far:
+and look at the history of what we have done so far:
 
 ```bash
 $ git log
