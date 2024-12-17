@@ -13,7 +13,7 @@ jobs:
   test-pr:
     name: "Record PR number"
     if: ${{ github.event.action != 'closed' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     outputs:
       is_valid: ${{ steps.check-pr.outputs.VALID }}
     steps:
@@ -25,7 +25,7 @@ jobs:
       - name: "Upload PR number"
         id: upload
         if: ${{ always() }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: pr
           path: ${{ github.workspace }}/NR
@@ -48,7 +48,7 @@ jobs:
   build-md-source:
     name: "Build markdown source files if valid"
     needs: test-pr
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     if: ${{ needs.test-pr.outputs.is_valid == 'true' }}
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
@@ -58,10 +58,10 @@ jobs:
       MD: ${{ github.workspace }}/site/built
     steps:
       - name: "Check Out Main Branch"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: "Check Out Staging Branch"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: md-outputs
           path: ${{ env.MD }}
@@ -107,20 +107,21 @@ jobs:
         shell: Rscript {0}
 
       - name: "Upload PR"
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: pr
           path: ${{ env.PR }}
+          overwrite: true
 
       - name: "Upload Diff"
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: diff
           path: ${{ env.CHIVE }}
           retention-days: 1
 
       - name: "Upload Build"
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: built
           path: ${{ env.MD }}

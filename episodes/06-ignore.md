@@ -23,8 +23,8 @@ or intermediate files created during data analysis?
 Let's create a few dummy files:
 
 ```bash
-$ mkdir results
-$ touch a.csv b.csv c.csv results/a.out results/b.out
+$ mkdir receipts
+$ touch a.png b.png c.png receipts/a.jpg receipts/b.jpg
 ```
 
 and see what Git says:
@@ -38,10 +38,10 @@ On branch main
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
-	a.csv
-	b.csv
-	c.csv
-	results/
+	a.png
+	b.png
+	c.png
+	receipts/
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
@@ -59,12 +59,12 @@ $ cat .gitignore
 ```
 
 ```output
-*.csv
-results/
+*.png
+receipts/
 ```
 
-These patterns tell Git to ignore any file whose name ends in `.csv`
-and everything in the `results` directory.
+These patterns tell Git to ignore any file whose name ends in `.png`
+and everything in the `receipts` directory.
 (If any of these files were already being tracked,
 Git would continue to track them.)
 
@@ -93,7 +93,7 @@ Let's add and commit `.gitignore`:
 
 ```bash
 $ git add .gitignore
-$ git commit -m "Ignore data files and the results folder"
+$ git commit -m "Ignore png files and the receipts folder."
 $ git status
 ```
 
@@ -105,12 +105,12 @@ nothing to commit, working tree clean
 As a bonus, using `.gitignore` helps us avoid accidentally adding files to the repository that we don't want to track:
 
 ```bash
-$ git add a.csv
+$ git add a.png
 ```
 
 ```output
 The following paths are ignored by one of your .gitignore files:
-a.csv
+a.png
 Use -f if you really want to add them.
 ```
 
@@ -128,10 +128,10 @@ On branch main
 Ignored files:
  (use "git add -f <file>..." to include in what will be committed)
 
-        a.csv
-        b.csv
-        c.csv
-        results/
+        a.png
+        b.png
+        c.png
+        receipts/
 
 nothing to commit, working tree clean
 ```
@@ -143,27 +143,27 @@ nothing to commit, working tree clean
 Given a directory structure that looks like:
 
 ```bash
-results/data
-results/plots
+receipts/data
+receipts/plots
 ```
 
-How would you ignore only `results/plots` and not `results/data`?
+How would you ignore only `receipts/plots` and not `receipts/data`?
 
 :::::::::::::::  solution
 
 ## Solution
 
 If you only want to ignore the contents of
-`results/plots`, you can change your `.gitignore` to ignore
+`receipts/plots`, you can change your `.gitignore` to ignore
 only the `/plots/` subfolder by adding the following line to
 your .gitignore:
 
 ```output
-results/plots/
+receipts/plots/
 ```
 
-This line will ensure only the contents of `results/plots` is ignored, and
-not the contents of `results/data`.
+This line will ensure only the contents of `receipts/plots` is ignored, and
+not the contents of `receipts/data`.
 
 As with most programming issues, there
 are a few alternative ways that one may ensure this ignore rule is followed.
@@ -182,8 +182,8 @@ Further, the discussion page has more detail on ignore rules.
 
 ## Including Specific Files
 
-How would you ignore all `.csv` files in your root directory except for
-`final.csv`?
+How would you ignore all `.png` files in your root directory except for
+`final.png`?
 Hint: Find out what `!` (the exclamation point operator) does
 
 :::::::::::::::  solution
@@ -193,15 +193,15 @@ Hint: Find out what `!` (the exclamation point operator) does
 You would add the following two lines to your .gitignore:
 
 ```output
-*.csv           # ignore all data files
-!final.csv      # except final.csv
+*.png           # ignore all png files
+!final.png      # except final.png
 ```
 
 The exclamation point operator will include a previously excluded entry.
 
-Note also that because you've previously committed `.csv` files in this
+Note also that because you've previously committed `.png` files in this
 lesson they will not be ignored with this new rule. Only future additions
-of `.csv` files added to the root directory will be ignored.
+of `.png` files added to the root directory will be ignored.
 
 
 
@@ -217,13 +217,13 @@ Given a directory structure that looks similar to the earlier Nested Files
 exercise, but with a slightly different directory structure:
 
 ```bash
-results/data
-results/images
-results/plots
-results/analysis
+receipts/data
+receipts/images
+receipts/plots
+receipts/analysis
 ```
 
-How would you ignore all of the contents in the results folder, but not `results/data`?
+How would you ignore all of the contents in the receipts folder, but not `receipts/data`?
 
 Hint: think a bit about how you created an exception with the `!` operator
 before.
@@ -233,13 +233,13 @@ before.
 ## Solution
 
 If you want to ignore the contents of
-`results/` but not those of `results/data/`, you can change your `.gitignore` to ignore
-the contents of results folder, but create an exception for the contents of the
-`results/data` subfolder. Your .gitignore would look like this:
+`receipts/` but not those of `receipts/data/`, you can change your `.gitignore` to ignore
+the contents of receipts folder, but create an exception for the contents of the
+`receipts/data` subfolder. Your .gitignore would look like this:
 
 ```output
-results/*               # ignore everything in results folder
-!results/data/          # do not ignore results/data/ contents
+receipts/*               # ignore everything in receipts folder
+!receipts/data/          # do not ignore receipts/data/ contents
 ```
 
 :::::::::::::::::::::::::
@@ -253,23 +253,23 @@ results/*               # ignore everything in results folder
 Assuming you have an empty .gitignore file, and given a directory structure that looks like:
 
 ```bash
-results/data/position/gps/a.csv
-results/data/position/gps/b.csv
-results/data/position/gps/c.csv
-results/data/position/gps/info.txt
-results/plots
+receipts/data/market_position/gps/a.dat
+receipts/data/market_position/gps/b.dat
+receipts/data/market_position/gps/c.dat
+receipts/data/market_position/gps/info.txt
+receipts/plots
 ```
 
-What's the shortest `.gitignore` rule you could write to ignore all `.csv`
-files in `result/data/position/gps`? Do not ignore the `info.txt`.
+What's the shortest `.gitignore` rule you could write to ignore all `.dat`
+files in `result/data/market_position/gps`? Do not ignore the `info.txt`.
 
 :::::::::::::::  solution
 
 ## Solution
 
-Appending `results/data/position/gps/*.csv` will match every file in `results/data/position/gps`
-that ends with `.csv`.
-The file `results/data/position/gps/info.txt` will not be ignored.
+Appending `receipts/data/market_position/gps/*.dat` will match every file in `receipts/data/market_position/gps`
+that ends with `.dat`.
+The file `receipts/data/market_position/gps/info.txt` will not be ignored.
 
 
 
@@ -367,7 +367,8 @@ You want to keep them but you do not want to track them through `git`.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- The `.gitignore` file tells Git what files to ignore.
+- The .gitignore file is a text file that tells Git which files to track and which to ignore in the repository.
+- You can list specific files or folders to be ignored by Git, or you can include files that would normally be ignored.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 

@@ -8,7 +8,7 @@ on:
 jobs:
   send-close-signal:
     name: "Send closing signal"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     if: ${{ github.event.action == 'closed' }}
     steps:
       - name: "Create PRtifact"
@@ -16,8 +16,7 @@ jobs:
           mkdir -p ./pr
           printf ${{ github.event.number }} > ./pr/NUM
       - name: Upload Diff
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: pr
           path: ./pr
-
