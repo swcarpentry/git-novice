@@ -199,9 +199,9 @@ You would add the following two lines to your .gitignore:
 
 The exclamation point operator will include a previously excluded entry.
 
-Note also that because you've previously committed `.png` files in this
-lesson they will not be ignored with this new rule. Only future additions
-of `.png` files added to the root directory will be ignored.
+Note also that, if you've previously committed `.png` files in this
+lesson, they will not be ignored with this new rule. Only future additions
+of `.png` files to the root directory will be ignored.
 
 
 
@@ -261,7 +261,7 @@ receipts/plots
 ```
 
 What's the shortest `.gitignore` rule you could write to ignore all `.dat`
-files in `result/data/market_position/gps`? Do not ignore the `info.txt`.
+files in `receipts/data/market_position/gps`? Do not ignore the `info.txt`.
 
 :::::::::::::::  solution
 
