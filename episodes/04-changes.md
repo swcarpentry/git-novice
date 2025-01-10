@@ -27,11 +27,10 @@ You should be in the `recipes` directory.
 $ cd ~/Desktop/recipes
 ```
 
-Let's create a file called `guacamole.md` that contains the basic structure to
-have a recipe.
+Let's create a file called `guacamole.md` that contains the basic structure of a recipe.
 We'll use `nano` to edit the file;
 you can use whatever editor you like.
-In particular, this does not have to be the `core.editor` you set globally earlier. But remember, the steps to create create or edit a new file will depend on the editor you choose (it might not be nano). For a refresher on text editors, check out ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor) in [The Unix Shell](https://swcarpentry.github.io/shell-novice/) lesson.
+In particular, this does not have to be the `core.editor` you set globally earlier. But remember, the steps to create or edit a new file will depend on the editor you choose (it might not be nano). For a refresher on text editors, check out ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor) in [The Unix Shell](https://swcarpentry.github.io/shell-novice/) lesson.
 
 ```bash
 $ nano guacamole.md
@@ -586,7 +585,7 @@ Two important facts you should know about directories in Git.
   you can add all files in the directory at once by:
   
   ```bash
-  git add <directory-with-files>
+  $ git add <directory-with-files>
   ```
   
   Try it for yourself:

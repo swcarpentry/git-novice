@@ -62,7 +62,7 @@ index b36abfd..0848c8d 100644
 +An ill-considered change
 ```
 
-Note that `HEAD` is the default option for `git diff`, so omitting it will not change the command's output at all (give it a try). However, the real power of `git diff` lies in its ability to compare with previous commits. For example, by adding `~1` (where "~" is "tilde", pronounced [**til**\-d*uh*]), we can look at the commit before `HEAD`. 
+Note that `HEAD` is the default option for `git diff`, so omitting it will not change the command's output at all (give it a try). However, the real power of `git diff` lies in its ability to compare with previous commits. For example, by adding `~1` (where "~" is "tilde", pronounced [**til**\-d*uh*]), we can look at the commit before `HEAD`.
 
 ```bash
 $ git diff HEAD~1 guacamole.md
@@ -402,18 +402,18 @@ $ cat ketchup.md # this will print the content of ketchup.md on screen
 ```
 
 1. ```output
-  ketchup enhances pasta dishes
-  ```
+   ketchup enhances pasta dishes
+   ```
 2. ```output
-  I like tomatoes, therefore I like ketchup
-  ```
+   I like tomatoes, therefore I like ketchup
+   ```
 3. ```output
-  I like tomatoes, therefore I like ketchup
-  ketchup enhances pasta dishes
-  ```
+   I like tomatoes, therefore I like ketchup
+   ketchup enhances pasta dishes
+   ```
 4. ```output
-  Error because you have changed ketchup.md without committing the changes
-  ```
+   Error because you have changed ketchup.md without committing the changes
+   ```
 
 :::::::::::::::  solution
 
@@ -422,16 +422,14 @@ $ cat ketchup.md # this will print the content of ketchup.md on screen
 The answer is 2.
 
 The changes to the file from the second `echo` command are only applied to the working copy,
-The command `git add ketchup.md` places the current version of `ketchup.md` into the staging area.
 not the version in the staging area.
+The command `git add ketchup.md` places the current version of `ketchup.md` into the staging area.
 
 So, when `git commit -m "My opinions about the red sauce"` is executed,
 the version of `ketchup.md` committed to the repository is the one from the staging area and
 has only one line.
 
-At this time, the working copy still has the second line (and
-
-`git status` will show that the file is modified). However, `git restore ketchup.md`
+At this time, the working copy still has the second line (and `git status` will show that the file is modified). However, `git restore ketchup.md`
 replaces the working copy with the most recently committed version of `ketchup.md`.
 So, `cat ketchup.md` will output
 
