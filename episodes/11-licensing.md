@@ -18,14 +18,7 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-When a repository with source code, a manuscript or other creative
-works becomes public, it should include a file `LICENSE` or
-`LICENSE.txt` in the base directory of the repository that clearly
-states under which license the content is being made available. This
-is because creative works are automatically eligible for intellectual
-property (and thus copyright) protection. Reusing creative works
-without a license is dangerous, because the copyright holders could
-sue you for copyright infringement.
+As an open source project, Software Carpentry relies on volunteers to create our lessons and includes a file named `LICENSE` or `LICENSE.txt` file in all public lesson repositories. This file is used to specify that all materials are freely available under the Creative Commons Attribution license. Without a file that clearly states under which license any public source code, manuscript or other creative works is being made available, the default copyright laws apply. To learn more about licensing and open source, you can read more about [Github's description of licenses] and the [legal grounds for open source licensing].
 
 A license solves this problem by granting rights to others (the
 licensees) that they would otherwise not have. What rights are being
@@ -91,7 +84,8 @@ the licenses discussed in this session? How is it different?
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 [software-licensing]: https://doi.org/10.1371/journal.pcbi.1002598
-
+[Github's description of licenses]: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository
+[legal grounds for open source licensing]: https://opensource.guide/legal/#are-public-github-projects-open-source
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
