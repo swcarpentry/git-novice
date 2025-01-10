@@ -162,7 +162,7 @@ computers to access your account.
 We will run the list command to check what key pairs already exist on your computer.
 
 ```bash
-ls -al ~/.ssh
+$ ls -al ~/.ssh
 ```
 
 Your output is going to look a little different depending on whether or not SSH has ever been set up on the computer you are using.
