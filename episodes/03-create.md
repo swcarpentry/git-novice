@@ -288,7 +288,7 @@ For complementary resources, refer to the [Git Cheatsheets for Quick Reference](
 
 :::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: discussion
 
 ## Places to Create Git Repositories
 
