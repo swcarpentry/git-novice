@@ -107,6 +107,37 @@ If you elect to use a private email address with GitHub, then use that same emai
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+Use `usethis::git_sitrep()` to check if the information was added to the Git configuration: 
+
+```r
+usethis::git_sitrep()
+```
+
+```output
+── Git global (user) 
+• Name: "Vlad Dracula"
+• Email: "vlad@tran.sylvan.ia"
+• Global (user-level) gitignore file:
+• Vaccinated: FALSE
+ℹ See `usethis::git_vaccinate()` to learn more.
+• Default Git protocol: "https"
+• Default initial branch name: "master"
+
+── GitHub user 
+• Default GitHub host: "https://github.com"
+• Personal access token for "https://github.com":
+  <unset>
+☐ To create a personal access token, call
+  usethis::create_github_token().
+☐ To store a token for current and future use, call
+  gitcreds::gitcreds_set().
+ℹ Read more in the Managing Git(Hub) Credentials
+  article.
+ℹ No active usethis project.
+```
+
+To have a clean situation report output, let's follow those two steps.
+
 <!--
 
 :::::::::::::::::::::::::::::::::::::::::  callout
