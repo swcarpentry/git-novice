@@ -579,13 +579,7 @@ Two important facts you should know about directories in Git.
   in otherwise empty directories. The sole purpose of `.gitkeep` files is to populate a directory so that Git adds it to the repository. The name `.gitkeep` is just a convention, and in fact, you can name these files anything you like.
 
 2. If you create a directory in your Git repository and populate it with files,
-  you can add all files in the directory at once by using this command syntax:
-  
-  ```
-  git add <directory-with-files>
-  ```
-  
-  Try it for yourself:
+  you can add all the files in the directory at once by referring to the directory in your `git add` command. Try it for yourself:
   
   ```bash
   $ touch cakes/brownie cakes/lemon_drizzle
