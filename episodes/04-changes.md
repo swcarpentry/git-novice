@@ -588,7 +588,7 @@ Two important facts you should know about directories in Git.
   Try it for yourself:
   
   ```bash
-  $ touch cakes/brownie cakes/lemon_drizzle
+  $ touch cakes/brownie_cakes/lemon_drizzle
   $ git status
   $ git add cakes
   $ git status
