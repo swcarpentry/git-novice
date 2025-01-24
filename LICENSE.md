@@ -69,7 +69,7 @@ SOFTWARE.
 ## Trademark
 
 "The Carpentries", "Software Carpentry", "Data Carpentry", and "Library
-Carpentry" and their respective logos are registered trademarks of [The Carpentries][carpentries].
+Carpentry" and their respective logos are registered trademarks of [The Carpentries, Inc.][carpentries].
 
 [cc-by-human]: https://creativecommons.org/licenses/by/4.0/
 [cc-by-legal]: https://creativecommons.org/licenses/by/4.0/legalcode
