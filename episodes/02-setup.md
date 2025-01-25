@@ -161,7 +161,7 @@ Let's close the file without making any additional changes.  Remember, since typ
 issues, it's safer to view the configuration with:
 
 ```bash
-$ git config --list
+$ git config --list --global
 ```
 
 And if necessary, change your configuration using the
