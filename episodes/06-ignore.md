@@ -55,6 +55,20 @@ We do this by creating a file in the root directory of our project called `.giti
 
 ```bash
 $ nano .gitignore
+```
+
+Type the text below into the `.gitignore` file:
+
+```
+*.png
+receipts/
+```
+
+Save the file and exit your editor.
+
+Verify that the file contains the files to ignore.
+
+```bash
 $ cat .gitignore
 ```
 
