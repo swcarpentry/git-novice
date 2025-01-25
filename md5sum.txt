@@ -1,6 +1,6 @@
 "file" "checksum" "built" "date"
 "CODE_OF_CONDUCT.md" "902ffb25d75c81ee3b2a5dee3301fa02" "site/built/CODE_OF_CONDUCT.md" "2024-12-09"
-"LICENSE.md" "b24ebbb41b14ca25cf6b8216dda83e5f" "site/built/LICENSE.md" "2023-05-08"
+"LICENSE.md" "ea0c0c96819430451d30c4cb669e0c64" "site/built/LICENSE.md" "2025-01-25"
 "config.yaml" "69e678021a92f74f922e53d180d05f47" "site/built/config.yaml" "2023-05-08"
 "index.md" "a37c98b62b9cd48ff67c51cea5240a1f" "site/built/index.md" "2024-09-29"
 "episodes/01-basics.md" "78184e84f5bf3b0dd88de3918e927591" "site/built/01-basics.md" "2024-06-20"
