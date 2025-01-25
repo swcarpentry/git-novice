@@ -137,15 +137,6 @@ You can think of the public key as a padlock, and only you have the key (the pri
 
 What we will do now is the minimum required to set up the SSH keys and add the public key to a GitHub account.
 
-:::::::::::::::::::::::::::::::::::::::::  callout
-
-## Advanced SSH
-
-A supplemental episode in this lesson discusses SSH and key pairs in more depth and detail.
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
 The first thing we are going to do is check if this has already been done on the computer you're on.  Because generally speaking, this setup only needs to happen once and then you can forget about it.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
