@@ -11,6 +11,7 @@ Maintainers:
 
 - [Kat Koziar][koziar_kat]: [@kekoziar](https://github.com/kekoziar)
 - [Martino Sorbaro][sorbaro_mart]: [@martinosorb](https://github.com/martinosorb)
+- Erin Graham: [@erinmgraham](https://github.com/erinmgraham)
 
 Alumni maintainers:
 
