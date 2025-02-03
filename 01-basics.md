@@ -71,13 +71,12 @@ Tools like [RCS](https://en.wikipedia.org/wiki/Revision_Control_System), [CVS](h
 many large companies.
 However, many of these are now considered legacy systems (i.e., outdated) due to various
 limitations in their capabilities.
-More modern systems, such as Git and [Mercurial](https://swcarpentry.github.io/hg-novice/),
+More modern systems, such as [Git](https://en.wikipedia.org/wiki/Git) and [Mercurial](https://en.wikipedia.org/wiki/Mercurial),
 are *distributed*, meaning that they do not need a centralized server to host the repository.
-These modern systems also include powerful merging tools that make it possible for
-multiple authors to work on
+These modern systems also include powerful merging tools that make it possible for multiple authors to work on
 the same files concurrently.
 
-
+For those interested, The Carpentries has a [Version Control with Mercurial](https://swcarpentry.github.io/hg-novice/) lesson (2013-2018), which provides additional context and historical perspective.
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
