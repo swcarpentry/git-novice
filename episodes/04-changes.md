@@ -27,19 +27,19 @@ You should be in the `recipes` directory.
 $ cd ~/Desktop/recipes
 ```
 
-Let's create a file called `guacamole.md` that contains the basic structure of a recipe.
+Let's create a file called `template.md` that contains the basic structure of a recipe.
 We'll use `nano` to edit the file;
 you can use whatever editor you like.
 In particular, this does not have to be the `core.editor` you set globally earlier. But remember, the steps to create or edit a new file will depend on the editor you choose (it might not be nano). For a refresher on text editors, check out ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor) in [The Unix Shell](https://swcarpentry.github.io/shell-novice/) lesson.
 
 ```bash
-$ nano guacamole.md
+$ nano template.md
 ```
 
-Type the text below into the `guacamole.md` file:
+Type the text below into the `template.md` file:
 
-```output
-# Guacamole
+```markdown
+# <insert-title>
 ## Ingredients
 ## Instructions
 ```
@@ -51,17 +51,17 @@ $ ls
 ```
 
 ```output
-guacamole.md
+template.md
 ```
 
-`guacamole.md` contains three lines, which we can see by running:
+`template.md` contains three lines, which we can see by running:
 
 ```bash
-$ cat guacamole.md
+$ cat template.md
 ```
 
 ```output
-# Guacamole
+# <insert-title>
 ## Ingredients
 ## Instructions
 ```
@@ -81,7 +81,7 @@ No commits yet
 Untracked files:
    (use "git add <file>..." to include in what will be committed)
 
-	guacamole.md
+	template.md
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
@@ -91,7 +91,7 @@ that Git isn't keeping track of.
 We can tell Git to track a file using `git add`:
 
 ```bash
-$ git add guacamole.md
+$ git add template.md
 ```
 
 and then check that the right thing happened:
@@ -108,11 +108,11 @@ No commits yet
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
 
-	new file:   guacamole.md
+	new file:   template.md
 
 ```
 
-Git now knows that it's supposed to keep track of `guacamole.md`,
+Git now knows that it's supposed to keep track of `template.md`,
 but it hasn't recorded these changes as a commit yet.
 To get it to do that,
 we need to run one more command:
@@ -124,7 +124,7 @@ $ git commit -m "Create a template for recipe"
 ```output
 [main (root-commit) f22b25e] Create a template for recipe
  1 file changed, 1 insertion(+)
- create mode 100644 guacamole.md
+ create mode 100644 template.md
 ```
 
 When we run `git commit`,
@@ -183,7 +183,7 @@ and the log message Git was given when the commit was created.
 
 ## Where Are My Changes?
 
-If we run `ls` at this point, we will still see just one file called `guacamole.md`.
+If we run `ls` at this point, we will still see just one file called `template.md`.
 That's because Git saves information about files' history
 in the special `.git` directory mentioned earlier
 so that our filesystem doesn't become cluttered
@@ -192,7 +192,35 @@ so that our filesystem doesn't become cluttered
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Now suppose Alfredo adds more information to the file.
+Now suppose Alfredo wants to start with his first recipe, Guacamole.
+For that, the copies the template and goes through the same initial process.
+First he creates a new recipe by copying our template.
+
+```bash
+$ cp template.md guacamole.md
+$ nano guacamole.md
+$ cat guacamole.md
+```
+```output
+# Guacamole
+## Ingredients
+## Instructions
+```
+
+An then he adds this initial stub of the recipe to the Git repository.
+
+```bash
+$ git add guacamole.md
+$ git commit -m "Start Guacamole recipe"
+```
+```output
+[main (root-commit) b30c901] Start Guacamole recipe
+ 1 files changed, 3 insertions(+)
+ create mode 100644 guacamole.md
+```
+
+Now we have our first recipe that needs more detail, so Alfredo
+adds more information to the file.
 (Again, we'll edit with `nano` and then `cat` the file to show its contents;
 you may use a different editor, and don't need to `cat`.)
 
