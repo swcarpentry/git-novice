@@ -27,7 +27,7 @@ You should be in the `recipes` directory.
 $ cd ~/Desktop/recipes
 ```
 
-Let's create a file called `guacamole.md` that contains the basic structure of a recipe.
+Let's create a file called `guacamole.md` that contains the basic structure of our first recipe.
 We'll use `nano` to edit the file;
 you can use whatever editor you like.
 In particular, this does not have to be the `core.editor` you set globally earlier. But remember, the steps to create or edit a new file will depend on the editor you choose (it might not be nano). For a refresher on text editors, check out ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor) in [The Unix Shell](https://swcarpentry.github.io/shell-novice/) lesson.
@@ -118,11 +118,11 @@ To get it to do that,
 we need to run one more command:
 
 ```bash
-$ git commit -m "Create a template for recipe"
+$ git commit -m "Create initial structure for a Guacamole recipe"
 ```
 
 ```output
-[main (root-commit) f22b25e] Create a template for recipe
+[main (root-commit) f22b25e] Create initial structure for a Guacamole recipe
  1 file changed, 1 insertion(+)
  create mode 100644 guacamole.md
 ```
@@ -167,7 +167,7 @@ commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Alfredo Linguini <a.linguini@ratatouille.fr>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Create a template for recipe
+    Create initial structure for a Guacamole recipe
 ```
 
 `git log` lists all commits  made to a repository in reverse chronological order.
@@ -471,7 +471,7 @@ commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Alfredo Linguini <a.linguini@ratatouille.fr>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Create a template for recipe
+    Create initial structure for a Guacamole recipe
 ```
 
 :::::::::::::::::::::::::::::::::::::::::  callout
@@ -536,7 +536,7 @@ $ git log --oneline
 ```output
 005937f (HEAD -> main) Modify guacamole to the traditional recipe
 34961b1 Add ingredients for basic guacamole
-f22b25e Create a template for recipe
+f22b25e Create initial structure for a Guacamole recipe
 ```
 
 You can also combine the `--oneline` option with others. One useful
@@ -552,7 +552,7 @@ $ git log --oneline --graph
 ```output
 * 005937f (HEAD -> main) Modify guacamole to the traditional recipe
 * 34961b1 Add ingredients for basic guacamole
-* f22b25e Create a template for recipe
+* f22b25e Create initial structure for a Guacamole recipe
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
