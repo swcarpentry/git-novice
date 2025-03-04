@@ -381,7 +381,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Open Science</h1>
-        <p>Last updated on 2023-05-30 |
+        <p>Last updated on 2025-03-04 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/10-open.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -445,16 +445,22 @@ read it.</li>
 </ul><p>For a growing number of scientists, though, the process looks like
 this:</p>
 <ul><li>The data that the scientist collects is stored in an open access
-repository like <a href="https://figshare.com/" class="external-link">figshare</a> or <a href="https://zenodo.org" class="external-link">Zenodo</a>, possibly as soon as it’s
-collected, and given its own <a href="https://en.wikipedia.org/wiki/Digital_object_identifier" class="external-link">Digital
-Object Identifier</a> (DOI). Or the data was already published and is
-stored in <a href="https://datadryad.org/" class="external-link">Dryad</a>.</li>
+repository. Specialised repositories exist for data produced in many
+domains of research (e.g. <a href="https://openneuro.org/" class="external-link">OpenNeuro</a>
+for neuroscience; <a href="https://www.ebi.ac.uk/ena/browser/home" class="external-link">the
+European Nucleotide Archive</a> for genomics), as well as “generalist”
+repositories like <a href="https://figshare.com/" class="external-link">figshare</a>, <a href="https://zenodo.org" class="external-link">Zenodo</a>, or <a href="https://datadryad.org/" class="external-link">Dryad</a>. The data may receive its own <a href="https://en.wikipedia.org/wiki/Digital_object_identifier" class="external-link">Digital
+Object Identifier</a> (DOI) when deposited.</li>
 <li>The scientist creates a new repository on GitHub to hold their
 work.</li>
 <li>During analysis, they push changes to their scripts (and possibly
 some output files) to that repository. The scientist also uses the
 repository for their paper; that repository is then the hub for
-collaboration with colleagues.</li>
+collaboration with colleagues. They may use a “literate programming”
+tool like <a href="https://jupyter.org/" class="external-link">Jupyter</a>, <a href="https://rmarkdown.rstudio.com/" class="external-link">R Markdown</a>, or <a href="https://quarto.org/" class="external-link">Quarto</a> to combine these elements
+together, mixing code for analysis, output from that code, and
+explanatory comments, notes, and other annotations into a single
+document.</li>
 <li>When they are happy with the state of the paper, the scientist posts
 a version to <a href="https://arxiv.org/" class="external-link">arXiv</a> or some other
 preprint server to invite feedback from peers.</li>
@@ -508,20 +514,36 @@ lab you work with.</p>
 </div>
 </div>
 </div>
-<div id="how-to-find-an-appropriate-data-repository" class="callout discussion">
+<div id="how-to-find-an-appropriate-data-repository" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="how-to-find-an-appropriate-data-repository" class="callout-inner">
 <h3 class="callout-title">How to Find an Appropriate Data Repository?</h3>
 <div class="callout-content">
-<p>Surf the internet for a couple of minutes and check out the data
-repositories mentioned above: <a href="https://figshare.com/" class="external-link">Figshare</a>, <a href="https://zenodo.org" class="external-link">Zenodo</a>, <a href="https://datadryad.org/" class="external-link">Dryad</a>. Depending on your field of
-research, you might find community-recognized repositories that are
-well-known in your field. You might also find useful <a href="https://www.nature.com/sdata/data-policies/repositories" class="external-link">these
+<p>Surf the internet for a couple of minutes and check out the
+generalist data repositories mentioned above: <a href="https://figshare.com/" class="external-link">Figshare</a>, <a href="https://zenodo.org" class="external-link">Zenodo</a>, <a href="https://datadryad.org/" class="external-link">Dryad</a>. Try to also find one or more
+repositories for data in your field. You might also find useful <a href="https://www.nature.com/sdata/data-policies/repositories" class="external-link">these
 data repositories recommended by Nature</a>. Discuss with your neighbor
 which data repository you might want to approach for your current
 project and explain why.</p>
+</div>
+</div>
+</div>
+<div id="accordionHint1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
+  <h4 class="accordion-header" id="headingHint1">
+  Useful Resource
+  </h4>
+</button>
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div class="accordion-body">
+<p>Confused by the sheer number of different repositories you could
+choose for your data? This <a href="https://zenodo.org/records/11105430" class="external-link">repository selection
+flowchart</a> aims to “guide users through a series of considerations
+for slecting the right repository for sharing data.”</p>
+</div>
 </div>
 </div>
 </div>
@@ -618,7 +640,7 @@ closed.</li>
   "url": "https://swcarpentry.github.io/git-novice/instructor/10-open.html",
   "identifier": "https://swcarpentry.github.io/git-novice/instructor/10-open.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2023-05-30",
+  "dateModified": "2025-03-04",
   "datePublished": "2025-03-04"
 }
 
