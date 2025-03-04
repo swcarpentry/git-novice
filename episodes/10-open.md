@@ -50,13 +50,14 @@ For a growing number of scientists,
 though,
 the process looks like this:
 
-- The data that the scientist collects is stored in an open access repository
-  like [figshare](https://figshare.com/) or
-  [Zenodo](https://zenodo.org), possibly as soon as it's collected,
-  and given its own
-  [Digital Object Identifier](https://en.wikipedia.org/wiki/Digital_object_identifier) (DOI).
-  Or the data was already published and is stored in
-  [Dryad](https://datadryad.org/).
+- The data that the scientist collects is stored in an open access repository.
+  Specialised repositories exist for data produced in many domains of research
+  (e.g. [OpenNeuro](https://openneuro.org/) for neuroscience; [the European Nucleotide Archive](https://www.ebi.ac.uk/ena/browser/home) for genomics),
+  as well as "generalist" repositories
+  like [figshare](https://figshare.com/),
+  [Zenodo](https://zenodo.org), or [Dryad](https://datadryad.org/).
+  The data may receive its own
+  [Digital Object Identifier](https://en.wikipedia.org/wiki/Digital_object_identifier) (DOI) when deposited.
 - The scientist creates a new repository on GitHub to hold their work.
 - During analysis,
   they push changes to their scripts
@@ -64,6 +65,7 @@ the process looks like this:
   to that repository.
   The scientist also uses the repository for their paper;
   that repository is then the hub for collaboration with colleagues.
+  They may use a "literate programming" tool like [Jupyter](https://jupyter.org/), [R Markdown](https://rmarkdown.rstudio.com/), or [Quarto](https://quarto.org/) to combine these elements together, mixing code for analysis, output from that code, and explanatory comments, notes, and other annotations into a single document.
 - When they are happy with the state of the paper,
   the scientist posts a version to [arXiv](https://arxiv.org/)
   or some other preprint server
@@ -125,13 +127,21 @@ then try to do it for a result from a lab you work with.
 
 ## How to Find an Appropriate Data Repository?
 
-Surf the internet for a couple of minutes and check out the data repositories
+Surf the internet for a couple of minutes and check out the generalist data repositories
 mentioned above: [Figshare](https://figshare.com/), [Zenodo](https://zenodo.org),
-[Dryad](https://datadryad.org/). Depending on your field of research, you might
-find community-recognized repositories that are well-known in your field.
+[Dryad](https://datadryad.org/). 
+Try to also find one or more repositories for data in your field.
 You might also find useful [these data repositories recommended by Nature](https://www.nature.com/sdata/data-policies/repositories).
 Discuss with your neighbor which data repository you might want to
 approach for your current project and explain why.
+
+:::::: hint
+
+### Useful Resource
+Confused by the sheer number of different repositories you could choose for your data? 
+This [repository selection flowchart](https://zenodo.org/records/11105430) aims to "guide users through a series of considerations for slecting the right repository for sharing data."
+
+:::::::::::::::
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
