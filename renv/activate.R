@@ -2,7 +2,7 @@
 local({
 
   # the requested version of renv
-  version <- "1.1.0"
+  version <- "1.1.2"
   attr(version, "sha") <- NULL
 
   # the project directory
@@ -135,12 +135,12 @@ local({
   
     # R help links
     pattern <- "`\\?(renv::(?:[^`])+)`"
-    replacement <- "`\033]8;;ide:help:\\1\a?\\1\033]8;;\a`"
+    replacement <- "`\033]8;;x-r-help:\\1\a?\\1\033]8;;\a`"
     text <- gsub(pattern, replacement, text, perl = TRUE)
   
     # runnable code
     pattern <- "`(renv::(?:[^`])+)`"
-    replacement <- "`\033]8;;ide:run:\\1\a\\1\033]8;;\a`"
+    replacement <- "`\033]8;;x-r-run:\\1\a\\1\033]8;;\a`"
     text <- gsub(pattern, replacement, text, perl = TRUE)
   
     # return ansified text
