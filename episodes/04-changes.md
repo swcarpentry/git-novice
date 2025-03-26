@@ -632,7 +632,7 @@ Two important facts you should know about directories in Git.
   you can add all the files in the directory at once by referring to the directory in your `git add` command. Try it for yourself:
   
   ```bash
-  $ touch cakes/brownie_cakes/lemon_drizzle
+  $ touch cakes/brownie cakes/lemon_drizzle
   $ git status
   $ git add cakes
   $ git status
