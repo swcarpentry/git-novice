@@ -24,7 +24,7 @@ Let's create a few dummy files:
 
 ```bash
 $ mkdir pictures
-$ touch a.png b.png c.png pictures/a.jpg pictures/b.jpg
+$ touch a.png b.png c.png pictures/cake1.jpg pictures/cake2.jpg
 ```
 
 and see what Git says:
