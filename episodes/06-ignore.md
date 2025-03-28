@@ -23,8 +23,8 @@ or intermediate files created during data analysis?
 Let's create a few dummy files:
 
 ```bash
-$ mkdir receipts
-$ touch a.png b.png c.png receipts/a.jpg receipts/b.jpg
+$ mkdir pictures
+$ touch a.png b.png c.png pictures/a.jpg pictures/b.jpg
 ```
 
 and see what Git says:
@@ -41,7 +41,7 @@ Untracked files:
 	a.png
 	b.png
 	c.png
-	receipts/
+	pictures/
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
@@ -61,7 +61,7 @@ Type the text below into the `.gitignore` file:
 
 ```
 *.png
-receipts/
+pictures/
 ```
 
 Save the file and exit your editor.
@@ -74,11 +74,11 @@ $ cat .gitignore
 
 ```output
 *.png
-receipts/
+pictures/
 ```
 
 These patterns tell Git to ignore any file whose name ends in `.png`
-and everything in the `receipts` directory.
+and everything in the `pictures` directory.
 (If any of these files were already being tracked,
 Git would continue to track them.)
 
@@ -107,7 +107,7 @@ Let's add and commit `.gitignore`:
 
 ```bash
 $ git add .gitignore
-$ git commit -m "Ignore png files and the receipts folder."
+$ git commit -m "Ignore png files and the pictures folder."
 $ git status
 ```
 
