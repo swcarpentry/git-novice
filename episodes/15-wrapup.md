@@ -41,7 +41,7 @@ praise::praise()
 
 ## Your next step!
 
-Good job! We recommend you to __read the supplemental episode__ on how to [use Git with the Rstudio IDE](14-supplemental-rstudio.md). It can make some steps easier to interact with! For topics like [resolving conflicts](09-conflict.md), we suggest to use Desktop software like [VScode](https://code.visualstudio.com/). (However, you may need to close RStudio when using VScode to avoid some git error messages!)
+Good job! We recommend you to __read the supplemental episode__ on how to [use Git with the RStudio IDE](14-supplemental-rstudio.md). It can make some steps easier to interact with! For topics like [resolving conflicts](09-conflict.md), we suggest to use Desktop software like [VScode](https://code.visualstudio.com/). (However, you may need to close RStudio when using VScode to avoid some git error messages!)
 
 If you are looking for more practice, go for the individual challenges on each episode. We also recommend you to keep practicing how to [Create branches](09-conflict.md#create-branches) and make [Atomic commits](09-conflict.md#atomic-commits).
 

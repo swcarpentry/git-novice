@@ -24,7 +24,7 @@ command-line, RStudio has a nice interface for many common Git operations.
 
 ::::::::::::::::: testimonial
 
-We also invite you to read this blog post about [10 Commands to Get Started with Git](https://rviews.rstudio.com/2020/04/23/10-commands-to-get-started-with-git/) with screenshots of the Rstudio web-based interface.
+We also invite you to read this blog post about [10 Commands to Get Started with Git](https://rviews.rstudio.com/2020/04/23/10-commands-to-get-started-with-git/) with screenshots of the RStudio web-based interface.
 
 :::::::::::::::::::::::::::::
 
@@ -33,7 +33,7 @@ We also invite you to read this blog post about [10 Commands to Get Started with
 RStudio allows us to create a [project][rstudio-projects] associated with a
 given directory to keep track of various related files. To be able to track the
 development of the project over time, to be able to revert to previous
-versions, and to collaborate with others, we version control the Rstudio
+versions, and to collaborate with others, we version control the RStudio
 project with Git. To get started using Git in RStudio, we create a new project:
 
 ![](fig/RStudio_screenshot_newproject.png){alt='RStudio screenshot showing the file menu dropdown with "New Project..." selected'}
@@ -49,7 +49,7 @@ For a new directory, [follow the steps in this section about "Versioning new wor
 
 ![](fig/git-rstudio-init-02.png)
 
-To clone a remote repository from Rstudio, follow these steps:
+To clone a remote repository from RStudio, follow these steps:
 
 ![](fig/git-rstudio-init-03.png)
 
@@ -183,7 +183,7 @@ files and directories.
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-In the `Rstudio: Review changes` window, you can also open the `.gitignore` files from the `Ignore` button. You can use the `Revert` button to do a `git checkout HEAD`, i.e., to undo changes not yet on staging area by restoring the local repository (last commit).
+In the `RStudio: Review changes` window, you can also open the `.gitignore` files from the `Ignore` button. You can use the `Revert` button to do a `git checkout HEAD`, i.e., to undo changes not yet on staging area by restoring the local repository (last commit).
 
 ![](fig/git-rstudio-review-window.png)
 
@@ -233,13 +233,13 @@ The best way to merge branches is on GitHub. We recommend you to read about how 
 
 ## Solution to Challenge
 
-This can be done in Rstudio:
+This can be done in RStudio:
 
 ```r
 usethis::use_directory("tests")
 ```
 
-Then open up the `.gitignore` file from the right-hand panel of Rstudio and add
+Then open up the `.gitignore` file from the right-hand panel of RStudio and add
 `tests/` to the list of files to ignore.
 
 

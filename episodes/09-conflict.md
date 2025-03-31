@@ -730,7 +730,7 @@ Commits should be ‘atomic’, meaning that they should do one simple thing and
 
 ![Two related modified lines must be part of the same commit.](fig/git-rstudio-27.png)
 
-In Rstudio, the Review changes window has a button called “Stage chunk”. This helps to make atomic commits, even if you change a lot of lines in a single edit. You can either select them to make isolated commits or to unite them to be part of the same commit.
+In RStudio, the Review changes window has a button called “Stage chunk”. This helps to make atomic commits, even if you change a lot of lines in a single edit. You can either select them to make isolated commits or to unite them to be part of the same commit.
 
 ![Two unrelated edits must be part of two isolated commits.](fig/git-rstudio-35.png)
 
@@ -742,7 +742,7 @@ A good atomic commit:
 
 - Includes more than one file that involves one unit of change. 
 
-- Isolate or includes multiple edited lines using the "Stage chunk" button in Rstudio.
+- Isolate or includes multiple edited lines using the "Stage chunk" button in RStudio.
 
 - Does not include all the files in one commit.
 

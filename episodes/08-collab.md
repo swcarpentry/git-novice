@@ -92,7 +92,7 @@ repository with the same name.
 
 ::::::::::::::::: callout
 
-First, if you are in Rstudio, close your R Project from `File` > `Close Project`.
+First, if you are in RStudio, close your R Project from `File` > `Close Project`.
 
 :::::::::::::::::::::::::
 
@@ -137,7 +137,7 @@ $ cat dashboard.Rmd
 ```
 -->
 
-First, open the `vlad-cases` R project. If you are in Rstudio: `File` > `New Project...` and navigate to the directory location.
+First, open the `vlad-cases` R project. If you are in RStudio: `File` > `New Project...` and navigate to the directory location.
 
 Now, let's create a new file called `dashboard.Rmd` to complement our Situation report!
 

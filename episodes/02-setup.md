@@ -32,7 +32,7 @@ metadata make up a [repository](../learners/reference.md#repository).
 Repositories can be kept in sync across different computers, facilitating
 collaboration among different people.
 
-Before creating our first repository, we need to setup Git. So, let's open Rstudio and introduce yourself to Git!
+Before creating our first repository, we need to setup Git. So, let's open RStudio and introduce yourself to Git!
 
 <!--
 ![Each record of changes is
@@ -41,9 +41,9 @@ called a `commit`.](fig/play-changes.svg){alt='Changes Are Saved Sequentially'}
 
 ::::::::::::::::::: prereq
 
-### The Rstudio Console
+### The RStudio Console
 
-In this episode, we are going to use the [Rstudio Console](https://docs.posit.co/ide/user/ide/guide/code/console.html).
+In this episode, we are going to use the [RStudio Console](https://docs.posit.co/ide/user/ide/guide/code/console.html).
 
 ![Visual appearance of the Console.](fig/rstudio-tab-console.png)
 
@@ -60,7 +60,7 @@ we need to configure a few things. Below are a few examples of configurations we
 
 You can set your Git user name and email from within R using the `{usethis}` package.
 
-Using the [Rstudio Console](https://docs.posit.co/ide/user/ide/guide/code/console.html), here is how Dracula sets up his new laptop:
+Using the [RStudio Console](https://docs.posit.co/ide/user/ide/guide/code/console.html), here is how Dracula sets up his new laptop:
 
 ```r
 # install if needed (do this exactly once):
@@ -486,7 +486,7 @@ If you are interested on this, [take a look to this chapter of the happygitwithr
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Use the `{usethis}` package to configure a user name, email address, and other preferences once per machine.
-- Use `usethis::use_git_config()` to configure Git in Rstudio.
+- Use `usethis::use_git_config()` to configure Git in RStudio.
 - Use `usethis::git_sitrep()` to verify your configuration.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::

@@ -31,13 +31,13 @@ In this episode, we are going to learn how to initialize Git to create a Local R
 
 ![Initialize a Local Repository in your Workspace with the `git init` command verb](fig/cut-git-verb_map-01.png)
 
-Let's start with a new R project in Rstudio.
+Let's start with a new R project in RStudio.
 
 ::::::::::::::::: prereq
 
 ### PREREQUISITES
 
-To start, you need to be out of any R project. In Rstudio, close you Project from `File` > `Close Project`. You can confirm this in the upper right corner `Project: (None)`.
+To start, you need to be out of any R project. In RStudio, close you Project from `File` > `Close Project`. You can confirm this in the upper right corner `Project: (None)`.
 
 ::::::::::::::::::::::::
 
@@ -118,11 +118,11 @@ Remember that each record of change can be [commit](../learners/reference.md#com
 Restart now?
 ```
 
-Agree to restart your session to activate the Git pane in Rstudio:
+Agree to restart your session to activate the Git pane in RStudio:
 
 ![The Git tab in the Environments pane shows the `status` of your repository.](fig/pane-git-01.png)
 
-The Git tab is in the [Environments pane](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html), usually in the upper right corner of the Rstudio IDE. 
+The Git tab is in the [Environments pane](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html), usually in the upper right corner of the RStudio IDE. 
 
 In this and next episodes you'll learn the function of all those buttons on the top of the Git tab!
 
@@ -170,7 +170,7 @@ we will lose the project's history.
 
 ### From the Console to the Terminal
 
-Now, we are going to use the [Rstudio Terminal](https://docs.posit.co/ide/user/ide/guide/tools/terminal.html). The Terminal tab is next to the Console tab. 
+Now, we are going to use the [RStudio Terminal](https://docs.posit.co/ide/user/ide/guide/tools/terminal.html). The Terminal tab is next to the Console tab. 
 
 Click on the Terminal tab and a new terminal session will be created (if there isn’t one already).
 
@@ -178,7 +178,7 @@ Click on the Terminal tab and a new terminal session will be created (if there i
 
 ::::::::::::::::::::::::
 
-Alternatively, in the Rstudio Terminal, 
+Alternatively, in the RStudio Terminal, 
 with the `ls -a` command we can see the _hidden directory_ called `.git/`:
 
 ```bash
@@ -234,7 +234,7 @@ Switched to a new branch 'main'
 
 ## Check the status
 
-To interact with Git, we can also use the [Rstudio Terminal](https://docs.posit.co/ide/user/ide/guide/tools/terminal.html). 
+To interact with Git, we can also use the [RStudio Terminal](https://docs.posit.co/ide/user/ide/guide/tools/terminal.html). 
 
 In the RStudio Terminal, we can check that everything is set up correctly
 by asking Git to tell us the `git status` of our project:
@@ -294,7 +294,7 @@ For complementary resources, refer to the [Git Cheatsheets for Quick Reference](
 
 Along with tracking information about cases (the project we have already created),
 Dracula would also like to track information about **interventions**.
-Despite Wolfman's concerns, Dracula creates a `interventions` project inside his `cases` project and initialize Git. Dracula uses a sequence of commands __in the Rstudio Console__:
+Despite Wolfman's concerns, Dracula creates a `interventions` project inside his `cases` project and initialize Git. Dracula uses a sequence of commands __in the RStudio Console__:
 
 ```r
 usethis::create_project(path = "interventions")
@@ -410,9 +410,9 @@ Therefore, always check your current directory using the command `pwd`.
 <!--
 ::::::::::::::::: testimonial
 
-### Use the Rstudio Git tab
+### Use the RStudio Git tab
 
-We invite you to [read the supplemental episode](14-supplemental-rstudio.md) on how to `git init` using Rstudio IDE.
+We invite you to [read the supplemental episode](14-supplemental-rstudio.md) on how to `git init` using RStudio IDE.
 
 :::::::::::::::::::::::::
 -->

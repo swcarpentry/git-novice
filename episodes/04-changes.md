@@ -37,7 +37,7 @@ So look at the upper right corner of the code chunks in this episode:
 
 ## Add changes
 
-First, in the __Rstudio Console__, let's make sure we're still in the right R project.
+First, in the __RStudio Console__, let's make sure we're still in the right R project.
 You should be in the `cases` directory.
 
 ```r
@@ -239,9 +239,9 @@ If you want to save your changes and quit, press <kbd>Esc</kbd> then type `:wq` 
 
 ### Do we need to change git core editor?
 
-With Rstudio you don't need to do change any editor. You can open all your files in the Source pane.
+With RStudio you don't need to do change any editor. You can open all your files in the Source pane.
 
-Also, to write commit messages you can use the Rstudio IDE. We invite you to [read the supplemental episode](14-supplemental-rstudio.md).
+Also, to write commit messages you can use the RStudio IDE. We invite you to [read the supplemental episode](14-supplemental-rstudio.md).
 
 However, if needed, Dracula can set his favorite text editor following this table:
 
@@ -1017,7 +1017,7 @@ Initialise git:
 usethis::use_git()
 ```
 
-Create your biography file `me.md` using the Rstudio editor.
+Create your biography file `me.md` using the RStudio editor.
 
 ```r
 usethis::edit_file("me.md")
@@ -1047,9 +1047,9 @@ $ git diff me.md
 <!--
 ::::::::::::::::: testimonial
 
-### Use the Rstudio Git tab
+### Use the RStudio Git tab
 
-We invite you to [read the supplemental episode](14-supplemental-rstudio.md) on how to `git commit`, `git log`, and `git diff` using the Rstudio Git tab.
+We invite you to [read the supplemental episode](14-supplemental-rstudio.md) on how to `git commit`, `git log`, and `git diff` using the RStudio Git tab.
 
 :::::::::::::::::::::::::
 -->

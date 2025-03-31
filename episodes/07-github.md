@@ -357,7 +357,7 @@ Dracula would also like to track information about interventions.
 
 ::::::::::::::::: solutions
 
-First, if you are in Rstudio, close your R Project from `File` > `Close Project`.
+First, if you are in RStudio, close your R Project from `File` > `Close Project`.
 
 In the Console, run:
 
