@@ -11,7 +11,7 @@
 carpentry: 'epiverse-trace'
 
 # Overall title for pages.
-title: 'Version Control with Git in Rstudio'
+title: 'Version Control with Git in RStudio'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
 created: '2014-12-04'
