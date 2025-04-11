@@ -43,8 +43,8 @@ praise::praise()
 
 Good job! We recommend you to __read the supplemental episode__ on how to [use Git with the RStudio IDE](14-supplemental-rstudio.md). It can make some steps easier to interact with! For topics like [resolving conflicts](09-conflict.md), we suggest to use Desktop software like: 
 
-- [VScode](https://code.visualstudio.com/), however, you may need to close RStudio when using VScode to avoid some git error messages!
-- [Positron](https://positron.posit.co/), which Git interface works as in VScode. Read their [overview on Source Control](https://code.visualstudio.com/docs/sourcecontrol/overview)) or
+- [VScode](https://code.visualstudio.com/). Close RStudio when using VScode to avoid some git error messages!
+- [Positron](https://positron.posit.co/). The Git interface works as in VScode. Read their [overview webpage](https://code.visualstudio.com/docs/sourcecontrol/overview).
 - [GitHub Desktop](https://github.com/apps/desktop), which is a Point-and-Click graphical interface similar to RStudio IDE.
 
 If you are looking for more practice, go for the individual challenges on each episode. We also recommend you keep practising how to [Create branches](09-conflict.md#create-branches) and make [Atomic commits](09-conflict.md#atomic-commits).
