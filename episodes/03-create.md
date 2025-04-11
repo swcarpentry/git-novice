@@ -304,6 +304,8 @@ usethis::use_git()
 Is the `usethis::use_git()` command, run inside the `interventions` subdirectory, required for
 tracking files stored in the `interventions` subdirectory?
 
+:::::::::::::::::::::::::::::::::::::::::::::::::::
+
 :::::::::::::::  solution
 
 ## Solution
@@ -405,7 +407,7 @@ Therefore, always check your current directory using the command `pwd`.
 :::::::::::::::::::::::::
 -->
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 <!--
 ::::::::::::::::: testimonial
