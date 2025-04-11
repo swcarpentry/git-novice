@@ -82,9 +82,7 @@ You can fill your questions under the [Q&A category](https://github.com/epiverse
 
 ## Your constructive feedback
 
-This form is anonymous: <https://forms.gle/HznDJM1c1U6Bgdmw7>
-
-If you did not fill out this form, please take 5 minutes to fill it. This form will be beneficial for further improvements to our workshop.
+Please take 5 minutes to fill out the feedback form shared by the instructor. Your comments will be beneficial for further improvements to our workshop.
 
 ## Complementary readings
 
