@@ -342,56 +342,6 @@ simply use `git push -u origin main` once the remote has been set up.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::: challenge
-
-For the Outbreak response, along with tracking information about cases (the project we have already created),
-Dracula would also like to track information about interventions.
-
-1. Create new local repository for `interventions` and connect it with a remote repository.
-
-2. Create a `read-data.R` file.
-
-3. Add and commit that change to the local repository.
-
-4. Push that change to the remote repository.
-
-::::::::::::::::: solution
-
-First, if you are in RStudio, close your R Project from `File` > `Close Project`.
-
-In the Console, run:
-
-```r
-# create a new R project in a new directory
-usethis::create_project(path = "interventions")
-
-# make the interventions directory a Git local repository
-usethis::use_git()
-
-# 1. create a GitHub remote repository
-# 2. connect local with remote
-# 3. push content to remote
-usethis::use_github()
-```
-
-Create the file
-
-```r
-usethis::edit_file("read-data.R")
-```
-
-In the Terminal, run:
-
-```bash
-$ git add read-data.R
-$ git commit -m "Add read data file"
-$ git push
-```
-
-:::::::::::::::::
-
-::::::::::::::::::::::::::::::::::
-
 ## Pull changes
 
 We can pull changes from the remote repository to the local one as well:
@@ -485,6 +435,56 @@ This tutorial have a **Discussions** board also hosted in GitHub.
 
 
 ## Individual Challenges
+
+::::::::::::::::::::::::::::::::: challenge
+
+For the Outbreak response, along with tracking information about cases (the project we have already created),
+Dracula would also like to track information about interventions.
+
+1. Create new local repository for `interventions` and connect it with a remote repository.
+
+2. Create a `read-data.R` file.
+
+3. Add and commit that change to the local repository.
+
+4. Push that change to the remote repository.
+
+::::::::::::::::: solution
+
+First, if you are in RStudio, close your R Project from `File` > `Close Project`.
+
+In the Console, run:
+
+```r
+# create a new R project in a new directory
+usethis::create_project(path = "interventions")
+
+# make the interventions directory a Git local repository
+usethis::use_git()
+
+# 1. create a GitHub remote repository
+# 2. connect local with remote
+# 3. push content to remote
+usethis::use_github()
+```
+
+Create the file
+
+```r
+usethis::edit_file("read-data.R")
+```
+
+In the Terminal, run:
+
+```bash
+$ git add read-data.R
+$ git commit -m "Add read data file"
+$ git push
+```
+
+:::::::::::::::::
+
+::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
