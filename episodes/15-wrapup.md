@@ -41,11 +41,15 @@ praise::praise()
 
 ## Your next step!
 
-Good job! We recommend you to __read the supplemental episode__ on how to [use Git with the RStudio IDE](14-supplemental-rstudio.md). It can make some steps easier to interact with! For topics like [resolving conflicts](09-conflict.md), we suggest to use Desktop software like [VScode](https://code.visualstudio.com/). (However, you may need to close RStudio when using VScode to avoid some git error messages!)
+Good job! We recommend you to __read the supplemental episode__ on how to [use Git with the RStudio IDE](14-supplemental-rstudio.md). It can make some steps easier to interact with! For topics like [resolving conflicts](09-conflict.md), we suggest to use Desktop software like: 
 
-If you are looking for more practice, go for the individual challenges on each episode. We also recommend you to keep practicing how to [Create branches](09-conflict.md#create-branches) and make [Atomic commits](09-conflict.md#atomic-commits).
+- [VScode](https://code.visualstudio.com/), however, you may need to close RStudio when using VScode to avoid some git error messages!
+- [Positron](https://positron.posit.co/), which Git interface works as in VScode. Read their [overview on Source Control](https://code.visualstudio.com/docs/sourcecontrol/overview)) or
+- [GitHub Desktop](https://github.com/apps/desktop), which is a Point-and-Click graphical interface similar to RStudio IDE.
 
-Also! You've now fulfill the core prerequisites for the tutorial on [Improve your code for Epidemic analysis with R](https://epiverse-trace.github.io/research-compendium/introduction.html#why-improve-our-code-for-epidemic-analysis)!
+If you are looking for more practice, go for the individual challenges on each episode. We also recommend you keep practising how to [Create branches](09-conflict.md#create-branches) and make [Atomic commits](09-conflict.md#atomic-commits).
+
+Also! You've now fulfilled the core prerequisites for the tutorial on [Improve your code for Epidemic analysis with R](https://epiverse-trace.github.io/research-compendium/introduction.html#why-improve-our-code-for-epidemic-analysis)!
 
 With `R`, `Git` and `GitHub` you will now extend your skills with a Research compendium, a Reproducible environment, and informative READMEs!
 
