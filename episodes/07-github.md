@@ -355,7 +355,7 @@ Dracula would also like to track information about interventions.
 
 4. Push that change to the remote repository.
 
-::::::::::::::::: solutions
+::::::::::::::::: solution
 
 First, if you are in RStudio, close your R Project from `File` > `Close Project`.
 
