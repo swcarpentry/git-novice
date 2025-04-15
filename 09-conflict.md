@@ -416,7 +416,7 @@ $ git commit -m "Add picture of guacamole"
 ```
 
 Suppose that Jimmy has added a similar picture in the meantime.
-His is a picture of a guacamole with nachos, but it is *also* called `guacamole.jpg`.
+Theirs is a picture of a guacamole with nachos, but it is *also* called `guacamole.jpg`.
 When Alfredo tries to push, he gets a familiar message:
 
 ```bash
