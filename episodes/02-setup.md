@@ -69,7 +69,8 @@ Using the [RStudio Console](https://docs.posit.co/ide/user/ide/guide/code/consol
 usethis::use_git_config(
   user.name = "Vlad Dracula",
   user.email = "vlad@tran.sylvan.ia",
-  github.user = "vlad")
+  github.user = "vlad"
+)
 ```
 
 Substitute this chunk with your name and __the email associated with your GitHub account__.
