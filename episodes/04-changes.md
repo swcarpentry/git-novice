@@ -590,7 +590,7 @@ last commit made to `sitrep.Rmd`?
 
 1. "Changes"
 2. "Added line 'Maps illustrate the spread and impact of outbreak' to sitrep.Rmd"
-3. "Discuss effects of Sitrep' climate on the Mummy"
+3. "Add geospatial visualization objective"
 
 :::::::::::::::  solution
 
