@@ -112,11 +112,7 @@ Open RStudio and **copy and paste** the following code chunk into the [console w
 ```r
 if(!require("pak")) install.packages("pak")
 
-new <- c("gh",
-         "gitcreds",
-         "usethis")
-
-pak::pak(new)
+pak::pak("usethis")
 ```
 
 These installation steps could ask you `? Do you want to continue (Y/n)` write `Y` and press <kbd>Enter</kbd>.
@@ -126,9 +122,8 @@ You should update **all of the packages** required for the tutorial, even if you
 When the installation has finished, you can try to load the packages by pasting the following code into the console:
 
 ```r
-library(gh)
-library(gitcreds)
 library(usethis)
+library(gitcreds)
 ```
 
 If you do NOT see an Error like `there is no package called ‘...’` you are good to go! If you do, [contact us](#your-questions)!
