@@ -661,8 +661,8 @@ Which of the following commit messages would be most appropriate for the
 last commit made to `guacamole.md`?
 
 1. "Changes"
-2. "Changed lemon for lime"
-3. "Guacamole modified to the traditional recipe"
+2. "Change lemon for lime"
+3. "Modify guacamole to the traditional recipe"
 
 :::::::::::::::  solution
 
