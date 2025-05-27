@@ -168,6 +168,36 @@ ls: cannot access '/c/Users/Alfredo/.ssh': No such file or directory
 If SSH has been set up on the computer you're using, the public and private key pairs will be listed. The file names are either `id_ed25519`/`id_ed25519.pub` or `id_rsa`/`id_rsa.pub` depending on how the key pairs were set up.
 Since they don't exist on Alfredo's computer, he uses this command to create them.
 
+:::::::::::::::::::::::::::::::::::::::::  spoiler
+
+## Resolving SSH Key Conflicts: Custom Names and Paths
+
+If you need to create an SSH key pair with a custom name or store it in a non-default location (e.g., because a default-named key like id_ed25519 already exists), Git may not automatically use it when pushing or pulling from GitHub.
+
+One solution is to add a GitHub entry to your SSH config.
+
+Open or create the SSH config file:
+
+```bash
+
+$ nano ~/.ssh/config
+```
+
+Add an entry for GitHub, replacing the path with your key’s actual name and location:
+
+```
+Host github.com
+	HostName github.com
+	User git
+	IdentityFile ~/<full_path_to_SSH_key_file>/<key_name>
+	IdentitiesOnly yes
+```
+
+Save and exit. Now Git will use the correct key when pushing to GitHub.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
 ### 3\.1 Create an SSH key pair
 
 To create an SSH key pair Alfredo uses this command, where the `-t` option specifies which type of algorithm to use and `-C` attaches a comment to the key (here, Alfredo's email):
