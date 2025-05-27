@@ -133,46 +133,33 @@ would tell us:
 
 ![](fig/RStudio_screenshot_viewhistory.png){alt='RStudio screenshot showing the "Review Changes" dialog after pressing the "History" button. The top panel lists the commits in the repository, similar to git log. The bottom panel shows the changes included in the commit that has been selected in the top panel.'}
 
-RStudio creates a number of files that it uses to keep track of a project. We
-often don't want to track these, in which case we add them to our `.gitignore`
-file:
+Now that you've confirmed your commit history locally using the Git pane in RStudio, you can head over to GitHub to see the same history reflected in your repository online.
 
-![](fig/RStudio_screenshot_gitignore.png){alt='RStudio screenshot showing .gitignore open in the editor pane with the files .Rproj.user, .Rhistory, .RData, and \*.Rproj added to the end'}
+To view it, go to your repository page and click on the "Commits" link near the top.
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+![](fig/github_screenshot_find_commit_history_edited.png){alt='GitHub screenshot showing where to find the commit history button.'}
 
-## Tip: versioning disposable output
+This will open a list of all commits, showing who made each change and when.
 
-Generally you do not want to version control disposable output (or read-only
-data). You should modify the `.gitignore` file to tell Git to ignore these
-files and directories.
+![](fig/github_screenshot_history_edited.png){alt='GitHub screenshot showing commit history.'}
 
+After seeing how your commit history appears on GitHub, you can be confident that your changes have been successfully pushed and recorded.
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+Next, let’s take a look at how RStudio quietly helps manage your repository by automatically updating the `.gitignore` file.
+
+When you create a *New Project* in RStudio, it generates an *.Rproj file and a hidden folder called `.Rproj.user`. These are used to store project-specific settings and user preferences.
+
+RStudio recognizes that these files typically shouldn’t be tracked in version control, so it automatically adds `.Rproj.user` to your existing `.gitignore` file.
+
+Notice that the `.gitignore` file was modified and appears as a changed file in the Git tab on the right-hand side panel.
+
+![](fig/RStudio_screenshot_gitignore.png){alt='RStudio screenshot showing .gitignore open in the editor pane with the .Rproj.user folder added to the end.'}
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Challenge
+## Push the .gitignore changes to GitHub
 
-1. Create a new directory within your project called `graphs`.
-2. Modify the `.gitignore` so that the `graphs` directory is not version controlled.
-
-:::::::::::::::  solution
-
-## Solution to Challenge
-
-This can be done in Rstudio:
-
-```r
-dir.create("./graphs")
-```
-
-Then open up the `.gitignore` file from the right-hand panel of Rstudio and add
-`graphs/` to the list of files to ignore.
-
-
-
-:::::::::::::::::::::::::
+Consider adding other files to be ignored, such as recipes.Rproj, .Rhistory and .RData, and complete the process for saving RStudio's `.gitignore` file changes to your remote repository.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
