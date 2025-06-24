@@ -381,7 +381,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Supplemental: Using Git from RStudio</h1>
-        <p>Last updated on 2024-09-29 |
+        <p>Last updated on 2025-06-24 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/14-supplemental-rstudio.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -511,56 +511,37 @@ this, open a terminal to the repository and enter the command:
 </div>
 <p>If we click on “History”, we can see a graphical version of what
 <code>git log</code> would tell us:</p>
-<figure><img src="fig/RStudio_screenshot_viewhistory.png" alt='RStudio screenshot showing the "Review Changes" dialog after pressing the "History" button. The top panel lists the commits in the repository, similar to git log. The bottom panel shows the changes included in the commit that has been selected in the top panel.' class="figure mx-auto d-block"></figure><p>RStudio creates a number of files that it uses to keep track of a
-project. We often don’t want to track these, in which case we add them
-to our <code>.gitignore</code> file:</p>
-<figure><img src="fig/RStudio_screenshot_gitignore.png" alt="RStudio screenshot showing .gitignore open in the editor pane with the files .Rproj.user, .Rhistory, .RData, and *.Rproj added to the end" class="figure mx-auto d-block"></figure><div id="tip-versioning-disposable-output" class="callout">
+<figure><img src="fig/RStudio_screenshot_viewhistory.png" alt='RStudio screenshot showing the "Review Changes" dialog after pressing the "History" button. The top panel lists the commits in the repository, similar to git log. The bottom panel shows the changes included in the commit that has been selected in the top panel.' class="figure mx-auto d-block"></figure><p>Now that you’ve confirmed your commit history locally using the Git
+pane in RStudio, you can head over to GitHub to see the same history
+reflected in your repository online.</p>
+<p>To view it, go to your repository page and click on the “Commits”
+link near the top.</p>
+<figure><img src="fig/github_screenshot_find_commit_history_edited.png" alt="GitHub screenshot showing where to find the commit history button." class="figure mx-auto d-block"></figure><p>This will open a list of all commits, showing who made each change
+and when.</p>
+<figure><img src="fig/github_screenshot_history_edited.png" alt="GitHub screenshot showing commit history." class="figure mx-auto d-block"></figure><p>After seeing how your commit history appears on GitHub, you can be
+confident that your changes have been successfully pushed and
+recorded.</p>
+<p>Next, let’s take a look at how RStudio quietly helps manage your
+repository by automatically updating the <code>.gitignore</code>
+file.</p>
+<p>When you create a <em>New Project</em> in RStudio, it generates an
+*.Rproj file and a hidden folder called <code>.Rproj.user</code>. These
+are used to store project-specific settings and user preferences.</p>
+<p>RStudio recognizes that these files typically shouldn’t be tracked in
+version control, so it automatically adds <code>.Rproj.user</code> to
+your existing <code>.gitignore</code> file.</p>
+<p>Notice that the <code>.gitignore</code> file was modified and appears
+as a changed file in the Git tab on the right-hand side panel.</p>
+<figure><img src="fig/RStudio_screenshot_gitignore.png" alt="RStudio screenshot showing .gitignore open in the editor pane with the .Rproj.user folder added to the end." class="figure mx-auto d-block"></figure><div id="push-the-.gitignore-changes-to-github" class="callout discussion">
 <div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
+<i class="callout-icon" data-feather="message-circle"></i>
 </div>
-<div id="tip-versioning-disposable-output" class="callout-inner">
-<h3 class="callout-title">Tip: versioning disposable output</h3>
+<div id="push-the-.gitignore-changes-to-github" class="callout-inner">
+<h3 class="callout-title">Push the .gitignore changes to GitHub</h3>
 <div class="callout-content">
-<p>Generally you do not want to version control disposable output (or
-read-only data). You should modify the <code>.gitignore</code> file to
-tell Git to ignore these files and directories.</p>
-</div>
-</div>
-</div>
-<div id="challenge" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
-<div class="callout-content">
-<ol style="list-style-type: decimal"><li>Create a new directory within your project called
-<code>graphs</code>.</li>
-<li>Modify the <code>.gitignore</code> so that the <code>graphs</code>
-directory is not version controlled.</li>
-</ol></div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1">
-  Solution to Challenge
-  </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
-<div class="accordion-body">
-<p>This can be done in Rstudio:</p>
-<div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">dir.create</span><span class="op">(</span><span class="st">"./graphs"</span><span class="op">)</span></span></code></pre>
-</div>
-<p>Then open up the <code>.gitignore</code> file from the right-hand
-panel of Rstudio and add <code>graphs/</code> to the list of files to
-ignore.</p>
-</div>
+<p>Consider adding other files to be ignored, such as recipes.Rproj,
+.Rhistory and .RData, and complete the process for saving RStudio’s
+<code>.gitignore</code> file changes to your remote repository.</p>
 </div>
 </div>
 </div>
@@ -639,7 +620,7 @@ project over time.</li>
   "url": "https://swcarpentry.github.io/git-novice/14-supplemental-rstudio.html",
   "identifier": "https://swcarpentry.github.io/git-novice/14-supplemental-rstudio.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2024-09-29",
+  "dateModified": "2025-06-24",
   "datePublished": "2025-06-24"
 }
 
