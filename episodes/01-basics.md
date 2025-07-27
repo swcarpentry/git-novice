@@ -76,6 +76,11 @@ are *distributed*, meaning that they do not need a centralized server to host th
 These modern systems also include powerful merging tools that make it possible for multiple authors to work on
 the same files concurrently.
 
+Git was created by Linus Torvalds in 2005 to track changes in the Linux kernel.
+Torvalds provided several explanations of the name, of varying degrees of
+politeness, which are enumerated in the 
+[project's README](https://github.com/git/git/blob/master/README.md?plain=1#L55).
+
 For those interested, The Carpentries has a [Version Control with Mercurial](https://swcarpentry.github.io/hg-novice/) lesson (2013-2018), which provides additional context and historical perspective.
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
