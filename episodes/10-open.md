@@ -139,7 +139,7 @@ approach for your current project and explain why.
 
 ### Useful Resource
 Confused by the sheer number of different repositories you could choose for your data? 
-This [repository selection flowchart](https://zenodo.org/records/11105430) aims to "guide users through a series of considerations for slecting the right repository for sharing data."
+This [repository selection flowchart](https://zenodo.org/records/11105430) aims to "guide users through a series of considerations for selecting the right repository for sharing data."
 
 :::::::::::::::
 
