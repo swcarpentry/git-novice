@@ -68,7 +68,7 @@ links and other things that might go into a web page.
 | ```                                   | <p></p>                                        |
 | 1.   Use numbers                      | 1.   Use numbers                               |
 | 1.   to create                        | 2.   to create                                 |
-| 1.   bullet lists.                    | 3.   numbered lists.                           |
+| 1.   numbered lists.                  | 3.   numbered lists.                           |
 | ```                                   |                                                |
 +---------------------------------------+------------------------------------------------+
 +---------------------------------------+------------------------------------------------+
