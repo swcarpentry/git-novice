@@ -433,15 +433,14 @@ How would you get that same information in the shell?
 
 ## Solution
 
-The left-most button (with the picture of a clipboard) copies the full identifier of the commit
-to the clipboard. In the shell, `git log` will show you the full commit identifier for each
-commit.
-
-When you click on the middle button, you'll see all of the changes that were made in that
+When you click on the left-most button, you'll see all of the changes that were made in that
 particular commit. Green shaded lines indicate additions and red ones removals. In the shell we
 can do the same thing with `git diff`. In particular, `git diff ID1..ID2` where ID1 and
 ID2 are commit identifiers (e.g. `git diff a3bf1e5..041e637`) will show the differences
 between those two commits.
+
+The middle button (with the picture of two overlapping squares or pages) copies the full identifier of the commit
+to the clipboard. In the shell, `git log` will show you the full commit identifier for each commit.
 
 The right-most button lets you view all of the files in the repository at the time of that
 commit. To do this in the shell, we'd need to checkout the repository at that particular time.
