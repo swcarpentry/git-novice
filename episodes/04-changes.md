@@ -719,6 +719,10 @@ to my local Git repository?
 
 ## Committing Multiple Files
 
+When you make changes, they often belong together as one logical improvement.
+Git lets you group related edits into a single commit so your project stays consistent.
+This is something word processors can’t easily do—each suggestion is separate, even if they depend on each other.
+
 The staging area can hold changes from any number of files
 that you want to commit as a single snapshot.
 
