@@ -1,0 +1,302 @@
+name: "Bot: Receive Pull Request"
+description: "Receive a pull request and build the markdown source files"
+on:
+  pull_request:
+    types:
+      [opened, synchronize, reopened]
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        type: number
+        required: true
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+
+  preflight:
+    name: "Preflight: md-outputs exists?"
+    runs-on: ubuntu-latest
+    outputs:
+      branch-exists: ${{ steps.check.outputs.exists }}
+    steps:
+      - name: "Checkout Lesson"
+        uses: actions/checkout@v4
+
+      - name: "Check if md-outputs branch exists"
+        id: check
+        run: |
+          # 💡 Checking for md-outputs branch #
+          if [[ -n $(git ls-remote --exit-code --heads origin md-outputs) ]]; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+            echo "::error::md-outputs branch required but does not exist."
+            echo "::error::Please merge any open package update PRs to trigger the '03 Maintain: Apply Package Cache' and '01: Maintain: Build and Deploy Site' workflows."
+
+            echo "## ❌ ERROR: md-outputs branch required" >> $GITHUB_STEP_SUMMARY
+            echo "Please merge any open package update PRs to trigger the '03 Maintain: Apply Package Cache' and '01: Maintain: Build and Deploy Site' workflows." >> $GITHUB_STEP_SUMMARY
+
+            exit 1
+          fi
+        shell: bash
+
+  test-pr:
+    name: "Record PR number"
+    if: ${{ github.event.action != 'closed' }} && ${{ needs.preflight.outputs.branch-exists == 'true' }}
+    runs-on: ubuntu-latest
+    needs: preflight
+    outputs:
+      is_valid: ${{ steps.check-pr.outputs.VALID }}
+      pr_number: ${{ env.NR }}
+      pr_branch: ${{ env.PR_BRANCH }}
+    steps:
+      - name: "Grab PR"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]] ; then
+            PR_NUMBER=${{ github.event.number }}
+          elif [[ "${{ github.event_name }}" == "workflow_dispatch" ]] ; then
+            PR_NUMBER=${{ inputs.pr_number }}
+          fi
+
+          echo $PR_NUMBER > ${{ github.workspace }}/NR
+          echo "NR=$PR_NUMBER" >> $GITHUB_ENV
+          echo "PR_BRANCH=$(gh -R ${{ github.repository }} pr view $PR_NUMBER --json headRefName --jq '.headRefName')" >> $GITHUB_ENV
+        shell: bash
+
+      - name: "Upload PR number"
+        id: upload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr
+          path: ${{ github.workspace }}/NR
+
+      - name: "Get Invalid Hashes File"
+        id: hash
+        run: |
+          echo "json<<EOF
+          $(curl -sL https://files.carpentries.org/invalid-hashes.json)
+          EOF" >> $GITHUB_OUTPUT
+        shell: bash
+
+      - name: "Debug Hashes Output"
+        run: |
+          echo "${{ steps.hash.outputs.json }}"
+        shell: bash
+
+      - name: "Check PR"
+        id: check-pr
+        uses: carpentries/actions/check-valid-pr@main
+        with:
+          pr: ${{ env.NR }}
+          invalid: ${{ fromJSON(steps.hash.outputs.json)[github.repository] }}
+
+  check-renv:
+    name: "Check If We Need {renv}"
+    runs-on: ubuntu-latest
+    outputs:
+      renv-needed: ${{ steps.renv-check.outputs.renv-needed }}
+      renv-cache-hashsum: ${{ steps.renv-check.outputs.renv-cache-hashsum }}
+    steps:
+      - name: "Checkout Lesson"
+        uses: actions/checkout@v4
+
+      - name: "Is renv required?"
+        id: renv-check
+        uses: carpentries/actions/renv-checks@main
+        with:
+          CACHE_VERSION: ${{ inputs.CACHE_VERSION || '' }}
+          skip-cache-check: true
+
+  build-md-source:
+    name: "Build markdown source files if valid"
+    needs:
+      - test-pr
+      - check-renv
+    runs-on: ubuntu-latest
+    if: needs.test-pr.outputs.is_valid == 'true'
+    env:
+      CHIVE: ${{ github.workspace }}/site/chive
+      PR: ${{ github.workspace }}/site/pr
+      GHWMD: ${{ github.workspace }}/site/built
+      PR_BRANCH: ${{ needs.test-pr.outputs.pr_branch }}
+      PR_NUMBER: ${{ needs.test-pr.outputs.pr_number }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    permissions:
+      checks: write
+      contents: write
+      pages: write
+    container:
+      image: ghcr.io/carpentries/workbench-docker:${{ vars.WORKBENCH_TAG || 'latest' }}
+      env:
+        WORKBENCH_PROFILE: "ci"
+        GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        RENV_PATHS_ROOT: /home/rstudio/lesson/renv
+        RENV_PROFILE: "lesson-requirements"
+        RENV_CONFIG_EXTERNAL_LIBRARIES: "/usr/local/lib/R/site-library"
+      volumes:
+        - ${{ github.workspace }}:/home/rstudio/lesson
+      options: --cpus 2
+    outputs:
+      workbench-update: ${{ steps.wb-vers.outputs.workbench-update }}
+      build-site: ${{ steps.build-site.outcome }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: "Check Out Staging Branch"
+        uses: actions/checkout@v4
+        with:
+          ref: md-outputs
+          path: ${{ env.GHWMD }}
+
+      - name: Mark Repository as Safe
+        run: |
+          git config --global --add safe.directory $(pwd)
+          git config --global --add safe.directory /home/rstudio/lesson
+        shell: bash
+
+      - name: "Ensure sandpaper is loadable"
+        run: |
+          .libPaths()
+          library(sandpaper)
+        shell: Rscript {0}
+
+      - name: Setup Lesson Dependencies
+        run: |
+          Rscript /home/rstudio/.workbench/setup_lesson_deps.R
+        shell: bash
+
+      - name: Get Container Version Used
+        id: wb-vers
+        if: needs.check-renv.outputs.renv-needed == 'true'
+        uses: carpentries/actions/container-version@main
+        with:
+          WORKBENCH_TAG: ${{ vars.WORKBENCH_TAG }}
+          renv-needed: ${{ needs.check-renv.outputs.renv-needed }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Validate Current Org and Workflow"
+        id: validate-org-workflow
+        if: needs.check-renv.outputs.renv-needed == 'true'
+        uses: carpentries/actions/validate-org-workflow@main
+        with:
+          repo: ${{ github.repository }}
+          workflow: ${{ github.workflow }}
+
+      - name: Configure AWS credentials via OIDC
+        id: aws-creds
+        env:
+          role-to-assume: ${{ secrets.AWS_GH_OIDC_ARN }}
+          aws-region: ${{ secrets.AWS_GH_OIDC_REGION }}
+        if: |
+          steps.validate-org-workflow.outputs.is_valid == 'true' &&
+          needs.check-renv.outputs.renv-needed == 'true' &&
+          env.role-to-assume != '' &&
+          env.aws-region != ''
+        uses: aws-actions/configure-aws-credentials@v5.0.0
+        with:
+          role-to-assume: ${{ env.role-to-assume }}
+          aws-region: ${{ env.aws-region }}
+          output-credentials: true
+
+      - name: Get cache object from S3
+        id: s3-cache
+        uses: carpentries/actions-cache/restore@frog-matchedkey-1
+        if: needs.check-renv.outputs.renv-needed == 'true'
+        with:
+          # insecure: false # optional, use http instead of https. default false
+          accessKey: ${{ steps.aws-creds.outputs.aws-access-key-id }}
+          secretKey: ${{ steps.aws-creds.outputs.aws-secret-access-key }}
+          sessionToken: ${{ steps.aws-creds.outputs.aws-session-token }}
+          bucket: workbench-docker-caches
+          path: |
+            /home/rstudio/lesson/renv
+            /usr/local/lib/R/site-library
+          key: ${{ github.repository }}/${{ steps.wb-vers.outputs.container-version }}_renv-${{ needs.check-renv.outputs.renv-cache-hashsum }}
+          restore-keys:
+            ${{ github.repository }}/${{ steps.wb-vers.outputs.container-version }}_renv-
+
+      - name: "Fortify renv Cache"
+        if: |
+          needs.check-renv.outputs.renv-needed == 'true' &&
+          steps.s3-cache.outputs.cache-hit != 'true'
+        run: |
+          Rscript /home/rstudio/.workbench/fortify_renv_cache.R
+        shell: bash
+
+      - name: "Validate and Build Markdown"
+        id: build-site
+        run: |
+          sandpaper::package_cache_trigger(TRUE)
+          sandpaper::validate_lesson(path = '/home/rstudio/lesson')
+          sandpaper:::build_markdown(path = '/home/rstudio/lesson', quiet = FALSE)
+        shell: Rscript {0}
+
+      - name: "Generate Artifacts"
+        id: generate-artifacts
+        run: |
+          sandpaper:::ci_bundle_pr_artifacts(
+            repo         = '${{ github.repository }}',
+            pr_number    = '${{ env.PR_NUMBER }}',
+            path_md      = '/home/rstudio/lesson/site/built',
+            path_pr      = '/home/rstudio/lesson/site/pr',
+            path_archive = '/home/rstudio/lesson/site/chive',
+            branch       = 'md-outputs'
+          )
+        shell: Rscript {0}
+
+      - name: "Upload PR"
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr
+          path: ${{ env.PR }}
+          overwrite: true
+
+      - name: "Upload Diff"
+        uses: actions/upload-artifact@v4
+        with:
+          name: diff
+          path: ${{ env.CHIVE }}
+          retention-days: 1
+
+      - name: "Upload Build"
+        uses: actions/upload-artifact@v4
+        with:
+          name: built
+          path: ${{ env.GHWMD }}
+          retention-days: 1
+
+      - name: "Teardown"
+        run: sandpaper::reset_site()
+        shell: Rscript {0}
+
+  pr-checks:
+    name: "Trigger PR Checks?"
+    needs:
+      - test-pr
+      - build-md-source
+    runs-on: ubuntu-latest
+    if: needs.test-pr.outputs.is_valid == 'true'
+    permissions:
+      actions: write
+      checks: write
+    steps:
+      - name: "Checkout Lesson"
+        uses: actions/checkout@v4
+
+      - name: "Trigger PR Checks"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh workflow run pr-comment.yaml --ref main --field workflow_id=${{ github.run_id }}
+        shell: bash
