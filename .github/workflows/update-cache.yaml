@@ -1,26 +1,45 @@
-name: "03 Maintain: Update Package Cache"
-
+name: "02 Maintain: Check for Updated Packages"
+description: "Check for updated R packages and create a pull request to update the lesson's renv lockfile and package cache"
 on:
+  schedule:
+    - cron: '0 0 * * 2'
   workflow_dispatch:
     inputs:
       name:
-        description: 'Who triggered this build (enter github username to tag yourself)?'
+        description: 'Who triggered this build?'
         required: true
-        default: 'monthly run'
-  schedule:
-    # Run every tuesday
-    - cron: '0 0 * * 2'
+        default: 'Maintainer (via GitHub)'
+      force-renv-init:
+        description: 'Force full lockfile update?'
+        required: false
+        default: false
+        type: boolean
+      update-packages:
+        description: 'Install any package updates?'
+        required: false
+        default: true
+        type: boolean
+      generate-cache:
+        description: 'Generate separate package cache?'
+        required: false
+        default: false
+        type: boolean
+
+env:
+  LOCKFILE_CACHE_GEN: ${{ vars.LOCKFILE_CACHE_GEN || github.event.inputs.generate-cache || 'false' }}
+  FORCE_RENV_INIT: ${{ vars.FORCE_RENV_INIT || github.event.inputs.force-renv-init || 'false' }}
+  UPDATE_PACKAGES: ${{ vars.UPDATE_PACKAGES || github.event.inputs.update-packages || 'true' }}
 
 jobs:
   preflight:
-    name: "Preflight Check"
-    runs-on: ubuntu-22.04
+    name: "Preflight: Manual or Scheduled Trigger?"
+    runs-on: ubuntu-latest
     outputs:
       ok: ${{ steps.check.outputs.ok }}
     steps:
       - id: check
         run: |
-          if [[ ${{ github.event_name }} == 'workflow_dispatch' ]]; then
+          if [[ "${{ github.event_name }}" == 'workflow_dispatch' ]]; then
             echo "ok=true" >> $GITHUB_OUTPUT
             echo "Running on request"
           # using single brackets here to avoid 08 being interpreted as octal
@@ -33,48 +52,42 @@ jobs:
             echo "ok=false" >> $GITHUB_OUTPUT
             echo "Not Running Today"
           fi
+        shell: bash
 
-  check_renv:
-    name: "Check if We Need {renv}"
-    runs-on: ubuntu-22.04
+  check-renv:
+    name: "Check If We Need {renv}"
+    runs-on: ubuntu-latest
     needs: preflight
-    if: ${{ needs.preflight.outputs.ok == 'true'}}
+    if: ${{ needs.preflight.outputs.ok == 'true' }}
     outputs:
-      needed: ${{ steps.renv.outputs.exists }}
+      renv-needed: ${{ steps.renv-check.outputs.renv-needed }}
     steps:
       - name: "Checkout Lesson"
         uses: actions/checkout@v4
-      - id: renv
-        run: |
-          if [[ -d renv ]]; then
-            echo "exists=true" >> $GITHUB_OUTPUT
-          fi
 
-  check_token:
-    name: "Check SANDPAPER_WORKFLOW token"
-    runs-on: ubuntu-22.04
-    needs: check_renv
-    if: ${{ needs.check_renv.outputs.needed == 'true' }}
-    outputs:
-      workflow: ${{ steps.validate.outputs.wf }}
-      repo: ${{ steps.validate.outputs.repo }}
-    steps:
-      - name: "validate token"
-        id: validate
-        uses: carpentries/actions/check-valid-credentials@main
+      - name: "Is renv required?"
+        id: renv-check
+        uses: carpentries/actions/renv-checks@main
         with:
-          token: ${{ secrets.SANDPAPER_WORKFLOW }}
+          CACHE_VERSION: ${{ inputs.CACHE_VERSION || '' }}
+          skip-cache-check: true
 
   update_cache:
-    name: "Update Package Cache"
-    needs: check_token
-    if: ${{ needs.check_token.outputs.repo== 'true' }}
+    name: "Create Package Update Pull Request"
     runs-on: ubuntu-22.04
+    needs: check-renv
+    permissions:
+      contents: write
+      pull-requests: write
+      actions: write
+      issues: write
+      id-token: write
+    if: needs.check-renv.outputs.renv-needed == 'true'
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       RENV_PATHS_ROOT: ~/.local/share/renv/
     steps:
-
       - name: "Checkout Lesson"
         uses: actions/checkout@v4
 
@@ -88,14 +101,60 @@ jobs:
         id: update
         uses: carpentries/actions/update-lockfile@main
         with:
+          update: ${{ env.UPDATE_PACKAGES }}
+          force-renv-init: ${{ env.FORCE_RENV_INIT }}
+          generate-cache: ${{ env.LOCKFILE_CACHE_GEN }}
           cache-version: ${{ secrets.CACHE_VERSION }}
 
-      - name: Create Pull Request
+      - name: "Validate Current Org and Workflow"
+        id: validate-org-workflow
+        uses: carpentries/actions/validate-org-workflow@main
+        with:
+          repo: ${{ github.repository }}
+          workflow: ${{ github.workflow }}
+
+      - name: "Configure AWS credentials via OIDC"
+        env:
+          role-to-assume: ${{ secrets.AWS_GH_OIDC_ARN }}
+          aws-region: ${{ secrets.AWS_GH_OIDC_REGION }}
+        if: |
+          steps.validate-org-workflow.outputs.is_valid == 'true' &&
+          env.role-to-assume != '' &&
+          env.aws-region != ''
+        uses: aws-actions/configure-aws-credentials@v5.0.0
+        with:
+          role-to-assume: ${{ env.role-to-assume }}
+          aws-region: ${{ env.aws-region }}
+
+      - name: "Set PAT from AWS Secrets Manager"
+        env:
+          role-to-assume: ${{ secrets.AWS_GH_OIDC_ARN }}
+          aws-region: ${{ secrets.AWS_GH_OIDC_REGION }}
+        if: |
+          steps.validate-org-workflow.outputs.is_valid == 'true' &&
+          env.role-to-assume != '' &&
+          env.aws-region != ''
+        id: set-pat
+        run: |
+          SECRET=$(aws secretsmanager get-secret-value \
+                   --secret-id carpentries-bot/github-pat \
+                   --query SecretString --output text)
+          PAT=$(echo "$SECRET" | jq -r .[])
+          echo "::add-mask::$PAT"
+          echo "pat=$PAT" >> "$GITHUB_OUTPUT"
+        shell: bash
+
+      # Create the PR with the following roles in order of preference:
+      # - Carpentries Bot classic PAT fetched from AWS (will only work in official Carpentries repos)
+      # - repo-scoped SANDPAPER_WORKFLOW classic PAT (will work in all scenarios)
+      # - default GITHUB_TOKEN (will work suitably, but workflows need to be triggered)
+      - name: "Create Pull Request"
         id: cpr
-        if: ${{ steps.update.outputs.n > 0 }}
+        if: |
+          steps.update.outputs.n > 0
         uses: carpentries/create-pull-request@main
         with:
-          token: ${{ secrets.SANDPAPER_WORKFLOW }}
+          token: ${{ steps.set-pat.outputs.pat || secrets.SANDPAPER_WORKFLOW || secrets.GITHUB_TOKEN }}
           delete-branch: true
           branch: "update/packages"
           commit-message: "[actions] update ${{ steps.update.outputs.n }} packages"
@@ -123,3 +182,19 @@ jobs:
             [1]: https://github.com/carpentries/create-pull-request/tree/main
           labels: "type: package cache"
           draft: false
+
+      - name: "Skip PR creation"
+        if: steps.update.outputs.n == 0
+        run: |
+          echo "No updates needed, skipping PR creation"
+        shell: bash
+
+      # thanks @Bisaloo! - https://github.com/carpentries/sandpaper/issues/646#issuecomment-2829578435
+      # only trigger checks manually if the validate-token step had no valid AWS or SANDPAPER_WORKFLOW token
+      - name: "Trigger checks"
+        if: |
+          steps.cpr.outputs.pull-request-number != '' &&
+          steps.validate-org-workflow.outputs.is_valid != 'true'
+        run: |
+          gh workflow run docker_pr_receive.yaml --field pr_number=${{ steps.cpr.outputs.pull-request-number }}
+        shell: bash
