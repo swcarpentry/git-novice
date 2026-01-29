@@ -158,6 +158,10 @@ working in teams or not, because it is
 - This is a good moment to show a log within a Git GUI. If you skip it
   because you're short on time, show it once in GitHub.
 
+## [Exploring History](../episodes/05-history.md)
+
+- Git 2.23 (August 2019) added the `git restore` command as a clearer, more verbose replacement for the heavily overloaded `git checkout` when you wish to restore files into the working tree. The older style `git checkout -- file` does still work in newer versions of Git. This is an illustration of the fact that there are often multiple ways to do the same thing in Git.
+
 ## [Ignoring Things](../episodes/06-ignore.md)
 
 Just remember that you can use wildcards and regular expressions to ignore a
