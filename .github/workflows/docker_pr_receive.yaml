@@ -19,7 +19,6 @@ permissions:
   pull-requests: write
 
 jobs:
-
   preflight:
     name: "Preflight: md-outputs exists?"
     runs-on: ubuntu-latest
@@ -49,7 +48,9 @@ jobs:
 
   test-pr:
     name: "Record PR number"
-    if: ${{ github.event.action != 'closed' }} && ${{ needs.preflight.outputs.branch-exists == 'true' }}
+    if: |
+      github.event.action != 'closed' &&
+      needs.preflight.outputs.branch-exists == 'true'
     runs-on: ubuntu-latest
     needs: preflight
     outputs:
@@ -135,6 +136,7 @@ jobs:
       checks: write
       contents: write
       pages: write
+      id-token: write
     container:
       image: ghcr.io/carpentries/workbench-docker:${{ vars.WORKBENCH_TAG || 'latest' }}
       env:
@@ -279,24 +281,3 @@ jobs:
       - name: "Teardown"
         run: sandpaper::reset_site()
         shell: Rscript {0}
-
-  pr-checks:
-    name: "Trigger PR Checks?"
-    needs:
-      - test-pr
-      - build-md-source
-    runs-on: ubuntu-latest
-    if: needs.test-pr.outputs.is_valid == 'true'
-    permissions:
-      actions: write
-      checks: write
-    steps:
-      - name: "Checkout Lesson"
-        uses: actions/checkout@v4
-
-      - name: "Trigger PR Checks"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh workflow run pr-comment.yaml --ref main --field workflow_id=${{ github.run_id }}
-        shell: bash
