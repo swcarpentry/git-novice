@@ -1,14 +1,10 @@
 name: "Bot: Comment on the Pull Request"
 description: "Comment on the pull request with the results of the markdown generation"
 on:
-  workflow_dispatch:
-    inputs:
-      workflow_id:
-        required: true
-
-concurrency:
-  group: pr-${{ github.event.workflow_run.pull_requests[0].number }}
-  cancel-in-progress: true
+  workflow_run:
+    workflows: ["Bot: Receive Pull Request"]
+    types:
+      - completed
 
 jobs:
   # Pull requests are valid if:
@@ -18,16 +14,6 @@ jobs:
   test-pr:
     name: "Test if pull request is valid"
     runs-on: ubuntu-latest
-    if: >
-      github.event_name == 'workflow_dispatch' ||
-      (
-        github.event_name == 'workflow_run' &&
-        (
-          github.event.workflow_run.event == 'pull_request' ||
-          github.event.workflow_run.event == 'workflow_dispatch'
-        ) &&
-        github.event.workflow_run.conclusion == 'success'
-      )
     outputs:
       is_valid: ${{ steps.check-pr.outputs.VALID }}
       payload: ${{ steps.check-pr.outputs.payload }}
@@ -38,7 +24,7 @@ jobs:
         id: dl
         uses: carpentries/actions/download-workflow-artifact@main
         with:
-          run: ${{ github.event.workflow_run.id || inputs.workflow_id }}
+          run: ${{ github.event.workflow_run.id }}
           name: 'pr'
 
       - name: "Get PR Number"
@@ -79,11 +65,9 @@ jobs:
 
       - name: "Skip checks for Workbench version file updates"
         if: steps.changed-files.outputs.only_version_file == 'true'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "Only workbench-docker-version.txt changed, skipping preflight checks and running cache update"
-          gh workflow run update-cache.yaml --ref main
+          echo "# 🔧 Wait for Next Cache Update #"
+          echo "Only workbench-docker-version.txt changed."
           exit 0
         shell: bash
 
@@ -138,7 +122,7 @@ jobs:
         id: dl
         uses: carpentries/actions/download-workflow-artifact@main
         with:
-          run: ${{ github.event.workflow_run.id || inputs.workflow_id }}
+          run: ${{ github.event.workflow_run.id }}
           name: 'built'
 
       - if: steps.dl.outputs.success == 'true'
@@ -177,7 +161,7 @@ jobs:
         id: dl
         uses: carpentries/actions/download-workflow-artifact@main
         with:
-          run: ${{ github.event.workflow_run.id || inputs.workflow_id }}
+          run: ${{ github.event.workflow_run.id }}
           name: 'diff'
 
       - if: steps.dl.outputs.success == 'true'
@@ -210,7 +194,7 @@ jobs:
         id: dl
         uses: carpentries/actions/download-workflow-artifact@main
         with:
-          run: ${{ github.event.workflow_run.id || inputs.workflow_id }}
+          run: ${{ github.event.workflow_run.id }}
           name: 'built'
 
       - name: "Alert if spoofed"

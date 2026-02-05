@@ -9,6 +9,10 @@ on:
       - '.github/workbench-docker-version.txt'
   schedule:
     - cron: '0 0 * * 2'
+  workflow_run:
+    workflows: ["03 Maintain: Apply Package Cache"]
+    types:
+      - completed
   workflow_dispatch:
     inputs:
       name:
@@ -72,7 +76,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: preflight
     if: |
-      always() &&
       needs.preflight.outputs.do-build == 'true' &&
       needs.preflight.outputs.workbench-update != 'true'
     env:
