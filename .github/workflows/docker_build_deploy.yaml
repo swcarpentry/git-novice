@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - 'main'
+      - 'l10n_main'
     paths-ignore:
       - '.github/workflows/**.yaml'
       - '.github/workbench-docker-version.txt'
@@ -132,6 +133,7 @@ jobs:
         with:
           reset: ${{ vars.BUILD_RESET || github.event.inputs.reset || 'false' }}
           skip-manage-deps: ${{ github.event.inputs.force-skip-manage-deps == 'true' || steps.build-container-deps.outputs.renv-cache-available || steps.build-container-deps.outputs.backup-cache-used || 'false' }}
+          lang-code: ${{ vars.LANG_CODE || '' }}
 
   update-container-version:
     name: "Update container version used"

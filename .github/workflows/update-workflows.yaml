@@ -1,5 +1,6 @@
 name: "04 Maintain: Update Workflow Files"
 description: "Update workflow files from the carpentries/sandpaper repository"
+
 on:
   schedule:
     - cron: '0 0 * * 2'
@@ -9,10 +10,10 @@ on:
         description: 'Who triggered this build (enter github username to tag yourself)?'
         required: true
         default: 'weekly run'
-      tarball:
-        description: 'Absolute URL to the desired sandpaper repo tarball'
+      version:
+        description: 'Workflows version number (e.g. 0.0.1), branch name (e.g. main), or "latest"'
         required: false
-        default: ''
+        default: 'latest'
       clean:
         description: 'Workflow files/file extensions to clean (no wildcards, enter "" for none)'
         required: false
@@ -88,7 +89,7 @@ jobs:
         if: ${{ steps.validate-token.outputs.wf == 'true' }}
         uses: carpentries/actions/update-workflows@main
         with:
-          repo: ${{ github.event.inputs.tarball || 'https://carpentries.r-universe.dev' }}
+          version: ${{ github.event.inputs.version || 'latest' }}
           clean: ${{ github.event.inputs.clean || '.yaml' }}
 
       - name: Create Pull Request
