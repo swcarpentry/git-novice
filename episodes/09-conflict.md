@@ -134,7 +134,7 @@ hint: (e.g., 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 
-![](fig/conflict.svg){alt='A diagram showing a conflict that might occur when two sets of independent changes are merged'}
+![](fig/conflict.svg){alt='A diagram showing a conflict that might occur when two sets of independent changes are merged' style="filter:invert(0);"}
 
 Git rejects the push because it detects that the remote repository has new updates that have not been
 incorporated into the local branch.
