@@ -286,8 +286,6 @@ but we haven't told Git we will want to save those changes
 nor have we saved them (which we do with `git commit`).
 So let's do that now. It is good practice to always review
 our changes before saving them. We do this using `git diff`.
-This shows us the differences between the current state
-of the file and the most recently saved version:
 
 ```bash
 $ git diff
@@ -447,12 +445,9 @@ $ git add guacamole.md
 $ git diff
 ```
 
-There is no output:
-as far as Git can tell,
-there's no difference between what it's been asked to save permanently
-and what's currently in the directory.
-However,
-if we do this:
+There is no output. Without any arguments, `git diff` compares the working directory and the staging area. After `git add`, the two versions are identical and there is nothing to show.
+
+However, if we do this:
 
 ```bash
 $ git diff --staged
@@ -473,10 +468,7 @@ index 315bf3a..b36abfd 100644
  ## Instructions
 ```
 
-it shows us the difference between
-the last committed change
-and what's in the staging area.
-Let's save our changes:
+we can see that by adding the `--staged` argument to the command we are now comparing what’s in the staged area to the last committed change.
 
 ```bash
 $ git commit -m "Modify guacamole to the traditional recipe"
