@@ -47,7 +47,7 @@ An ill-considered change
 Now, let's see what we get.
 
 ```bash
-$ git diff HEAD guacamole.md
+$ git diff HEAD
 ```
 
 ```output
@@ -65,14 +65,14 @@ index b36abfd..0848c8d 100644
 Note that `HEAD` is the default option for `git diff`, so omitting it will not change the command's output at all (give it a try). However, the real power of `git diff` lies in its ability to compare with previous commits. For example, by adding `~1` (where "~" is "tilde", pronounced [**til**\-d*uh*]), we can look at the commit before `HEAD`.
 
 ```bash
-$ git diff HEAD~1 guacamole.md
+$ git diff HEAD~1
 ```
 
 If we want to see the differences between older commits we can use `git diff`
 again, but with the notation `HEAD~1`, `HEAD~2`, and so on, to refer to them:
 
 ```bash
-$ git diff HEAD~2 guacamole.md
+$ git diff HEAD~2
 ```
 
 ```output
@@ -94,7 +94,7 @@ well as the commit message, rather than the *differences* between a commit and o
 working directory that we see by using `git diff`.
 
 ```bash
-$ git show HEAD~2 guacamole.md
+$ git show HEAD~2
 ```
 
 ```output
@@ -135,7 +135,7 @@ Our first commit was given the ID
 so let's try this:
 
 ```bash
-$ git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b guacamole.md
+$ git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b
 ```
 
 ```output
@@ -158,7 +158,7 @@ but typing out random 40-character strings is annoying,
 so Git lets us use just the first few characters (typically seven for normal size projects):
 
 ```bash
-$ git diff f22b25e guacamole.md
+$ git diff f22b25e
 ```
 
 ```output
@@ -176,14 +176,9 @@ index df0654a..93a3e13 100644
 +An ill-considered change
 ```
 
-All right! So
-we can save changes to files and see what we've changed. Now, how
-can we restore older versions of things?
-Let's suppose we change our mind about the last update to
-`guacamole.md` (the "ill-considered change").
+All right! So we can save changes to files and see what we've changed. Now, how can we restore older versions of things? Let's suppose we change our mind about the last update to `guacamole.md` (the "ill-considered change").
 
-`git status` now tells us that the file has been changed,
-but those changes haven't been staged:
+`git status` now tells us that the file has been changed, but those changes haven't been staged:
 
 ```bash
 $ git status
@@ -445,12 +440,10 @@ I like tomatoes, therefore I like ketchup
 
 ## Checking Understanding of `git diff`
 
-Consider this command: `git diff HEAD~9 guacamole.md`. What do you predict this command
+Consider this command: `git diff HEAD~9 `. What do you predict this command
 will do if you execute it? What happens when you do execute it? Why?
 
-Try another command, `git diff [ID] guacamole.md`, where [ID] is replaced with
-the unique identifier for your most recent commit. What do you think will happen,
-and what does happen?
+Try another command, `git diff [ID]`, where [ID] is replaced with the unique identifier for your most recent commit. What do you think will happen, and what does happen?
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
