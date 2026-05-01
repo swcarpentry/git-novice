@@ -205,6 +205,10 @@ To create an SSH key pair Alfredo uses this command, where the `-t` option speci
 ```bash
 $ ssh-keygen -t ed25519 -C "a.linguini@ratatouille.fr"
 ```
+Notes: 
+1) The -C flag adds a comment/label to the SSH key
+2) The email address is for identification only and does not validate account access
+3) Best practice is to use email associated with your GitHub account, although you may use hostnames, or no comment at all
 
 If you are using a legacy system that doesn't support the Ed25519 algorithm, use:
 `$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
