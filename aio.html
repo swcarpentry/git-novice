@@ -577,7 +577,7 @@ changes?</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ul>
 <li><p>Recovering the excellent version is only possible if you created
@@ -1273,7 +1273,7 @@ lesson.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Markdown </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>Jimmy and Alfredo are using <a href="https://en.wikipedia.org/wiki/Markdown" class="external-link">Markdown</a> to write
 their recipes. It is a simple plain-text format for writing lists, links
@@ -2002,7 +2002,7 @@ the last commit made to <code>guacamole.md</code>?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Answer 1 is not descriptive enough, and the purpose of the commit is
 unclear; and answer 2 is redundant to using “git diff” to see what
@@ -2054,7 +2054,7 @@ imperative.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>Would only create a commit if files have already been staged.</li>
@@ -2099,7 +2099,7 @@ changes.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>First we make our changes to the <code>guacamole.md</code> and
 <code>groceries.md</code> files:</p>
@@ -2191,7 +2191,7 @@ state.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>If needed, move out of the <code>recipes</code> folder:</p>
 <div class="codewrapper sourceCode" id="cb68">
@@ -3383,7 +3383,7 @@ can include files that would normally be ignored.</li>
 </div>
 </div></section><section id="aio-07-github"><p>Content from <a href="07-github.html">Remotes in GitHub</a></p>
 <hr>
-<p>Last updated on 2025-12-19 |
+<p>Last updated on 2026-05-10 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/07-github.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -3619,6 +3619,11 @@ email):</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1" aria-label="code-block-9-1"></a><span class="ex">$</span> ssh-keygen <span class="at">-t</span> ed25519 <span class="at">-C</span> <span class="st">"a.linguini@ratatouille.fr"</span></span></code></pre>
 </div>
+<p>In the command above, the `-C- flag is used to label the SSH key with
+the owner’s email address. It’s good practice to use the same email
+associated to your GitHub account, but it does not have to be, and will
+not be used to validate the access. You can also decide not to add any
+label.</p>
 <p>If you are using a legacy system that doesn’t support the Ed25519
 algorithm, use:
 <code>$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"</code></p>
@@ -5318,7 +5323,7 @@ project and explain why.</p>
   Useful Resource
   </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <p>Confused by the sheer number of different repositories you could
 choose for your data? This <a href="https://zenodo.org/records/11105430" class="external-link">repository selection
@@ -5966,8 +5971,8 @@ project over time.</li>
   "url": "https://swcarpentry.github.io/git-novice/aio.html",
   "identifier": "https://swcarpentry.github.io/git-novice/aio.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2026-05-05",
-  "datePublished": "2026-05-05"
+  "dateModified": "2026-05-10",
+  "datePublished": "2026-05-10"
 }
 
   </script><script>
