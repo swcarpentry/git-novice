@@ -253,7 +253,7 @@ the contents of pictures folder, but create an exception for the contents of the
 
 ```output
 pictures/*              # ignore everything in pictures folder
-!pictures/pie/          # do not ignore pictures/data/ contents
+!pictures/pie/          # do not ignore pictures/pie/ contents
 ```
 
 :::::::::::::::::::::::::
