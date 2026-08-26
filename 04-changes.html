@@ -374,7 +374,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Tracking Changes</h1>
-        <p>Last updated on 2026-04-21 |
+        <p>Last updated on 2026-08-26 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/04-changes.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -421,12 +421,13 @@ be in the <code>recipes</code> directory.</p>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="ex">$</span> cd ~/Desktop/recipes</span></code></pre>
 </div>
 <p>Let’s create a file called <code>guacamole.md</code> that contains
-the basic structure of our first recipe. We’ll use <code>nano</code> to
-edit the file; you can use whatever editor you like. In particular, this
-does not have to be the <code>core.editor</code> you set globally
-earlier. But remember, the steps to create or edit a new file will
-depend on the editor you choose (it might not be nano). For a refresher
-on text editors, check out <a href="https://swcarpentry.github.io/shell-novice/03-create.html#which-editor" class="external-link">“Which
+the basic structure of our first recipe. A file editor is a command that
+opens a specified file in the current shell and allows you to edit it;
+the file is created if it does not exist.</p>
+<p>In this lesson, we’ll use <code>nano</code> as a file editor, but you
+can use whatever editor you like. In particular, this does not have to
+be the <code>core.editor</code> you set globally earlier during <a href="https://swcarpentry.github.io/git-novice/02-setup.html" class="external-link">“Setting
+Up Git”</a>. For a refresher on text editors, check out <a href="https://swcarpentry.github.io/shell-novice/03-create.html#which-editor" class="external-link">“Which
 Editor?”</a> in <a href="https://swcarpentry.github.io/shell-novice/" class="external-link">The Unix Shell</a>
 lesson.</p>
 <div class="codewrapper sourceCode" id="cb2">
@@ -442,13 +443,17 @@ lesson.</p>
 <span><span class="co">## Ingredients</span></span>
 <span><span class="co">## Instructions</span></span></code></pre>
 </div>
-<p>Save the file and exit your editor.</p>
+<p>Now we need to save the file and exit the editor. In the case of
+<code>nano</code>, many shortcuts are available via the <code>^</code>
+(symbolizing <code>Ctrl</code>) key. For example, to save and exit the
+editor you should use the sequence: <code>Ctrl+X</code> to exit,
+<code>Y</code> to save, and finally <code>Enter</code> to validate.</p>
 <div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Markdown </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>Jimmy and Alfredo are using <a href="https://en.wikipedia.org/wiki/Markdown" class="external-link">Markdown</a> to write
 their recipes. It is a simple plain-text format for writing lists, links
@@ -531,8 +536,9 @@ command (<code>ls</code>):</p>
 </h3>
 <pre class="output" tabindex="0"><code><span><span class="va">guacamole.md</span></span></code></pre>
 </div>
-<p><code>guacamole.md</code> contains three lines, which we can see by
-running:</p>
+<p>The <code>cat</code> command prints the content of a file in the
+shell. We can use it to visualize the 3 lines we added to
+<code>guacamole.md</code>:</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1127,7 +1133,7 @@ the last commit made to <code>guacamole.md</code>?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Answer 1 is not descriptive enough, and the purpose of the commit is
 unclear; and answer 2 is redundant to using “git diff” to see what
@@ -1177,7 +1183,7 @@ imperative.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>Would only create a commit if files have already been staged.</li>
 <li>Would try to create a new repository.</li>
@@ -1218,7 +1224,7 @@ changes.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>First we make our changes to the <code>guacamole.md</code> and
 <code>groceries.md</code> files:</p>
@@ -1308,7 +1314,7 @@ state.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>If needed, move out of the <code>recipes</code> folder:</p>
 <div class="codewrapper sourceCode" id="cb68">
@@ -1434,8 +1440,8 @@ the local repository.</li>
   "url": "https://swcarpentry.github.io/git-novice/04-changes.html",
   "identifier": "https://swcarpentry.github.io/git-novice/04-changes.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2026-04-21",
-  "datePublished": "2026-08-25"
+  "dateModified": "2026-08-26",
+  "datePublished": "2026-08-26"
 }
 
   </script><script>
