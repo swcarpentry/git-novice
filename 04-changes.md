@@ -28,9 +28,11 @@ $ cd ~/Desktop/recipes
 ```
 
 Let's create a file called `guacamole.md` that contains the basic structure of our first recipe.
-We'll use `nano` to edit the file;
-you can use whatever editor you like.
-In particular, this does not have to be the `core.editor` you set globally earlier. But remember, the steps to create or edit a new file will depend on the editor you choose (it might not be nano). For a refresher on text editors, check out ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor) in [The Unix Shell](https://swcarpentry.github.io/shell-novice/) lesson.
+A file editor is a command that opens a specified file in the current shell and allows you to edit it; the file is created if it does not exist.
+
+In this lesson, we'll use `nano` as a file editor, but you can use whatever editor you like.
+In particular, this does not have to be the `core.editor` you set globally earlier during ["Setting Up Git"](https://swcarpentry.github.io/git-novice/02-setup.html).
+For a refresher on text editors, check out ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor) in [The Unix Shell](https://swcarpentry.github.io/shell-novice/) lesson.
 
 ```bash
 $ nano guacamole.md
@@ -44,7 +46,9 @@ Type the text below into the `guacamole.md` file:
 ## Instructions
 ```
 
-Save the file and exit your editor.
+Now we need to save the file and exit the editor.
+In the case of `nano`, many shortcuts are available via the `^` (symbolizing `Ctrl`) key.
+For example, to save and exit the editor you should use the sequence: `Ctrl+X` to exit, `Y` to save, and finally `Enter` to validate.
 
 :::::::::::::::::::::::::::::::::::::::::  spoiler
 
@@ -104,7 +108,8 @@ $ ls
 guacamole.md
 ```
 
-`guacamole.md` contains three lines, which we can see by running:
+The `cat` command prints the content of a file in the shell.
+We can use it to visualize the 3 lines we added to `guacamole.md`:
 
 ```bash
 $ cat guacamole.md
