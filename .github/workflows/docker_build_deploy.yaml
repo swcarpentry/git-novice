@@ -95,6 +95,7 @@ jobs:
         RENV_PATHS_ROOT: /home/rstudio/lesson/renv
         RENV_PROFILE: "lesson-requirements"
         RENV_CONFIG_EXTERNAL_LIBRARIES: "/usr/local/lib/R/site-library"
+        WORKBENCH_OVERLAY_CUSTOMIZATION: ${{ vars.WORKBENCH_OVERLAY_CUSTOMIZATION || '' }}
       volumes:
         - ${{ github.workspace }}:/home/rstudio/lesson
       options: --cpus 1
@@ -144,7 +145,8 @@ jobs:
         uses: carpentries/actions/record-container-version@v1
         with:
           CONTAINER_VER: ${{ needs.preflight.outputs.wb-vers }}
-          AUTO_MERGE: ${{ vars.AUTO_MERGE_CONTAINER_VERSION_UPDATE || 'true' }}
+          OMIT_PR: ${{ vars.OMIT_PR_CONTAINER_VERSION_UPDATE || 'false' }}
+          AUTO_MERGE: ${{ vars.AUTO_MERGE_CONTAINER_VERSION_UPDATE || 'false' }}
           token: ${{ secrets.GITHUB_TOKEN }}
           role-to-assume: ${{ secrets.AWS_GH_OIDC_ARN }}
           aws-region: ${{ secrets.AWS_GH_OIDC_REGION }}

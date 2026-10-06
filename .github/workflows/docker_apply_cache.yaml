@@ -154,6 +154,9 @@ jobs:
     name: "Prune Dependency Images"
     runs-on: ubuntu-latest
     needs: check-renv
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: Prune any old dependency image layers
         uses: carpentries/actions/prune-dependency-images@v1
