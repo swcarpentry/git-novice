@@ -196,12 +196,17 @@ Repository-level variables for this workflow are:
   - Force a reset of previously build markdown files
   - Setting this variable value to `true` will force sandpaper to delete any previously build markdown files
   - Default is unset or `false`
+- OMIT_PR_CONTAINER_VERSION_UPDATE
+  - Control raise behaviour of the workbench-docker version update PR
+  - When a new workbench Docker image version is detected, usually after a sandpaper, varnish, or pegboard update, its version number will be incremented
+  - If a newer version is available, a PR will be raised that updates the `.github/workbench-docker-version.txt` file
+  - To not raise this PR set this to `true`
+  - Default is unset or `false`
 - AUTO_MERGE_WORKBENCH_VERSION_UPDATE
   - Control merge behaviour of the workbench-docker version update PR
-  - When a new workbench Docker image version is detected, usually after a sandpaper, varnish, or pegboard update, its version number will be incremented
-  - If a newer version is available, a PR will be auto-generated that updates the `.github/workbench-docker-version.txt` file, and this PR will be auto-merged
-  - To not auto-merge this PR and to choose when to update the Docker version used, set this to `false`.
-  - Default is unset or `true`
+  - If OMIT_PR_CONTAINER_VERSION_UPDATE is `true` this option does nothing
+  - To auto-merge this PR, set this to `true`
+  - Default is unset or `false`
 - LANG_CODE
   - Two-letter language code that triggers the use of Joel Nitta's {dovetail} package for lesson translation
   - This is used in the internationalisation repos of the main Carpentry lesson programs
