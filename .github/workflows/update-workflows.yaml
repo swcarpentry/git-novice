@@ -29,11 +29,11 @@ jobs:
       id-token: write
     steps:
       - name: "Checkout Repository"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: "Validate Current Org and Workflow"
         id: validate-org-workflow
-        uses: carpentries/actions/validate-org-workflow@main
+        uses: carpentries/actions/validate-org-workflow@v1
         with:
           repo: ${{ github.repository }}
           workflow: ${{ github.workflow }}
@@ -46,7 +46,7 @@ jobs:
           steps.validate-org-workflow.outputs.is_valid == 'true' &&
           env.role-to-assume != '' &&
           env.aws-region != ''
-        uses: aws-actions/configure-aws-credentials@v5.0.0
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: ${{ env.role-to-assume }}
           aws-region: ${{ env.aws-region }}
@@ -71,7 +71,7 @@ jobs:
 
       - name: "Validate token"
         id: validate-token
-        uses: carpentries/actions/check-valid-credentials@main
+        uses: carpentries/actions/check-valid-credentials@v1
         with:
           token: ${{ steps.set-pat.outputs.pat || secrets.SANDPAPER_WORKFLOW }}
 
@@ -87,10 +87,11 @@ jobs:
       - name: Update Workflows
         id: update
         if: ${{ steps.validate-token.outputs.wf == 'true' }}
-        uses: carpentries/actions/update-workflows@main
+        uses: carpentries/actions/update-workflows@v1
         with:
           version: ${{ github.event.inputs.version || 'latest' }}
           clean: ${{ github.event.inputs.clean || '.yaml' }}
+          token: ${{ steps.set-pat.outputs.pat || secrets.SANDPAPER_WORKFLOW }}
 
       - name: Create Pull Request
         id: cpr

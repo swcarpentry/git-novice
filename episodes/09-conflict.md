@@ -504,7 +504,7 @@ image and rename it:
 
 ```bash
 $ git checkout HEAD guacamole.jpg
-$ git mv guacamole.jpg guacamole-only.jpg
+$ mv guacamole.jpg guacamole-only.jpg
 $ git checkout 439dc8c0 guacamole.jpg
 $ mv guacamole.jpg guacamole-nachos.jpg
 ```

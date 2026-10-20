@@ -28,9 +28,11 @@ $ cd ~/Desktop/recipes
 ```
 
 Let's create a file called `guacamole.md` that contains the basic structure of our first recipe.
-We'll use `nano` to edit the file;
-you can use whatever editor you like.
-In particular, this does not have to be the `core.editor` you set globally earlier. But remember, the steps to create or edit a new file will depend on the editor you choose (it might not be nano). For a refresher on text editors, check out ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor) in [The Unix Shell](https://swcarpentry.github.io/shell-novice/) lesson.
+A file editor is a command that opens a specified file in the current shell and allows you to edit it; the file is created if it does not exist.
+
+In this lesson, we'll use `nano` as a file editor, but you can use whatever editor you like.
+In particular, this does not have to be the `core.editor` you set globally earlier during ["Setting Up Git"](https://swcarpentry.github.io/git-novice/02-setup.html).
+For a refresher on text editors, check out ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor) in [The Unix Shell](https://swcarpentry.github.io/shell-novice/) lesson.
 
 ```bash
 $ nano guacamole.md
@@ -44,7 +46,9 @@ Type the text below into the `guacamole.md` file:
 ## Instructions
 ```
 
-Save the file and exit your editor.
+Now we need to save the file and exit the editor.
+In the case of `nano`, many shortcuts are available via the `^` (symbolizing `Ctrl`) key.
+For example, to save and exit the editor you should use the sequence: `Ctrl+X` to exit, `Y` to save, and finally `Enter` to validate.
 
 :::::::::::::::::::::::::::::::::::::::::  spoiler
 
@@ -104,7 +108,8 @@ $ ls
 guacamole.md
 ```
 
-`guacamole.md` contains three lines, which we can see by running:
+The `cat` command prints the content of a file in the shell.
+We can use it to visualize the 3 lines we added to `guacamole.md`:
 
 ```bash
 $ cat guacamole.md
@@ -286,8 +291,6 @@ but we haven't told Git we will want to save those changes
 nor have we saved them (which we do with `git commit`).
 So let's do that now. It is good practice to always review
 our changes before saving them. We do this using `git diff`.
-This shows us the differences between the current state
-of the file and the most recently saved version:
 
 ```bash
 $ git diff
@@ -447,12 +450,9 @@ $ git add guacamole.md
 $ git diff
 ```
 
-There is no output:
-as far as Git can tell,
-there's no difference between what it's been asked to save permanently
-and what's currently in the directory.
-However,
-if we do this:
+There is no output. Without any arguments, `git diff` compares the working directory and the staging area. After `git add`, the two versions are identical and there is nothing to show.
+
+However, if we do this:
 
 ```bash
 $ git diff --staged
@@ -473,10 +473,7 @@ index 315bf3a..b36abfd 100644
  ## Instructions
 ```
 
-it shows us the difference between
-the last committed change
-and what's in the staging area.
-Let's save our changes:
+we can see that by adding the `--staged` argument to the command we are now comparing what’s in the staged area to the last committed change.
 
 ```bash
 $ git commit -m "Modify guacamole to the traditional recipe"

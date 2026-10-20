@@ -82,7 +82,7 @@ systems, to track changes in the Linux kernel.
 Torvalds provided several explanations of the name, of varying degrees of
 politeness, which are enumerated in the 
 [project's README](https://github.com/git/git/blob/master/README.md?plain=1#L55),
-including "Global Information Tacker" for when "you're in a good mood".
+including "Global Information Tracker" for when "you're in a good mood".
 
 For those interested, The Carpentries has a [Version Control with Mercurial](https://swcarpentry.github.io/hg-novice/) lesson (2013-2018), which provides additional context and historical perspective.
 ::::::::::::::::::::::::::::::::::::::::::::::::::
