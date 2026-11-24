@@ -1,0 +1,45 @@
+{
+    "forwardPorts": [
+        8787,
+        4321
+    ],
+    "portsAttributes": {
+        "8787": {
+            "label": "RStudio Server",
+            "onAutoForward": "notify"
+        },
+        "4321": {
+            "label": "Sandpaper Serve",
+            "onAutoForward": "notify"
+        }
+    },
+    "remoteUser":"rstudio",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/rstudio/lesson,type=bind",
+    "workspaceFolder": "/home/rstudio/lesson",
+    "mounts": [
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/rstudio/.ssh,type=bind,consistency=cached",
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.gnupg,target=/home/rstudio/.gnupg,type=bind,consistency=cached"
+    ],
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "runArgs": [
+        "-p=8787:8787",
+        "-p=4321:4321"
+    ],
+    "postCreateCommand": {
+        "pre_echo": "echo 'Installing lesson prerequisites - please wait...'",
+        "gpg_reset": "gpgconf --kill all",
+        "renv_rstudio_setup": "Rscript /home/rstudio/.workbench/fortify_renv_cache.R && bash /home/rstudio/start.sh"
+    },
+    "containerEnv": {
+        "DISABLE_AUTH": "true",
+        "GPG_TTY": "/dev/pts/0",
+        "USER": "rstudio",
+        "PASSWORD": "rstudio",
+        "RENV_PATHS_ROOT": "/home/rstudio/.local/share/renv",
+        "RENV_PROFILE": "lesson-requirements",
+        "RENV_CONFIG_EXTERNAL_LIBRARIES": "/usr/local/lib/R/site-library"
+    }
+}
